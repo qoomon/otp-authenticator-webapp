@@ -4,17 +4,26 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "beefy app.js --live"
+    "serve": "gulp serve"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "any-base": "^1.0.1",
-    "jssha": "^2.2.0"
+    "jssha": "^2.2.0",
+    "progressbar.js": "^1.0.1"
   },
   "devDependencies": {
+    "brfs": "^1.4.3",
+    "browser-sync": "^2.18.8",
     "browserify": "^14.1.0",
-    "beefy": "^2.1.8"
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-sequence": "^0.4.6",
+    "packageify": "^1.0.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

@@ -20,3 +20,5 @@ npm install --global watchify
   watchify main.js -o bundle.js -v
 npm install --global beefy
   beefy app.js:bundle.js --live
+  
+example secret N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G

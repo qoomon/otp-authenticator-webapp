@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Goole Authenticator</title>
+    <link rel=icon href=favicon.ico>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <style>
+      h2 { text-align: center; color: #e6e6e6; }
+      body  { background: #292929; }
+      .well { background: #424242; border-color: #2f2f2f; }
+      #totp { color: #ddd; font-size: 24px; margin: 10px 0 10px 0; }
+      #totp-remaining-seconds { color: #aaa; font-size: 12px; margin: 10px 0 10px 0; }
+      #totp-remaining-seconds-circle { width: 20px; height: 20px;}
+    </style>
+    <script src="bundle.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Authenticator</h2>
+      <div class="well">
+        <input type="text" id="secret" class="form-control">
+        <div id="totp"></div>
+        <div id="totp-remaining-seconds-circle" ></div>
+      </div>
+    </div>
+  </body>
+</html>

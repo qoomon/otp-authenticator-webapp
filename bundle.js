@@ -33,12 +33,12 @@ function getTotp(secretBase32){
 }
 
 // ################  run  ##################
-var secretBase32 = '7N7J3NBUQ4WTL66GN2SJSUOXCKQM5MAX';
-
-var totp = getTotp(secretBase32);
-
-console.log(totp);
-document.getElementById('response').innerHTML = totp;
+setInterval(refresh_totp, 1000);
+function refresh_totp() {
+  var secretBase32 = 'N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G';
+  var totp = getTotp(secretBase32);
+  document.getElementById('response').innerHTML = totp + " " + (30 - Math.floor(new Date().getTime() / 1000.0) % 30) + "s";
+}
 
 },{"any-base":2,"jssha":4}],2:[function(require,module,exports){
 var Converter = require('./src/converter');

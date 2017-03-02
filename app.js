@@ -1,17 +1,14 @@
-/*
-  Generates a TOTP code given a secret.
-  
-  This script requires jsSHA (https://github.com/Caligatio/jsSHA) to work.
-  
-  Usage: 
-  
-  var code = getTotpCode(secret);
-*/
+"use strict";
+
+
 var jsSHA = require("jssha");
 var anyBase = require('any-base');
+anyBase.BASE32 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
+
 var decToHex = anyBase(anyBase.DEC, anyBase.HEX);
 var hexToDec = anyBase(anyBase.HEX, anyBase.DEC);
-var base32ToHex = anyBase("ABCDEFGHIJKLMNOPQRSTUVWXYZ234567", anyBase.HEX);
+var base32ToHex = anyBase(anyBase.BASE32, anyBase.HEX);
+
 var leftPad = function(str, minLength, pad) {
    if (str.length >= minLength) {
        return str
@@ -24,7 +21,7 @@ function getTotp(secretBase32){
   var secretHex = base32ToHex(secretBase32);
   var epochSeconds = Math.floor(new Date().getTime() / 1000.0);
   var timeHex = decToHex(String(Math.floor(epochSeconds / stepSeconds)))
-  var timeHexPadded= leftPad(timeHex, 16, '0');  
+  var timeHexPadded = leftPad(timeHex, 16, '0');
   var shaObj = new jsSHA("SHA-1", "HEX");
   shaObj.setHMACKey(secretHex, "HEX");
   shaObj.update(timeHexPadded);
@@ -35,8 +32,9 @@ function getTotp(secretBase32){
 }
 
 // ################  run  ##################
-var secretBase32 = process.argv[2];
+var secretBase32 = '7N7J3NBUQ4WTL66GN2SJSUOXCKQM5MAX';
 
 var totp = getTotp(secretBase32);
 
 console.log(totp);
+document.getElementById('response').innerHTML = totp;

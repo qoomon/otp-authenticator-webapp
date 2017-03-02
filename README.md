@@ -7,9 +7,16 @@ https://www.google.com/chart?chs=200x200&chld=M|0&cht=qr&chl=otpauth://totp/Exam
 * secret
   * text
   * qr code reader
-  
+
 ### Out
 * totp
 * valid time
 * qr code
 
+
+npm install --global browserify
+  browserify main.js -o bundle.js -v
+npm install --global watchify
+  watchify main.js -o bundle.js -v
+npm install --global beefy
+  beefy app.js:bundle.js --live

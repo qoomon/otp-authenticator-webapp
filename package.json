@@ -2,14 +2,19 @@
   "name": "totp-web-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "beefy app.js --live"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "any-base": "^1.0.1",
     "jssha": "^2.2.0"
+  },
+  "devDependencies": {
+    "browserify": "^14.1.0",
+    "beefy": "^2.1.8"
   }
 }

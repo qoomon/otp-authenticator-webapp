@@ -39,6 +39,7 @@ gulp.task('build', ['clean'], function (callback) {
     gulpSequence( 
         [
             'copy-resources',
+            'build-css',
             'build-js',
             'build-html'
         ],
@@ -62,6 +63,11 @@ gulp.task('build-js', function () {
 
 gulp.task('build-html', function () {
     return gulp.src('app/**/*.html')
+        .pipe(gulp.dest(destDir + '/'));
+});
+
+gulp.task('build-css', function () {
+    return gulp.src('app/**/*.css')
         .pipe(gulp.dest(destDir + '/'));
 });
 

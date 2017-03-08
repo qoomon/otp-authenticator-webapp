@@ -52,7 +52,9 @@ document.getElementById('secret').value = 'N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G';
 
 var totpRemainingSecondsCircle = new ProgressBar.Circle('#totp-remaining-seconds-circle', {
   strokeWidth: 50,
-  duration: 1000
+  duration: 1000,
+  color: '',
+  trailColor: ''
 });
 totpRemainingSecondsCircle.svg.style.transform= 'scale(-1, 1)';
 totpRemainingSecondsCircle.set(1.0);

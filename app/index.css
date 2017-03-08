@@ -1,35 +1,51 @@
-h2 { 
-  text-align: center; 
-  color: #e6e6e6; 
-}
-
-body  { 
+body { 
+  width: 100%;
   background: #1d1d1d; 
-}
-
-.well { 
-  background: #404040; 
-  border-color: #2f2f2f; 
-}
-
-#secret {
-  font-size: 66px;
-}
-
-#totp { 
-  margin: 10px 0 10px 0; 
-  font-size: 24px; 
   color: #ddd;
 }
 
-#totp-remaining-seconds { 
-  margin: 10px 0 10px 0; 
-  font-size: 12px; 
-  color: #aaa;
+#appname { 
+  font-size: 24px;
+  text-align: center; 
+  color: #e6e6e6; #
+  padding: 10px;
+  margin: 10px;
+}
+
+#calculator { 
+  margin:0 auto;
+  background: #404040; 
+  border-color: #2f2f2f; 
+  max-width: 400px;
+}
+
+#calculator:after{
+    clear: both;
+    content: "";
+    display: block;
+}
+
+#secret {
+  background-color: #eee;
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+#totp { 
+  float: left;
+  padding-left: 8px;
+  height: 34px; 
+  font-size: 24px; 
 }
 
 #totp-remaining-seconds-circle { 
-  width: 20px; 
-  height: 20px; 
+  float: right;
+  padding-right: 8px;
+  width: 34px; 
+  height: 34px; 
+  padding: 7px;
   stroke: #ddd;
 }
+
+

@@ -1,6 +1,5 @@
 "use strict";
 
-
 var jsSHA = require('jssha');
 var anyBase = require('any-base');
 anyBase.BASE32 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
@@ -27,16 +26,16 @@ function TOTP(secretBase32){
     this.secretBase32=secretBase32;
    
     this.getCode = function(){
-      var secretHex = base32ToHex(this.secretBase32);
-      var timeHex = decToHex(String(Math.floor(getEpochSeconds() / stepSeconds)))
-      var timeHexPadded = leftPad(timeHex, 16, '0');
-      var shaObj = new jsSHA("SHA-1", "HEX");
-      shaObj.setHMACKey(secretHex, "HEX");
-      shaObj.update(timeHexPadded);
-      var hmac = shaObj.getHMAC("HEX");
-      var offset = hexToDec(hmac.substring(hmac.length - 1));
-      var totp = String(hexToDec(hmac.substr(offset * 2, 8)) & hexToDec('7fffffff'));
-      return totp.slice(-6);
+        var secretHex = base32ToHex(this.secretBase32);
+        var timeHex = decToHex(String(Math.floor(getEpochSeconds() / stepSeconds)))
+        var timeHexPadded = leftPad(timeHex, 16, '0');
+        var shaObj = new jsSHA("SHA-1", "HEX");
+        shaObj.setHMACKey(secretHex, "HEX");
+        shaObj.update(timeHexPadded);
+        var hmac = shaObj.getHMAC("HEX");
+        var offset = hexToDec(hmac.substring(hmac.length - 1));
+        var totp = String(hexToDec(hmac.substr(offset * 2, 8)) & hexToDec('7fffffff'));
+        return totp.slice(-6);
     }
 
     this.getRemainingSeconds = function (){
@@ -48,31 +47,36 @@ function TOTP(secretBase32){
 
 // set default secret
 document.getElementById('secret').value = 'N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G';
-//document.getElementById('otpauth-qr').src='https://chart.googleapis.com/chart?chs=150x150&cht=qr&chld=M|1&chl=otpauth://totp/username@domain.com?secret=ONSWG4TFORVWK6I=';
+// document.getElementById('otpauth-qr').src='https://chart.googleapis.com/chart?chs=150x150&cht=qr&chld=M|1&chl=otpauth://totp/username@domain.com?secret=ONSWG4TFORVWK6I=';
 
 var totpRemainingSecondsCircle = new ProgressBar.Circle('#totp-remaining-seconds-circle', {
   strokeWidth: 50,
   duration: 1000,
-  color: '',
-  trailColor: ''
+  color: null, // null to support css styling
+  trailColor: null //  null to support css styling
 });
 totpRemainingSecondsCircle.svg.style.transform= 'scale(-1, 1)';
-totpRemainingSecondsCircle.set(1.0);
 
 setInterval(refresh_totp, 1000);
 function refresh_totp() {
   var secretBase32 = document.getElementById('secret').value;
   if (secretBase32) {
     var totp = new TOTP(secretBase32);
-    document.getElementById('totp').innerHTML = totp.getCode();
-    // document.getElementById('totp-remaining-seconds').innerHTML = totp.getRemainingSeconds() + "s";
-    if (totp.getRemainingSeconds() / 30.0 == 0) {
-      totpRemainingSecondsCircle.set(1.0);
-    } else {
-      totpRemainingSecondsCircle.animate(totp.getRemainingSeconds() / 30.0);
+    try {
+      document.getElementById('totp').innerHTML = totp.getCode();
+      if (totp.getRemainingSeconds() / 30.0 == 0) {
+        totpRemainingSecondsCircle.set(1.0);
+      } else {
+        totpRemainingSecondsCircle.animate(totp.getRemainingSeconds() / 30.0);
+      }
+    } catch (err) {
+      document.getElementById('totp').innerHTML = "Invalid Secret!";
+      totpRemainingSecondsCircle.set(0.0);
     }
+
+    
   } else {
-    document.getElementById('totp').innerHTML = 'missing secret';
-    // document.getElementById('totp-remaining-seconds').innerHTML = '';
+    document.getElementById('totp').innerHTML = '';
+    totpRemainingSecondsCircle.set(0.0);
   }
 }

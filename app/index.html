@@ -10,13 +10,11 @@
     <script src="bundle.js" defer></script>
   </head>
   <body>
-    <div class="container">
-      <h2>Authenticator</h2>
-      <div class="well">
-        <input type="password" id="secret" class="form-control">
-        <div id="totp"></div>
-        <div id="totp-remaining-seconds-circle" ></div>
-      </div>
+    <div id="appname">Authenticator</div>
+    <div id="calculator" class="well">
+      <input type="password" id="secret" class="form-control" placeholder="Insert Secret">
+      <div id="totp"></div>
+      <div id="totp-remaining-seconds-circle" ></div>
     </div>
   </body>
 </html>

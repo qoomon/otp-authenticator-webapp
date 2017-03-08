@@ -46,7 +46,7 @@ function TOTP(secretBase32){
 // ################  run  ##################
 
 // set default secret
-document.getElementById('input').value = 'N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G';
+document.getElementById('input').value = 'JBSWY3DPEHPK3PXP';
 // document.getElementById('otpauth-qr').src='https://chart.googleapis.com/chart?chs=150x150&cht=qr&chld=M|1&chl=otpauth://totp/username@domain.com?secret=ONSWG4TFORVWK6I=';
 
 var totpRemainingSecondsCircle = new ProgressBar.Circle('#totp-remaining-seconds-circle', {

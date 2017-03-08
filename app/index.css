@@ -1,0 +1,31 @@
+h2 { 
+  text-align: center; 
+  color: #e6e6e6; 
+}
+
+body  { 
+  background: #1d1d1d; 
+}
+
+.well { 
+  background: #404040; 
+  border-color: #2f2f2f; 
+}
+
+#totp { 
+  margin: 10px 0 10px 0; 
+  font-size: 24px; 
+  color: #ddd;
+}
+
+#totp-remaining-seconds { 
+  margin: 10px 0 10px 0; 
+  font-size: 12px; 
+  color: #aaa;
+}
+
+#totp-remaining-seconds-circle { 
+  width: 20px; 
+  height: 20px; 
+  stroke: #ddd;
+}

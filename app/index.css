@@ -25,7 +25,7 @@ body {
     display: block;
 }
 
-#secret {
+#input {
   background-color: #eee;
   margin-bottom: 20px;
   font-size: 24px;

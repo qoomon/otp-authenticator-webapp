@@ -59,7 +59,16 @@ totpRemainingSecondsCircle.svg.style.transform= 'scale(-1, 1)';
 
 setInterval(refresh_totp, 1000);
 function refresh_totp() {
-  var secretBase32 = document.getElementById('secret').value;
+  var input = document.getElementById('input').value;
+  
+   // otpauth://totp/Example:alice@google.com?secret=JBSWY3DPEHPK3PXP&issuer=Example
+  var secretBase32; 
+  if (input.startsWith("otpauth://")) {
+    var otpauth = new URL(input);
+    secretBase32 = otpauth.searchParams.get('secret');
+  } else {
+    secretBase32 = input;
+  }
   if (secretBase32) {
     var totp = new TOTP(secretBase32);
     try {

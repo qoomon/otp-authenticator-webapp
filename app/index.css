@@ -1,21 +1,21 @@
-body { 
+body {
   width: 100%;
-  background: #1d1d1d; 
+  background: #1d1d1d;
   color: #ddd;
 }
 
-#appname { 
+#appname {
   font-size: 24px;
-  text-align: center; 
+  text-align: center;
   color: #e6e6e6; #
   padding: 10px;
   margin: 10px;
 }
 
-#calculator { 
+#calculator {
   margin:0 auto;
-  background: #404040; 
-  border-color: #2f2f2f; 
+  background: #404040;
+  border-color: #2f2f2f;
   max-width: 400px;
 }
 
@@ -32,20 +32,18 @@ body {
   text-align: center;
 }
 
-#totp { 
+#totp-token { 
   float: left;
   padding-left: 8px;
-  height: 34px; 
-  font-size: 24px; 
+  height: 34px;
+  font-size: 24px;
 }
 
-#totp-remaining-seconds-circle { 
+#totp-token-remaining-seconds-circle {
   float: right;
   padding-right: 8px;
-  width: 34px; 
-  height: 34px; 
+  width: 34px;
+  height: 34px;
   padding: 7px;
   stroke: #ddd;
 }
-
-

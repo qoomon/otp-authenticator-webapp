@@ -2,13 +2,13 @@
 
 var jsSHA = require('jssha');
 var anyBase = require('any-base');
-anyBase.BASE32 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
+anyBase.ZBASE32 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
 
 var ProgressBar = require('progressbar.js');
 
 var decToHex = anyBase(anyBase.DEC, anyBase.HEX);
 var hexToDec = anyBase(anyBase.HEX, anyBase.DEC);
-var base32ToHex = anyBase(anyBase.BASE32, anyBase.HEX);
+var zbase32ToHex = anyBase(anyBase.ZBASE32, anyBase.HEX);
 
 var leftPad = function(str, minLength, pad) {
    if (str.length >= minLength) {
@@ -21,12 +21,12 @@ var getEpochSeconds = function(){
   return Math.floor(new Date().getTime() / 1000.0);
 }
 
-function TOTP(secretBase32){
+function TOTP(secretZBase32){
     var stepSeconds = 30;
-    this.secretBase32=secretBase32;
-   
-    this.getCode = function(){
-        var secretHex = base32ToHex(this.secretBase32);
+    this.secretZBase32=secretZBase32;
+
+    this.getToken = function(){
+        var secretHex = zbase32ToHex(this.secretZBase32).replace(/(.*)0$/,"0$1");
         var timeHex = decToHex(String(Math.floor(getEpochSeconds() / stepSeconds)))
         var timeHexPadded = leftPad(timeHex, 16, '0');
         var shaObj = new jsSHA("SHA-1", "HEX");
@@ -34,8 +34,8 @@ function TOTP(secretBase32){
         shaObj.update(timeHexPadded);
         var hmac = shaObj.getHMAC("HEX");
         var offset = hexToDec(hmac.substring(hmac.length - 1));
-        var totp = String(hexToDec(hmac.substr(offset * 2, 8)) & hexToDec('7fffffff'));
-        return totp.slice(-6);
+        var token = String(hexToDec(hmac.substr(offset * 2, 8)) & hexToDec('7fffffff'));
+        return token.slice(-6);
     }
 
     this.getRemainingSeconds = function (){
@@ -49,7 +49,7 @@ function TOTP(secretBase32){
 document.getElementById('input').value = 'JBSWY3DPEHPK3PXP';
 // document.getElementById('otpauth-qr').src='https://chart.googleapis.com/chart?chs=150x150&cht=qr&chld=M|1&chl=otpauth://totp/username@domain.com?secret=ONSWG4TFORVWK6I=';
 
-var totpRemainingSecondsCircle = new ProgressBar.Circle('#totp-remaining-seconds-circle', {
+var totpRemainingSecondsCircle = new ProgressBar.Circle('#totp-token-remaining-seconds-circle', {
   strokeWidth: 50,
   duration: 1000,
   color: null, // null to support css styling
@@ -61,8 +61,8 @@ setInterval(refresh_totp, 1000);
 function refresh_totp() {
    var input = document.getElementById('input').value;
    if (input) {
-      var secretBase32; 
-      if (input.startsWith("otpauth://")) { 
+      var secretBase32;
+      if (input.startsWith("otpauth://")) {
          // // otpauth://totp/Example:alice@google.com?secret=JBSWY3DPEHPK3PXP&issuer=Example
          var otpauthUrl = new URL(input);
          secretBase32 = otpauthUrl.searchParams.get('secret');
@@ -71,18 +71,18 @@ function refresh_totp() {
       }
       var totp = new TOTP(secretBase32);
       try {
-         document.getElementById('totp').innerHTML = totp.getCode();
+         document.getElementById('totp-token').innerHTML = totp.getToken();
          if (totp.getRemainingSeconds() / 30.0 == 0) {
             totpRemainingSecondsCircle.set(1.0);
          } else {
             totpRemainingSecondsCircle.animate(totp.getRemainingSeconds() / 30.0);
          }
       } catch (err) {
-         document.getElementById('totp').innerHTML = "Invalid Secret!";
+         document.getElementById('totp-token').innerHTML = "Invalid Secret!";
          totpRemainingSecondsCircle.set(0.0);
       }
    } else {
-      document.getElementById('totp').innerHTML = '';
+      document.getElementById('totp-token').innerHTML = '';
       totpRemainingSecondsCircle.set(0.0);
    }
 }

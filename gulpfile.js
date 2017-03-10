@@ -72,7 +72,7 @@ gulp.task('build-css', function () {
 });
 
 gulp.task('copy-resources', function () {
-    return gulp.src(['app/favicon.ico'])
+    return gulp.src(['app/favicon.ico', 'app/*.png'])
         .pipe(gulp.dest(destDir + '/'));
 });
 

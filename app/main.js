@@ -24,7 +24,7 @@ var getEpochSeconds = function(){
 
 function TOTP(secretZBase32){
     var stepSeconds = 30;
-    this.secretZBase32=secretZBase32;
+    this.secretZBase32=secretZBase32.toUpperCase();
 
     this.getToken = function(){
         var secretHex = zbase32ToHex(this.secretZBase32).replace(/(.*)0$/,"0$1");
@@ -75,37 +75,39 @@ var qrImage = new QRCode(document.getElementById('otpauth-qr'), {
     colorLight : "#ffffff",
     correctLevel : QRCode.CorrectLevel.M
 });
-console.log("### " + JSON.stringify(QRCode.CorrectLevel,2,2));
-var updateQrImage= function(){
+
+var update = function(){
   var secret = document.getElementById('inputSecret').value;
+  if (secret.startsWith("otpauth://")) {
+     var otpauthUrl = new URL(secret);
+     secret = otpauthUrl.searchParams.get('secret');
+     document.getElementById('inputAccount').value = decodeURIComponent(otpauthUrl.pathname).split(':')[1] || '';
+     document.getElementById('inputIssuer').value = otpauthUrl.searchParams.get('issuer') || '';
+  }
   var account = document.getElementById('inputAccount').value;
   var issuer = document.getElementById('inputIssuer').value;
+  
   var otpauthUrl = 'otpauth://totp/' + encodeURIComponent(issuer + ':' + account) + '?secret=' + encodeURIComponent(secret) + '&issuer=' + encodeURIComponent(issuer);
   qrImage.makeCode(otpauthUrl);
 };
-document.getElementById('inputIssuer').addEventListener('input', updateQrImage, false);
-document.getElementById('inputAccount').addEventListener('input', updateQrImage, false);
-document.getElementById('inputSecret').addEventListener('input', updateQrImage, false);
+document.getElementById('inputIssuer').addEventListener('input', update, false);
+document.getElementById('inputAccount').addEventListener('input', update, false);
+document.getElementById('inputSecret').addEventListener('input', update, false);
 
 // ################  run  ##################
 
 // set default secret
-document.getElementById('inputSecret').value = 'JBSWY3DPEHPK3PXP';
-updateQrImage(); 
+document.getElementById('inputSecret').value = 'JBSWY3DPEHPK3PXP' //'otpauth://totp/Issuer%3AAccount?secret=JBSWY3DPEHPK3PXP&issuer=Issuer';
+update(); 
 
 setInterval(refresh_totp, 1000);
 function refresh_totp() {
-   var input = document.getElementById('inputSecret').value;
-   if (input) {
-      var secretBase32;
-      if (input.startsWith("otpauth://")) {
-         // // otpauth://totp/Example:alice@google.com?secret=JBSWY3DPEHPK3PXP&issuer=Example
-         var otpauthUrl = new URL(input);
-         secretBase32 = otpauthUrl.searchParams.get('secret');
-      } else {
-         secretBase32 = input;
-      }
-      var totp = new TOTP(secretBase32);
+   var secret = document.getElementById('inputSecret').value;
+   if (secret) {
+      if (secret.startsWith("otpauth://")) {
+         secret = new URL(secret).searchParams.get('secret');
+      } 
+      var totp = new TOTP(secret);
       try {
          document.getElementById('totp-token').innerHTML = totp.getToken().replace(/(...)/g, "$1 ");
          if (totp.getRemainingSeconds() / 30.0 == 0) {

@@ -36,7 +36,13 @@ body {
 }
 
 #input {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+}
+
+#input:after{
+    clear: both;
+    content: "";
+    display: block;
 }
 
 #input > input {

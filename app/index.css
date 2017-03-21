@@ -92,7 +92,7 @@ body {
   width: calc(128px + 12px);
   margin-left: calc(50% - 64px - 6px);
   margin-top: 20px;
-  border-radius: 3px;
+  border-radius: 2px;
   padding: 6px;
   background: #f9f9f9;
   filter: brightness(0.94);

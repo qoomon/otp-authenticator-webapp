@@ -44,11 +44,11 @@ function TOTP(secretZBase32){
     }
 }
 
-var totpRemainingSecondsCircle = new ProgressBar.Circle('#totp-token-remaining-seconds-circle', {
+var totpRemainingSecondsCircle = new ProgressBar.Circle(document.getElementById('totp-token-remaining-seconds-circle'), {
   strokeWidth: 50,
   duration: 1000,
   color: 'inherit', // null to support css styling
-  trailColor: 'inherit' //  null to support css styling
+  trailColor: 'transparent' //  null to support css styling
 });
 totpRemainingSecondsCircle.svg.style.transform= 'scale(-1, 1)';
 

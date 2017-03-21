@@ -82,7 +82,6 @@ var updateQrImage= function(){
   var issuer = document.getElementById('inputIssuer').value;
   var otpauthUrl = 'otpauth://totp/' + encodeURIComponent(issuer + ':' + account) + '?secret=' + encodeURIComponent(secret) + '&issuer=' + encodeURIComponent(issuer);
   qrImage.makeCode(otpauthUrl);
-  // document.getElementById('otpauth-qr').src = 'https://chart.googleapis.com/chart?chs=256x256&cht=qr&chld=M|1&chl=' + encodeURIComponent(otpauthUrl);
 };
 document.getElementById('inputIssuer').addEventListener('input', updateQrImage, false);
 document.getElementById('inputAccount').addEventListener('input', updateQrImage, false);
@@ -108,7 +107,7 @@ function refresh_totp() {
       }
       var totp = new TOTP(secretBase32);
       try {
-         document.getElementById('totp-token').innerHTML = totp.getToken();
+         document.getElementById('totp-token').innerHTML = totp.getToken().replace(/(...)/g, "$1 ");
          if (totp.getRemainingSeconds() / 30.0 == 0) {
             totpRemainingSecondsCircle.set(1.0);
          } else {

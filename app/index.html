@@ -12,9 +12,15 @@
   <body>
     <div id="appname"><img src="google-authenticator.png">Google Authenticator</div>
     <div id="calculator" class="well">
-      <input id="input" type="password" class="form-control" placeholder="Insert Secret">
+      <div id="input">
+        <input id="inputSecret"  class="form-control" placeholder="Insert Secret"   type="password" autocomplete="new-password">
+        <div id="button-otpauth-qr"></div>
+        <input id="inputAccount" class="form-control" placeholder="Insert Account"  style="display: none;">
+        <input id="inputIssuer"  class="form-control" placeholder="Insert Issuer"   style="display: none;">
+      </div>
       <div id="totp-token"></div>
       <div id="totp-token-remaining-seconds-circle" ></div>
+      <div id="otpauth-qr" style="display: none;"></div>
     </div>
   </body>
 </html>

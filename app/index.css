@@ -4,6 +4,7 @@ body {
   color: #ddd;
 }
 
+
 #appname {
   width: 400px;
   margin: 0 auto;
@@ -35,10 +36,33 @@ body {
 }
 
 #input {
+    margin-bottom: 20px;
+}
+
+#input > input {
+  margin-bottom: 10px;
   background-color: #eee;
-  margin-bottom: 20px;
-  font-size: 24px;
-  text-align: center;
+  text-align: left;
+  font-size: 20px;
+  width: calc(100% - 38px);
+}
+
+#inputSecret {
+  float: left;
+}
+
+
+#button-otpauth-qr {
+    float: left;
+    width: 22px;
+    height: 22px;
+    margin-top: 6px;
+    margin-left: 9px;
+    border-radius: 3px;
+    background-color: #fbfbfb;
+    cursor: pointer;
+    background-image: url(qr_code.png);
+    background-size: contain;
 }
 
 #totp-token { 
@@ -55,4 +79,15 @@ body {
   height: 34px;
   padding: 7px;
   stroke: #ddd;
+}
+
+#otpauth-qr > img{
+  float: left;
+  width: calc(128px + 12px);
+  margin-left: calc(50% - 64px - 6px);
+  margin-top: 20px;
+  border-radius: 3px;
+  padding: 6px;
+  background: #f9f9f9;
+  filter: brightness(0.94);
 }

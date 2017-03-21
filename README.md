@@ -13,12 +13,4 @@ https://www.google.com/chart?chs=200x200&chld=M|0&cht=qr&chl=otpauth://totp/Exam
 * valid time
 * qr code
 
-
-npm install --global browserify
-  browserify main.js -o bundle.js -v
-npm install --global watchify
-  watchify main.js -o bundle.js -v
-npm install --global beefy
-  beefy app.js:bundle.js --live
-  
 example secret N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G

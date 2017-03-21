@@ -5,6 +5,7 @@ var anyBase = require('any-base');
 anyBase.ZBASE32 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
 
 var ProgressBar = require('progressbar.js');
+var QRCode = require('qrcodejs2');
 
 var decToHex = anyBase(anyBase.DEC, anyBase.HEX);
 var hexToDec = anyBase(anyBase.HEX, anyBase.DEC);
@@ -43,23 +44,59 @@ function TOTP(secretZBase32){
     }
 }
 
-// ################  run  ##################
-
-// set default secret
-document.getElementById('input').value = 'JBSWY3DPEHPK3PXP';
-// document.getElementById('otpauth-qr').src='https://chart.googleapis.com/chart?chs=150x150&cht=qr&chld=M|1&chl=otpauth://totp/username@domain.com?secret=ONSWG4TFORVWK6I=';
-
 var totpRemainingSecondsCircle = new ProgressBar.Circle('#totp-token-remaining-seconds-circle', {
   strokeWidth: 50,
   duration: 1000,
-  color: null, // null to support css styling
-  trailColor: null //  null to support css styling
+  color: 'inherit', // null to support css styling
+  trailColor: 'inherit' //  null to support css styling
 });
 totpRemainingSecondsCircle.svg.style.transform= 'scale(-1, 1)';
 
+
+
+document.getElementById('button-otpauth-qr').addEventListener('click', function(e){
+  var otpauthQrImage= document.getElementById('otpauth-qr');
+  var accountInput = document.getElementById('inputAccount');
+  var issuerInput = document.getElementById('inputIssuer');
+  if( otpauthQrImage.style.display == 'none'){
+    otpauthQrImage.style.display = "inherit";
+    accountInput.style.display = "inherit";
+    issuerInput.style.display = "inherit";
+  } else {
+    otpauthQrImage.style.display = "none";
+    accountInput.style.display = "none";
+    issuerInput.style.display = "none";
+  }
+}, false);
+
+
+var qrImage = new QRCode(document.getElementById('otpauth-qr'), {
+    colorDark : "#000000",
+    colorLight : "#ffffff",
+    correctLevel : QRCode.CorrectLevel.M
+});
+console.log("### " + JSON.stringify(QRCode.CorrectLevel,2,2));
+var updateQrImage= function(){
+  var secret = document.getElementById('inputSecret').value;
+  var account = document.getElementById('inputAccount').value;
+  var issuer = document.getElementById('inputIssuer').value;
+  var otpauthUrl = 'otpauth://totp/' + encodeURIComponent(issuer + ':' + account) + '?secret=' + encodeURIComponent(secret) + '&issuer=' + encodeURIComponent(issuer);
+  qrImage.makeCode(otpauthUrl);
+  // document.getElementById('otpauth-qr').src = 'https://chart.googleapis.com/chart?chs=256x256&cht=qr&chld=M|1&chl=' + encodeURIComponent(otpauthUrl);
+};
+document.getElementById('inputIssuer').addEventListener('input', updateQrImage, false);
+document.getElementById('inputAccount').addEventListener('input', updateQrImage, false);
+document.getElementById('inputSecret').addEventListener('input', updateQrImage, false);
+
+// ################  run  ##################
+
+// set default secret
+document.getElementById('inputSecret').value = 'JBSWY3DPEHPK3PXP';
+updateQrImage(); 
+
 setInterval(refresh_totp, 1000);
 function refresh_totp() {
-   var input = document.getElementById('input').value;
+   var input = document.getElementById('inputSecret').value;
    if (input) {
       var secretBase32;
       if (input.startsWith("otpauth://")) {

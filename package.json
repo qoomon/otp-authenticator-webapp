@@ -13,7 +13,8 @@
   "dependencies": {
     "any-base": "^1.0.1",
     "jssha": "^2.2.0",
-    "progressbar.js": "^1.0.1"
+    "progressbar.js": "^1.0.1",
+    "qrcodejs2": "0.0.2"
   },
   "devDependencies": {
     "brfs": "^1.4.3",

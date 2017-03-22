@@ -10,4 +10,4 @@ install:
   - npm install
 script:
   - npm run build
-  - if [[ "$TRAVIS_BRANCH" =~ ^master$ ]]; then ./push_to_git.sh 'dist' "https://qoomon:${GH_TOKEN}@github.com/qoomon/google-authenticator-webapp.git" 'gh-pages'; else echo 'ignored.'; fi
+  - if [[ "$TRAVIS_BRANCH" =~ ^master$ ]]; then ./push_to_git.sh 'dist' "https://${GH_TOKEN}@github.com/qoomon/google-authenticator-webapp.git" 'gh-pages'; else echo 'ignored.'; fi

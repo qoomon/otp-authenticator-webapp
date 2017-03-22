@@ -49,7 +49,7 @@ gulp.task('build', ['clean'], function (callback) {
 gulp.task('build-js', function () {
      return browserify({
             entries: [
-              'app/main.js'
+              'app/index.js'
             ],
             transform: [
                   "packageify",

@@ -4,16 +4,16 @@ body {
   color: #ddd;
 }
 
-
 #appname {
   width: 400px;
   margin: 0 auto;
   padding-top: 20px;
   padding-bottom: 10px;
-  padding-left: 2px;
+  padding-left: 5px;
   font-size: 24px;
   color: #e6e6e6;
 }
+
 #appname > img {
     height: 34px;
     width: auto;
@@ -57,7 +57,6 @@ body {
   float: left;
 }
 
-
 #button-otpauth-qr {
   float: left;
   width: 24px;
@@ -92,7 +91,7 @@ body {
   width: calc(128px + 12px);
   margin-left: calc(50% - 64px - 6px);
   margin-top: 20px;
-  border-radius: 2px;
+  border-radius: 4px;
   padding: 6px;
   background: #f9f9f9;
   filter: brightness(0.94);

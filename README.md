@@ -1,6 +1,8 @@
 # google-authenticator-webapp
 google authenticator webapp
 
+## No External Services are used, local JavaScript exceution only
+
 ### Features
 * generate totp codes
 * show remaining valid seconds for totp code

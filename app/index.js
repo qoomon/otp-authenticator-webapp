@@ -90,10 +90,48 @@ var update = function(){
   var otpauthUrl = 'otpauth://totp/' + encodeURIComponent(issuer + ':' + account) + '?secret=' + encodeURIComponent(secret) + '&issuer=' + encodeURIComponent(issuer);
   qrImage.makeCode(otpauthUrl);
 };
+
+function copyToClipboard(value) {
+  // Create a temporary input
+  var input = document.createElement("input");
+  // Append it to body
+  document.body.appendChild(input);
+  
+  // Set input value
+  input.setAttribute("value", value);
+  // Select input value
+  input.select();
+  // Copy input value
+  document.execCommand("copy");
+  
+  // Remove input from body
+  document.body.removeChild(input);
+}
+
+function showToast(value, timeout){
+  timeout = timeout || 2000;
+  
+  var toastElement = document.createElement("div");
+  toastElement.classList.add('toast');
+  toastElement.innerText = value;
+  
+  document.body.appendChild(toastElement);
+  setTimeout(function(){
+    document.body.removeChild(toastElement);
+  }, timeout);
+}
+                   
 document.getElementById('inputIssuer').addEventListener('input', update, false);
 document.getElementById('inputAccount').addEventListener('input', update, false);
 document.getElementById('inputSecret').addEventListener('input', update, false);
 
+['click', 'tap'].forEach(function(event){
+    document.getElementById('totp-token').addEventListener(event, function() {
+    copyToClipboard(this.innerText.replace(/\s/g,''));
+    showToast("Copied!");
+  }, false);
+});
+  
 // ################  run  ##################
 
 // set default secret
@@ -104,23 +142,24 @@ setInterval(refresh_totp, 1000);
 function refresh_totp() {
    var secret = document.getElementById('inputSecret').value;
    if (secret) {
+      var totpTokenElement = document.getElementById('totp-token');
       if (secret.startsWith("otpauth://")) {
          secret = new URL(secret).searchParams.get('secret');
       } 
       var totp = new TOTP(secret);
       try {
-         document.getElementById('totp-token').innerHTML = totp.getToken().replace(/(...)/g, "$1 ");
+         totpTokenElement.innerHTML = totp.getToken().replace(/(...)(?=.)/g, "$& ");
          if (totp.getRemainingSeconds() / 30.0 == 0) {
             totpRemainingSecondsCircle.set(1.0);
          } else {
             totpRemainingSecondsCircle.animate(totp.getRemainingSeconds() / 30.0);
          }
       } catch (err) {
-         document.getElementById('totp-token').innerHTML = "Invalid Secret!";
+         totpTokenElement.innerHTML = "Invalid Secret!";
          totpRemainingSecondsCircle.set(0.0);
       }
    } else {
-      document.getElementById('totp-token').innerHTML = '';
+      totpTokenElement.innerHTML = '';
       totpRemainingSecondsCircle.set(0.0);
    }
 }

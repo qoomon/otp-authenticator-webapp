@@ -75,6 +75,7 @@ body {
   padding-left: 8px;
   height: 34px;
   font-size: 24px;
+  cursor: pointer;
 }
 
 #totp-token-remaining-seconds-circle {
@@ -95,4 +96,20 @@ body {
   padding: 6px;
   background: #f9f9f9;
   filter: brightness(0.94);
+}
+
+.toast {
+  position: fixed;
+  top: 30vh;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 240px;
+  text-align: center;
+  background-color: #c5c5c5;
+  border-radius: 4px;
+  padding: 4px;
+  font-size: 16px;
+  color: #000000;
 }

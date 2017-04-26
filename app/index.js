@@ -143,7 +143,7 @@ var initAccount = urlSearchParams.get('account');
 var initIssuer = urlSearchParams.get('issuer');
 
 document.getElementById('inputSecret').value = initSecret;
-document.getElementById('inputAcount').value = initAccount;
+document.getElementById('inputAccount').value = initAccount;
 document.getElementById('inputIssuer').value = initIssuer;
 
 update(); 

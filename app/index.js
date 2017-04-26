@@ -133,9 +133,19 @@ document.getElementById('inputSecret').addEventListener('input', update, false);
 });
   
 // ################  run  ##################
+ 
+// init secret
+var urlSearchParams = new URLSearchParams(window.location.search);
+history.pushState(history.state, document.title, window.location.pathname);
 
-// set default secret
-document.getElementById('inputSecret').value = 'JBSWY3DPEHPK3PXP' //'otpauth://totp/Issuer%3AAccount?secret=JBSWY3DPEHPK3PXP&issuer=Issuer';
+var initSecret = urlSearchParams.get('secret') || 'JBSWY3DPEHPK3PXP'; //'otpauth://totp/Issuer%3AAccount?secret=JBSWY3DPEHPK3PXP&issuer=Issuer';
+var initAccount = urlSearchParams.get('account');
+var initIssuer = urlSearchParams.get('issuer');
+
+document.getElementById('inputSecret').value = initSecret;
+document.getElementById('inputAcount').value = initAccount;
+document.getElementById('inputIssuer').value = initIssuer;
+
 update(); 
 
 setInterval(refresh_totp, 1000);

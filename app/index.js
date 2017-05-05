@@ -140,7 +140,7 @@ document.getElementById('inputSecret').addEventListener('input', update, false);
 var urlSearchParams = new URLSearchParams(window.location.search);
 history.pushState(history.state, document.title, window.location.pathname);
 
-var initSecret = urlSearchParams.get('secret') || 'JBSWY3DPEHPK3PXP'; //'otpauth://totp/Issuer%3AAccount?secret=JBSWY3DPEHPK3PXP&issuer=Issuer';
+var initSecret = urlSearchParams.get('secret'); //'otpauth://totp/Issuer%3AAccount?secret=JBSWY3DPEHPK3PXP&issuer=Issuer';
 var initAccount = urlSearchParams.get('account');
 var initIssuer = urlSearchParams.get('issuer');
 

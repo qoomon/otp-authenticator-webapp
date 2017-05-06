@@ -1,5 +1,10 @@
 "use strict";
 
+var exec = require('browserify-exec');
+
+var gitCommit = exec('git rev-parse HEAD');
+document.getElementById('appversion').innerText = gitCommit;
+
 var jsSHA = require('jssha');
 var anyBase = require('any-base');
 anyBase.ZBASE32 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
@@ -154,7 +159,7 @@ setInterval(refresh_totp, 1000);
 
 function refresh_totp() {
   var totpTokenElement = document.getElementById('totp-token');
-  
+
   var secret = document.getElementById('inputSecret').value;
   if (secret) {
     if (secret.startsWith("otpauth://")) {

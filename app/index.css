@@ -14,6 +14,14 @@ body {
   color: #e6e6e6;
 }
 
+#appversion {
+  position: fixed;
+  bottom: 0px;
+  text-align: center;
+  width: 100%;
+  font-size: x-small;
+}
+
 #appname > img {
     height: 34px;
     width: auto;
@@ -70,7 +78,7 @@ body {
   background-size: contain;
 }
 
-#totp-token { 
+#totp-token {
   float: left;
   padding-left: 8px;
   height: 34px;

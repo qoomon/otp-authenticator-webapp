@@ -36,7 +36,7 @@ gulp.task('serve', ['build'], function () {
 });
 
 gulp.task('build', ['clean'], function (callback) {
-    gulpSequence( 
+    gulpSequence(
         [
             'copy-resources',
             'build-css',
@@ -52,6 +52,7 @@ gulp.task('build-js', function () {
               'app/index.js'
             ],
             transform: [
+                  "browserify-exec",
                   "packageify",
                   "brfs"
             ]
@@ -75,5 +76,3 @@ gulp.task('copy-resources', function () {
     return gulp.src(['app/favicon.ico', 'app/*.png'])
         .pipe(gulp.dest(destDir + '/'));
 });
-
-

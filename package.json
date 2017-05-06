@@ -19,6 +19,7 @@
     "brfs": "^1.4.3",
     "browser-sync": "^2.18.8",
     "browserify": "^14.1.0",
+    "browserify-exec": "0.0.2",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-sequence": "^0.4.6",

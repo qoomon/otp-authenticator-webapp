@@ -9,14 +9,20 @@ const gulpSequence = require('gulp-sequence');
 // const gulpSourcemaps = require('gulp-sourcemaps');
 const gulpDel = require('del');
 
-var browserify = require('browserify');
-var browserSync = require('browser-sync').create();
+const browserify = require('browserify');
+const browserSync = require('browser-sync').create();
 
-var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
 
+const shell = require('shelljs');
 // const Fs = require('fs');
 // const Path = require('path');
+const packageFile = require('./package.json');
+
+const app = {
+  version: packageFile.version + '-' + shell.exec('git rev-parse HEAD', {silent:true})
+};
 
 const destDir = 'dist/';
 
@@ -49,8 +55,11 @@ gulp.task('build', ['clean'], function (callback) {
 gulp.task('build-js', function () {
      return browserify({
             entries: [
-              'app/index.js'
+             'app/index.js'
             ],
+            insertGlobalVars: {
+              app: function () { return JSON.stringify(app)} 
+            },
             transform: [
                   "browserify-exec",
                   "packageify",

@@ -1,9 +1,6 @@
 "use strict";
 
-var exec = require('browserify-exec');
-
-var gitCommit = exec('git rev-parse HEAD');
-document.getElementById('appversion').innerText = gitCommit;
+document.getElementById('appversion').innerText = app.version;
 
 var jsSHA = require('jssha');
 var anyBase = require('any-base');

@@ -12,4 +12,6 @@
   * secret
   * accoount
   * issuer
-  * e.g. https://qoomon.github.io/google-authenticator-webapp/?secret=N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G&account=john.doe&issuer=example.org
+  
+### Example
+https://qoomon.github.io/google-authenticator-webapp/?secret=N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G&account=john.doe&issuer=example.org

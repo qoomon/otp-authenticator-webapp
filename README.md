@@ -9,4 +9,7 @@
 * parse otpauth URLs in 'secret' input field
 * generate otpauth URL QR code
 * accept request parameters
-  * https://qoomon.github.io/google-authenticator-webapp/?secret=N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G&account=john.doe&issuer=example.org
+  * secret
+  * accoount
+  * issuer
+  * e.g. https://qoomon.github.io/google-authenticator-webapp/?secret=N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G&account=john.doe&issuer=example.org

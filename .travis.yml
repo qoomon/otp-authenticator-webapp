@@ -5,9 +5,13 @@ cache:
   directories:
     - node_modules
 install:
-  - git config --global user.name "Travis"
-  - git config --global user.email '<>'
   - npm install
 script:
   - npm run build
-  - if [[ "$TRAVIS_BRANCH" =~ ^master$ ]]; then ./push_to_git.sh 'dist' "https://${GH_TOKEN}@github.com/qoomon/google-authenticator-webapp.git" 'gh-pages'; else echo 'ignored.'; fi
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: scripts/deploy_to_git.sh 'dist' "https://${GH_TOKEN}@github.com/qoomon/google-authenticator-webapp.git" 'gh-pages'
+  on:
+    branch: master
+

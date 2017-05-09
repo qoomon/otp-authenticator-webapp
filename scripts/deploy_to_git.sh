@@ -12,14 +12,20 @@ SOURCE_FOLDER="$1"
 
 TARGET_REPO="$2"
 TARGET_BRANCH="$3"
-COMMIT_MESSAGE="$(git log --format='%h %s%nAuthor: %an <%ae>')\n$(git config --get remote.origin.url)"
+COMMIT_MESSAGE="$(git log -1 --format='Commit: %h - %s%nAuthor: %an <%ae>')\n$(git config --get remote.origin.url)"
 
 echo "Deploy '$SOURCE_FOLDER' to '${TARGET_REPO}' '$TARGET_BRANCH'"
 
+echo ''
+echo "--- Change directory to ${SOURCE_FOLDER}"
 cd "${SOURCE_FOLDER}";
 
+echo ''
+echo "--- Init Repository"
 rm -rf '.git'
 git init
+git config user.name "$(whoami)"		
+git config user.email '<>'
 
 echo ''
 echo '--- Stash Files'

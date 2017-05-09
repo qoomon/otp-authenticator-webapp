@@ -21,7 +21,7 @@ const shell = require('shelljs');
 const packageFile = require('./package.json');
 
 const app = {
-  version: packageFile.version + '-' + shell.exec('git rev-parse HEAD', {silent:true})
+  version: packageFile.version + '-' + shell.exec('git rev-parse HEAD', {silent:true}).replace(/\n$/, "")
 };
 
 const destDir = 'dist/';

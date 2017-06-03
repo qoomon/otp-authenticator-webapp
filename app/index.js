@@ -13,13 +13,6 @@ var decToHex = anyBase(anyBase.DEC, anyBase.HEX);
 var hexToDec = anyBase(anyBase.HEX, anyBase.DEC);
 var zbase32ToHex = anyBase(anyBase.ZBASE32, anyBase.HEX);
 
-var leftPad = function(str, minLength, pad) {
-  if (str.length >= minLength) {
-    return str
-  }
-  return pad.repeat(minLength - str.length) + str;
-};
-
 var getEpochSeconds = function() {
   return Math.floor(new Date().getTime() / 1000.0);
 }
@@ -32,11 +25,17 @@ function TOTP(secretZBase32) {
     var shaObj = new jsSHA("SHA-1", "HEX");
 
     var secretHex = zbase32ToHex(this.secretZBase32);
-    var secretHexPadded = leftPad(secretHex, Math.ceil(secretHex.length / 2) * 2, '0');
-    shaObj.setHMACKey(secretHexPadded, "HEX");
+    if (secretHex % 2 !== 0){
+      secretHex = '0' + secretHex;
+      if(secretHex.endsWith('0')) {
+        secretHex = secretHex.slice(0, -1);
+      }
+    }
+    shaObj.setHMACKey(secretHex, "HEX");
 
-    var timeHex = decToHex(String(Math.floor(getEpochSeconds() / stepSeconds)))
-    var timeHexPadded = leftPad(timeHex, 16, '0');
+    var counter = Math.floor(getEpochSeconds() / stepSeconds);
+    var timeHex = decToHex(counter.toString())
+    var timeHexPadded = ('0'.repeat(16) + timeHex).slice(-16); // left pad with zeros
     shaObj.update(timeHexPadded);
 
     var hmac = shaObj.getHMAC("HEX");

@@ -1,6 +1,6 @@
 {
   "name": "google-authenticator-webapp",
-  "version": "1.2.0",
+  "version": "1.2.7",
   "description": "",
   "scripts": {
     "build": "gulp build",
@@ -10,21 +10,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "any-base": "^1.0.1",
-    "jssha": "^2.2.0",
-    "progressbar.js": "^1.0.1",
+    "any-base": "1.0.1",
+    "jssha": "2.2.0",
+    "progressbar.js": "1.0.1",
     "qrcodejs2": "0.0.2"
   },
   "devDependencies": {
-    "brfs": "^1.4.3",
-    "browser-sync": "^2.18.8",
-    "browserify": "^14.1.0",
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-sequence": "^0.4.6",
-    "packageify": "^1.0.0",
-    "shelljs": "^0.7.7",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "brfs": "1.4.3",
+    "browserify": "14.1.0",
+    "browser-sync": "2.18.8",
+    "shelljs": "0.7.7",
+    "packageify": "1.0.0",
+    "gulp": "3.9.1",
+    "gulp-sequence": "0.4.6",
+    "vinyl-buffer": "1.0.0",
+    "vinyl-source-stream": "1.1.0",
+    "del": "2.2.2"
   }
 }

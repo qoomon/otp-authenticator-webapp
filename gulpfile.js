@@ -61,7 +61,6 @@ gulp.task('build-js', function () {
               app: function () { return JSON.stringify(app)} 
             },
             transform: [
-                  "browserify-exec",
                   "packageify",
                   "brfs"
             ]

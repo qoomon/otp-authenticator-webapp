@@ -97,8 +97,8 @@ body {
 
 #otpauth-qr > img{
   float: left;
-  width: calc(128px + 12px);
-  margin-left: calc(50% - 64px - 6px);
+  width: 256px;
+  margin-left: calc(50% - 128px);
   margin-top: 20px;
   border-radius: 4px;
   padding: 6px;

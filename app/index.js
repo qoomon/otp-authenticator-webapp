@@ -15,21 +15,22 @@ var totpRemainingSecondsCircle = new ProgressBar.Circle(document.getElementById(
 });
 totpRemainingSecondsCircle.svg.style.transform = 'scale(-1, 1)';
 
-document.getElementById('button-otpauth-qr').addEventListener('click', function(e) {
-  var otpauthQrImage = document.getElementById('otpauth-qr');
-  var accountInput = document.getElementById('inputAccount');
-  var issuerInput = document.getElementById('inputIssuer');
-  if (otpauthQrImage.style.display == 'none') {
-    otpauthQrImage.style.display = "inherit";
-    accountInput.style.display = "inherit";
-    issuerInput.style.display = "inherit";
-  } else {
-    otpauthQrImage.style.display = "none";
-    accountInput.style.display = "none";
-    issuerInput.style.display = "none";
-  }
-}, false);
-
+['click', 'tap'].forEach(function(event) {
+  document.getElementById('button-otpauth-qr').addEventListener(event, function(e) {
+    var otpauthQrImage = document.getElementById('otpauth-qr');
+    var accountInput = document.getElementById('inputAccount');
+    var issuerInput = document.getElementById('inputIssuer');
+    if (otpauthQrImage.style.display == 'none') {
+      otpauthQrImage.style.display = "inherit";
+      accountInput.style.display = "inherit";
+      issuerInput.style.display = "inherit";
+    } else {
+      otpauthQrImage.style.display = "none";
+      accountInput.style.display = "none";
+      issuerInput.style.display = "none";
+    }
+  }, false);
+});
 
 var qrImage = new QRCode(document.getElementById('otpauth-qr'), {
   colorDark: "#000000",

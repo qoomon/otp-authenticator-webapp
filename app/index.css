@@ -15,11 +15,19 @@ body {
 }
 
 #appversion {
-  position: fixed;
+  position: absolute;
   bottom: 0px;
   text-align: center;
   width: 100%;
   font-size: x-small;
+}
+
+#github-ref {
+  position: absolute;
+  bottom: 20px;
+  left: calc(50% - 16px);
+  height: 32px;
+  width: 32px;
 }
 
 #appname > img {

@@ -3,6 +3,10 @@
 
 ## No External Services are used, local JavaScript execution only
 
+Hosted at github pages: https://qoomon.github.com/google-authenticator-webapp/
+* branch: [gh-pages](https://github.com/qoomon/google-authenticator-webapp/tree/gh-pages)
+
+
 ### Features
 * generate totp codes
 * show remaining valid seconds for totp code

@@ -19,9 +19,9 @@ function TOTP(secretZBase32) {
 
     var secretHex = zbase32ToHex(this.secretZBase32);
     if (secretHex.length % 2 !== 0) {
-      if(secretHex.endsWith('0')) {
+      if (secretHex.endsWith('0')) {
         secretHex = secretHex.slice(0, -1);
-      }else{
+      } else {
         secretHex = '0' + secretHex;
       }
     }

@@ -19,9 +19,10 @@ function TOTP(secretZBase32) {
 
     var secretHex = zbase32ToHex(this.secretZBase32);
     if (secretHex.length % 2 !== 0) {
-      secretHex = '0' + secretHex;
       if(secretHex.endsWith('0')) {
         secretHex = secretHex.slice(0, -1);
+      }else{
+        secretHex = '0' + secretHex;
       }
     }
     shaObj.setHMACKey(secretHex, "HEX");

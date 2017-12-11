@@ -25,4 +25,5 @@ deploy:
   script: scripts/deploy_to_git.sh 'dist' 'git@github.com:qoomon/google-authenticator-webapp.git' 'gh-pages'
   on:
     branch: master
+    condition: $TRAVIS_REPO_SLUG = qoomon/google-authenticator-webapp
 

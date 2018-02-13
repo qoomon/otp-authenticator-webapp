@@ -1,10 +1,12 @@
-# google-authenticator-webapp
-[![Build Status](https://travis-ci.org/qoomon/google-authenticator-webapp.svg?branch=master)](https://travis-ci.org/qoomon/google-authenticator-webapp)
+# otp-authenticator-webapp
+[![Build Status](https://travis-ci.org/qoomon/otp-authenticator-webapp.svg?branch=master)](https://travis-ci.org/qoomon/otp-authenticator-webapp)
+
+A *Google Authenticator* like webapp.
 
 ## No External Services are used, local JavaScript execution only
 
-Hosted at github pages: https://qoomon.github.com/google-authenticator-webapp/
-* branch: [gh-pages](https://github.com/qoomon/google-authenticator-webapp/tree/gh-pages)
+Hosted at github pages: https://qoomon.github.com/otp-authenticator-webapp/
+* branch: [gh-pages](https://github.com/qoomon/otp-authenticator-webapp/tree/gh-pages)
 
 
 ### Features
@@ -18,4 +20,4 @@ Hosted at github pages: https://qoomon.github.com/google-authenticator-webapp/
   * issuer
   
 ### Example
-https://qoomon.github.io/google-authenticator-webapp/?secret=N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G&account=john.doe&issuer=example.org
+https://qoomon.github.io/otp-authenticator-webapp/?secret=N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G&account=john.doe&issuer=example.org

@@ -9,7 +9,7 @@ Hosted at github pages: https://qoomon.github.com/otp-authenticator-webapp/
 * branch: [gh-pages](https://github.com/qoomon/otp-authenticator-webapp/tree/gh-pages)
 
 Or host it on your onw GitHub account 
-* just fork this repo and this web app is available at https://<USERNAME>.github.com/otp-authenticator-webapp/
+* just fork this repo and this web app is available at https://\<USERNAME>.github.com/otp-authenticator-webapp/
 
 
 ### Features

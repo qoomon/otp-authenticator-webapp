@@ -45,7 +45,7 @@ var update = function() {
     secret = otpauthUrl.searchParams.get('secret');
     document.getElementById('inputSecret').value = secret;
     var label = decodeURIComponent(otpauthUrl.pathname.replace(RegExp('^//totp/'), ''));
-    if(label.includes(":")){
+    if(!label.includes(":")){
       document.getElementById('inputAccount').value = label;
     } else {
       document.getElementById('inputIssuer').value = label.split(':')[0];

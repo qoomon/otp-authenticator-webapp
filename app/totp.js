@@ -1,45 +1,61 @@
 var jsSHA = require('jssha');
-var anyBase = require('any-base');
-anyBase.ZBASE32 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
 
-var decToHex = anyBase(anyBase.DEC, anyBase.HEX);
-var hexToDec = anyBase(anyBase.HEX, anyBase.DEC);
-var zbase32ToHex = anyBase(anyBase.ZBASE32, anyBase.HEX);
-
-var getEpochSeconds = function() {
-  return Math.floor(new Date().getTime() / 1000.0);
+function decToHex(dec){
+  return dec.toString(16);
 }
 
-function TOTP(secretZBase32) {
-  var stepSeconds = 30;
-  this.secretZBase32 = secretZBase32.toUpperCase();
+function hexToDec(hex){
+  return parseInt(hex, 16);
+}
 
-  this.getToken = function() {
-    var shaObj = new jsSHA("SHA-1", "HEX");
+function base32ToHex(base32) {
+	const base32chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
 
-    var secretHex = zbase32ToHex(this.secretZBase32);
-    if (secretHex.length % 2 !== 0) {
-      if (secretHex.endsWith('0')) {
-        secretHex = secretHex.slice(0, -1);
-      } else {
-        secretHex = '0' + secretHex;
-      }
+  let bits = '';
+	for (let i = 0; i < base32.length; i++) {
+		let val = base32chars.indexOf(base32.charAt(i).toUpperCase());
+    if(val < 0){
+      throw new Error("Illegal Base32 character: " + base32.charAt(i));
     }
+		bits += val.toString(2).padStart(5, "0");
+	}
+
+  let hex = '';
+  bits = bits.padMultiple(4, "0");
+	for (let i = 0; i + 4 <= bits.length; i += 4) {
+		let chunk = bits.substr(i, 4);
+		hex += parseInt(chunk, 2).toString(16);
+	}
+  
+	return hex;
+}
+
+
+function TOTP(secretBase32) {
+  this.secretBase32 = secretBase32;
+  this.stepSeconds = 30;
+  this.tokenLength = 6;
+  
+  this.getToken = function() {
+    let secretHex = base32ToHex(secretBase32);
+    if (secretHex.length % 2 !== 0) {
+      secretHex += '0';
+    }
+    let counter = Math.floor(Date.now()/1000/stepSeconds);
+    let counterHex = decToHex(counter);
+
+    let shaObj = new jsSHA("SHA-1", "HEX");
     shaObj.setHMACKey(secretHex, "HEX");
+    shaObj.update(counterHex.padStart(16, "0"));
+    let hmac = shaObj.getHMAC("HEX");
+    let offset = hexToDec(hmac.slice(-1));
+    let token = String(hexToDec(hmac.substr(offset * 2, 8)) & hexToDec('7fffffff')).slice(-6);
 
-    var counter = Math.floor(getEpochSeconds() / stepSeconds);
-    var timeHex = decToHex(counter.toString())
-    var timeHexPadded = ('0'.repeat(16) + timeHex).slice(-16); // left pad with zeros
-    shaObj.update(timeHexPadded);
-
-    var hmac = shaObj.getHMAC("HEX");
-    var offset = hexToDec(hmac.slice(-1));
-    var token = String(hexToDec(hmac.substr(offset * 2, 8)) & hexToDec('7fffffff'));
-    return token.slice(-6);
+    return token;
   }
-
+  
   this.getRemainingSeconds = function() {
-    return stepSeconds - getEpochSeconds() % stepSeconds;
+    return stepSeconds - (Date.now()/1000) % stepSeconds;
   }
 }
 

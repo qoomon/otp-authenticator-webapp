@@ -43,13 +43,14 @@ var update = function() {
   if (secret.startsWith("otpauth://")) {
     var otpauthUrl = new URL(secret);
     secret = otpauthUrl.searchParams.get('secret');
+    document.getElementById('inputSecret').value = secret;
     document.getElementById('inputAccount').value = decodeURIComponent(otpauthUrl.pathname).split(':')[1] || '';
     document.getElementById('inputIssuer').value = otpauthUrl.searchParams.get('issuer') || '';
   }
   var account = document.getElementById('inputAccount').value;
   var issuer = document.getElementById('inputIssuer').value;
 
-  var otpauthUrl = 'otpauth://totp/' + encodeURIComponent(issuer + ':' + account) + '?secret=' + encodeURIComponent(secret) + '&issuer=' + encodeURIComponent(issuer);
+  var otpauthUrl = 'otpauth://totp/' + encodeURIComponent(account) + '?secret=' + encodeURIComponent(secret) + '&issuer=' + encodeURIComponent(issuer);
   qrImage.makeCode(otpauthUrl);
 };
 
@@ -100,7 +101,7 @@ document.getElementById('inputSecret').addEventListener('input', update, false);
 var urlSearchParams = new URLSearchParams(window.location.search);
 history.pushState(history.state, document.title, window.location.pathname);
 
-var initSecret = urlSearchParams.get('secret'); //'otpauth://totp/Issuer%3AAccount?secret=JBSWY3DPEHPK3PXP&issuer=Issuer';
+var initSecret = urlSearchParams.get('secret'); //'otpauth://totp/ACCOUNT?secret=JBSWY3DPEHPK3PXP&issuer=ISSUER';
 var initAccount = urlSearchParams.get('account');
 var initIssuer = urlSearchParams.get('issuer');
 
@@ -117,11 +118,7 @@ function refresh_totp() {
 
   var secret = document.getElementById('inputSecret').value;
   if (secret) {
-    if (secret.startsWith("otpauth://")) {
-      secret = new URL(secret).searchParams.get('secret');
-    } else {
-      secret = secret.replace(/\s/g, '');
-    }
+    secret = secret.replace(/\s/g, '');
     var totp = new TOTP(secret);
     try {
       totpTokenElement.innerHTML = totp.getToken().replace(/(...)(?=.)/g, "$& ");

@@ -44,8 +44,15 @@ var update = function() {
     var otpauthUrl = new URL(secret);
     secret = otpauthUrl.searchParams.get('secret');
     document.getElementById('inputSecret').value = secret;
-    document.getElementById('inputAccount').value = decodeURIComponent(otpauthUrl.pathname).split(':')[1] || '';
-    document.getElementById('inputIssuer').value = otpauthUrl.searchParams.get('issuer') || '';
+    if(!decodeURIComponent(otpauthUrl.pathname).includes(":")){
+      document.getElementById('inputAccount').value = decodeURIComponent(otpauthUrl.pathname);
+    } else {
+      document.getElementById('inputIssuer').value = decodeURIComponent(otpauthUrl.pathname).split(':')[0];
+      document.getElementById('inputAccount').value = decodeURIComponent(otpauthUrl.pathname).split(':')[1];
+    }
+    if(otpauthUrl.searchParams.get('issuer')){
+      document.getElementById('inputIssuer').value = otpauthUrl.searchParams.get('issuer');
+    }
   }
   var account = document.getElementById('inputAccount').value;
   var issuer = document.getElementById('inputIssuer').value;

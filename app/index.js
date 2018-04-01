@@ -40,22 +40,24 @@ var qrImage = new QRCode(document.getElementById('otpauth-qr'), {
 
 var update = function() {
   var secret = document.getElementById('inputSecret').value;
-  if (secret.startsWith("otpauth://")) {
+  if (secret.startsWith("otpauth://totp/")) {
     var otpauthUrl = new URL(secret);
     secret = otpauthUrl.searchParams.get('secret');
     document.getElementById('inputSecret').value = secret;
-    if(!decodeURIComponent(otpauthUrl.pathname).includes(":")){
-      document.getElementById('inputAccount').value = decodeURIComponent(otpauthUrl.pathname);
+    var label = decodeURIComponent(otpauthUrl.pathname.replace(RegExp('^//totp/'), ''));
+    if(label.includes(":")){
+      document.getElementById('inputAccount').value = label;
     } else {
-      document.getElementById('inputIssuer').value = decodeURIComponent(otpauthUrl.pathname).split(':')[0];
-      document.getElementById('inputAccount').value = decodeURIComponent(otpauthUrl.pathname).split(':')[1];
+      document.getElementById('inputIssuer').value = label.split(':')[0];
+      document.getElementById('inputAccount').value = label.split(':')[1];
     }
     if(otpauthUrl.searchParams.get('issuer')){
-      document.getElementById('inputIssuer').value = otpauthUrl.searchParams.get('issuer');
+      document.getElementById('inputIssuer').value = decodeURIComponent(otpauthUrl.searchParams.get('issuer'));
     }
   }
-  var account = document.getElementById('inputAccount').value;
+  
   var issuer = document.getElementById('inputIssuer').value;
+  var account = document.getElementById('inputAccount').value;
 
   var otpauthUrl = 'otpauth://totp/' + encodeURIComponent(account) + '?secret=' + encodeURIComponent(secret) + '&issuer=' + encodeURIComponent(issuer);
   qrImage.makeCode(otpauthUrl);

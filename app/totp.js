@@ -18,16 +18,15 @@ function base32ToHex(base32) {
       throw new Error("Illegal Base32 character: " + base32.charAt(i));
     }
 		bits += val.toString(2).padStart(5, "0");
-	}
+  }
 
   let hex = '';
-  bits = bits.padMultiple(4, "0");
-	for (let i = 0; i + 4 <= bits.length; i += 4) {
-		let chunk = bits.substr(i, 4);
-		hex += parseInt(chunk, 2).toString(16);
-	}
-  
-	return hex;
+  for (let i = 0; i + 4 <= bits.length; i += 4) {
+    let chunk = bits.substr(i, 4);
+    hex += parseInt(chunk, 2).toString(16);
+ }
+
+  return hex;
 }
 
 

@@ -21,7 +21,6 @@ function base32ToHex(base32) {
   }
 
   let hex = '';
-  bits = bits.padEnd(Math.floor(bits.length/4)*4 ,'0');	
   for (let i = 0; i + 4 <= bits.length; i += 4) {
     let chunk = bits.substr(i, 4);
     hex += parseInt(chunk, 2).toString(16);

@@ -9,18 +9,19 @@ function hexToDec(hex){
 }
 
 function base32ToHex(base32) {
-	const base32chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
+  const base32chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
 
   let bits = '';
-	for (let i = 0; i < base32.length; i++) {
-		let val = base32chars.indexOf(base32.charAt(i).toUpperCase());
+  for (let i = 0; i < base32.length; i++) {
+    let val = base32chars.indexOf(base32.charAt(i).toUpperCase());
     if(val < 0){
       throw new Error("Illegal Base32 character: " + base32.charAt(i));
     }
-		bits += val.toString(2).padStart(5, "0");
+    bits += val.toString(2).padStart(5, '0');
   }
 
   let hex = '';
+  bits = bits.padEnd(Math.floor(bits.length/4)*4 ,'0');	
   for (let i = 0; i + 4 <= bits.length; i += 4) {
     let chunk = bits.substr(i, 4);
     hex += parseInt(chunk, 2).toString(16);

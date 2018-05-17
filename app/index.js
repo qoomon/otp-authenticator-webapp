@@ -112,7 +112,8 @@ history.pushState(history.state, document.title, window.location.pathname);
 
 //'...?_=otpauth://totp/ACCOUNT?secret=JBSWY3DPEHPK3PXP&issuer=ISSUER';
 var otpauthUrl = document.location.search.replace(/^(.*_=)|(.*)/, "");
-document.getElementById('inputSecret').value = otpauthUrl
+var secret = urlSearchParams.get('secret');
+document.getElementById('inputSecret').value = otpauthUrl || secret;
 
 update();
 

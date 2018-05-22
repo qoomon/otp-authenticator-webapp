@@ -10,20 +10,20 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jssha": "2.2.0",
+    "jssha": "2.3.1",
     "progressbar.js": "1.0.1",
     "qrcodejs2": "0.0.2"
   },
   "devDependencies": {
-    "brfs": "1.4.3",
-    "browserify": "14.1.0",
-    "browser-sync": "2.18.8",
-    "shelljs": "0.7.7",
+    "brfs": "1.6.1",
+    "browserify": "16.2.2",
+    "browser-sync": "2.24.4",
+    "shelljs": "0.8.2",
     "packageify": "1.0.0",
     "gulp": "3.9.1",
-    "gulp-sequence": "0.4.6",
-    "vinyl-buffer": "1.0.0",
-    "vinyl-source-stream": "1.1.0",
-    "del": "2.2.2"
+    "gulp-sequence": "1.0.0",
+    "vinyl-buffer": "1.0.1",
+    "vinyl-source-stream": "2.0.0",
+    "del": "3.0.0"
   }
 }

@@ -106,14 +106,17 @@ document.getElementById('inputSecret').addEventListener('input', update, false);
 
 // ################  run  ##################
 
-// init secret
-var urlSearchParams = new URLSearchParams(window.location.search);
-history.pushState(history.state, document.title, window.location.pathname);
-
 //'...?_=otpauth://totp/ACCOUNT?secret=JBSWY3DPEHPK3PXP&issuer=ISSUER';
 var otpauthUrl = document.location.search.replace(/^(.*_=)|(.*)/, "");
+
+// init secret
+var urlSearchParams = new URLSearchParams(window.location.search.replace(/_=.*$/, ""));
 var secret = urlSearchParams.get('secret');
+
 document.getElementById('inputSecret').value = otpauthUrl || secret;
+
+// remove searchParams
+history.pushState(history.state, document.title, window.location.pathname);
 
 update();
 

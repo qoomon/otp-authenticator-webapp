@@ -169,10 +169,11 @@ function refresh_totp() {
     var totp = new TOTP(secret);
     try {
       totpTokenElement.innerHTML = totp.getToken().replace(/(...)(?=.)/g, "$& ");
-      if (totp.getRemainingSeconds() / 30.0 <= 0) {
+      var normalizedRemainingTime = totp.getRemainingSeconds() / totp.getStepSeconds();
+      if ( normalizedRemainingTime <= 0) {
         totpRemainingSecondsCircle.set(1.0);
       } else {
-        totpRemainingSecondsCircle.animate(totp.getRemainingSeconds() / 30.0);
+        totpRemainingSecondsCircle.animate(normalizedRemainingTime);
       }
     } catch (err) {
       console.log(err);

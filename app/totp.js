@@ -56,6 +56,10 @@ function TOTP(secretBase32) {
   this.getRemainingSeconds = function() {
     return this.stepSeconds - (Date.now()/1000) % this.stepSeconds;
   }
+  
+  this.getStepSeconds = function() {
+    return this.stepSeconds;
+  }
 }
 
 module.exports = TOTP;

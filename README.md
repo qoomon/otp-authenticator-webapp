@@ -3,7 +3,7 @@
 
 A *Google Authenticator* like webapp.
 
-## No External Services are used, local JavaScript execution only
+## 🔒 No External Services are used, local JavaScript execution only 🔒
 
 Hosted at github pages: https://qoomon.github.com/otp-authenticator-webapp/
 * branch: [gh-pages](https://github.com/qoomon/otp-authenticator-webapp/tree/gh-pages)

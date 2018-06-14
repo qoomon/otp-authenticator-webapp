@@ -16,11 +16,13 @@
         <input id="inputSecret"  class="form-control" placeholder="Insert Secret" type="password" autocomplete="new-password" autofocus>
         <div id="button-otpauth-qr"></div>
         <input id="inputAccount" class="form-control" placeholder="Insert Account" style="display: none;">
-        <input id="inputIssuer"  class="form-control" placeholder="Insert Issuer"  style="display: none;">
+        <input id="inputIssuer"  class="form-control" placeholder="Insert Issuer (optional)"  style="display: none;">
       </div>
-      <div id="totp-token"></div>
-      <div id="totp-token-remaining-seconds-circle" ></div>
-      <div id="otpauth-qr" style="display: none;"></div>
+      <div id="totp-token-container">
+        <div id="totp-token"></div>
+        <div id="totp-token-remaining-seconds-circle" ></div>
+      </div>
+      <div id="otpauth-qr" style="display: none;" class="well"></div>
     </div>
     <a href="https://github.com/qoomon/otp-authenticator-webapp"><img id="github-ref" src="github-icon.png"></a>
     <div id="appversion"/ >

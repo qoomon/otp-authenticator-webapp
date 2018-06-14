@@ -66,7 +66,7 @@ body {
   background-color: #eee;
   text-align: left;
   font-size: 20px;
-  width: calc(100% - 38px);
+  width: calc(100% - 27px);
 }
 
 #inputSecret {
@@ -75,15 +75,17 @@ body {
 
 #button-otpauth-qr {
   float: left;
-  width: 24px;
-  height: 24px;
-  margin-top: 5px;
-  margin-left: 10px;
-  border-radius: 3px;
-  background-color: #dddddd;
+  width: 22px;
+  height: 22px;
+  margin-top: 6px;
+  margin-left: 5px;
   cursor: pointer;
-  background-image: url(qr_code.png);
+  background-image: url(more.png);
   background-size: contain;
+}
+
+#totp-token-container {
+  overflow: auto;
 }
 
 #totp-token {
@@ -103,29 +105,29 @@ body {
   stroke: #ddd;
 }
 
-#otpauth-qr > img{
-  float: left;
+#otpauth-qr {
   width: 256px;
-  margin-left: 42px;
+  height: 256px;
   margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 4px;
-  padding: 6px;
   background: #f9f9f9;
   filter: brightness(0.94);
 }
 
 .toast {
   position: fixed;
-  top: 30vh;
+  bottom: 30vh;
   left: 0;
   right: 0;
   width: 100%;
   margin: 0 auto;
   max-width: 240px;
   text-align: center;
-  background-color: #c5c5c5;
-  border-radius: 4px;
+  background-color: #585858;
+  border-radius: 20px;
   padding: 4px;
   font-size: 16px;
-  color: #000000;
+  color: #bababa;
 }

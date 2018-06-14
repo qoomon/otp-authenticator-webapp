@@ -99,11 +99,11 @@ var update = function() {
     var otpauthUrl = buildOTPauthUrl(secret, account, issuer);
     qrImage.makeCode(otpauthUrl);
     qrImage._el.removeAttribute("title"); // WORKAROUND: prevent showing otpauthUrl in html
-    document.getElementById('otpauth-qr-overlay').style.display='';
+    document.getElementById('otpauth-qr-overlay').style.display='none';
   } else {
     qrImage.makeCode('');
     document.getElementById('otpauth-qr-overlay').innerHTML = "Input missing!";
-    document.getElementById('otpauth-qr-overlay').style.display='none';
+    document.getElementById('otpauth-qr-overlay').style.display='';
   }
 };
 

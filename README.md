@@ -15,7 +15,7 @@ Or host it on your onw GitHub account
 ### Features
 * generate totp codes
 * show remaining valid seconds for totp code
-* parse otpauth URLs in `secret input field
+* parse otpauth URLs in `secret` input field
 * generate otpauth URL QR code
 * accept request parameters
   * `secret` - OTP Secret

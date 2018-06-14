@@ -99,8 +99,10 @@ var update = function() {
     var otpauthUrl = buildOTPauthUrl(secret, account, issuer);
     qrImage.makeCode(otpauthUrl);
     qrImage._el.removeAttribute("title"); // WORKAROUND: prevent showing otpauthUrl in html
+    document.getElementById('inputIssuer').style.display='';
   } else {
-    qrImage._el.getElementsByTagName("img")[0].src = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="; // WORKAROUND: clean image
+    qrImage.makeCode('');
+    document.getElementById('inputIssuer').style.display='none';
   }
 };
 

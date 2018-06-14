@@ -116,6 +116,21 @@ body {
   filter: brightness(0.94);
 }
 
+#otpauth-qr-overlay {
+  position: absolute;
+  top: 40%;
+  right: 0;
+  left: 0;
+  width: 64%;
+  margin: 0 auto;
+  padding: 4px;
+  border-radius: 20px;
+  background-color: #585858;
+  color: #bababa;
+  font-size: 16px;
+  text-align: center;
+}
+
 .toast {
   position: fixed;
   bottom: 30vh;

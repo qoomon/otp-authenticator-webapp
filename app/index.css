@@ -104,6 +104,7 @@ body {
 }
 
 #otpauth-qr {
+  position: relative;
   width: 256px;
   height: 256px;
   margin-top: 20px;

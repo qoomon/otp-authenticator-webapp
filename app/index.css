@@ -98,10 +98,8 @@ body {
 
 #totp-token-remaining-seconds-circle {
   float: right;
-  padding-right: 8px;
-  width: 34px;
-  height: 34px;
-  padding: 7px;
+  width: 22px;
+  margin-top: 5px;
   stroke: #ddd;
 }
 

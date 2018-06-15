@@ -115,7 +115,7 @@ document.getElementById('inputSecret').addEventListener('input', update, false);
 
 ['click', 'tap'].forEach(function(event) {
   document.getElementById('totp-token').addEventListener(event, function() {
-    copyToClipboard(this.innerText.replace(/\s/g, ''));
+    copyToClipboard(this.innerText);
     showToast("Token copied!");
   }, false);
 });
@@ -171,7 +171,7 @@ function refresh_totp() {
     secret = secret.replace(/\s/g, '');
     var totp = new TOTP(secret);
     try {
-      totpTokenElement.innerHTML = totp.getToken().replace(/(...)(?=.)/g, "$& ");
+      totpTokenElement.innerHTML = totp.getToken().replace(/(...)(...)/g, '<span>$1</span><span style="margin-left:8px">$2</span>');
       var normalizedRemainingTime = totp.getRemainingSeconds() / totp.getStepSeconds();
       if ( normalizedRemainingTime <= 0) {
         totpRemainingSecondsCircle.set(1.0);

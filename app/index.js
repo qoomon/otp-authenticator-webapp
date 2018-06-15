@@ -89,6 +89,7 @@ var update = function() {
     secret = otpauthParameters.secret || ' ';
     issuer = otpauthParameters.issuer;
     account = otpauthParameters.account;
+    showOtpauthQr();
   }
   
   document.getElementById('inputSecret').value = secret || '';
@@ -131,20 +132,33 @@ document.getElementById('inputSecret').addEventListener('input', update, false);
   }, false);
 });
 
+
+function showOtpauthQr() {
+  document.getElementById('otpauth-qr').style.display = "";
+  document.getElementById('inputAccount').style.display = "";
+  document.getElementById('inputIssuer').style.display = "";
+}
+
+function hideOtpauthQr() {
+  document.getElementById('otpauth-qr').style.display = "none";
+  document.getElementById('inputAccount').style.display = "none";
+  document.getElementById('inputIssuer').style.display = "none";
+}
+
+function toggleOtpauthQr() {
+  if (document.getElementById('otpauth-qr').style.display == 'none') {
+    showOtpauthQr();
+  } else {
+    hideOtpauthQr();
+  }
+}
+
 ['click', 'tap'].forEach(function(event) {
   document.getElementById('button-otpauth-qr').addEventListener(event, function(e) {
     var otpauthQrImageElement = document.getElementById('otpauth-qr');
     var accountInputElement = document.getElementById('inputAccount');
     var issuerInputElement = document.getElementById('inputIssuer');
-    if (otpauthQrImageElement.style.display == 'none') {
-      otpauthQrImageElement.style.display = "";
-      accountInputElement.style.display = "";
-      issuerInputElement.style.display = "";
-    } else {
-      otpauthQrImageElement.style.display = "none";
-      accountInputElement.style.display = "none";
-      issuerInputElement.style.display = "none";
-    }
+    toggleOtpauthQr();
   }, false);
 });
 

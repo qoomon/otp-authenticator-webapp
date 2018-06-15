@@ -3,7 +3,7 @@
 
 A *Google Authenticator* like webapp.
 
-## 🔒 No External Services are used, local JavaScript execution only 🔒
+## ☂️No External Services are used, local JavaScript execution only ☂️
 
 Hosted at github pages: https://qoomon.github.com/otp-authenticator-webapp/
 * branch: [gh-pages](https://github.com/qoomon/otp-authenticator-webapp/tree/gh-pages)
@@ -16,8 +16,8 @@ Or host it on your onw GitHub account
 * generate totp codes
 * show remaining valid seconds for totp code
 * parse otpauth URLs in `secret` input field
-* generate otpauth URL QR code
-* accept request parameters
+* generate otpauth URL QR code - click on qr-code image
+* accept request parameters - ⚠️**you have to trust the server side**⚠️
   * `secret` - OTP Secret
     * https://qoomon.github.io/otp-authenticator-webapp/?secret=N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G
   * `_` - otpauth URL 

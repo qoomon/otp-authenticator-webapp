@@ -113,6 +113,7 @@ body {
   border-radius: 4px;
   background: #f9f9f9;
   filter: brightness(0.94);
+  cursor: pointer;
 }
 
 #otpauth-qr-overlay {

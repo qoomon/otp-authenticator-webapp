@@ -164,14 +164,11 @@ function toggleOtpauthQr() {
 
 // ################  run  ##################
 
-var urlSearchParams = new URLSearchParams(window.location.search.replace(/_=.*$/, ""));
-var secret = urlSearchParams.get('secret');
-var otpauthUrl = document.location.search.replace(/^(.*_=)|(.*)/, ""); //'...?_=otpauth://totp/ACCOUNT?secret=JBSWY3DPEHPK3PXP&issuer=ISSUER';
+var secret = window.location.hash.substr(1);
+// remove hash
+history.pushState(history.state, document.title, window.location.pathname);
 
 document.getElementById('inputSecret').value = otpauthUrl || secret;
-
-// remove searchParams
-history.pushState(history.state, document.title, window.location.pathname);
 
 update();
 

@@ -17,7 +17,7 @@ Or host it on your onw GitHub account
 * show remaining valid seconds for totp code
 * parse otpauth URLs in `secret` input field
 * generate otpauth URL QR code - click on qr-code image
-* accept url hash parameters
+* accept url hash to pass secret or otpauth url - browsers do not send url hash values
   * OTP Secret
     * https://qoomon.github.io/otp-authenticator-webapp/#N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G
   * otpauth URL 

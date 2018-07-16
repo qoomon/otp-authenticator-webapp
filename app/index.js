@@ -168,9 +168,9 @@ window.onhashchange = function(){
   var secret = window.location.hash.substr(1);
   history.pushState(history.state, document.title, window.location.pathname); // remove hash
   document.getElementById('inputSecret').value = secret;
+  update();
 };
-
-update();
+window.onhashchange();
 
 setInterval(refresh_totp, 1000);
 

@@ -165,10 +165,8 @@ function toggleOtpauthQr() {
 // ################  run  ##################
 
 var secret = window.location.hash.substr(1);
-// remove hash
-history.pushState(history.state, document.title, window.location.pathname);
-
-document.getElementById('inputSecret').value = otpauthUrl || secret;
+history.pushState(history.state, document.title, window.location.pathname); // remove hash
+document.getElementById('inputSecret').value = secret;
 
 update();
 

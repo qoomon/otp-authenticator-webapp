@@ -21,5 +21,5 @@ Or host it on your onw GitHub account
  * ℹ️ browsers do not send url hash value to server 
  * ⚠️ browsers may keep hash value in history
  * examples
-  * OTP Secret - https://qoomon.github.io/otp-authenticator-webapp/#N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G
   * otpauth URL - https://qoomon.github.io/otp-authenticator-webapp/#otpauth://totp/john.doe?secret=N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G&issuer=example.org
+  * Secret only - https://qoomon.github.io/otp-authenticator-webapp/#N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G

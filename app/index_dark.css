@@ -1,0 +1,50 @@
+body {
+  background: #212121;
+  color: #f7f7f7;
+}
+
+#appname {
+  color: #e6e6e6;
+}
+
+#appversion {
+  color: #f7f7f7;
+}
+
+#github-ref {
+  filter: invert(25%);
+}
+
+#calculator {
+  background: #424242;
+  border-color: #2f2f2f;
+}
+
+#input>input {
+  background-color: #353535;
+  border-color: #1f1f1f;
+  color: #dddddd;
+}
+
+#button-otpauth-qr {
+  filter: invert(25%);
+}
+
+#totp-token-remaining-seconds-circle {
+  stroke: #f7f7f7;
+}
+
+#otpauth-qr {
+  background: #f9f9f9;
+  filter: brightness(0.94);
+}
+
+#otpauth-qr-overlay {
+  background-color: #585858;
+  color: #efefef;
+}
+
+.toast {
+  background-color: #585858;
+  color: #efefef;
+}

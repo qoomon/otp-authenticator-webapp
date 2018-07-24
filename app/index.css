@@ -1,7 +1,7 @@
 body {
   width: 100%;
-  background: #1d1d1d;
-  color: #ddd;
+  background-color: #f2f2f2;
+  color: #4688f1;
 }
 
 #appname {
@@ -11,15 +11,16 @@ body {
   padding-bottom: 10px;
   padding-left: 5px;
   font-size: 24px;
-  color: #e6e6e6;
+  color: #4c4c4c;
 }
 
 #appversion {
   position: absolute;
   bottom: 0px;
-  text-align: center;
   width: 100%;
+  text-align: center;
   font-size: x-small;
+  color: #4c4c4c;
 }
 
 #github-ref {
@@ -28,45 +29,49 @@ body {
   left: calc(50% - 16px);
   height: 32px;
   width: 32px;
+  filter: invert(50%);
 }
 
-#appname > img {
-    height: 34px;
-    width: auto;
-    margin-right: 10px;
-    position: relative;
-    top: -3px;
+#appname>img {
+  height: 34px;
+  width: auto;
+  margin-right: 10px;
+  position: relative;
+  top: -3px;
 }
 
 #calculator {
-  margin:0 auto;
-  background: #404040;
-  border-color: #2f2f2f;
+  margin: 0 auto;
   max-width: 400px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  border-color: #e8e8e8;
 }
 
-#calculator:after{
-    clear: both;
-    content: "";
-    display: block;
+#calculator:after {
+  clear: both;
+  content: "";
+  display: block;
 }
 
 #input {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
-#input:after{
-    clear: both;
-    content: "";
-    display: block;
+#input:after {
+  clear: both;
+  content: "";
+  display: block;
 }
 
-#input > input {
+#input>input {
   margin-bottom: 10px;
-  background-color: #eee;
+  width: calc(100% - 27px);
+  max-width: 400px;
   text-align: left;
   font-size: 20px;
-  width: calc(100% - 27px);
+  background-color: #fbfbfb;
+  border-color: #9bb8e4;
 }
 
 #inputSecret {
@@ -82,6 +87,7 @@ body {
   cursor: pointer;
   background-image: url(more.png);
   background-size: contain;
+  filter: invert(25%);
 }
 
 #totp-token-container {
@@ -100,7 +106,7 @@ body {
   float: right;
   width: 22px;
   margin-top: 5px;
-  stroke: #ddd;
+  stroke: #4688f1;
 }
 
 #otpauth-qr {
@@ -111,9 +117,9 @@ body {
   margin-left: auto;
   margin-right: auto;
   border-radius: 4px;
-  background: #f9f9f9;
-  filter: brightness(0.94);
   cursor: pointer;
+  background-color: #ffffff;
+  filter: brightness(0.94);
 }
 
 #otpauth-qr-overlay {
@@ -125,10 +131,10 @@ body {
   margin: 0 auto;
   padding: 4px;
   border-radius: 20px;
-  background-color: #585858;
-  color: #efefef;
   font-size: 16px;
   text-align: center;
+  background-color: #4687f1;
+  color: #efefef;
 }
 
 .toast {
@@ -136,13 +142,13 @@ body {
   bottom: 30vh;
   left: 0;
   right: 0;
-  width: 100%;
   margin: 0 auto;
   max-width: 240px;
-  text-align: center;
-  background-color: #585858;
-  border-radius: 20px;
   padding: 4px;
+  width: 100%;
+  border-radius: 20px;
+  text-align: center;
   font-size: 16px;
-  color: #bababa;
+  background-color: #4687f1;
+  color: #efefef;
 }

@@ -24,6 +24,10 @@ const base32ToHex = (base32) => {
 };
 
 function TOTP(secretBase32) {
+  if(secretBase32.length < 16){
+    throw new Error("Secret minimum length is 16, but was only" + secretBase32.length);
+  }
+  
   this.secretBase32 = secretBase32;
   this.stepSeconds = 30;
   this.tokenLength = 6;

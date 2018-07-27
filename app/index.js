@@ -169,8 +169,8 @@ function refresh_totp() {
   var secret = document.getElementById('inputSecret').value;
   if (secret) {
     secret = secret.replace(/\s/g, '');
-    var totp = new TOTP(secret);
     try {
+      var totp = new TOTP(secret);
       totpTokenElement.innerHTML = totp.getToken().replace(/(...)(...)/g, '<span>$1</span><span style="margin-left:8px">$2</span>');
       var normalizedRemainingTime = totp.getRemainingSeconds() / totp.getStepSeconds();
       if (normalizedRemainingTime <= 0) {
@@ -184,7 +184,7 @@ function refresh_totp() {
       totpRemainingSecondsCircle.set(0.0);
     }
   } else {
-    totpTokenElement.innerHTML = '';
+    totpTokenElement.innerHTML = '000000'.replace(/(...)(...)/g, '<span>$1</span><span style="margin-left:8px">$2</span>');;
     totpRemainingSecondsCircle.set(0.0);
   }
 }

@@ -1,46 +1,39 @@
 var jsSHA = require('jssha');
 
-function decToHex(dec){
-  return dec.toString(16);
-}
+const decToHex = (dec) => dec.toString(16);
+const hexToDec = (hex) => parseInt(hex, 16);
 
-function hexToDec(hex){
-  return parseInt(hex, 16);
-}
+const base32chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
+const base32ToHex = (base32) => {
+  let bits = base32.split('')
+    .map(char => {
+      let val = base32chars.indexOf(char.toUpperCase());
+      if (val < 0) {
+        throw new Error("Illegal Base32 character: " + char);
+      }
+      return val;
+    })
+    .map(val => val.toString(2).padStart(5, '0'))
+    .join('');
 
-function base32ToHex(base32) {
-  const base32chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
-
-  let bits = '';
-  for (let i = 0; i < base32.length; i++) {
-    let val = base32chars.indexOf(base32.charAt(i).toUpperCase());
-    if(val < 0){
-      throw new Error("Illegal Base32 character: " + base32.charAt(i));
-    }
-    bits += val.toString(2).padStart(5, '0');
-  }
-
-  let hex = '';
-  for (let i = 0; i + 4 <= bits.length; i += 4) {
-    let chunk = bits.substr(i, 4);
-    hex += parseInt(chunk, 2).toString(16);
- }
+  let hex = bits.match(/.{4}/g)
+    .map(chunk => parseInt(chunk, 2).toString(16))
+    .join('');
 
   return hex;
-}
-
+};
 
 function TOTP(secretBase32) {
   this.secretBase32 = secretBase32;
   this.stepSeconds = 30;
   this.tokenLength = 6;
-  
-  this.getToken = function() {
+
+  this.getToken = () => {
     let secretHex = base32ToHex(this.secretBase32);
     if (secretHex.length % 2 !== 0) {
       secretHex += '0';
     }
-    let counter = Math.floor(Date.now()/1000/this.stepSeconds);
+    let counter = Math.floor(Date.now() / 1000 / this.stepSeconds);
     let counterHex = decToHex(counter);
 
     let shaObj = new jsSHA("SHA-1", "HEX");
@@ -48,18 +41,15 @@ function TOTP(secretBase32) {
     shaObj.update(counterHex.padStart(16, "0"));
     let hmac = shaObj.getHMAC("HEX");
     let offset = hexToDec(hmac.slice(-1));
-    let token = String(hexToDec(hmac.substr(offset * 2, 8)) & hexToDec('7fffffff')).slice(-6);
+    let token = String(hexToDec(hmac.substr(offset * 2, 8)) & hexToDec('7fffffff'))
+      .slice(-this.tokenLength);
 
     return token;
   }
-  
-  this.getRemainingSeconds = function() {
-    return this.stepSeconds - (Date.now()/1000) % this.stepSeconds;
-  }
-  
-  this.getStepSeconds = function() {
-    return this.stepSeconds;
-  }
-}
+
+  this.getRemainingSeconds = () => this.stepSeconds - (Date.now() / 1000) % this.stepSeconds;
+  this.getStepSeconds = () => this.stepSeconds;
+  this.getTokenLength = () => this.tokenLength;
+};
 
 module.exports = TOTP;

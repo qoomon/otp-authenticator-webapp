@@ -12,6 +12,17 @@ body {
   padding-left: 5px;
   font-size: 24px;
   color: #4c4c4c;
+}
+
+#light-switch {
+  background: url(light-bulb.png) no-repeat;
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  filter: invert(60%);
   cursor: pointer;
 }
 

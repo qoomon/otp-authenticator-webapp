@@ -141,7 +141,7 @@ function toggleDarkMode() {
 });
 
 ['click', 'tap'].forEach(function(event) {
-  document.getElementById('appname').addEventListener(event, function(e) {
+  document.getElementById('light-switch').addEventListener(event, function(e) {
     toggleDarkMode();
   }, false);
 });

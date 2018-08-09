@@ -64,7 +64,6 @@ var update = function() {
     secret = otpauthParameters.secret ||  ' ';
     issuer = otpauthParameters.issuer;
     account = otpauthParameters.account;
-    showOtpauthQr();
   }
 
   document.getElementById('inputSecret').value = secret ||  '';

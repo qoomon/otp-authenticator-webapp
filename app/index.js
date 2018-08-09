@@ -81,6 +81,7 @@ var update = function() {
     document.getElementById('otpauth-qr-overlay').innerHTML = "Input missing!";
     document.getElementById('otpauth-qr-overlay').style.display = '';
   }
+  refresh_totp();
 };
 
 // ################  input handling  ##################

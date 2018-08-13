@@ -54,6 +54,7 @@ body {
 
 #calculator {
   margin: 0 auto;
+  padding-bottom: 10px;
   max-width: 400px;
   border-radius: 8px;
   background-color: #ffffff;
@@ -77,7 +78,7 @@ body {
 }
 
 #input>input {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   width: calc(100% - 27px);
   max-width: 400px;
   text-align: left;
@@ -90,7 +91,7 @@ body {
   float: left;
 }
 
-#button-otpauth-qr {
+#otpauth-button {
   float: left;
   width: 22px;
   height: 22px;
@@ -101,6 +102,16 @@ body {
   background-size: contain;
   filter: invert(25%);
 }
+
+#totp-label {
+  margin-bottom: 2px;
+  padding-left: 8px;
+  font-size: 10px;
+  font-weight: bold;
+  color: #bfbfbf;
+  cursor: pointer;
+}
+
 
 #totp-token-container {
   overflow: auto;

@@ -26,7 +26,7 @@ body {
   color: #dddddd;
 }
 
-#button-otpauth-qr {
+#otpauth-button-qr {
   filter: invert(25%);
 }
 

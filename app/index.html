@@ -15,10 +15,11 @@
     <div id="calculator" class="well">
       <div id="input">
         <input id="inputSecret"  class="form-control" placeholder="Insert Secret" type="password" autocomplete="new-password" autofocus>
-        <div id="button-otpauth-qr"></div>
+        <div id="otpauth-button"></div>
         <input id="inputAccount" class="form-control" placeholder="Insert Account" style="display: none;">
-        <input id="inputIssuer"  class="form-control" placeholder="Insert Issuer (optional)"  style="display: none;">
+        <input id="inputIssuer"  class="form-control" placeholder="Insert Issuer"  style="display: none;">
       </div>
+      <div id="totp-label" style="display: none;">Google (example@gmail.com)</div>
       <div id="totp-token-container">
         <div id="totp-token"></div>
         <div id="totp-token-remaining-seconds-circle" ></div>

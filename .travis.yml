@@ -22,7 +22,7 @@ script:
 deploy:
   skip_cleanup: true
   provider: script
-  script: scripts/deploy_to_git.sh 'dist' 'git@github.com:qoomon/otp-authenticator-webapp.git' 'gh-pages'
+  script: ./deploy_to_git.sh 'dist' 'git@github.com:qoomon/otp-authenticator-webapp.git' 'gh-pages'
   on:
     branch: master
     condition: $TRAVIS_REPO_SLUG = qoomon/otp-authenticator-webapp

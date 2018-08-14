@@ -2,10 +2,11 @@
   "name": "otp-authenticator-webapp",
   "version": "2.0.0",
   "description": "",
+  "private": true,
   "scripts": {
-    "build": "gulp build",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "gulp serve"
+    "build": "webpack",
+    "serve": "webpack-serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
@@ -15,15 +16,12 @@
     "qrcodejs2": "0.0.2"
   },
   "devDependencies": {
-    "brfs": "1.6.1",
-    "browserify": "16.2.2",
-    "browser-sync": "2.24.4",
-    "shelljs": "0.8.2",
-    "packageify": "1.0.0",
-    "gulp": "3.9.1",
-    "gulp-sequence": "1.0.0",
-    "vinyl-buffer": "1.0.1",
-    "vinyl-source-stream": "2.0.0",
-    "del": "3.0.0"
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.2",
+    "git-revision": "0.0.2",
+    "uglifyjs-webpack-plugin": "latest",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-serve": "^2.0.2"
   }
 }

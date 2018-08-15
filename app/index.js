@@ -117,6 +117,8 @@ function handleSecretInput() {
         document.getElementById('inputSecret').value = secret || ' ';
         document.getElementById('inputIssuer').value = issuer || '';
         document.getElementById('inputAccount').value = account || '';
+
+        updateLabel();
     }
 }
 

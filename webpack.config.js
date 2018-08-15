@@ -20,6 +20,7 @@ module.exports = (env) => {
         plugins: [
             new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
             new CopyWebpackPlugin([
+                {from: './*.ico'},
                 {from: './*.png'},
                 {from: './*.css'},
                 {from: './*.html'}

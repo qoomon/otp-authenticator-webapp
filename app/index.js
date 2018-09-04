@@ -77,7 +77,7 @@ function updateQrCode() {
     const account = document.getElementById('inputAccount').value;
 
     if (secret && account) {
-        const otpauthUrl = OTPAuthUrl.build(secret, account, issuer);
+        const otpauthUrl = OTPAuthUrl.build(secret.replace(/\s+/g, ''), account, issuer);
         qrImage.makeCode(otpauthUrl);
         document.getElementById('otpauth-qr-overlay').style.display = 'none';
     } else {
@@ -105,9 +105,8 @@ function updateLabel() {
     }
 }
 
-function handleSecretInput() {
+function parseSecretInput() {
     let secret = document.getElementById('inputSecret').value;
-
     if (secret.startsWith("otpauth://totp/")) {
         const otpauthParameters = OTPAuthUrl.parse(secret);
         secret = otpauthParameters.secret;
@@ -115,10 +114,11 @@ function handleSecretInput() {
         let account = otpauthParameters.account;
 
         document.getElementById('inputSecret').value = secret || ' ';
+        document.getElementById('inputSecret').dispatchEvent(new Event('input'));
         document.getElementById('inputIssuer').value = issuer || '';
+        document.getElementById('inputIssuer').dispatchEvent(new Event('input'));
         document.getElementById('inputAccount').value = account || '';
-
-        updateLabel();
+        document.getElementById('inputAccount').dispatchEvent(new Event('input'));
     }
 }
 
@@ -152,16 +152,16 @@ function toggleDarkMode() {
     Cookies.set("otp-authenticator.darkStyle", !darkStyleElement.disabled);
 }
 
-function removeLocationHash() {
+function handleLocationHash() {
     const secret = window.location.hash.substr(1);
-    history.pushState(history.state, document.title, window.location.pathname); // remove hash
     document.getElementById('inputSecret').value = secret;
+    document.getElementById('inputSecret').dispatchEvent(new Event('input'));
 }
 
 // ################  input handling  ##################
 
 document.getElementById('inputSecret').addEventListener('input', () => {
-    handleSecretInput();
+    parseSecretInput();
     updateTotpGenerator();
     updateQrCode();
 }, false);
@@ -219,8 +219,8 @@ if (Cookies.get("otp-authenticator.darkStyle") === "true") {
     toggleDarkMode();
 }
 
-removeLocationHash();
-window.onhashchange = removeLocationHash;
+handleLocationHash();
+window.onhashchange = handleLocationHash;
 
 updateQrCode();
 

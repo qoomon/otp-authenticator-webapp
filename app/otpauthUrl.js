@@ -4,7 +4,7 @@ module.exports = {
         account = account || 'unknown';
         let label = account;
         if (issuer) {
-            label = `${issuer} (${account})`;
+            label = `${issuer}:${account}`;
         }
 
         let result = 'otpauth://totp/' + encodeURIComponent(label) + '?secret=' + encodeURIComponent(secret);

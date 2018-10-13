@@ -152,12 +152,6 @@ function toggleDarkMode() {
     Cookies.set("otp-authenticator.darkStyle", !darkStyleElement.disabled);
 }
 
-function handleLocationHash() {
-    const secret = window.location.hash.substr(1);
-    document.getElementById('inputSecret').value = secret;
-    document.getElementById('inputSecret').dispatchEvent(new Event('input'));
-}
-
 // ################  input handling  ##################
 
 document.getElementById('inputSecret').addEventListener('input', () => {
@@ -218,11 +212,6 @@ document.getElementById('inputIssuer').addEventListener('input', () => {
 if (Cookies.get("otp-authenticator.darkStyle") === "true") {
     toggleDarkMode();
 }
-
-handleLocationHash();
-window.onhashchange = handleLocationHash;
-
-updateQrCode();
 
 setInterval(refreshTotpToken, 1000);
 

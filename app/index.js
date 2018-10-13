@@ -209,6 +209,8 @@ document.getElementById('inputIssuer').addEventListener('input', () => {
 
 // ################  run  ##################
 
+updateQrCode();
+
 if (Cookies.get("otp-authenticator.darkStyle") === "true") {
     toggleDarkMode();
 }

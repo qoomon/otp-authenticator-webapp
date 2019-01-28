@@ -1,5 +1,5 @@
 # otp-authenticator-webapp
-[![Build Status](https://travis-ci.org/qoomon/otp-authenticator-webapp.svg?branch=master)](https://travis-ci.org/qoomon/otp-authenticator-webapp)
+[![Build Status](https://travis-ci.com/qoomon/otp-authenticator-webapp.svg?branch=master)](https://travis-ci.org/qoomon/otp-authenticator-webapp)
 
 A *Google Authenticator* like offline webapp.
 

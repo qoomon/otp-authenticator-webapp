@@ -15,7 +15,5 @@ Or host it on your onw GitHub account
 ### Features
 * generate totp codes
 * show remaining valid seconds for totp code
-* parse otpauth URLs in `secret` input field
-  * e.g. https://qoomon.github.io/otp-authenticator-webapp/#otpauth://totp/john.doe?secret=N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G&issuer=example.org
 * generate QR-code with OTPAuth URL
   * click on QR-code to copy OTPAuth URL

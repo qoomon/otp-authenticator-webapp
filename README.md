@@ -17,5 +17,5 @@ Or host it on your onw GitHub account
 * show remaining valid seconds for totp code
 * generate QR-code with OTPAuth URL
   * click on QR-code to copy OTPAuth URL
-* parse otpauth URLs in `secret` input field
+* parse otpauth URLs in the `secret` input field
   * e.g. https://qoomon.github.io/otp-authenticator-webapp/#otpauth://totp/john.doe?secret=N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G&issuer=example.org

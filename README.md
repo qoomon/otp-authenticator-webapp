@@ -18,4 +18,4 @@ Or host it on your onw GitHub account
 * generate QR-code with OTPAuth URL
   * click on QR-code to copy OTPAuth URL
 * parse otpauth URLs in the `secret` input field
-  * e.g. otpauth://totp/john.doe?secret=N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G&issuer=example.org
+  * e.g. `otpauth://totp/john.doe?secret=N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G&issuer=example.org`

@@ -1,6 +1,9 @@
 name: Deploy
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   deploy:
@@ -8,19 +11,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Add GitHub Deploy Key
+      run: |
+        echo "${{ secrets.GITHUB_DEPLOY_KEY }}" > github_deploy_key
+        chmod 600 github_deploy_key
+        eval $(ssh-agent -s)
+        ssh-add github_deploy_key
+        
     - uses: actions/checkout@v2
+    
     - name: Setup Node.js
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
+        
     - name: npm install, build, and test
       run: |
         npm ci
         npm run build
       env:
         CI: true
-    - name: Deploy to GH Pages
-      run: ./deploy_to_git.sh 'dist' "https://${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" 'gh-pages'
-      env:
-        CI: true   
-      
+        
+    - name: Deploy to GitHub Pages
+      run: ./deploy_to_github_pages.sh 'dist' "git@github.com:${{ github.repository }}.git" 'gh-pages' 'GitHub Action'
+        
+    

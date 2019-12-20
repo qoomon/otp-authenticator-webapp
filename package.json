@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --mode production",
     "serve": "webpack-serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,11 +17,11 @@
   },
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.19",
-    "copy-webpack-plugin": "^4.5.2",
+    "copy-webpack-plugin": "^5.1.1",
     "git-revision": "0.0.2",
     "uglifyjs-webpack-plugin": "latest",
-    "webpack": "^4.16.5",
+    "webpack": "^4.41.4",
     "webpack-cli": "^3.1.0",
-    "webpack-serve": "^2.0.3"
+    "webpack-serve": "^3.2.0"
   }
 }

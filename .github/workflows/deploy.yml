@@ -33,6 +33,8 @@ jobs:
         CI: true
         
     - name: Deploy to GitHub Pages
-      run: ./deploy_to_github_pages.sh 'dist' "git@github.com:${{ github.repository }}.git" 'gh-pages' 'GitHub Action'
+      run: |
+        ssh-add -l
+        ./deploy_to_github_pages.sh 'dist' "git@github.com:${{ github.repository }}.git" 'gh-pages' 'GitHub Action'
         
     

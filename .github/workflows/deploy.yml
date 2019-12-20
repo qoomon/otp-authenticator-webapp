@@ -15,7 +15,7 @@ jobs:
     - name: Prepare GitHub Actions Deploy Key
       run: |
         mkdir -p ~/.ssh
-        echo "${GITHUB_DEPLOY_KEY}" > ~/.ssh/github_actions
+        cat ~/.ssh/github_actions <<< "${GITHUB_DEPLOY_KEY}"
         chmod 600 ~/.ssh/github_actions
       env:
         GITHUB_DEPLOY_KEY: "${{ secrets.GITHUB_DEPLOY_KEY }}"

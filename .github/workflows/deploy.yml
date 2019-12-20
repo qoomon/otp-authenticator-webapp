@@ -12,12 +12,12 @@ jobs:
 
     steps:   
     - name: Prepare GitHub Actions Deploy Key
-      env:
-        GITHUB_DEPLOY_KEY: "${{ secrets.GITHUB_DEPLOY_KEY }}"
       run: |
         mkdir -p ~/.ssh
         echo "${GITHUB_DEPLOY_KEY}" > ~/.ssh/github_actions
         chmod 600 ~/.ssh/github_actions
+      env:
+        GITHUB_DEPLOY_KEY: "${{ secrets.GITHUB_DEPLOY_KEY }}"
              
     - uses: actions/checkout@v2
         

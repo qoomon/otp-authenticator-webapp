@@ -10,8 +10,7 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    steps:        
-    - uses: actions/checkout@v2
+    steps:   
     - name: Prepare GitHub Actions Deploy Key
       env:
         GITHUB_DEPLOY_KEY: "${{ secrets.GITHUB_DEPLOY_KEY }}"
@@ -19,6 +18,8 @@ jobs:
         mkdir -p ~/.ssh
         echo "${GITHUB_DEPLOY_KEY}" > ~/.ssh/github_actions
         chmod 600 ~/.ssh/github_actions
+             
+    - uses: actions/checkout@v2
         
     - name: Setup Node.js
       uses: actions/setup-node@v1

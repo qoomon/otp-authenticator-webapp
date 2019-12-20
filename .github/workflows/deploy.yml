@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Add GitHub Deploy Key
-      run: |
-        echo "${{ secrets.GITHUB_DEPLOY_KEY }}" > github_deploy_key
-        chmod 600 github_deploy_key
-        eval $(ssh-agent -s)
-        ssh-add github_deploy_key
+    # - name: Add GitHub Deploy Key
+    #   run: |
+    #     echo "${{ secrets.GITHUB_DEPLOY_KEY }}" > github_deploy_key
+    #     chmod 600 github_deploy_key
+    #     eval $(ssh-agent -s)
+    #     ssh-add github_deploy_key
         
     - uses: actions/checkout@v2
     
@@ -34,7 +34,11 @@ jobs:
         
     - name: Deploy to GitHub Pages
       run: |
-        ssh-add -l
+        ls
+        echo "${{ secrets.GITHUB_DEPLOY_KEY }}" > github_deploy_key
+        chmod 600 github_deploy_key
+        eval $(ssh-agent -s)
+        ssh-add github_deploy_key
         ./deploy_to_github_pages.sh 'dist' "git@github.com:${{ github.repository }}.git" 'gh-pages' 'GitHub Action'
         
     

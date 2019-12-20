@@ -10,15 +10,14 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    steps:
+    steps:        
+    - uses: actions/checkout@v2
     - name: Add GitHub Deploy Key
       run: |
         echo "${{ secrets.GITHUB_DEPLOY_KEY }}" > github_deploy_key
         chmod 600 github_deploy_key
         eval $(ssh-agent -s)
         ssh-add github_deploy_key
-        
-    - uses: actions/checkout@v2
     
     - name: Setup Node.js
       uses: actions/setup-node@v1

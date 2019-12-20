@@ -12,10 +12,6 @@ jobs:
 
     steps:        
     - uses: actions/checkout@v2
-    - name: Add GitHub Deploy Key
-      run: |
-        echo "${{ secrets.GITHUB_DEPLOY_KEY }}" > ~/.ssh/github
-        chmod 600 ~/.ssh/github
     
     - name: Setup Node.js
       uses: actions/setup-node@v1
@@ -31,7 +27,10 @@ jobs:
         
     - name: Deploy to GitHub Pages
       run: |
-        eval $(ssh-agent -s) && ssh-add ~/.ssh/github
-        ./deploy_to_github_pages.sh 'dist' "git@github.com:${{ github.repository }}.git" 'gh-pages' 'GitHub Action'
+        echo "${{ secrets.GITHUB_DEPLOY_KEY }}" > ~/.ssh/github_actions
+        chmod 600 ~/.ssh/github_actions
+        eval $(ssh-agent -s)
+        ssh-add ~/.ssh/github_actions
+        ./deploy_to_github_pages.sh 'dist' "git@github.com:${{ github.repository }}.git" 'gh-pages' 'GitHub Actions'
         
     

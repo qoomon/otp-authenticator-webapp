@@ -1,0 +1,26 @@
+name: Deploy
+
+on: [push]
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - name: npm install, build, and test
+      run: |
+        npm ci
+        npm run build
+      env:
+        CI: true
+    - name: Deploy to GH Pages
+      run: ./deploy_to_git.sh 'dist' "https://${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" 'gh-pages'
+      env:
+        CI: true   
+      

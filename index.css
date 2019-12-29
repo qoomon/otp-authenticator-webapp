@@ -1,0 +1,177 @@
+body {
+  width: 100%;
+  background-color: #f2f2f2;
+  color: #4688f1;
+}
+
+#appname {
+  width: 400px;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  font-size: 24px;
+  color: #4c4c4c;
+}
+
+#light-switch {
+  background: url(light-bulb.png) no-repeat;
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  filter: invert(60%);
+  cursor: pointer;
+}
+
+#appversion {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  font-size: x-small;
+  color: #4c4c4c;
+}
+
+#github-ref {
+  position: absolute;
+  bottom: 20px;
+  left: calc(50% - 16px);
+  height: 32px;
+  width: 32px;
+  filter: invert(50%);
+}
+
+#appname>img {
+  height: 34px;
+  width: auto;
+  margin-right: 10px;
+  position: relative;
+  top: -3px;
+}
+
+#calculator {
+  margin: 0 auto;
+  padding-bottom: 10px;
+  max-width: 400px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  border-color: #e8e8e8;
+}
+
+#calculator:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+#input {
+  margin-bottom: 0px;
+}
+
+#input:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+#input>input {
+  margin-bottom: 8px;
+  width: calc(100% - 27px);
+  max-width: 400px;
+  text-align: left;
+  font-size: 20px;
+  background-color: #fbfbfb;
+  border-color: #9bb8e4;
+}
+
+#inputSecret {
+  float: left;
+}
+
+#otpauth-button {
+  float: left;
+  width: 22px;
+  height: 22px;
+  margin-top: 6px;
+  margin-left: 5px;
+  cursor: pointer;
+  background-image: url(more.png);
+  background-size: contain;
+  filter: invert(25%);
+}
+
+#totp-label {
+  margin-bottom: 2px;
+  padding-left: 8px;
+  font-size: 10px;
+  font-weight: bold;
+  color: #a0a0a0;
+  cursor: pointer;
+}
+
+
+#totp-token-container {
+  overflow: auto;
+}
+
+#totp-token {
+  float: left;
+  padding-left: 8px;
+  height: 34px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#totp-token-remaining-seconds-circle {
+  float: right;
+  width: 22px;
+  margin-top: 5px;
+  stroke: #4688f1;
+}
+
+#otpauth-qr {
+  position: relative;
+  width: 256px;
+  height: 256px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #ffffff;
+  filter: brightness(0.94);
+}
+
+#otpauth-qr-overlay {
+  position: absolute;
+  top: 42%;
+  right: 0;
+  left: 0;
+  width: 64%;
+  margin: 0 auto;
+  padding: 4px;
+  border-radius: 20px;
+  font-size: 16px;
+  text-align: center;
+  background-color: #4687f1;
+  color: #efefef;
+}
+
+.toast {
+  position: fixed;
+  bottom: 30vh;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  max-width: 240px;
+  padding: 4px;
+  width: 100%;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 16px;
+  background-color: #4687f1;
+  color: #efefef;
+}

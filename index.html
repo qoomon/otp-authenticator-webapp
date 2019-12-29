@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="theme-color" content="#292929" />
+    <title>OTP Authenticator</title>
+    <link rel=icon href=favicon.ico>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link id="dark-style" rel="stylesheet" href="index_dark.css" disabled>
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div id="appname"><img src="otp-authenticator.png">OTP Authenticator</div>
+    <div id="calculator" class="well">
+      <div id="input">
+        <input id="inputSecret"  class="form-control" placeholder="Insert Secret" type="password" autocomplete="new-password" autofocus>
+        <div id="otpauth-button"></div>
+        <input id="inputAccount" class="form-control" placeholder="Insert Account" style="display: none;">
+        <input id="inputIssuer"  class="form-control" placeholder="Insert Issuer (Optional)"  style="display: none;">
+      </div>
+      <div id="totp-label" style="display: none;">Google (example@gmail.com)</div>
+      <div id="totp-token-container">
+        <div id="totp-token"></div>
+        <div id="totp-token-remaining-seconds-circle" ></div>
+      </div>
+      <div id="otpauth-qr" style="display: none;" class="well">
+        <div id="otpauth-qr-overlay"></div>
+      </div>
+    </div>
+    <div id="light-switch"></div>
+    <a href="https://github.com/qoomon/otp-authenticator-webapp"><img id="github-ref" src="github-icon.png"></a>
+    <div id="appversion"></div>
+  </body>
+</html>

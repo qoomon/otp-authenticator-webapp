@@ -1,43 +1,32 @@
-name: Deploy
+name: Build & Deploy
 
 on:
   push:
-    branches:
-      - master
+    branches: [ '*' ]
 
 jobs:
-  deploy:
+  build:
 
     runs-on: ubuntu-latest
 
-    steps:   
-    - name: Prepare GitHub Actions Deploy Key
-      run: |
-        mkdir -p ~/.ssh
-        echo "${GITHUB_DEPLOY_KEY}" > ~/.ssh/github_actions
-        chmod 600 ~/.ssh/github_actions
-      env:
-        GITHUB_DEPLOY_KEY: "${{ secrets.GITHUB_DEPLOY_KEY }}"
-             
-    - uses: actions/checkout@v2
-        
-    - name: Setup Node.js
-      uses: actions/setup-node@v1
+    steps:              
+    - uses: actions/checkout@v2  
+    - uses: actions/setup-node@v1
       with:
         node-version: 12.x
-        
-    - name: npm install, build, and test
-      run: |
-        npm ci
-        npm run build
-      env:
-        CI: true
+    - run: npm ci
+    - run: npm run build
+    # - run: npm test
+    #   env:
+    #     CI: true
     
     - name: Deploy to GitHub Pages
-      run: |
-        git config --global user.name 'github-actions'; git config --global user.email "<>"
-        eval $(ssh-agent -s) >/dev/null
-        ssh-add ~/.ssh/github_actions
-        ./deploy_to_github_pages.sh 'dist' 'gh-pages' "git@github.com:${{ github.repository }}.git"
+      if: github.ref == 'refs/heads/master'
+      uses: qoomon/deploy-to-github-pages-action@v1
+      with:
+        GITHUB_PAGES_SOURCE_DIR: dist
+        GITHUB_PAGES_BRANCH: gh-pages
+        GITHUB_PAGES_REPLACE: false
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
     

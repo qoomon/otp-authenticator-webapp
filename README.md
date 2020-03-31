@@ -1,5 +1,5 @@
 # otp-authenticator-webapp
-[![Build Workflow](https://github.com/qoomon/otp-authenticator-webapp/workflows/Build/badge.svg)](https://github.com/qoomon/otp-authenticator-webapp/actions)
+[![Build Workflow](https://github.com/qoomon/otp-authenticator-webapp/workflows/Build%20&%20Deploy/badge.svg)](https://github.com/qoomon/otp-authenticator-webapp/actions)
 [![LGTM Grade](https://img.shields.io/lgtm/grade/javascript/github/qoomon/otp-authenticator-webapp)](https://lgtm.com/projects/g/qoomon/otp-authenticator-webapp)
 
 A *Google Authenticator* like offline webapp.

@@ -86,6 +86,9 @@ body {
   background-color: #fbfbfb;
   border-color: #9bb8e4;
 }
+#input>input::placeholder {
+    font-size: 16px;
+}
 
 #inputSecret {
   float: left;

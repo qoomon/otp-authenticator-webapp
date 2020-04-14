@@ -22,7 +22,7 @@ jobs:
     
     - name: Deploy to GitHub Pages
       if: github.ref == 'refs/heads/master'
-      uses: qoomon/deploy-to-github-pages-action@v1
+      uses: qoomon/actions-publish-to-github-pages@v1
       with:
         GITHUB_PAGES_SOURCE_DIR: dist
         GITHUB_PAGES_BRANCH: gh-pages

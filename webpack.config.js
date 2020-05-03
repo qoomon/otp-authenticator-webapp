@@ -2,13 +2,11 @@ const webpack = require('webpack');
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const packageFile = require('./package.json');
 const gitRevision = require('git-revision');
 
 module.exports = (env) => {
-    env = env || 'dev';
     return {
         context: path.join(__dirname, 'app'),
         entry: './index.js',
@@ -31,10 +29,5 @@ module.exports = (env) => {
                 }),
             })
         ].filter((e) => e)
-        // optimization: {
-        //     minimizer: [
-        //         new UglifyJsPlugin()
-        //     ]
-        // }
     }
 };

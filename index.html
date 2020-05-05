@@ -22,7 +22,10 @@
       <div id="totp-label" style="display: none;">Google (example@gmail.com)</div>
       <div id="totp-token-container">
         <div id="totp-token"></div>
-        <div id="totp-token-remaining-seconds-circle" ></div>
+        <svg id="totp-token-remaining-seconds-pie" viewBox="0 0 0.318310 0.318310">
+          <!-- r = 1 / (2 * PI) ≈ 0.159155 -->
+          <circle r="0.159155"  cx="0.159155" cy="0.159155"/>
+        </svg>
       </div>
       <div id="otpauth-qr" style="display: none;" class="well">
         <div id="otpauth-qr-overlay"></div>

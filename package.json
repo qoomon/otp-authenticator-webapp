@@ -1,18 +1,17 @@
 {
   "name": "otp-authenticator-webapp",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "",
   "private": true,
   "scripts": {
     "build": "webpack --mode production",
-    "serve": "webpack-serve",
+    "serve": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "jssha": "3.1.0",
-    "progressbar.js": "1.1.0",
     "qrcodejs2": "0.0.2"
   },
   "devDependencies": {
@@ -21,6 +20,6 @@
     "git-revision": "0.0.2",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
-    "webpack-serve": "^3.2.0"
+    "webpack-dev-server": "^3.10.3"
   }
 }

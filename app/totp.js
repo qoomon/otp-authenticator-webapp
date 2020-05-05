@@ -1,4 +1,4 @@
-const JsSHA = require('jssha');
+const JsSHA = require('jssha/dist/sha1');
 
 const decToHex = (dec) => dec.toString(16);
 const hexToDec = (hex) => parseInt(hex, 16);
@@ -39,8 +39,9 @@ module.exports = function (secretBase32) {
         let counter = Math.floor(Date.now() / 1000 / this.stepSeconds);
         let counterHex = decToHex(counter);
 
-        let shaObj = new JsSHA("SHA-1", "HEX");
-        shaObj.setHMACKey(secretHex, "HEX");
+        let shaObj = new JsSHA("SHA-1", "HEX", {
+          hmacKey: { value: secretHex, format: "HEX" }
+        });
         shaObj.update(counterHex.padStart(16, "0"));
         let hmac = shaObj.getHMAC("HEX");
         let offset = hexToDec(hmac.slice(-1));

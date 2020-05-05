@@ -128,11 +128,26 @@ body {
   cursor: pointer;
 }
 
-#totp-token-remaining-seconds-circle {
+#totp-token-remaining-seconds-pie {
   float: right;
   width: 22px;
+  height: 22px;
   margin-top: 5px;
   stroke: #4688f1;
+}
+#totp-token-remaining-seconds-pie {
+  transform: rotate(-90deg);
+  border-radius: 50%;
+  display: block;
+}
+
+#totp-token-remaining-seconds-pie > circle {
+  stroke: #4688f1;
+  stroke-width: 100%;
+  stroke-dasharray: 1;
+  stroke-dashoffset: -1;
+  fill: none;
+  transition: stroke-dashoffset 1s linear;
 }
 
 #otpauth-qr {

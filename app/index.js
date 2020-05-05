@@ -2,13 +2,10 @@
 
 document.getElementById('appversion').innerText = APP.version;
 
+const QRCode = require('qrcodejs2');
 const TOTP = require('./totp');
 const Cookies = require('./cookies');
 const OTPAuthUrl = require('./otpauthUrl');
-
-const ProgressBar = require('progressbar.js');
-const QRCode = require('qrcodejs2');
-
 
 function copyToClipboard(value) {
     // Create a temporary input
@@ -41,14 +38,6 @@ function showToast(value, timeout) {
 }
 
 let totpGenerator = undefined;
-
-const totpRemainingSecondsCircle = new ProgressBar.Circle(document.getElementById('totp-token-remaining-seconds-circle'), {
-    strokeWidth: 50,
-    duration: 1000,
-    color: 'inherit', // null to support css styling
-    trailColor: 'transparent' //  null to support css styling
-});
-totpRemainingSecondsCircle.svg.style.transform = 'scale(-1, 1)';
 
 const qrImage = new QRCode(document.getElementById('otpauth-qr'), {
     colorDark: "#000000",
@@ -152,6 +141,18 @@ function toggleDarkMode() {
     Cookies.set("otp-authenticator.darkStyle", !darkStyleElement.disabled);
 }
 
+function setRemainingTimePiePercentage(percentag) {
+  document.querySelector("#totp-token-remaining-seconds-pie > circle").style.strokeDashoffset = -1 + percentag;
+}
+
+function setTokenHtml(html) {
+  document.getElementById('totp-token').innerHTML = html;
+}
+
+function formatToken(token) {
+  return token.replace(/(...)(...)/g, '<span>$1</span><span style="margin-left:8px">$2</span>')
+}
+
 // ################  input handling  ##################
 
 document.getElementById('inputSecret').addEventListener('input', () => {
@@ -216,26 +217,18 @@ if (Cookies.get("otp-authenticator.darkStyle") === "true") {
 }
 
 setInterval(refreshTotpToken, 1000);
-
 function refreshTotpToken() {
-    const totpTokenElement = document.getElementById('totp-token');
-
     if (totpGenerator) {
         try {
-            totpTokenElement.innerHTML = totpGenerator.getToken().replace(/(...)(...)/g, '<span>$1</span><span style="margin-left:8px">$2</span>');
-            const normalizedRemainingTime = totpGenerator.getRemainingSeconds() / totpGenerator.getStepSeconds();
-            if (normalizedRemainingTime <= 0) {
-                totpRemainingSecondsCircle.set(1.0);
-            } else {
-                totpRemainingSecondsCircle.animate(normalizedRemainingTime);
-            }
+            setTokenHtml(formatToken(totpGenerator.getToken()));
+            setRemainingTimePiePercentage(totpGenerator.getRemainingSeconds() / totpGenerator.getStepSeconds());
         } catch (err) {
-            console.log(err);
-            totpTokenElement.innerHTML = "Invalid Secret!";
-            totpRemainingSecondsCircle.set(0.0);
+            console.info(err.message);
+            setTokenHtml("Invalid Secret!");
+            setRemainingTimePiePercentage(0);
         }
     } else {
-        totpTokenElement.innerHTML = '000000'.replace(/(...)(...)/g, '<span>$1</span><span style="margin-left:8px">$2</span>');
-        totpRemainingSecondsCircle.set(0.0);
+        setTokenHtml(formatToken('000000'));
+        setRemainingTimePiePercentage(0);
     }
 }

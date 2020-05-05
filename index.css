@@ -133,8 +133,8 @@ body {
   width: 22px;
   height: 22px;
   margin-top: 5px;
-  stroke: #4688f1;
 }
+
 #totp-token-remaining-seconds-pie {
   transform: rotate(-90deg);
   border-radius: 50%;

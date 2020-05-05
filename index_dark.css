@@ -30,7 +30,7 @@ body {
   filter: invert(25%);
 }
 
-#totp-token-remaining-seconds-circle {
+#totp-token-remaining-seconds-pie > circle{
   stroke: #f7f7f7;
 }
 

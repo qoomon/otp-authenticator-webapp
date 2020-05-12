@@ -16,6 +16,8 @@ body {
   padding-left: 5px;
   font-size: 24px;
   color: #4c4c4c;
+  border-bottom: solid 2px;
+  border-color: #cccccc;
 }
 
 #light-switch {

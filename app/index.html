@@ -12,20 +12,20 @@
   </head>
   <body>
     <div id="appname"><img src="otp-authenticator.png">OTP Authenticator</div>
-    <div id="calculator" class="well">
-      <div id="input">
-        <input id="inputSecret"  class="form-control" placeholder="Insert Secret or otpauth URI" type="password" autocomplete="off" autofocus>
-        <div id="otpauth-button"></div>
-        <input id="inputAccount" class="form-control" placeholder="Insert Account" style="display: none;">
-        <input id="inputIssuer"  class="form-control" placeholder="Insert Issuer (Optional)"  style="display: none;">
-      </div>
-      <div id="totp-label" style="display: none;">Google (example@gmail.com)</div>
+    <div id="calculator">
+      <div id="totp-label"></div>
       <div id="totp-token-container">
         <div id="totp-token"></div>
         <svg id="totp-token-remaining-seconds-pie" viewBox="0 0 0.318310 0.318310">
           <!-- r = 1 / (2 * PI) ≈ 0.159155 -->
           <circle r="0.159155"  cx="0.159155" cy="0.159155"/>
         </svg>
+      </div>
+      <div id="input">
+        <input id="inputSecret"  class="form-control" placeholder="Insert Secret or otpauth URI" type="password" autocomplete="off" autofocus>
+        <div id="otpauth-button"></div>
+        <input id="inputAccount" class="form-control" placeholder="Insert Account" style="display: none;">
+        <input id="inputIssuer"  class="form-control" placeholder="Insert Issuer (Optional)"  style="display: none;">
       </div>
       <div id="otpauth-qr" style="display: none;" class="well">
         <div id="otpauth-qr-overlay"></div>

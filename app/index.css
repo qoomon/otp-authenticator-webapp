@@ -1,7 +1,7 @@
 body {
   width: 100%;
-  background-color: #f2f2f2;
-  color: #4688f1;
+  background-color: #f5f5f5;
+  color: #2e7fff;
 }
 
 #appname {
@@ -28,20 +28,20 @@ body {
 
 #appversion {
   position: absolute;
-  bottom: 0px;
+  bottom: 4px;
   width: 100%;
   text-align: center;
   font-size: x-small;
-  color: #4c4c4c;
+  color: #949494;
 }
 
 #github-ref {
   position: absolute;
-  bottom: 20px;
+  bottom: 24px;
   left: calc(50% - 16px);
   height: 32px;
   width: 32px;
-  filter: invert(50%);
+  filter: invert(25%);
 }
 
 #appname>img {
@@ -56,9 +56,8 @@ body {
   margin: 0 auto;
   padding-bottom: 10px;
   max-width: 400px;
-  border-radius: 8px;
-  background-color: #ffffff;
-  border-color: #e8e8e8;
+  min-height: 20px;
+  padding: 19px;
 }
 
 #calculator:after {
@@ -68,6 +67,7 @@ body {
 }
 
 #input {
+  position: relative;
   margin-bottom: 0px;
 }
 
@@ -79,15 +79,15 @@ body {
 
 #input>input {
   margin-bottom: 8px;
-  width: calc(100% - 27px);
   max-width: 400px;
   text-align: left;
   font-size: 20px;
-  background-color: #fbfbfb;
-  border-color: #9bb8e4;
+  background-color: transparent;
 }
+
 #input>input::placeholder {
     font-size: 16px;
+    color: #bbbbbb
 }
 
 #inputSecret {
@@ -95,29 +95,29 @@ body {
 }
 
 #otpauth-button {
-  float: left;
-  width: 22px;
-  height: 22px;
-  margin-top: 6px;
-  margin-left: 5px;
+  position: absolute;
+  right: 8px;
+  width: 16px;
+  height: 16px;
+  margin-top: 9px;
   cursor: pointer;
   background-image: url(more.png);
   background-size: contain;
-  filter: invert(25%);
+  filter: invert(30%);
 }
 
 #totp-label {
-  margin-bottom: 2px;
   padding-left: 8px;
-  font-size: 10px;
-  font-weight: bold;
-  color: #a0a0a0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #3a3a3a;
   cursor: pointer;
 }
 
 
 #totp-token-container {
   overflow: auto;
+  margin-bottom: 10px;
 }
 
 #totp-token {
@@ -142,7 +142,7 @@ body {
 }
 
 #totp-token-remaining-seconds-pie > circle {
-  stroke: #4688f1;
+  stroke: #2e7fff;
   stroke-width: 100%;
   stroke-dasharray: 1;
   stroke-dashoffset: -1;
@@ -190,6 +190,6 @@ body {
   border-radius: 20px;
   text-align: center;
   font-size: 16px;
-  background-color: #4687f1;
-  color: #efefef;
+  background-color: #2e7fff;
+  color: #f5f5f5;
 }

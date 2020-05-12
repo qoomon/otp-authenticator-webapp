@@ -91,7 +91,7 @@
 "use strict";
 
 
-document.getElementById('appversion').innerText = {"version":"2.0.3-07ea24d5bc186f38eb0515a08c14ceb8bce77ab0"}.version;
+document.getElementById('appversion').innerText = {"version":"2.0.3-9b8cacdb5c9f2490815e69f7b74aeb92826fe9c8"}.version;
 
 const QRCode = __webpack_require__(1);
 const TOTP = __webpack_require__(2);
@@ -169,20 +169,17 @@ function updateQrCode() {
 
 function updateLabel() {
     const issuer = document.getElementById('inputIssuer').value;
-    const account = document.getElementById('inputAccount').value || 'unknown';
-
-    let label = account;
-    if (issuer) {
-        label = `${issuer} (${account})`;
+    const account = document.getElementById('inputAccount').value;
+    let label = issuer;
+    if (account) {
+        if (label) {
+          label += ` (${account})`
+        } else {
+          label += account
+        }
     }
 
     document.getElementById('totp-label').innerText = label;
-
-    if ((account || issuer) && document.getElementById('inputAccount').style.display === 'none') {
-        document.getElementById('totp-label').style.display = '';
-    } else {
-        document.getElementById('totp-label').style.display = 'none';
-    }
 }
 
 function parseSecretInput() {
@@ -205,16 +202,12 @@ function parseSecretInput() {
 function showOtpAuthDetails() {
     document.getElementById('inputAccount').style.display = "";
     document.getElementById('inputIssuer').style.display = "";
-    document.getElementById('totp-label').style.display = "none";
     document.getElementById('otpauth-qr').style.display = "";
 }
 
 function hideOtpAuthDetails() {
     document.getElementById('inputAccount').style.display = "none";
     document.getElementById('inputIssuer').style.display = "none";
-    if (document.getElementById('inputAccount').value || document.getElementById('inputIssuer').value) {
-        document.getElementById('totp-label').style.display = "";
-    }
     document.getElementById('otpauth-qr').style.display = "none";
 }
 

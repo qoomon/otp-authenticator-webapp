@@ -1,6 +1,6 @@
 body {
-  background: #212121;
-  color: #f7f7f7;
+  background: #131313;
+  color: #619eff;
 }
 
 #appname {
@@ -8,22 +8,27 @@ body {
 }
 
 #appversion {
-  color: #f7f7f7;
+  color: #444444;
 }
 
 #github-ref {
-  filter: invert(25%);
-}
-
-#calculator {
-  background: #424242;
-  border-color: #2f2f2f;
+  filter: invert(75%);
 }
 
 #input>input {
-  background-color: #353535;
-  border-color: #1f1f1f;
-  color: #dddddd;
+  border-color: #2d2d2d;
+}
+
+#input>input::placeholder {
+  color: #444444;
+}
+
+#totp-label {
+  color: #eaeaea;
+}
+
+#otpauth-button {
+  filter: invert(60%);
 }
 
 #otpauth-button-qr {
@@ -31,7 +36,7 @@ body {
 }
 
 #totp-token-remaining-seconds-pie > circle{
-  stroke: #f7f7f7;
+  stroke: #4688f1;
 }
 
 #otpauth-qr {
@@ -45,6 +50,6 @@ body {
 }
 
 .toast {
-  background-color: #585858;
-  color: #efefef;
+  background-color: #619eff;
+  color: #131313;
 }

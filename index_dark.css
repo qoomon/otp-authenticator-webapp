@@ -15,17 +15,19 @@ body {
   filter: invert(75%);
 }
 
-#input>input {
+#input-box>input {
   border-color: #2d2d2d;
+  color: #606060;
 }
 
-#input>input::placeholder {
+#input-box>input::placeholder {
   color: #444444;
 }
 
 #totp-label {
-  color: #eaeaea;
+  color: #cccccc;
 }
+
 
 #otpauth-button {
   filter: invert(60%);
@@ -45,8 +47,8 @@ body {
 }
 
 #otpauth-qr-overlay {
-  background-color: #585858;
-  color: #efefef;
+  background-color: #619eff;
+  color: #131313;
 }
 
 .toast {

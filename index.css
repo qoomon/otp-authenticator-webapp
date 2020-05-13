@@ -1,36 +1,74 @@
-* {
-  box-sizing : border-box;
+#app-icon {
+  height: 32px;
+  width: 32px;
+  margin-right: 10px;
+  background-image: url(otp-authenticator.png);
+  background-size: contain;
 }
 
-body {
+#appversion {
+  position: absolute;
+  bottom: 4px;
   width: 100%;
-  background-color: #f5f5f5;
-  color: #2e7fff;
-  font-family: Jost;
-  letter-spacing: 0.05em;
+  text-align: center;
+  font-size: x-small;
+  color: #949494;
 }
 
-#appname {
+#calculator-container {
+  max-width: 400px;
+  min-height: 20px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+#github-ref {
+  position: absolute;
+  bottom: 24px;
+  left: calc(50%-16px);
+  height: 32px;
+  width: 32px;
+  filter: invert(25%);
+}
+
+#header-container {
+  position: relative;
+  height: 64px;
   max-width: 400px;
   min-width: 300px;
-  margin: 0 auto;
-  padding-top: 20px;
-  padding-bottom: 10px;
-  padding-left: 5px;
-  padding-right: 7px;
   font-size: 20px;
   font-weight: 500;
   color: #4c4c4c;
   border-bottom: solid 2px;
+  display: flex;
+  align-items: center;
   border-color: #dedede;
+  margin: 0 auto;
+  padding: 20px 12px 10px;
 }
 
-#appname>img {
-  height: 34px;
-  width: auto;
-  margin-right: 10px;
+#input-container {
   position: relative;
-  top: 9px;
+}
+
+#input-container>input {
+  margin-bottom: 8px;
+  max-width: 400px;
+  text-align: left;
+  font-size: 20px;
+  background-color: transparent;
+  color: #a0a0a0;
+  border: none;
+  width: 100%;
+}
+
+#input-container>input::placeholder {
+  font-size: 16px;
+  color: #bbb;
+}
+
+#input-container>input:focus {
+  outline: none;
 }
 
 #light-switch {
@@ -45,127 +83,14 @@ body {
   cursor: pointer;
 }
 
-#appversion {
-  position: absolute;
-  bottom: 4px;
-  width: 100%;
-  text-align: center;
-  font-size: x-small;
-  color: #949494;
-}
-
-#github-ref {
-  position: absolute;
-  bottom: 24px;
-  left: calc(50% - 16px);
-  height: 32px;
-  width: 32px;
-  filter: invert(25%);
-}
-
-#calculator {
-  margin: 0 auto;
-  padding-bottom: 10px;
-  max-width: 400px;
-  min-height: 20px;
-  padding: 19px;
-}
-
-#calculator:after {
-  clear: both;
-  content: "";
-  display: block;
-}
-
-#input-box {
-  position: relative;
-  padding: 0 64px 0 8px;
-}
-
-#input-box:after {
-  clear: both;
-  content: "";
-  display: block;
-}
-
-#input-box>input {
-  margin-bottom: 8px;
-  max-width: 400px;
-  text-align: left;
-  font-size: 20px;
-  background-color: transparent;
-  color: #a0a0a0;
-  border: none;
-  width: 100%;
-}
-
-#input-box>input::placeholder {
-    font-size: 16px;
-    color: #bbbbbb
-}
-
-#input-box>input:focus {
-    outline: none;
-}
-
-#inputSecret {
-  float: left;
-}
-
-#otpauth-button {
-  float: right;
+#more-button {
   width: 24px;
   height: 24px;
-  margin-top: 16px;
   cursor: pointer;
   background-image: url(more.png);
   background-size: contain;
   filter: invert(70%);
-}
-
-#totp-label {
-  padding-left: 8px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #3a3a3a;
-  cursor: pointer;
-  line-height: 16px;
-}
-
-
-#totp-token-container {
-  overflow: hidden;
-  margin-bottom: 10px;
-}
-
-#totp-token {
-  float: left;
-  padding-left: 8px;
-  height: 34px;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-#totp-token-remaining-seconds-pie {
-  float: right;
-  width: 22px;
-  height: 22px;
-  margin-top: 5px;
-}
-
-#totp-token-remaining-seconds-pie {
-  transform: rotate(-90deg);
-  border-radius: 50%;
-  display: block;
-}
-
-#totp-token-remaining-seconds-pie > circle {
-  stroke: #2e7fff;
-  stroke-width: 100%;
-  stroke-dasharray: 1;
-  stroke-dashoffset: -1;
-  fill: none;
-  transition: stroke-dashoffset 1s linear;
+  margin-left: auto;
 }
 
 #otpauth-qr {
@@ -177,9 +102,9 @@ body {
   margin-right: auto;
   border-radius: 4px;
   cursor: pointer;
-  background: #ffffff;
-  padding: 19px;
+  background: #fff;
   border: 1px solid #e3e3e3;
+  padding: 19px;
 }
 
 #otpauth-qr-overlay {
@@ -188,13 +113,57 @@ body {
   right: 0;
   left: 0;
   width: 64%;
-  margin: 0 auto;
-  padding: 4px;
   border-radius: 20px;
   font-size: 16px;
   text-align: center;
   background-color: #2e7fff;
   color: #f5f5f5;
+  margin: 0 auto;
+  padding: 4px;
+}
+
+#totp-label {
+  margin-bottom: 2px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #3a3a3a;
+  cursor: pointer;
+  line-height: 16px;
+}
+
+#totp-token {
+  float: left;
+  height: 34px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#totp-token-container {
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+}
+
+#totp-token-remaining-seconds-pie {
+  width: 22px;
+  height: 22px;
+  transform: rotate(-90deg);
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+}
+
+#totp-token-remaining-seconds-pie>circle {
+  stroke: #2e7fff;
+  stroke-width: 100%;
+  stroke-dasharray: 1;
+  stroke-dashoffset: -1;
+  fill: none;
+  transition: stroke-dashoffset 1s linear;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .toast {
@@ -202,13 +171,21 @@ body {
   bottom: 30vh;
   left: 0;
   right: 0;
-  margin: 0 auto;
   max-width: 240px;
-  padding: 4px;
   width: 100%;
   border-radius: 20px;
   text-align: center;
   font-size: 16px;
   background-color: #2e7fff;
   color: #f5f5f5;
+  margin: 0 auto;
+  padding: 4px;
+}
+
+body {
+  width: 100%;
+  background-color: #f5f5f5;
+  color: #2e7fff;
+  font-family: Jost;
+  letter-spacing: .05em;
 }

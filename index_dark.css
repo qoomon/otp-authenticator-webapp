@@ -1,44 +1,27 @@
-body {
-  background: #131313;
-  color: #598de0;
-}
-
-#appname {
-  border-color: #313131;
-  color: #e6e6e6;
-}
-
-#appversion {
-  color: #444444;
+#appversion, #input-container>input::placeholder {
+  color: #444;
 }
 
 #github-ref {
   filter: invert(75%);
 }
 
-#input-box>input {
-  border-color: #2d2d2d;
+#header-container {
+  color: #e6e6e6;
+  border-color: #313131;
+}
+
+#input-container>input {
   color: #606060;
+  border-color: #2d2d2d;
 }
 
-#input-box>input::placeholder {
-  color: #444444;
+#more-button {
+  filter: invert(30%);
 }
 
-#totp-label {
-  color: #9c9c9c;
-}
-
-#otpauth-button {
-  filter: invert(30%);;
-}
-
-#otpauth-button-qr {
+#more-button-qr, #light-switch {
   filter: invert(25%);
-}
-
-#totp-token-remaining-seconds-pie > circle{
-  stroke: #4688f1;
 }
 
 #otpauth-qr {
@@ -46,16 +29,20 @@ body {
   filter: brightness(0.94);
 }
 
-#otpauth-qr-overlay {
+#otpauth-qr-overlay, .toast {
   background-color: #598de0;
   color: #131313;
 }
 
-.toast {
-  background-color: #598de0;
-  color: #131313;
+#totp-label {
+  color: #9c9c9c;
 }
 
-#light-switch {
-  filter: invert(25%);
+#totp-token-remaining-seconds-pie>circle {
+  stroke: #4688f1;
+}
+
+body {
+  background: #131313;
+  color: #598de0;
 }

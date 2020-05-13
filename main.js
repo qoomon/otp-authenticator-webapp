@@ -91,7 +91,7 @@
 "use strict";
 
 
-document.getElementById('appversion').innerText = {"version":"2.0.3-b647b3a592efd99d4844a2806352fbe3e51d5b02"}.version;
+document.getElementById('appversion').innerText = {"version":"2.0.3-3957bb197713ea1f5ca3ab0669529267cb66ac65"}.version;
 
 const QRCode = __webpack_require__(1);
 const TOTP = __webpack_require__(2);
@@ -220,7 +220,7 @@ function toggleOtpAuthDetails() {
 }
 
 function toggleDarkMode() {
-    const darkStyleElement = document.getElementById('dark-style');
+    const darkStyleElement = document.getElementById('dark-mode');
     darkStyleElement.disabled = !darkStyleElement.disabled;
     Cookies.set("otp-authenticator.darkStyle", !darkStyleElement.disabled);
 }
@@ -275,7 +275,7 @@ document.getElementById('inputIssuer').addEventListener('input', () => {
 });
 
 ['click', 'tap'].forEach(function (event) {
-    document.getElementById('otpauth-button').addEventListener(event, function () {
+    document.getElementById('more-button').addEventListener(event, function () {
         toggleOtpAuthDetails();
     }, false);
 });

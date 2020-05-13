@@ -1,6 +1,6 @@
 body {
   background: #131313;
-  color: #619eff;
+  color: #598de0;
 }
 
 #appname {
@@ -26,12 +26,11 @@ body {
 }
 
 #totp-label {
-  color: #cccccc;
+  color: #9c9c9c;
 }
 
-
 #otpauth-button {
-  filter: invert(60%);
+  filter: invert(30%);;
 }
 
 #otpauth-button-qr {
@@ -48,11 +47,15 @@ body {
 }
 
 #otpauth-qr-overlay {
-  background-color: #619eff;
+  background-color: #598de0;
   color: #131313;
 }
 
 .toast {
-  background-color: #619eff;
+  background-color: #598de0;
   color: #131313;
+}
+
+#light-switch {
+  filter: invert(25%);
 }

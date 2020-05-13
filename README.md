@@ -20,3 +20,6 @@ Or host it on your onw GitHub account
   * click on QR-code to copy OTPAuth URL
 * parse OTPAuth URLs in the `secret` input field
   * e.g. `otpauth://totp/john.doe?secret=N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G&issuer=example.org`
+  
+## Developer Notes
+* https://csscomb.herokuapp.com/online

@@ -1,6 +1,6 @@
 "use strict";
 
-document.getElementById('appversion').innerText = APP.version;
+document.getElementById('app-version').innerText = APP.version;
 
 const QRCode = require('qrcodejs2');
 const TOTP = require('./totp');
@@ -129,7 +129,7 @@ function toggleOtpAuthDetails() {
 }
 
 function toggleDarkMode() {
-    const darkStyleElement = document.getElementById('dark-style');
+    const darkStyleElement = document.getElementById('dark-mode');
     darkStyleElement.disabled = !darkStyleElement.disabled;
     Cookies.set("otp-authenticator.darkStyle", !darkStyleElement.disabled);
 }
@@ -184,7 +184,7 @@ document.getElementById('inputIssuer').addEventListener('input', () => {
 });
 
 ['click', 'tap'].forEach(function (event) {
-    document.getElementById('otpauth-button').addEventListener(event, function () {
+    document.getElementById('more-button').addEventListener(event, function () {
         toggleOtpAuthDetails();
     }, false);
 });

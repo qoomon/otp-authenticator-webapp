@@ -7,16 +7,16 @@
     <link rel=icon href=favicon.ico>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
-    <link id="dark-style" rel="stylesheet" href="index_dark.css" disabled>
+    <link id="dark-mode" rel="stylesheet" href="index_dark.css" disabled>
     <script src="main.js" defer></script>
   </head>
   <body>
-    <div id="appname">
-      <img src="otp-authenticator.png">
-      <span>OTP Authenticator</span>
-      <div id="otpauth-button"></div>
+    <div id="header-container">
+      <div id="app-icon"></div>
+      <div id="app-name">OTP Authenticator</div>
+      <div id="more-button"></div>
     </div>
-    <div id="calculator">
+    <div id="calculator-container">
       <div id="totp-label"></div>
       <div id="totp-token-container">
         <div id="totp-token"></div>
@@ -25,7 +25,7 @@
           <circle r="0.159155"  cx="0.159155" cy="0.159155"/>
         </svg>
       </div>
-      <div id="input-box">
+      <div id="input-container">
         <input id="inputSecret"  placeholder="Insert Secret or otpauth URI" type="password" autocomplete="off" autofocus>
         <input id="inputAccount" placeholder="Insert Account" style="display: none;">
         <input id="inputIssuer"  placeholder="Insert Issuer (Optional)"  style="display: none;">
@@ -34,8 +34,8 @@
         <div id="otpauth-qr-overlay"></div>
       </div>
     </div>
+    <a id="github-ref" href="https://github.com/qoomon/otp-authenticator-webapp"></a>
+    <div id="app-version"></div>
     <div id="light-switch"></div>
-    <a href="https://github.com/qoomon/otp-authenticator-webapp"><img id="github-ref" src="github-icon.png"></a>
-    <div id="appversion"></div>
   </body>
 </html>

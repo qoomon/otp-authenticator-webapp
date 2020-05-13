@@ -91,7 +91,7 @@
 "use strict";
 
 
-document.getElementById('appversion').innerText = {"version":"2.0.3-3957bb197713ea1f5ca3ab0669529267cb66ac65"}.version;
+document.getElementById('appversion').innerText = {"version":"2.0.3-dc1854e01f217323fa80bee35d46f50eb81a098c"}.version;
 
 const QRCode = __webpack_require__(1);
 const TOTP = __webpack_require__(2);

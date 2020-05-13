@@ -39,7 +39,7 @@
 }
 
 #totp-token-remaining-seconds-pie>circle {
-  stroke: #4688f1;
+  stroke: #598de0;
 }
 
 body {

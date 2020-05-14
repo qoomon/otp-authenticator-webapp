@@ -1,48 +1,63 @@
-#appversion, #input-container>input::placeholder {
-  color: #444;
+body
+{
+    color: #598de0;
+    background: #131313;
 }
 
-#github-ref {
-  filter: invert(75%);
+#app-version,
+#input-container > input::placeholder
+{
+    color: #444;
 }
 
-#header-container {
-  color: #e6e6e6;
-  border-color: #313131;
+#github-ref
+{
+    filter: invert(75%);
 }
 
-#input-container>input {
-  color: #606060;
-  border-color: #2d2d2d;
+#header-container
+{
+    color: #e6e6e6;
+    border-color: #313131;
 }
 
-#more-button {
-  filter: invert(30%);
+#input-container > input
+{
+    color: #606060;
+    border-color: #2d2d2d;
 }
 
-#more-button-qr, #light-switch {
-  filter: invert(25%);
+#more-button
+{
+    filter: invert(30%);
 }
 
-#otpauth-qr {
-  background: #f9f9f9;
-  filter: brightness(0.94);
+#more-button-qr,
+#light-switch
+{
+    filter: invert(25%);
 }
 
-#otpauth-qr-overlay, .toast {
-  background-color: #598de0;
-  color: #131313;
+#otpauth-qr
+{
+    background: #f9f9f9;
+
+    filter: brightness(.94);
 }
 
-#totp-label {
-  color: #9c9c9c;
+#otpauth-qr-overlay,
+.toast
+{
+    color: #131313;
+    background-color: #598de0;
 }
 
-#totp-token-remaining-seconds-pie>circle {
-  stroke: #598de0;
+#totp-label
+{
+    color: #9c9c9c;
 }
 
-body {
-  background: #131313;
-  color: #598de0;
+#totp-token-remaining-seconds-pie > circle
+{
+    stroke: #598de0;
 }

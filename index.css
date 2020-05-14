@@ -1,191 +1,269 @@
-#app-icon {
-  height: 32px;
-  width: 32px;
-  margin-right: 10px;
-  background-image: url(otp-authenticator.png);
-  background-size: contain;
+*
+{
+    box-sizing: border-box;
 }
 
-#appversion {
-  position: absolute;
-  bottom: 4px;
-  width: 100%;
-  text-align: center;
-  font-size: x-small;
-  color: #949494;
+body
+{
+    font-family: Jost;
+
+    width: 100%;
+
+    letter-spacing: .05em;
+
+    color: #2e7fff;
+    background-color: #f5f5f5;
 }
 
-#calculator-container {
-  max-width: 400px;
-  min-height: 20px;
-  margin: 0 auto;
-  padding: 24px;
+.toast
+{
+    font-size: 16px;
+
+    position: fixed;
+    right: 0;
+    bottom: 30vh;
+    left: 0;
+
+    width: 100%;
+    max-width: 240px;
+    margin: 0 auto;
+    padding: 4px;
+
+    text-align: center;
+
+    color: #f5f5f5;
+    border-radius: 20px;
+    background-color: #2e7fff;
 }
 
-#github-ref {
-  position: absolute;
-  bottom: 24px;
-  left: calc(50%-16px);
-  height: 32px;
-  width: 32px;
-  filter: invert(25%);
+#app-icon
+{
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+
+    background-image: url(otp-authenticator.png);
+    background-size: contain;
 }
 
-#header-container {
-  position: relative;
-  height: 64px;
-  max-width: 400px;
-  min-width: 300px;
-  font-size: 20px;
-  font-weight: 500;
-  color: #4c4c4c;
-  border-bottom: solid 2px;
-  display: flex;
-  align-items: center;
-  border-color: #dedede;
-  margin: 0 auto;
-  padding: 20px 12px 10px;
+#app-version
+{
+    font-size: x-small;
+
+    position: fixed;
+    bottom: 4px;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: #949494;
 }
 
-#input-container {
-  position: relative;
+#calculator-container
+{
+    max-width: 400px;
+    min-height: 20px;
+    margin: 0 auto;
+    padding: 24px;
 }
 
-#input-container>input {
-  margin-bottom: 8px;
-  max-width: 400px;
-  text-align: left;
-  font-size: 20px;
-  background-color: transparent;
-  color: #a0a0a0;
-  border: none;
-  width: 100%;
+/* #github-ref > img
+{
+    width: 100%;
+    height: 100%;
+} */
+
+#github-ref
+{
+    position: fixed;
+    bottom: 12px;
+    left: 12px;
+
+    width: 32px;
+    height: 32px;
+
+    background: url(github-icon.png) no-repeat;
+    background-size: contain;
+    filter: invert(25%);
 }
 
-#input-container>input::placeholder {
-  font-size: 16px;
-  color: #bbb;
+#header-container
+{
+    font-size: 20px;
+    font-weight: 500;
+
+    position: relative;
+
+    display: flex;
+
+    min-width: 300px;
+    max-width: 400px;
+    height: 64px;
+    margin: 0 auto;
+    padding: 20px 12px 10px;
+
+    color: #4c4c4c;
+    border-color: #dedede;
+    border-bottom: solid 2px;
+
+    align-items: center;
 }
 
-#input-container>input:focus {
-  outline: none;
+#input-container
+{
+    position: relative;
 }
 
-#light-switch {
-  background: url(light-bulb.png) no-repeat;
-  background-size: contain;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-  filter: invert(75%);
-  cursor: pointer;
+#input-container > input
+{
+    font-size: 20px;
+
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 8px;
+
+    text-align: left;
+
+    color: #a0a0a0;
+    border: none;
+    background-color: transparent;
 }
 
-#more-button {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-  background-image: url(more.png);
-  background-size: contain;
-  filter: invert(70%);
-  margin-left: auto;
+#input-container > input::placeholder
+{
+    font-size: 16px;
+
+    color: #bbb;
 }
 
-#otpauth-qr {
-  position: relative;
-  width: 256px;
-  height: 256px;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 4px;
-  cursor: pointer;
-  background: #fff;
-  border: 1px solid #e3e3e3;
-  padding: 19px;
+#input-container > input:focus
+{
+    outline: none;
 }
 
-#otpauth-qr-overlay {
-  position: absolute;
-  top: 42%;
-  right: 0;
-  left: 0;
-  width: 64%;
-  border-radius: 20px;
-  font-size: 16px;
-  text-align: center;
-  background-color: #2e7fff;
-  color: #f5f5f5;
-  margin: 0 auto;
-  padding: 4px;
+#light-switch
+{
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+
+    width: 32px;
+    height: 32px;
+
+    cursor: pointer;
+
+    background: url(light-bulb.png) no-repeat;
+    background-size: contain;
+
+    filter: invert(75%);
 }
 
-#totp-label {
-  margin-bottom: 2px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #3a3a3a;
-  cursor: pointer;
-  line-height: 16px;
+#more-button
+{
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+
+    cursor: pointer;
+
+    background: url(more.png) no-repeat;
+    background-size: contain;
+
+    filter: invert(70%);
 }
 
-#totp-token {
-  float: left;
-  height: 34px;
-  font-size: 24px;
-  cursor: pointer;
+#otpauth-qr
+{
+    position: relative;
+
+    width: 256px;
+    height: 256px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 19px;
+
+    cursor: pointer;
+
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    background: #fff;
 }
 
-#totp-token-container {
-  margin-bottom: 4px;
-  display: flex;
-  align-items: center;
+#otpauth-qr-overlay
+{
+    font-size: 16px;
+
+    position: absolute;
+    top: 42%;
+    right: 0;
+    left: 0;
+
+    width: 64%;
+    margin: 0 auto;
+    padding: 4px;
+
+    text-align: center;
+
+    color: #f5f5f5;
+    border-radius: 20px;
+    background-color: #2e7fff;
 }
 
-#totp-token-remaining-seconds-pie {
-  width: 22px;
-  height: 22px;
-  transform: rotate(-90deg);
-  border-radius: 50%;
-  display: block;
-  margin-left: auto;
+#totp-label
+{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+
+    margin-bottom: 2px;
+
+    cursor: pointer;
+
+    color: #3a3a3a;
 }
 
-#totp-token-remaining-seconds-pie>circle {
-  stroke: #2e7fff;
-  stroke-width: 100%;
-  stroke-dasharray: 1;
-  stroke-dashoffset: -1;
-  fill: none;
-  transition: stroke-dashoffset 1s linear;
+#totp-token
+{
+    font-size: 24px;
+
+    float: left;
+
+    height: 34px;
+
+    cursor: pointer;
 }
 
-* {
-  box-sizing: border-box;
+#totp-token-container
+{
+    display: flex;
+
+    margin-bottom: 4px;
+
+    align-items: center;
 }
 
-.toast {
-  position: fixed;
-  bottom: 30vh;
-  left: 0;
-  right: 0;
-  max-width: 240px;
-  width: 100%;
-  border-radius: 20px;
-  text-align: center;
-  font-size: 16px;
-  background-color: #2e7fff;
-  color: #f5f5f5;
-  margin: 0 auto;
-  padding: 4px;
+#totp-token-remaining-seconds-pie
+{
+    display: block;
+
+    width: 22px;
+    height: 22px;
+    margin-left: auto;
+
+    transform: rotate(-90deg);
+
+    border-radius: 50%;
 }
 
-body {
-  width: 100%;
-  background-color: #f5f5f5;
-  color: #2e7fff;
-  font-family: Jost;
-  letter-spacing: .05em;
+#totp-token-remaining-seconds-pie > circle
+{
+    transition: stroke-dashoffset 1s linear;
+
+    stroke: #2e7fff;
+    stroke-width: 100%;
+    stroke-dasharray: 1;
+    stroke-dashoffset: -1;
+    fill: none;
 }

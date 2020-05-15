@@ -43,10 +43,10 @@ const qrImage = new QRCode(document.getElementById('otpauth-qr-image'), {
     colorDark: "#000000",
     colorLight: "#ffffff",
     correctLevel: QRCode.CorrectLevel.Q,
-    // calculate final size by removing padding from size,
+    // calculate final size by removing padding and border from size,
     // fix padding problem on mobile devices see index.css > #otpauth-qr
-    width: 256 - (16 * 2), 
-    height: 256 - (16 * 2)
+    width: 256 - ((1 + 16) * 2), 
+    height: 256 - ((1 + 16) * 2)
 });
 
 function updateTotpGenerator() {

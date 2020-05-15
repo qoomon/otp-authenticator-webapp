@@ -91,7 +91,7 @@
 "use strict";
 
 
-document.getElementById('app-version').innerText = {"version":"2.0.3-b9472308f4dc0a34b53b3d7db3aa93109e45900c"}.version;
+document.getElementById('app-version').innerText = {"version":"2.0.3-28f73a04194a2bc0624ef8c63a5f322374de6ae3"}.version;
 
 const QRCode = __webpack_require__(1);
 const TOTP = __webpack_require__(2);
@@ -130,7 +130,7 @@ function showToast(value, timeout) {
 
 let totpGenerator = undefined;
 
-const qrImage = new QRCode(document.getElementById('otpauth-qr'), {
+const qrImage = new QRCode(document.getElementById('otpauth-qr-image'), {
     colorDark: "#000000",
     colorLight: "#ffffff",
     correctLevel: QRCode.CorrectLevel.Q

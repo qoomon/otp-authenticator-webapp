@@ -72,8 +72,7 @@ function updateQrCode() {
         qrImage.makeCode(otpauthUrl);
         document.getElementById('otpauth-qr-overlay').style.display = 'none';
     } else {
-        qrImage.makeCode('');
-        document.getElementById('otpauth-qr-overlay').innerHTML = "Input missing!";
+        qrImage.makeCode('https://qoomon.me');
         document.getElementById('otpauth-qr-overlay').style.display = '';
     }
 }
@@ -189,7 +188,7 @@ document.getElementById('inputPeriod').addEventListener('input', () => {
         const secret = document.getElementById('inputSecret').value;
         const account = document.getElementById('inputAccount').value;
         const issuer = document.getElementById('inputIssuer').value;
-        const period = document.getElementById('InputPeriod').value;
+        const period = document.getElementById('inputPeriod').value;
         const otpauthUrl = OTPAuthUrl.build(secret, account, issuer, period);
         copyToClipboard(otpauthUrl);
         showToast("OTPAuth url copied!");

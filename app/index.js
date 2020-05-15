@@ -140,8 +140,8 @@ function toggleDarkMode() {
     Cookies.set("otp-authenticator.darkStyle", !darkStyleElement.disabled);
 }
 
-function setRemainingTimePiePercentage(percentag) {
-  document.querySelector("#totp-token-remaining-seconds-pie > circle").style.strokeDashoffset = -1 + percentag;
+function setRemainingTimePiePercentage(percentage) {
+  document.querySelector("#totp-token-remaining-seconds-pie > circle").style.strokeDashoffset = -1 + percentage;
 }
 
 function setTokenHtml(html) {

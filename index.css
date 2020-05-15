@@ -101,8 +101,8 @@ body
     padding: 20px 12px 10px;
 
     color: #4c4c4c;
-    border-color: #dedede;
     border-bottom: solid 2px;
+    border-color: #dedede;
 
     align-items: center;
 }

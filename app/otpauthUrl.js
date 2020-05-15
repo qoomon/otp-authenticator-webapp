@@ -1,6 +1,6 @@
 module.exports = {
 
-    build: (secret, account, issuer) => {
+    build: (secret, account, issuer, period) => {
         account = account || 'unknown';
         let label = account;
         if (issuer) {
@@ -10,6 +10,9 @@ module.exports = {
         let result = 'otpauth://totp/' + encodeURIComponent(label) + '?secret=' + encodeURIComponent(secret);
         if (account && issuer) {
             result += '&issuer=' + encodeURIComponent(issuer);
+        }
+        if (period) {
+            result += '&period=' + period;
         }
         return result;
     },
@@ -32,6 +35,9 @@ module.exports = {
         }
         if (otpauthUrl.searchParams.get('issuer')) {
             result.issuer = decodeURIComponent(otpauthUrl.searchParams.get('issuer'));
+        }
+        if (otpauthUrl.searchParams.get('period')) {
+            result.period = decodeURIComponent(otpauthUrl.searchParams.get('period'));
         }
 
         return result;

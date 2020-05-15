@@ -21,10 +21,10 @@ const base32ToHex = (base32) => {
         .join('');
 };
 
-module.exports = function (secretBase32) {
+module.exports = function (secretBase32, period) {
 
     this.secretBase32 = secretBase32;
-    this.stepSeconds = 30;
+    this.stepSeconds = Number.isInteger(Number(period)) && Number(period) > 0 ? Number(period) : 30;
     this.tokenLength = 6;
 
     this.getToken = () => {

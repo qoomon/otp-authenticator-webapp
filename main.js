@@ -91,7 +91,7 @@
 "use strict";
 
 
-document.getElementById('app-version').innerText = {"version":"2.0.3-8aa5dfed7a9f571df2dec7869ff73d504c80f246"}.version;
+document.getElementById('app-version').innerText = {"version":"2.0.3-a426adf8b4851382ece1e2b35cc7dffa83b5ddfe"}.version;
 
 const QRCode = __webpack_require__(1);
 const TOTP = __webpack_require__(2);
@@ -163,8 +163,7 @@ function updateQrCode() {
         qrImage.makeCode(otpauthUrl);
         document.getElementById('otpauth-qr-overlay').style.display = 'none';
     } else {
-        qrImage.makeCode('');
-        document.getElementById('otpauth-qr-overlay').innerHTML = "Input missing!";
+        qrImage.makeCode('https://qoomon.me');
         document.getElementById('otpauth-qr-overlay').style.display = '';
     }
 }
@@ -280,7 +279,7 @@ document.getElementById('inputPeriod').addEventListener('input', () => {
         const secret = document.getElementById('inputSecret').value;
         const account = document.getElementById('inputAccount').value;
         const issuer = document.getElementById('inputIssuer').value;
-        const period = document.getElementById('InputPeriod').value;
+        const period = document.getElementById('inputPeriod').value;
         const otpauthUrl = OTPAuthUrl.build(secret, account, issuer, period);
         copyToClipboard(otpauthUrl);
         showToast("OTPAuth url copied!");

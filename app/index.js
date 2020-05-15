@@ -39,7 +39,7 @@ function showToast(value, timeout) {
 
 let totpGenerator = undefined;
 
-const qrImage = new QRCode(document.getElementById('otpauth-qr'), {
+const qrImage = new QRCode(document.getElementById('otpauth-qr-image'), {
     colorDark: "#000000",
     colorLight: "#ffffff",
     correctLevel: QRCode.CorrectLevel.Q

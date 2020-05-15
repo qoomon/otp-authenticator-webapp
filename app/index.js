@@ -42,10 +42,12 @@ let totpGenerator = undefined;
 const qrImage = new QRCode(document.getElementById('otpauth-qr-image'), {
     colorDark: "#000000",
     colorLight: "#ffffff",
-    correctLevel: QRCode.CorrectLevel.Q
+    correctLevel: QRCode.CorrectLevel.Q,
+    // calculate final size by removing padding from size,
+    // fix padding problem on mobile devices see index.css > #otpauth-qr
+    width: 256 - (16 * 2), 
+    height: 256 - (16 * 2)
 });
-qrImage._el.getElementsByTagName("img")[0].style.width = '100%'; // FIX: scaling problem with padding
-
 
 function updateTotpGenerator() {
     let secret = document.getElementById('inputSecret').value.replace(/\s/g, '');

@@ -91,7 +91,7 @@
 "use strict";
 
 
-document.getElementById('app-version').innerText = {"version":"2.0.3-e8365e42d7bb09bbd51f7f20b1bb8db060cedf23"}.version;
+document.getElementById('app-version').innerText = {"version":"2.0.3-8aa5dfed7a9f571df2dec7869ff73d504c80f246"}.version;
 
 const QRCode = __webpack_require__(1);
 const TOTP = __webpack_require__(2);
@@ -140,9 +140,10 @@ qrImage._el.getElementsByTagName("img")[0].style.width = '100%'; // FIX: scaling
 
 function updateTotpGenerator() {
     let secret = document.getElementById('inputSecret').value.replace(/\s/g, '');
+    let period = document.getElementById('inputPeriod').value;
 
     if (secret) {
-        totpGenerator = new TOTP(secret);
+        totpGenerator = new TOTP(secret, period);
     } else {
         totpGenerator = undefined;
     }
@@ -155,9 +156,10 @@ function updateQrCode() {
     const secret = document.getElementById('inputSecret').value;
     const issuer = document.getElementById('inputIssuer').value;
     const account = document.getElementById('inputAccount').value;
+    const period = document.getElementById('inputPeriod').value;
 
     if (secret && account) {
-        const otpauthUrl = OTPAuthUrl.build(secret.replace(/\s+/g, ''), account, issuer);
+        const otpauthUrl = OTPAuthUrl.build(secret.replace(/\s+/g, ''), account, issuer, period);
         qrImage.makeCode(otpauthUrl);
         document.getElementById('otpauth-qr-overlay').style.display = 'none';
     } else {
@@ -189,6 +191,7 @@ function parseSecretInput() {
         secret = otpauthParameters.secret;
         let issuer = otpauthParameters.issuer;
         let account = otpauthParameters.account;
+        let period = otpauthParameters.period;
 
         document.getElementById('inputSecret').value = secret || ' ';
         document.getElementById('inputSecret').dispatchEvent(new Event('input'));
@@ -196,18 +199,22 @@ function parseSecretInput() {
         document.getElementById('inputIssuer').dispatchEvent(new Event('input'));
         document.getElementById('inputAccount').value = account || '';
         document.getElementById('inputAccount').dispatchEvent(new Event('input'));
+        document.getElementById('inputPeriod').value = period || '';
+        document.getElementById('inputPeriod').dispatchEvent(new Event('input'));
     }
 }
 
 function showOtpAuthDetails() {
     document.getElementById('inputAccount').style.display = "";
     document.getElementById('inputIssuer').style.display = "";
+    document.getElementById('inputPeriod').style.display = "";
     document.getElementById('otpauth-qr').style.display = "";
 }
 
 function hideOtpAuthDetails() {
     document.getElementById('inputAccount').style.display = "none";
     document.getElementById('inputIssuer').style.display = "none";
+    document.getElementById('inputPeriod').style.display = "none";
     document.getElementById('otpauth-qr').style.display = "none";
 }
 
@@ -255,6 +262,11 @@ document.getElementById('inputIssuer').addEventListener('input', () => {
     updateQrCode();
 }, false);
 
+document.getElementById('inputPeriod').addEventListener('input', () => {
+    parseSecretInput();
+    updateTotpGenerator();
+    updateQrCode();
+}, false);
 
 ['click', 'tap'].forEach(function (event) {
     document.getElementById('totp-token').addEventListener(event, function () {
@@ -268,7 +280,8 @@ document.getElementById('inputIssuer').addEventListener('input', () => {
         const secret = document.getElementById('inputSecret').value;
         const account = document.getElementById('inputAccount').value;
         const issuer = document.getElementById('inputIssuer').value;
-        const otpauthUrl = OTPAuthUrl.build(secret, account, issuer);
+        const period = document.getElementById('InputPeriod').value;
+        const otpauthUrl = OTPAuthUrl.build(secret, account, issuer, period);
         copyToClipboard(otpauthUrl);
         showToast("OTPAuth url copied!");
     }, false);
@@ -975,10 +988,10 @@ const base32ToHex = (base32) => {
         .join('');
 };
 
-module.exports = function (secretBase32) {
+module.exports = function (secretBase32, period) {
 
     this.secretBase32 = secretBase32;
-    this.stepSeconds = 30;
+    this.stepSeconds = Number.isInteger(Number(period)) && Number(period) > 0 ? Number(period) : 30;
     this.tokenLength = 6;
 
     this.getToken = () => {
@@ -1055,7 +1068,7 @@ module.exports = {
 
 module.exports = {
 
-    build: (secret, account, issuer) => {
+    build: (secret, account, issuer, period) => {
         account = account || 'unknown';
         let label = account;
         if (issuer) {
@@ -1065,6 +1078,9 @@ module.exports = {
         let result = 'otpauth://totp/' + encodeURIComponent(label) + '?secret=' + encodeURIComponent(secret);
         if (account && issuer) {
             result += '&issuer=' + encodeURIComponent(issuer);
+        }
+        if (period) {
+            result += '&period=' + period;
         }
         return result;
     },
@@ -1087,6 +1103,9 @@ module.exports = {
         }
         if (otpauthUrl.searchParams.get('issuer')) {
             result.issuer = decodeURIComponent(otpauthUrl.searchParams.get('issuer'));
+        }
+        if (otpauthUrl.searchParams.get('period')) {
+            result.period = decodeURIComponent(otpauthUrl.searchParams.get('period'));
         }
 
         return result;

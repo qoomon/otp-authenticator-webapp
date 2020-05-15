@@ -91,7 +91,7 @@
 "use strict";
 
 
-document.getElementById('app-version').innerText = {"version":"2.0.3-5bb8a90a54d9540de23b1b7d4a6f421fe9d75ad4"}.version;
+document.getElementById('app-version').innerText = {"version":"2.0.3-7522c16f618f4d7652e0f34bbb653066e28926cc"}.version;
 
 const QRCode = __webpack_require__(1);
 const TOTP = __webpack_require__(2);
@@ -134,10 +134,10 @@ const qrImage = new QRCode(document.getElementById('otpauth-qr-image'), {
     colorDark: "#000000",
     colorLight: "#ffffff",
     correctLevel: QRCode.CorrectLevel.Q,
-    // calculate final size by removing padding from size,
+    // calculate final size by removing padding and border from size,
     // fix padding problem on mobile devices see index.css > #otpauth-qr
-    width: 256 - (16 * 2), 
-    height: 256 - (16 * 2)
+    width: 256 - ((1 + 16) * 2), 
+    height: 256 - ((1 + 16) * 2)
 });
 
 function updateTotpGenerator() {

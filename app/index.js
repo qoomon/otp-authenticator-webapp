@@ -178,14 +178,14 @@ document.getElementById('inputPeriod').addEventListener('input', () => {
     updateQrCode();
 }, false);
 
-['click', 'tap'].forEach(event -> {
+['click', 'tap'].forEach(event => {
     document.getElementById('totp-token').addEventListener(event, function () {
         copyToClipboard(this.innerText);
         showToast("Token copied!");
     }, false);
 });
 
-['click', 'tap'].forEach(event -> {
+['click', 'tap'].forEach(event => {
     document.getElementById('otpauth-qr').addEventListener(event, function () {
         const secret = document.getElementById('inputSecret').value;
         const account = document.getElementById('inputAccount').value;
@@ -197,19 +197,19 @@ document.getElementById('inputPeriod').addEventListener('input', () => {
     }, false);
 });
 
-['click', 'tap'].forEach(event -> {
+['click', 'tap'].forEach(event => {
     document.getElementById('more-button').addEventListener(event, function () {
         toggleOtpAuthDetails();
     }, false);
 });
 
-['click', 'tap'].forEach(event -> {
+['click', 'tap'].forEach(event => {
     document.getElementById('totp-label').addEventListener(event, function () {
         toggleOtpAuthDetails();
     }, false);
 });
 
-['click', 'tap'].forEach(event -> {
+['click', 'tap'].forEach(event => {
     document.getElementById('light-switch').addEventListener(event, function () {
         toggleDarkMode();
     }, false);

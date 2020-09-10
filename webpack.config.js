@@ -19,12 +19,17 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([
-      {from: './*.ico'},
-      {from: './*.png'},
-      {from: './*.css'},
-      {from: './*.html'}
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: './*.ico' },
+        { from: './*.png' },
+        { from: './*.css' },
+        { from: './*.html' }
+      ],
+      options: {
+        concurrency: 100,
+      },
+    }),
     new webpack.DefinePlugin({
       APP: JSON.stringify({
         version: packageFile.version + '-' + gitRevision('hash')

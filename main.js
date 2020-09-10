@@ -91,7 +91,7 @@
 "use strict";
 
 
-document.getElementById('app-version').innerText = {"version":"2.0.3-ee32f1a2373ad8ffabca946192108a3aeddc5dd5"}.version;
+document.getElementById('app-version').innerText = {"version":"2.0.3-62adc2b569cee00766e77cb1ebc60be0901dba0b"}.version;
 
 const QRCode = __webpack_require__(1);
 const TOTP = __webpack_require__(2);
@@ -269,14 +269,14 @@ document.getElementById('inputPeriod').addEventListener('input', () => {
     updateQrCode();
 }, false);
 
-['click', 'tap'].forEach(function (event) {
+['click', 'tap'].forEach(event => {
     document.getElementById('totp-token').addEventListener(event, function () {
         copyToClipboard(this.innerText);
         showToast("Token copied!");
     }, false);
 });
 
-['click', 'tap'].forEach(function (event) {
+['click', 'tap'].forEach(event => {
     document.getElementById('otpauth-qr').addEventListener(event, function () {
         const secret = document.getElementById('inputSecret').value;
         const account = document.getElementById('inputAccount').value;
@@ -288,19 +288,19 @@ document.getElementById('inputPeriod').addEventListener('input', () => {
     }, false);
 });
 
-['click', 'tap'].forEach(function (event) {
+['click', 'tap'].forEach(event => {
     document.getElementById('more-button').addEventListener(event, function () {
         toggleOtpAuthDetails();
     }, false);
 });
 
-['click', 'tap'].forEach(function (event) {
+['click', 'tap'].forEach(event => {
     document.getElementById('totp-label').addEventListener(event, function () {
         toggleOtpAuthDetails();
     }, false);
 });
 
-['click', 'tap'].forEach(function (event) {
+['click', 'tap'].forEach(event => {
     document.getElementById('light-switch').addEventListener(event, function () {
         toggleDarkMode();
     }, false);

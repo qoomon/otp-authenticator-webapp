@@ -216,12 +216,14 @@ document.getElementById('inputPeriod').addEventListener('input', () => {
 });
 
 // ################  run  ##################
-
-updateQrCode();
-
+if (!Cookies.get("otp-authenticator.darkStyle") && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    Cookies.set("otp-authenticator.darkStyle", "true");
+}
 if (Cookies.get("otp-authenticator.darkStyle") === "true") {
     toggleDarkMode();
 }
+
+updateQrCode();
 
 setInterval(refreshTotpToken, 1000);
 function refreshTotpToken() {

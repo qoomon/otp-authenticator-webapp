@@ -91,7 +91,7 @@
 "use strict";
 
 
-document.getElementById('app-version').innerText = {"version":"2.0.3-b295db7df7680f0287d3cf1ad67b8803a7d72859"}.version;
+document.getElementById('app-version').innerText = {"version":"2.0.3-baedb6959af633fc54dba1a26342cb583994567b"}.version;
 
 const QRCode = __webpack_require__(1);
 const TOTP = __webpack_require__(2);
@@ -307,12 +307,14 @@ document.getElementById('inputPeriod').addEventListener('input', () => {
 });
 
 // ################  run  ##################
-
-updateQrCode();
-
+if (!Cookies.get("otp-authenticator.darkStyle") && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    Cookies.set("otp-authenticator.darkStyle", "true");
+}
 if (Cookies.get("otp-authenticator.darkStyle") === "true") {
     toggleDarkMode();
 }
+
+updateQrCode();
 
 setInterval(refreshTotpToken, 1000);
 function refreshTotpToken() {

@@ -16,7 +16,7 @@ Or host it on your onw GitHub account
 
 
 ### Features
-* generate totp codes
+* generate TOTP codes
 * show remaining valid seconds for totp code
 * generate QR-code with OTPAuth URL
   * click on QR-code to copy OTPAuth URL

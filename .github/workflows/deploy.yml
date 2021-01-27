@@ -2,15 +2,7 @@ name: Build & Deploy
 
 on:
   push:
-    branches: [ '*' ]
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'     
-        required: false
-        default: 'warning'
-      tags:
-        description: 'Test scenario tags'  
+    branches: [ '*' ]  
 
 jobs:
   build:

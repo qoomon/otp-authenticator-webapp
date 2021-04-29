@@ -821,7 +821,7 @@ var __webpack_exports__ = {};
 "use strict";
 
 
-document.getElementById('app-version').innerText = {"version":"2.0.4-4555e902227633d692827c7867a5ab10339b7aa1"}.version;
+document.getElementById('app-version').innerText = {"version":"2.0.4-8aea5ae68df49b930b83be4a3f9d5a3cf327298e"}.version;
 
 const QRCode = __webpack_require__(597);
 const TOTP = __webpack_require__(368);

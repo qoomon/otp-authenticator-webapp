@@ -2,10 +2,16 @@
 
 document.getElementById('app-version').innerText = APP.version;
 
-const QRCode = require('qrcodejs2');
+const {
+  BrowserQRCodeSvgWriter, 
+  EncodeHintType
+} = require('@zxing/library');
+const QRCodeWriter = new BrowserQRCodeSvgWriter()
 const TOTP = require('./totp');
 const Cookies = require('./cookies');
 const OTPAuthUrl = require('./otpauthUrl');
+
+let totpGenerator = undefined;
 
 function copyToClipboard(value) {
     // Create a temporary input
@@ -37,18 +43,6 @@ function showToast(value, timeout) {
     }, timeout);
 }
 
-let totpGenerator = undefined;
-
-const qrImage = new QRCode(document.getElementById('otpauth-qr-image'), {
-    colorDark: "#000000",
-    colorLight: "#ffffff",
-    correctLevel: QRCode.CorrectLevel.Q,
-    // calculate final size by removing padding and border from size,
-    // fix padding problem on mobile devices see index.css > #otpauth-qr
-    width: 256 - ((1 + 16) * 2), 
-    height: 256 - ((1 + 16) * 2)
-});
-
 function updateTotpGenerator() {
     let secret = document.getElementById('inputSecret').value.replace(/\s/g, '');
     let period = document.getElementById('inputPeriod').value;
@@ -62,20 +56,46 @@ function updateTotpGenerator() {
     refreshTotpToken();
 }
 
-
 function updateQrCode() {
     const secret = document.getElementById('inputSecret').value;
     const issuer = document.getElementById('inputIssuer').value;
     const account = document.getElementById('inputAccount').value;
     const period = document.getElementById('inputPeriod').value;
 
+    let qrMessage = 'https://qoomon.me'
+    document.getElementById('otpauth-qr-overlay').style.display = '';
+    
     if (secret && account) {
-        const otpauthUrl = OTPAuthUrl.build(secret.replace(/\s+/g, ''), account, issuer, period);
-        qrImage.makeCode(otpauthUrl);
+        qrMessage = OTPAuthUrl.build(secret.replace(/\s+/g, ''), account, issuer, period);
         document.getElementById('otpauth-qr-overlay').style.display = 'none';
-    } else {
-        qrImage.makeCode('https://qoomon.me');
-        document.getElementById('otpauth-qr-overlay').style.display = '';
+    }
+
+    // generate qr code as svg data image url
+    let svgElement = QRCodeWriter.write(qrMessage, 0, 0, new Map([
+        [EncodeHintType.CHARACTER_SET, "UTF-8"],
+        [EncodeHintType.ERROR_CORRECTION, "Q"],
+        [EncodeHintType.MARGIN, 2],
+      ])
+    );
+    
+    var svgXml = new XMLSerializer().serializeToString(svgElement);
+    var imageDataUrl = 'data:image/svg+xml;base64,' + btoa(svgXml);
+    
+    // set svg as image
+    let img = document.getElementById('otpauth-qr-image');
+    img.src = imageDataUrl;
+    
+    // convert svg image to png
+    img.onload = () => {
+      img.onload = null;
+    
+      var canvas = document.createElement("canvas");
+      canvas.width = 512;
+      canvas.height = 512;
+      canvas.getContext("2d")
+        .drawImage(img, 0, 0, canvas.width, canvas.height);
+    
+      img.src = canvas.toDataURL();
     }
 }
 
@@ -219,6 +239,7 @@ document.getElementById('inputPeriod').addEventListener('input', () => {
 if (!Cookies.get("otp-authenticator.darkStyle") && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     Cookies.set("otp-authenticator.darkStyle", "true");
 }
+
 if (Cookies.get("otp-authenticator.darkStyle") === "true") {
     toggleDarkMode();
 }

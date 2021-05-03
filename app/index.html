@@ -25,12 +25,22 @@
           <circle r="0.159155"  cx="0.159155" cy="0.159155"/>
         </svg>
       </div>
+      
       <div id="input-container">
-        <input id="inputSecret"  placeholder="Insert Secret or otpauth URI" type="password" autocomplete="off" autofocus>
+        <div id="input-secret-container">
+          <input id="inputSecret" placeholder="Insert Secret or otpauth URI" type="password" autocomplete="off" autofocus>
+          
+          <div id="inputVideoButton"></div>
+          <label id="inputImageButton" style=" display: inline-block;">
+              <input id="inputImage" type="file" style="display: none;">
+          </label>
+        </div>
+        
         <input id="inputAccount" placeholder="Insert Account" style="display: none;">
         <input id="inputIssuer"  placeholder="Insert Issuer (Optional)"  style="display: none;">
         <input id="inputPeriod"  placeholder="Insert Period (Optional)"  type="number"  style="display: none;">
       </div>
+      
       <div id="otpauth-qr" style="display: none;">
         <img id="otpauth-qr-image">
         <div id="otpauth-qr-overlay">Missing values!</div>
@@ -40,8 +50,11 @@
     <div id="app-version"></div>
     <div id="light-switch"></div>
     
-    
-    <div style="width: 500px; height: 500px;" id="qrScanner"></div>
+    <div id="inputVideoDialog" style="display: none;">
+      <div id="inputVideoContainer">
+        <video id="inputVideo"></video>
+      </div>
+    </div>
     
   </body>
 </html>

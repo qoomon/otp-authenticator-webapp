@@ -176,9 +176,8 @@ body {
   width: 24px;
   height: 24px;
   margin-left: auto;
-  cursor: pointer;
   background: url(more.png) no-repeat;
-  background-size: contain;
+  
 }
 
 #more-button,
@@ -186,6 +185,8 @@ body {
 #inputVideoButton,
 #light-switch
 {
+    background-size: contain;
+    cursor: pointer;
     filter: invert(75%);
 }
 

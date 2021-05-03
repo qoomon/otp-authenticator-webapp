@@ -5,7 +5,7 @@ body
 }
 
 #app-version,
-#input-container > input::placeholder
+#input-container input::placeholder
 {
     color: #444;
 }
@@ -21,18 +21,15 @@ body
     border-color: #313131;
 }
 
-#input-container > input
+#input-container input
 {
     color: #606060;
     border-color: #2d2d2d;
 }
 
-#more-button
-{
-    filter: invert(30%);
-}
-
-#more-button-qr,
+#more-button,
+#inputImageButton,
+#inputVideoButton,
 #light-switch
 {
     filter: invert(25%);

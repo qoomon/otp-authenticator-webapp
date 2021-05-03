@@ -24438,13 +24438,15 @@ var __webpack_exports__ = {};
 "use strict";
 
 
-document.getElementById('app-version').innerText = {"version":"2.0.4-2e11f927b9993405c5d28e15084d0eb90d195672"}.version;
+document.getElementById('app-version').innerText = {"version":"2.0.4-dca83f229302cdb99d6eb74e65f56a87de299996"}.version;
 
 const {
+  BrowserQRCodeReader,
   BrowserQRCodeSvgWriter, 
   EncodeHintType
 } = __webpack_require__(653);
 const QRCodeWriter = new BrowserQRCodeSvgWriter()
+const QRCodeReader = new BrowserQRCodeReader()
 const TOTP = __webpack_require__(368);
 const Cookies = __webpack_require__(428);
 const OTPAuthUrl = __webpack_require__(394);
@@ -24552,26 +24554,6 @@ function updateLabel() {
     document.getElementById('totp-label').innerText = label;
 }
 
-function parseSecretInput() {
-    let secret = document.getElementById('inputSecret').value;
-    if (secret.startsWith("otpauth://totp/")) {
-        const otpauthParameters = OTPAuthUrl.parse(secret);
-        secret = otpauthParameters.secret;
-        let issuer = otpauthParameters.issuer;
-        let account = otpauthParameters.account;
-        let period = otpauthParameters.period;
-
-        document.getElementById('inputSecret').value = secret || ' ';
-        document.getElementById('inputSecret').dispatchEvent(new Event('input'));
-        document.getElementById('inputIssuer').value = issuer || '';
-        document.getElementById('inputIssuer').dispatchEvent(new Event('input'));
-        document.getElementById('inputAccount').value = account || '';
-        document.getElementById('inputAccount').dispatchEvent(new Event('input'));
-        document.getElementById('inputPeriod').value = period || '';
-        document.getElementById('inputPeriod').dispatchEvent(new Event('input'));
-    }
-}
-
 function showOtpAuthDetails() {
     document.getElementById('inputAccount').style.display = "";
     document.getElementById('inputIssuer').style.display = "";
@@ -24604,18 +24586,114 @@ function setRemainingTimePiePercentage(percentage) {
   document.querySelector("#totp-token-remaining-seconds-pie > circle").style.strokeDashoffset = -1 + percentage;
 }
 
-function setTokenHtml(html) {
-  document.getElementById('totp-token').innerHTML = html;
-}
-
 function formatToken(token) {
   return token.replace(/(...)(...)/g, '<span>$1</span><span style="margin-left:8px">$2</span>')
 }
 
 // ################  input handling  ##################
 
-document.getElementById('inputSecret').addEventListener('input', () => {
-    parseSecretInput();
+function handleOtpauthUrl(otpauthUrl) {
+    // otpauth://totp/issuer%3Aaccount?secret=secret&issuer=issuer
+    const otpauthParameters = OTPAuthUrl.parse(otpauthUrl);
+
+    document.getElementById('inputSecret').value = otpauthParameters.secret || ' ';
+    document.getElementById('inputSecret').dispatchEvent(new Event('input'));
+    
+    document.getElementById('inputIssuer').value = otpauthParameters.issuer || '';
+    document.getElementById('inputIssuer').dispatchEvent(new Event('input'));
+    
+    document.getElementById('inputAccount').value = otpauthParameters.account || '';
+    document.getElementById('inputAccount').dispatchEvent(new Event('input'));
+    
+    document.getElementById('inputPeriod').value = otpauthParameters.period || '';
+    document.getElementById('inputPeriod').dispatchEvent(new Event('input'));
+}
+
+document.getElementById('inputVideoButton').addEventListener('click', () => {
+
+  document.getElementById('inputVideoDialog').style.display = '';
+  
+  const decodeFromInputVideoDevice = (selectedDeviceId) => {
+    QRCodeReader.decodeFromInputVideoDevice(selectedDeviceId, 'inputVideo')
+      .then((result) => {
+        if(result.text.startsWith('otpauth://totp/')){
+          handleOtpauthUrl(result.text)
+        } else {
+          alert('Invalid OTP auth QR code!')
+        }
+      })
+      .catch((err) => console.error(err))
+      .finally(() => {
+        QRCodeReader.reset()
+        document.getElementById('inputVideoDialog').style.display = 'none'; 
+      });
+    };
+  
+  QRCodeReader.getVideoInputDevices()
+    .then((videoInputDevices) => {
+      if (videoInputDevices.length <= 0) {
+        alert("No camera device available!")
+        return;
+      }
+      
+      if (videoInputDevices.length == 1) {
+        decodeFromInputVideoDevice(videoInputDevices[0].deviceId);
+      } else {
+        let videoInputDevice = videoInputDevices.find(device => device.label != 'Snap Camera');
+        decodeFromInputVideoDevice(videoInputDevice.deviceId);
+        
+        // TODO
+        // const sourceSelect = document.getElementById('sourceSelect')
+        // sourceSelect.textContent = '';
+        // 
+        // videoInputDevices.forEach((element) => {
+        //   const sourceOption = document.createElement('option')
+        //   sourceOption.text = element.label
+        //   sourceOption.value = element.deviceId
+        //   sourceSelect.appendChild(sourceOption)
+        // });
+        // 
+        // sourceSelect.onchange = () => {
+        //   decodeFromInputVideoDevice(sourceSelect.value);
+        // };
+      }  
+    })
+    .catch((err) => console.error(err));
+});
+
+document.getElementById('inputVideoDialog').addEventListener('click', () => {
+  QRCodeReader.reset();
+  document.getElementById('inputVideoDialog').style.display = 'none'; 
+});
+ 
+document.getElementById('inputImage').addEventListener('change', (event) => {
+  const imageFile = event.target.files[0];
+  if(imageFile) {
+    const image = new Image();
+    var fileReader = new FileReader();
+    fileReader.onload = (event) => image.src = event.target.result;
+    fileReader.readAsDataURL(imageFile);
+    image.onerror = (err) => alert('Invalid image!');
+    image.onload = () => QRCodeReader.decodeFromImage(image)
+      .then((result) => {
+        if(result.text.startsWith('otpauth://totp/')) {
+          handleOtpauthUrl(result.text);
+        } else {
+          alert('Invalid OTP auth QR code!')
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        alert('Couldn\'t find any QR code in image!');
+      });
+  }
+});
+
+document.getElementById('inputSecret').addEventListener('input', (event) => {
+    let secret = event.target.value;
+    if (secret.startsWith("otpauth://totp/")) {
+      handleOtpauthUrl(secret);
+    }
     updateTotpGenerator();
     updateQrCode();
 }, false);
@@ -24631,7 +24709,6 @@ document.getElementById('inputIssuer').addEventListener('input', () => {
 }, false);
 
 document.getElementById('inputPeriod').addEventListener('input', () => {
-    parseSecretInput();
     updateTotpGenerator();
     updateQrCode();
 }, false);
@@ -24686,17 +24763,18 @@ updateQrCode();
 
 setInterval(refreshTotpToken, 1000);
 function refreshTotpToken() {
+    let tokenElement = document.getElementById('totp-token');
     if (totpGenerator) {
         try {
-            setTokenHtml(formatToken(totpGenerator.getToken()));
+            tokenElement.innerHTML = formatToken(totpGenerator.getToken());
             setRemainingTimePiePercentage(totpGenerator.getRemainingSeconds() / totpGenerator.getStepSeconds());
         } catch (err) {
             console.info(err.message);
-            setTokenHtml("Invalid Secret!");
+            tokenElement.textContent = "Invalid Secret!";
             setRemainingTimePiePercentage(0);
         }
     } else {
-        setTokenHtml(formatToken('000000'));
+        tokenElement.innerHTML = formatToken('000000');
         setRemainingTimePiePercentage(0);
     }
 }

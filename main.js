@@ -24438,7 +24438,7 @@ var __webpack_exports__ = {};
 "use strict";
 
 
-document.getElementById('app-version').innerText = {"version":"2.1.0-55ec004a2ae02f5ced2f3556406cc546194c3a52"}.version;
+document.getElementById('app-version').innerText = {"version":"2.1.0-82d2348a1a0beefec0dad0cd3f2b5056dd789474"}.version;
 
 const {
   BrowserQRCodeReader,
@@ -24614,7 +24614,7 @@ document.getElementById('inputVideoButton').addEventListener('click', () => {
   document.getElementById('inputVideoDialog').style.display = '';
   
   const decodeFromInputVideoDevice = (selectedDeviceId) => {
-    QRCodeReader.decodeFromInputVideoDevice(selectedDeviceId, 'inputVideo')
+    QRCodeReader.decodeOnceFromVideoDevice(selectedDeviceId, 'inputVideo')
       .then((result) => {
         if(result.text.startsWith('otpauth://totp/')){
           handleOtpauthUrl(result.text)
@@ -24635,28 +24635,33 @@ document.getElementById('inputVideoButton').addEventListener('click', () => {
         alert("No camera device available!")
         return;
       }
-      
       if (videoInputDevices.length == 1) {
         decodeFromInputVideoDevice(videoInputDevices[0].deviceId);
       } else {
-        let videoInputDevice = videoInputDevices.find(device => device.label != 'Snap Camera');
-        decodeFromInputVideoDevice(videoInputDevice.deviceId);
-        
-        // TODO
-        // const sourceSelect = document.getElementById('sourceSelect')
-        // sourceSelect.textContent = '';
-        // 
-        // videoInputDevices.forEach((element) => {
-        //   const sourceOption = document.createElement('option')
-        //   sourceOption.text = element.label
-        //   sourceOption.value = element.deviceId
-        //   sourceSelect.appendChild(sourceOption)
-        // });
-        // 
-        // sourceSelect.onchange = () => {
-        //   decodeFromInputVideoDevice(sourceSelect.value);
-        // };
-      }  
+        let isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        if(isMobileDevice) {
+          decodeFromInputVideoDevice(undefined);
+        } else {
+          let videoInputDevice = videoInputDevices.find(device => device.label != 'Snap Camera');
+          decodeFromInputVideoDevice(videoInputDevice.deviceId);
+        }
+      }
+      
+      // TODO
+      // const sourceSelect = document.getElementById('sourceSelect')
+      // sourceSelect.textContent = '';
+      // 
+      // videoInputDevices.forEach((element) => {
+      //   const sourceOption = document.createElement('option')
+      //   sourceOption.text = element.label
+      //   sourceOption.value = element.deviceId
+      //   sourceSelect.appendChild(sourceOption)
+      // });
+      // 
+      // sourceSelect.onchange = () => {
+      //   decodeFromInputVideoDevice(sourceSelect.value);
+      // };
+      
     })
     .catch((err) => console.error(err));
 });

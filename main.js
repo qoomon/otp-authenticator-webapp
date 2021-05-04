@@ -24438,7 +24438,7 @@ var __webpack_exports__ = {};
 "use strict";
 
 
-document.getElementById('app-version').innerText = {"version":"2.1.0-6435750c0be08f45c0749d08e0dae1e67a412721"}.version;
+document.getElementById('app-version').innerText = {"version":"2.1.0-d417e8a251abc4520cb893f7abb9bc21350905a8"}.version;
 
 const {
   BrowserQRCodeReader,
@@ -24642,7 +24642,7 @@ document.getElementById('inputVideoButton').addEventListener('click', () => {
         if(isMobileDevice) {
           decodeFromInputVideoDevice(undefined);
         } else {
-          let videoInputDevice = videoInputDevices.find(device => device.label != 'Snap Camera');
+          let videoInputDevice = videoInputDevices.find(device => device.label != 'Snap Camera' && device.label != 'OBS-Camera');
           decodeFromInputVideoDevice(videoInputDevice.deviceId);
         }
       }

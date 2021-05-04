@@ -17,7 +17,7 @@
       <div id="more-button"></div>
     </div>
     <div id="calculator-container">
-      <div id="totp-label"></div>
+      <div id="totp-label" style="margin-bottom: 0px; height: 0px;"></div>
       <div id="totp-token-container">
         <div id="totp-token"></div>
         <svg id="totp-token-remaining-seconds-pie" viewBox="0 0 0.318310 0.318310">
@@ -28,17 +28,17 @@
       
       <div id="input-container">
         <div id="input-secret-container">
-          <input id="inputSecret" placeholder="Insert Secret or otpauth URI" type="password" autocomplete="off" autofocus>
+          <input id="input-secret" placeholder="Insert Secret or otpauth URI" type="password" autocomplete="off" autofocus>
           
-          <div id="inputVideoButton"></div>
-          <label id="inputImageButton" style=" display: inline-block;">
-              <input id="inputImage" type="file" style="display: none;">
+          <div id="input-video-button"></div>
+          <label id="input-image-button" style=" display: inline-block;">
+              <input id="input-image" type="file" style="display: none;">
           </label>
         </div>
         
-        <input id="inputAccount" placeholder="Insert Account" style="display: none;">
-        <input id="inputIssuer"  placeholder="Insert Issuer (Optional)"  style="display: none;">
-        <input id="inputPeriod"  placeholder="Insert Period (Optional)"  type="number"  style="display: none;">
+        <input id="input-account" placeholder="Insert Account" style="display: none;">
+        <input id="input-issuer"  placeholder="Insert Issuer (Optional)"  style="display: none;">
+        <input id="input-period"  placeholder="Insert Period (Optional)"  type="number"  style="display: none;">
       </div>
       
       <div id="otpauth-qr" style="display: none;">
@@ -50,9 +50,9 @@
     <div id="app-version"></div>
     <div id="light-switch"></div>
     
-    <div id="inputVideoDialog" style="display: none;">
-      <div id="inputVideoContainer">
-        <video id="inputVideo"></video>
+    <div id="input-video-dialog" style="display: none;">
+      <div id="input-video-container">
+        <video id="input-video"></video>
       </div>
     </div>
     

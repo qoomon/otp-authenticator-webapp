@@ -28,8 +28,8 @@ body
 }
 
 #more-button,
-#inputImageButton,
-#inputVideoButton,
+#input-image-button,
+#input-video-button,
 #light-switch
 {
     filter: invert(25%);

@@ -24438,7 +24438,7 @@ var __webpack_exports__ = {};
 "use strict";
 
 
-document.getElementById('app-version').innerText = {"version":"2.1.0-4d04b6125bd73bc49c0bdfb32a9600d9a8f9c68c"}.version;
+document.getElementById('app-version').innerText = {"version":"2.1.0-891cb0871d3b4afc9e2fad189626e05df8d5608f"}.version;
 
 const {
   BrowserQRCodeReader,
@@ -24484,8 +24484,8 @@ function showToast(value, timeout) {
 }
 
 function updateTotpGenerator() {
-    let secret = document.getElementById('inputSecret').value.replace(/\s/g, '');
-    let period = document.getElementById('inputPeriod').value;
+    let secret = document.getElementById('input-secret').value.replace(/\s/g, '');
+    let period = document.getElementById('input-period').value;
 
     totpGenerator = secret ? new TOTP(secret, period) : undefined;
    
@@ -24510,10 +24510,10 @@ function updateTotpToken() {
 }
 
 function updateQrCode() {
-    const secret = document.getElementById('inputSecret').value;
-    const issuer = document.getElementById('inputIssuer').value;
-    const account = document.getElementById('inputAccount').value;
-    const period = document.getElementById('inputPeriod').value;
+    const secret = document.getElementById('input-secret').value;
+    const issuer = document.getElementById('input-issuer').value;
+    const account = document.getElementById('input-account').value;
+    const period = document.getElementById('input-period').value;
 
     let qrMessage = 'https://qoomon.me'
     document.getElementById('otpauth-qr-overlay').style.display = '';
@@ -24553,36 +24553,39 @@ function updateQrCode() {
 }
 
 function updateLabel() {
-    const issuer = document.getElementById('inputIssuer').value;
-    const account = document.getElementById('inputAccount').value;
+    const issuer = document.getElementById('input-issuer').value;
+    const account = document.getElementById('input-account').value;
     let label = issuer;
-    if (account) {
-        if (label) {
-          label += ` (${account})`
-        } else {
-          label += account
-        }
+    if(issuer && account) {
+      label = `${issuer} (${account})`
+    } else if(issuer) {
+      label = issuer
+    } else if(account) {
+      label = account
     }
 
-    document.getElementById('totp-label').innerText = label;
+    let labelElement = document.getElementById('totp-label');
+    labelElement.innerText = label;
+    labelElement.style.marginBottom = label ? null : '0';
+    labelElement.style.height = label ? null : '0';
 }
 
 function showOtpAuthDetails() {
-    document.getElementById('inputAccount').style.display = "";
-    document.getElementById('inputIssuer').style.display = "";
-    document.getElementById('inputPeriod').style.display = "";
-    document.getElementById('otpauth-qr').style.display = "";
+    document.getElementById('input-account').style.display = '';
+    document.getElementById('input-issuer').style.display = '';
+    document.getElementById('input-period').style.display = '';
+    document.getElementById('otpauth-qr').style.display = '';
 }
 
 function hideOtpAuthDetails() {
-    document.getElementById('inputAccount').style.display = "none";
-    document.getElementById('inputIssuer').style.display = "none";
-    document.getElementById('inputPeriod').style.display = "none";
-    document.getElementById('otpauth-qr').style.display = "none";
+    document.getElementById('input-account').style.display = 'none';
+    document.getElementById('input-issuer').style.display = 'none';
+    document.getElementById('input-period').style.display = 'none';
+    document.getElementById('otpauth-qr').style.display = 'none';
 }
 
 function toggleOtpAuthDetails() {
-    if (document.getElementById('inputAccount').style.display === 'none') {
+    if (document.getElementById('input-account').style.display === 'none') {
         showOtpAuthDetails();
     } else {
         hideOtpAuthDetails();
@@ -24609,25 +24612,25 @@ function handleOtpauthUrl(otpauthUrl) {
     // otpauth://totp/issuer%3Aaccount?secret=secret&issuer=issuer
     const otpauthParameters = OTPAuthUrl.parse(otpauthUrl);
 
-    document.getElementById('inputSecret').value = otpauthParameters.secret || ' ';
-    document.getElementById('inputSecret').dispatchEvent(new Event('input'));
+    document.getElementById('input-secret').value = otpauthParameters.secret || ' ';
+    document.getElementById('input-secret').dispatchEvent(new Event('input'));
     
-    document.getElementById('inputIssuer').value = otpauthParameters.issuer || '';
-    document.getElementById('inputIssuer').dispatchEvent(new Event('input'));
+    document.getElementById('input-issuer').value = otpauthParameters.issuer || '';
+    document.getElementById('input-issuer').dispatchEvent(new Event('input'));
     
-    document.getElementById('inputAccount').value = otpauthParameters.account || '';
-    document.getElementById('inputAccount').dispatchEvent(new Event('input'));
+    document.getElementById('input-account').value = otpauthParameters.account || '';
+    document.getElementById('input-account').dispatchEvent(new Event('input'));
     
-    document.getElementById('inputPeriod').value = otpauthParameters.period || '';
-    document.getElementById('inputPeriod').dispatchEvent(new Event('input'));
+    document.getElementById('input-period').value = otpauthParameters.period || '';
+    document.getElementById('input-period').dispatchEvent(new Event('input'));
 }
 
-document.getElementById('inputVideoButton').addEventListener('click', () => {
+document.getElementById('input-video-button').addEventListener('click', () => {
 
-  document.getElementById('inputVideoDialog').style.display = '';
+  document.getElementById('input-video-dialog').style.display = '';
   
   const decodeFromInputVideoDevice = (selectedDeviceId) => {
-    QRCodeReader.decodeOnceFromVideoDevice(selectedDeviceId, 'inputVideo')
+    QRCodeReader.decodeOnceFromVideoDevice(selectedDeviceId, 'input-video')
       .then((result) => {
         if(result.text.startsWith('otpauth://totp/')){
           handleOtpauthUrl(result.text)
@@ -24638,7 +24641,7 @@ document.getElementById('inputVideoButton').addEventListener('click', () => {
       .catch((err) => console.error(err))
       .finally(() => {
         QRCodeReader.reset()
-        document.getElementById('inputVideoDialog').style.display = 'none'; 
+        document.getElementById('input-video-dialog').style.display = 'none'; 
       });
     };
   
@@ -24679,12 +24682,12 @@ document.getElementById('inputVideoButton').addEventListener('click', () => {
     .catch((err) => console.error(err));
 });
 
-document.getElementById('inputVideoDialog').addEventListener('click', () => {
+document.getElementById('input-video-dialog').addEventListener('click', () => {
   QRCodeReader.reset();
-  document.getElementById('inputVideoDialog').style.display = 'none'; 
+  document.getElementById('input-video-dialog').style.display = 'none'; 
 });
  
-document.getElementById('inputImage').addEventListener('change', (event) => {
+document.getElementById('input-image').addEventListener('change', (event) => {
   const imageFile = event.target.files[0];
   if(imageFile) {
     const image = new Image();
@@ -24707,7 +24710,7 @@ document.getElementById('inputImage').addEventListener('change', (event) => {
   }
 });
 
-document.getElementById('inputSecret').addEventListener('input', (event) => {
+document.getElementById('input-secret').addEventListener('input', (event) => {
     let secret = event.target.value;
     if (secret.startsWith("otpauth://totp/")) {
       handleOtpauthUrl(secret);
@@ -24716,17 +24719,17 @@ document.getElementById('inputSecret').addEventListener('input', (event) => {
     updateQrCode();
 }, false);
 
-document.getElementById('inputAccount').addEventListener('input', () => {
+document.getElementById('input-account').addEventListener('input', () => {
     updateLabel();
     updateQrCode();
 }, false);
 
-document.getElementById('inputIssuer').addEventListener('input', () => {
+document.getElementById('input-issuer').addEventListener('input', () => {
     updateLabel();
     updateQrCode();
 }, false);
 
-document.getElementById('inputPeriod').addEventListener('input', () => {
+document.getElementById('input-period').addEventListener('input', () => {
     updateTotpGenerator();
     updateQrCode();
 }, false);
@@ -24740,10 +24743,10 @@ document.getElementById('inputPeriod').addEventListener('input', () => {
 
 ['click', 'tap'].forEach(event => {
     document.getElementById('otpauth-qr').addEventListener(event, function () {
-        const secret = document.getElementById('inputSecret').value;
-        const account = document.getElementById('inputAccount').value;
-        const issuer = document.getElementById('inputIssuer').value;
-        const period = document.getElementById('inputPeriod').value;
+        const secret = document.getElementById('input-secret').value;
+        const account = document.getElementById('input-account').value;
+        const issuer = document.getElementById('input-issuer').value;
+        const period = document.getElementById('input-period').value;
         const otpauthUrl = OTPAuthUrl.build(secret, account, issuer, period);
         copyToClipboard(otpauthUrl);
         showToast("OTPAuth url copied!");
@@ -24777,6 +24780,8 @@ if (Cookies.get("otp-authenticator.darkStyle") === "true") {
     toggleDarkMode();
 }
 
+updateLabel();
+updateTotpToken();
 updateQrCode();
 
 setInterval(updateTotpToken, 1000);

@@ -107,21 +107,27 @@ body {
     display: flex;
 }
 
-#inputImageButton {
-  min-width: 24px;
-  margin-left: 16px;
-  background: url(scan-image.png) no-repeat;
-  background-size: contain;
+#input-secret {
+    padding-left: 0;
 }
 
-#inputVideoButton {
+#input-image-button,
+#input-video-button {
   min-width: 24px;
-  margin-left: 16px;
-  background: url(scan-video.png) no-repeat;
+  margin-left: 12px;
   background-size: contain;
+  background-repeat: no-repeat;
 }
 
-#inputVideoDialog {
+#input-image-button {
+  background-image: url(scan-image.png);
+}
+
+#input-video-button {
+  background-image: url(scan-video.png);
+}
+
+#input-video-dialog {
   display: block;
   position: fixed;
   top: 0;
@@ -131,7 +137,7 @@ body {
   background: #101010bd;
 }
 
-#inputVideoContainer {
+#input-video-container {
   position: relative;
   margin: 0 auto;
   top: 96px;
@@ -145,13 +151,13 @@ body {
   overflow: hidden;
 }
 
-#inputVideoContainer:before {
+#input-video-container:before {
   content: "";
   display: block;
   padding-top: 100%;
 }
 
-#inputVideo {
+#input-video {
   position: absolute;
   top: 0;
   width: 100%;
@@ -181,8 +187,8 @@ body {
 }
 
 #more-button,
-#inputImageButton,
-#inputVideoButton,
+#input-image-button,
+#input-video-button,
 #light-switch
 {
     background-size: contain;
@@ -227,9 +233,11 @@ body {
   font-size: 16px;
   font-weight: 600;
   line-height: 16px;
-  margin-bottom: 2px;
+  margin-bottom: 8px;
   cursor: pointer;
   color: #777777;
+  height: 1em;
+  transition: 0.2s;
 }
 
 #totp-token {
@@ -243,7 +251,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 4px;
+  margin-bottom: 18px;
 }
 
 #totp-token-remaining-seconds-pie {

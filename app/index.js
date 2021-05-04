@@ -49,13 +49,26 @@ function updateTotpGenerator() {
     let secret = document.getElementById('inputSecret').value.replace(/\s/g, '');
     let period = document.getElementById('inputPeriod').value;
 
-    if (secret) {
-        totpGenerator = new TOTP(secret, period);
-    } else {
-        totpGenerator = undefined;
-    }
+    totpGenerator = secret ? new TOTP(secret, period) : undefined;
+   
+    updateTotpToken();
+}
 
-    refreshTotpToken();
+function updateTotpToken() {
+    let tokenElement = document.getElementById('totp-token');
+    if (totpGenerator) {
+        try {
+            tokenElement.innerHTML = formatToken(totpGenerator.getToken());
+            setRemainingTimePiePercentage(totpGenerator.getRemainingSeconds() / totpGenerator.getStepSeconds());
+        } catch (err) {
+            console.info(err.message);
+            tokenElement.textContent = "Invalid Secret!";
+            setRemainingTimePiePercentage(0);
+        }
+    } else {
+        tokenElement.innerHTML = formatToken('000000');
+        setRemainingTimePiePercentage(0);
+    }
 }
 
 function updateQrCode() {
@@ -328,20 +341,5 @@ if (Cookies.get("otp-authenticator.darkStyle") === "true") {
 
 updateQrCode();
 
-setInterval(refreshTotpToken, 1000);
-function refreshTotpToken() {
-    let tokenElement = document.getElementById('totp-token');
-    if (totpGenerator) {
-        try {
-            tokenElement.innerHTML = formatToken(totpGenerator.getToken());
-            setRemainingTimePiePercentage(totpGenerator.getRemainingSeconds() / totpGenerator.getStepSeconds());
-        } catch (err) {
-            console.info(err.message);
-            tokenElement.textContent = "Invalid Secret!";
-            setRemainingTimePiePercentage(0);
-        }
-    } else {
-        tokenElement.innerHTML = formatToken('000000');
-        setRemainingTimePiePercentage(0);
-    }
-}
+setInterval(updateTotpToken, 1000);
+

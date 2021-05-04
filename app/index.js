@@ -204,7 +204,7 @@ document.getElementById('inputVideoButton').addEventListener('click', () => {
         if(isMobileDevice) {
           decodeFromInputVideoDevice(undefined);
         } else {
-          let videoInputDevice = videoInputDevices.find(device => device.label != 'Snap Camera');
+          let videoInputDevice = videoInputDevices.find(device => device.label != 'Snap Camera' && device.label != 'OBS-Camera');
           decodeFromInputVideoDevice(videoInputDevice.deviceId);
         }
       }

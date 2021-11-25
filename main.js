@@ -24438,7 +24438,7 @@ var __webpack_exports__ = {};
 "use strict";
 
 
-document.getElementById('app-version').innerText = {"version":"2.1.0-b6581e182f8e71e6628a22f383edc70ce9692d2c"}.version;
+document.getElementById('app-version').innerText = {"version":"2.1.0-ead0c28867cb8ad65f52c1fdd80e1778abefff5e"}.version;
 
 const {
   BrowserQRCodeReader,

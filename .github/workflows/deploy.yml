@@ -27,6 +27,3 @@ jobs:
         GITHUB_PAGES_SOURCE_DIR: dist
         GITHUB_PAGES_BRANCH: gh-pages
         GITHUB_PAGES_REPLACE: false
-        GITHUB_TOKEN: ${{ github.token }}
-        
-    

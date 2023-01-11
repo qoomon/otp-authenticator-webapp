@@ -10,11 +10,10 @@ A *Google Authenticator* like offline webapp.
 Hosted at github pages: https://qoomon.github.io/otp-authenticator-webapp/
 * branch: [gh-pages](https://github.com/qoomon/otp-authenticator-webapp/tree/gh-pages)
 
-Or host it on your onw GitHub account 
-* Just fork this repo and this web app is available at:
-  
-  [https://\<USERNAME>.github.io/otp-authenticator-webapp/](https://USERNAME.github.io/otp-authenticator-webapp/)
-
+Or host it on your onw GitHub account by just forking this repo.
+* Go to Your forked Repository -> `Settings` -> `GitHub Pages`
+  * Ensure `Source` is set to `gh-pages`
+  * Find your link to the app `Your site is published at https://USERNAME.github.io/otp-authenticator-webapp/`
 
 ### Features
 * generate TOTP codes

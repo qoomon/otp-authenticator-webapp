@@ -179,7 +179,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//# sourceMappingURL=browser.js.map
+
 
 /***/ }),
 
@@ -228,7 +228,7 @@ var BrowserAztecCodeReader = /** @class */ (function (_super) {
     return BrowserAztecCodeReader;
 }(_BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__/* .BrowserCodeReader */ .n));
 
-//# sourceMappingURL=BrowserAztecCodeReader.js.map
+
 
 /***/ }),
 
@@ -275,7 +275,7 @@ var BrowserBarcodeReader = /** @class */ (function (_super) {
     return BrowserBarcodeReader;
 }(_BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__/* .BrowserCodeReader */ .n));
 
-//# sourceMappingURL=BrowserBarcodeReader.js.map
+
 
 /***/ }),
 
@@ -453,10 +453,10 @@ var BrowserCodeReader = /** @class */ (function () {
                 switch (_b.label) {
                     case 0:
                         if (!this.hasNavigator) {
-                            throw new Error('Can\'t enumerate devices, navigator is not present.');
+                            throw new Error("Can't enumerate devices, navigator is not present.");
                         }
                         if (!this.canEnumerateDevices) {
-                            throw new Error('Can\'t enumerate devices, method not supported.');
+                            throw new Error("Can't enumerate devices, method not supported.");
                         }
                         return [4 /*yield*/, navigator.mediaDevices.enumerateDevices()];
                     case 1:
@@ -768,7 +768,9 @@ var BrowserCodeReader = /** @class */ (function () {
      */
     BrowserCodeReader.prototype.playVideoOnLoadAsync = function (videoElement) {
         var _this = this;
-        return new Promise(function (resolve, reject) { return _this.playVideoOnLoad(videoElement, function () { return resolve(); }); });
+        return new Promise(function (resolve, reject) {
+            return _this.playVideoOnLoad(videoElement, function () { return resolve(); });
+        });
     };
     /**
      * Binds listeners and callbacks to the videoElement.
@@ -790,7 +792,10 @@ var BrowserCodeReader = /** @class */ (function () {
      * Checks if the given video element is currently playing.
      */
     BrowserCodeReader.prototype.isVideoPlaying = function (video) {
-        return video.currentTime > 0 && !video.paused && !video.ended && video.readyState > 2;
+        return (video.currentTime > 0 &&
+            !video.paused &&
+            !video.ended &&
+            video.readyState > 2);
     };
     /**
      * Just tries to play the video and logs any errors.
@@ -986,7 +991,9 @@ var BrowserCodeReader = /** @class */ (function () {
     BrowserCodeReader.prototype._decodeOnLoadImage = function (element) {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.imageLoadedListener = function () { return _this.decodeOnce(element, false, true).then(resolve, reject); };
+            _this.imageLoadedListener = function () {
+                return _this.decodeOnce(element, false, true).then(resolve, reject);
+            };
             element.addEventListener('load', _this.imageLoadedListener);
         });
     };
@@ -1069,7 +1076,7 @@ var BrowserCodeReader = /** @class */ (function () {
             videoElement.height = 200;
         }
         if (typeof videoSource === 'string') {
-            videoElement = this.getMediaElement(videoSource, 'video');
+            videoElement = (this.getMediaElement(videoSource, 'video'));
         }
         if (videoSource instanceof HTMLVideoElement) {
             videoElement = videoSource;
@@ -1154,7 +1161,12 @@ var BrowserCodeReader = /** @class */ (function () {
      */
     BrowserCodeReader.prototype.createBinaryBitmap = function (mediaElement) {
         var ctx = this.getCaptureCanvasContext(mediaElement);
-        this.drawImageOnCanvas(ctx, mediaElement);
+        if (mediaElement instanceof HTMLVideoElement) {
+            this.drawFrameOnCanvas(mediaElement);
+        }
+        else {
+            this.drawImageOnCanvas(mediaElement);
+        }
         var canvas = this.getCaptureCanvas(mediaElement);
         var luminanceSource = new _HTMLCanvasElementLuminanceSource__WEBPACK_IMPORTED_MODULE_6__/* .HTMLCanvasElementLuminanceSource */ .R(canvas);
         var hybridBinarizer = new _core_common_HybridBinarizer__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z(luminanceSource);
@@ -1166,7 +1178,13 @@ var BrowserCodeReader = /** @class */ (function () {
     BrowserCodeReader.prototype.getCaptureCanvasContext = function (mediaElement) {
         if (!this.captureCanvasContext) {
             var elem = this.getCaptureCanvas(mediaElement);
-            var ctx = elem.getContext('2d');
+            var ctx = void 0;
+            try {
+                ctx = elem.getContext('2d', { willReadFrequently: true });
+            }
+            catch (e) {
+                ctx = elem.getContext('2d');
+            }
             this.captureCanvasContext = ctx;
         }
         return this.captureCanvasContext;
@@ -1182,10 +1200,38 @@ var BrowserCodeReader = /** @class */ (function () {
         return this.captureCanvas;
     };
     /**
+     * Overwriting this allows you to manipulate the next frame in anyway you want before decode.
+     */
+    BrowserCodeReader.prototype.drawFrameOnCanvas = function (srcElement, dimensions, canvasElementContext) {
+        if (dimensions === void 0) { dimensions = {
+            sx: 0,
+            sy: 0,
+            sWidth: srcElement.videoWidth,
+            sHeight: srcElement.videoHeight,
+            dx: 0,
+            dy: 0,
+            dWidth: srcElement.videoWidth,
+            dHeight: srcElement.videoHeight,
+        }; }
+        if (canvasElementContext === void 0) { canvasElementContext = this.captureCanvasContext; }
+        canvasElementContext.drawImage(srcElement, dimensions.sx, dimensions.sy, dimensions.sWidth, dimensions.sHeight, dimensions.dx, dimensions.dy, dimensions.dWidth, dimensions.dHeight);
+    };
+    /**
      * Ovewriting this allows you to manipulate the snapshot image in anyway you want before decode.
      */
-    BrowserCodeReader.prototype.drawImageOnCanvas = function (canvasElementContext, srcElement) {
-        canvasElementContext.drawImage(srcElement, 0, 0);
+    BrowserCodeReader.prototype.drawImageOnCanvas = function (srcElement, dimensions, canvasElementContext) {
+        if (dimensions === void 0) { dimensions = {
+            sx: 0,
+            sy: 0,
+            sWidth: srcElement.naturalWidth,
+            sHeight: srcElement.naturalHeight,
+            dx: 0,
+            dy: 0,
+            dWidth: srcElement.naturalWidth,
+            dHeight: srcElement.naturalHeight,
+        }; }
+        if (canvasElementContext === void 0) { canvasElementContext = this.captureCanvasContext; }
+        canvasElementContext.drawImage(srcElement, dimensions.sx, dimensions.sy, dimensions.sWidth, dimensions.sHeight, dimensions.dx, dimensions.dy, dimensions.dWidth, dimensions.dHeight);
     };
     /**
      * Call the encapsulated readers decode
@@ -1301,6 +1347,7 @@ var BrowserCodeReader = /** @class */ (function () {
         }
         catch (err) {
             // @note Avoid using this in new browsers, as it is going away.
+            // @ts-ignore
             videoElement.src = URL.createObjectURL(stream);
         }
     };
@@ -1321,7 +1368,7 @@ var BrowserCodeReader = /** @class */ (function () {
     return BrowserCodeReader;
 }());
 
-//# sourceMappingURL=BrowserCodeReader.js.map
+
 
 /***/ }),
 
@@ -1367,7 +1414,7 @@ var BrowserDatamatrixCodeReader = /** @class */ (function (_super) {
     return BrowserDatamatrixCodeReader;
 }(_BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__/* .BrowserCodeReader */ .n));
 
-//# sourceMappingURL=BrowserDatamatrixCodeReader.js.map
+
 
 /***/ }),
 
@@ -1416,7 +1463,7 @@ var BrowserMultiFormatReader = /** @class */ (function (_super) {
     return BrowserMultiFormatReader;
 }(_BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__/* .BrowserCodeReader */ .n));
 
-//# sourceMappingURL=BrowserMultiFormatReader.js.map
+
 
 /***/ }),
 
@@ -1462,7 +1509,7 @@ var BrowserPDF417Reader = /** @class */ (function (_super) {
     return BrowserPDF417Reader;
 }(_BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__/* .BrowserCodeReader */ .n));
 
-//# sourceMappingURL=BrowserPDF417Reader.js.map
+
 
 /***/ }),
 
@@ -1508,7 +1555,7 @@ var BrowserQRCodeReader = /** @class */ (function (_super) {
     return BrowserQRCodeReader;
 }(_BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__/* .BrowserCodeReader */ .n));
 
-//# sourceMappingURL=BrowserQRCodeReader.js.map
+
 
 /***/ }),
 
@@ -1650,14 +1697,14 @@ var BrowserQRCodeSvgWriter = /** @class */ (function () {
     return BrowserQRCodeSvgWriter;
 }());
 
-//# sourceMappingURL=BrowserQRCodeSvgWriter.js.map
+
 
 /***/ }),
 
 /***/ 3692:
 /***/ (() => {
 
-//# sourceMappingURL=DecodeContinuouslyCallback.js.map
+
 
 /***/ }),
 
@@ -1705,28 +1752,56 @@ var HTMLCanvasElementLuminanceSource = /** @class */ (function (_super) {
     };
     HTMLCanvasElementLuminanceSource.toGrayscaleBuffer = function (imageBuffer, width, height) {
         var grayscaleBuffer = new Uint8ClampedArray(width * height);
-        for (var i = 0, j = 0, length_1 = imageBuffer.length; i < length_1; i += 4, j++) {
-            var gray = void 0;
-            var alpha = imageBuffer[i + 3];
-            // The color of fully-transparent pixels is irrelevant. They are often, technically, fully-transparent
-            // black (0 alpha, and then 0 RGB). They are often used, of course as the "white" area in a
-            // barcode image. Force any such pixel to be white:
-            if (alpha === 0) {
-                gray = 0xFF;
+        HTMLCanvasElementLuminanceSource.FRAME_INDEX = !HTMLCanvasElementLuminanceSource.FRAME_INDEX;
+        if (HTMLCanvasElementLuminanceSource.FRAME_INDEX) {
+            for (var i = 0, j = 0, length_1 = imageBuffer.length; i < length_1; i += 4, j++) {
+                var gray = void 0;
+                var alpha = imageBuffer[i + 3];
+                // The color of fully-transparent pixels is irrelevant. They are often, technically, fully-transparent
+                // black (0 alpha, and then 0 RGB). They are often used, of course as the "white" area in a
+                // barcode image. Force any such pixel to be white:
+                if (alpha === 0) {
+                    gray = 0xFF;
+                }
+                else {
+                    var pixelR = imageBuffer[i];
+                    var pixelG = imageBuffer[i + 1];
+                    var pixelB = imageBuffer[i + 2];
+                    // .299R + 0.587G + 0.114B (YUV/YIQ for PAL and NTSC),
+                    // (306*R) >> 10 is approximately equal to R*0.299, and so on.
+                    // 0x200 >> 10 is 0.5, it implements rounding.
+                    gray = (306 * pixelR +
+                        601 * pixelG +
+                        117 * pixelB +
+                        0x200) >> 10;
+                }
+                grayscaleBuffer[j] = gray;
             }
-            else {
-                var pixelR = imageBuffer[i];
-                var pixelG = imageBuffer[i + 1];
-                var pixelB = imageBuffer[i + 2];
-                // .299R + 0.587G + 0.114B (YUV/YIQ for PAL and NTSC),
-                // (306*R) >> 10 is approximately equal to R*0.299, and so on.
-                // 0x200 >> 10 is 0.5, it implements rounding.
-                gray = (306 * pixelR +
-                    601 * pixelG +
-                    117 * pixelB +
-                    0x200) >> 10;
+        }
+        else {
+            for (var i = 0, j = 0, length_2 = imageBuffer.length; i < length_2; i += 4, j++) {
+                var gray = void 0;
+                var alpha = imageBuffer[i + 3];
+                // The color of fully-transparent pixels is irrelevant. They are often, technically, fully-transparent
+                // black (0 alpha, and then 0 RGB). They are often used, of course as the "white" area in a
+                // barcode image. Force any such pixel to be white:
+                if (alpha === 0) {
+                    gray = 0xFF;
+                }
+                else {
+                    var pixelR = imageBuffer[i];
+                    var pixelG = imageBuffer[i + 1];
+                    var pixelB = imageBuffer[i + 2];
+                    // .299R + 0.587G + 0.114B (YUV/YIQ for PAL and NTSC),
+                    // (306*R) >> 10 is approximately equal to R*0.299, and so on.
+                    // 0x200 >> 10 is 0.5, it implements rounding.
+                    gray = (306 * pixelR +
+                        601 * pixelG +
+                        117 * pixelB +
+                        0x200) >> 10;
+                }
+                grayscaleBuffer[j] = 0xFF - gray;
             }
-            grayscaleBuffer[j] = gray;
         }
         return grayscaleBuffer;
     };
@@ -1806,17 +1881,18 @@ var HTMLCanvasElementLuminanceSource = /** @class */ (function (_super) {
         return new _core_InvertedLuminanceSource__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(this);
     };
     HTMLCanvasElementLuminanceSource.DEGREE_TO_RADIANS = Math.PI / 180;
+    HTMLCanvasElementLuminanceSource.FRAME_INDEX = true;
     return HTMLCanvasElementLuminanceSource;
 }(_core_LuminanceSource__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z));
 
-//# sourceMappingURL=HTMLCanvasElementLuminanceSource.js.map
+
 
 /***/ }),
 
 /***/ 7210:
 /***/ (() => {
 
-//# sourceMappingURL=HTMLVisualMediaElement.js.map
+
 
 /***/ }),
 
@@ -1858,7 +1934,7 @@ var VideoInputDevice = /** @class */ (function () {
     return VideoInputDevice;
 }());
 
-//# sourceMappingURL=VideoInputDevice.js.map
+
 
 /***/ }),
 
@@ -1896,7 +1972,7 @@ var ArgumentException = /** @class */ (function (_super) {
     return ArgumentException;
 }(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ArgumentException);
-//# sourceMappingURL=ArgumentException.js.map
+
 
 /***/ }),
 
@@ -1934,7 +2010,7 @@ var ArithmeticException = /** @class */ (function (_super) {
     return ArithmeticException;
 }(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ArithmeticException);
-//# sourceMappingURL=ArithmeticException.js.map
+
 
 /***/ }),
 
@@ -2007,7 +2083,7 @@ var BarcodeFormat;
     BarcodeFormat[BarcodeFormat["UPC_EAN_EXTENSION"] = 16] = "UPC_EAN_EXTENSION";
 })(BarcodeFormat || (BarcodeFormat = {}));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BarcodeFormat);
-//# sourceMappingURL=BarcodeFormat.js.map
+
 
 /***/ }),
 
@@ -2057,7 +2133,7 @@ var Binarizer = /** @class */ (function () {
     return Binarizer;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Binarizer);
-//# sourceMappingURL=Binarizer.js.map
+
 
 /***/ }),
 
@@ -2196,7 +2272,7 @@ var BinaryBitmap = /** @class */ (function () {
     return BinaryBitmap;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BinaryBitmap);
-//# sourceMappingURL=BinaryBitmap.js.map
+
 
 /***/ }),
 
@@ -2237,7 +2313,7 @@ var ChecksumException = /** @class */ (function (_super) {
     return ChecksumException;
 }(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ChecksumException);
-//# sourceMappingURL=ChecksumException.js.map
+
 
 /***/ }),
 
@@ -2308,22 +2384,27 @@ var DecodeHintType;
      */
     DecodeHintType[DecodeHintType["ASSUME_CODE_39_CHECK_DIGIT"] = 6] = "ASSUME_CODE_39_CHECK_DIGIT"; /*(Void.class)*/
     /**
+     * Enable extended mode for Code 39 codes. Doesn't matter what it maps to;
+     * use {@link Boolean#TRUE}.
+     */
+    DecodeHintType[DecodeHintType["ENABLE_CODE_39_EXTENDED_MODE"] = 7] = "ENABLE_CODE_39_EXTENDED_MODE"; /*(Void.class)*/
+    /**
      * Assume the barcode is being processed as a GS1 barcode, and modify behavior as needed.
      * For example this affects FNC1 handling for Code 128 (aka GS1-128). Doesn't matter what it maps to;
      * use {@link Boolean#TRUE}.
      */
-    DecodeHintType[DecodeHintType["ASSUME_GS1"] = 7] = "ASSUME_GS1"; /*(Void.class)*/
+    DecodeHintType[DecodeHintType["ASSUME_GS1"] = 8] = "ASSUME_GS1"; /*(Void.class)*/
     /**
      * If true, return the start and end digits in a Codabar barcode instead of stripping them. They
      * are alpha, whereas the rest are numeric. By default, they are stripped, but this causes them
      * to not be. Doesn't matter what it maps to; use {@link Boolean#TRUE}.
      */
-    DecodeHintType[DecodeHintType["RETURN_CODABAR_START_END"] = 8] = "RETURN_CODABAR_START_END"; /*(Void.class)*/
+    DecodeHintType[DecodeHintType["RETURN_CODABAR_START_END"] = 9] = "RETURN_CODABAR_START_END"; /*(Void.class)*/
     /**
      * The caller needs to be notified via callback when a possible {@link ResultPoint}
      * is found. Maps to a {@link ResultPointCallback}.
      */
-    DecodeHintType[DecodeHintType["NEED_RESULT_POINT_CALLBACK"] = 9] = "NEED_RESULT_POINT_CALLBACK"; /*(ResultPointCallback.class)*/
+    DecodeHintType[DecodeHintType["NEED_RESULT_POINT_CALLBACK"] = 10] = "NEED_RESULT_POINT_CALLBACK"; /*(ResultPointCallback.class)*/
     /**
      * Allowed extension lengths for EAN or UPC barcodes. Other formats will ignore this.
      * Maps to an {@code Int32Array} of the allowed extension lengths, for example [2], [5], or [2, 5].
@@ -2331,7 +2412,7 @@ var DecodeHintType;
      * and a UPC or EAN barcode is found but an extension is not, then no result will be returned
      * at all.
      */
-    DecodeHintType[DecodeHintType["ALLOWED_EAN_EXTENSIONS"] = 10] = "ALLOWED_EAN_EXTENSIONS"; /*(Int32Array.class)*/
+    DecodeHintType[DecodeHintType["ALLOWED_EAN_EXTENSIONS"] = 11] = "ALLOWED_EAN_EXTENSIONS"; /*(Int32Array.class)*/
     // End of enumeration values.
     /**
      * Data type the hint is expecting.
@@ -2350,7 +2431,7 @@ var DecodeHintType;
     // }
 })(DecodeHintType || (DecodeHintType = {}));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DecodeHintType);
-//# sourceMappingURL=DecodeHintType.js.map
+
 
 /***/ }),
 
@@ -2403,42 +2484,57 @@ var EncodeHintType;
      */
     EncodeHintType[EncodeHintType["DATA_MATRIX_SHAPE"] = 2] = "DATA_MATRIX_SHAPE";
     /**
+     * Specifies whether to use compact mode for Data Matrix (type {@link Boolean}, or "true" or "false"
+     * {@link String } value).
+     * The compact encoding mode also supports the encoding of characters that are not in the ISO-8859-1
+     * character set via ECIs.
+     * Please note that in that case, the most compact character encoding is chosen for characters in
+     * the input that are not in the ISO-8859-1 character set. Based on experience, some scanners do not
+     * support encodings like cp-1256 (Arabic). In such cases the encoding can be forced to UTF-8 by
+     * means of the {@link #CHARACTER_SET} encoding hint.
+     * Compact encoding also provides GS1-FNC1 support when {@link #GS1_FORMAT} is selected. In this case
+     * group-separator character (ASCII 29 decimal) can be used to encode the positions of FNC1 codewords
+     * for the purpose of delimiting AIs.
+     * This option and {@link #FORCE_C40} are mutually exclusive.
+     */
+    EncodeHintType[EncodeHintType["DATA_MATRIX_COMPACT"] = 3] = "DATA_MATRIX_COMPACT";
+    /**
      * Specifies a minimum barcode size (type {@link Dimension}). Only applicable to Data Matrix now.
      *
      * @deprecated use width/height params in
      * {@link com.google.zxing.datamatrix.DataMatrixWriter#encode(String, BarcodeFormat, int, int)}
      */
     /*@Deprecated*/
-    EncodeHintType[EncodeHintType["MIN_SIZE"] = 3] = "MIN_SIZE";
+    EncodeHintType[EncodeHintType["MIN_SIZE"] = 4] = "MIN_SIZE";
     /**
      * Specifies a maximum barcode size (type {@link Dimension}). Only applicable to Data Matrix now.
      *
      * @deprecated without replacement
      */
     /*@Deprecated*/
-    EncodeHintType[EncodeHintType["MAX_SIZE"] = 4] = "MAX_SIZE";
+    EncodeHintType[EncodeHintType["MAX_SIZE"] = 5] = "MAX_SIZE";
     /**
      * Specifies margin, in pixels, to use when generating the barcode. The meaning can vary
      * by format; for example it controls margin before and after the barcode horizontally for
      * most 1D formats. (Type {@link Integer}, or {@link String} representation of the integer value).
      */
-    EncodeHintType[EncodeHintType["MARGIN"] = 5] = "MARGIN";
+    EncodeHintType[EncodeHintType["MARGIN"] = 6] = "MARGIN";
     /**
      * Specifies whether to use compact mode for PDF417 (type {@link Boolean}, or "true" or "false"
      * {@link String} value).
      */
-    EncodeHintType[EncodeHintType["PDF417_COMPACT"] = 6] = "PDF417_COMPACT";
+    EncodeHintType[EncodeHintType["PDF417_COMPACT"] = 7] = "PDF417_COMPACT";
     /**
      * Specifies what compaction mode to use for PDF417 (type
      * {@link com.google.zxing.pdf417.encoder.Compaction Compaction} or {@link String} value of one of its
      * enum values).
      */
-    EncodeHintType[EncodeHintType["PDF417_COMPACTION"] = 7] = "PDF417_COMPACTION";
+    EncodeHintType[EncodeHintType["PDF417_COMPACTION"] = 8] = "PDF417_COMPACTION";
     /**
      * Specifies the minimum and maximum number of rows and columns for PDF417 (type
      * {@link com.google.zxing.pdf417.encoder.Dimensions Dimensions}).
      */
-    EncodeHintType[EncodeHintType["PDF417_DIMENSIONS"] = 8] = "PDF417_DIMENSIONS";
+    EncodeHintType[EncodeHintType["PDF417_DIMENSIONS"] = 9] = "PDF417_DIMENSIONS";
     /**
      * Specifies the required number of layers for an Aztec code.
      * A negative number (-1, -2, -3, -4) specifies a compact Aztec code.
@@ -2446,15 +2542,25 @@ var EncodeHintType;
      * A positive number (1, 2, .. 32) specifies a normal (non-compact) Aztec code.
      * (Type {@link Integer}, or {@link String} representation of the integer value).
      */
-    EncodeHintType[EncodeHintType["AZTEC_LAYERS"] = 9] = "AZTEC_LAYERS";
+    EncodeHintType[EncodeHintType["AZTEC_LAYERS"] = 10] = "AZTEC_LAYERS";
     /**
      * Specifies the exact version of QR code to be encoded.
      * (Type {@link Integer}, or {@link String} representation of the integer value).
      */
-    EncodeHintType[EncodeHintType["QR_VERSION"] = 10] = "QR_VERSION";
+    EncodeHintType[EncodeHintType["QR_VERSION"] = 11] = "QR_VERSION";
+    /**
+     * Specifies whether the data should be encoded to the GS1 standard (type {@link Boolean}, or "true" or "false"
+     * {@link String } value).
+     */
+    EncodeHintType[EncodeHintType["GS1_FORMAT"] = 12] = "GS1_FORMAT";
+    /**
+     * Forces C40 encoding for data-matrix (type {@link Boolean}, or "true" or "false") {@link String } value). This
+     * option and {@link #DATA_MATRIX_COMPACT} are mutually exclusive.
+     */
+    EncodeHintType[EncodeHintType["FORCE_C40"] = 13] = "FORCE_C40";
 })(EncodeHintType || (EncodeHintType = {}));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (EncodeHintType);
-//# sourceMappingURL=EncodeHintType.js.map
+
 
 /***/ }),
 
@@ -2483,20 +2589,24 @@ function fixStack(target, fn) {
 }
 
 var __extends =  false || function () {
-  var extendStatics = function (d, b) {
-    extendStatics = Object.setPrototypeOf || {
+  var _extendStatics = function extendStatics(d, b) {
+    _extendStatics = Object.setPrototypeOf || {
       __proto__: []
     } instanceof Array && function (d, b) {
       d.__proto__ = b;
     } || function (d, b) {
-      for (var p in b) { if (b.hasOwnProperty(p)) { d[p] = b[p]; } }
+      for (var p in b) {
+        if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+      }
     };
 
-    return extendStatics(d, b);
+    return _extendStatics(d, b);
   };
 
   return function (d, b) {
-    extendStatics(d, b);
+    if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+
+    _extendStatics(d, b);
 
     function __() {
       this.constructor = d;
@@ -2509,10 +2619,10 @@ var __extends =  false || function () {
 var CustomError = function (_super) {
   __extends(CustomError, _super);
 
-  function CustomError(message) {
+  function CustomError(message, options) {
     var _newTarget = this.constructor;
 
-    var _this = _super.call(this, message) || this;
+    var _this = _super.call(this, message, options) || this;
 
     Object.defineProperty(_this, 'name', {
       value: _newTarget.name,
@@ -2527,14 +2637,14 @@ var CustomError = function (_super) {
   return CustomError;
 }(Error);
 
-var __spreadArrays =  false || function () {
-  var arguments$1 = arguments;
-
-  for (var s = 0, i = 0, il = arguments.length; i < il; i++) { s += arguments$1[i].length; }
-
-  for (var r = Array(s), k = 0, i = 0; i < il; i++) { for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++) { r[k] = a[j]; } }
-
-  return r;
+var __spreadArray =  false || function (to, from, pack) {
+  if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+    if (ar || !(i in from)) {
+      if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+      ar[i] = from[i];
+    }
+  }
+  return to.concat(ar || Array.prototype.slice.call(from));
 };
 function customErrorFactory(fn, parent) {
   if (parent === void 0) {
@@ -2542,15 +2652,13 @@ function customErrorFactory(fn, parent) {
   }
 
   function CustomError() {
-    var arguments$1 = arguments;
-
     var args = [];
 
     for (var _i = 0; _i < arguments.length; _i++) {
-      args[_i] = arguments$1[_i];
+      args[_i] = arguments[_i];
     }
 
-    if (!(this instanceof CustomError)) { return new (CustomError.bind.apply(CustomError, __spreadArrays([void 0], args)))(); }
+    if (!(this instanceof CustomError)) return new (CustomError.bind.apply(CustomError, __spreadArray([void 0], args, false)))();
     parent.apply(this, args);
     Object.defineProperty(this, 'name', {
       value: fn.name || parent.name,
@@ -2618,7 +2726,7 @@ var Exception = /** @class */ (function (_super) {
     return Exception;
 }(CustomError));
 /* harmony default export */ const core_Exception = (Exception);
-//# sourceMappingURL=Exception.js.map
+
 
 /***/ }),
 
@@ -2659,7 +2767,7 @@ var FormatException = /** @class */ (function (_super) {
     return FormatException;
 }(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormatException);
-//# sourceMappingURL=FormatException.js.map
+
 
 /***/ }),
 
@@ -2697,7 +2805,7 @@ var IllegalArgumentException = /** @class */ (function (_super) {
     return IllegalArgumentException;
 }(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IllegalArgumentException);
-//# sourceMappingURL=IllegalArgumentException.js.map
+
 
 /***/ }),
 
@@ -2735,7 +2843,7 @@ var IllegalStateException = /** @class */ (function (_super) {
     return IllegalStateException;
 }(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IllegalStateException);
-//# sourceMappingURL=IllegalStateException.js.map
+
 
 /***/ }),
 
@@ -2773,7 +2881,7 @@ var IndexOutOfBoundsException = /** @class */ (function (_super) {
     return IndexOutOfBoundsException;
 }(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexOutOfBoundsException);
-//# sourceMappingURL=IndexOutOfBoundsException.js.map
+
 
 /***/ }),
 
@@ -2877,7 +2985,7 @@ var InvertedLuminanceSource = /** @class */ (function (_super) {
     return InvertedLuminanceSource;
 }(_LuminanceSource__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InvertedLuminanceSource);
-//# sourceMappingURL=InvertedLuminanceSource.js.map
+
 
 /***/ }),
 
@@ -3007,7 +3115,7 @@ var LuminanceSource = /** @class */ (function () {
     return LuminanceSource;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LuminanceSource);
-//# sourceMappingURL=LuminanceSource.js.map
+
 
 /***/ }),
 
@@ -3240,7 +3348,7 @@ var MultiFormatReader = /** @class */ (function () {
     return MultiFormatReader;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MultiFormatReader);
-//# sourceMappingURL=MultiFormatReader.js.map
+
 
 /***/ }),
 
@@ -3351,7 +3459,7 @@ var MultiFormatWriter = /** @class */ (function () {
     return MultiFormatWriter;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MultiFormatWriter);
-//# sourceMappingURL=MultiFormatWriter.js.map
+
 
 /***/ }),
 
@@ -3392,7 +3500,7 @@ var NotFoundException = /** @class */ (function (_super) {
     return NotFoundException;
 }(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NotFoundException);
-//# sourceMappingURL=NotFoundException.js.map
+
 
 /***/ }),
 
@@ -3559,7 +3667,7 @@ var PlanarYUVLuminanceSource = /** @class */ (function (_super) {
     return PlanarYUVLuminanceSource;
 }(_LuminanceSource__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PlanarYUVLuminanceSource);
-//# sourceMappingURL=PlanarYUVLuminanceSource.js.map
+
 
 /***/ }),
 
@@ -3708,7 +3816,7 @@ var RGBLuminanceSource = /** @class */ (function (_super) {
     return RGBLuminanceSource;
 }(_LuminanceSource__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RGBLuminanceSource);
-//# sourceMappingURL=RGBLuminanceSource.js.map
+
 
 /***/ }),
 
@@ -3746,7 +3854,7 @@ var ReaderException = /** @class */ (function (_super) {
     return ReaderException;
 }(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ReaderException);
-//# sourceMappingURL=ReaderException.js.map
+
 
 /***/ }),
 
@@ -3784,7 +3892,7 @@ var ReedSolomonException = /** @class */ (function (_super) {
     return ReedSolomonException;
 }(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ReedSolomonException);
-//# sourceMappingURL=ReedSolomonException.js.map
+
 
 /***/ }),
 
@@ -3938,7 +4046,7 @@ var Result = /** @class */ (function () {
     return Result;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Result);
-//# sourceMappingURL=Result.js.map
+
 
 /***/ }),
 
@@ -4034,7 +4142,7 @@ var ResultMetadataType;
     ResultMetadataType[ResultMetadataType["STRUCTURED_APPEND_PARITY"] = 10] = "STRUCTURED_APPEND_PARITY";
 })(ResultMetadataType || (ResultMetadataType = {}));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ResultMetadataType);
-//# sourceMappingURL=ResultMetadataType.js.map
+
 
 /***/ }),
 
@@ -4160,7 +4268,7 @@ var ResultPoint = /** @class */ (function () {
     return ResultPoint;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ResultPoint);
-//# sourceMappingURL=ResultPoint.js.map
+
 
 /***/ }),
 
@@ -4198,7 +4306,7 @@ var UnsupportedOperationException = /** @class */ (function (_super) {
     return UnsupportedOperationException;
 }(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (UnsupportedOperationException);
-//# sourceMappingURL=UnsupportedOperationException.js.map
+
 
 /***/ }),
 
@@ -4236,7 +4344,7 @@ var WriterException = /** @class */ (function (_super) {
     return WriterException;
 }(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (WriterException);
-//# sourceMappingURL=WriterException.js.map
+
 
 /***/ }),
 
@@ -4304,7 +4412,7 @@ var AztecDetectorResult = /** @class */ (function (_super) {
     return AztecDetectorResult;
 }(_common_DetectorResult__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AztecDetectorResult);
-//# sourceMappingURL=AztecDetectorResult.js.map
+
 
 /***/ }),
 
@@ -4418,7 +4526,7 @@ var AztecReader = /** @class */ (function () {
     return AztecReader;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AztecReader);
-//# sourceMappingURL=AztecReader.js.map
+
 
 /***/ }),
 
@@ -4533,7 +4641,7 @@ var AztecWriter = /** @class */ (function () {
     return AztecWriter;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AztecWriter);
-//# sourceMappingURL=AztecWriter.js.map
+
 
 /***/ }),
 
@@ -4888,11 +4996,9 @@ var Decoder = /** @class */ (function () {
         'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'CTRL_US', 'CTRL_ML', 'CTRL_DL', 'CTRL_BS'
     ];
     Decoder.MIXED_TABLE = [
-        // Module parse failed: Octal literal in strict mode (50:29)
-        // so number string were scaped
-        'CTRL_PS', ' ', '\\1', '\\2', '\\3', '\\4', '\\5', '\\6', '\\7', '\b', '\t', '\n',
-        '\\13', '\f', '\r', '\\33', '\\34', '\\35', '\\36', '\\37', '@', '\\', '^', '_',
-        '`', '|', '~', '\\177', 'CTRL_LL', 'CTRL_UL', 'CTRL_PL', 'CTRL_BS'
+        'CTRL_PS', ' ', '\x01', '\x02', '\x03', '\x04', '\x05', '\x06', '\x07', '\b', '\t', '\n',
+        '\x0b', '\f', '\r', '\x1b', '\x1c', '\x1d', '\x1e', '\x1f', '@', '\\', '^', '_',
+        '`', '|', '~', '\x7f', 'CTRL_LL', 'CTRL_UL', 'CTRL_PL', 'CTRL_BS'
     ];
     Decoder.PUNCT_TABLE = [
         '', '\r', '\r\n', '. ', ', ', ': ', '!', '"', '#', '$', '%', '&', '\'', '(', ')',
@@ -4904,7 +5010,7 @@ var Decoder = /** @class */ (function () {
     return Decoder;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Decoder);
-//# sourceMappingURL=Decoder.js.map
+
 
 /***/ }),
 
@@ -5414,7 +5520,7 @@ var Detector = /** @class */ (function () {
     return Detector;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Detector);
-//# sourceMappingURL=Detector.js.map
+
 
 /***/ }),
 
@@ -5496,7 +5602,7 @@ var AztecCode = /** @class */ (function () {
     return AztecCode;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AztecCode);
-//# sourceMappingURL=AztecCode.js.map
+
 
 /***/ }),
 
@@ -5877,7 +5983,7 @@ var Encoder = /** @class */ (function () {
     return Encoder;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Encoder);
-//# sourceMappingURL=Encoder.js.map
+
 
 /***/ }),
 
@@ -5910,7 +6016,7 @@ var Collections = /** @class */ (function () {
     return Collections;
 }());
 /* harmony default export */ const util_Collections = (Collections);
-//# sourceMappingURL=Collections.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/BitArray.js
 var BitArray = __webpack_require__(1555);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/Token.js
@@ -5939,7 +6045,7 @@ var Token = /** @class */ (function () {
     return Token;
 }());
 /* harmony default export */ const encoder_Token = (Token);
-//# sourceMappingURL=Token.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/Integer.js
 var Integer = __webpack_require__(3450);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/SimpleToken.js
@@ -6006,7 +6112,7 @@ var SimpleToken = /** @class */ (function (_super) {
     return SimpleToken;
 }(encoder_Token));
 /* harmony default export */ const encoder_SimpleToken = (SimpleToken);
-//# sourceMappingURL=SimpleToken.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/BinaryShiftToken.js
 /*
 * Copyright 2013 ZXing authors
@@ -6082,7 +6188,7 @@ var BinaryShiftToken = /** @class */ (function (_super) {
     return BinaryShiftToken;
 }(encoder_SimpleToken));
 /* harmony default export */ const encoder_BinaryShiftToken = (BinaryShiftToken);
-//# sourceMappingURL=BinaryShiftToken.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/TokenHelpers.js
 
 
@@ -6093,7 +6199,7 @@ function addBinaryShift(token, start, byteCount) {
 function add(token, value, bitCount) {
     return new encoder_SimpleToken(token, value, bitCount);
 }
-//# sourceMappingURL=TokenHelpers.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/EncoderConstants.js
 
 var /*final*/ MODE_NAMES = [
@@ -6109,7 +6215,7 @@ var /*final*/ MODE_DIGIT = 2; // 4 bits
 var /*final*/ MODE_MIXED = 3; // 5 bits
 var /*final*/ MODE_PUNCT = 4; // 5 bits
 var EMPTY_TOKEN = new encoder_SimpleToken(null, 0, 0);
-//# sourceMappingURL=EncoderConstants.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/LatchTable.js
 // The Latch Table shows, for each pair of Modes, the optimal method for
 // getting from one mode to another.  In the worst possible case, this can
@@ -6154,7 +6260,7 @@ var LATCH_TABLE = [
         0
     ])
 ];
-//# sourceMappingURL=LatchTable.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/Arrays.js + 1 modules
 var Arrays = __webpack_require__(1126);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/ShiftTable.js
@@ -6195,7 +6301,7 @@ function static_SHIFT_TABLE(SHIFT_TABLE) {
     return SHIFT_TABLE;
 }
 var /*final*/ SHIFT_TABLE = static_SHIFT_TABLE(Arrays/* default.createInt32Array */.Z.createInt32Array(6, 6)); // mode shift codes, per table
-//# sourceMappingURL=ShiftTable.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/StringUtils.js
 var StringUtils = __webpack_require__(3429);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/State.js
@@ -6391,7 +6497,7 @@ var State = /** @class */ (function () {
     return State;
 }());
 /* harmony default export */ const encoder_State = (State);
-//# sourceMappingURL=State.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/CharMap.js
 
 
@@ -6494,7 +6600,7 @@ function static_CHAR_MAP(CHAR_MAP) {
     return CHAR_MAP;
 }
 var CHAR_MAP = static_CHAR_MAP(Arrays/* default.createInt32Array */.Z.createInt32Array(5, 256));
-//# sourceMappingURL=CharMap.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/HighLevelEncoder.js
 /*
  * Copyright 2013 ZXing authors
@@ -6750,7 +6856,7 @@ var HighLevelEncoder = /** @class */ (function () {
     return HighLevelEncoder;
 }());
 /* harmony default export */ const encoder_HighLevelEncoder = (HighLevelEncoder);
-//# sourceMappingURL=HighLevelEncoder.js.map
+
 
 /***/ }),
 
@@ -7119,10 +7225,20 @@ var BitArray /*implements Cloneable*/ = /** @class */ (function () {
     BitArray.prototype.clone = function () {
         return new BitArray(this.size, this.bits.slice());
     };
+    /**
+     * converts to boolean array.
+     */
+    BitArray.prototype.toArray = function () {
+        var result = [];
+        for (var i = 0, size = this.size; i < size; i++) {
+            result.push(this.get(i));
+        }
+        return result;
+    };
     return BitArray;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BitArray);
-//# sourceMappingURL=BitArray.js.map
+
 
 /***/ }),
 
@@ -7625,7 +7741,7 @@ var BitMatrix /*implements Cloneable*/ = /** @class */ (function () {
     return BitMatrix;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BitMatrix);
-//# sourceMappingURL=BitMatrix.js.map
+
 
 /***/ }),
 
@@ -7741,7 +7857,7 @@ var BitSource = /** @class */ (function () {
     return BitSource;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BitSource);
-//# sourceMappingURL=BitSource.js.map
+
 
 /***/ }),
 
@@ -7949,7 +8065,7 @@ var CharacterSetECI = /** @class */ (function () {
     return CharacterSetECI;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CharacterSetECI);
-//# sourceMappingURL=CharacterSetECI.js.map
+
 
 /***/ }),
 
@@ -8079,7 +8195,7 @@ var DecoderResult = /** @class */ (function () {
     return DecoderResult;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DecoderResult);
-//# sourceMappingURL=DecoderResult.js.map
+
 
 /***/ }),
 
@@ -8182,7 +8298,7 @@ var DefaultGridSampler = /** @class */ (function (_super) {
     return DefaultGridSampler;
 }(_GridSampler__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DefaultGridSampler);
-//# sourceMappingURL=DefaultGridSampler.js.map
+
 
 /***/ }),
 
@@ -8229,7 +8345,7 @@ var DetectorResult = /** @class */ (function () {
     return DetectorResult;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DetectorResult);
-//# sourceMappingURL=DetectorResult.js.map
+
 
 /***/ }),
 
@@ -8444,7 +8560,7 @@ var GlobalHistogramBinarizer = /** @class */ (function (_super) {
     return GlobalHistogramBinarizer;
 }(_Binarizer__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GlobalHistogramBinarizer);
-//# sourceMappingURL=GlobalHistogramBinarizer.js.map
+
 
 /***/ }),
 
@@ -8562,7 +8678,7 @@ var GridSampler = /** @class */ (function () {
     return GridSampler;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GridSampler);
-//# sourceMappingURL=GridSampler.js.map
+
 
 /***/ }),
 
@@ -8600,7 +8716,7 @@ var GridSamplerInstance = /** @class */ (function () {
     return GridSamplerInstance;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GridSamplerInstance);
-//# sourceMappingURL=GridSamplerInstance.js.map
+
 
 /***/ }),
 
@@ -8835,7 +8951,7 @@ var HybridBinarizer = /** @class */ (function (_super) {
     return HybridBinarizer;
 }(_GlobalHistogramBinarizer__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HybridBinarizer);
-//# sourceMappingURL=HybridBinarizer.js.map
+
 
 /***/ }),
 
@@ -8956,7 +9072,7 @@ var PerspectiveTransform = /** @class */ (function () {
     return PerspectiveTransform;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PerspectiveTransform);
-//# sourceMappingURL=PerspectiveTransform.js.map
+
 
 /***/ }),
 
@@ -9259,7 +9375,7 @@ var StringUtils = /** @class */ (function () {
     return StringUtils;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StringUtils);
-//# sourceMappingURL=StringUtils.js.map
+
 
 /***/ }),
 
@@ -9302,7 +9418,7 @@ var MathUtils = /** @class */ (function () {
      * @return nearest {@code int}
      */
     MathUtils.round = function (d /*float*/) {
-        if (NaN === d)
+        if (isNaN(d))
             return 0;
         if (d <= Number.MIN_SAFE_INTEGER)
             return Number.MIN_SAFE_INTEGER;
@@ -9350,7 +9466,7 @@ var MathUtils = /** @class */ (function () {
     return MathUtils;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MathUtils);
-//# sourceMappingURL=MathUtils.js.map
+
 
 /***/ }),
 
@@ -9667,7 +9783,7 @@ var WhiteRectangleDetector = /** @class */ (function () {
     return WhiteRectangleDetector;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (WhiteRectangleDetector);
-//# sourceMappingURL=WhiteRectangleDetector.js.map
+
 
 /***/ }),
 
@@ -9735,7 +9851,7 @@ var AbstractGenericGF = /** @class */ (function () {
     return AbstractGenericGF;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AbstractGenericGF);
-//# sourceMappingURL=AbstractGenericGF.js.map
+
 
 /***/ }),
 
@@ -9897,7 +10013,7 @@ var GenericGF = /** @class */ (function (_super) {
     return GenericGF;
 }(_AbstractGenericGF__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GenericGF);
-//# sourceMappingURL=GenericGF.js.map
+
 
 /***/ }),
 
@@ -10166,7 +10282,7 @@ var GenericGFPoly = /** @class */ (function () {
     return GenericGFPoly;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GenericGFPoly);
-//# sourceMappingURL=GenericGFPoly.js.map
+
 
 /***/ }),
 
@@ -10361,7 +10477,7 @@ var ReedSolomonDecoder = /** @class */ (function () {
     return ReedSolomonDecoder;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ReedSolomonDecoder);
-//# sourceMappingURL=ReedSolomonDecoder.js.map
+
 
 /***/ }),
 
@@ -10469,7 +10585,7 @@ var ReedSolomonEncoder = /** @class */ (function () {
     return ReedSolomonEncoder;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ReedSolomonEncoder);
-//# sourceMappingURL=ReedSolomonEncoder.js.map
+
 
 /***/ }),
 
@@ -10703,7 +10819,7 @@ var Version = /** @class */ (function () {
     return Version;
 }());
 /* harmony default export */ const decoder_Version = (Version);
-//# sourceMappingURL=Version.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/IllegalArgumentException.js
 var IllegalArgumentException = __webpack_require__(8475);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/decoder/BitMatrixParser.js
@@ -11122,7 +11238,7 @@ var BitMatrixParser = /** @class */ (function () {
     return BitMatrixParser;
 }());
 /* harmony default export */ const decoder_BitMatrixParser = (BitMatrixParser);
-//# sourceMappingURL=BitMatrixParser.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/decoder/DataBlock.js
 var DataBlock_values = (undefined && undefined.__values) || function(o) {
     var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
@@ -11257,7 +11373,7 @@ var DataBlock = /** @class */ (function () {
     return DataBlock;
 }());
 /* harmony default export */ const decoder_DataBlock = (DataBlock);
-//# sourceMappingURL=DataBlock.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/decoder/DecodedBitStreamParser.js
 var DecodedBitStreamParser = __webpack_require__(7897);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/decoder/Decoder.js
@@ -11382,7 +11498,7 @@ var Decoder = /** @class */ (function () {
     return Decoder;
 }());
 /* harmony default export */ const decoder_Decoder = (Decoder);
-//# sourceMappingURL=Decoder.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/detector/WhiteRectangleDetector.js
 var WhiteRectangleDetector = __webpack_require__(3354);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/DetectorResult.js
@@ -11694,7 +11810,7 @@ var Detector = /** @class */ (function () {
     return Detector;
 }());
 /* harmony default export */ const detector_Detector = (Detector);
-//# sourceMappingURL=Detector.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/DataMatrixReader.js
 
 
@@ -11834,7 +11950,1855 @@ var DataMatrixReader = /** @class */ (function () {
     return DataMatrixReader;
 }());
 /* harmony default export */ const datamatrix_DataMatrixReader = (DataMatrixReader);
-//# sourceMappingURL=DataMatrixReader.js.map
+
+
+/***/ }),
+
+/***/ 880:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "Z": () => (/* binding */ datamatrix_DataMatrixWriter)
+});
+
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/BarcodeFormat.js
+var BarcodeFormat = __webpack_require__(8684);
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/BitMatrix.js
+var BitMatrix = __webpack_require__(1103);
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/EncodeHintType.js
+var EncodeHintType = __webpack_require__(5127);
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/qrcode/encoder/ByteMatrix.js
+var ByteMatrix = __webpack_require__(8556);
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/Charset.js
+var Charset = __webpack_require__(5408);
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/ASCIIEncoder.js
+var ASCIIEncoder = __webpack_require__(4470);
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/Base256Encoder.js
+var Base256Encoder = __webpack_require__(3256);
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/C40Encoder.js
+var C40Encoder = __webpack_require__(4903);
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/DefaultPlacement.js
+var DefaultPlacement = __webpack_require__(8504);
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/EdifactEncoder.js
+var EdifactEncoder = __webpack_require__(2299);
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/EncoderContext.js
+var EncoderContext = __webpack_require__(8847);
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/ErrorCorrection.js
+var ErrorCorrection = __webpack_require__(9864);
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/HighLevelEncoder.js
+var HighLevelEncoder = __webpack_require__(9729);
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/constants.js
+var constants = __webpack_require__(4255);
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StandardCharsets.js
+var StandardCharsets = __webpack_require__(4248);
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StringEncoding.js
+var StringEncoding = __webpack_require__(4421);
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/StringUtils.js
+var StringUtils = __webpack_require__(3429);
+;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/common/ECIEncoderSet.js
+/**
+ * Set of CharsetEncoders for a given input string
+ *
+ * Invariants:
+ * - The list contains only encoders from CharacterSetECI (list is shorter then the list of encoders available on
+ *   the platform for which ECI values are defined).
+ * - The list contains encoders at least one encoder for every character in the input.
+ * - The first encoder in the list is always the ISO-8859-1 encoder even of no character in the input can be encoded
+ *       by it.
+ * - If the input contains a character that is not in ISO-8859-1 then the last two entries in the list will be the
+ *   UTF-8 encoder and the UTF-16BE encoder.
+ *
+ * @author Alex Geller
+ */
+var __values = (undefined && undefined.__values) || function(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+};
+
+
+
+
+var CharsetEncoder = /** @class */ (function () {
+    function CharsetEncoder(charset) {
+        this.charset = charset;
+        this.name = charset.name;
+    }
+    CharsetEncoder.prototype.canEncode = function (c) {
+        try {
+            return StringEncoding/* default.encode */.Z.encode(c, this.charset) != null;
+        }
+        catch (ex) {
+            return false;
+        }
+    };
+    return CharsetEncoder;
+}());
+var ECIEncoderSet = /** @class */ (function () {
+    /**
+     * Constructs an encoder set
+     *
+     * @param stringToEncode the string that needs to be encoded
+     * @param priorityCharset The preferred {@link Charset} or null.
+     * @param fnc1 fnc1 denotes the character in the input that represents the FNC1 character or -1 for a non-GS1 bar
+     * code. When specified, it is considered an error to pass it as argument to the methods canEncode() or encode().
+     */
+    function ECIEncoderSet(stringToEncode, priorityCharset, fnc1) {
+        var e_1, _a, e_2, _b, e_3, _c;
+        this.ENCODERS = [
+            'IBM437',
+            'ISO-8859-2',
+            'ISO-8859-3',
+            'ISO-8859-4',
+            'ISO-8859-5',
+            'ISO-8859-6',
+            'ISO-8859-7',
+            'ISO-8859-8',
+            'ISO-8859-9',
+            'ISO-8859-10',
+            'ISO-8859-11',
+            'ISO-8859-13',
+            'ISO-8859-14',
+            'ISO-8859-15',
+            'ISO-8859-16',
+            'windows-1250',
+            'windows-1251',
+            'windows-1252',
+            'windows-1256',
+            'Shift_JIS',
+        ].map(function (name) { return new CharsetEncoder(Charset/* default.forName */.Z.forName(name)); });
+        this.encoders = [];
+        var neededEncoders = [];
+        // we always need the ISO-8859-1 encoder. It is the default encoding
+        neededEncoders.push(new CharsetEncoder(StandardCharsets/* default.ISO_8859_1 */.Z.ISO_8859_1));
+        var needUnicodeEncoder = priorityCharset != null && priorityCharset.name.startsWith('UTF');
+        // Walk over the input string and see if all characters can be encoded with the list of encoders
+        for (var i = 0; i < stringToEncode.length; i++) {
+            var canEncode = false;
+            try {
+                for (var neededEncoders_1 = (e_1 = void 0, __values(neededEncoders)), neededEncoders_1_1 = neededEncoders_1.next(); !neededEncoders_1_1.done; neededEncoders_1_1 = neededEncoders_1.next()) {
+                    var encoder = neededEncoders_1_1.value;
+                    var singleCharacter = stringToEncode.charAt(i);
+                    var c = singleCharacter.charCodeAt(0);
+                    if (c === fnc1 || encoder.canEncode(singleCharacter)) {
+                        canEncode = true;
+                        break;
+                    }
+                }
+            }
+            catch (e_1_1) { e_1 = { error: e_1_1 }; }
+            finally {
+                try {
+                    if (neededEncoders_1_1 && !neededEncoders_1_1.done && (_a = neededEncoders_1.return)) _a.call(neededEncoders_1);
+                }
+                finally { if (e_1) throw e_1.error; }
+            }
+            if (!canEncode) {
+                try {
+                    // for the character at position i we don't yet have an encoder in the list
+                    for (var _d = (e_2 = void 0, __values(this.ENCODERS)), _e = _d.next(); !_e.done; _e = _d.next()) {
+                        var encoder = _e.value;
+                        if (encoder.canEncode(stringToEncode.charAt(i))) {
+                            // Good, we found an encoder that can encode the character. We add him to the list and continue scanning
+                            // the input
+                            neededEncoders.push(encoder);
+                            canEncode = true;
+                            break;
+                        }
+                    }
+                }
+                catch (e_2_1) { e_2 = { error: e_2_1 }; }
+                finally {
+                    try {
+                        if (_e && !_e.done && (_b = _d.return)) _b.call(_d);
+                    }
+                    finally { if (e_2) throw e_2.error; }
+                }
+            }
+            if (!canEncode) {
+                // The character is not encodeable by any of the single byte encoders so we remember that we will need a
+                // Unicode encoder.
+                needUnicodeEncoder = true;
+            }
+        }
+        if (neededEncoders.length === 1 && !needUnicodeEncoder) {
+            // the entire input can be encoded by the ISO-8859-1 encoder
+            this.encoders = [neededEncoders[0]];
+        }
+        else {
+            // we need more than one single byte encoder or we need a Unicode encoder.
+            // In this case we append a UTF-8 and UTF-16 encoder to the list
+            this.encoders = [];
+            var index = 0;
+            try {
+                for (var neededEncoders_2 = __values(neededEncoders), neededEncoders_2_1 = neededEncoders_2.next(); !neededEncoders_2_1.done; neededEncoders_2_1 = neededEncoders_2.next()) {
+                    var encoder = neededEncoders_2_1.value;
+                    this.encoders[index++] = encoder;
+                }
+            }
+            catch (e_3_1) { e_3 = { error: e_3_1 }; }
+            finally {
+                try {
+                    if (neededEncoders_2_1 && !neededEncoders_2_1.done && (_c = neededEncoders_2.return)) _c.call(neededEncoders_2);
+                }
+                finally { if (e_3) throw e_3.error; }
+            }
+            // this.encoders[index] = new CharsetEncoder(StandardCharsets.UTF_8);
+            // this.encoders[index + 1] = new CharsetEncoder(StandardCharsets.UTF_16BE);
+        }
+        // Compute priorityEncoderIndex by looking up priorityCharset in encoders
+        var priorityEncoderIndexValue = -1;
+        if (priorityCharset != null) {
+            for (var i = 0; i < this.encoders.length; i++) {
+                if (this.encoders[i] != null &&
+                    priorityCharset.name === this.encoders[i].name) {
+                    priorityEncoderIndexValue = i;
+                    break;
+                }
+            }
+        }
+        this.priorityEncoderIndex = priorityEncoderIndexValue;
+        // invariants
+        // if(this?.encoders?.[0].name !== StandardCharsets.ISO_8859_1)){
+        // throw new Error("ISO-8859-1 must be the first encoder");
+        // }
+    }
+    ECIEncoderSet.prototype.length = function () {
+        return this.encoders.length;
+    };
+    ECIEncoderSet.prototype.getCharsetName = function (index) {
+        if (!(index < this.length())) {
+            throw new Error('index must be less than length');
+        }
+        return this.encoders[index].name;
+    };
+    ECIEncoderSet.prototype.getCharset = function (index) {
+        if (!(index < this.length())) {
+            throw new Error('index must be less than length');
+        }
+        return this.encoders[index].charset;
+    };
+    ECIEncoderSet.prototype.getECIValue = function (encoderIndex) {
+        return this.encoders[encoderIndex].charset.getValueIdentifier();
+    };
+    /*
+     *  returns -1 if no priority charset was defined
+     */
+    ECIEncoderSet.prototype.getPriorityEncoderIndex = function () {
+        return this.priorityEncoderIndex;
+    };
+    ECIEncoderSet.prototype.canEncode = function (c, encoderIndex) {
+        if (!(encoderIndex < this.length())) {
+            throw new Error('index must be less than length');
+        }
+        return true;
+    };
+    ECIEncoderSet.prototype.encode = function (c, encoderIndex) {
+        if (!(encoderIndex < this.length())) {
+            throw new Error('index must be less than length');
+        }
+        return StringEncoding/* default.encode */.Z.encode(StringUtils/* default.getCharAt */.Z.getCharAt(c), this.encoders[encoderIndex].name);
+    };
+    return ECIEncoderSet;
+}());
+
+
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/Integer.js
+var Integer = __webpack_require__(3450);
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StringBuilder.js
+var StringBuilder = __webpack_require__(75);
+;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/common/MinimalECIInput.js
+
+
+
+var COST_PER_ECI = 3; // approximated (latch + 2 codewords)
+var MinimalECIInput = /** @class */ (function () {
+    /**
+     * Constructs a minimal input
+     *
+     * @param stringToEncode the character string to encode
+     * @param priorityCharset The preferred {@link Charset}. When the value of the argument is null, the algorithm
+     *   chooses charsets that leads to a minimal representation. Otherwise the algorithm will use the priority
+     *   charset to encode any character in the input that can be encoded by it if the charset is among the
+     *   supported charsets.
+     * @param fnc1 denotes the character in the input that represents the FNC1 character or -1 if this is not GS1
+     *   input.
+     */
+    function MinimalECIInput(stringToEncode, priorityCharset, fnc1) {
+        this.fnc1 = fnc1;
+        var encoderSet = new ECIEncoderSet(stringToEncode, priorityCharset, fnc1);
+        if (encoderSet.length() === 1) {
+            // optimization for the case when all can be encoded without ECI in ISO-8859-1
+            for (var i = 0; i < this.bytes.length; i++) {
+                var c = stringToEncode.charAt(i).charCodeAt(0);
+                this.bytes[i] = c === fnc1 ? 1000 : c;
+            }
+        }
+        else {
+            this.bytes = this.encodeMinimally(stringToEncode, encoderSet, fnc1);
+        }
+    }
+    MinimalECIInput.prototype.getFNC1Character = function () {
+        return this.fnc1;
+    };
+    /**
+     * Returns the length of this input.  The length is the number
+     * of {@code byte}s, FNC1 characters or ECIs in the sequence.
+     *
+     * @return  the number of {@code char}s in this sequence
+     */
+    MinimalECIInput.prototype.length = function () {
+        return this.bytes.length;
+    };
+    MinimalECIInput.prototype.haveNCharacters = function (index, n) {
+        if (index + n - 1 >= this.bytes.length) {
+            return false;
+        }
+        for (var i = 0; i < n; i++) {
+            if (this.isECI(index + i)) {
+                return false;
+            }
+        }
+        return true;
+    };
+    /**
+     * Returns the {@code byte} value at the specified index.  An index ranges from zero
+     * to {@code length() - 1}.  The first {@code byte} value of the sequence is at
+     * index zero, the next at index one, and so on, as for array
+     * indexing.
+     *
+     * @param   index the index of the {@code byte} value to be returned
+     *
+     * @return  the specified {@code byte} value as character or the FNC1 character
+     *
+     * @throws  IndexOutOfBoundsException
+     *          if the {@code index} argument is negative or not less than
+     *          {@code length()}
+     * @throws  IllegalArgumentException
+     *          if the value at the {@code index} argument is an ECI (@see #isECI)
+     */
+    MinimalECIInput.prototype.charAt = function (index) {
+        if (index < 0 || index >= this.length()) {
+            throw new Error('' + index);
+        }
+        if (this.isECI(index)) {
+            throw new Error('value at ' + index + ' is not a character but an ECI');
+        }
+        return this.isFNC1(index) ? this.fnc1 : this.bytes[index];
+    };
+    /**
+     * Returns a {@code CharSequence} that is a subsequence of this sequence.
+     * The subsequence starts with the {@code char} value at the specified index and
+     * ends with the {@code char} value at index {@code end - 1}.  The length
+     * (in {@code char}s) of the
+     * returned sequence is {@code end - start}, so if {@code start == end}
+     * then an empty sequence is returned.
+     *
+     * @param   start   the start index, inclusive
+     * @param   end     the end index, exclusive
+     *
+     * @return  the specified subsequence
+     *
+     * @throws  IndexOutOfBoundsException
+     *          if {@code start} or {@code end} are negative,
+     *          if {@code end} is greater than {@code length()},
+     *          or if {@code start} is greater than {@code end}
+     * @throws  IllegalArgumentException
+     *          if a value in the range {@code start}-{@code end} is an ECI (@see #isECI)
+     */
+    MinimalECIInput.prototype.subSequence = function (start, end) {
+        if (start < 0 || start > end || end > this.length()) {
+            throw new Error('' + start);
+        }
+        var result = new StringBuilder/* default */.Z();
+        for (var i = start; i < end; i++) {
+            if (this.isECI(i)) {
+                throw new Error('value at ' + i + ' is not a character but an ECI');
+            }
+            result.append(this.charAt(i));
+        }
+        return result.toString();
+    };
+    /**
+     * Determines if a value is an ECI
+     *
+     * @param   index the index of the value
+     *
+     * @return  true if the value at position {@code index} is an ECI
+     *
+     * @throws  IndexOutOfBoundsException
+     *          if the {@code index} argument is negative or not less than
+     *          {@code length()}
+     */
+    MinimalECIInput.prototype.isECI = function (index) {
+        if (index < 0 || index >= this.length()) {
+            throw new Error('' + index);
+        }
+        return this.bytes[index] > 255 && this.bytes[index] <= 999;
+    };
+    /**
+     * Determines if a value is the FNC1 character
+     *
+     * @param   index the index of the value
+     *
+     * @return  true if the value at position {@code index} is the FNC1 character
+     *
+     * @throws  IndexOutOfBoundsException
+     *          if the {@code index} argument is negative or not less than
+     *          {@code length()}
+     */
+    MinimalECIInput.prototype.isFNC1 = function (index) {
+        if (index < 0 || index >= this.length()) {
+            throw new Error('' + index);
+        }
+        return this.bytes[index] === 1000;
+    };
+    /**
+     * Returns the {@code int} ECI value at the specified index.  An index ranges from zero
+     * to {@code length() - 1}.  The first {@code byte} value of the sequence is at
+     * index zero, the next at index one, and so on, as for array
+     * indexing.
+     *
+     * @param   index the index of the {@code int} value to be returned
+     *
+     * @return  the specified {@code int} ECI value.
+     *          The ECI specified the encoding of all bytes with a higher index until the
+     *          next ECI or until the end of the input if no other ECI follows.
+     *
+     * @throws  IndexOutOfBoundsException
+     *          if the {@code index} argument is negative or not less than
+     *          {@code length()}
+     * @throws  IllegalArgumentException
+     *          if the value at the {@code index} argument is not an ECI (@see #isECI)
+     */
+    MinimalECIInput.prototype.getECIValue = function (index) {
+        if (index < 0 || index >= this.length()) {
+            throw new Error('' + index);
+        }
+        if (!this.isECI(index)) {
+            throw new Error('value at ' + index + ' is not an ECI but a character');
+        }
+        return this.bytes[index] - 256;
+    };
+    MinimalECIInput.prototype.addEdge = function (edges, to, edge) {
+        if (edges[to][edge.encoderIndex] == null ||
+            edges[to][edge.encoderIndex].cachedTotalSize > edge.cachedTotalSize) {
+            edges[to][edge.encoderIndex] = edge;
+        }
+    };
+    MinimalECIInput.prototype.addEdges = function (stringToEncode, encoderSet, edges, from, previous, fnc1) {
+        var ch = stringToEncode.charAt(from).charCodeAt(0);
+        var start = 0;
+        var end = encoderSet.length();
+        if (encoderSet.getPriorityEncoderIndex() >= 0 &&
+            (ch === fnc1 ||
+                encoderSet.canEncode(ch, encoderSet.getPriorityEncoderIndex()))) {
+            start = encoderSet.getPriorityEncoderIndex();
+            end = start + 1;
+        }
+        for (var i = start; i < end; i++) {
+            if (ch === fnc1 || encoderSet.canEncode(ch, i)) {
+                this.addEdge(edges, from + 1, new InputEdge(ch, encoderSet, i, previous, fnc1));
+            }
+        }
+    };
+    MinimalECIInput.prototype.encodeMinimally = function (stringToEncode, encoderSet, fnc1) {
+        var inputLength = stringToEncode.length;
+        // Array that represents vertices. There is a vertex for every character and encoding.
+        var edges = new InputEdge[inputLength + 1][encoderSet.length()]();
+        this.addEdges(stringToEncode, encoderSet, edges, 0, null, fnc1);
+        for (var i = 1; i <= inputLength; i++) {
+            for (var j = 0; j < encoderSet.length(); j++) {
+                if (edges[i][j] != null && i < inputLength) {
+                    this.addEdges(stringToEncode, encoderSet, edges, i, edges[i][j], fnc1);
+                }
+            }
+            // optimize memory by removing edges that have been passed.
+            for (var j = 0; j < encoderSet.length(); j++) {
+                edges[i - 1][j] = null;
+            }
+        }
+        var minimalJ = -1;
+        var minimalSize = Integer/* default.MAX_VALUE */.Z.MAX_VALUE;
+        for (var j = 0; j < encoderSet.length(); j++) {
+            if (edges[inputLength][j] != null) {
+                var edge = edges[inputLength][j];
+                if (edge.cachedTotalSize < minimalSize) {
+                    minimalSize = edge.cachedTotalSize;
+                    minimalJ = j;
+                }
+            }
+        }
+        if (minimalJ < 0) {
+            throw new Error('Failed to encode "' + stringToEncode + '"');
+        }
+        var intsAL = [];
+        var current = edges[inputLength][minimalJ];
+        while (current != null) {
+            if (current.isFNC1()) {
+                intsAL.unshift(1000);
+            }
+            else {
+                var bytes = encoderSet.encode(current.c, current.encoderIndex);
+                for (var i = bytes.length - 1; i >= 0; i--) {
+                    intsAL.unshift(bytes[i] & 0xff);
+                }
+            }
+            var previousEncoderIndex = current.previous === null ? 0 : current.previous.encoderIndex;
+            if (previousEncoderIndex !== current.encoderIndex) {
+                intsAL.unshift(256 + encoderSet.getECIValue(current.encoderIndex));
+            }
+            current = current.previous;
+        }
+        var ints = [];
+        for (var i = 0; i < ints.length; i++) {
+            ints[i] = intsAL[i];
+        }
+        return ints;
+    };
+    return MinimalECIInput;
+}());
+
+var InputEdge = /** @class */ (function () {
+    function InputEdge(c, encoderSet, encoderIndex, previous, fnc1) {
+        this.c = c;
+        this.encoderSet = encoderSet;
+        this.encoderIndex = encoderIndex;
+        this.previous = previous;
+        this.fnc1 = fnc1;
+        this.c = c === fnc1 ? 1000 : c;
+        var size = this.isFNC1() ? 1 : encoderSet.encode(c, encoderIndex).length;
+        var previousEncoderIndex = previous === null ? 0 : previous.encoderIndex;
+        if (previousEncoderIndex !== encoderIndex) {
+            size += COST_PER_ECI;
+        }
+        if (previous != null) {
+            size += previous.cachedTotalSize;
+        }
+        this.cachedTotalSize = size;
+    }
+    InputEdge.prototype.isFNC1 = function () {
+        return this.c === 1000;
+    };
+    return InputEdge;
+}());
+
+;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/MinimalEncoder.js
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var MinimalEncoder_values = (undefined && undefined.__values) || function(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+};
+var __read = (undefined && undefined.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+var __spread = (undefined && undefined.__spread) || function () {
+    for (var ar = [], i = 0; i < arguments.length; i++) ar = ar.concat(__read(arguments[i]));
+    return ar;
+};
+
+
+
+
+var Mode;
+(function (Mode) {
+    Mode[Mode["ASCII"] = 0] = "ASCII";
+    Mode[Mode["C40"] = 1] = "C40";
+    Mode[Mode["TEXT"] = 2] = "TEXT";
+    Mode[Mode["X12"] = 3] = "X12";
+    Mode[Mode["EDF"] = 4] = "EDF";
+    Mode[Mode["B256"] = 5] = "B256";
+})(Mode || (Mode = {}));
+var C40_SHIFT2_CHARS = [
+    '!',
+    '"',
+    '#',
+    '$',
+    '%',
+    '&',
+    "'",
+    '(',
+    ')',
+    '*',
+    '+',
+    ',',
+    '-',
+    '.',
+    '/',
+    ':',
+    ';',
+    '<',
+    '=',
+    '>',
+    '?',
+    '@',
+    '[',
+    '\\',
+    ']',
+    '^',
+    '_',
+];
+var MinimalEncoder = /** @class */ (function () {
+    function MinimalEncoder() {
+    }
+    MinimalEncoder.isExtendedASCII = function (ch, fnc1) {
+        return ch !== fnc1 && ch >= 128 && ch <= 255;
+    };
+    MinimalEncoder.isInC40Shift1Set = function (ch) {
+        return ch <= 31;
+    };
+    MinimalEncoder.isInC40Shift2Set = function (ch, fnc1) {
+        var e_1, _a;
+        try {
+            for (var C40_SHIFT2_CHARS_1 = MinimalEncoder_values(C40_SHIFT2_CHARS), C40_SHIFT2_CHARS_1_1 = C40_SHIFT2_CHARS_1.next(); !C40_SHIFT2_CHARS_1_1.done; C40_SHIFT2_CHARS_1_1 = C40_SHIFT2_CHARS_1.next()) {
+                var c40Shift2Char = C40_SHIFT2_CHARS_1_1.value;
+                if (c40Shift2Char.charCodeAt(0) === ch) {
+                    return true;
+                }
+            }
+        }
+        catch (e_1_1) { e_1 = { error: e_1_1 }; }
+        finally {
+            try {
+                if (C40_SHIFT2_CHARS_1_1 && !C40_SHIFT2_CHARS_1_1.done && (_a = C40_SHIFT2_CHARS_1.return)) _a.call(C40_SHIFT2_CHARS_1);
+            }
+            finally { if (e_1) throw e_1.error; }
+        }
+        return ch === fnc1;
+    };
+    MinimalEncoder.isInTextShift1Set = function (ch) {
+        return this.isInC40Shift1Set(ch);
+    };
+    MinimalEncoder.isInTextShift2Set = function (ch, fnc1) {
+        return this.isInC40Shift2Set(ch, fnc1);
+    };
+    /**
+     * Performs message encoding of a DataMatrix message
+     *
+     * @param msg the message
+     * @param priorityCharset The preferred {@link Charset}. When the value of the argument is null, the algorithm
+     *   chooses charsets that leads to a minimal representation. Otherwise the algorithm will use the priority
+     *   charset to encode any character in the input that can be encoded by it if the charset is among the
+     *   supported charsets.
+     * @param fnc1 denotes the character in the input that represents the FNC1 character or -1 if this is not a GS1
+     *   bar code. If the value is not -1 then a FNC1 is also prepended.
+     * @param shape requested shape.
+     * @return the encoded message (the char values range from 0 to 255)
+     */
+    MinimalEncoder.encodeHighLevel = function (msg, priorityCharset, fnc1, shape) {
+        if (priorityCharset === void 0) { priorityCharset = null; }
+        if (fnc1 === void 0) { fnc1 = -1; }
+        if (shape === void 0) { shape = 0 /* FORCE_NONE */; }
+        var macroId = 0;
+        if (msg.startsWith(constants/* MACRO_05_HEADER */.qL) && msg.endsWith(constants/* MACRO_TRAILER */.Lt)) {
+            macroId = 5;
+            msg = msg.substring(constants/* MACRO_05_HEADER.length */.qL.length, msg.length - 2);
+        }
+        else if (msg.startsWith(constants/* MACRO_06_HEADER */.np) && msg.endsWith(constants/* MACRO_TRAILER */.Lt)) {
+            macroId = 6;
+            msg = msg.substring(constants/* MACRO_06_HEADER.length */.np.length, msg.length - 2);
+        }
+        return decodeURIComponent(escape(String.fromCharCode.apply(String, __spread(this.encode(msg, priorityCharset, fnc1, shape, macroId)))));
+    };
+    /**
+     * Encodes input minimally and returns an array of the codewords
+     *
+     * @param input The string to encode
+     * @param priorityCharset The preferred {@link Charset}. When the value of the argument is null, the algorithm
+     *   chooses charsets that leads to a minimal representation. Otherwise the algorithm will use the priority
+     *   charset to encode any character in the input that can be encoded by it if the charset is among the
+     *   supported charsets.
+     * @param fnc1 denotes the character in the input that represents the FNC1 character or -1 if this is not a GS1
+     *   bar code. If the value is not -1 then a FNC1 is also prepended.
+     * @param shape requested shape.
+     * @param macroId Prepends the specified macro function in case that a value of 5 or 6 is specified.
+     * @return An array of bytes representing the codewords of a minimal encoding.
+     */
+    MinimalEncoder.encode = function (input, priorityCharset, fnc1, shape, macroId) {
+        return this.encodeMinimally(new Input(input, priorityCharset, fnc1, shape, macroId)).getBytes();
+    };
+    MinimalEncoder.addEdge = function (edges, edge) {
+        var vertexIndex = edge.fromPosition + edge.characterLength;
+        if (edges[vertexIndex][edge.getEndMode()] === null ||
+            edges[vertexIndex][edge.getEndMode()].cachedTotalSize >
+                edge.cachedTotalSize) {
+            edges[vertexIndex][edge.getEndMode()] = edge;
+        }
+    };
+    /** @return the number of words in which the string starting at from can be encoded in c40 or text mode.
+     *  The number of characters encoded is returned in characterLength.
+     *  The number of characters encoded is also minimal in the sense that the algorithm stops as soon
+     *  as a character encoding fills a C40 word competely (three C40 values). An exception is at the
+     *  end of the string where two C40 values are allowed (according to the spec the third c40 value
+     *  is filled  with 0 (Shift 1) in this case).
+     */
+    MinimalEncoder.getNumberOfC40Words = function (input, from, c40, characterLength) {
+        var thirdsCount = 0;
+        for (var i = from; i < input.length(); i++) {
+            if (input.isECI(i)) {
+                characterLength[0] = 0;
+                return 0;
+            }
+            var ci = input.charAt(i);
+            if ((c40 && HighLevelEncoder/* default.isNativeC40 */.Z.isNativeC40(ci)) ||
+                (!c40 && HighLevelEncoder/* default.isNativeText */.Z.isNativeText(ci))) {
+                thirdsCount++; // native
+            }
+            else if (!MinimalEncoder.isExtendedASCII(ci, input.getFNC1Character())) {
+                thirdsCount += 2; // shift
+            }
+            else {
+                var asciiValue = ci & 0xff;
+                if (asciiValue >= 128 &&
+                    ((c40 && HighLevelEncoder/* default.isNativeC40 */.Z.isNativeC40(asciiValue - 128)) ||
+                        (!c40 && HighLevelEncoder/* default.isNativeText */.Z.isNativeText(asciiValue - 128)))) {
+                    thirdsCount += 3; // shift, Upper shift
+                }
+                else {
+                    thirdsCount += 4; // shift, Upper shift, shift
+                }
+            }
+            if (thirdsCount % 3 === 0 ||
+                ((thirdsCount - 2) % 3 === 0 && i + 1 === input.length())) {
+                characterLength[0] = i - from + 1;
+                return Math.ceil(thirdsCount / 3.0);
+            }
+        }
+        characterLength[0] = 0;
+        return 0;
+    };
+    MinimalEncoder.addEdges = function (input, edges, from, previous) {
+        var e_2, _a;
+        if (input.isECI(from)) {
+            this.addEdge(edges, new Edge(input, Mode.ASCII, from, 1, previous));
+            return;
+        }
+        var ch = input.charAt(from);
+        if (previous === null || previous.getEndMode() !== Mode.EDF) {
+            // not possible to unlatch a full EDF edge to something
+            // else
+            if (HighLevelEncoder/* default.isDigit */.Z.isDigit(ch) &&
+                input.haveNCharacters(from, 2) &&
+                HighLevelEncoder/* default.isDigit */.Z.isDigit(input.charAt(from + 1))) {
+                // two digits ASCII encoded
+                this.addEdge(edges, new Edge(input, Mode.ASCII, from, 2, previous));
+            }
+            else {
+                // one ASCII encoded character or an extended character via Upper Shift
+                this.addEdge(edges, new Edge(input, Mode.ASCII, from, 1, previous));
+            }
+            var modes = [Mode.C40, Mode.TEXT];
+            try {
+                for (var modes_1 = MinimalEncoder_values(modes), modes_1_1 = modes_1.next(); !modes_1_1.done; modes_1_1 = modes_1.next()) {
+                    var mode = modes_1_1.value;
+                    var characterLength = [];
+                    if (MinimalEncoder.getNumberOfC40Words(input, from, mode === Mode.C40, characterLength) > 0) {
+                        this.addEdge(edges, new Edge(input, mode, from, characterLength[0], previous));
+                    }
+                }
+            }
+            catch (e_2_1) { e_2 = { error: e_2_1 }; }
+            finally {
+                try {
+                    if (modes_1_1 && !modes_1_1.done && (_a = modes_1.return)) _a.call(modes_1);
+                }
+                finally { if (e_2) throw e_2.error; }
+            }
+            if (input.haveNCharacters(from, 3) &&
+                HighLevelEncoder/* default.isNativeX12 */.Z.isNativeX12(input.charAt(from)) &&
+                HighLevelEncoder/* default.isNativeX12 */.Z.isNativeX12(input.charAt(from + 1)) &&
+                HighLevelEncoder/* default.isNativeX12 */.Z.isNativeX12(input.charAt(from + 2))) {
+                this.addEdge(edges, new Edge(input, Mode.X12, from, 3, previous));
+            }
+            this.addEdge(edges, new Edge(input, Mode.B256, from, 1, previous));
+        }
+        // We create 4 EDF edges,  with 1, 2 3 or 4 characters length. The fourth normally doesn't have a latch to ASCII
+        // unless it is 2 characters away from the end of the input.
+        var i;
+        for (i = 0; i < 3; i++) {
+            var pos = from + i;
+            if (input.haveNCharacters(pos, 1) &&
+                HighLevelEncoder/* default.isNativeEDIFACT */.Z.isNativeEDIFACT(input.charAt(pos))) {
+                this.addEdge(edges, new Edge(input, Mode.EDF, from, i + 1, previous));
+            }
+            else {
+                break;
+            }
+        }
+        if (i === 3 &&
+            input.haveNCharacters(from, 4) &&
+            HighLevelEncoder/* default.isNativeEDIFACT */.Z.isNativeEDIFACT(input.charAt(from + 3))) {
+            this.addEdge(edges, new Edge(input, Mode.EDF, from, 4, previous));
+        }
+    };
+    MinimalEncoder.encodeMinimally = function (input) {
+        /* The minimal encoding is computed by Dijkstra. The acyclic graph is modeled as follows:
+         * A vertex represents a combination of a position in the input and an encoding mode where position 0
+         * denotes the position left of the first character, 1 the position left of the second character and so on.
+         * Likewise the end vertices are located after the last character at position input.length().
+         * For any position there might be up to six vertices, one for each of the encoding types ASCII, C40, TEXT, X12,
+         * EDF and B256.
+         *
+         * As an example consider the input string "ABC123" then at position 0 there is only one vertex with the default
+         * ASCII encodation. At position 3 there might be vertices for the types ASCII, C40, X12, EDF and B256.
+         *
+         * An edge leading to such a vertex encodes one or more of the characters left of the position that the vertex
+         * represents. It encodes the characters in the encoding mode of the vertex that it ends on. In other words,
+         * all edges leading to a particular vertex encode the same characters (the length of the suffix can vary) using the same
+         * encoding mode.
+         * As an example consider the input string "ABC123" and the vertex (4,EDF). Possible edges leading to this vertex
+         * are:
+         *   (0,ASCII)  --EDF(ABC1)--> (4,EDF)
+         *   (1,ASCII)  --EDF(BC1)-->  (4,EDF)
+         *   (1,B256)   --EDF(BC1)-->  (4,EDF)
+         *   (1,EDF)    --EDF(BC1)-->  (4,EDF)
+         *   (2,ASCII)  --EDF(C1)-->   (4,EDF)
+         *   (2,B256)   --EDF(C1)-->   (4,EDF)
+         *   (2,EDF)    --EDF(C1)-->   (4,EDF)
+         *   (3,ASCII)  --EDF(1)-->    (4,EDF)
+         *   (3,B256)   --EDF(1)-->    (4,EDF)
+         *   (3,EDF)    --EDF(1)-->    (4,EDF)
+         *   (3,C40)    --EDF(1)-->    (4,EDF)
+         *   (3,X12)    --EDF(1)-->    (4,EDF)
+         *
+         * The edges leading to a vertex are stored in such a way that there is a fast way to enumerate the edges ending
+         * on a particular vertex.
+         *
+         * The algorithm processes the vertices in order of their position thereby performing the following:
+         *
+         * For every vertex at position i the algorithm enumerates the edges ending on the vertex and removes all but the
+         * shortest from that list.
+         * Then it processes the vertices for the position i+1. If i+1 == input.length() then the algorithm ends
+         * and chooses the the edge with the smallest size from any of the edges leading to vertices at this position.
+         * Otherwise the algorithm computes all possible outgoing edges for the vertices at the position i+1
+         *
+         * Examples:
+         * The process is illustrated by showing the graph (edges) after each iteration from left to right over the input:
+         * An edge is drawn as follows "(" + fromVertex + ") -- " + encodingMode + "(" + encodedInput + ") (" +
+         * accumulatedSize + ") --> (" + toVertex + ")"
+         *
+         * Example 1 encoding the string "ABCDEFG":
+         *
+         *
+         * Situation after adding edges to the start vertex (0,ASCII)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII)
+         * (0,ASCII) B256(A) (3) --> (1,B256)
+         * (0,ASCII) EDF(AB) (4) --> (2,EDF)
+         * (0,ASCII) C40(ABC) (3) --> (3,C40)
+         * (0,ASCII) TEXT(ABC) (5) --> (3,TEXT)
+         * (0,ASCII) X12(ABC) (3) --> (3,X12)
+         * (0,ASCII) EDF(ABC) (4) --> (3,EDF)
+         * (0,ASCII) EDF(ABCD) (4) --> (4,EDF)
+         *
+         * Situation after adding edges to vertices at position 1
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII)
+         * (0,ASCII) B256(A) (3) --> (1,B256)
+         * (0,ASCII) EDF(AB) (4) --> (2,EDF)
+         * (0,ASCII) C40(ABC) (3) --> (3,C40)
+         * (0,ASCII) TEXT(ABC) (5) --> (3,TEXT)
+         * (0,ASCII) X12(ABC) (3) --> (3,X12)
+         * (0,ASCII) EDF(ABC) (4) --> (3,EDF)
+         * (0,ASCII) EDF(ABCD) (4) --> (4,EDF)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) ASCII(B) (2) --> (2,ASCII)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) B256(B) (4) --> (2,B256)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) EDF(BC) (5) --> (3,EDF)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) C40(BCD) (4) --> (4,C40)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) TEXT(BCD) (6) --> (4,TEXT)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) X12(BCD) (4) --> (4,X12)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) EDF(BCD) (5) --> (4,EDF)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) EDF(BCDE) (5) --> (5,EDF)
+         * (0,ASCII) B256(A) (3) --> (1,B256) ASCII(B) (4) --> (2,ASCII)
+         * (0,ASCII) B256(A) (3) --> (1,B256) B256(B) (3) --> (2,B256)
+         * (0,ASCII) B256(A) (3) --> (1,B256) EDF(BC) (6) --> (3,EDF)
+         * (0,ASCII) B256(A) (3) --> (1,B256) C40(BCD) (5) --> (4,C40)
+         * (0,ASCII) B256(A) (3) --> (1,B256) TEXT(BCD) (7) --> (4,TEXT)
+         * (0,ASCII) B256(A) (3) --> (1,B256) X12(BCD) (5) --> (4,X12)
+         * (0,ASCII) B256(A) (3) --> (1,B256) EDF(BCD) (6) --> (4,EDF)
+         * (0,ASCII) B256(A) (3) --> (1,B256) EDF(BCDE) (6) --> (5,EDF)
+         *
+         * Edge "(1,ASCII) ASCII(B) (2) --> (2,ASCII)" is minimal for the vertex (2,ASCII) so that edge "(1,B256) ASCII(B) (4) --> (2,ASCII)" is removed.
+         * Edge "(1,B256) B256(B) (3) --> (2,B256)" is minimal for the vertext (2,B256) so that the edge "(1,ASCII) B256(B) (4) --> (2,B256)" is removed.
+         *
+         * Situation after adding edges to vertices at position 2
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII)
+         * (0,ASCII) B256(A) (3) --> (1,B256)
+         * (0,ASCII) EDF(AB) (4) --> (2,EDF)
+         * (0,ASCII) C40(ABC) (3) --> (3,C40)
+         * (0,ASCII) TEXT(ABC) (5) --> (3,TEXT)
+         * (0,ASCII) X12(ABC) (3) --> (3,X12)
+         * (0,ASCII) EDF(ABC) (4) --> (3,EDF)
+         * (0,ASCII) EDF(ABCD) (4) --> (4,EDF)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) ASCII(B) (2) --> (2,ASCII)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) EDF(BC) (5) --> (3,EDF)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) C40(BCD) (4) --> (4,C40)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) TEXT(BCD) (6) --> (4,TEXT)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) X12(BCD) (4) --> (4,X12)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) EDF(BCD) (5) --> (4,EDF)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) EDF(BCDE) (5) --> (5,EDF)
+         * (0,ASCII) B256(A) (3) --> (1,B256) B256(B) (3) --> (2,B256)
+         * (0,ASCII) B256(A) (3) --> (1,B256) EDF(BC) (6) --> (3,EDF)
+         * (0,ASCII) B256(A) (3) --> (1,B256) C40(BCD) (5) --> (4,C40)
+         * (0,ASCII) B256(A) (3) --> (1,B256) TEXT(BCD) (7) --> (4,TEXT)
+         * (0,ASCII) B256(A) (3) --> (1,B256) X12(BCD) (5) --> (4,X12)
+         * (0,ASCII) B256(A) (3) --> (1,B256) EDF(BCD) (6) --> (4,EDF)
+         * (0,ASCII) B256(A) (3) --> (1,B256) EDF(BCDE) (6) --> (5,EDF)
+         * (0,ASCII) EDF(AB) (4) --> (2,EDF) ASCII(C) (5) --> (3,ASCII)
+         * (0,ASCII) EDF(AB) (4) --> (2,EDF) B256(C) (6) --> (3,B256)
+         * (0,ASCII) EDF(AB) (4) --> (2,EDF) EDF(CD) (7) --> (4,EDF)
+         * (0,ASCII) EDF(AB) (4) --> (2,EDF) C40(CDE) (6) --> (5,C40)
+         * (0,ASCII) EDF(AB) (4) --> (2,EDF) TEXT(CDE) (8) --> (5,TEXT)
+         * (0,ASCII) EDF(AB) (4) --> (2,EDF) X12(CDE) (6) --> (5,X12)
+         * (0,ASCII) EDF(AB) (4) --> (2,EDF) EDF(CDE) (7) --> (5,EDF)
+         * (0,ASCII) EDF(AB) (4) --> (2,EDF) EDF(CDEF) (7) --> (6,EDF)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) ASCII(B) (2) --> (2,ASCII) ASCII(C) (3) --> (3,ASCII)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) ASCII(B) (2) --> (2,ASCII) B256(C) (5) --> (3,B256)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) ASCII(B) (2) --> (2,ASCII) EDF(CD) (6) --> (4,EDF)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) ASCII(B) (2) --> (2,ASCII) C40(CDE) (5) --> (5,C40)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) ASCII(B) (2) --> (2,ASCII) TEXT(CDE) (7) --> (5,TEXT)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) ASCII(B) (2) --> (2,ASCII) X12(CDE) (5) --> (5,X12)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) ASCII(B) (2) --> (2,ASCII) EDF(CDE) (6) --> (5,EDF)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) ASCII(B) (2) --> (2,ASCII) EDF(CDEF) (6) --> (6,EDF)
+         * (0,ASCII) B256(A) (3) --> (1,B256) B256(B) (3) --> (2,B256) ASCII(C) (4) --> (3,ASCII)
+         * (0,ASCII) B256(A) (3) --> (1,B256) B256(B) (3) --> (2,B256) B256(C) (4) --> (3,B256)
+         * (0,ASCII) B256(A) (3) --> (1,B256) B256(B) (3) --> (2,B256) EDF(CD) (6) --> (4,EDF)
+         * (0,ASCII) B256(A) (3) --> (1,B256) B256(B) (3) --> (2,B256) C40(CDE) (5) --> (5,C40)
+         * (0,ASCII) B256(A) (3) --> (1,B256) B256(B) (3) --> (2,B256) TEXT(CDE) (7) --> (5,TEXT)
+         * (0,ASCII) B256(A) (3) --> (1,B256) B256(B) (3) --> (2,B256) X12(CDE) (5) --> (5,X12)
+         * (0,ASCII) B256(A) (3) --> (1,B256) B256(B) (3) --> (2,B256) EDF(CDE) (6) --> (5,EDF)
+         * (0,ASCII) B256(A) (3) --> (1,B256) B256(B) (3) --> (2,B256) EDF(CDEF) (6) --> (6,EDF)
+         *
+         * Edge "(2,ASCII) ASCII(C) (3) --> (3,ASCII)" is minimal for the vertex (3,ASCII) so that edges "(2,EDF) ASCII(C) (5) --> (3,ASCII)"
+         * and "(2,B256) ASCII(C) (4) --> (3,ASCII)" can be removed.
+         * Edge "(0,ASCII) EDF(ABC) (4) --> (3,EDF)" is minimal for the vertex (3,EDF) so that edges "(1,ASCII) EDF(BC) (5) --> (3,EDF)"
+         * and "(1,B256) EDF(BC) (6) --> (3,EDF)" can be removed.
+         * Edge "(2,B256) B256(C) (4) --> (3,B256)" is minimal for the vertex (3,B256) so that edges "(2,ASCII) B256(C) (5) --> (3,B256)"
+         * and "(2,EDF) B256(C) (6) --> (3,B256)" can be removed.
+         *
+         * This continues for vertices 3 thru 7
+         *
+         * Situation after adding edges to vertices at position 7
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII)
+         * (0,ASCII) B256(A) (3) --> (1,B256)
+         * (0,ASCII) EDF(AB) (4) --> (2,EDF)
+         * (0,ASCII) C40(ABC) (3) --> (3,C40)
+         * (0,ASCII) TEXT(ABC) (5) --> (3,TEXT)
+         * (0,ASCII) X12(ABC) (3) --> (3,X12)
+         * (0,ASCII) EDF(ABC) (4) --> (3,EDF)
+         * (0,ASCII) EDF(ABCD) (4) --> (4,EDF)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) ASCII(B) (2) --> (2,ASCII)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) C40(BCD) (4) --> (4,C40)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) TEXT(BCD) (6) --> (4,TEXT)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) X12(BCD) (4) --> (4,X12)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) EDF(BCDE) (5) --> (5,EDF)
+         * (0,ASCII) B256(A) (3) --> (1,B256) B256(B) (3) --> (2,B256)
+         * (0,ASCII) C40(ABC) (3) --> (3,C40) C40(DEF) (5) --> (6,C40)
+         * (0,ASCII) X12(ABC) (3) --> (3,X12) X12(DEF) (5) --> (6,X12)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) ASCII(B) (2) --> (2,ASCII) ASCII(C) (3) --> (3,ASCII)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) ASCII(B) (2) --> (2,ASCII) C40(CDE) (5) --> (5,C40)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) ASCII(B) (2) --> (2,ASCII) TEXT(CDE) (7) --> (5,TEXT)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) ASCII(B) (2) --> (2,ASCII) X12(CDE) (5) --> (5,X12)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) ASCII(B) (2) --> (2,ASCII) EDF(CDEF) (6) --> (6,EDF)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) C40(BCD) (4) --> (4,C40) C40(EFG) (6) --> (7,C40)    //Solution 1
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) X12(BCD) (4) --> (4,X12) X12(EFG) (6) --> (7,X12)    //Solution 2
+         * (0,ASCII) B256(A) (3) --> (1,B256) B256(B) (3) --> (2,B256) B256(C) (4) --> (3,B256)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) ASCII(B) (2) --> (2,ASCII) ASCII(C) (3) --> (3,ASCII) ASCII(D) (4) --> (4,ASCII)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) ASCII(B) (2) --> (2,ASCII) ASCII(C) (3) --> (3,ASCII) TEXT(DEF) (8) --> (6,TEXT)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) ASCII(B) (2) --> (2,ASCII) ASCII(C) (3) --> (3,ASCII) EDF(DEFG) (7) --> (7,EDF)
+         * (0,ASCII) B256(A) (3) --> (1,B256) B256(B) (3) --> (2,B256) B256(C) (4) --> (3,B256) B256(D) (5) --> (4,B256)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) ASCII(B) (2) --> (2,ASCII) ASCII(C) (3) --> (3,ASCII) ASCII(D) (4) --> (4,ASCII) ASCII(E) (5) --> (5,ASCII)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) ASCII(B) (2) --> (2,ASCII) ASCII(C) (3) --> (3,ASCII) ASCII(D) (4) --> (4,ASCII) TEXT(EFG) (9) --> (7,TEXT)
+         * (0,ASCII) B256(A) (3) --> (1,B256) B256(B) (3) --> (2,B256) B256(C) (4) --> (3,B256) B256(D) (5) --> (4,B256) B256(E) (6) --> (5,B256)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) ASCII(B) (2) --> (2,ASCII) ASCII(C) (3) --> (3,ASCII) ASCII(D) (4) --> (4,ASCII) ASCII(E) (5) --> (5,ASCII) ASCII(F) (6) --> (6,ASCII)
+         * (0,ASCII) B256(A) (3) --> (1,B256) B256(B) (3) --> (2,B256) B256(C) (4) --> (3,B256) B256(D) (5) --> (4,B256) B256(E) (6) --> (5,B256) B256(F) (7) --> (6,B256)
+         * (0,ASCII) ASCII(A) (1) --> (1,ASCII) ASCII(B) (2) --> (2,ASCII) ASCII(C) (3) --> (3,ASCII) ASCII(D) (4) --> (4,ASCII) ASCII(E) (5) --> (5,ASCII) ASCII(F) (6) --> (6,ASCII) ASCII(G) (7) --> (7,ASCII)
+         * (0,ASCII) B256(A) (3) --> (1,B256) B256(B) (3) --> (2,B256) B256(C) (4) --> (3,B256) B256(D) (5) --> (4,B256) B256(E) (6) --> (5,B256) B256(F) (7) --> (6,B256) B256(G) (8) --> (7,B256)
+         *
+         * Hence a minimal encoding of "ABCDEFG" is either ASCII(A),C40(BCDEFG) or ASCII(A), X12(BCDEFG) with a size of 5 bytes.
+         */
+        var inputLength = input.length();
+        // Array that represents vertices. There is a vertex for every character and mode.
+        // The last dimension in the array below encodes the 6 modes ASCII, C40, TEXT, X12, EDF and B256
+        var edges = Array(inputLength + 1)
+            .fill(null)
+            .map(function () { return Array(6).fill(0); });
+        this.addEdges(input, edges, 0, null);
+        for (var i = 1; i <= inputLength; i++) {
+            for (var j = 0; j < 6; j++) {
+                if (edges[i][j] !== null && i < inputLength) {
+                    this.addEdges(input, edges, i, edges[i][j]);
+                }
+            }
+            // optimize memory by removing edges that have been passed.
+            for (var j = 0; j < 6; j++) {
+                edges[i - 1][j] = null;
+            }
+        }
+        var minimalJ = -1;
+        var minimalSize = Integer/* default.MAX_VALUE */.Z.MAX_VALUE;
+        for (var j = 0; j < 6; j++) {
+            if (edges[inputLength][j] !== null) {
+                var edge = edges[inputLength][j];
+                var size = j >= 1 && j <= 3 ? edge.cachedTotalSize + 1 : edge.cachedTotalSize; // C40, TEXT and X12 need an
+                // extra unlatch at the end
+                if (size < minimalSize) {
+                    minimalSize = size;
+                    minimalJ = j;
+                }
+            }
+        }
+        if (minimalJ < 0) {
+            throw new Error('Failed to encode "' + input + '"');
+        }
+        return new Result(edges[inputLength][minimalJ]);
+    };
+    return MinimalEncoder;
+}());
+
+var Result = /** @class */ (function () {
+    function Result(solution) {
+        var input = solution.input;
+        var size = 0;
+        var bytesAL = [];
+        var randomizePostfixLength = [];
+        var randomizeLengths = [];
+        if ((solution.mode === Mode.C40 ||
+            solution.mode === Mode.TEXT ||
+            solution.mode === Mode.X12) &&
+            solution.getEndMode() !== Mode.ASCII) {
+            size += this.prepend(Edge.getBytes(254), bytesAL);
+        }
+        var current = solution;
+        while (current !== null) {
+            size += this.prepend(current.getDataBytes(), bytesAL);
+            if (current.previous === null ||
+                current.getPreviousStartMode() !== current.getMode()) {
+                if (current.getMode() === Mode.B256) {
+                    if (size <= 249) {
+                        bytesAL.unshift(size);
+                        size++;
+                    }
+                    else {
+                        bytesAL.unshift(size % 250);
+                        bytesAL.unshift(size / 250 + 249);
+                        size += 2;
+                    }
+                    randomizePostfixLength.push(bytesAL.length);
+                    randomizeLengths.push(size);
+                }
+                this.prepend(current.getLatchBytes(), bytesAL);
+                size = 0;
+            }
+            current = current.previous;
+        }
+        if (input.getMacroId() === 5) {
+            size += this.prepend(Edge.getBytes(236), bytesAL);
+        }
+        else if (input.getMacroId() === 6) {
+            size += this.prepend(Edge.getBytes(237), bytesAL);
+        }
+        if (input.getFNC1Character() > 0) {
+            size += this.prepend(Edge.getBytes(232), bytesAL);
+        }
+        for (var i = 0; i < randomizePostfixLength.length; i++) {
+            this.applyRandomPattern(bytesAL, bytesAL.length - randomizePostfixLength[i], randomizeLengths[i]);
+        }
+        // add padding
+        var capacity = solution.getMinSymbolSize(bytesAL.length);
+        if (bytesAL.length < capacity) {
+            bytesAL.push(129);
+        }
+        while (bytesAL.length < capacity) {
+            bytesAL.push(this.randomize253State(bytesAL.length + 1));
+        }
+        this.bytes = new Uint8Array(bytesAL.length);
+        for (var i = 0; i < this.bytes.length; i++) {
+            this.bytes[i] = bytesAL[i];
+        }
+    }
+    Result.prototype.prepend = function (bytes, into) {
+        for (var i = bytes.length - 1; i >= 0; i--) {
+            into.unshift(bytes[i]);
+        }
+        return bytes.length;
+    };
+    Result.prototype.randomize253State = function (codewordPosition) {
+        var pseudoRandom = ((149 * codewordPosition) % 253) + 1;
+        var tempVariable = 129 + pseudoRandom;
+        return tempVariable <= 254 ? tempVariable : tempVariable - 254;
+    };
+    Result.prototype.applyRandomPattern = function (bytesAL, startPosition, length) {
+        for (var i = 0; i < length; i++) {
+            // See "B.1 253-state algorithm
+            var Pad_codeword_position = startPosition + i;
+            var Pad_codeword_value = bytesAL[Pad_codeword_position] & 0xff;
+            var pseudo_random_number = ((149 * (Pad_codeword_position + 1)) % 255) + 1;
+            var temp_variable = Pad_codeword_value + pseudo_random_number;
+            bytesAL[Pad_codeword_position] =
+                temp_variable <= 255 ? temp_variable : temp_variable - 256;
+        }
+    };
+    Result.prototype.getBytes = function () {
+        return this.bytes;
+    };
+    return Result;
+}());
+var Edge = /** @class */ (function () {
+    function Edge(input, mode, fromPosition, characterLength, previous) {
+        this.input = input;
+        this.mode = mode;
+        this.fromPosition = fromPosition;
+        this.characterLength = characterLength;
+        this.previous = previous;
+        this.allCodewordCapacities = [
+            3, 5, 8, 10, 12, 16, 18, 22, 30, 32, 36, 44, 49, 62, 86, 114, 144, 174, 204,
+            280, 368, 456, 576, 696, 816, 1050, 1304, 1558,
+        ];
+        this.squareCodewordCapacities = [
+            3, 5, 8, 12, 18, 22, 30, 36, 44, 62, 86, 114, 144, 174, 204, 280, 368, 456,
+            576, 696, 816, 1050, 1304, 1558,
+        ];
+        this.rectangularCodewordCapacities = [5, 10, 16, 33, 32, 49];
+        if (!(fromPosition + characterLength <= input.length())) {
+            throw new Error('Invalid edge');
+        }
+        var size = previous !== null ? previous.cachedTotalSize : 0;
+        var previousMode = this.getPreviousMode();
+        /*
+         * Switching modes
+         * ASCII -> C40: latch 230
+         * ASCII -> TEXT: latch 239
+         * ASCII -> X12: latch 238
+         * ASCII -> EDF: latch 240
+         * ASCII -> B256: latch 231
+         * C40 -> ASCII: word(c1,c2,c3), 254
+         * TEXT -> ASCII: word(c1,c2,c3), 254
+         * X12 -> ASCII: word(c1,c2,c3), 254
+         * EDIFACT -> ASCII: Unlatch character,0,0,0 or c1,Unlatch character,0,0 or c1,c2,Unlatch character,0 or
+         * c1,c2,c3,Unlatch character
+         * B256 -> ASCII: without latch after n bytes
+         */
+        switch (mode) {
+            case Mode.ASCII:
+                size++;
+                if (input.isECI(fromPosition) ||
+                    MinimalEncoder.isExtendedASCII(input.charAt(fromPosition), input.getFNC1Character())) {
+                    size++;
+                }
+                if (previousMode === Mode.C40 ||
+                    previousMode === Mode.TEXT ||
+                    previousMode === Mode.X12) {
+                    size++; // unlatch 254 to ASCII
+                }
+                break;
+            case Mode.B256:
+                size++;
+                if (previousMode !== Mode.B256) {
+                    size++; // byte count
+                }
+                else if (this.getB256Size() === 250) {
+                    size++; // extra byte count
+                }
+                if (previousMode === Mode.ASCII) {
+                    size++; // latch to B256
+                }
+                else if (previousMode === Mode.C40 ||
+                    previousMode === Mode.TEXT ||
+                    previousMode === Mode.X12) {
+                    size += 2; // unlatch to ASCII, latch to B256
+                }
+                break;
+            case Mode.C40:
+            case Mode.TEXT:
+            case Mode.X12:
+                if (mode === Mode.X12) {
+                    size += 2;
+                }
+                else {
+                    var charLen = [];
+                    size +=
+                        MinimalEncoder.getNumberOfC40Words(input, fromPosition, mode === Mode.C40, charLen) * 2;
+                }
+                if (previousMode === Mode.ASCII || previousMode === Mode.B256) {
+                    size++; // additional byte for latch from ASCII to this mode
+                }
+                else if (previousMode !== mode &&
+                    (previousMode === Mode.C40 ||
+                        previousMode === Mode.TEXT ||
+                        previousMode === Mode.X12)) {
+                    size += 2; // unlatch 254 to ASCII followed by latch to this mode
+                }
+                break;
+            case Mode.EDF:
+                size += 3;
+                if (previousMode === Mode.ASCII || previousMode === Mode.B256) {
+                    size++; // additional byte for latch from ASCII to this mode
+                }
+                else if (previousMode === Mode.C40 ||
+                    previousMode === Mode.TEXT ||
+                    previousMode === Mode.X12) {
+                    size += 2; // unlatch 254 to ASCII followed by latch to this mode
+                }
+                break;
+        }
+        this.cachedTotalSize = size;
+    }
+    // does not count beyond 250
+    Edge.prototype.getB256Size = function () {
+        var cnt = 0;
+        var current = this;
+        while (current !== null && current.mode === Mode.B256 && cnt <= 250) {
+            cnt++;
+            current = current.previous;
+        }
+        return cnt;
+    };
+    Edge.prototype.getPreviousStartMode = function () {
+        return this.previous === null ? Mode.ASCII : this.previous.mode;
+    };
+    Edge.prototype.getPreviousMode = function () {
+        return this.previous === null ? Mode.ASCII : this.previous.getEndMode();
+    };
+    /** Returns Mode.ASCII in case that:
+     *  - Mode is EDIFACT and characterLength is less than 4 or the remaining characters can be encoded in at most 2
+     *    ASCII bytes.
+     *  - Mode is C40, TEXT or X12 and the remaining characters can be encoded in at most 1 ASCII byte.
+     *  Returns mode in all other cases.
+     * */
+    Edge.prototype.getEndMode = function () {
+        if (this.mode === Mode.EDF) {
+            if (this.characterLength < 4) {
+                return Mode.ASCII;
+            }
+            var lastASCII = this.getLastASCII(); // see 5.2.8.2 EDIFACT encodation Rules
+            if (lastASCII > 0 &&
+                this.getCodewordsRemaining(this.cachedTotalSize + lastASCII) <=
+                    2 - lastASCII) {
+                return Mode.ASCII;
+            }
+        }
+        if (this.mode === Mode.C40 ||
+            this.mode === Mode.TEXT ||
+            this.mode === Mode.X12) {
+            // see 5.2.5.2 C40 encodation rules and 5.2.7.2 ANSI X12 encodation rules
+            if (this.fromPosition + this.characterLength >= this.input.length() &&
+                this.getCodewordsRemaining(this.cachedTotalSize) === 0) {
+                return Mode.ASCII;
+            }
+            var lastASCII = this.getLastASCII();
+            if (lastASCII === 1 &&
+                this.getCodewordsRemaining(this.cachedTotalSize + 1) === 0) {
+                return Mode.ASCII;
+            }
+        }
+        return this.mode;
+    };
+    Edge.prototype.getMode = function () {
+        return this.mode;
+    };
+    /** Peeks ahead and returns 1 if the postfix consists of exactly two digits, 2 if the postfix consists of exactly
+     *  two consecutive digits and a non extended character or of 4 digits.
+     *  Returns 0 in any other case
+     **/
+    Edge.prototype.getLastASCII = function () {
+        var length = this.input.length();
+        var from = this.fromPosition + this.characterLength;
+        if (length - from > 4 || from >= length) {
+            return 0;
+        }
+        if (length - from === 1) {
+            if (MinimalEncoder.isExtendedASCII(this.input.charAt(from), this.input.getFNC1Character())) {
+                return 0;
+            }
+            return 1;
+        }
+        if (length - from === 2) {
+            if (MinimalEncoder.isExtendedASCII(this.input.charAt(from), this.input.getFNC1Character()) ||
+                MinimalEncoder.isExtendedASCII(this.input.charAt(from + 1), this.input.getFNC1Character())) {
+                return 0;
+            }
+            if (HighLevelEncoder/* default.isDigit */.Z.isDigit(this.input.charAt(from)) &&
+                HighLevelEncoder/* default.isDigit */.Z.isDigit(this.input.charAt(from + 1))) {
+                return 1;
+            }
+            return 2;
+        }
+        if (length - from === 3) {
+            if (HighLevelEncoder/* default.isDigit */.Z.isDigit(this.input.charAt(from)) &&
+                HighLevelEncoder/* default.isDigit */.Z.isDigit(this.input.charAt(from + 1)) &&
+                !MinimalEncoder.isExtendedASCII(this.input.charAt(from + 2), this.input.getFNC1Character())) {
+                return 2;
+            }
+            if (HighLevelEncoder/* default.isDigit */.Z.isDigit(this.input.charAt(from + 1)) &&
+                HighLevelEncoder/* default.isDigit */.Z.isDigit(this.input.charAt(from + 2)) &&
+                !MinimalEncoder.isExtendedASCII(this.input.charAt(from), this.input.getFNC1Character())) {
+                return 2;
+            }
+            return 0;
+        }
+        if (HighLevelEncoder/* default.isDigit */.Z.isDigit(this.input.charAt(from)) &&
+            HighLevelEncoder/* default.isDigit */.Z.isDigit(this.input.charAt(from + 1)) &&
+            HighLevelEncoder/* default.isDigit */.Z.isDigit(this.input.charAt(from + 2)) &&
+            HighLevelEncoder/* default.isDigit */.Z.isDigit(this.input.charAt(from + 3))) {
+            return 2;
+        }
+        return 0;
+    };
+    /** Returns the capacity in codewords of the smallest symbol that has enough capacity to fit the given minimal
+     * number of codewords.
+     **/
+    Edge.prototype.getMinSymbolSize = function (minimum) {
+        var e_3, _a, e_4, _b, e_5, _c;
+        switch (this.input.getShapeHint()) {
+            case 1 /* FORCE_SQUARE */:
+                try {
+                    for (var _d = MinimalEncoder_values(this.squareCodewordCapacities), _e = _d.next(); !_e.done; _e = _d.next()) {
+                        var capacity = _e.value;
+                        if (capacity >= minimum) {
+                            return capacity;
+                        }
+                    }
+                }
+                catch (e_3_1) { e_3 = { error: e_3_1 }; }
+                finally {
+                    try {
+                        if (_e && !_e.done && (_a = _d.return)) _a.call(_d);
+                    }
+                    finally { if (e_3) throw e_3.error; }
+                }
+                break;
+            case 2 /* FORCE_RECTANGLE */:
+                try {
+                    for (var _f = MinimalEncoder_values(this.rectangularCodewordCapacities), _g = _f.next(); !_g.done; _g = _f.next()) {
+                        var capacity = _g.value;
+                        if (capacity >= minimum) {
+                            return capacity;
+                        }
+                    }
+                }
+                catch (e_4_1) { e_4 = { error: e_4_1 }; }
+                finally {
+                    try {
+                        if (_g && !_g.done && (_b = _f.return)) _b.call(_f);
+                    }
+                    finally { if (e_4) throw e_4.error; }
+                }
+                break;
+        }
+        try {
+            for (var _h = MinimalEncoder_values(this.allCodewordCapacities), _j = _h.next(); !_j.done; _j = _h.next()) {
+                var capacity = _j.value;
+                if (capacity >= minimum) {
+                    return capacity;
+                }
+            }
+        }
+        catch (e_5_1) { e_5 = { error: e_5_1 }; }
+        finally {
+            try {
+                if (_j && !_j.done && (_c = _h.return)) _c.call(_h);
+            }
+            finally { if (e_5) throw e_5.error; }
+        }
+        return this.allCodewordCapacities[this.allCodewordCapacities.length - 1];
+    };
+    /** Returns the remaining capacity in codewords of the smallest symbol that has enough capacity to fit the given
+     * minimal number of codewords.
+     **/
+    Edge.prototype.getCodewordsRemaining = function (minimum) {
+        return this.getMinSymbolSize(minimum) - minimum;
+    };
+    Edge.getBytes = function (c1, c2) {
+        var result = new Uint8Array(c2 ? 2 : 1);
+        result[0] = c1;
+        if (c2) {
+            result[1] = c2;
+        }
+        return result;
+    };
+    Edge.prototype.setC40Word = function (bytes, offset, c1, c2, c3) {
+        var val16 = 1600 * (c1 & 0xff) + 40 * (c2 & 0xff) + (c3 & 0xff) + 1;
+        bytes[offset] = val16 / 256;
+        bytes[offset + 1] = val16 % 256;
+    };
+    Edge.prototype.getX12Value = function (c) {
+        return c === 13
+            ? 0
+            : c === 42
+                ? 1
+                : c === 62
+                    ? 2
+                    : c === 32
+                        ? 3
+                        : c >= 48 && c <= 57
+                            ? c - 44
+                            : c >= 65 && c <= 90
+                                ? c - 51
+                                : c;
+    };
+    Edge.prototype.getX12Words = function () {
+        if (!(this.characterLength % 3 === 0)) {
+            throw new Error('X12 words must be a multiple of 3');
+        }
+        var result = new Uint8Array((this.characterLength / 3) * 2);
+        for (var i = 0; i < result.length; i += 2) {
+            this.setC40Word(result, i, this.getX12Value(this.input.charAt(this.fromPosition + (i / 2) * 3)), this.getX12Value(this.input.charAt(this.fromPosition + (i / 2) * 3 + 1)), this.getX12Value(this.input.charAt(this.fromPosition + (i / 2) * 3 + 2)));
+        }
+        return result;
+    };
+    Edge.prototype.getShiftValue = function (c, c40, fnc1) {
+        return (c40 && MinimalEncoder.isInC40Shift1Set(c)) ||
+            (!c40 && MinimalEncoder.isInTextShift1Set(c))
+            ? 0
+            : (c40 && MinimalEncoder.isInC40Shift2Set(c, fnc1)) ||
+                (!c40 && MinimalEncoder.isInTextShift2Set(c, fnc1))
+                ? 1
+                : 2;
+    };
+    Edge.prototype.getC40Value = function (c40, setIndex, c, fnc1) {
+        if (c === fnc1) {
+            if (!(setIndex === 2)) {
+                throw new Error('FNC1 cannot be used in C40 shift 2');
+            }
+            return 27;
+        }
+        if (c40) {
+            return c <= 31
+                ? c
+                : c === 32
+                    ? 3
+                    : c <= 47
+                        ? c - 33
+                        : c <= 57
+                            ? c - 44
+                            : c <= 64
+                                ? c - 43
+                                : c <= 90
+                                    ? c - 51
+                                    : c <= 95
+                                        ? c - 69
+                                        : c <= 127
+                                            ? c - 96
+                                            : c;
+        }
+        else {
+            return c === 0
+                ? 0
+                : setIndex === 0 && c <= 3
+                    ? c - 1 // is this a bug in the spec?
+                    : setIndex === 1 && c <= 31
+                        ? c
+                        : c === 32
+                            ? 3
+                            : c >= 33 && c <= 47
+                                ? c - 33
+                                : c >= 48 && c <= 57
+                                    ? c - 44
+                                    : c >= 58 && c <= 64
+                                        ? c - 43
+                                        : c >= 65 && c <= 90
+                                            ? c - 64
+                                            : c >= 91 && c <= 95
+                                                ? c - 69
+                                                : c === 96
+                                                    ? 0
+                                                    : c >= 97 && c <= 122
+                                                        ? c - 83
+                                                        : c >= 123 && c <= 127
+                                                            ? c - 96
+                                                            : c;
+        }
+    };
+    Edge.prototype.getC40Words = function (c40, fnc1) {
+        var c40Values = [];
+        for (var i = 0; i < this.characterLength; i++) {
+            var ci = this.input.charAt(this.fromPosition + i);
+            if ((c40 && HighLevelEncoder/* default.isNativeC40 */.Z.isNativeC40(ci)) ||
+                (!c40 && HighLevelEncoder/* default.isNativeText */.Z.isNativeText(ci))) {
+                c40Values.push(this.getC40Value(c40, 0, ci, fnc1));
+            }
+            else if (!MinimalEncoder.isExtendedASCII(ci, fnc1)) {
+                var shiftValue = this.getShiftValue(ci, c40, fnc1);
+                c40Values.push(shiftValue); // Shift[123]
+                c40Values.push(this.getC40Value(c40, shiftValue, ci, fnc1));
+            }
+            else {
+                var asciiValue = (ci & 0xff) - 128;
+                if ((c40 && HighLevelEncoder/* default.isNativeC40 */.Z.isNativeC40(asciiValue)) ||
+                    (!c40 && HighLevelEncoder/* default.isNativeText */.Z.isNativeText(asciiValue))) {
+                    c40Values.push(1); // Shift 2
+                    c40Values.push(30); // Upper Shift
+                    c40Values.push(this.getC40Value(c40, 0, asciiValue, fnc1));
+                }
+                else {
+                    c40Values.push(1); // Shift 2
+                    c40Values.push(30); // Upper Shift
+                    var shiftValue = this.getShiftValue(asciiValue, c40, fnc1);
+                    c40Values.push(shiftValue); // Shift[123]
+                    c40Values.push(this.getC40Value(c40, shiftValue, asciiValue, fnc1));
+                }
+            }
+        }
+        if (c40Values.length % 3 !== 0) {
+            if (!((c40Values.length - 2) % 3 === 0 &&
+                this.fromPosition + this.characterLength === this.input.length())) {
+                throw new Error('C40 words must be a multiple of 3');
+            }
+            c40Values.push(0); // pad with 0 (Shift 1)
+        }
+        var result = new Uint8Array((c40Values.length / 3) * 2);
+        var byteIndex = 0;
+        for (var i = 0; i < c40Values.length; i += 3) {
+            this.setC40Word(result, byteIndex, c40Values[i] & 0xff, c40Values[i + 1] & 0xff, c40Values[i + 2] & 0xff);
+            byteIndex += 2;
+        }
+        return result;
+    };
+    Edge.prototype.getEDFBytes = function () {
+        var numberOfThirds = Math.ceil(this.characterLength / 4.0);
+        var result = new Uint8Array(numberOfThirds * 3);
+        var pos = this.fromPosition;
+        var endPos = Math.min(this.fromPosition + this.characterLength - 1, this.input.length() - 1);
+        for (var i = 0; i < numberOfThirds; i += 3) {
+            var edfValues = [];
+            for (var j = 0; j < 4; j++) {
+                if (pos <= endPos) {
+                    edfValues[j] = this.input.charAt(pos++) & 0x3f;
+                }
+                else {
+                    edfValues[j] = pos === endPos + 1 ? 0x1f : 0;
+                }
+            }
+            var val24 = edfValues[0] << 18;
+            val24 |= edfValues[1] << 12;
+            val24 |= edfValues[2] << 6;
+            val24 |= edfValues[3];
+            result[i] = (val24 >> 16) & 0xff;
+            result[i + 1] = (val24 >> 8) & 0xff;
+            result[i + 2] = val24 & 0xff;
+        }
+        return result;
+    };
+    Edge.prototype.getLatchBytes = function () {
+        switch (this.getPreviousMode()) {
+            case Mode.ASCII:
+            case Mode.B256: // after B256 ends (via length) we are back to ASCII
+                switch (this.mode) {
+                    case Mode.B256:
+                        return Edge.getBytes(231);
+                    case Mode.C40:
+                        return Edge.getBytes(230);
+                    case Mode.TEXT:
+                        return Edge.getBytes(239);
+                    case Mode.X12:
+                        return Edge.getBytes(238);
+                    case Mode.EDF:
+                        return Edge.getBytes(240);
+                }
+                break;
+            case Mode.C40:
+            case Mode.TEXT:
+            case Mode.X12:
+                if (this.mode !== this.getPreviousMode()) {
+                    switch (this.mode) {
+                        case Mode.ASCII:
+                            return Edge.getBytes(254);
+                        case Mode.B256:
+                            return Edge.getBytes(254, 231);
+                        case Mode.C40:
+                            return Edge.getBytes(254, 230);
+                        case Mode.TEXT:
+                            return Edge.getBytes(254, 239);
+                        case Mode.X12:
+                            return Edge.getBytes(254, 238);
+                        case Mode.EDF:
+                            return Edge.getBytes(254, 240);
+                    }
+                }
+                break;
+            case Mode.EDF:
+                // The rightmost EDIFACT edge always contains an unlatch character
+                if (this.mode !== Mode.EDF) {
+                    throw new Error('Cannot switch from EDF to ' + this.mode);
+                }
+                break;
+        }
+        return new Uint8Array(0);
+    };
+    // Important: The function does not return the length bytes (one or two) in case of B256 encoding
+    Edge.prototype.getDataBytes = function () {
+        switch (this.mode) {
+            case Mode.ASCII:
+                if (this.input.isECI(this.fromPosition)) {
+                    return Edge.getBytes(241, this.input.getECIValue(this.fromPosition) + 1);
+                }
+                else if (MinimalEncoder.isExtendedASCII(this.input.charAt(this.fromPosition), this.input.getFNC1Character())) {
+                    return Edge.getBytes(235, this.input.charAt(this.fromPosition) - 127);
+                }
+                else if (this.characterLength === 2) {
+                    return Edge.getBytes(this.input.charAt(this.fromPosition) * 10 +
+                        this.input.charAt(this.fromPosition + 1) +
+                        130);
+                }
+                else if (this.input.isFNC1(this.fromPosition)) {
+                    return Edge.getBytes(232);
+                }
+                else {
+                    return Edge.getBytes(this.input.charAt(this.fromPosition) + 1);
+                }
+            case Mode.B256:
+                return Edge.getBytes(this.input.charAt(this.fromPosition));
+            case Mode.C40:
+                return this.getC40Words(true, this.input.getFNC1Character());
+            case Mode.TEXT:
+                return this.getC40Words(false, this.input.getFNC1Character());
+            case Mode.X12:
+                return this.getX12Words();
+            case Mode.EDF:
+                return this.getEDFBytes();
+        }
+    };
+    return Edge;
+}());
+var Input = /** @class */ (function (_super) {
+    __extends(Input, _super);
+    function Input(stringToEncode, priorityCharset, fnc1, shape, macroId) {
+        var _this = _super.call(this, stringToEncode, priorityCharset, fnc1) || this;
+        _this.shape = shape;
+        _this.macroId = macroId;
+        return _this;
+    }
+    Input.prototype.getMacroId = function () {
+        return this.macroId;
+    };
+    Input.prototype.getShapeHint = function () {
+        return this.shape;
+    };
+    return Input;
+}(MinimalECIInput));
+
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/SymbolInfo.js
+var SymbolInfo = __webpack_require__(1662);
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/TextEncoder.js
+var TextEncoder = __webpack_require__(6175);
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/X12Encoder.js
+var X12Encoder = __webpack_require__(9714);
+;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/index.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/DataMatrixWriter.js
+
+
+
+
+
+
+var DataMatrixWriter = /** @class */ (function () {
+    function DataMatrixWriter() {
+    }
+    DataMatrixWriter.prototype.encode = function (contents, format, width, height, hints) {
+        if (hints === void 0) { hints = null; }
+        if (contents.trim() === '') {
+            throw new Error('Found empty contents');
+        }
+        if (format !== BarcodeFormat/* default.DATA_MATRIX */.Z.DATA_MATRIX) {
+            throw new Error('Can only encode DATA_MATRIX, but got ' + format);
+        }
+        if (width < 0 || height < 0) {
+            throw new Error('Requested dimensions can\'t be negative: ' + width + 'x' + height);
+        }
+        // Try to get force shape & min / max size
+        var shape = 0 /* FORCE_NONE */;
+        var minSize = null;
+        var maxSize = null;
+        if (hints != null) {
+            var requestedShape = hints.get(EncodeHintType/* default.DATA_MATRIX_SHAPE */.Z.DATA_MATRIX_SHAPE);
+            if (requestedShape != null) {
+                shape = requestedShape;
+            }
+            var requestedMinSize = hints.get(EncodeHintType/* default.MIN_SIZE */.Z.MIN_SIZE);
+            if (requestedMinSize != null) {
+                minSize = requestedMinSize;
+            }
+            var requestedMaxSize = hints.get(EncodeHintType/* default.MAX_SIZE */.Z.MAX_SIZE);
+            if (requestedMaxSize != null) {
+                maxSize = requestedMaxSize;
+            }
+        }
+        // 1. step: Data encodation
+        var encoded;
+        var hasCompactionHint = hints != null &&
+            hints.has(EncodeHintType/* default.DATA_MATRIX_COMPACT */.Z.DATA_MATRIX_COMPACT) &&
+            Boolean(hints.get(EncodeHintType/* default.DATA_MATRIX_COMPACT */.Z.DATA_MATRIX_COMPACT).toString());
+        if (hasCompactionHint) {
+            var hasGS1FormatHint = hints.has(EncodeHintType/* default.GS1_FORMAT */.Z.GS1_FORMAT) &&
+                Boolean(hints.get(EncodeHintType/* default.GS1_FORMAT */.Z.GS1_FORMAT).toString());
+            var charset = null;
+            var hasEncodingHint = hints.has(EncodeHintType/* default.CHARACTER_SET */.Z.CHARACTER_SET);
+            if (hasEncodingHint) {
+                charset = Charset/* default.forName */.Z.forName(hints.get(EncodeHintType/* default.CHARACTER_SET */.Z.CHARACTER_SET).toString());
+            }
+            encoded = MinimalEncoder.encodeHighLevel(contents, charset, hasGS1FormatHint ? 0x1d : -1, shape);
+        }
+        else {
+            var hasForceC40Hint = hints != null &&
+                hints.has(EncodeHintType/* default.FORCE_C40 */.Z.FORCE_C40) &&
+                Boolean(hints.get(EncodeHintType/* default.FORCE_C40 */.Z.FORCE_C40).toString());
+            encoded = HighLevelEncoder/* default.encodeHighLevel */.Z.encodeHighLevel(contents, shape, minSize, maxSize, hasForceC40Hint);
+        }
+        var symbolInfo = SymbolInfo/* default.lookup */.Z.lookup(encoded.length, shape, minSize, maxSize, true);
+        // 2. step: ECC generation
+        var codewords = ErrorCorrection/* default.encodeECC200 */.Z.encodeECC200(encoded, symbolInfo);
+        // 3. step: Module placement in Matrix
+        var placement = new DefaultPlacement/* default */.Z(codewords, symbolInfo.getSymbolDataWidth(), symbolInfo.getSymbolDataHeight());
+        placement.place();
+        // 4. step: low-level encoding
+        return this.encodeLowLevel(placement, symbolInfo, width, height);
+    };
+    /**
+     * Encode the given symbol info to a bit matrix.
+     *
+     * @param placement  The DataMatrix placement.
+     * @param symbolInfo The symbol info to encode.
+     * @return The bit matrix generated.
+     */
+    DataMatrixWriter.prototype.encodeLowLevel = function (placement, symbolInfo, width, height) {
+        var symbolWidth = symbolInfo.getSymbolDataWidth();
+        var symbolHeight = symbolInfo.getSymbolDataHeight();
+        var matrix = new ByteMatrix/* default */.Z(symbolInfo.getSymbolWidth(), symbolInfo.getSymbolHeight());
+        var matrixY = 0;
+        for (var y = 0; y < symbolHeight; y++) {
+            // Fill the top edge with alternate 0 / 1
+            var matrixX = void 0;
+            if (y % symbolInfo.matrixHeight === 0) {
+                matrixX = 0;
+                for (var x = 0; x < symbolInfo.getSymbolWidth(); x++) {
+                    matrix.setBoolean(matrixX, matrixY, x % 2 === 0);
+                    matrixX++;
+                }
+                matrixY++;
+            }
+            matrixX = 0;
+            for (var x = 0; x < symbolWidth; x++) {
+                // Fill the right edge with full 1
+                if (x % symbolInfo.matrixWidth === 0) {
+                    matrix.setBoolean(matrixX, matrixY, true);
+                    matrixX++;
+                }
+                matrix.setBoolean(matrixX, matrixY, placement.getBit(x, y));
+                matrixX++;
+                // Fill the right edge with alternate 0 / 1
+                if (x % symbolInfo.matrixWidth === symbolInfo.matrixWidth - 1) {
+                    matrix.setBoolean(matrixX, matrixY, y % 2 === 0);
+                    matrixX++;
+                }
+            }
+            matrixY++;
+            // Fill the bottom edge with full 1
+            if (y % symbolInfo.matrixHeight === symbolInfo.matrixHeight - 1) {
+                matrixX = 0;
+                for (var x = 0; x < symbolInfo.getSymbolWidth(); x++) {
+                    matrix.setBoolean(matrixX, matrixY, true);
+                    matrixX++;
+                }
+                matrixY++;
+            }
+        }
+        return this.convertByteMatrixToBitMatrix(matrix, width, height);
+    };
+    /**
+     * Convert the ByteMatrix to BitMatrix.
+     *
+     * @param reqHeight The requested height of the image (in pixels) with the Datamatrix code
+     * @param reqWidth The requested width of the image (in pixels) with the Datamatrix code
+     * @param matrix The input matrix.
+     * @return The output matrix.
+     */
+    DataMatrixWriter.prototype.convertByteMatrixToBitMatrix = function (matrix, reqWidth, reqHeight) {
+        var matrixWidth = matrix.getWidth();
+        var matrixHeight = matrix.getHeight();
+        var outputWidth = Math.max(reqWidth, matrixWidth);
+        var outputHeight = Math.max(reqHeight, matrixHeight);
+        var multiple = Math.min(outputWidth / matrixWidth, outputHeight / matrixHeight);
+        var leftPadding = (outputWidth - matrixWidth * multiple) / 2;
+        var topPadding = (outputHeight - matrixHeight * multiple) / 2;
+        var output;
+        // remove padding if requested width and height are too small
+        if (reqHeight < matrixHeight || reqWidth < matrixWidth) {
+            leftPadding = 0;
+            topPadding = 0;
+            output = new BitMatrix/* default */.Z(matrixWidth, matrixHeight);
+        }
+        else {
+            output = new BitMatrix/* default */.Z(reqWidth, reqHeight);
+        }
+        output.clear();
+        for (var inputY = 0, outputY = topPadding; inputY < matrixHeight; inputY++, outputY += multiple) {
+            // Write the contents of this row of the bytematrix
+            for (var inputX = 0, outputX = leftPadding; inputX < matrixWidth; inputX++, outputX += multiple) {
+                if (matrix.get(inputX, inputY) === 1) {
+                    output.setRegion(outputX, outputY, multiple, multiple);
+                }
+            }
+        }
+        return output;
+    };
+    return DataMatrixWriter;
+}());
+/* harmony default export */ const datamatrix_DataMatrixWriter = (DataMatrixWriter);
+
 
 /***/ }),
 
@@ -12361,7 +14325,2037 @@ var DecodedBitStreamParser = /** @class */ (function () {
     return DecodedBitStreamParser;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DecodedBitStreamParser);
-//# sourceMappingURL=DecodedBitStreamParser.js.map
+
+
+/***/ }),
+
+/***/ 4470:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "g": () => (/* binding */ ASCIIEncoder)
+/* harmony export */ });
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4255);
+/* harmony import */ var _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9729);
+
+// tslint:disable-next-line:no-circular-imports
+
+var ASCIIEncoder = /** @class */ (function () {
+    function ASCIIEncoder() {
+    }
+    ASCIIEncoder.prototype.getEncodingMode = function () {
+        return _constants__WEBPACK_IMPORTED_MODULE_0__/* .ASCII_ENCODATION */ .KJ;
+    };
+    ASCIIEncoder.prototype.encode = function (context) {
+        // step B
+        var n = _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__/* ["default"].determineConsecutiveDigitCount */ .Z.determineConsecutiveDigitCount(context.getMessage(), context.pos);
+        if (n >= 2) {
+            context.writeCodeword(this.encodeASCIIDigits(context.getMessage().charCodeAt(context.pos), context.getMessage().charCodeAt(context.pos + 1)));
+            context.pos += 2;
+        }
+        else {
+            var c = context.getCurrentChar();
+            var newMode = _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__/* ["default"].lookAheadTest */ .Z.lookAheadTest(context.getMessage(), context.pos, this.getEncodingMode());
+            if (newMode !== this.getEncodingMode()) {
+                switch (newMode) {
+                    case _constants__WEBPACK_IMPORTED_MODULE_0__/* .BASE256_ENCODATION */ .vF:
+                        context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_0__/* .LATCH_TO_BASE256 */ .Fd);
+                        context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_0__/* .BASE256_ENCODATION */ .vF);
+                        return;
+                    case _constants__WEBPACK_IMPORTED_MODULE_0__/* .C40_ENCODATION */ .Bw:
+                        context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_0__/* .LATCH_TO_C40 */ .RJ);
+                        context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_0__/* .C40_ENCODATION */ .Bw);
+                        return;
+                    case _constants__WEBPACK_IMPORTED_MODULE_0__/* .X12_ENCODATION */ .Pi:
+                        context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_0__/* .LATCH_TO_ANSIX12 */ .xh);
+                        context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_0__/* .X12_ENCODATION */ .Pi);
+                        break;
+                    case _constants__WEBPACK_IMPORTED_MODULE_0__/* .TEXT_ENCODATION */ .Uz:
+                        context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_0__/* .LATCH_TO_TEXT */ .HO);
+                        context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_0__/* .TEXT_ENCODATION */ .Uz);
+                        break;
+                    case _constants__WEBPACK_IMPORTED_MODULE_0__/* .EDIFACT_ENCODATION */ .t_:
+                        context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_0__/* .LATCH_TO_EDIFACT */ .gy);
+                        context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_0__/* .EDIFACT_ENCODATION */ .t_);
+                        break;
+                    default:
+                        throw new Error('Illegal mode: ' + newMode);
+                }
+            }
+            else if (_HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__/* ["default"].isExtendedASCII */ .Z.isExtendedASCII(c)) {
+                context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_0__/* .UPPER_SHIFT */ .R2);
+                context.writeCodeword(c - 128 + 1);
+                context.pos++;
+            }
+            else {
+                context.writeCodeword(c + 1);
+                context.pos++;
+            }
+        }
+    };
+    ASCIIEncoder.prototype.encodeASCIIDigits = function (digit1, digit2) {
+        if (_HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__/* ["default"].isDigit */ .Z.isDigit(digit1) && _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__/* ["default"].isDigit */ .Z.isDigit(digit2)) {
+            var num = (digit1 - 48) * 10 + (digit2 - 48);
+            return num + 130;
+        }
+        throw new Error('not digits: ' + digit1 + digit2);
+    };
+    return ASCIIEncoder;
+}());
+
+
+
+/***/ }),
+
+/***/ 3256:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "M": () => (/* binding */ Base256Encoder)
+/* harmony export */ });
+/* harmony import */ var _common_StringUtils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3429);
+/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75);
+/* harmony import */ var _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9729);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4255);
+
+
+
+
+var Base256Encoder = /** @class */ (function () {
+    function Base256Encoder() {
+    }
+    Base256Encoder.prototype.getEncodingMode = function () {
+        return _constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF;
+    };
+    Base256Encoder.prototype.encode = function (context) {
+        var buffer = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z();
+        buffer.append(0); // Initialize length field
+        while (context.hasMoreCharacters()) {
+            var c = context.getCurrentChar();
+            buffer.append(c);
+            context.pos++;
+            var newMode = _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_2__/* ["default"].lookAheadTest */ .Z.lookAheadTest(context.getMessage(), context.pos, this.getEncodingMode());
+            if (newMode !== this.getEncodingMode()) {
+                // Return to ASCII encodation, which will actually handle latch to new mode
+                context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ);
+                break;
+            }
+        }
+        var dataCount = buffer.length() - 1;
+        var lengthFieldSize = 1;
+        var currentSize = context.getCodewordCount() + dataCount + lengthFieldSize;
+        context.updateSymbolInfo(currentSize);
+        var mustPad = context.getSymbolInfo().getDataCapacity() - currentSize > 0;
+        if (context.hasMoreCharacters() || mustPad) {
+            if (dataCount <= 249) {
+                buffer.setCharAt(0, _common_StringUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"].getCharAt */ .Z.getCharAt(dataCount));
+            }
+            else if (dataCount <= 1555) {
+                buffer.setCharAt(0, _common_StringUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"].getCharAt */ .Z.getCharAt(Math.floor(dataCount / 250) + 249));
+                buffer.insert(1, _common_StringUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"].getCharAt */ .Z.getCharAt(dataCount % 250));
+            }
+            else {
+                throw new Error('Message length not in valid ranges: ' + dataCount);
+            }
+        }
+        for (var i = 0, c = buffer.length(); i < c; i++) {
+            context.writeCodeword(this.randomize255State(buffer.charAt(i).charCodeAt(0), context.getCodewordCount() + 1));
+        }
+    };
+    Base256Encoder.prototype.randomize255State = function (ch, codewordPosition) {
+        var pseudoRandom = ((149 * codewordPosition) % 255) + 1;
+        var tempVariable = ch + pseudoRandom;
+        if (tempVariable <= 255) {
+            return tempVariable;
+        }
+        else {
+            return tempVariable - 256;
+        }
+    };
+    return Base256Encoder;
+}());
+
+
+
+/***/ }),
+
+/***/ 4903:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "D": () => (/* binding */ C40Encoder)
+/* harmony export */ });
+/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75);
+/* harmony import */ var _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9729);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4255);
+
+
+
+var C40Encoder = /** @class */ (function () {
+    function C40Encoder() {
+    }
+    C40Encoder.prototype.getEncodingMode = function () {
+        return _constants__WEBPACK_IMPORTED_MODULE_2__/* .C40_ENCODATION */ .Bw;
+    };
+    C40Encoder.prototype.encodeMaximal = function (context) {
+        var buffer = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+        var lastCharSize = 0;
+        var backtrackStartPosition = context.pos;
+        var backtrackBufferLength = 0;
+        while (context.hasMoreCharacters()) {
+            var c = context.getCurrentChar();
+            context.pos++;
+            lastCharSize = this.encodeChar(c, buffer);
+            if (buffer.length() % 3 === 0) {
+                backtrackStartPosition = context.pos;
+                backtrackBufferLength = buffer.length();
+            }
+        }
+        if (backtrackBufferLength !== buffer.length()) {
+            var unwritten = Math.floor((buffer.length() / 3) * 2);
+            var curCodewordCount = Math.floor(context.getCodewordCount() + unwritten + 1); // +1 for the latch to C40
+            context.updateSymbolInfo(curCodewordCount);
+            var available = context.getSymbolInfo().getDataCapacity() - curCodewordCount;
+            var rest = Math.floor(buffer.length() % 3);
+            if ((rest === 2 && available !== 2) ||
+                (rest === 1 && (lastCharSize > 3 || available !== 1))) {
+                // buffer.setLength(backtrackBufferLength);
+                context.pos = backtrackStartPosition;
+            }
+        }
+        if (buffer.length() > 0) {
+            context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_2__/* .LATCH_TO_C40 */ .RJ);
+        }
+        this.handleEOD(context, buffer);
+    };
+    C40Encoder.prototype.encode = function (context) {
+        // step C
+        var buffer = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+        while (context.hasMoreCharacters()) {
+            var c = context.getCurrentChar();
+            context.pos++;
+            var lastCharSize = this.encodeChar(c, buffer);
+            var unwritten = Math.floor(buffer.length() / 3) * 2;
+            var curCodewordCount = context.getCodewordCount() + unwritten;
+            context.updateSymbolInfo(curCodewordCount);
+            var available = context.getSymbolInfo().getDataCapacity() - curCodewordCount;
+            if (!context.hasMoreCharacters()) {
+                // Avoid having a single C40 value in the last triplet
+                var removed = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+                if (buffer.length() % 3 === 2 && available !== 2) {
+                    lastCharSize = this.backtrackOneCharacter(context, buffer, removed, lastCharSize);
+                }
+                while (buffer.length() % 3 === 1 &&
+                    (lastCharSize > 3 || available !== 1)) {
+                    lastCharSize = this.backtrackOneCharacter(context, buffer, removed, lastCharSize);
+                }
+                break;
+            }
+            var count = buffer.length();
+            if (count % 3 === 0) {
+                var newMode = _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__/* ["default"].lookAheadTest */ .Z.lookAheadTest(context.getMessage(), context.pos, this.getEncodingMode());
+                if (newMode !== this.getEncodingMode()) {
+                    // Return to ASCII encodation, which will actually handle latch to new mode
+                    context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_2__/* .ASCII_ENCODATION */ .KJ);
+                    break;
+                }
+            }
+        }
+        this.handleEOD(context, buffer);
+    };
+    C40Encoder.prototype.backtrackOneCharacter = function (context, buffer, removed, lastCharSize) {
+        var count = buffer.length();
+        var test = buffer.toString().substring(0, count - lastCharSize);
+        buffer.setLengthToZero();
+        buffer.append(test);
+        // buffer.delete(count - lastCharSize, count);
+        /*for (let i = count - lastCharSize; i < count; i++) {
+          buffer.deleteCharAt(i);
+        }*/
+        context.pos--;
+        var c = context.getCurrentChar();
+        lastCharSize = this.encodeChar(c, removed);
+        context.resetSymbolInfo(); // Deal with possible reduction in symbol size
+        return lastCharSize;
+    };
+    C40Encoder.prototype.writeNextTriplet = function (context, buffer) {
+        context.writeCodewords(this.encodeToCodewords(buffer.toString()));
+        var test = buffer.toString().substring(3);
+        buffer.setLengthToZero();
+        buffer.append(test);
+        // buffer.delete(0, 3);
+        /*for (let i = 0; i < 3; i++) {
+          buffer.deleteCharAt(i);
+        }*/
+    };
+    /**
+     * Handle "end of data" situations
+     *
+     * @param context the encoder context
+     * @param buffer  the buffer with the remaining encoded characters
+     */
+    C40Encoder.prototype.handleEOD = function (context, buffer) {
+        var unwritten = Math.floor((buffer.length() / 3) * 2);
+        var rest = buffer.length() % 3;
+        var curCodewordCount = context.getCodewordCount() + unwritten;
+        context.updateSymbolInfo(curCodewordCount);
+        var available = context.getSymbolInfo().getDataCapacity() - curCodewordCount;
+        if (rest === 2) {
+            buffer.append('\0'); // Shift 1
+            while (buffer.length() >= 3) {
+                this.writeNextTriplet(context, buffer);
+            }
+            if (context.hasMoreCharacters()) {
+                context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_2__/* .C40_UNLATCH */ .fs);
+            }
+        }
+        else if (available === 1 && rest === 1) {
+            while (buffer.length() >= 3) {
+                this.writeNextTriplet(context, buffer);
+            }
+            if (context.hasMoreCharacters()) {
+                context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_2__/* .C40_UNLATCH */ .fs);
+            }
+            // else no unlatch
+            context.pos--;
+        }
+        else if (rest === 0) {
+            while (buffer.length() >= 3) {
+                this.writeNextTriplet(context, buffer);
+            }
+            if (available > 0 || context.hasMoreCharacters()) {
+                context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_2__/* .C40_UNLATCH */ .fs);
+            }
+        }
+        else {
+            throw new Error('Unexpected case. Please report!');
+        }
+        context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_2__/* .ASCII_ENCODATION */ .KJ);
+    };
+    C40Encoder.prototype.encodeChar = function (c, sb) {
+        if (c === ' '.charCodeAt(0)) {
+            sb.append(3);
+            return 1;
+        }
+        if (c >= '0'.charCodeAt(0) && c <= '9'.charCodeAt(0)) {
+            sb.append(c - 48 + 4);
+            return 1;
+        }
+        if (c >= 'A'.charCodeAt(0) && c <= 'Z'.charCodeAt(0)) {
+            sb.append(c - 65 + 14);
+            return 1;
+        }
+        if (c < ' '.charCodeAt(0)) {
+            sb.append(0); // Shift 1 Set
+            sb.append(c);
+            return 2;
+        }
+        if (c <= '/'.charCodeAt(0)) {
+            sb.append(1); // Shift 2 Set
+            sb.append(c - 33);
+            return 2;
+        }
+        if (c <= '@'.charCodeAt(0)) {
+            sb.append(1); // Shift 2 Set
+            sb.append(c - 58 + 15);
+            return 2;
+        }
+        if (c <= '_'.charCodeAt(0)) {
+            sb.append(1); // Shift 2 Set
+            sb.append(c - 91 + 22);
+            return 2;
+        }
+        if (c <= 127) {
+            sb.append(2); // Shift 3 Set
+            sb.append(c - 96);
+            return 2;
+        }
+        sb.append(1 + "\u001E"); // Shift 2, Upper Shift
+        var len = 2;
+        len += this.encodeChar(c - 128, sb);
+        return len;
+    };
+    C40Encoder.prototype.encodeToCodewords = function (sb) {
+        var v = 1600 * sb.charCodeAt(0) + 40 * sb.charCodeAt(1) + sb.charCodeAt(2) + 1;
+        var cw1 = v / 256;
+        var cw2 = v % 256;
+        var result = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+        result.append(cw1);
+        result.append(cw2);
+        return result.toString();
+    };
+    return C40Encoder;
+}());
+
+
+
+/***/ }),
+
+/***/ 8504:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _util_Arrays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1126);
+
+/**
+ * Symbol Character Placement Program. Adapted from Annex M.1 in ISO/IEC 16022:2000(E).
+ */
+var DefaultPlacement = /** @class */ (function () {
+    /**
+     * Main constructor
+     *
+     * @param codewords the codewords to place
+     * @param numcols   the number of columns
+     * @param numrows   the number of rows
+     */
+    function DefaultPlacement(codewords, numcols, numrows) {
+        this.codewords = codewords;
+        this.numcols = numcols;
+        this.numrows = numrows;
+        this.bits = new Uint8Array(numcols * numrows);
+        _util_Arrays__WEBPACK_IMPORTED_MODULE_0__/* ["default"].fill */ .Z.fill(this.bits, 2); // Initialize with "not set" value
+    }
+    DefaultPlacement.prototype.getNumrows = function () {
+        return this.numrows;
+    };
+    DefaultPlacement.prototype.getNumcols = function () {
+        return this.numcols;
+    };
+    DefaultPlacement.prototype.getBits = function () {
+        return this.bits;
+    };
+    DefaultPlacement.prototype.getBit = function (col, row) {
+        return this.bits[row * this.numcols + col] === 1;
+    };
+    DefaultPlacement.prototype.setBit = function (col, row, bit) {
+        this.bits[row * this.numcols + col] = bit ? 1 : 0;
+    };
+    DefaultPlacement.prototype.noBit = function (col, row) {
+        return this.bits[row * this.numcols + col] === 2;
+    };
+    DefaultPlacement.prototype.place = function () {
+        var pos = 0;
+        var row = 4;
+        var col = 0;
+        do {
+            // repeatedly first check for one of the special corner cases, then...
+            if (row === this.numrows && col === 0) {
+                this.corner1(pos++);
+            }
+            if (row === this.numrows - 2 && col === 0 && this.numcols % 4 !== 0) {
+                this.corner2(pos++);
+            }
+            if (row === this.numrows - 2 && col === 0 && this.numcols % 8 === 4) {
+                this.corner3(pos++);
+            }
+            if (row === this.numrows + 4 && col === 2 && this.numcols % 8 === 0) {
+                this.corner4(pos++);
+            }
+            // sweep upward diagonally, inserting successive characters...
+            do {
+                if (row < this.numrows && col >= 0 && this.noBit(col, row)) {
+                    this.utah(row, col, pos++);
+                }
+                row -= 2;
+                col += 2;
+            } while (row >= 0 && col < this.numcols);
+            row++;
+            col += 3;
+            // and then sweep downward diagonally, inserting successive characters, ...
+            do {
+                if (row >= 0 && col < this.numcols && this.noBit(col, row)) {
+                    this.utah(row, col, pos++);
+                }
+                row += 2;
+                col -= 2;
+            } while (row < this.numrows && col >= 0);
+            row += 3;
+            col++;
+            // ...until the entire array is scanned
+        } while (row < this.numrows || col < this.numcols);
+        // Lastly, if the lower right-hand corner is untouched, fill in fixed pattern
+        if (this.noBit(this.numcols - 1, this.numrows - 1)) {
+            this.setBit(this.numcols - 1, this.numrows - 1, true);
+            this.setBit(this.numcols - 2, this.numrows - 2, true);
+        }
+    };
+    DefaultPlacement.prototype.module = function (row, col, pos, bit) {
+        if (row < 0) {
+            row += this.numrows;
+            col += 4 - ((this.numrows + 4) % 8);
+        }
+        if (col < 0) {
+            col += this.numcols;
+            row += 4 - ((this.numcols + 4) % 8);
+        }
+        // Note the conversion:
+        var v = this.codewords.charCodeAt(pos);
+        v &= 1 << (8 - bit);
+        this.setBit(col, row, v !== 0);
+    };
+    /**
+     * Places the 8 bits of a utah-shaped symbol character in ECC200.
+     *
+     * @param row the row
+     * @param col the column
+     * @param pos character position
+     */
+    DefaultPlacement.prototype.utah = function (row, col, pos) {
+        this.module(row - 2, col - 2, pos, 1);
+        this.module(row - 2, col - 1, pos, 2);
+        this.module(row - 1, col - 2, pos, 3);
+        this.module(row - 1, col - 1, pos, 4);
+        this.module(row - 1, col, pos, 5);
+        this.module(row, col - 2, pos, 6);
+        this.module(row, col - 1, pos, 7);
+        this.module(row, col, pos, 8);
+    };
+    DefaultPlacement.prototype.corner1 = function (pos) {
+        this.module(this.numrows - 1, 0, pos, 1);
+        this.module(this.numrows - 1, 1, pos, 2);
+        this.module(this.numrows - 1, 2, pos, 3);
+        this.module(0, this.numcols - 2, pos, 4);
+        this.module(0, this.numcols - 1, pos, 5);
+        this.module(1, this.numcols - 1, pos, 6);
+        this.module(2, this.numcols - 1, pos, 7);
+        this.module(3, this.numcols - 1, pos, 8);
+    };
+    DefaultPlacement.prototype.corner2 = function (pos) {
+        this.module(this.numrows - 3, 0, pos, 1);
+        this.module(this.numrows - 2, 0, pos, 2);
+        this.module(this.numrows - 1, 0, pos, 3);
+        this.module(0, this.numcols - 4, pos, 4);
+        this.module(0, this.numcols - 3, pos, 5);
+        this.module(0, this.numcols - 2, pos, 6);
+        this.module(0, this.numcols - 1, pos, 7);
+        this.module(1, this.numcols - 1, pos, 8);
+    };
+    DefaultPlacement.prototype.corner3 = function (pos) {
+        this.module(this.numrows - 3, 0, pos, 1);
+        this.module(this.numrows - 2, 0, pos, 2);
+        this.module(this.numrows - 1, 0, pos, 3);
+        this.module(0, this.numcols - 2, pos, 4);
+        this.module(0, this.numcols - 1, pos, 5);
+        this.module(1, this.numcols - 1, pos, 6);
+        this.module(2, this.numcols - 1, pos, 7);
+        this.module(3, this.numcols - 1, pos, 8);
+    };
+    DefaultPlacement.prototype.corner4 = function (pos) {
+        this.module(this.numrows - 1, 0, pos, 1);
+        this.module(this.numrows - 1, this.numcols - 1, pos, 2);
+        this.module(0, this.numcols - 3, pos, 3);
+        this.module(0, this.numcols - 2, pos, 4);
+        this.module(0, this.numcols - 1, pos, 5);
+        this.module(1, this.numcols - 3, pos, 6);
+        this.module(1, this.numcols - 2, pos, 7);
+        this.module(1, this.numcols - 1, pos, 8);
+    };
+    return DefaultPlacement;
+}());
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DefaultPlacement);
+
+
+/***/ }),
+
+/***/ 2299:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Q": () => (/* binding */ EdifactEncoder)
+/* harmony export */ });
+/* harmony import */ var _common_StringUtils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3429);
+/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4255);
+/* harmony import */ var _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9729);
+
+
+
+
+var EdifactEncoder = /** @class */ (function () {
+    function EdifactEncoder() {
+    }
+    EdifactEncoder.prototype.getEncodingMode = function () {
+        return _constants__WEBPACK_IMPORTED_MODULE_2__/* .EDIFACT_ENCODATION */ .t_;
+    };
+    EdifactEncoder.prototype.encode = function (context) {
+        // step F
+        var buffer = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z();
+        while (context.hasMoreCharacters()) {
+            var c = context.getCurrentChar();
+            this.encodeChar(c, buffer);
+            context.pos++;
+            var count = buffer.length();
+            if (count >= 4) {
+                context.writeCodewords(this.encodeToCodewords(buffer.toString()));
+                var test_1 = buffer.toString().substring(4);
+                buffer.setLengthToZero();
+                buffer.append(test_1);
+                // buffer.delete(0, 4);
+                // for (let i = 0; i < 4; i++) {
+                //  buffer.deleteCharAt(i);
+                // }
+                var newMode = _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_3__/* ["default"].lookAheadTest */ .Z.lookAheadTest(context.getMessage(), context.pos, this.getEncodingMode());
+                if (newMode !== this.getEncodingMode()) {
+                    // Return to ASCII encodation, which will actually handle latch to new mode
+                    context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_2__/* .ASCII_ENCODATION */ .KJ);
+                    break;
+                }
+            }
+        }
+        buffer.append(_common_StringUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"].getCharAt */ .Z.getCharAt(31)); // Unlatch
+        this.handleEOD(context, buffer);
+    };
+    /**
+     * Handle "end of data" situations
+     *
+     * @param context the encoder context
+     * @param buffer  the buffer with the remaining encoded characters
+     */
+    EdifactEncoder.prototype.handleEOD = function (context, buffer) {
+        try {
+            var count = buffer.length();
+            if (count === 0) {
+                return; // Already finished
+            }
+            if (count === 1) {
+                // Only an unlatch at the end
+                context.updateSymbolInfo();
+                var available = context.getSymbolInfo().getDataCapacity() -
+                    context.getCodewordCount();
+                var remaining = context.getRemainingCharacters();
+                // The following two lines are a hack inspired by the 'fix' from https://sourceforge.net/p/barcode4j/svn/221/
+                if (remaining > available) {
+                    context.updateSymbolInfo(context.getCodewordCount() + 1);
+                    available =
+                        context.getSymbolInfo().getDataCapacity() -
+                            context.getCodewordCount();
+                }
+                if (remaining <= available && available <= 2) {
+                    return; // No unlatch
+                }
+            }
+            if (count > 4) {
+                throw new Error('Count must not exceed 4');
+            }
+            var restChars = count - 1;
+            var encoded = this.encodeToCodewords(buffer.toString());
+            var endOfSymbolReached = !context.hasMoreCharacters();
+            var restInAscii = endOfSymbolReached && restChars <= 2;
+            if (restChars <= 2) {
+                context.updateSymbolInfo(context.getCodewordCount() + restChars);
+                var available = context.getSymbolInfo().getDataCapacity() -
+                    context.getCodewordCount();
+                if (available >= 3) {
+                    restInAscii = false;
+                    context.updateSymbolInfo(context.getCodewordCount() + encoded.length);
+                    // available = context.symbolInfo.dataCapacity - context.getCodewordCount();
+                }
+            }
+            if (restInAscii) {
+                context.resetSymbolInfo();
+                context.pos -= restChars;
+            }
+            else {
+                context.writeCodewords(encoded);
+            }
+        }
+        finally {
+            context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_2__/* .ASCII_ENCODATION */ .KJ);
+        }
+    };
+    EdifactEncoder.prototype.encodeChar = function (c, sb) {
+        if (c >= ' '.charCodeAt(0) && c <= '?'.charCodeAt(0)) {
+            sb.append(c);
+        }
+        else if (c >= '@'.charCodeAt(0) && c <= '^'.charCodeAt(0)) {
+            sb.append(_common_StringUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"].getCharAt */ .Z.getCharAt(c - 64));
+        }
+        else {
+            _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_3__/* ["default"].illegalCharacter */ .Z.illegalCharacter(_common_StringUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"].getCharAt */ .Z.getCharAt(c));
+        }
+    };
+    EdifactEncoder.prototype.encodeToCodewords = function (sb) {
+        var len = sb.length;
+        if (len === 0) {
+            throw new Error('StringBuilder must not be empty');
+        }
+        var c1 = sb.charAt(0).charCodeAt(0);
+        var c2 = len >= 2 ? sb.charAt(1).charCodeAt(0) : 0;
+        var c3 = len >= 3 ? sb.charAt(2).charCodeAt(0) : 0;
+        var c4 = len >= 4 ? sb.charAt(3).charCodeAt(0) : 0;
+        var v = (c1 << 18) + (c2 << 12) + (c3 << 6) + c4;
+        var cw1 = (v >> 16) & 255;
+        var cw2 = (v >> 8) & 255;
+        var cw3 = v & 255;
+        var res = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z();
+        res.append(cw1);
+        if (len >= 2) {
+            res.append(cw2);
+        }
+        if (len >= 3) {
+            res.append(cw3);
+        }
+        return res.toString();
+    };
+    return EdifactEncoder;
+}());
+
+
+
+/***/ }),
+
+/***/ 8847:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "y": () => (/* binding */ EncoderContext)
+/* harmony export */ });
+/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75);
+/* harmony import */ var _SymbolInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1662);
+
+
+var EncoderContext = /** @class */ (function () {
+    function EncoderContext(msg) {
+        this.msg = msg;
+        this.pos = 0;
+        this.skipAtEnd = 0;
+        // From this point on Strings are not Unicode anymore!
+        var msgBinary = msg.split('').map(function (c) { return c.charCodeAt(0); });
+        var sb = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+        for (var i = 0, c = msgBinary.length; i < c; i++) {
+            var ch = String.fromCharCode(msgBinary[i] & 0xff);
+            if (ch === '?' && msg.charAt(i) !== '?') {
+                throw new Error('Message contains characters outside ISO-8859-1 encoding.');
+            }
+            sb.append(ch);
+        }
+        this.msg = sb.toString(); // Not Unicode here!
+        this.shape = 0 /* FORCE_NONE */;
+        this.codewords = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+        this.newEncoding = -1;
+    }
+    EncoderContext.prototype.setSymbolShape = function (shape) {
+        this.shape = shape;
+    };
+    EncoderContext.prototype.setSizeConstraints = function (minSize, maxSize) {
+        this.minSize = minSize;
+        this.maxSize = maxSize;
+    };
+    EncoderContext.prototype.getMessage = function () {
+        return this.msg;
+    };
+    EncoderContext.prototype.setSkipAtEnd = function (count) {
+        this.skipAtEnd = count;
+    };
+    EncoderContext.prototype.getCurrentChar = function () {
+        return this.msg.charCodeAt(this.pos);
+    };
+    EncoderContext.prototype.getCurrent = function () {
+        return this.msg.charCodeAt(this.pos);
+    };
+    EncoderContext.prototype.getCodewords = function () {
+        return this.codewords;
+    };
+    EncoderContext.prototype.writeCodewords = function (codewords) {
+        this.codewords.append(codewords);
+    };
+    EncoderContext.prototype.writeCodeword = function (codeword) {
+        this.codewords.append(codeword);
+    };
+    EncoderContext.prototype.getCodewordCount = function () {
+        return this.codewords.length();
+    };
+    EncoderContext.prototype.getNewEncoding = function () {
+        return this.newEncoding;
+    };
+    EncoderContext.prototype.signalEncoderChange = function (encoding) {
+        this.newEncoding = encoding;
+    };
+    EncoderContext.prototype.resetEncoderSignal = function () {
+        this.newEncoding = -1;
+    };
+    EncoderContext.prototype.hasMoreCharacters = function () {
+        return this.pos < this.getTotalMessageCharCount();
+    };
+    EncoderContext.prototype.getTotalMessageCharCount = function () {
+        return this.msg.length - this.skipAtEnd;
+    };
+    EncoderContext.prototype.getRemainingCharacters = function () {
+        return this.getTotalMessageCharCount() - this.pos;
+    };
+    EncoderContext.prototype.getSymbolInfo = function () {
+        return this.symbolInfo;
+    };
+    EncoderContext.prototype.updateSymbolInfo = function (len) {
+        if (len === void 0) { len = this.getCodewordCount(); }
+        if (this.symbolInfo == null || len > this.symbolInfo.getDataCapacity()) {
+            this.symbolInfo = _SymbolInfo__WEBPACK_IMPORTED_MODULE_1__/* ["default"].lookup */ .Z.lookup(len, this.shape, this.minSize, this.maxSize, true);
+        }
+    };
+    EncoderContext.prototype.resetSymbolInfo = function () {
+        this.symbolInfo = null;
+    };
+    return EncoderContext;
+}());
+
+
+
+/***/ }),
+
+/***/ 9864:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4255);
+
+
+/**
+ * Error Correction Code for ECC200.
+ */
+var ErrorCorrection = /** @class */ (function () {
+    function ErrorCorrection() {
+    }
+    /**
+     * Creates the ECC200 error correction for an encoded message.
+     *
+     * @param codewords  the codewords
+     * @param symbolInfo information about the symbol to be encoded
+     * @return the codewords with interleaved error correction.
+     */
+    ErrorCorrection.encodeECC200 = function (codewords, symbolInfo) {
+        if (codewords.length !== symbolInfo.getDataCapacity()) {
+            throw new Error('The number of codewords does not match the selected symbol');
+        }
+        var sb = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+        sb.append(codewords);
+        var blockCount = symbolInfo.getInterleavedBlockCount();
+        if (blockCount === 1) {
+            var ecc = this.createECCBlock(codewords, symbolInfo.getErrorCodewords());
+            sb.append(ecc);
+        }
+        else {
+            // sb.setLength(sb.capacity());
+            var dataSizes = [];
+            var errorSizes = [];
+            for (var i = 0; i < blockCount; i++) {
+                dataSizes[i] = symbolInfo.getDataLengthForInterleavedBlock(i + 1);
+                errorSizes[i] = symbolInfo.getErrorLengthForInterleavedBlock(i + 1);
+            }
+            for (var block = 0; block < blockCount; block++) {
+                var temp = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+                for (var d = block; d < symbolInfo.getDataCapacity(); d += blockCount) {
+                    temp.append(codewords.charAt(d));
+                }
+                var ecc = this.createECCBlock(temp.toString(), errorSizes[block]);
+                var pos = 0;
+                for (var e = block; e < errorSizes[block] * blockCount; e += blockCount) {
+                    sb.setCharAt(symbolInfo.getDataCapacity() + e, ecc.charAt(pos++));
+                }
+            }
+        }
+        return sb.toString();
+    };
+    ErrorCorrection.createECCBlock = function (codewords, numECWords) {
+        var table = -1;
+        for (var i = 0; i < _constants__WEBPACK_IMPORTED_MODULE_1__/* .FACTOR_SETS.length */ .cA.length; i++) {
+            if (_constants__WEBPACK_IMPORTED_MODULE_1__/* .FACTOR_SETS */ .cA[i] === numECWords) {
+                table = i;
+                break;
+            }
+        }
+        if (table < 0) {
+            throw new Error('Illegal number of error correction codewords specified: ' + numECWords);
+        }
+        var poly = _constants__WEBPACK_IMPORTED_MODULE_1__/* .FACTORS */ .Sh[table];
+        var ecc = [];
+        for (var i = 0; i < numECWords; i++) {
+            ecc[i] = 0;
+        }
+        for (var i = 0; i < codewords.length; i++) {
+            var m = ecc[numECWords - 1] ^ codewords.charAt(i).charCodeAt(0);
+            for (var k = numECWords - 1; k > 0; k--) {
+                if (m !== 0 && poly[k] !== 0) {
+                    ecc[k] = ecc[k - 1] ^ _constants__WEBPACK_IMPORTED_MODULE_1__/* .ALOG */ .UD[(_constants__WEBPACK_IMPORTED_MODULE_1__/* .LOG */ .sY[m] + _constants__WEBPACK_IMPORTED_MODULE_1__/* .LOG */ .sY[poly[k]]) % 255];
+                }
+                else {
+                    ecc[k] = ecc[k - 1];
+                }
+            }
+            if (m !== 0 && poly[0] !== 0) {
+                ecc[0] = _constants__WEBPACK_IMPORTED_MODULE_1__/* .ALOG */ .UD[(_constants__WEBPACK_IMPORTED_MODULE_1__/* .LOG */ .sY[m] + _constants__WEBPACK_IMPORTED_MODULE_1__/* .LOG */ .sY[poly[0]]) % 255];
+            }
+            else {
+                ecc[0] = 0;
+            }
+        }
+        var eccReversed = [];
+        for (var i = 0; i < numECWords; i++) {
+            eccReversed[i] = ecc[numECWords - i - 1];
+        }
+        return eccReversed.map(function (c) { return String.fromCharCode(c); }).join('');
+    };
+    return ErrorCorrection;
+}());
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ErrorCorrection);
+
+
+/***/ }),
+
+/***/ 9729:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ASCIIEncoder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4470);
+/* harmony import */ var _Base256Encoder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3256);
+/* harmony import */ var _C40Encoder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4903);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4255);
+/* harmony import */ var _EdifactEncoder__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2299);
+/* harmony import */ var _EncoderContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8847);
+/* harmony import */ var _X12Encoder__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9714);
+/* harmony import */ var _TextEncoder__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(6175);
+/* harmony import */ var _util_Arrays__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(1126);
+/* harmony import */ var _util_Integer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(3450);
+// tslint:disable-next-line:no-circular-imports
+
+// tslint:disable-next-line:no-circular-imports
+
+// tslint:disable-next-line:no-circular-imports
+
+
+// tslint:disable-next-line:no-circular-imports
+
+
+// tslint:disable-next-line:no-circular-imports
+
+// tslint:disable-next-line:no-circular-imports
+
+
+
+/**
+ * DataMatrix ECC 200 data encoder following the algorithm described in ISO/IEC 16022:200(E) in
+ * annex S.
+ */
+var HighLevelEncoder = /** @class */ (function () {
+    function HighLevelEncoder() {
+    }
+    HighLevelEncoder.randomize253State = function (codewordPosition) {
+        var pseudoRandom = ((149 * codewordPosition) % 253) + 1;
+        var tempVariable = _constants__WEBPACK_IMPORTED_MODULE_3__/* .PAD */ .Bg + pseudoRandom;
+        return tempVariable <= 254 ? tempVariable : tempVariable - 254;
+    };
+    /**
+     * Performs message encoding of a DataMatrix message using the algorithm described in annex P
+     * of ISO/IEC 16022:2000(E).
+     *
+     * @param msg     the message
+     * @param shape   requested shape. May be {@code SymbolShapeHint.FORCE_NONE},
+     *                {@code SymbolShapeHint.FORCE_SQUARE} or {@code SymbolShapeHint.FORCE_RECTANGLE}.
+     * @param minSize the minimum symbol size constraint or null for no constraint
+     * @param maxSize the maximum symbol size constraint or null for no constraint
+     * @param forceC40 enforce C40 encoding
+     * @return the encoded message (the char values range from 0 to 255)
+     */
+    HighLevelEncoder.encodeHighLevel = function (msg, shape, minSize, maxSize, forceC40) {
+        if (shape === void 0) { shape = 0 /* FORCE_NONE */; }
+        if (minSize === void 0) { minSize = null; }
+        if (maxSize === void 0) { maxSize = null; }
+        if (forceC40 === void 0) { forceC40 = false; }
+        // the codewords 0..255 are encoded as Unicode characters
+        var c40Encoder = new _C40Encoder__WEBPACK_IMPORTED_MODULE_2__/* .C40Encoder */ .D();
+        var encoders = [
+            new _ASCIIEncoder__WEBPACK_IMPORTED_MODULE_0__/* .ASCIIEncoder */ .g(),
+            c40Encoder,
+            new _TextEncoder__WEBPACK_IMPORTED_MODULE_7__/* .TextEncoder */ .p(),
+            new _X12Encoder__WEBPACK_IMPORTED_MODULE_6__/* .X12Encoder */ .c(),
+            new _EdifactEncoder__WEBPACK_IMPORTED_MODULE_4__/* .EdifactEncoder */ .Q(),
+            new _Base256Encoder__WEBPACK_IMPORTED_MODULE_1__/* .Base256Encoder */ .M(),
+        ];
+        var context = new _EncoderContext__WEBPACK_IMPORTED_MODULE_5__/* .EncoderContext */ .y(msg);
+        context.setSymbolShape(shape);
+        context.setSizeConstraints(minSize, maxSize);
+        if (msg.startsWith(_constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_05_HEADER */ .qL) && msg.endsWith(_constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_TRAILER */ .Lt)) {
+            context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_05 */ .nz);
+            context.setSkipAtEnd(2);
+            context.pos += _constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_05_HEADER.length */ .qL.length;
+        }
+        else if (msg.startsWith(_constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_06_HEADER */ .np) && msg.endsWith(_constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_TRAILER */ .Lt)) {
+            context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_06 */ .Jg);
+            context.setSkipAtEnd(2);
+            context.pos += _constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_06_HEADER.length */ .np.length;
+        }
+        var encodingMode = _constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ; // Default mode
+        if (forceC40) {
+            c40Encoder.encodeMaximal(context);
+            encodingMode = context.getNewEncoding();
+            context.resetEncoderSignal();
+        }
+        while (context.hasMoreCharacters()) {
+            encoders[encodingMode].encode(context);
+            if (context.getNewEncoding() >= 0) {
+                encodingMode = context.getNewEncoding();
+                context.resetEncoderSignal();
+            }
+        }
+        var len = context.getCodewordCount();
+        context.updateSymbolInfo();
+        var capacity = context.getSymbolInfo().getDataCapacity();
+        if (len < capacity &&
+            encodingMode !== _constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ &&
+            encodingMode !== _constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF &&
+            encodingMode !== _constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_) {
+            context.writeCodeword('\u00fe'); // Unlatch (254)
+        }
+        // Padding
+        var codewords = context.getCodewords();
+        if (codewords.length() < capacity) {
+            codewords.append(_constants__WEBPACK_IMPORTED_MODULE_3__/* .PAD */ .Bg);
+        }
+        while (codewords.length() < capacity) {
+            codewords.append(this.randomize253State(codewords.length() + 1));
+        }
+        return context.getCodewords().toString();
+    };
+    HighLevelEncoder.lookAheadTest = function (msg, startpos, currentMode) {
+        var newMode = this.lookAheadTestIntern(msg, startpos, currentMode);
+        if (currentMode === _constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi && newMode === _constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi) {
+            var endpos = Math.min(startpos + 3, msg.length);
+            for (var i = startpos; i < endpos; i++) {
+                if (!this.isNativeX12(msg.charCodeAt(i))) {
+                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ;
+                }
+            }
+        }
+        else if (currentMode === _constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_ &&
+            newMode === _constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_) {
+            var endpos = Math.min(startpos + 4, msg.length);
+            for (var i = startpos; i < endpos; i++) {
+                if (!this.isNativeEDIFACT(msg.charCodeAt(i))) {
+                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ;
+                }
+            }
+        }
+        return newMode;
+    };
+    HighLevelEncoder.lookAheadTestIntern = function (msg, startpos, currentMode) {
+        if (startpos >= msg.length) {
+            return currentMode;
+        }
+        var charCounts;
+        // step J
+        if (currentMode === _constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ) {
+            charCounts = [0, 1, 1, 1, 1, 1.25];
+        }
+        else {
+            charCounts = [1, 2, 2, 2, 2, 2.25];
+            charCounts[currentMode] = 0;
+        }
+        var charsProcessed = 0;
+        var mins = new Uint8Array(6);
+        var intCharCounts = [];
+        while (true) {
+            // step K
+            if (startpos + charsProcessed === msg.length) {
+                _util_Arrays__WEBPACK_IMPORTED_MODULE_8__/* ["default"].fill */ .Z.fill(mins, 0);
+                _util_Arrays__WEBPACK_IMPORTED_MODULE_8__/* ["default"].fill */ .Z.fill(intCharCounts, 0);
+                var min = this.findMinimums(charCounts, intCharCounts, _util_Integer__WEBPACK_IMPORTED_MODULE_9__/* ["default"].MAX_VALUE */ .Z.MAX_VALUE, mins);
+                var minCount = this.getMinimumCount(mins);
+                if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ] === min) {
+                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ;
+                }
+                if (minCount === 1) {
+                    if (mins[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF] > 0) {
+                        return _constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF;
+                    }
+                    if (mins[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_] > 0) {
+                        return _constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_;
+                    }
+                    if (mins[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz] > 0) {
+                        return _constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz;
+                    }
+                    if (mins[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi] > 0) {
+                        return _constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi;
+                    }
+                }
+                return _constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw;
+            }
+            var c = msg.charCodeAt(startpos + charsProcessed);
+            charsProcessed++;
+            // step L
+            if (this.isDigit(c)) {
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ] += 0.5;
+            }
+            else if (this.isExtendedASCII(c)) {
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ] = Math.ceil(charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ]);
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ] += 2.0;
+            }
+            else {
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ] = Math.ceil(charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ]);
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ]++;
+            }
+            // step M
+            if (this.isNativeC40(c)) {
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw] += 2.0 / 3.0;
+            }
+            else if (this.isExtendedASCII(c)) {
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw] += 8.0 / 3.0;
+            }
+            else {
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw] += 4.0 / 3.0;
+            }
+            // step N
+            if (this.isNativeText(c)) {
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz] += 2.0 / 3.0;
+            }
+            else if (this.isExtendedASCII(c)) {
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz] += 8.0 / 3.0;
+            }
+            else {
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz] += 4.0 / 3.0;
+            }
+            // step O
+            if (this.isNativeX12(c)) {
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi] += 2.0 / 3.0;
+            }
+            else if (this.isExtendedASCII(c)) {
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi] += 13.0 / 3.0;
+            }
+            else {
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi] += 10.0 / 3.0;
+            }
+            // step P
+            if (this.isNativeEDIFACT(c)) {
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_] += 3.0 / 4.0;
+            }
+            else if (this.isExtendedASCII(c)) {
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_] += 17.0 / 4.0;
+            }
+            else {
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_] += 13.0 / 4.0;
+            }
+            // step Q
+            if (this.isSpecialB256(c)) {
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF] += 4.0;
+            }
+            else {
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF]++;
+            }
+            // step R
+            if (charsProcessed >= 4) {
+                _util_Arrays__WEBPACK_IMPORTED_MODULE_8__/* ["default"].fill */ .Z.fill(mins, 0);
+                _util_Arrays__WEBPACK_IMPORTED_MODULE_8__/* ["default"].fill */ .Z.fill(intCharCounts, 0);
+                this.findMinimums(charCounts, intCharCounts, _util_Integer__WEBPACK_IMPORTED_MODULE_9__/* ["default"].MAX_VALUE */ .Z.MAX_VALUE, mins);
+                if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ] <
+                    this.min(intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_])) {
+                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ;
+                }
+                if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF] < intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ] ||
+                    intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF] + 1 <
+                        this.min(intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_])) {
+                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF;
+                }
+                if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_] + 1 <
+                    this.min(intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ])) {
+                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_;
+                }
+                if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz] + 1 <
+                    this.min(intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ])) {
+                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz;
+                }
+                if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi] + 1 <
+                    this.min(intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ])) {
+                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi;
+                }
+                if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw] + 1 <
+                    this.min(intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz])) {
+                    if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw] < intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi]) {
+                        return _constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw;
+                    }
+                    if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw] === intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi]) {
+                        var p = startpos + charsProcessed + 1;
+                        while (p < msg.length) {
+                            var tc = msg.charCodeAt(p);
+                            if (this.isX12TermSep(tc)) {
+                                return _constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi;
+                            }
+                            if (!this.isNativeX12(tc)) {
+                                break;
+                            }
+                            p++;
+                        }
+                        return _constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw;
+                    }
+                }
+            }
+        }
+    };
+    HighLevelEncoder.min = function (f1, f2, f3, f4, f5) {
+        var val = Math.min(f1, Math.min(f2, Math.min(f3, f4)));
+        if (f5 === undefined) {
+            return val;
+        }
+        else {
+            return Math.min(val, f5);
+        }
+    };
+    HighLevelEncoder.findMinimums = function (charCounts, intCharCounts, min, mins) {
+        for (var i = 0; i < 6; i++) {
+            var current = (intCharCounts[i] = Math.ceil(charCounts[i]));
+            if (min > current) {
+                min = current;
+                _util_Arrays__WEBPACK_IMPORTED_MODULE_8__/* ["default"].fill */ .Z.fill(mins, 0);
+            }
+            if (min === current) {
+                mins[i] = mins[i] + 1;
+            }
+        }
+        return min;
+    };
+    HighLevelEncoder.getMinimumCount = function (mins) {
+        var minCount = 0;
+        for (var i = 0; i < 6; i++) {
+            minCount += mins[i];
+        }
+        return minCount || 0;
+    };
+    HighLevelEncoder.isDigit = function (ch) {
+        return ch >= '0'.charCodeAt(0) && ch <= '9'.charCodeAt(0);
+    };
+    HighLevelEncoder.isExtendedASCII = function (ch) {
+        return ch >= 128 && ch <= 255;
+    };
+    HighLevelEncoder.isNativeC40 = function (ch) {
+        return (ch === ' '.charCodeAt(0) ||
+            (ch >= '0'.charCodeAt(0) && ch <= '9'.charCodeAt(0)) ||
+            (ch >= 'A'.charCodeAt(0) && ch <= 'Z'.charCodeAt(0)));
+    };
+    HighLevelEncoder.isNativeText = function (ch) {
+        return (ch === ' '.charCodeAt(0) ||
+            (ch >= '0'.charCodeAt(0) && ch <= '9'.charCodeAt(0)) ||
+            (ch >= 'a'.charCodeAt(0) && ch <= 'z'.charCodeAt(0)));
+    };
+    HighLevelEncoder.isNativeX12 = function (ch) {
+        return (this.isX12TermSep(ch) ||
+            ch === ' '.charCodeAt(0) ||
+            (ch >= '0'.charCodeAt(0) && ch <= '9'.charCodeAt(0)) ||
+            (ch >= 'A'.charCodeAt(0) && ch <= 'Z'.charCodeAt(0)));
+    };
+    HighLevelEncoder.isX12TermSep = function (ch) {
+        return (ch === 13 || // CR
+            ch === '*'.charCodeAt(0) ||
+            ch === '>'.charCodeAt(0));
+    };
+    HighLevelEncoder.isNativeEDIFACT = function (ch) {
+        return ch >= ' '.charCodeAt(0) && ch <= '^'.charCodeAt(0);
+    };
+    HighLevelEncoder.isSpecialB256 = function (ch) {
+        return false; // TODO NOT IMPLEMENTED YET!!!
+    };
+    /**
+     * Determines the number of consecutive characters that are encodable using numeric compaction.
+     *
+     * @param msg      the message
+     * @param startpos the start position within the message
+     * @return the requested character count
+     */
+    HighLevelEncoder.determineConsecutiveDigitCount = function (msg, startpos) {
+        if (startpos === void 0) { startpos = 0; }
+        var len = msg.length;
+        var idx = startpos;
+        while (idx < len && this.isDigit(msg.charCodeAt(idx))) {
+            idx++;
+        }
+        return idx - startpos;
+    };
+    HighLevelEncoder.illegalCharacter = function (singleCharacter) {
+        var hex = _util_Integer__WEBPACK_IMPORTED_MODULE_9__/* ["default"].toHexString */ .Z.toHexString(singleCharacter.charCodeAt(0));
+        hex = '0000'.substring(0, 4 - hex.length) + hex;
+        throw new Error('Illegal character: ' + singleCharacter + ' (0x' + hex + ')');
+    };
+    return HighLevelEncoder;
+}());
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HighLevelEncoder);
+
+
+/***/ }),
+
+/***/ 1662:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* unused harmony export PROD_SYMBOLS */
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __values = (undefined && undefined.__values) || function(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+};
+/**
+ * Symbol info table for DataMatrix.
+ */
+var SymbolInfo = /** @class */ (function () {
+    function SymbolInfo(rectangular, dataCapacity, errorCodewords, matrixWidth, matrixHeight, dataRegions, rsBlockData, rsBlockError) {
+        if (rsBlockData === void 0) { rsBlockData = 0; }
+        if (rsBlockError === void 0) { rsBlockError = 0; }
+        this.rectangular = rectangular;
+        this.dataCapacity = dataCapacity;
+        this.errorCodewords = errorCodewords;
+        this.matrixWidth = matrixWidth;
+        this.matrixHeight = matrixHeight;
+        this.dataRegions = dataRegions;
+        this.rsBlockData = rsBlockData;
+        this.rsBlockError = rsBlockError;
+    }
+    SymbolInfo.lookup = function (dataCodewords, shape, minSize, maxSize, fail) {
+        var e_1, _a;
+        if (shape === void 0) { shape = 0 /* FORCE_NONE */; }
+        if (minSize === void 0) { minSize = null; }
+        if (maxSize === void 0) { maxSize = null; }
+        if (fail === void 0) { fail = true; }
+        try {
+            for (var PROD_SYMBOLS_1 = __values(PROD_SYMBOLS), PROD_SYMBOLS_1_1 = PROD_SYMBOLS_1.next(); !PROD_SYMBOLS_1_1.done; PROD_SYMBOLS_1_1 = PROD_SYMBOLS_1.next()) {
+                var symbol = PROD_SYMBOLS_1_1.value;
+                if (shape === 1 /* FORCE_SQUARE */ && symbol.rectangular) {
+                    continue;
+                }
+                if (shape === 2 /* FORCE_RECTANGLE */ && !symbol.rectangular) {
+                    continue;
+                }
+                if (minSize != null &&
+                    (symbol.getSymbolWidth() < minSize.getWidth() ||
+                        symbol.getSymbolHeight() < minSize.getHeight())) {
+                    continue;
+                }
+                if (maxSize != null &&
+                    (symbol.getSymbolWidth() > maxSize.getWidth() ||
+                        symbol.getSymbolHeight() > maxSize.getHeight())) {
+                    continue;
+                }
+                if (dataCodewords <= symbol.dataCapacity) {
+                    return symbol;
+                }
+            }
+        }
+        catch (e_1_1) { e_1 = { error: e_1_1 }; }
+        finally {
+            try {
+                if (PROD_SYMBOLS_1_1 && !PROD_SYMBOLS_1_1.done && (_a = PROD_SYMBOLS_1.return)) _a.call(PROD_SYMBOLS_1);
+            }
+            finally { if (e_1) throw e_1.error; }
+        }
+        if (fail) {
+            throw new Error("Can't find a symbol arrangement that matches the message. Data codewords: " +
+                dataCodewords);
+        }
+        return null;
+    };
+    SymbolInfo.prototype.getHorizontalDataRegions = function () {
+        switch (this.dataRegions) {
+            case 1:
+                return 1;
+            case 2:
+            case 4:
+                return 2;
+            case 16:
+                return 4;
+            case 36:
+                return 6;
+            default:
+                throw new Error('Cannot handle this number of data regions');
+        }
+    };
+    SymbolInfo.prototype.getVerticalDataRegions = function () {
+        switch (this.dataRegions) {
+            case 1:
+            case 2:
+                return 1;
+            case 4:
+                return 2;
+            case 16:
+                return 4;
+            case 36:
+                return 6;
+            default:
+                throw new Error('Cannot handle this number of data regions');
+        }
+    };
+    SymbolInfo.prototype.getSymbolDataWidth = function () {
+        return this.getHorizontalDataRegions() * this.matrixWidth;
+    };
+    SymbolInfo.prototype.getSymbolDataHeight = function () {
+        return this.getVerticalDataRegions() * this.matrixHeight;
+    };
+    SymbolInfo.prototype.getSymbolWidth = function () {
+        return this.getSymbolDataWidth() + this.getHorizontalDataRegions() * 2;
+    };
+    SymbolInfo.prototype.getSymbolHeight = function () {
+        return this.getSymbolDataHeight() + this.getVerticalDataRegions() * 2;
+    };
+    SymbolInfo.prototype.getCodewordCount = function () {
+        return this.dataCapacity + this.errorCodewords;
+    };
+    SymbolInfo.prototype.getInterleavedBlockCount = function () {
+        if (!this.rsBlockData)
+            return 1;
+        return this.dataCapacity / this.rsBlockData;
+    };
+    SymbolInfo.prototype.getDataCapacity = function () {
+        return this.dataCapacity;
+    };
+    SymbolInfo.prototype.getErrorCodewords = function () {
+        return this.errorCodewords;
+    };
+    SymbolInfo.prototype.getDataLengthForInterleavedBlock = function (index) {
+        return this.rsBlockData;
+    };
+    SymbolInfo.prototype.getErrorLengthForInterleavedBlock = function (index) {
+        return this.rsBlockError;
+    };
+    return SymbolInfo;
+}());
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SymbolInfo);
+var DataMatrixSymbolInfo144 = /** @class */ (function (_super) {
+    __extends(DataMatrixSymbolInfo144, _super);
+    function DataMatrixSymbolInfo144() {
+        return _super.call(this, false, 1558, 620, 22, 22, 36, -1, 62) || this;
+    }
+    DataMatrixSymbolInfo144.prototype.getInterleavedBlockCount = function () {
+        return 10;
+    };
+    DataMatrixSymbolInfo144.prototype.getDataLengthForInterleavedBlock = function (index) {
+        return index <= 8 ? 156 : 155;
+    };
+    return DataMatrixSymbolInfo144;
+}(SymbolInfo));
+var PROD_SYMBOLS = [
+    new SymbolInfo(false, 3, 5, 8, 8, 1),
+    new SymbolInfo(false, 5, 7, 10, 10, 1),
+    /*rect*/ new SymbolInfo(true, 5, 7, 16, 6, 1),
+    new SymbolInfo(false, 8, 10, 12, 12, 1),
+    /*rect*/ new SymbolInfo(true, 10, 11, 14, 6, 2),
+    new SymbolInfo(false, 12, 12, 14, 14, 1),
+    /*rect*/ new SymbolInfo(true, 16, 14, 24, 10, 1),
+    new SymbolInfo(false, 18, 14, 16, 16, 1),
+    new SymbolInfo(false, 22, 18, 18, 18, 1),
+    /*rect*/ new SymbolInfo(true, 22, 18, 16, 10, 2),
+    new SymbolInfo(false, 30, 20, 20, 20, 1),
+    /*rect*/ new SymbolInfo(true, 32, 24, 16, 14, 2),
+    new SymbolInfo(false, 36, 24, 22, 22, 1),
+    new SymbolInfo(false, 44, 28, 24, 24, 1),
+    /*rect*/ new SymbolInfo(true, 49, 28, 22, 14, 2),
+    new SymbolInfo(false, 62, 36, 14, 14, 4),
+    new SymbolInfo(false, 86, 42, 16, 16, 4),
+    new SymbolInfo(false, 114, 48, 18, 18, 4),
+    new SymbolInfo(false, 144, 56, 20, 20, 4),
+    new SymbolInfo(false, 174, 68, 22, 22, 4),
+    new SymbolInfo(false, 204, 84, 24, 24, 4, 102, 42),
+    new SymbolInfo(false, 280, 112, 14, 14, 16, 140, 56),
+    new SymbolInfo(false, 368, 144, 16, 16, 16, 92, 36),
+    new SymbolInfo(false, 456, 192, 18, 18, 16, 114, 48),
+    new SymbolInfo(false, 576, 224, 20, 20, 16, 144, 56),
+    new SymbolInfo(false, 696, 272, 22, 22, 16, 174, 68),
+    new SymbolInfo(false, 816, 336, 24, 24, 16, 136, 56),
+    new SymbolInfo(false, 1050, 408, 18, 18, 36, 175, 68),
+    new SymbolInfo(false, 1304, 496, 20, 20, 36, 163, 62),
+    new DataMatrixSymbolInfo144(),
+];
+
+
+/***/ }),
+
+/***/ 6175:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "p": () => (/* binding */ TextEncoder)
+/* harmony export */ });
+/* harmony import */ var _C40Encoder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4903);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4255);
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+var TextEncoder = /** @class */ (function (_super) {
+    __extends(TextEncoder, _super);
+    function TextEncoder() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    TextEncoder.prototype.getEncodingMode = function () {
+        return _constants__WEBPACK_IMPORTED_MODULE_1__/* .TEXT_ENCODATION */ .Uz;
+    };
+    TextEncoder.prototype.encodeChar = function (c, sb) {
+        if (c === ' '.charCodeAt(0)) {
+            sb.append(3);
+            return 1;
+        }
+        if (c >= '0'.charCodeAt(0) && c <= '9'.charCodeAt(0)) {
+            sb.append(c - 48 + 4);
+            return 1;
+        }
+        if (c >= 'a'.charCodeAt(0) && c <= 'z'.charCodeAt(0)) {
+            sb.append(c - 97 + 14);
+            return 1;
+        }
+        if (c < ' '.charCodeAt(0)) {
+            sb.append(0); // Shift 1 Set
+            sb.append(c);
+            return 2;
+        }
+        if (c <= '/'.charCodeAt(0)) {
+            sb.append(1); // Shift 2 Set
+            sb.append(c - 33);
+            return 2;
+        }
+        if (c <= '@'.charCodeAt(0)) {
+            sb.append(1); // Shift 2 Set
+            sb.append(c - 58 + 15);
+            return 2;
+        }
+        if (c >= '['.charCodeAt(0) && c <= '_'.charCodeAt(0)) {
+            sb.append(1); // Shift 2 Set
+            sb.append(c - 91 + 22);
+            return 2;
+        }
+        if (c === '`'.charCodeAt(0)) {
+            sb.append(2); // Shift 3 Set
+            sb.append(0); // '`' - 96 == 0
+            return 2;
+        }
+        if (c <= 'Z'.charCodeAt(0)) {
+            sb.append(2); // Shift 3 Set
+            sb.append(c - 65 + 1);
+            return 2;
+        }
+        if (c <= 127) {
+            sb.append(2); // Shift 3 Set
+            sb.append(c - 123 + 27);
+            return 2;
+        }
+        sb.append(1 + "\u001E"); // Shift 2, Upper Shift
+        var len = 2;
+        len += this.encodeChar(c - 128, sb);
+        return len;
+    };
+    return TextEncoder;
+}(_C40Encoder__WEBPACK_IMPORTED_MODULE_0__/* .C40Encoder */ .D));
+
+
+
+/***/ }),
+
+/***/ 9714:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "c": () => (/* binding */ X12Encoder)
+/* harmony export */ });
+/* harmony import */ var _common_StringUtils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3429);
+/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75);
+/* harmony import */ var _C40Encoder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4903);
+/* harmony import */ var _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9729);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4255);
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+
+
+
+var X12Encoder = /** @class */ (function (_super) {
+    __extends(X12Encoder, _super);
+    function X12Encoder() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    X12Encoder.prototype.getEncodingMode = function () {
+        return _constants__WEBPACK_IMPORTED_MODULE_4__/* .X12_ENCODATION */ .Pi;
+    };
+    X12Encoder.prototype.encode = function (context) {
+        // step C
+        var buffer = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z();
+        while (context.hasMoreCharacters()) {
+            var c = context.getCurrentChar();
+            context.pos++;
+            this.encodeChar(c, buffer);
+            var count = buffer.length();
+            if (count % 3 === 0) {
+                this.writeNextTriplet(context, buffer);
+                var newMode = _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_3__/* ["default"].lookAheadTest */ .Z.lookAheadTest(context.getMessage(), context.pos, this.getEncodingMode());
+                if (newMode !== this.getEncodingMode()) {
+                    // Return to ASCII encodation, which will actually handle latch to new mode
+                    context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_4__/* .ASCII_ENCODATION */ .KJ);
+                    break;
+                }
+            }
+        }
+        this.handleEOD(context, buffer);
+    };
+    X12Encoder.prototype.encodeChar = function (c, sb) {
+        switch (c) {
+            case 13: // CR (Carriage return)
+                sb.append(0);
+                break;
+            case '*'.charCodeAt(0):
+                sb.append(1);
+                break;
+            case '>'.charCodeAt(0):
+                sb.append(2);
+                break;
+            case ' '.charCodeAt(0):
+                sb.append(3);
+                break;
+            default:
+                if (c >= '0'.charCodeAt(0) && c <= '9'.charCodeAt(0)) {
+                    sb.append(c - 48 + 4);
+                }
+                else if (c >= 'A'.charCodeAt(0) && c <= 'Z'.charCodeAt(0)) {
+                    sb.append(c - 65 + 14);
+                }
+                else {
+                    _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_3__/* ["default"].illegalCharacter */ .Z.illegalCharacter(_common_StringUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"].getCharAt */ .Z.getCharAt(c));
+                }
+                break;
+        }
+        return 1;
+    };
+    X12Encoder.prototype.handleEOD = function (context, buffer) {
+        context.updateSymbolInfo();
+        var available = context.getSymbolInfo().getDataCapacity() - context.getCodewordCount();
+        var count = buffer.length();
+        context.pos -= count;
+        if (context.getRemainingCharacters() > 1 ||
+            available > 1 ||
+            context.getRemainingCharacters() !== available) {
+            context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_4__/* .X12_UNLATCH */ .RW);
+        }
+        if (context.getNewEncoding() < 0) {
+            context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_4__/* .ASCII_ENCODATION */ .KJ);
+        }
+    };
+    return X12Encoder;
+}(_C40Encoder__WEBPACK_IMPORTED_MODULE_2__/* .C40Encoder */ .D));
+
+
+
+/***/ }),
+
+/***/ 4255:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Bg": () => (/* binding */ PAD),
+/* harmony export */   "Bw": () => (/* binding */ C40_ENCODATION),
+/* harmony export */   "Fd": () => (/* binding */ LATCH_TO_BASE256),
+/* harmony export */   "HO": () => (/* binding */ LATCH_TO_TEXT),
+/* harmony export */   "Jg": () => (/* binding */ MACRO_06),
+/* harmony export */   "KJ": () => (/* binding */ ASCII_ENCODATION),
+/* harmony export */   "Lt": () => (/* binding */ MACRO_TRAILER),
+/* harmony export */   "Pi": () => (/* binding */ X12_ENCODATION),
+/* harmony export */   "R2": () => (/* binding */ UPPER_SHIFT),
+/* harmony export */   "RJ": () => (/* binding */ LATCH_TO_C40),
+/* harmony export */   "RW": () => (/* binding */ X12_UNLATCH),
+/* harmony export */   "Sh": () => (/* binding */ FACTORS),
+/* harmony export */   "UD": () => (/* binding */ ALOG),
+/* harmony export */   "Uz": () => (/* binding */ TEXT_ENCODATION),
+/* harmony export */   "cA": () => (/* binding */ FACTOR_SETS),
+/* harmony export */   "fs": () => (/* binding */ C40_UNLATCH),
+/* harmony export */   "gy": () => (/* binding */ LATCH_TO_EDIFACT),
+/* harmony export */   "nC": () => (/* binding */ SymbolShapeHint),
+/* harmony export */   "np": () => (/* binding */ MACRO_06_HEADER),
+/* harmony export */   "nz": () => (/* binding */ MACRO_05),
+/* harmony export */   "qL": () => (/* binding */ MACRO_05_HEADER),
+/* harmony export */   "sY": () => (/* binding */ LOG),
+/* harmony export */   "t_": () => (/* binding */ EDIFACT_ENCODATION),
+/* harmony export */   "vF": () => (/* binding */ BASE256_ENCODATION),
+/* harmony export */   "xh": () => (/* binding */ LATCH_TO_ANSIX12)
+/* harmony export */ });
+/* unused harmony export MODULO_VALUE */
+var _a;
+/**
+ * Lookup table which factors to use for which number of error correction codewords.
+ * See FACTORS.
+ */
+var FACTOR_SETS = [
+    5, 7, 10, 11, 12, 14, 18, 20, 24, 28, 36, 42, 48, 56, 62, 68,
+];
+/**
+ * Precomputed polynomial factors for ECC 200.
+ */
+var FACTORS = [
+    [228, 48, 15, 111, 62],
+    [23, 68, 144, 134, 240, 92, 254],
+    [28, 24, 185, 166, 223, 248, 116, 255, 110, 61],
+    [175, 138, 205, 12, 194, 168, 39, 245, 60, 97, 120],
+    [41, 153, 158, 91, 61, 42, 142, 213, 97, 178, 100, 242],
+    [156, 97, 192, 252, 95, 9, 157, 119, 138, 45, 18, 186, 83, 185],
+    [
+        83, 195, 100, 39, 188, 75, 66, 61, 241, 213, 109, 129, 94, 254, 225, 48, 90,
+        188,
+    ],
+    [
+        15, 195, 244, 9, 233, 71, 168, 2, 188, 160, 153, 145, 253, 79, 108, 82, 27,
+        174, 186, 172,
+    ],
+    [
+        52, 190, 88, 205, 109, 39, 176, 21, 155, 197, 251, 223, 155, 21, 5, 172,
+        254, 124, 12, 181, 184, 96, 50, 193,
+    ],
+    [
+        211, 231, 43, 97, 71, 96, 103, 174, 37, 151, 170, 53, 75, 34, 249, 121, 17,
+        138, 110, 213, 141, 136, 120, 151, 233, 168, 93, 255,
+    ],
+    [
+        245, 127, 242, 218, 130, 250, 162, 181, 102, 120, 84, 179, 220, 251, 80,
+        182, 229, 18, 2, 4, 68, 33, 101, 137, 95, 119, 115, 44, 175, 184, 59, 25,
+        225, 98, 81, 112,
+    ],
+    [
+        77, 193, 137, 31, 19, 38, 22, 153, 247, 105, 122, 2, 245, 133, 242, 8, 175,
+        95, 100, 9, 167, 105, 214, 111, 57, 121, 21, 1, 253, 57, 54, 101, 248, 202,
+        69, 50, 150, 177, 226, 5, 9, 5,
+    ],
+    [
+        245, 132, 172, 223, 96, 32, 117, 22, 238, 133, 238, 231, 205, 188, 237, 87,
+        191, 106, 16, 147, 118, 23, 37, 90, 170, 205, 131, 88, 120, 100, 66, 138,
+        186, 240, 82, 44, 176, 87, 187, 147, 160, 175, 69, 213, 92, 253, 225, 19,
+    ],
+    [
+        175, 9, 223, 238, 12, 17, 220, 208, 100, 29, 175, 170, 230, 192, 215, 235,
+        150, 159, 36, 223, 38, 200, 132, 54, 228, 146, 218, 234, 117, 203, 29, 232,
+        144, 238, 22, 150, 201, 117, 62, 207, 164, 13, 137, 245, 127, 67, 247, 28,
+        155, 43, 203, 107, 233, 53, 143, 46,
+    ],
+    [
+        242, 93, 169, 50, 144, 210, 39, 118, 202, 188, 201, 189, 143, 108, 196, 37,
+        185, 112, 134, 230, 245, 63, 197, 190, 250, 106, 185, 221, 175, 64, 114, 71,
+        161, 44, 147, 6, 27, 218, 51, 63, 87, 10, 40, 130, 188, 17, 163, 31, 176,
+        170, 4, 107, 232, 7, 94, 166, 224, 124, 86, 47, 11, 204,
+    ],
+    [
+        220, 228, 173, 89, 251, 149, 159, 56, 89, 33, 147, 244, 154, 36, 73, 127,
+        213, 136, 248, 180, 234, 197, 158, 177, 68, 122, 93, 213, 15, 160, 227, 236,
+        66, 139, 153, 185, 202, 167, 179, 25, 220, 232, 96, 210, 231, 136, 223, 239,
+        181, 241, 59, 52, 172, 25, 49, 232, 211, 189, 64, 54, 108, 153, 132, 63, 96,
+        103, 82, 186,
+    ],
+];
+var /*final*/ MODULO_VALUE = 0x12d;
+var static_LOG = function (LOG, ALOG) {
+    var p = 1;
+    for (var i = 0; i < 255; i++) {
+        ALOG[i] = p;
+        LOG[p] = i;
+        p *= 2;
+        if (p >= 256) {
+            p ^= MODULO_VALUE;
+        }
+    }
+    return {
+        LOG: LOG,
+        ALOG: ALOG,
+    };
+};
+var LOG = (_a = static_LOG([], []), _a.LOG), ALOG = _a.ALOG;
+var SymbolShapeHint;
+(function (SymbolShapeHint) {
+    SymbolShapeHint[SymbolShapeHint["FORCE_NONE"] = 0] = "FORCE_NONE";
+    SymbolShapeHint[SymbolShapeHint["FORCE_SQUARE"] = 1] = "FORCE_SQUARE";
+    SymbolShapeHint[SymbolShapeHint["FORCE_RECTANGLE"] = 2] = "FORCE_RECTANGLE";
+})(SymbolShapeHint || (SymbolShapeHint = {}));
+/**
+ * Padding character
+ */
+var PAD = 129;
+/**
+ * mode latch to C40 encodation mode
+ */
+var LATCH_TO_C40 = 230;
+/**
+ * mode latch to Base 256 encodation mode
+ */
+var LATCH_TO_BASE256 = 231;
+/**
+ * FNC1 Codeword
+ */
+// private static FNC1 = 232;
+/**
+ * Structured Append Codeword
+ */
+// private static STRUCTURED_APPEND = 233;
+/**
+ * Reader Programming
+ */
+// private static READER_PROGRAMMING = 234;
+/**
+ * Upper Shift
+ */
+var UPPER_SHIFT = 235;
+/**
+ * 05 Macro
+ */
+var MACRO_05 = 236;
+/**
+ * 06 Macro
+ */
+var MACRO_06 = 237;
+/**
+ * mode latch to ANSI X.12 encodation mode
+ */
+var LATCH_TO_ANSIX12 = 238;
+/**
+ * mode latch to Text encodation mode
+ */
+var LATCH_TO_TEXT = 239;
+/**
+ * mode latch to EDIFACT encodation mode
+ */
+var LATCH_TO_EDIFACT = 240;
+/**
+ * ECI character (Extended Channel Interpretation)
+ */
+// private export const ECI = 241;
+/**
+ * Unlatch from C40 encodation
+ */
+var C40_UNLATCH = 254;
+/**
+ * Unlatch from X12 encodation
+ */
+var X12_UNLATCH = 254;
+/**
+ * 05 Macro header
+ */
+var MACRO_05_HEADER = '[)>\u001E05\u001D';
+/**
+ * 06 Macro header
+ */
+var MACRO_06_HEADER = '[)>\u001E06\u001D';
+/**
+ * Macro trailer
+ */
+var MACRO_TRAILER = '\u001E\u0004';
+var ASCII_ENCODATION = 0;
+var C40_ENCODATION = 1;
+var TEXT_ENCODATION = 2;
+var X12_ENCODATION = 3;
+var EDIFACT_ENCODATION = 4;
+var BASE256_ENCODATION = 5;
+
+
+/***/ }),
+
+/***/ 6004:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8684);
+/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8842);
+/* harmony import */ var _OneDReader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3903);
+/* harmony import */ var _Result__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1462);
+/* harmony import */ var _ResultPoint__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8307);
+/*
+ * Copyright 2008 ZXing authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+/*namespace com.google.zxing.oned {*/
+
+
+
+
+
+/**
+ * <p>Decodes CodaBar barcodes. </p>
+ *
+ * @author Evan @dodobelieve
+ * @see CodaBarReader
+ */
+var CodaBarReader = /** @class */ (function (_super) {
+    __extends(CodaBarReader, _super);
+    function CodaBarReader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.CODA_BAR_CHAR_SET = {
+            nnnnnww: '0',
+            nnnnwwn: '1',
+            nnnwnnw: '2',
+            wwnnnnn: '3',
+            nnwnnwn: '4',
+            wnnnnwn: '5',
+            nwnnnnw: '6',
+            nwnnwnn: '7',
+            nwwnnnn: '8',
+            wnnwnnn: '9',
+            nnnwwnn: '-',
+            nnwwnnn: '$',
+            wnnnwnw: ':',
+            wnwnnnw: '/',
+            wnwnwnn: '.',
+            nnwwwww: '+',
+            nnwwnwn: 'A',
+            nwnwnnw: 'B',
+            nnnwnww: 'C',
+            nnnwwwn: 'D'
+        };
+        return _this;
+    }
+    CodaBarReader.prototype.decodeRow = function (rowNumber, row, hints) {
+        var validRowData = this.getValidRowData(row);
+        if (!validRowData)
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z();
+        var retStr = this.codaBarDecodeRow(validRowData.row);
+        if (!retStr)
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z();
+        return new _Result__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z(retStr, null, 0, [new _ResultPoint__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z(validRowData.left, rowNumber), new _ResultPoint__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z(validRowData.right, rowNumber)], _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__/* ["default"].CODABAR */ .Z.CODABAR, new Date().getTime());
+    };
+    /**
+     * converts bit array to valid data array(lengths of black bits and white bits)
+     * @param row bit array to convert
+     */
+    CodaBarReader.prototype.getValidRowData = function (row) {
+        var booleanArr = row.toArray();
+        var startIndex = booleanArr.indexOf(true);
+        if (startIndex === -1)
+            return null;
+        var lastIndex = booleanArr.lastIndexOf(true);
+        if (lastIndex <= startIndex)
+            return null;
+        booleanArr = booleanArr.slice(startIndex, lastIndex + 1);
+        var result = [];
+        var lastBit = booleanArr[0];
+        var bitLength = 1;
+        for (var i = 1; i < booleanArr.length; i++) {
+            if (booleanArr[i] === lastBit) {
+                bitLength++;
+            }
+            else {
+                lastBit = booleanArr[i];
+                result.push(bitLength);
+                bitLength = 1;
+            }
+        }
+        result.push(bitLength);
+        // CodaBar code data valid
+        if (result.length < 23 && (result.length + 1) % 8 !== 0)
+            return null;
+        return { row: result, left: startIndex, right: lastIndex };
+    };
+    /**
+     * decode codabar code
+     * @param row row to cecode
+     */
+    CodaBarReader.prototype.codaBarDecodeRow = function (row) {
+        var code = [];
+        var barThreshold = Math.ceil(row.reduce(function (pre, item) { return (pre + item) / 2; }, 0));
+        // Read one encoded character at a time.
+        while (row.length > 0) {
+            var seg = row.splice(0, 8).splice(0, 7);
+            var key = seg.map(function (len) { return (len < barThreshold ? 'n' : 'w'); }).join('');
+            if (this.CODA_BAR_CHAR_SET[key] === undefined)
+                return null;
+            code.push(this.CODA_BAR_CHAR_SET[key]);
+        }
+        var strCode = code.join('');
+        if (this.validCodaBarString(strCode))
+            return strCode;
+        return null;
+    };
+    /**
+     * check if the string is a CodaBar string
+     * @param src string to determine
+     */
+    CodaBarReader.prototype.validCodaBarString = function (src) {
+        var reg = /^[A-D].{1,}[A-D]$/;
+        return reg.test(src);
+    };
+    return CodaBarReader;
+}(_OneDReader__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CodaBarReader);
+
 
 /***/ }),
 
@@ -12458,7 +16452,7 @@ var Code128Reader = /** @class */ (function (_super) {
                         return Int32Array.from([patternStart, i, bestMatch]);
                     }
                     patternStart += counters[0] + counters[1];
-                    counters = counters.slice(2, counters.length - 1);
+                    counters = counters.slice(2, counters.length);
                     counters[counterPosition - 1] = 0;
                     counters[counterPosition] = 0;
                     counterPosition--;
@@ -12897,7 +16891,7 @@ var Code128Reader = /** @class */ (function (_super) {
     return Code128Reader;
 }(_OneDReader__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Code128Reader);
-//# sourceMappingURL=Code128Reader.js.map
+
 
 /***/ }),
 
@@ -13287,7 +17281,359 @@ var Code39Reader = /** @class */ (function (_super) {
     return Code39Reader;
 }(_OneDReader__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Code39Reader);
-//# sourceMappingURL=Code39Reader.js.map
+
+
+/***/ }),
+
+/***/ 7340:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8684);
+/* harmony import */ var _ChecksumException__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3392);
+/* harmony import */ var _FormatException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2468);
+/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8842);
+/* harmony import */ var _OneDReader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3903);
+/* harmony import */ var _Result__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1462);
+/* harmony import */ var _ResultPoint__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8307);
+/*
+ * Copyright 2010 ZXing authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __values = (undefined && undefined.__values) || function(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+};
+/*namespace com.google.zxing.oned {*/
+
+
+
+
+
+
+//import com.google.zxing.ResultMetadataType;
+
+/**
+ * <p>Decodes Code 93 barcodes.</p>
+ *
+ * @author Sean Owen
+ * @see Code39Reader
+ */
+var Code93Reader = /** @class */ (function (_super) {
+    __extends(Code93Reader, _super);
+    //public Code93Reader() {
+    //  decodeRowResult = new StringBuilder(20);
+    //  counters = new int[6];
+    //}
+    function Code93Reader() {
+        var _this = _super.call(this) || this;
+        _this.decodeRowResult = '';
+        _this.counters = new Int32Array(6);
+        return _this;
+    }
+    Code93Reader.prototype.decodeRow = function (rowNumber, row, hints) {
+        var e_1, _a, e_2, _b;
+        var start = this.findAsteriskPattern(row);
+        // Read off white space
+        var nextStart = row.getNextSet(start[1]);
+        var end = row.getSize();
+        var theCounters = this.counters;
+        theCounters.fill(0);
+        this.decodeRowResult = '';
+        var decodedChar;
+        var lastStart;
+        do {
+            Code93Reader.recordPattern(row, nextStart, theCounters);
+            var pattern = this.toPattern(theCounters);
+            if (pattern < 0) {
+                throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+            }
+            decodedChar = this.patternToChar(pattern);
+            this.decodeRowResult += decodedChar;
+            lastStart = nextStart;
+            try {
+                for (var theCounters_1 = (e_1 = void 0, __values(theCounters)), theCounters_1_1 = theCounters_1.next(); !theCounters_1_1.done; theCounters_1_1 = theCounters_1.next()) {
+                    var counter = theCounters_1_1.value;
+                    nextStart += counter;
+                }
+            }
+            catch (e_1_1) { e_1 = { error: e_1_1 }; }
+            finally {
+                try {
+                    if (theCounters_1_1 && !theCounters_1_1.done && (_a = theCounters_1.return)) _a.call(theCounters_1);
+                }
+                finally { if (e_1) throw e_1.error; }
+            }
+            // Read off white space
+            nextStart = row.getNextSet(nextStart);
+        } while (decodedChar !== '*');
+        this.decodeRowResult = this.decodeRowResult.substring(0, this.decodeRowResult.length - 1); // remove asterisk
+        var lastPatternSize = 0;
+        try {
+            for (var theCounters_2 = __values(theCounters), theCounters_2_1 = theCounters_2.next(); !theCounters_2_1.done; theCounters_2_1 = theCounters_2.next()) {
+                var counter = theCounters_2_1.value;
+                lastPatternSize += counter;
+            }
+        }
+        catch (e_2_1) { e_2 = { error: e_2_1 }; }
+        finally {
+            try {
+                if (theCounters_2_1 && !theCounters_2_1.done && (_b = theCounters_2.return)) _b.call(theCounters_2);
+            }
+            finally { if (e_2) throw e_2.error; }
+        }
+        // Should be at least one more black module
+        if (nextStart === end || !row.get(nextStart)) {
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+        }
+        if (this.decodeRowResult.length < 2) {
+            // false positive -- need at least 2 checksum digits
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+        }
+        this.checkChecksums(this.decodeRowResult);
+        // Remove checksum digits
+        this.decodeRowResult = this.decodeRowResult.substring(0, this.decodeRowResult.length - 2);
+        var resultString = this.decodeExtended(this.decodeRowResult);
+        var left = (start[1] + start[0]) / 2.0;
+        var right = lastStart + lastPatternSize / 2.0;
+        return new _Result__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z(resultString, null, 0, [new _ResultPoint__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z(left, rowNumber), new _ResultPoint__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z(right, rowNumber)], _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__/* ["default"].CODE_93 */ .Z.CODE_93, new Date().getTime());
+    };
+    Code93Reader.prototype.findAsteriskPattern = function (row) {
+        var width = row.getSize();
+        var rowOffset = row.getNextSet(0);
+        this.counters.fill(0);
+        var theCounters = this.counters;
+        var patternStart = rowOffset;
+        var isWhite = false;
+        var patternLength = theCounters.length;
+        var counterPosition = 0;
+        for (var i = rowOffset; i < width; i++) {
+            if (row.get(i) !== isWhite) {
+                theCounters[counterPosition]++;
+            }
+            else {
+                if (counterPosition === patternLength - 1) {
+                    if (this.toPattern(theCounters) === Code93Reader.ASTERISK_ENCODING) {
+                        return new Int32Array([patternStart, i]);
+                    }
+                    patternStart += theCounters[0] + theCounters[1];
+                    theCounters.copyWithin(0, 2, 2 + counterPosition - 1);
+                    theCounters[counterPosition - 1] = 0;
+                    theCounters[counterPosition] = 0;
+                    counterPosition--;
+                }
+                else {
+                    counterPosition++;
+                }
+                theCounters[counterPosition] = 1;
+                isWhite = !isWhite;
+            }
+        }
+        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z;
+    };
+    Code93Reader.prototype.toPattern = function (counters) {
+        var e_3, _a;
+        var sum = 0;
+        try {
+            for (var counters_1 = __values(counters), counters_1_1 = counters_1.next(); !counters_1_1.done; counters_1_1 = counters_1.next()) {
+                var counter = counters_1_1.value;
+                sum += counter;
+            }
+        }
+        catch (e_3_1) { e_3 = { error: e_3_1 }; }
+        finally {
+            try {
+                if (counters_1_1 && !counters_1_1.done && (_a = counters_1.return)) _a.call(counters_1);
+            }
+            finally { if (e_3) throw e_3.error; }
+        }
+        var pattern = 0;
+        var max = counters.length;
+        for (var i = 0; i < max; i++) {
+            var scaled = Math.round(counters[i] * 9.0 / sum);
+            if (scaled < 1 || scaled > 4) {
+                return -1;
+            }
+            if ((i & 0x01) === 0) {
+                for (var j = 0; j < scaled; j++) {
+                    pattern = (pattern << 1) | 0x01;
+                }
+            }
+            else {
+                pattern <<= scaled;
+            }
+        }
+        return pattern;
+    };
+    Code93Reader.prototype.patternToChar = function (pattern) {
+        for (var i = 0; i < Code93Reader.CHARACTER_ENCODINGS.length; i++) {
+            if (Code93Reader.CHARACTER_ENCODINGS[i] === pattern) {
+                return Code93Reader.ALPHABET_STRING.charAt(i);
+            }
+        }
+        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+    };
+    Code93Reader.prototype.decodeExtended = function (encoded) {
+        var length = encoded.length;
+        var decoded = '';
+        for (var i = 0; i < length; i++) {
+            var c = encoded.charAt(i);
+            if (c >= 'a' && c <= 'd') {
+                if (i >= length - 1) {
+                    throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+                }
+                var next = encoded.charAt(i + 1);
+                var decodedChar = '\0';
+                switch (c) {
+                    case 'd':
+                        // +A to +Z map to a to z
+                        if (next >= 'A' && next <= 'Z') {
+                            decodedChar = String.fromCharCode(next.charCodeAt(0) + 32);
+                        }
+                        else {
+                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+                        }
+                        break;
+                    case 'a':
+                        // $A to $Z map to control codes SH to SB
+                        if (next >= 'A' && next <= 'Z') {
+                            decodedChar = String.fromCharCode(next.charCodeAt(0) - 64);
+                        }
+                        else {
+                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+                        }
+                        break;
+                    case 'b':
+                        if (next >= 'A' && next <= 'E') {
+                            // %A to %E map to control codes ESC to USep
+                            decodedChar = String.fromCharCode(next.charCodeAt(0) - 38);
+                        }
+                        else if (next >= 'F' && next <= 'J') {
+                            // %F to %J map to ; < = > ?
+                            decodedChar = String.fromCharCode(next.charCodeAt(0) - 11);
+                        }
+                        else if (next >= 'K' && next <= 'O') {
+                            // %K to %O map to [ \ ] ^ _
+                            decodedChar = String.fromCharCode(next.charCodeAt(0) + 16);
+                        }
+                        else if (next >= 'P' && next <= 'T') {
+                            // %P to %T map to { | } ~ DEL
+                            decodedChar = String.fromCharCode(next.charCodeAt(0) + 43);
+                        }
+                        else if (next === 'U') {
+                            // %U map to NUL
+                            decodedChar = '\0';
+                        }
+                        else if (next === 'V') {
+                            // %V map to @
+                            decodedChar = '@';
+                        }
+                        else if (next === 'W') {
+                            // %W map to `
+                            decodedChar = '`';
+                        }
+                        else if (next >= 'X' && next <= 'Z') {
+                            // %X to %Z all map to DEL (127)
+                            decodedChar = String.fromCharCode(127);
+                        }
+                        else {
+                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+                        }
+                        break;
+                    case 'c':
+                        // /A to /O map to ! to , and /Z maps to :
+                        if (next >= 'A' && next <= 'O') {
+                            decodedChar = String.fromCharCode(next.charCodeAt(0) - 32);
+                        }
+                        else if (next === 'Z') {
+                            decodedChar = ':';
+                        }
+                        else {
+                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+                        }
+                        break;
+                }
+                decoded += decodedChar;
+                // bump up i again since we read two characters
+                i++;
+            }
+            else {
+                decoded += c;
+            }
+        }
+        return decoded;
+    };
+    Code93Reader.prototype.checkChecksums = function (result) {
+        var length = result.length;
+        this.checkOneChecksum(result, length - 2, 20);
+        this.checkOneChecksum(result, length - 1, 15);
+    };
+    Code93Reader.prototype.checkOneChecksum = function (result, checkPosition, weightMax) {
+        var weight = 1;
+        var total = 0;
+        for (var i = checkPosition - 1; i >= 0; i--) {
+            total += weight * Code93Reader.ALPHABET_STRING.indexOf(result.charAt(i));
+            if (++weight > weightMax) {
+                weight = 1;
+            }
+        }
+        if (result.charAt(checkPosition) !== Code93Reader.ALPHABET_STRING[total % 47]) {
+            throw new _ChecksumException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z;
+        }
+    };
+    // Note that 'abcd' are dummy characters in place of control characters.
+    Code93Reader.ALPHABET_STRING = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-. $/+%abcd*";
+    /**
+     * These represent the encodings of characters, as patterns of wide and narrow bars.
+     * The 9 least-significant bits of each int correspond to the pattern of wide and narrow.
+     */
+    Code93Reader.CHARACTER_ENCODINGS = [
+        0x114, 0x148, 0x144, 0x142, 0x128, 0x124, 0x122, 0x150, 0x112, 0x10A,
+        0x1A8, 0x1A4, 0x1A2, 0x194, 0x192, 0x18A, 0x168, 0x164, 0x162, 0x134,
+        0x11A, 0x158, 0x14C, 0x146, 0x12C, 0x116, 0x1B4, 0x1B2, 0x1AC, 0x1A6,
+        0x196, 0x19A, 0x16C, 0x166, 0x136, 0x13A,
+        0x12E, 0x1D4, 0x1D2, 0x1CA, 0x16E, 0x176, 0x1AE,
+        0x126, 0x1DA, 0x1D6, 0x132, 0x15E,
+    ];
+    Code93Reader.ASTERISK_ENCODING = Code93Reader.CHARACTER_ENCODINGS[47];
+    return Code93Reader;
+}(_OneDReader__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Code93Reader);
+
 
 /***/ }),
 
@@ -13425,7 +17771,7 @@ var EAN13Reader = /** @class */ (function (_super) {
     return EAN13Reader;
 }(_UPCEANReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (EAN13Reader);
-//# sourceMappingURL=EAN13Reader.js.map
+
 
 /***/ }),
 
@@ -13819,7 +18165,7 @@ var ITFReader = /** @class */ (function (_super) {
     return ITFReader;
 }(_OneDReader__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ITFReader);
-//# sourceMappingURL=ITFReader.js.map
+
 
 /***/ }),
 
@@ -13843,6 +18189,8 @@ var NotFoundException = __webpack_require__(8842);
 var Code128Reader = __webpack_require__(7344);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/Code39Reader.js
 var Code39Reader = __webpack_require__(352);
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/Code93Reader.js
+var Code93Reader = __webpack_require__(7340);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/ITFReader.js
 var ITFReader = __webpack_require__(1758);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/Result.js
@@ -13960,7 +18308,7 @@ var EAN8Reader = /** @class */ (function (_super) {
     return EAN8Reader;
 }(UPCEANReader/* default */.Z));
 /* harmony default export */ const oned_EAN8Reader = (EAN8Reader);
-//# sourceMappingURL=EAN8Reader.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/UPCAReader.js
 /*
  * Copyright 2008 ZXing authors
@@ -14051,7 +18399,7 @@ var UPCAReader = /** @class */ (function (_super) {
     return UPCAReader;
 }(UPCEANReader/* default */.Z));
 /* harmony default export */ const oned_UPCAReader = (UPCAReader);
-//# sourceMappingURL=UPCAReader.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StringBuilder.js
 var StringBuilder = __webpack_require__(75);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/UPCEReader.js
@@ -14274,7 +18622,7 @@ var UPCEReader = /** @class */ (function (_super) {
     return UPCEReader;
 }(UPCEANReader/* default */.Z));
 /* harmony default export */ const oned_UPCEReader = (UPCEReader);
-//# sourceMappingURL=UPCEReader.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/MultiFormatUPCEANReader.js
 /*
  * Copyright 2008 ZXing authors
@@ -14341,7 +18689,7 @@ var MultiFormatUPCEANReader = /** @class */ (function (_super) {
             if (possibleFormats.indexOf(BarcodeFormat/* default.EAN_13 */.Z.EAN_13) > -1) {
                 readers.push(new EAN13Reader/* default */.Z());
             }
-            else if (possibleFormats.indexOf(BarcodeFormat/* default.UPC_A */.Z.UPC_A) > -1) {
+            if (possibleFormats.indexOf(BarcodeFormat/* default.UPC_A */.Z.UPC_A) > -1) {
                 readers.push(new oned_UPCAReader());
             }
             if (possibleFormats.indexOf(BarcodeFormat/* default.EAN_8 */.Z.EAN_8) > -1) {
@@ -14353,7 +18701,7 @@ var MultiFormatUPCEANReader = /** @class */ (function (_super) {
         }
         if (readers.length === 0) {
             readers.push(new EAN13Reader/* default */.Z());
-            // UPC-A is covered by EAN-13
+            readers.push(new oned_UPCAReader());
             readers.push(new oned_EAN8Reader());
             readers.push(new oned_UPCEReader());
         }
@@ -14388,7 +18736,7 @@ var MultiFormatUPCEANReader = /** @class */ (function (_super) {
                     if (ean13MayBeUPCA && canReturnUPCA) {
                         var rawBytes = result.getRawBytes();
                         // Transfer the metadata across
-                        var resultUPCA = new Result/* default */.Z(result.getText().substring(1), rawBytes, rawBytes.length, result.getResultPoints(), BarcodeFormat/* default.UPC_A */.Z.UPC_A);
+                        var resultUPCA = new Result/* default */.Z(result.getText().substring(1), rawBytes, (rawBytes ? rawBytes.length : null), result.getResultPoints(), BarcodeFormat/* default.UPC_A */.Z.UPC_A);
                         resultUPCA.putAllMetadata(result.getResultMetadata());
                         return resultUPCA;
                     }
@@ -14427,7 +18775,9 @@ var MultiFormatUPCEANReader = /** @class */ (function (_super) {
     return MultiFormatUPCEANReader;
 }(OneDReader/* default */.Z));
 /* harmony default export */ const oned_MultiFormatUPCEANReader = (MultiFormatUPCEANReader);
-//# sourceMappingURL=MultiFormatUPCEANReader.js.map
+
+// EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/CodaBarReader.js
+var CodaBarReader = __webpack_require__(6004);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/RSSExpandedReader.js + 3 modules
 var RSSExpandedReader = __webpack_require__(2050);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/RSS14Reader.js + 1 modules
@@ -14472,6 +18822,8 @@ var MultiFormatOneDReader_extends = (undefined && undefined.__extends) || (funct
 
 
 
+
+
 /**
  * @author Daniel Switkin <dswitkin@google.com>
  * @author Sean Owen
@@ -14483,6 +18835,7 @@ var MultiFormatOneDReader = /** @class */ (function (_super) {
         _this.readers = [];
         var possibleFormats = !hints ? null : hints.get(DecodeHintType/* default.POSSIBLE_FORMATS */.Z.POSSIBLE_FORMATS);
         var useCode39CheckDigit = hints && hints.get(DecodeHintType/* default.ASSUME_CODE_39_CHECK_DIGIT */.Z.ASSUME_CODE_39_CHECK_DIGIT) !== undefined;
+        var useCode39ExtendedMode = hints && hints.get(DecodeHintType/* default.ENABLE_CODE_39_EXTENDED_MODE */.Z.ENABLE_CODE_39_EXTENDED_MODE) !== undefined;
         if (possibleFormats) {
             if (possibleFormats.includes(BarcodeFormat/* default.EAN_13 */.Z.EAN_13) ||
                 possibleFormats.includes(BarcodeFormat/* default.UPC_A */.Z.UPC_A) ||
@@ -14491,20 +18844,20 @@ var MultiFormatOneDReader = /** @class */ (function (_super) {
                 _this.readers.push(new oned_MultiFormatUPCEANReader(hints));
             }
             if (possibleFormats.includes(BarcodeFormat/* default.CODE_39 */.Z.CODE_39)) {
-                _this.readers.push(new Code39Reader/* default */.Z(useCode39CheckDigit));
+                _this.readers.push(new Code39Reader/* default */.Z(useCode39CheckDigit, useCode39ExtendedMode));
             }
-            // if (possibleFormats.includes(BarcodeFormat.CODE_93)) {
-            //    this.readers.push(new Code93Reader());
-            // }
+            if (possibleFormats.includes(BarcodeFormat/* default.CODE_93 */.Z.CODE_93)) {
+                _this.readers.push(new Code93Reader/* default */.Z());
+            }
             if (possibleFormats.includes(BarcodeFormat/* default.CODE_128 */.Z.CODE_128)) {
                 _this.readers.push(new Code128Reader/* default */.Z());
             }
             if (possibleFormats.includes(BarcodeFormat/* default.ITF */.Z.ITF)) {
                 _this.readers.push(new ITFReader/* default */.Z());
             }
-            // if (possibleFormats.includes(BarcodeFormat.CODABAR)) {
-            //    this.readers.push(new CodaBarReader());
-            // }
+            if (possibleFormats.includes(BarcodeFormat/* default.CODABAR */.Z.CODABAR)) {
+                _this.readers.push(new CodaBarReader/* default */.Z());
+            }
             if (possibleFormats.includes(BarcodeFormat/* default.RSS_14 */.Z.RSS_14)) {
                 _this.readers.push(new RSS14Reader/* default */.Z());
             }
@@ -14517,7 +18870,7 @@ var MultiFormatOneDReader = /** @class */ (function (_super) {
             _this.readers.push(new oned_MultiFormatUPCEANReader(hints));
             _this.readers.push(new Code39Reader/* default */.Z());
             // this.readers.push(new CodaBarReader());
-            // this.readers.push(new Code93Reader());
+            _this.readers.push(new Code93Reader/* default */.Z());
             _this.readers.push(new oned_MultiFormatUPCEANReader(hints));
             _this.readers.push(new Code128Reader/* default */.Z());
             _this.readers.push(new ITFReader/* default */.Z());
@@ -14545,7 +18898,7 @@ var MultiFormatOneDReader = /** @class */ (function (_super) {
     return MultiFormatOneDReader;
 }(OneDReader/* default */.Z));
 /* harmony default export */ const oned_MultiFormatOneDReader = (MultiFormatOneDReader);
-//# sourceMappingURL=MultiFormatOneDReader.js.map
+
 
 /***/ }),
 
@@ -14824,7 +19177,7 @@ var OneDReader = /** @class */ (function () {
     return OneDReader;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (OneDReader);
-//# sourceMappingURL=OneDReader.js.map
+
 
 /***/ }),
 
@@ -14994,7 +19347,7 @@ var AbstractUPCEANReader = /** @class */ (function (_super) {
                         return Int32Array.from([patternStart, x]);
                     }
                     patternStart += counters[0] + counters[1];
-                    var slice = counters.slice(2, counters.length - 1);
+                    var slice = counters.slice(2, counters.length);
                     for (var i = 0; i < counterPosition - 1; i++) {
                         counters[i] = slice[i];
                     }
@@ -15066,7 +19419,7 @@ var AbstractUPCEANReader = /** @class */ (function (_super) {
     return AbstractUPCEANReader;
 }(OneDReader/* default */.Z));
 /* harmony default export */ const oned_AbstractUPCEANReader = (AbstractUPCEANReader);
-//# sourceMappingURL=AbstractUPCEANReader.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/UPCEANExtension5Support.js
 /*
  * Copyright (C) 2010 ZXing authors
@@ -15237,7 +19590,7 @@ var UPCEANExtension5Support = /** @class */ (function () {
     return UPCEANExtension5Support;
 }());
 /* harmony default export */ const oned_UPCEANExtension5Support = (UPCEANExtension5Support);
-//# sourceMappingURL=UPCEANExtension5Support.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/UPCEANExtension2Support.js
 /*
  * Copyright (C) 2012 ZXing authors
@@ -15346,7 +19699,7 @@ var UPCEANExtension2Support = /** @class */ (function () {
     return UPCEANExtension2Support;
 }());
 /* harmony default export */ const oned_UPCEANExtension2Support = (UPCEANExtension2Support);
-//# sourceMappingURL=UPCEANExtension2Support.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/UPCEANExtensionSupport.js
 /*
  * Copyright (C) 2010 ZXing authors
@@ -15386,7 +19739,7 @@ var UPCEANExtensionSupport = /** @class */ (function () {
     return UPCEANExtensionSupport;
 }());
 /* harmony default export */ const oned_UPCEANExtensionSupport = (UPCEANExtensionSupport);
-//# sourceMappingURL=UPCEANExtensionSupport.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/ChecksumException.js
 var ChecksumException = __webpack_require__(3392);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/UPCEANReader.js
@@ -15558,7 +19911,7 @@ var UPCEANReader = /** @class */ (function (_super) {
     return UPCEANReader;
 }(oned_AbstractUPCEANReader));
 /* harmony default export */ const oned_UPCEANReader = (UPCEANReader);
-//# sourceMappingURL=UPCEANReader.js.map
+
 
 /***/ }),
 
@@ -15707,7 +20060,7 @@ var AbstractRSSReader = /** @class */ (function (_super) {
     return AbstractRSSReader;
 }(_OneDReader__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AbstractRSSReader);
-//# sourceMappingURL=AbstractRSSReader.js.map
+
 
 /***/ }),
 
@@ -15745,7 +20098,7 @@ var DataCharacter = /** @class */ (function () {
     return DataCharacter;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DataCharacter);
-//# sourceMappingURL=DataCharacter.js.map
+
 
 /***/ }),
 
@@ -15790,7 +20143,7 @@ var FinderPattern = /** @class */ (function () {
     return FinderPattern;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FinderPattern);
-//# sourceMappingURL=FinderPattern.js.map
+
 
 /***/ }),
 
@@ -15843,7 +20196,7 @@ var Pair = /** @class */ (function (_super) {
     return Pair;
 }(DataCharacter/* default */.Z));
 /* harmony default export */ const rss_Pair = (Pair);
-//# sourceMappingURL=Pair.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/Result.js
 var Result = __webpack_require__(1462);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/DecodeHintType.js
@@ -16321,7 +20674,7 @@ var RSS14Reader = /** @class */ (function (_super) {
     return RSS14Reader;
 }(AbstractRSSReader/* default */.Z));
 /* harmony default export */ const rss_RSS14Reader = (RSS14Reader);
-//# sourceMappingURL=RSS14Reader.js.map
+
 
 /***/ }),
 
@@ -16420,7 +20773,7 @@ var RSSUtils = /** @class */ (function () {
     return RSSUtils;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RSSUtils);
-//# sourceMappingURL=RSSUtils.js.map
+
 
 /***/ }),
 
@@ -16460,7 +20813,7 @@ var BitArrayBuilder = /** @class */ (function () {
     function BitArrayBuilder() {
     }
     BitArrayBuilder.buildBitArray = function (pairs) {
-        var charNumber = (pairs.length * 2) - 1;
+        var charNumber = pairs.length * 2 - 1;
         if (pairs[pairs.length - 1].getRightChar() == null) {
             charNumber -= 1;
         }
@@ -16470,7 +20823,7 @@ var BitArrayBuilder = /** @class */ (function () {
         var firstPair = pairs[0];
         var firstValue = firstPair.getRightChar().getValue();
         for (var i = 11; i >= 0; --i) {
-            if ((firstValue & (1 << i)) != 0) {
+            if ((firstValue & (1 << i)) !== 0) {
                 binary.set(accPos);
             }
             accPos++;
@@ -16479,15 +20832,15 @@ var BitArrayBuilder = /** @class */ (function () {
             var currentPair = pairs[i];
             var leftValue = currentPair.getLeftChar().getValue();
             for (var j = 11; j >= 0; --j) {
-                if ((leftValue & (1 << j)) != 0) {
+                if ((leftValue & (1 << j)) !== 0) {
                     binary.set(accPos);
                 }
                 accPos++;
             }
-            if (currentPair.getRightChar() != null) {
+            if (currentPair.getRightChar() !== null) {
                 var rightValue = currentPair.getRightChar().getValue();
                 for (var j = 11; j >= 0; --j) {
-                    if ((rightValue & (1 << j)) != 0) {
+                    if ((rightValue & (1 << j)) !== 0) {
                         binary.set(accPos);
                     }
                     accPos++;
@@ -16499,7 +20852,7 @@ var BitArrayBuilder = /** @class */ (function () {
     return BitArrayBuilder;
 }());
 /* harmony default export */ const expanded_BitArrayBuilder = (BitArrayBuilder);
-//# sourceMappingURL=BitArrayBuilder.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AbstractExpandedDecoderComplement.js + 10 modules
 var AbstractExpandedDecoderComplement = __webpack_require__(3351);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/ExpandedPair.js
@@ -16547,7 +20900,7 @@ var ExpandedPair = /** @class */ (function () {
     return ExpandedPair;
 }());
 /* harmony default export */ const expanded_ExpandedPair = (ExpandedPair);
-//# sourceMappingURL=ExpandedPair.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/ExpandedRow.js
 var ExpandedRow = /** @class */ (function () {
     function ExpandedRow(pairs, rowNumber, wasReversed) {
@@ -16599,7 +20952,7 @@ var ExpandedRow = /** @class */ (function () {
     return ExpandedRow;
 }());
 /* harmony default export */ const expanded_ExpandedRow = (ExpandedRow);
-//# sourceMappingURL=ExpandedRow.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/RSSExpandedReader.js
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -16799,7 +21152,7 @@ var RSSExpandedReader = /** @class */ (function (_super) {
                 }
                 var stop_1 = true;
                 for (var j = 0; j < pairs.length; j++) {
-                    if (pairs[j].getFinderPattern().getValue() != sequence[j]) {
+                    if (pairs[j].getFinderPattern().getValue() !== sequence[j]) {
                         stop_1 = false;
                         break;
                     }
@@ -16986,7 +21339,9 @@ var RSSExpandedReader = /** @class */ (function (_super) {
         var decoder = (0,AbstractExpandedDecoderComplement/* createDecoder */.U)(binary);
         var resultingString = decoder.parseInformation();
         var firstPoints = pairs[0].getFinderPattern().getResultPoints();
-        var lastPoints = pairs[pairs.length - 1].getFinderPattern().getResultPoints();
+        var lastPoints = pairs[pairs.length - 1]
+            .getFinderPattern()
+            .getResultPoints();
         var points = [firstPoints[0], firstPoints[1], lastPoints[0], lastPoints[1]];
         return new Result/* default */.Z(resultingString, null, null, points, BarcodeFormat/* default.RSS_EXPANDED */.Z.RSS_EXPANDED, null);
     };
@@ -16994,7 +21349,7 @@ var RSSExpandedReader = /** @class */ (function (_super) {
         var firstPair = this.pairs.get(0);
         var checkCharacter = firstPair.getLeftChar();
         var firstCharacter = firstPair.getRightChar();
-        if (firstCharacter == null) {
+        if (firstCharacter === null) {
             return false;
         }
         var checksum = firstCharacter.getChecksumPortion();
@@ -17011,7 +21366,7 @@ var RSSExpandedReader = /** @class */ (function (_super) {
         }
         checksum %= 211;
         var checkCharacterValue = 211 * (s - 4) + checksum;
-        return checkCharacterValue == checkCharacter.getValue();
+        return checkCharacterValue === checkCharacter.getValue();
     };
     RSSExpandedReader.getNextSecondBar = function (row, initialPos) {
         var currentPos;
@@ -17027,7 +21382,7 @@ var RSSExpandedReader = /** @class */ (function (_super) {
     };
     // not private for testing
     RSSExpandedReader.prototype.retrieveNextPair = function (row, previousPairs, rowNumber) {
-        var isOddPattern = previousPairs.length % 2 == 0;
+        var isOddPattern = previousPairs.length % 2 === 0;
         if (this.startFromEven) {
             isOddPattern = !isOddPattern;
         }
@@ -17037,7 +21392,7 @@ var RSSExpandedReader = /** @class */ (function (_super) {
         do {
             this.findNextPair(row, previousPairs, forcedOffset);
             pattern = this.parseFoundFinderPattern(row, rowNumber, isOddPattern);
-            if (pattern == null) {
+            if (pattern === null) {
                 forcedOffset = RSSExpandedReader.getNextSecondBar(row, this.startEnd[0]);
             }
             else {
@@ -17047,7 +21402,8 @@ var RSSExpandedReader = /** @class */ (function (_super) {
         // When stacked symbol is split over multiple rows, there's no way to guess if this pair can be last or not.
         // boolean mayBeLast = checkPairSequence(previousPairs, pattern);
         var leftChar = this.decodeDataCharacter(row, pattern, isOddPattern, true);
-        if (!this.isEmptyPair(previousPairs) && previousPairs[previousPairs.length - 1].mustBeLast()) {
+        if (!this.isEmptyPair(previousPairs) &&
+            previousPairs[previousPairs.length - 1].mustBeLast()) {
             throw new NotFoundException/* default */.Z();
         }
         var rightChar;
@@ -17084,7 +21440,7 @@ var RSSExpandedReader = /** @class */ (function (_super) {
             var lastPair = previousPairs[previousPairs.length - 1];
             rowOffset = lastPair.getFinderPattern().getStartEnd()[1];
         }
-        var searchingEvenPair = previousPairs.length % 2 != 0;
+        var searchingEvenPair = previousPairs.length % 2 !== 0;
         if (this.startFromEven) {
             searchingEvenPair = !searchingEvenPair;
         }
@@ -17099,11 +21455,11 @@ var RSSExpandedReader = /** @class */ (function (_super) {
         var counterPosition = 0;
         var patternStart = rowOffset;
         for (var x = rowOffset; x < width; x++) {
-            if (row.get(x) != isWhite) {
+            if (row.get(x) !== isWhite) {
                 counters[counterPosition]++;
             }
             else {
-                if (counterPosition == 3) {
+                if (counterPosition === 3) {
                     if (searchingEvenPair) {
                         RSSExpandedReader.reverseCounters(counters);
                     }
@@ -17172,7 +21528,6 @@ var RSSExpandedReader = /** @class */ (function (_super) {
         }
         catch (e) {
             return null;
-            console.log(e);
         }
         // return new FinderPattern(value, new int[] { start, end }, start, end, rowNumber});
         return new FinderPattern/* default */.Z(value, [start, end], start, end, rowNumber);
@@ -17198,7 +21553,8 @@ var RSSExpandedReader = /** @class */ (function (_super) {
         var elementWidth = MathUtils/* default.sum */.Z.sum(new Int32Array(counters)) / numModules;
         // Sanity check: element width for pattern and the character should match
         var expectedElementWidth = (pattern.getStartEnd()[1] - pattern.getStartEnd()[0]) / 15.0;
-        if (Math.abs(elementWidth - expectedElementWidth) / expectedElementWidth > 0.3) {
+        if (Math.abs(elementWidth - expectedElementWidth) / expectedElementWidth >
+            0.3) {
             throw new NotFoundException/* default */.Z();
         }
         var oddCounts = this.getOddCounts();
@@ -17206,7 +21562,7 @@ var RSSExpandedReader = /** @class */ (function (_super) {
         var oddRoundingErrors = this.getOddRoundingErrors();
         var evenRoundingErrors = this.getEvenRoundingErrors();
         for (var i = 0; i < counters.length; i++) {
-            var value_1 = 1.0 * counters[i] / elementWidth;
+            var value_1 = (1.0 * counters[i]) / elementWidth;
             var count = value_1 + 0.5; // Round
             if (count < 1) {
                 if (value_1 < 0.3) {
@@ -17221,7 +21577,7 @@ var RSSExpandedReader = /** @class */ (function (_super) {
                 count = 8;
             }
             var offset = i / 2;
-            if ((i & 0x01) == 0) {
+            if ((i & 0x01) === 0) {
                 oddCounts[offset] = count;
                 oddRoundingErrors[offset] = value_1 - count;
             }
@@ -17251,7 +21607,7 @@ var RSSExpandedReader = /** @class */ (function (_super) {
             // evenSum += evenCounts[i];
         }
         var checksumPortion = oddChecksumPortion + evenChecksumPortion;
-        if ((oddSum & 0x01) != 0 || oddSum > 13 || oddSum < 4) {
+        if ((oddSum & 0x01) !== 0 || oddSum > 13 || oddSum < 4) {
             throw new NotFoundException/* default */.Z();
         }
         var group = (13 - oddSum) / 2;
@@ -17266,7 +21622,7 @@ var RSSExpandedReader = /** @class */ (function (_super) {
     };
     RSSExpandedReader.isNotA1left = function (pattern, isOddPattern, leftChar) {
         // A1: pattern.getValue is 0 (A), and it's an oddPattern, and it is a left char
-        return !(pattern.getValue() == 0 && isOddPattern && leftChar);
+        return !(pattern.getValue() === 0 && isOddPattern && leftChar);
     };
     RSSExpandedReader.prototype.adjustOddEvenCounts = function (numModules) {
         var oddSum = MathUtils/* default.sum */.Z.sum(new Int32Array(this.getOddCounts()));
@@ -17288,9 +21644,9 @@ var RSSExpandedReader = /** @class */ (function (_super) {
             incrementEven = true;
         }
         var mismatch = oddSum + evenSum - numModules;
-        var oddParityBad = (oddSum & 0x01) == 1;
-        var evenParityBad = (evenSum & 0x01) == 0;
-        if (mismatch == 1) {
+        var oddParityBad = (oddSum & 0x01) === 1;
+        var evenParityBad = (evenSum & 0x01) === 0;
+        if (mismatch === 1) {
             if (oddParityBad) {
                 if (evenParityBad) {
                     throw new NotFoundException/* default */.Z();
@@ -17304,7 +21660,7 @@ var RSSExpandedReader = /** @class */ (function (_super) {
                 decrementEven = true;
             }
         }
-        else if (mismatch == -1) {
+        else if (mismatch === -1) {
             if (oddParityBad) {
                 if (evenParityBad) {
                     throw new NotFoundException/* default */.Z();
@@ -17318,7 +21674,7 @@ var RSSExpandedReader = /** @class */ (function (_super) {
                 incrementEven = true;
             }
         }
-        else if (mismatch == 0) {
+        else if (mismatch === 0) {
             if (oddParityBad) {
                 if (!evenParityBad) {
                     throw new NotFoundException/* default */.Z();
@@ -17371,7 +21727,7 @@ var RSSExpandedReader = /** @class */ (function (_super) {
         Int32Array.from([3, 4, 6, 1]),
         Int32Array.from([3, 2, 8, 1]),
         Int32Array.from([2, 6, 5, 1]),
-        Int32Array.from([2, 2, 9, 1]) // F
+        Int32Array.from([2, 2, 9, 1]),
     ];
     RSSExpandedReader.WEIGHTS = [
         [1, 3, 9, 27, 81, 32, 96, 77],
@@ -17396,7 +21752,7 @@ var RSSExpandedReader = /** @class */ (function (_super) {
         [103, 98, 83, 38, 114, 131, 182, 124],
         [161, 61, 183, 127, 170, 88, 53, 159],
         [55, 165, 73, 8, 24, 72, 5, 15],
-        [45, 135, 194, 160, 58, 174, 100, 89]
+        [45, 135, 194, 160, 58, 174, 100, 89],
     ];
     RSSExpandedReader.FINDER_PAT_A = 0;
     RSSExpandedReader.FINDER_PAT_B = 1;
@@ -17406,21 +21762,93 @@ var RSSExpandedReader = /** @class */ (function (_super) {
     RSSExpandedReader.FINDER_PAT_F = 5;
     RSSExpandedReader.FINDER_PATTERN_SEQUENCES = [
         [RSSExpandedReader.FINDER_PAT_A, RSSExpandedReader.FINDER_PAT_A],
-        [RSSExpandedReader.FINDER_PAT_A, RSSExpandedReader.FINDER_PAT_B, RSSExpandedReader.FINDER_PAT_B],
-        [RSSExpandedReader.FINDER_PAT_A, RSSExpandedReader.FINDER_PAT_C, RSSExpandedReader.FINDER_PAT_B, RSSExpandedReader.FINDER_PAT_D],
-        [RSSExpandedReader.FINDER_PAT_A, RSSExpandedReader.FINDER_PAT_E, RSSExpandedReader.FINDER_PAT_B, RSSExpandedReader.FINDER_PAT_D, RSSExpandedReader.FINDER_PAT_C],
-        [RSSExpandedReader.FINDER_PAT_A, RSSExpandedReader.FINDER_PAT_E, RSSExpandedReader.FINDER_PAT_B, RSSExpandedReader.FINDER_PAT_D, RSSExpandedReader.FINDER_PAT_D, RSSExpandedReader.FINDER_PAT_F],
-        [RSSExpandedReader.FINDER_PAT_A, RSSExpandedReader.FINDER_PAT_E, RSSExpandedReader.FINDER_PAT_B, RSSExpandedReader.FINDER_PAT_D, RSSExpandedReader.FINDER_PAT_E, RSSExpandedReader.FINDER_PAT_F, RSSExpandedReader.FINDER_PAT_F],
-        [RSSExpandedReader.FINDER_PAT_A, RSSExpandedReader.FINDER_PAT_A, RSSExpandedReader.FINDER_PAT_B, RSSExpandedReader.FINDER_PAT_B, RSSExpandedReader.FINDER_PAT_C, RSSExpandedReader.FINDER_PAT_C, RSSExpandedReader.FINDER_PAT_D, RSSExpandedReader.FINDER_PAT_D],
-        [RSSExpandedReader.FINDER_PAT_A, RSSExpandedReader.FINDER_PAT_A, RSSExpandedReader.FINDER_PAT_B, RSSExpandedReader.FINDER_PAT_B, RSSExpandedReader.FINDER_PAT_C, RSSExpandedReader.FINDER_PAT_C, RSSExpandedReader.FINDER_PAT_D, RSSExpandedReader.FINDER_PAT_E, RSSExpandedReader.FINDER_PAT_E],
-        [RSSExpandedReader.FINDER_PAT_A, RSSExpandedReader.FINDER_PAT_A, RSSExpandedReader.FINDER_PAT_B, RSSExpandedReader.FINDER_PAT_B, RSSExpandedReader.FINDER_PAT_C, RSSExpandedReader.FINDER_PAT_C, RSSExpandedReader.FINDER_PAT_D, RSSExpandedReader.FINDER_PAT_E, RSSExpandedReader.FINDER_PAT_F, RSSExpandedReader.FINDER_PAT_F],
-        [RSSExpandedReader.FINDER_PAT_A, RSSExpandedReader.FINDER_PAT_A, RSSExpandedReader.FINDER_PAT_B, RSSExpandedReader.FINDER_PAT_B, RSSExpandedReader.FINDER_PAT_C, RSSExpandedReader.FINDER_PAT_D, RSSExpandedReader.FINDER_PAT_D, RSSExpandedReader.FINDER_PAT_E, RSSExpandedReader.FINDER_PAT_E, RSSExpandedReader.FINDER_PAT_F, RSSExpandedReader.FINDER_PAT_F],
+        [
+            RSSExpandedReader.FINDER_PAT_A,
+            RSSExpandedReader.FINDER_PAT_B,
+            RSSExpandedReader.FINDER_PAT_B,
+        ],
+        [
+            RSSExpandedReader.FINDER_PAT_A,
+            RSSExpandedReader.FINDER_PAT_C,
+            RSSExpandedReader.FINDER_PAT_B,
+            RSSExpandedReader.FINDER_PAT_D,
+        ],
+        [
+            RSSExpandedReader.FINDER_PAT_A,
+            RSSExpandedReader.FINDER_PAT_E,
+            RSSExpandedReader.FINDER_PAT_B,
+            RSSExpandedReader.FINDER_PAT_D,
+            RSSExpandedReader.FINDER_PAT_C,
+        ],
+        [
+            RSSExpandedReader.FINDER_PAT_A,
+            RSSExpandedReader.FINDER_PAT_E,
+            RSSExpandedReader.FINDER_PAT_B,
+            RSSExpandedReader.FINDER_PAT_D,
+            RSSExpandedReader.FINDER_PAT_D,
+            RSSExpandedReader.FINDER_PAT_F,
+        ],
+        [
+            RSSExpandedReader.FINDER_PAT_A,
+            RSSExpandedReader.FINDER_PAT_E,
+            RSSExpandedReader.FINDER_PAT_B,
+            RSSExpandedReader.FINDER_PAT_D,
+            RSSExpandedReader.FINDER_PAT_E,
+            RSSExpandedReader.FINDER_PAT_F,
+            RSSExpandedReader.FINDER_PAT_F,
+        ],
+        [
+            RSSExpandedReader.FINDER_PAT_A,
+            RSSExpandedReader.FINDER_PAT_A,
+            RSSExpandedReader.FINDER_PAT_B,
+            RSSExpandedReader.FINDER_PAT_B,
+            RSSExpandedReader.FINDER_PAT_C,
+            RSSExpandedReader.FINDER_PAT_C,
+            RSSExpandedReader.FINDER_PAT_D,
+            RSSExpandedReader.FINDER_PAT_D,
+        ],
+        [
+            RSSExpandedReader.FINDER_PAT_A,
+            RSSExpandedReader.FINDER_PAT_A,
+            RSSExpandedReader.FINDER_PAT_B,
+            RSSExpandedReader.FINDER_PAT_B,
+            RSSExpandedReader.FINDER_PAT_C,
+            RSSExpandedReader.FINDER_PAT_C,
+            RSSExpandedReader.FINDER_PAT_D,
+            RSSExpandedReader.FINDER_PAT_E,
+            RSSExpandedReader.FINDER_PAT_E,
+        ],
+        [
+            RSSExpandedReader.FINDER_PAT_A,
+            RSSExpandedReader.FINDER_PAT_A,
+            RSSExpandedReader.FINDER_PAT_B,
+            RSSExpandedReader.FINDER_PAT_B,
+            RSSExpandedReader.FINDER_PAT_C,
+            RSSExpandedReader.FINDER_PAT_C,
+            RSSExpandedReader.FINDER_PAT_D,
+            RSSExpandedReader.FINDER_PAT_E,
+            RSSExpandedReader.FINDER_PAT_F,
+            RSSExpandedReader.FINDER_PAT_F,
+        ],
+        [
+            RSSExpandedReader.FINDER_PAT_A,
+            RSSExpandedReader.FINDER_PAT_A,
+            RSSExpandedReader.FINDER_PAT_B,
+            RSSExpandedReader.FINDER_PAT_B,
+            RSSExpandedReader.FINDER_PAT_C,
+            RSSExpandedReader.FINDER_PAT_D,
+            RSSExpandedReader.FINDER_PAT_D,
+            RSSExpandedReader.FINDER_PAT_E,
+            RSSExpandedReader.FINDER_PAT_E,
+            RSSExpandedReader.FINDER_PAT_F,
+            RSSExpandedReader.FINDER_PAT_F,
+        ],
     ];
     RSSExpandedReader.MAX_PAIRS = 11;
     return RSSExpandedReader;
 }(AbstractRSSReader/* default */.Z));
 /* harmony default export */ const expanded_RSSExpandedReader = (RSSExpandedReader);
-//# sourceMappingURL=RSSExpandedReader.js.map
+
 
 /***/ }),
 
@@ -17447,7 +21875,7 @@ var AbstractExpandedDecoder = /** @class */ (function () {
     return AbstractExpandedDecoder;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AbstractExpandedDecoder);
-//# sourceMappingURL=AbstractExpandedDecoder.js.map
+
 
 /***/ }),
 
@@ -17524,7 +21952,7 @@ var AI01decoder = /** @class */ (function (_super) {
     return AI01decoder;
 }(AbstractExpandedDecoder/* default */.Z));
 /* harmony default export */ const decoders_AI01decoder = (AI01decoder);
-//# sourceMappingURL=AI01decoder.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StringBuilder.js
 var StringBuilder = __webpack_require__(75);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01AndOtherAIs.js
@@ -17562,7 +21990,7 @@ var AI01AndOtherAIs = /** @class */ (function (_super) {
     return AI01AndOtherAIs;
 }(decoders_AI01decoder));
 /* harmony default export */ const decoders_AI01AndOtherAIs = (AI01AndOtherAIs);
-//# sourceMappingURL=AI01AndOtherAIs.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AnyAIDecoder.js
 var AnyAIDecoder_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -17592,7 +22020,7 @@ var AnyAIDecoder = /** @class */ (function (_super) {
     return AnyAIDecoder;
 }(AbstractExpandedDecoder/* default */.Z));
 /* harmony default export */ const decoders_AnyAIDecoder = (AnyAIDecoder);
-//# sourceMappingURL=AnyAIDecoder.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01weightDecoder.js
 var AI01weightDecoder_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -17629,7 +22057,7 @@ var AI01weightDecoder = /** @class */ (function (_super) {
     return AI01weightDecoder;
 }(decoders_AI01decoder));
 /* harmony default export */ const decoders_AI01weightDecoder = (AI01weightDecoder);
-//# sourceMappingURL=AI01weightDecoder.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/NotFoundException.js
 var NotFoundException = __webpack_require__(8842);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI013x0xDecoder.js
@@ -17655,7 +22083,10 @@ var AI013x0xDecoder = /** @class */ (function (_super) {
         return _super.call(this, information) || this;
     }
     AI013x0xDecoder.prototype.parseInformation = function () {
-        if (this.getInformation().getSize() != AI013x0xDecoder.HEADER_SIZE + decoders_AI01weightDecoder.GTIN_SIZE + AI013x0xDecoder.WEIGHT_SIZE) {
+        if (this.getInformation().getSize() !==
+            AI013x0xDecoder.HEADER_SIZE +
+                decoders_AI01weightDecoder.GTIN_SIZE +
+                AI013x0xDecoder.WEIGHT_SIZE) {
             throw new NotFoundException/* default */.Z();
         }
         var buf = new StringBuilder/* default */.Z();
@@ -17668,7 +22099,7 @@ var AI013x0xDecoder = /** @class */ (function (_super) {
     return AI013x0xDecoder;
 }(decoders_AI01weightDecoder));
 /* harmony default export */ const decoders_AI013x0xDecoder = (AI013x0xDecoder);
-//# sourceMappingURL=AI013x0xDecoder.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI013103decoder.js
 var AI013103decoder_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -17698,7 +22129,7 @@ var AI013103decoder = /** @class */ (function (_super) {
     return AI013103decoder;
 }(decoders_AI013x0xDecoder));
 /* harmony default export */ const decoders_AI013103decoder = (AI013103decoder);
-//# sourceMappingURL=AI013103decoder.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01320xDecoder.js
 var AI01320xDecoder_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -17736,7 +22167,7 @@ var AI01320xDecoder = /** @class */ (function (_super) {
     return AI01320xDecoder;
 }(decoders_AI013x0xDecoder));
 /* harmony default export */ const decoders_AI01320xDecoder = (AI01320xDecoder);
-//# sourceMappingURL=AI01320xDecoder.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01392xDecoder.js
 var AI01392xDecoder_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -17778,7 +22209,7 @@ var AI01392xDecoder = /** @class */ (function (_super) {
     return AI01392xDecoder;
 }(decoders_AI01decoder));
 /* harmony default export */ const decoders_AI01392xDecoder = (AI01392xDecoder);
-//# sourceMappingURL=AI01392xDecoder.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01393xDecoder.js
 var AI01393xDecoder_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -17802,7 +22233,8 @@ var AI01393xDecoder = /** @class */ (function (_super) {
         return _super.call(this, information) || this;
     }
     AI01393xDecoder.prototype.parseInformation = function () {
-        if (this.getInformation().getSize() < AI01393xDecoder.HEADER_SIZE + decoders_AI01decoder.GTIN_SIZE) {
+        if (this.getInformation().getSize() <
+            AI01393xDecoder.HEADER_SIZE + decoders_AI01decoder.GTIN_SIZE) {
             throw new NotFoundException/* default */.Z();
         }
         var buf = new StringBuilder/* default */.Z();
@@ -17811,15 +22243,20 @@ var AI01393xDecoder = /** @class */ (function (_super) {
         buf.append('(393');
         buf.append(lastAIdigit);
         buf.append(')');
-        var firstThreeDigits = this.getGeneralDecoder().extractNumericValueFromBitArray(AI01393xDecoder.HEADER_SIZE + decoders_AI01decoder.GTIN_SIZE + AI01393xDecoder.LAST_DIGIT_SIZE, AI01393xDecoder.FIRST_THREE_DIGITS_SIZE);
-        if (firstThreeDigits / 100 == 0) {
+        var firstThreeDigits = this.getGeneralDecoder().extractNumericValueFromBitArray(AI01393xDecoder.HEADER_SIZE +
+            decoders_AI01decoder.GTIN_SIZE +
+            AI01393xDecoder.LAST_DIGIT_SIZE, AI01393xDecoder.FIRST_THREE_DIGITS_SIZE);
+        if (firstThreeDigits / 100 === 0) {
             buf.append('0');
         }
-        if (firstThreeDigits / 10 == 0) {
+        if (firstThreeDigits / 10 === 0) {
             buf.append('0');
         }
         buf.append(firstThreeDigits);
-        var generalInformation = this.getGeneralDecoder().decodeGeneralPurposeField(AI01393xDecoder.HEADER_SIZE + decoders_AI01decoder.GTIN_SIZE + AI01393xDecoder.LAST_DIGIT_SIZE + AI01393xDecoder.FIRST_THREE_DIGITS_SIZE, null);
+        var generalInformation = this.getGeneralDecoder().decodeGeneralPurposeField(AI01393xDecoder.HEADER_SIZE +
+            decoders_AI01decoder.GTIN_SIZE +
+            AI01393xDecoder.LAST_DIGIT_SIZE +
+            AI01393xDecoder.FIRST_THREE_DIGITS_SIZE, null);
         buf.append(generalInformation.getNewString());
         return buf.toString();
     };
@@ -17829,7 +22266,7 @@ var AI01393xDecoder = /** @class */ (function (_super) {
     return AI01393xDecoder;
 }(decoders_AI01decoder));
 /* harmony default export */ const decoders_AI01393xDecoder = (AI01393xDecoder);
-//# sourceMappingURL=AI01393xDecoder.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI013x0x1xDecoder.js
 var AI013x0x1xDecoder_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -17856,18 +22293,24 @@ var AI013x0x1xDecoder = /** @class */ (function (_super) {
         return _this;
     }
     AI013x0x1xDecoder.prototype.parseInformation = function () {
-        if (this.getInformation().getSize() != AI013x0x1xDecoder.HEADER_SIZE + AI013x0x1xDecoder.GTIN_SIZE + AI013x0x1xDecoder.WEIGHT_SIZE + AI013x0x1xDecoder.DATE_SIZE) {
+        if (this.getInformation().getSize() !==
+            AI013x0x1xDecoder.HEADER_SIZE +
+                AI013x0x1xDecoder.GTIN_SIZE +
+                AI013x0x1xDecoder.WEIGHT_SIZE +
+                AI013x0x1xDecoder.DATE_SIZE) {
             throw new NotFoundException/* default */.Z();
         }
         var buf = new StringBuilder/* default */.Z();
         this.encodeCompressedGtin(buf, AI013x0x1xDecoder.HEADER_SIZE);
         this.encodeCompressedWeight(buf, AI013x0x1xDecoder.HEADER_SIZE + AI013x0x1xDecoder.GTIN_SIZE, AI013x0x1xDecoder.WEIGHT_SIZE);
-        this.encodeCompressedDate(buf, AI013x0x1xDecoder.HEADER_SIZE + AI013x0x1xDecoder.GTIN_SIZE + AI013x0x1xDecoder.WEIGHT_SIZE);
+        this.encodeCompressedDate(buf, AI013x0x1xDecoder.HEADER_SIZE +
+            AI013x0x1xDecoder.GTIN_SIZE +
+            AI013x0x1xDecoder.WEIGHT_SIZE);
         return buf.toString();
     };
     AI013x0x1xDecoder.prototype.encodeCompressedDate = function (buf, currentPos) {
         var numericDate = this.getGeneralDecoder().extractNumericValueFromBitArray(currentPos, AI013x0x1xDecoder.DATE_SIZE);
-        if (numericDate == 38400) {
+        if (numericDate === 38400) {
             return;
         }
         buf.append('(');
@@ -17875,18 +22318,18 @@ var AI013x0x1xDecoder = /** @class */ (function (_super) {
         buf.append(')');
         var day = numericDate % 32;
         numericDate /= 32;
-        var month = numericDate % 12 + 1;
+        var month = (numericDate % 12) + 1;
         numericDate /= 12;
         var year = numericDate;
-        if (year / 10 == 0) {
+        if (year / 10 === 0) {
             buf.append('0');
         }
         buf.append(year);
-        if (month / 10 == 0) {
+        if (month / 10 === 0) {
             buf.append('0');
         }
         buf.append(month);
-        if (day / 10 == 0) {
+        if (day / 10 === 0) {
             buf.append('0');
         }
         buf.append(day);
@@ -17906,7 +22349,7 @@ var AI013x0x1xDecoder = /** @class */ (function (_super) {
     return AI013x0x1xDecoder;
 }(decoders_AI01weightDecoder));
 /* harmony default export */ const decoders_AI013x0x1xDecoder = (AI013x0x1xDecoder);
-//# sourceMappingURL=AI013x0x1xDecoder.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AbstractExpandedDecoderComplement.js
 
 
@@ -17952,7 +22395,7 @@ function createDecoder(information) {
         throw new IllegalStateException/* default */.Z('unknown decoder: ' + information);
     }
 }
-//# sourceMappingURL=AbstractExpandedDecoderComplement.js.map
+
 
 /***/ }),
 
@@ -17992,7 +22435,7 @@ var BlockParsedResult = /** @class */ (function () {
     return BlockParsedResult;
 }());
 /* harmony default export */ const decoders_BlockParsedResult = (BlockParsedResult);
-//# sourceMappingURL=BlockParsedResult.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/DecodedObject.js
 var DecodedObject = /** @class */ (function () {
     function DecodedObject(newPosition) {
@@ -18004,7 +22447,7 @@ var DecodedObject = /** @class */ (function () {
     return DecodedObject;
 }());
 /* harmony default export */ const decoders_DecodedObject = (DecodedObject);
-//# sourceMappingURL=DecodedObject.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/DecodedChar.js
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -18037,7 +22480,7 @@ var DecodedChar = /** @class */ (function (_super) {
     return DecodedChar;
 }(decoders_DecodedObject));
 /* harmony default export */ const decoders_DecodedChar = (DecodedChar);
-//# sourceMappingURL=DecodedChar.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/DecodedInformation.js
 var DecodedInformation_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -18080,7 +22523,7 @@ var DecodedInformation = /** @class */ (function (_super) {
     return DecodedInformation;
 }(decoders_DecodedObject));
 /* harmony default export */ const decoders_DecodedInformation = (DecodedInformation);
-//# sourceMappingURL=DecodedInformation.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/DecodedNumeric.js
 var DecodedNumeric_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -18130,7 +22573,7 @@ var DecodedNumeric = /** @class */ (function (_super) {
     return DecodedNumeric;
 }(decoders_DecodedObject));
 /* harmony default export */ const decoders_DecodedNumeric = (DecodedNumeric);
-//# sourceMappingURL=DecodedNumeric.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/NotFoundException.js
 var NotFoundException = __webpack_require__(8842);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/FieldParser.js
@@ -18408,7 +22851,7 @@ var FieldParser = /** @class */ (function () {
     return FieldParser;
 }());
 /* harmony default export */ const decoders_FieldParser = (FieldParser);
-//# sourceMappingURL=FieldParser.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/GeneralAppIdDecoder.js
 
 
@@ -18797,7 +23240,7 @@ var GeneralAppIdDecoder = /** @class */ (function () {
     return GeneralAppIdDecoder;
 }());
 /* harmony default export */ const decoders_GeneralAppIdDecoder = (GeneralAppIdDecoder);
-//# sourceMappingURL=GeneralAppIdDecoder.js.map
+
 
 /***/ }),
 
@@ -19292,7 +23735,7 @@ var PDF417Common = /** @class */ (function () {
     return PDF417Common;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PDF417Common);
-//# sourceMappingURL=PDF417Common.js.map
+
 
 /***/ }),
 
@@ -19362,7 +23805,7 @@ var PDF417DetectorResult = /** @class */ (function () {
     return PDF417DetectorResult;
 }());
 /* harmony default export */ const detector_PDF417DetectorResult = (PDF417DetectorResult);
-//# sourceMappingURL=PDF417DetectorResult.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/detector/Detector.js
 /*
 * Copyright 2009 ZXing authors
@@ -19701,7 +24144,7 @@ var Detector = /** @class */ (function () {
     return Detector;
 }());
 /* harmony default export */ const detector_Detector = (Detector);
-//# sourceMappingURL=Detector.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/detector/MathUtils.js
 var MathUtils = __webpack_require__(8611);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/ec/ErrorCorrection.js + 3 modules
@@ -19861,7 +24304,7 @@ var BoundingBox = /** @class */ (function () {
     return BoundingBox;
 }());
 /* harmony default export */ const decoder_BoundingBox = (BoundingBox);
-//# sourceMappingURL=BoundingBox.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/BarcodeMetadata.js
 /*
  * Copyright 2013 ZXing authors
@@ -19908,7 +24351,7 @@ var BarcodeMetadata = /** @class */ (function () {
     return BarcodeMetadata;
 }());
 /* harmony default export */ const decoder_BarcodeMetadata = (BarcodeMetadata);
-//# sourceMappingURL=BarcodeMetadata.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/util/Formatter.js
 /**
  * Java Formatter class polyfill that works in the JS way.
@@ -19988,7 +24431,7 @@ var Formatter = /** @class */ (function () {
     return Formatter;
 }());
 /* harmony default export */ const util_Formatter = (Formatter);
-//# sourceMappingURL=Formatter.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/DetectionResultColumn.js
 /*
  * Copyright 2013 ZXing authors
@@ -20095,7 +24538,7 @@ var DetectionResultColumn = /** @class */ (function () {
     return DetectionResultColumn;
 }());
 /* harmony default export */ const decoder_DetectionResultColumn = (DetectionResultColumn);
-//# sourceMappingURL=DetectionResultColumn.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/BarcodeValue.js
 /*
  * Copyright 2013 ZXing authors
@@ -20209,7 +24652,7 @@ var BarcodeValue = /** @class */ (function () {
     return BarcodeValue;
 }());
 /* harmony default export */ const decoder_BarcodeValue = (BarcodeValue);
-//# sourceMappingURL=BarcodeValue.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/DetectionResultRowIndicatorColumn.js
 /*
  * Copyright 2013 ZXing authors
@@ -20525,7 +24968,7 @@ var DetectionResultRowIndicatorColumn = /** @class */ (function (_super) {
     return DetectionResultRowIndicatorColumn;
 }(decoder_DetectionResultColumn));
 /* harmony default export */ const decoder_DetectionResultRowIndicatorColumn = (DetectionResultRowIndicatorColumn);
-//# sourceMappingURL=DetectionResultRowIndicatorColumn.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/DetectionResult.js
 /*
  * Copyright 2013 ZXing authors
@@ -20708,6 +25151,9 @@ var DetectionResult = /** @class */ (function () {
     };
     DetectionResult.prototype.adjustRowNumbers = function (barcodeColumn, codewordsRow, codewords) {
         var e_1, _a;
+        if (this.detectionResultColumns[barcodeColumn - 1] == null) {
+            return;
+        }
         var codeword = codewords[codewordsRow];
         var previousColumnCodewords = this.detectionResultColumns[barcodeColumn - 1].getCodewords();
         var nextColumnCodewords = previousColumnCodewords;
@@ -20819,7 +25265,7 @@ var DetectionResult = /** @class */ (function () {
     return DetectionResult;
 }());
 /* harmony default export */ const decoder_DetectionResult = (DetectionResult);
-//# sourceMappingURL=DetectionResult.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/Codeword.js
 /*
  * Copyright 2013 ZXing authors
@@ -20886,7 +25332,7 @@ var Codeword = /** @class */ (function () {
     return Codeword;
 }());
 /* harmony default export */ const decoder_Codeword = (Codeword);
-//# sourceMappingURL=Codeword.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/Float.js
 var Float = __webpack_require__(377);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/PDF417CodewordDecoder.js
@@ -21016,7 +25462,7 @@ var PDF417CodewordDecoder = /** @class */ (function () {
     return PDF417CodewordDecoder;
 }());
 /* harmony default export */ const decoder_PDF417CodewordDecoder = (PDF417CodewordDecoder);
-//# sourceMappingURL=PDF417CodewordDecoder.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/DecodedBitStreamParser.js + 5 modules
 var DecodedBitStreamParser = __webpack_require__(9763);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/PDF417ScanningDecoder.js
@@ -21723,7 +26169,7 @@ var PDF417ScanningDecoder = /** @class */ (function () {
     return PDF417ScanningDecoder;
 }());
 /* harmony default export */ const decoder_PDF417ScanningDecoder = (PDF417ScanningDecoder);
-//# sourceMappingURL=PDF417ScanningDecoder.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/PDF417Reader.js
 /*
  * Copyright 2009 ZXing authors
@@ -21885,7 +26331,7 @@ var PDF417Reader = /** @class */ (function () {
     return PDF417Reader;
 }());
 /* harmony default export */ const pdf417_PDF417Reader = (PDF417Reader);
-//# sourceMappingURL=PDF417Reader.js.map
+
 
 /***/ }),
 
@@ -22037,7 +26483,7 @@ var PDF417ResultMetadata = /** @class */ (function () {
     return PDF417ResultMetadata;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PDF417ResultMetadata);
-//# sourceMappingURL=PDF417ResultMetadata.js.map
+
 
 /***/ }),
 
@@ -22085,7 +26531,7 @@ var Long = /** @class */ (function () {
     return Long;
 }());
 /* harmony default export */ const util_Long = (Long);
-//# sourceMappingURL=Long.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/IndexOutOfBoundsException.js
 var IndexOutOfBoundsException = __webpack_require__(7164);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/Exception.js + 1 modules
@@ -22117,7 +26563,7 @@ var NullPointerException = /** @class */ (function (_super) {
     return NullPointerException;
 }(Exception/* default */.Z));
 /* harmony default export */ const core_NullPointerException = (NullPointerException);
-//# sourceMappingURL=NullPointerException.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/util/OutputStream.js
 
 
@@ -22258,7 +26704,7 @@ var OutputStream /*implements Closeable, Flushable*/ = /** @class */ (function (
     return OutputStream;
 }());
 /* harmony default export */ const util_OutputStream = (OutputStream);
-//# sourceMappingURL=OutputStream.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/IllegalArgumentException.js
 var IllegalArgumentException = __webpack_require__(8475);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/OutOfMemoryError.js
@@ -22287,7 +26733,7 @@ var OutOfMemoryError = /** @class */ (function (_super) {
     return OutOfMemoryError;
 }(Exception/* default */.Z));
 /* harmony default export */ const core_OutOfMemoryError = (OutOfMemoryError);
-//# sourceMappingURL=OutOfMemoryError.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/System.js
 var System = __webpack_require__(8507);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/util/ByteArrayOutputStream.js
@@ -22572,7 +27018,7 @@ var ByteArrayOutputStream = /** @class */ (function (_super) {
     return ByteArrayOutputStream;
 }(util_OutputStream));
 /* harmony default export */ const util_ByteArrayOutputStream = (ByteArrayOutputStream);
-//# sourceMappingURL=ByteArrayOutputStream.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StringEncoding.js
 var StringEncoding = __webpack_require__(4421);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/DecodedBitStreamParser.js
@@ -23352,7 +27798,7 @@ var DecodedBitStreamParser = /** @class */ (function () {
     return DecodedBitStreamParser;
 }());
 /* harmony default export */ const decoder_DecodedBitStreamParser = (DecodedBitStreamParser);
-//# sourceMappingURL=DecodedBitStreamParser.js.map
+
 
 /***/ }),
 
@@ -23648,7 +28094,7 @@ var ModulusPoly = /** @class */ (function () {
     return ModulusPoly;
 }());
 /* harmony default export */ const ec_ModulusPoly = (ModulusPoly);
-//# sourceMappingURL=ModulusPoly.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/pdf417/PDF417Common.js
 var PDF417Common = __webpack_require__(2807);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/ArithmeticException.js
@@ -23695,7 +28141,7 @@ var ModulusBase = /** @class */ (function () {
     return ModulusBase;
 }());
 /* harmony default export */ const ec_ModulusBase = (ModulusBase);
-//# sourceMappingURL=ModulusBase.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/ec/ModulusGF.js
 /*
  * Copyright 2012 ZXing authors
@@ -23779,7 +28225,7 @@ var ModulusGF = /** @class */ (function (_super) {
     return ModulusGF;
 }(ec_ModulusBase));
 /* harmony default export */ const ec_ModulusGF = (ModulusGF);
-//# sourceMappingURL=ModulusGF.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/ec/ErrorCorrection.js
 /*
 * Copyright 2012 ZXing authors
@@ -23979,7 +28425,7 @@ var ErrorCorrection = /** @class */ (function () {
     return ErrorCorrection;
 }());
 /* harmony default export */ const ec_ErrorCorrection = (ErrorCorrection);
-//# sourceMappingURL=ErrorCorrection.js.map
+
 
 /***/ }),
 
@@ -24205,7 +28651,7 @@ var BitMatrixParser = /** @class */ (function () {
         if (this.parsedFormatInfo === null) {
             return; // We have no format information, and have no data mask
         }
-        var dataMask = DataMask/* default.values */.Z.values[this.parsedFormatInfo.getDataMask()];
+        var dataMask = DataMask/* default.values.get */.Z.values.get(this.parsedFormatInfo.getDataMask());
         var dimension = this.bitMatrix.getHeight();
         dataMask.unmaskBitMatrix(this.bitMatrix, dimension);
     };
@@ -24237,7 +28683,7 @@ var BitMatrixParser = /** @class */ (function () {
     return BitMatrixParser;
 }());
 /* harmony default export */ const decoder_BitMatrixParser = (BitMatrixParser);
-//# sourceMappingURL=BitMatrixParser.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/IllegalArgumentException.js
 var IllegalArgumentException = __webpack_require__(8475);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/DataBlock.js
@@ -24380,7 +28826,7 @@ var DataBlock = /** @class */ (function () {
     return DataBlock;
 }());
 /* harmony default export */ const decoder_DataBlock = (DataBlock);
-//# sourceMappingURL=DataBlock.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/DecodedBitStreamParser.js
 var DecodedBitStreamParser = __webpack_require__(9297);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/QRCodeDecoderMetaData.js
@@ -24432,7 +28878,7 @@ var QRCodeDecoderMetaData = /** @class */ (function () {
     return QRCodeDecoderMetaData;
 }());
 /* harmony default export */ const decoder_QRCodeDecoderMetaData = (QRCodeDecoderMetaData);
-//# sourceMappingURL=QRCodeDecoderMetaData.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/Decoder.js
 /*
  * Copyright 2007 ZXing authors
@@ -24627,7 +29073,7 @@ var Decoder = /** @class */ (function () {
     return Decoder;
 }());
 /* harmony default export */ const decoder_Decoder = (Decoder);
-//# sourceMappingURL=Decoder.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/detector/MathUtils.js
 var MathUtils = __webpack_require__(8611);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/DetectorResult.js
@@ -24706,7 +29152,7 @@ var AlignmentPattern = /** @class */ (function (_super) {
     return AlignmentPattern;
 }(ResultPoint/* default */.Z));
 /* harmony default export */ const detector_AlignmentPattern = (AlignmentPattern);
-//# sourceMappingURL=AlignmentPattern.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/detector/AlignmentPatternFinder.js
 /*
  * Copyright 2007 ZXing authors
@@ -24977,7 +29423,7 @@ var AlignmentPatternFinder = /** @class */ (function () {
     return AlignmentPatternFinder;
 }());
 /* harmony default export */ const detector_AlignmentPatternFinder = (AlignmentPatternFinder);
-//# sourceMappingURL=AlignmentPatternFinder.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/detector/FinderPattern.js
 /*
  * Copyright 2007 ZXing authors
@@ -25067,7 +29513,7 @@ var FinderPattern = /** @class */ (function (_super) {
     return FinderPattern;
 }(ResultPoint/* default */.Z));
 /* harmony default export */ const detector_FinderPattern = (FinderPattern);
-//# sourceMappingURL=FinderPattern.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/detector/FinderPatternInfo.js
 /*
  * Copyright 2007 ZXing authors
@@ -25108,7 +29554,7 @@ var FinderPatternInfo = /** @class */ (function () {
     return FinderPatternInfo;
 }());
 /* harmony default export */ const detector_FinderPatternInfo = (FinderPatternInfo);
-//# sourceMappingURL=FinderPatternInfo.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/detector/FinderPatternFinder.js
 /*
  * Copyright 2007 ZXing authors
@@ -25787,7 +30233,7 @@ var FinderPatternFinder = /** @class */ (function () {
     return FinderPatternFinder;
 }());
 /* harmony default export */ const detector_FinderPatternFinder = (FinderPatternFinder);
-//# sourceMappingURL=FinderPatternFinder.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/detector/Detector.js
 /*
  * Copyright 2007 ZXing authors
@@ -26112,7 +30558,7 @@ var Detector = /** @class */ (function () {
     return Detector;
 }());
 /* harmony default export */ const detector_Detector = (Detector);
-//# sourceMappingURL=Detector.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/QRCodeReader.js
 /*
  * Copyright 2007 ZXing authors
@@ -26308,7 +30754,7 @@ var QRCodeReader = /** @class */ (function () {
     return QRCodeReader;
 }());
 /* harmony default export */ const qrcode_QRCodeReader = (QRCodeReader);
-//# sourceMappingURL=QRCodeReader.js.map
+
 
 /***/ }),
 
@@ -26422,7 +30868,7 @@ var QRCodeWriter = /** @class */ (function () {
     return QRCodeWriter;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (QRCodeWriter);
-//# sourceMappingURL=QRCodeWriter.js.map
+
 
 /***/ }),
 
@@ -26534,7 +30980,7 @@ var DataMask = /** @class */ (function () {
     return DataMask;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DataMask);
-//# sourceMappingURL=DataMask.js.map
+
 
 /***/ }),
 
@@ -26895,7 +31341,7 @@ var DecodedBitStreamParser = /** @class */ (function () {
 //     }
 //     return c.toString();
 // }
-//# sourceMappingURL=DecodedBitStreamParser.js.map
+
 
 /***/ }),
 
@@ -26996,7 +31442,7 @@ var ErrorCorrectionLevel = /** @class */ (function () {
     return ErrorCorrectionLevel;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ErrorCorrectionLevel);
-//# sourceMappingURL=ErrorCorrectionLevel.js.map
+
 
 /***/ }),
 
@@ -27175,7 +31621,7 @@ var FormatInformation = /** @class */ (function () {
     return FormatInformation;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormatInformation);
-//# sourceMappingURL=FormatInformation.js.map
+
 
 /***/ }),
 
@@ -27296,7 +31742,7 @@ var Mode = /** @class */ (function () {
     return Mode;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Mode);
-//# sourceMappingURL=Mode.js.map
+
 
 /***/ }),
 
@@ -27372,7 +31818,7 @@ var ECBlocks = /** @class */ (function () {
     return ECBlocks;
 }());
 /* harmony default export */ const decoder_ECBlocks = (ECBlocks);
-//# sourceMappingURL=ECBlocks.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/ECB.js
 /**
  * <p>Encapsulates the parameters for one error-correction block in one symbol version.
@@ -27393,7 +31839,7 @@ var ECB = /** @class */ (function () {
     return ECB;
 }());
 /* harmony default export */ const decoder_ECB = (ECB);
-//# sourceMappingURL=ECB.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/FormatException.js
 var FormatException = __webpack_require__(2468);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/IllegalArgumentException.js
@@ -27632,7 +32078,7 @@ var Version = /** @class */ (function () {
     return Version;
 }());
 /* harmony default export */ const decoder_Version = (Version);
-//# sourceMappingURL=Version.js.map
+
 
 /***/ }),
 
@@ -27779,7 +32225,7 @@ var ByteMatrix = /** @class */ (function () {
     return ByteMatrix;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ByteMatrix);
-//# sourceMappingURL=ByteMatrix.js.map
+
 
 /***/ }),
 
@@ -27848,7 +32294,7 @@ var BlockPair = /** @class */ (function () {
     return BlockPair;
 }());
 /* harmony default export */ const encoder_BlockPair = (BlockPair);
-//# sourceMappingURL=BlockPair.js.map
+
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/WriterException.js
 var WriterException = __webpack_require__(1079);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/encoder/Encoder.js
@@ -28436,7 +32882,7 @@ var Encoder = /** @class */ (function () {
     return Encoder;
 }());
 /* harmony default export */ const encoder_Encoder = (Encoder);
-//# sourceMappingURL=Encoder.js.map
+
 
 /***/ }),
 
@@ -28660,7 +33106,7 @@ var MaskUtil = /** @class */ (function () {
     return MaskUtil;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MaskUtil);
-//# sourceMappingURL=MaskUtil.js.map
+
 
 /***/ }),
 
@@ -29107,7 +33553,7 @@ var MatrixUtil = /** @class */ (function () {
     return MatrixUtil;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MatrixUtil);
-//# sourceMappingURL=MatrixUtil.js.map
+
 
 /***/ }),
 
@@ -29203,7 +33649,7 @@ var QRCode = /** @class */ (function () {
     return QRCode;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (QRCode);
-//# sourceMappingURL=QRCode.js.map
+
 
 /***/ }),
 
@@ -29255,7 +33701,7 @@ var ArrayIndexOutOfBoundsException = /** @class */ (function (_super) {
     return ArrayIndexOutOfBoundsException;
 }(IndexOutOfBoundsException/* default */.Z));
 /* harmony default export */ const core_ArrayIndexOutOfBoundsException = (ArrayIndexOutOfBoundsException);
-//# sourceMappingURL=ArrayIndexOutOfBoundsException.js.map
+
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/util/Arrays.js
 var __values = (undefined && undefined.__values) || function(o) {
     var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
@@ -29445,7 +33891,7 @@ var Arrays = /** @class */ (function () {
     return Arrays;
 }());
 /* harmony default export */ const util_Arrays = (Arrays);
-//# sourceMappingURL=Arrays.js.map
+
 
 /***/ }),
 
@@ -29485,7 +33931,7 @@ var Charset = /** @class */ (function (_super) {
     return Charset;
 }(_common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Charset);
-//# sourceMappingURL=Charset.js.map
+
 
 /***/ }),
 
@@ -29516,7 +33962,7 @@ var Float = /** @class */ (function () {
     return Float;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Float);
-//# sourceMappingURL=Float.js.map
+
 
 /***/ }),
 
@@ -29620,7 +34066,7 @@ var Integer = /** @class */ (function () {
     return Integer;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Integer);
-//# sourceMappingURL=Integer.js.map
+
 
 /***/ }),
 
@@ -29643,7 +34089,7 @@ var StandardCharsets = /** @class */ (function () {
     return StandardCharsets;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StandardCharsets);
-//# sourceMappingURL=StandardCharsets.js.map
+
 
 /***/ }),
 
@@ -29710,12 +34156,12 @@ var StringBuilder = /** @class */ (function () {
         return this.value;
     };
     StringBuilder.prototype.insert = function (n, c) {
-        this.value = this.value.substr(0, n) + c + this.value.substr(n + c.length);
+        this.value = this.value.substring(0, n) + c + this.value.substring(n);
     };
     return StringBuilder;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StringBuilder);
-//# sourceMappingURL=StringBuilder.js.map
+
 
 /***/ }),
 
@@ -29837,7 +34283,7 @@ var StringEncoding = /** @class */ (function () {
     return StringEncoding;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StringEncoding);
-//# sourceMappingURL=StringEncoding.js.map
+
 
 /***/ }),
 
@@ -29870,7 +34316,7 @@ var System = /** @class */ (function () {
     return System;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (System);
-//# sourceMappingURL=System.js.map
+
 
 /***/ }),
 
@@ -29880,18 +34326,18 @@ var System = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "AbstractExpandedDecoder": () => (/* reexport safe */ _core_oned_rss_expanded_decoders_AbstractExpandedDecoder__WEBPACK_IMPORTED_MODULE_87__.Z),
+/* harmony export */   "AbstractExpandedDecoder": () => (/* reexport safe */ _core_oned_rss_expanded_decoders_AbstractExpandedDecoder__WEBPACK_IMPORTED_MODULE_94__.Z),
 /* harmony export */   "ArgumentException": () => (/* reexport safe */ _core_ArgumentException__WEBPACK_IMPORTED_MODULE_1__.Z),
 /* harmony export */   "ArithmeticException": () => (/* reexport safe */ _core_ArithmeticException__WEBPACK_IMPORTED_MODULE_2__.Z),
-/* harmony export */   "AztecCode": () => (/* reexport safe */ _core_aztec_encoder_AztecCode__WEBPACK_IMPORTED_MODULE_77__.Z),
-/* harmony export */   "AztecCodeReader": () => (/* reexport safe */ _core_aztec_AztecReader__WEBPACK_IMPORTED_MODULE_72__.Z),
-/* harmony export */   "AztecCodeWriter": () => (/* reexport safe */ _core_aztec_AztecWriter__WEBPACK_IMPORTED_MODULE_73__.Z),
-/* harmony export */   "AztecDecoder": () => (/* reexport safe */ _core_aztec_decoder_Decoder__WEBPACK_IMPORTED_MODULE_78__.Z),
-/* harmony export */   "AztecDetector": () => (/* reexport safe */ _core_aztec_detector_Detector__WEBPACK_IMPORTED_MODULE_79__.Z),
-/* harmony export */   "AztecDetectorResult": () => (/* reexport safe */ _core_aztec_AztecDetectorResult__WEBPACK_IMPORTED_MODULE_74__.Z),
-/* harmony export */   "AztecEncoder": () => (/* reexport safe */ _core_aztec_encoder_Encoder__WEBPACK_IMPORTED_MODULE_75__.Z),
-/* harmony export */   "AztecHighLevelEncoder": () => (/* reexport safe */ _core_aztec_encoder_HighLevelEncoder__WEBPACK_IMPORTED_MODULE_76__.Z),
-/* harmony export */   "AztecPoint": () => (/* reexport safe */ _core_aztec_detector_Detector__WEBPACK_IMPORTED_MODULE_79__.E),
+/* harmony export */   "AztecCode": () => (/* reexport safe */ _core_aztec_encoder_AztecCode__WEBPACK_IMPORTED_MODULE_83__.Z),
+/* harmony export */   "AztecCodeReader": () => (/* reexport safe */ _core_aztec_AztecReader__WEBPACK_IMPORTED_MODULE_78__.Z),
+/* harmony export */   "AztecCodeWriter": () => (/* reexport safe */ _core_aztec_AztecWriter__WEBPACK_IMPORTED_MODULE_79__.Z),
+/* harmony export */   "AztecDecoder": () => (/* reexport safe */ _core_aztec_decoder_Decoder__WEBPACK_IMPORTED_MODULE_84__.Z),
+/* harmony export */   "AztecDetector": () => (/* reexport safe */ _core_aztec_detector_Detector__WEBPACK_IMPORTED_MODULE_85__.Z),
+/* harmony export */   "AztecDetectorResult": () => (/* reexport safe */ _core_aztec_AztecDetectorResult__WEBPACK_IMPORTED_MODULE_80__.Z),
+/* harmony export */   "AztecEncoder": () => (/* reexport safe */ _core_aztec_encoder_Encoder__WEBPACK_IMPORTED_MODULE_81__.Z),
+/* harmony export */   "AztecHighLevelEncoder": () => (/* reexport safe */ _core_aztec_encoder_HighLevelEncoder__WEBPACK_IMPORTED_MODULE_82__.Z),
+/* harmony export */   "AztecPoint": () => (/* reexport safe */ _core_aztec_detector_Detector__WEBPACK_IMPORTED_MODULE_85__.E),
 /* harmony export */   "BarcodeFormat": () => (/* reexport safe */ _core_BarcodeFormat__WEBPACK_IMPORTED_MODULE_13__.Z),
 /* harmony export */   "Binarizer": () => (/* reexport safe */ _core_Binarizer__WEBPACK_IMPORTED_MODULE_14__.Z),
 /* harmony export */   "BinaryBitmap": () => (/* reexport safe */ _core_BinaryBitmap__WEBPACK_IMPORTED_MODULE_15__.Z),
@@ -29900,15 +34346,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "BitSource": () => (/* reexport safe */ _core_common_BitSource__WEBPACK_IMPORTED_MODULE_35__.Z),
 /* harmony export */   "CharacterSetECI": () => (/* reexport safe */ _core_common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_36__.Z),
 /* harmony export */   "ChecksumException": () => (/* reexport safe */ _core_ChecksumException__WEBPACK_IMPORTED_MODULE_3__.Z),
-/* harmony export */   "Code128Reader": () => (/* reexport safe */ _core_oned_Code128Reader__WEBPACK_IMPORTED_MODULE_82__.Z),
-/* harmony export */   "Code39Reader": () => (/* reexport safe */ _core_oned_Code39Reader__WEBPACK_IMPORTED_MODULE_84__.Z),
+/* harmony export */   "CodaBarReader": () => (/* reexport safe */ _core_oned_CodaBarReader__WEBPACK_IMPORTED_MODULE_97__.Z),
+/* harmony export */   "Code128Reader": () => (/* reexport safe */ _core_oned_Code128Reader__WEBPACK_IMPORTED_MODULE_88__.Z),
+/* harmony export */   "Code39Reader": () => (/* reexport safe */ _core_oned_Code39Reader__WEBPACK_IMPORTED_MODULE_90__.Z),
+/* harmony export */   "Code93Reader": () => (/* reexport safe */ _core_oned_Code93Reader__WEBPACK_IMPORTED_MODULE_91__.Z),
 /* harmony export */   "DataMatrixDecodedBitStreamParser": () => (/* reexport safe */ _core_datamatrix_decoder_DecodedBitStreamParser__WEBPACK_IMPORTED_MODULE_54__.Z),
+/* harmony export */   "DataMatrixDefaultPlacement": () => (/* reexport safe */ _core_datamatrix_encoder_DefaultPlacement__WEBPACK_IMPORTED_MODULE_55__.Z),
+/* harmony export */   "DataMatrixErrorCorrection": () => (/* reexport safe */ _core_datamatrix_encoder_ErrorCorrection__WEBPACK_IMPORTED_MODULE_56__.Z),
+/* harmony export */   "DataMatrixHighLevelEncoder": () => (/* reexport safe */ _core_datamatrix_encoder_HighLevelEncoder__WEBPACK_IMPORTED_MODULE_57__.Z),
 /* harmony export */   "DataMatrixReader": () => (/* reexport safe */ _core_datamatrix_DataMatrixReader__WEBPACK_IMPORTED_MODULE_53__.Z),
+/* harmony export */   "DataMatrixSymbolInfo": () => (/* reexport safe */ _core_datamatrix_encoder_SymbolInfo__WEBPACK_IMPORTED_MODULE_58__.Z),
+/* harmony export */   "DataMatrixSymbolShapeHint": () => (/* reexport safe */ _core_datamatrix_encoder_constants__WEBPACK_IMPORTED_MODULE_59__.nC),
+/* harmony export */   "DataMatrixWriter": () => (/* reexport safe */ _core_datamatrix_DataMatrixWriter__WEBPACK_IMPORTED_MODULE_60__.Z),
 /* harmony export */   "DecodeHintType": () => (/* reexport safe */ _core_DecodeHintType__WEBPACK_IMPORTED_MODULE_16__.Z),
 /* harmony export */   "DecoderResult": () => (/* reexport safe */ _core_common_DecoderResult__WEBPACK_IMPORTED_MODULE_37__.Z),
 /* harmony export */   "DefaultGridSampler": () => (/* reexport safe */ _core_common_DefaultGridSampler__WEBPACK_IMPORTED_MODULE_38__.Z),
 /* harmony export */   "DetectorResult": () => (/* reexport safe */ _core_common_DetectorResult__WEBPACK_IMPORTED_MODULE_39__.Z),
-/* harmony export */   "EAN13Reader": () => (/* reexport safe */ _core_oned_EAN13Reader__WEBPACK_IMPORTED_MODULE_81__.Z),
+/* harmony export */   "EAN13Reader": () => (/* reexport safe */ _core_oned_EAN13Reader__WEBPACK_IMPORTED_MODULE_87__.Z),
 /* harmony export */   "EncodeHintType": () => (/* reexport safe */ _core_EncodeHintType__WEBPACK_IMPORTED_MODULE_40__.Z),
 /* harmony export */   "Exception": () => (/* reexport safe */ _core_Exception__WEBPACK_IMPORTED_MODULE_4__.Z),
 /* harmony export */   "FormatException": () => (/* reexport safe */ _core_FormatException__WEBPACK_IMPORTED_MODULE_5__.Z),
@@ -29918,39 +34372,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "GridSampler": () => (/* reexport safe */ _core_common_GridSampler__WEBPACK_IMPORTED_MODULE_42__.Z),
 /* harmony export */   "GridSamplerInstance": () => (/* reexport safe */ _core_common_GridSamplerInstance__WEBPACK_IMPORTED_MODULE_43__.Z),
 /* harmony export */   "HybridBinarizer": () => (/* reexport safe */ _core_common_HybridBinarizer__WEBPACK_IMPORTED_MODULE_44__.Z),
-/* harmony export */   "ITFReader": () => (/* reexport safe */ _core_oned_ITFReader__WEBPACK_IMPORTED_MODULE_83__.Z),
+/* harmony export */   "ITFReader": () => (/* reexport safe */ _core_oned_ITFReader__WEBPACK_IMPORTED_MODULE_89__.Z),
 /* harmony export */   "IllegalArgumentException": () => (/* reexport safe */ _core_IllegalArgumentException__WEBPACK_IMPORTED_MODULE_6__.Z),
 /* harmony export */   "IllegalStateException": () => (/* reexport safe */ _core_IllegalStateException__WEBPACK_IMPORTED_MODULE_7__.Z),
 /* harmony export */   "InvertedLuminanceSource": () => (/* reexport safe */ _core_InvertedLuminanceSource__WEBPACK_IMPORTED_MODULE_17__.Z),
 /* harmony export */   "LuminanceSource": () => (/* reexport safe */ _core_LuminanceSource__WEBPACK_IMPORTED_MODULE_18__.Z),
 /* harmony export */   "MathUtils": () => (/* reexport safe */ _core_common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_47__.Z),
-/* harmony export */   "MultiFormatOneDReader": () => (/* reexport safe */ _core_oned_MultiFormatOneDReader__WEBPACK_IMPORTED_MODULE_89__.Z),
+/* harmony export */   "MultiFormatOneDReader": () => (/* reexport safe */ _core_oned_MultiFormatOneDReader__WEBPACK_IMPORTED_MODULE_96__.Z),
 /* harmony export */   "MultiFormatReader": () => (/* reexport safe */ _core_MultiFormatReader__WEBPACK_IMPORTED_MODULE_19__.Z),
 /* harmony export */   "MultiFormatWriter": () => (/* reexport safe */ _core_MultiFormatWriter__WEBPACK_IMPORTED_MODULE_20__.Z),
 /* harmony export */   "NotFoundException": () => (/* reexport safe */ _core_NotFoundException__WEBPACK_IMPORTED_MODULE_8__.Z),
-/* harmony export */   "OneDReader": () => (/* reexport safe */ _core_oned_OneDReader__WEBPACK_IMPORTED_MODULE_80__.Z),
-/* harmony export */   "PDF417DecodedBitStreamParser": () => (/* reexport safe */ _core_pdf417_decoder_DecodedBitStreamParser__WEBPACK_IMPORTED_MODULE_57__.Z),
-/* harmony export */   "PDF417DecoderErrorCorrection": () => (/* reexport safe */ _core_pdf417_decoder_ec_ErrorCorrection__WEBPACK_IMPORTED_MODULE_58__.Z),
-/* harmony export */   "PDF417Reader": () => (/* reexport safe */ _core_pdf417_PDF417Reader__WEBPACK_IMPORTED_MODULE_55__.Z),
-/* harmony export */   "PDF417ResultMetadata": () => (/* reexport safe */ _core_pdf417_PDF417ResultMetadata__WEBPACK_IMPORTED_MODULE_56__.Z),
+/* harmony export */   "OneDReader": () => (/* reexport safe */ _core_oned_OneDReader__WEBPACK_IMPORTED_MODULE_86__.Z),
+/* harmony export */   "PDF417DecodedBitStreamParser": () => (/* reexport safe */ _core_pdf417_decoder_DecodedBitStreamParser__WEBPACK_IMPORTED_MODULE_63__.Z),
+/* harmony export */   "PDF417DecoderErrorCorrection": () => (/* reexport safe */ _core_pdf417_decoder_ec_ErrorCorrection__WEBPACK_IMPORTED_MODULE_64__.Z),
+/* harmony export */   "PDF417Reader": () => (/* reexport safe */ _core_pdf417_PDF417Reader__WEBPACK_IMPORTED_MODULE_61__.Z),
+/* harmony export */   "PDF417ResultMetadata": () => (/* reexport safe */ _core_pdf417_PDF417ResultMetadata__WEBPACK_IMPORTED_MODULE_62__.Z),
 /* harmony export */   "PerspectiveTransform": () => (/* reexport safe */ _core_common_PerspectiveTransform__WEBPACK_IMPORTED_MODULE_45__.Z),
 /* harmony export */   "PlanarYUVLuminanceSource": () => (/* reexport safe */ _core_PlanarYUVLuminanceSource__WEBPACK_IMPORTED_MODULE_21__.Z),
-/* harmony export */   "QRCodeByteMatrix": () => (/* reexport safe */ _core_qrcode_encoder_ByteMatrix__WEBPACK_IMPORTED_MODULE_70__.Z),
-/* harmony export */   "QRCodeDataMask": () => (/* reexport safe */ _core_qrcode_decoder_DataMask__WEBPACK_IMPORTED_MODULE_66__.Z),
-/* harmony export */   "QRCodeDecodedBitStreamParser": () => (/* reexport safe */ _core_qrcode_decoder_DecodedBitStreamParser__WEBPACK_IMPORTED_MODULE_65__.Z),
-/* harmony export */   "QRCodeDecoderErrorCorrectionLevel": () => (/* reexport safe */ _core_qrcode_decoder_ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_61__.Z),
-/* harmony export */   "QRCodeDecoderFormatInformation": () => (/* reexport safe */ _core_qrcode_decoder_FormatInformation__WEBPACK_IMPORTED_MODULE_62__.Z),
-/* harmony export */   "QRCodeEncoder": () => (/* reexport safe */ _core_qrcode_encoder_Encoder__WEBPACK_IMPORTED_MODULE_67__.Z),
-/* harmony export */   "QRCodeEncoderQRCode": () => (/* reexport safe */ _core_qrcode_encoder_QRCode__WEBPACK_IMPORTED_MODULE_68__.Z),
-/* harmony export */   "QRCodeMaskUtil": () => (/* reexport safe */ _core_qrcode_encoder_MaskUtil__WEBPACK_IMPORTED_MODULE_71__.Z),
-/* harmony export */   "QRCodeMatrixUtil": () => (/* reexport safe */ _core_qrcode_encoder_MatrixUtil__WEBPACK_IMPORTED_MODULE_69__.Z),
-/* harmony export */   "QRCodeMode": () => (/* reexport safe */ _core_qrcode_decoder_Mode__WEBPACK_IMPORTED_MODULE_64__.Z),
-/* harmony export */   "QRCodeReader": () => (/* reexport safe */ _core_qrcode_QRCodeReader__WEBPACK_IMPORTED_MODULE_59__.Z),
-/* harmony export */   "QRCodeVersion": () => (/* reexport safe */ _core_qrcode_decoder_Version__WEBPACK_IMPORTED_MODULE_63__.Z),
-/* harmony export */   "QRCodeWriter": () => (/* reexport safe */ _core_qrcode_QRCodeWriter__WEBPACK_IMPORTED_MODULE_60__.Z),
+/* harmony export */   "QRCodeByteMatrix": () => (/* reexport safe */ _core_qrcode_encoder_ByteMatrix__WEBPACK_IMPORTED_MODULE_76__.Z),
+/* harmony export */   "QRCodeDataMask": () => (/* reexport safe */ _core_qrcode_decoder_DataMask__WEBPACK_IMPORTED_MODULE_72__.Z),
+/* harmony export */   "QRCodeDecodedBitStreamParser": () => (/* reexport safe */ _core_qrcode_decoder_DecodedBitStreamParser__WEBPACK_IMPORTED_MODULE_71__.Z),
+/* harmony export */   "QRCodeDecoderErrorCorrectionLevel": () => (/* reexport safe */ _core_qrcode_decoder_ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_67__.Z),
+/* harmony export */   "QRCodeDecoderFormatInformation": () => (/* reexport safe */ _core_qrcode_decoder_FormatInformation__WEBPACK_IMPORTED_MODULE_68__.Z),
+/* harmony export */   "QRCodeEncoder": () => (/* reexport safe */ _core_qrcode_encoder_Encoder__WEBPACK_IMPORTED_MODULE_73__.Z),
+/* harmony export */   "QRCodeEncoderQRCode": () => (/* reexport safe */ _core_qrcode_encoder_QRCode__WEBPACK_IMPORTED_MODULE_74__.Z),
+/* harmony export */   "QRCodeMaskUtil": () => (/* reexport safe */ _core_qrcode_encoder_MaskUtil__WEBPACK_IMPORTED_MODULE_77__.Z),
+/* harmony export */   "QRCodeMatrixUtil": () => (/* reexport safe */ _core_qrcode_encoder_MatrixUtil__WEBPACK_IMPORTED_MODULE_75__.Z),
+/* harmony export */   "QRCodeMode": () => (/* reexport safe */ _core_qrcode_decoder_Mode__WEBPACK_IMPORTED_MODULE_70__.Z),
+/* harmony export */   "QRCodeReader": () => (/* reexport safe */ _core_qrcode_QRCodeReader__WEBPACK_IMPORTED_MODULE_65__.Z),
+/* harmony export */   "QRCodeVersion": () => (/* reexport safe */ _core_qrcode_decoder_Version__WEBPACK_IMPORTED_MODULE_69__.Z),
+/* harmony export */   "QRCodeWriter": () => (/* reexport safe */ _core_qrcode_QRCodeWriter__WEBPACK_IMPORTED_MODULE_66__.Z),
 /* harmony export */   "RGBLuminanceSource": () => (/* reexport safe */ _core_RGBLuminanceSource__WEBPACK_IMPORTED_MODULE_24__.Z),
-/* harmony export */   "RSS14Reader": () => (/* reexport safe */ _core_oned_rss_RSS14Reader__WEBPACK_IMPORTED_MODULE_85__.Z),
-/* harmony export */   "RSSExpandedReader": () => (/* reexport safe */ _core_oned_rss_expanded_RSSExpandedReader__WEBPACK_IMPORTED_MODULE_86__.Z),
+/* harmony export */   "RSS14Reader": () => (/* reexport safe */ _core_oned_rss_RSS14Reader__WEBPACK_IMPORTED_MODULE_92__.Z),
+/* harmony export */   "RSSExpandedReader": () => (/* reexport safe */ _core_oned_rss_expanded_RSSExpandedReader__WEBPACK_IMPORTED_MODULE_93__.Z),
 /* harmony export */   "ReaderException": () => (/* reexport safe */ _core_ReaderException__WEBPACK_IMPORTED_MODULE_9__.Z),
 /* harmony export */   "ReedSolomonDecoder": () => (/* reexport safe */ _core_common_reedsolomon_ReedSolomonDecoder__WEBPACK_IMPORTED_MODULE_51__.Z),
 /* harmony export */   "ReedSolomonEncoder": () => (/* reexport safe */ _core_common_reedsolomon_ReedSolomonEncoder__WEBPACK_IMPORTED_MODULE_52__.Z),
@@ -29969,11 +34423,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ZXingStringBuilder": () => (/* reexport safe */ _core_util_StringBuilder__WEBPACK_IMPORTED_MODULE_27__.Z),
 /* harmony export */   "ZXingStringEncoding": () => (/* reexport safe */ _core_util_StringEncoding__WEBPACK_IMPORTED_MODULE_28__.Z),
 /* harmony export */   "ZXingSystem": () => (/* reexport safe */ _core_util_System__WEBPACK_IMPORTED_MODULE_26__.Z),
-/* harmony export */   "createAbstractExpandedDecoder": () => (/* reexport safe */ _core_oned_rss_expanded_decoders_AbstractExpandedDecoderComplement__WEBPACK_IMPORTED_MODULE_88__.U)
+/* harmony export */   "createAbstractExpandedDecoder": () => (/* reexport safe */ _core_oned_rss_expanded_decoders_AbstractExpandedDecoderComplement__WEBPACK_IMPORTED_MODULE_95__.U)
 /* harmony export */ });
 /* harmony import */ var _browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1329);
 /* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
-/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _browser__WEBPACK_IMPORTED_MODULE_0__) if(["default","ArgumentException","ArithmeticException","ChecksumException","Exception","FormatException","IllegalArgumentException","IllegalStateException","NotFoundException","ReaderException","ReedSolomonException","UnsupportedOperationException","WriterException","BarcodeFormat","Binarizer","BinaryBitmap","DecodeHintType","InvertedLuminanceSource","LuminanceSource","MultiFormatReader","MultiFormatWriter","PlanarYUVLuminanceSource","Result","ResultMetadataType","RGBLuminanceSource","ResultPoint","ZXingSystem","ZXingStringBuilder","ZXingStringEncoding","ZXingCharset","ZXingArrays","ZXingStandardCharsets","ZXingInteger","BitArray","BitMatrix","BitSource","CharacterSetECI","DecoderResult","DefaultGridSampler","DetectorResult","EncodeHintType","GlobalHistogramBinarizer","GridSampler","GridSamplerInstance","HybridBinarizer","PerspectiveTransform","StringUtils","MathUtils","WhiteRectangleDetector","GenericGF","GenericGFPoly","ReedSolomonDecoder","ReedSolomonEncoder","DataMatrixReader","DataMatrixDecodedBitStreamParser","PDF417Reader","PDF417ResultMetadata","PDF417DecodedBitStreamParser","PDF417DecoderErrorCorrection","QRCodeReader","QRCodeWriter","QRCodeDecoderErrorCorrectionLevel","QRCodeDecoderFormatInformation","QRCodeVersion","QRCodeMode","QRCodeDecodedBitStreamParser","QRCodeDataMask","QRCodeEncoder","QRCodeEncoderQRCode","QRCodeMatrixUtil","QRCodeByteMatrix","QRCodeMaskUtil","AztecCodeReader","AztecCodeWriter","AztecDetectorResult","AztecEncoder","AztecHighLevelEncoder","AztecCode","AztecDecoder","AztecDetector","AztecPoint","OneDReader","EAN13Reader","Code128Reader","ITFReader","Code39Reader","RSS14Reader","RSSExpandedReader","AbstractExpandedDecoder","createAbstractExpandedDecoder","MultiFormatOneDReader"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _browser__WEBPACK_IMPORTED_MODULE_0__[__WEBPACK_IMPORT_KEY__]
+/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _browser__WEBPACK_IMPORTED_MODULE_0__) if(["default","ArgumentException","ArithmeticException","ChecksumException","Exception","FormatException","IllegalArgumentException","IllegalStateException","NotFoundException","ReaderException","ReedSolomonException","UnsupportedOperationException","WriterException","BarcodeFormat","Binarizer","BinaryBitmap","DecodeHintType","InvertedLuminanceSource","LuminanceSource","MultiFormatReader","MultiFormatWriter","PlanarYUVLuminanceSource","Result","ResultMetadataType","RGBLuminanceSource","ResultPoint","ZXingSystem","ZXingStringBuilder","ZXingStringEncoding","ZXingCharset","ZXingArrays","ZXingStandardCharsets","ZXingInteger","BitArray","BitMatrix","BitSource","CharacterSetECI","DecoderResult","DefaultGridSampler","DetectorResult","EncodeHintType","GlobalHistogramBinarizer","GridSampler","GridSamplerInstance","HybridBinarizer","PerspectiveTransform","StringUtils","MathUtils","WhiteRectangleDetector","GenericGF","GenericGFPoly","ReedSolomonDecoder","ReedSolomonEncoder","DataMatrixReader","DataMatrixDecodedBitStreamParser","DataMatrixDefaultPlacement","DataMatrixErrorCorrection","DataMatrixHighLevelEncoder","DataMatrixSymbolInfo","DataMatrixSymbolShapeHint","DataMatrixWriter","PDF417Reader","PDF417ResultMetadata","PDF417DecodedBitStreamParser","PDF417DecoderErrorCorrection","QRCodeReader","QRCodeWriter","QRCodeDecoderErrorCorrectionLevel","QRCodeDecoderFormatInformation","QRCodeVersion","QRCodeMode","QRCodeDecodedBitStreamParser","QRCodeDataMask","QRCodeEncoder","QRCodeEncoderQRCode","QRCodeMatrixUtil","QRCodeByteMatrix","QRCodeMaskUtil","AztecCodeReader","AztecCodeWriter","AztecDetectorResult","AztecEncoder","AztecHighLevelEncoder","AztecCode","AztecDecoder","AztecDetector","AztecPoint","OneDReader","EAN13Reader","Code128Reader","ITFReader","Code39Reader","Code93Reader","RSS14Reader","RSSExpandedReader","AbstractExpandedDecoder","createAbstractExpandedDecoder","MultiFormatOneDReader","CodaBarReader"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _browser__WEBPACK_IMPORTED_MODULE_0__[__WEBPACK_IMPORT_KEY__]
 /* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
 /* harmony import */ var _core_ArgumentException__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3087);
 /* harmony import */ var _core_ArithmeticException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6288);
@@ -30029,41 +34483,49 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_common_reedsolomon_ReedSolomonEncoder__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(8074);
 /* harmony import */ var _core_datamatrix_DataMatrixReader__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(5370);
 /* harmony import */ var _core_datamatrix_decoder_DecodedBitStreamParser__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(7897);
-/* harmony import */ var _core_pdf417_PDF417Reader__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(4963);
-/* harmony import */ var _core_pdf417_PDF417ResultMetadata__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(6027);
-/* harmony import */ var _core_pdf417_decoder_DecodedBitStreamParser__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(9763);
-/* harmony import */ var _core_pdf417_decoder_ec_ErrorCorrection__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(2193);
-/* harmony import */ var _core_qrcode_QRCodeReader__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(3949);
-/* harmony import */ var _core_qrcode_QRCodeWriter__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(9891);
-/* harmony import */ var _core_qrcode_decoder_ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(8911);
-/* harmony import */ var _core_qrcode_decoder_FormatInformation__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(5173);
-/* harmony import */ var _core_qrcode_decoder_Version__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(1507);
-/* harmony import */ var _core_qrcode_decoder_Mode__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(7624);
-/* harmony import */ var _core_qrcode_decoder_DecodedBitStreamParser__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(9297);
-/* harmony import */ var _core_qrcode_decoder_DataMask__WEBPACK_IMPORTED_MODULE_66__ = __webpack_require__(579);
-/* harmony import */ var _core_qrcode_encoder_Encoder__WEBPACK_IMPORTED_MODULE_67__ = __webpack_require__(3080);
-/* harmony import */ var _core_qrcode_encoder_QRCode__WEBPACK_IMPORTED_MODULE_68__ = __webpack_require__(9087);
-/* harmony import */ var _core_qrcode_encoder_MatrixUtil__WEBPACK_IMPORTED_MODULE_69__ = __webpack_require__(2569);
-/* harmony import */ var _core_qrcode_encoder_ByteMatrix__WEBPACK_IMPORTED_MODULE_70__ = __webpack_require__(8556);
-/* harmony import */ var _core_qrcode_encoder_MaskUtil__WEBPACK_IMPORTED_MODULE_71__ = __webpack_require__(9790);
-/* harmony import */ var _core_aztec_AztecReader__WEBPACK_IMPORTED_MODULE_72__ = __webpack_require__(6144);
-/* harmony import */ var _core_aztec_AztecWriter__WEBPACK_IMPORTED_MODULE_73__ = __webpack_require__(8105);
-/* harmony import */ var _core_aztec_AztecDetectorResult__WEBPACK_IMPORTED_MODULE_74__ = __webpack_require__(5123);
-/* harmony import */ var _core_aztec_encoder_Encoder__WEBPACK_IMPORTED_MODULE_75__ = __webpack_require__(8332);
-/* harmony import */ var _core_aztec_encoder_HighLevelEncoder__WEBPACK_IMPORTED_MODULE_76__ = __webpack_require__(1908);
-/* harmony import */ var _core_aztec_encoder_AztecCode__WEBPACK_IMPORTED_MODULE_77__ = __webpack_require__(9425);
-/* harmony import */ var _core_aztec_decoder_Decoder__WEBPACK_IMPORTED_MODULE_78__ = __webpack_require__(131);
-/* harmony import */ var _core_aztec_detector_Detector__WEBPACK_IMPORTED_MODULE_79__ = __webpack_require__(8106);
-/* harmony import */ var _core_oned_OneDReader__WEBPACK_IMPORTED_MODULE_80__ = __webpack_require__(3903);
-/* harmony import */ var _core_oned_EAN13Reader__WEBPACK_IMPORTED_MODULE_81__ = __webpack_require__(9667);
-/* harmony import */ var _core_oned_Code128Reader__WEBPACK_IMPORTED_MODULE_82__ = __webpack_require__(7344);
-/* harmony import */ var _core_oned_ITFReader__WEBPACK_IMPORTED_MODULE_83__ = __webpack_require__(1758);
-/* harmony import */ var _core_oned_Code39Reader__WEBPACK_IMPORTED_MODULE_84__ = __webpack_require__(352);
-/* harmony import */ var _core_oned_rss_RSS14Reader__WEBPACK_IMPORTED_MODULE_85__ = __webpack_require__(1006);
-/* harmony import */ var _core_oned_rss_expanded_RSSExpandedReader__WEBPACK_IMPORTED_MODULE_86__ = __webpack_require__(2050);
-/* harmony import */ var _core_oned_rss_expanded_decoders_AbstractExpandedDecoder__WEBPACK_IMPORTED_MODULE_87__ = __webpack_require__(1811);
-/* harmony import */ var _core_oned_rss_expanded_decoders_AbstractExpandedDecoderComplement__WEBPACK_IMPORTED_MODULE_88__ = __webpack_require__(3351);
-/* harmony import */ var _core_oned_MultiFormatOneDReader__WEBPACK_IMPORTED_MODULE_89__ = __webpack_require__(4956);
+/* harmony import */ var _core_datamatrix_encoder_DefaultPlacement__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(8504);
+/* harmony import */ var _core_datamatrix_encoder_ErrorCorrection__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(9864);
+/* harmony import */ var _core_datamatrix_encoder_HighLevelEncoder__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(9729);
+/* harmony import */ var _core_datamatrix_encoder_SymbolInfo__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(1662);
+/* harmony import */ var _core_datamatrix_encoder_constants__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(4255);
+/* harmony import */ var _core_datamatrix_DataMatrixWriter__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(880);
+/* harmony import */ var _core_pdf417_PDF417Reader__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(4963);
+/* harmony import */ var _core_pdf417_PDF417ResultMetadata__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(6027);
+/* harmony import */ var _core_pdf417_decoder_DecodedBitStreamParser__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(9763);
+/* harmony import */ var _core_pdf417_decoder_ec_ErrorCorrection__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(2193);
+/* harmony import */ var _core_qrcode_QRCodeReader__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(3949);
+/* harmony import */ var _core_qrcode_QRCodeWriter__WEBPACK_IMPORTED_MODULE_66__ = __webpack_require__(9891);
+/* harmony import */ var _core_qrcode_decoder_ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_67__ = __webpack_require__(8911);
+/* harmony import */ var _core_qrcode_decoder_FormatInformation__WEBPACK_IMPORTED_MODULE_68__ = __webpack_require__(5173);
+/* harmony import */ var _core_qrcode_decoder_Version__WEBPACK_IMPORTED_MODULE_69__ = __webpack_require__(1507);
+/* harmony import */ var _core_qrcode_decoder_Mode__WEBPACK_IMPORTED_MODULE_70__ = __webpack_require__(7624);
+/* harmony import */ var _core_qrcode_decoder_DecodedBitStreamParser__WEBPACK_IMPORTED_MODULE_71__ = __webpack_require__(9297);
+/* harmony import */ var _core_qrcode_decoder_DataMask__WEBPACK_IMPORTED_MODULE_72__ = __webpack_require__(579);
+/* harmony import */ var _core_qrcode_encoder_Encoder__WEBPACK_IMPORTED_MODULE_73__ = __webpack_require__(3080);
+/* harmony import */ var _core_qrcode_encoder_QRCode__WEBPACK_IMPORTED_MODULE_74__ = __webpack_require__(9087);
+/* harmony import */ var _core_qrcode_encoder_MatrixUtil__WEBPACK_IMPORTED_MODULE_75__ = __webpack_require__(2569);
+/* harmony import */ var _core_qrcode_encoder_ByteMatrix__WEBPACK_IMPORTED_MODULE_76__ = __webpack_require__(8556);
+/* harmony import */ var _core_qrcode_encoder_MaskUtil__WEBPACK_IMPORTED_MODULE_77__ = __webpack_require__(9790);
+/* harmony import */ var _core_aztec_AztecReader__WEBPACK_IMPORTED_MODULE_78__ = __webpack_require__(6144);
+/* harmony import */ var _core_aztec_AztecWriter__WEBPACK_IMPORTED_MODULE_79__ = __webpack_require__(8105);
+/* harmony import */ var _core_aztec_AztecDetectorResult__WEBPACK_IMPORTED_MODULE_80__ = __webpack_require__(5123);
+/* harmony import */ var _core_aztec_encoder_Encoder__WEBPACK_IMPORTED_MODULE_81__ = __webpack_require__(8332);
+/* harmony import */ var _core_aztec_encoder_HighLevelEncoder__WEBPACK_IMPORTED_MODULE_82__ = __webpack_require__(1908);
+/* harmony import */ var _core_aztec_encoder_AztecCode__WEBPACK_IMPORTED_MODULE_83__ = __webpack_require__(9425);
+/* harmony import */ var _core_aztec_decoder_Decoder__WEBPACK_IMPORTED_MODULE_84__ = __webpack_require__(131);
+/* harmony import */ var _core_aztec_detector_Detector__WEBPACK_IMPORTED_MODULE_85__ = __webpack_require__(8106);
+/* harmony import */ var _core_oned_OneDReader__WEBPACK_IMPORTED_MODULE_86__ = __webpack_require__(3903);
+/* harmony import */ var _core_oned_EAN13Reader__WEBPACK_IMPORTED_MODULE_87__ = __webpack_require__(9667);
+/* harmony import */ var _core_oned_Code128Reader__WEBPACK_IMPORTED_MODULE_88__ = __webpack_require__(7344);
+/* harmony import */ var _core_oned_ITFReader__WEBPACK_IMPORTED_MODULE_89__ = __webpack_require__(1758);
+/* harmony import */ var _core_oned_Code39Reader__WEBPACK_IMPORTED_MODULE_90__ = __webpack_require__(352);
+/* harmony import */ var _core_oned_Code93Reader__WEBPACK_IMPORTED_MODULE_91__ = __webpack_require__(7340);
+/* harmony import */ var _core_oned_rss_RSS14Reader__WEBPACK_IMPORTED_MODULE_92__ = __webpack_require__(1006);
+/* harmony import */ var _core_oned_rss_expanded_RSSExpandedReader__WEBPACK_IMPORTED_MODULE_93__ = __webpack_require__(2050);
+/* harmony import */ var _core_oned_rss_expanded_decoders_AbstractExpandedDecoder__WEBPACK_IMPORTED_MODULE_94__ = __webpack_require__(1811);
+/* harmony import */ var _core_oned_rss_expanded_decoders_AbstractExpandedDecoderComplement__WEBPACK_IMPORTED_MODULE_95__ = __webpack_require__(3351);
+/* harmony import */ var _core_oned_MultiFormatOneDReader__WEBPACK_IMPORTED_MODULE_96__ = __webpack_require__(4956);
+/* harmony import */ var _core_oned_CodaBarReader__WEBPACK_IMPORTED_MODULE_97__ = __webpack_require__(6004);
 
 // Exceptions
 
@@ -30127,6 +34589,12 @@ __webpack_require__.r(__webpack_exports__);
 // core/datamatrix
 
 
+
+
+
+
+
+
 // core/pdf417
 
 
@@ -30167,7 +34635,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//# sourceMappingURL=index.js.map
+
+
+
 
 /***/ }),
 
@@ -30285,7 +34755,7 @@ var __webpack_exports__ = {};
 "use strict";
 
 
-document.getElementById('app-version').innerText = {"version":"2.1.0-8c22d21d4e97405ae46bcac50a59e9d0b2ad168a"}.version;
+document.getElementById('app-version').innerText = {"version":"2.1.0-07a73e0afe08be1567c804cd37473e100e65869e"}.version;
 
 const {
   BrowserQRCodeReader,

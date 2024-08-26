@@ -1,7 +1,7 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 428:
+/***/ 5542:
 /***/ ((module) => {
 
 module.exports = {
@@ -18,7 +18,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 8394:
+/***/ 781:
 /***/ ((module) => {
 
 module.exports = {
@@ -70,10 +70,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ 6368:
+/***/ 3796:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const JsSHA = __webpack_require__(274);
+const JsSHA = __webpack_require__(3228);
 
 const decToHex = (dec) => dec.toString(16);
 const hexToDec = (hex) => parseInt(hex, 16);
@@ -129,43 +129,43 @@ module.exports = function (secretBase32, period) {
 
 /***/ }),
 
-/***/ 1329:
+/***/ 4967:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "BrowserAztecCodeReader": () => (/* reexport safe */ _browser_BrowserAztecCodeReader__WEBPACK_IMPORTED_MODULE_0__.s),
-/* harmony export */   "BrowserBarcodeReader": () => (/* reexport safe */ _browser_BrowserBarcodeReader__WEBPACK_IMPORTED_MODULE_1__.n),
-/* harmony export */   "BrowserCodeReader": () => (/* reexport safe */ _browser_BrowserCodeReader__WEBPACK_IMPORTED_MODULE_2__.n),
-/* harmony export */   "BrowserDatamatrixCodeReader": () => (/* reexport safe */ _browser_BrowserDatamatrixCodeReader__WEBPACK_IMPORTED_MODULE_3__.r),
-/* harmony export */   "BrowserMultiFormatReader": () => (/* reexport safe */ _browser_BrowserMultiFormatReader__WEBPACK_IMPORTED_MODULE_4__.V),
-/* harmony export */   "BrowserPDF417Reader": () => (/* reexport safe */ _browser_BrowserPDF417Reader__WEBPACK_IMPORTED_MODULE_5__.f),
-/* harmony export */   "BrowserQRCodeReader": () => (/* reexport safe */ _browser_BrowserQRCodeReader__WEBPACK_IMPORTED_MODULE_6__.N),
-/* harmony export */   "BrowserQRCodeSvgWriter": () => (/* reexport safe */ _browser_BrowserQRCodeSvgWriter__WEBPACK_IMPORTED_MODULE_7__.p),
-/* harmony export */   "HTMLCanvasElementLuminanceSource": () => (/* reexport safe */ _browser_HTMLCanvasElementLuminanceSource__WEBPACK_IMPORTED_MODULE_9__.R),
-/* harmony export */   "VideoInputDevice": () => (/* reexport safe */ _browser_VideoInputDevice__WEBPACK_IMPORTED_MODULE_11__.D)
+/* harmony export */   BrowserAztecCodeReader: () => (/* reexport safe */ _browser_BrowserAztecCodeReader__WEBPACK_IMPORTED_MODULE_0__.u),
+/* harmony export */   BrowserBarcodeReader: () => (/* reexport safe */ _browser_BrowserBarcodeReader__WEBPACK_IMPORTED_MODULE_1__.c),
+/* harmony export */   BrowserCodeReader: () => (/* reexport safe */ _browser_BrowserCodeReader__WEBPACK_IMPORTED_MODULE_2__.J),
+/* harmony export */   BrowserDatamatrixCodeReader: () => (/* reexport safe */ _browser_BrowserDatamatrixCodeReader__WEBPACK_IMPORTED_MODULE_3__.w),
+/* harmony export */   BrowserMultiFormatReader: () => (/* reexport safe */ _browser_BrowserMultiFormatReader__WEBPACK_IMPORTED_MODULE_4__.s),
+/* harmony export */   BrowserPDF417Reader: () => (/* reexport safe */ _browser_BrowserPDF417Reader__WEBPACK_IMPORTED_MODULE_5__.W),
+/* harmony export */   BrowserQRCodeReader: () => (/* reexport safe */ _browser_BrowserQRCodeReader__WEBPACK_IMPORTED_MODULE_6__.w),
+/* harmony export */   BrowserQRCodeSvgWriter: () => (/* reexport safe */ _browser_BrowserQRCodeSvgWriter__WEBPACK_IMPORTED_MODULE_7__.Q),
+/* harmony export */   HTMLCanvasElementLuminanceSource: () => (/* reexport safe */ _browser_HTMLCanvasElementLuminanceSource__WEBPACK_IMPORTED_MODULE_9__.L),
+/* harmony export */   VideoInputDevice: () => (/* reexport safe */ _browser_VideoInputDevice__WEBPACK_IMPORTED_MODULE_11__.K)
 /* harmony export */ });
-/* harmony import */ var _browser_BrowserAztecCodeReader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7083);
-/* harmony import */ var _browser_BrowserBarcodeReader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9326);
-/* harmony import */ var _browser_BrowserCodeReader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9672);
-/* harmony import */ var _browser_BrowserDatamatrixCodeReader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1144);
-/* harmony import */ var _browser_BrowserMultiFormatReader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(677);
-/* harmony import */ var _browser_BrowserPDF417Reader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3029);
-/* harmony import */ var _browser_BrowserQRCodeReader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7964);
-/* harmony import */ var _browser_BrowserQRCodeSvgWriter__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(6432);
-/* harmony import */ var _browser_DecodeContinuouslyCallback__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(3692);
+/* harmony import */ var _browser_BrowserAztecCodeReader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(129);
+/* harmony import */ var _browser_BrowserBarcodeReader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5097);
+/* harmony import */ var _browser_BrowserCodeReader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8474);
+/* harmony import */ var _browser_BrowserDatamatrixCodeReader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1511);
+/* harmony import */ var _browser_BrowserMultiFormatReader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(43);
+/* harmony import */ var _browser_BrowserPDF417Reader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(849);
+/* harmony import */ var _browser_BrowserQRCodeReader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(1401);
+/* harmony import */ var _browser_BrowserQRCodeSvgWriter__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(7385);
+/* harmony import */ var _browser_DecodeContinuouslyCallback__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(3155);
 /* harmony import */ var _browser_DecodeContinuouslyCallback__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_browser_DecodeContinuouslyCallback__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
 /* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _browser_DecodeContinuouslyCallback__WEBPACK_IMPORTED_MODULE_8__) if(["default","BrowserAztecCodeReader","BrowserBarcodeReader","BrowserCodeReader","BrowserDatamatrixCodeReader","BrowserMultiFormatReader","BrowserPDF417Reader","BrowserQRCodeReader","BrowserQRCodeSvgWriter"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _browser_DecodeContinuouslyCallback__WEBPACK_IMPORTED_MODULE_8__[__WEBPACK_IMPORT_KEY__]
 /* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
-/* harmony import */ var _browser_HTMLCanvasElementLuminanceSource__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(9279);
-/* harmony import */ var _browser_HTMLVisualMediaElement__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(7210);
+/* harmony import */ var _browser_HTMLCanvasElementLuminanceSource__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(8524);
+/* harmony import */ var _browser_HTMLVisualMediaElement__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(967);
 /* harmony import */ var _browser_HTMLVisualMediaElement__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_browser_HTMLVisualMediaElement__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
 /* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _browser_HTMLVisualMediaElement__WEBPACK_IMPORTED_MODULE_10__) if(["default","BrowserAztecCodeReader","BrowserBarcodeReader","BrowserCodeReader","BrowserDatamatrixCodeReader","BrowserMultiFormatReader","BrowserPDF417Reader","BrowserQRCodeReader","BrowserQRCodeSvgWriter","HTMLCanvasElementLuminanceSource"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _browser_HTMLVisualMediaElement__WEBPACK_IMPORTED_MODULE_10__[__WEBPACK_IMPORT_KEY__]
 /* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
-/* harmony import */ var _browser_VideoInputDevice__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(5491);
+/* harmony import */ var _browser_VideoInputDevice__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(7669);
 // browser
 
 
@@ -183,15 +183,15 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 7083:
+/***/ 129:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "s": () => (/* binding */ BrowserAztecCodeReader)
+/* harmony export */   u: () => (/* binding */ BrowserAztecCodeReader)
 /* harmony export */ });
-/* harmony import */ var _BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9672);
-/* harmony import */ var _core_aztec_AztecReader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6144);
+/* harmony import */ var _BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8474);
+/* harmony import */ var _core_aztec_AztecReader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(623);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -223,24 +223,24 @@ var BrowserAztecCodeReader = /** @class */ (function (_super) {
      */
     function BrowserAztecCodeReader(timeBetweenScansMillis) {
         if (timeBetweenScansMillis === void 0) { timeBetweenScansMillis = 500; }
-        return _super.call(this, new _core_aztec_AztecReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z(), timeBetweenScansMillis) || this;
+        return _super.call(this, new _core_aztec_AztecReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A(), timeBetweenScansMillis) || this;
     }
     return BrowserAztecCodeReader;
-}(_BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__/* .BrowserCodeReader */ .n));
+}(_BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__/* .BrowserCodeReader */ .J));
 
 
 
 /***/ }),
 
-/***/ 9326:
+/***/ 5097:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "n": () => (/* binding */ BrowserBarcodeReader)
+/* harmony export */   c: () => (/* binding */ BrowserBarcodeReader)
 /* harmony export */ });
-/* harmony import */ var _BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9672);
-/* harmony import */ var _core_oned_MultiFormatOneDReader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4956);
+/* harmony import */ var _BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8474);
+/* harmony import */ var _core_oned_MultiFormatOneDReader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8787);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -270,30 +270,30 @@ var BrowserBarcodeReader = /** @class */ (function (_super) {
      */
     function BrowserBarcodeReader(timeBetweenScansMillis, hints) {
         if (timeBetweenScansMillis === void 0) { timeBetweenScansMillis = 500; }
-        return _super.call(this, new _core_oned_MultiFormatOneDReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z(hints), timeBetweenScansMillis, hints) || this;
+        return _super.call(this, new _core_oned_MultiFormatOneDReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A(hints), timeBetweenScansMillis, hints) || this;
     }
     return BrowserBarcodeReader;
-}(_BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__/* .BrowserCodeReader */ .n));
+}(_BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__/* .BrowserCodeReader */ .J));
 
 
 
 /***/ }),
 
-/***/ 9672:
+/***/ 8474:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "n": () => (/* binding */ BrowserCodeReader)
+/* harmony export */   J: () => (/* binding */ BrowserCodeReader)
 /* harmony export */ });
-/* harmony import */ var _core_ArgumentException__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3087);
-/* harmony import */ var _core_BinaryBitmap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8467);
-/* harmony import */ var _core_ChecksumException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3392);
-/* harmony import */ var _core_common_HybridBinarizer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3545);
-/* harmony import */ var _core_FormatException__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2468);
-/* harmony import */ var _core_NotFoundException__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8842);
-/* harmony import */ var _HTMLCanvasElementLuminanceSource__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9279);
-/* harmony import */ var _VideoInputDevice__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(5491);
+/* harmony import */ var _core_ArgumentException__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2951);
+/* harmony import */ var _core_BinaryBitmap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4153);
+/* harmony import */ var _core_ChecksumException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1371);
+/* harmony import */ var _core_common_HybridBinarizer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(929);
+/* harmony import */ var _core_FormatException__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7027);
+/* harmony import */ var _core_NotFoundException__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8427);
+/* harmony import */ var _HTMLCanvasElementLuminanceSource__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8524);
+/* harmony import */ var _VideoInputDevice__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(7669);
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -505,7 +505,7 @@ var BrowserCodeReader = /** @class */ (function () {
                     case 0: return [4 /*yield*/, this.listVideoInputDevices()];
                     case 1:
                         devices = _a.sent();
-                        return [2 /*return*/, devices.map(function (d) { return new _VideoInputDevice__WEBPACK_IMPORTED_MODULE_7__/* .VideoInputDevice */ .D(d.deviceId, d.label); })];
+                        return [2 /*return*/, devices.map(function (d) { return new _VideoInputDevice__WEBPACK_IMPORTED_MODULE_7__/* .VideoInputDevice */ .K(d.deviceId, d.label); })];
                 }
             });
         });
@@ -833,10 +833,10 @@ var BrowserCodeReader = /** @class */ (function () {
     BrowserCodeReader.prototype.getMediaElement = function (mediaElementId, type) {
         var mediaElement = document.getElementById(mediaElementId);
         if (!mediaElement) {
-            throw new _core_ArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z("element with id '" + mediaElementId + "' not found");
+            throw new _core_ArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A("element with id '" + mediaElementId + "' not found");
         }
         if (mediaElement.nodeName.toLowerCase() !== type.toLowerCase()) {
-            throw new _core_ArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z("element with id '" + mediaElementId + "' must be an " + type + " element");
+            throw new _core_ArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A("element with id '" + mediaElementId + "' must be an " + type + " element");
         }
         return mediaElement;
     };
@@ -851,7 +851,7 @@ var BrowserCodeReader = /** @class */ (function () {
      */
     BrowserCodeReader.prototype.decodeFromImage = function (source, url) {
         if (!source && !url) {
-            throw new _core_ArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z('either imageElement with a src set or an url must be provided');
+            throw new _core_ArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A('either imageElement with a src set or an url must be provided');
         }
         if (url && !source) {
             return this.decodeFromImageUrl(url);
@@ -869,7 +869,7 @@ var BrowserCodeReader = /** @class */ (function () {
      */
     BrowserCodeReader.prototype.decodeFromVideo = function (source, url) {
         if (!source && !url) {
-            throw new _core_ArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z('Either an element with a src set or an URL must be provided');
+            throw new _core_ArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A('Either an element with a src set or an URL must be provided');
         }
         if (url && !source) {
             return this.decodeFromVideoUrl(url);
@@ -889,7 +889,7 @@ var BrowserCodeReader = /** @class */ (function () {
      */
     BrowserCodeReader.prototype.decodeFromVideoContinuously = function (source, url, callbackFn) {
         if (undefined === source && undefined === url) {
-            throw new _core_ArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z('Either an element with a src set or an URL must be provided');
+            throw new _core_ArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A('Either an element with a src set or an URL must be provided');
         }
         if (url && !source) {
             return this.decodeFromVideoUrlContinuously(url, callbackFn);
@@ -901,7 +901,7 @@ var BrowserCodeReader = /** @class */ (function () {
      */
     BrowserCodeReader.prototype.decodeFromImageElement = function (source) {
         if (!source) {
-            throw new _core_ArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z('An image element must be provided.');
+            throw new _core_ArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A('An image element must be provided.');
         }
         this.reset();
         var element = this.prepareImageElement(source);
@@ -936,7 +936,7 @@ var BrowserCodeReader = /** @class */ (function () {
      */
     BrowserCodeReader.prototype._decodeFromVideoElementSetup = function (source) {
         if (!source) {
-            throw new _core_ArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z('A video element must be provided.');
+            throw new _core_ArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A('A video element must be provided.');
         }
         this.reset();
         var element = this.prepareVideoElement(source);
@@ -949,7 +949,7 @@ var BrowserCodeReader = /** @class */ (function () {
      */
     BrowserCodeReader.prototype.decodeFromImageUrl = function (url) {
         if (!url) {
-            throw new _core_ArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z('An URL must be provided.');
+            throw new _core_ArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A('An URL must be provided.');
         }
         this.reset();
         var element = this.prepareImageElement();
@@ -963,7 +963,7 @@ var BrowserCodeReader = /** @class */ (function () {
      */
     BrowserCodeReader.prototype.decodeFromVideoUrl = function (url) {
         if (!url) {
-            throw new _core_ArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z('An URL must be provided.');
+            throw new _core_ArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A('An URL must be provided.');
         }
         this.reset();
         // creates a new element
@@ -979,7 +979,7 @@ var BrowserCodeReader = /** @class */ (function () {
      */
     BrowserCodeReader.prototype.decodeFromVideoUrlContinuously = function (url, callbackFn) {
         if (!url) {
-            throw new _core_ArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z('An URL must be provided.');
+            throw new _core_ArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A('An URL must be provided.');
         }
         this.reset();
         // creates a new element
@@ -1097,7 +1097,7 @@ var BrowserCodeReader = /** @class */ (function () {
         this._stopAsyncDecode = false;
         var loop = function (resolve, reject) {
             if (_this._stopAsyncDecode) {
-                reject(new _core_NotFoundException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z('Video stream has ended before any code could be detected.'));
+                reject(new _core_NotFoundException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A('Video stream has ended before any code could be detected.'));
                 _this._stopAsyncDecode = undefined;
                 return;
             }
@@ -1106,8 +1106,8 @@ var BrowserCodeReader = /** @class */ (function () {
                 resolve(result);
             }
             catch (e) {
-                var ifNotFound = retryIfNotFound && e instanceof _core_NotFoundException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z;
-                var isChecksumOrFormatError = e instanceof _core_ChecksumException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z || e instanceof _core_FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z;
+                var ifNotFound = retryIfNotFound && e instanceof _core_NotFoundException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A;
+                var isChecksumOrFormatError = e instanceof _core_ChecksumException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A || e instanceof _core_FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A;
                 var ifChecksumOrFormat = isChecksumOrFormatError && retryIfChecksumOrFormatError;
                 if (ifNotFound || ifChecksumOrFormat) {
                     // trying again
@@ -1136,8 +1136,8 @@ var BrowserCodeReader = /** @class */ (function () {
             }
             catch (e) {
                 callbackFn(null, e);
-                var isChecksumOrFormatError = e instanceof _core_ChecksumException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z || e instanceof _core_FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z;
-                var isNotFound = e instanceof _core_NotFoundException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z;
+                var isChecksumOrFormatError = e instanceof _core_ChecksumException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A || e instanceof _core_FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A;
+                var isNotFound = e instanceof _core_NotFoundException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A;
                 if (isChecksumOrFormatError || isNotFound) {
                     // trying again
                     setTimeout(loop, _this._timeBetweenDecodingAttempts);
@@ -1168,9 +1168,9 @@ var BrowserCodeReader = /** @class */ (function () {
             this.drawImageOnCanvas(mediaElement);
         }
         var canvas = this.getCaptureCanvas(mediaElement);
-        var luminanceSource = new _HTMLCanvasElementLuminanceSource__WEBPACK_IMPORTED_MODULE_6__/* .HTMLCanvasElementLuminanceSource */ .R(canvas);
-        var hybridBinarizer = new _core_common_HybridBinarizer__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z(luminanceSource);
-        return new _core_BinaryBitmap__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z(hybridBinarizer);
+        var luminanceSource = new _HTMLCanvasElementLuminanceSource__WEBPACK_IMPORTED_MODULE_6__/* .HTMLCanvasElementLuminanceSource */ .L(canvas);
+        var hybridBinarizer = new _core_common_HybridBinarizer__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A(luminanceSource);
+        return new _core_BinaryBitmap__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A(hybridBinarizer);
     };
     /**
      *
@@ -1372,15 +1372,15 @@ var BrowserCodeReader = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 1144:
+/***/ 1511:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "r": () => (/* binding */ BrowserDatamatrixCodeReader)
+/* harmony export */   w: () => (/* binding */ BrowserDatamatrixCodeReader)
 /* harmony export */ });
-/* harmony import */ var _BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9672);
-/* harmony import */ var _core_datamatrix_DataMatrixReader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5370);
+/* harmony import */ var _BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8474);
+/* harmony import */ var _core_datamatrix_DataMatrixReader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9208);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -1409,24 +1409,24 @@ var BrowserDatamatrixCodeReader = /** @class */ (function (_super) {
      */
     function BrowserDatamatrixCodeReader(timeBetweenScansMillis) {
         if (timeBetweenScansMillis === void 0) { timeBetweenScansMillis = 500; }
-        return _super.call(this, new _core_datamatrix_DataMatrixReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z(), timeBetweenScansMillis) || this;
+        return _super.call(this, new _core_datamatrix_DataMatrixReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A(), timeBetweenScansMillis) || this;
     }
     return BrowserDatamatrixCodeReader;
-}(_BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__/* .BrowserCodeReader */ .n));
+}(_BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__/* .BrowserCodeReader */ .J));
 
 
 
 /***/ }),
 
-/***/ 677:
+/***/ 43:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "V": () => (/* binding */ BrowserMultiFormatReader)
+/* harmony export */   s: () => (/* binding */ BrowserMultiFormatReader)
 /* harmony export */ });
-/* harmony import */ var _BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9672);
-/* harmony import */ var _core_MultiFormatReader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(781);
+/* harmony import */ var _BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8474);
+/* harmony import */ var _core_MultiFormatReader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6190);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -1448,7 +1448,7 @@ var BrowserMultiFormatReader = /** @class */ (function (_super) {
         if (hints === void 0) { hints = null; }
         if (timeBetweenScansMillis === void 0) { timeBetweenScansMillis = 500; }
         var _this = this;
-        var reader = new _core_MultiFormatReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z();
+        var reader = new _core_MultiFormatReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A();
         reader.setHints(hints);
         _this = _super.call(this, reader, timeBetweenScansMillis) || this;
         return _this;
@@ -1461,21 +1461,21 @@ var BrowserMultiFormatReader = /** @class */ (function (_super) {
         return this.reader.decodeWithState(binaryBitmap);
     };
     return BrowserMultiFormatReader;
-}(_BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__/* .BrowserCodeReader */ .n));
+}(_BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__/* .BrowserCodeReader */ .J));
 
 
 
 /***/ }),
 
-/***/ 3029:
+/***/ 849:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "f": () => (/* binding */ BrowserPDF417Reader)
+/* harmony export */   W: () => (/* binding */ BrowserPDF417Reader)
 /* harmony export */ });
-/* harmony import */ var _BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9672);
-/* harmony import */ var _core_pdf417_PDF417Reader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4963);
+/* harmony import */ var _BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8474);
+/* harmony import */ var _core_pdf417_PDF417Reader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4390);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -1504,24 +1504,24 @@ var BrowserPDF417Reader = /** @class */ (function (_super) {
      */
     function BrowserPDF417Reader(timeBetweenScansMillis) {
         if (timeBetweenScansMillis === void 0) { timeBetweenScansMillis = 500; }
-        return _super.call(this, new _core_pdf417_PDF417Reader__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z(), timeBetweenScansMillis) || this;
+        return _super.call(this, new _core_pdf417_PDF417Reader__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A(), timeBetweenScansMillis) || this;
     }
     return BrowserPDF417Reader;
-}(_BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__/* .BrowserCodeReader */ .n));
+}(_BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__/* .BrowserCodeReader */ .J));
 
 
 
 /***/ }),
 
-/***/ 7964:
+/***/ 1401:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "N": () => (/* binding */ BrowserQRCodeReader)
+/* harmony export */   w: () => (/* binding */ BrowserQRCodeReader)
 /* harmony export */ });
-/* harmony import */ var _BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9672);
-/* harmony import */ var _core_qrcode_QRCodeReader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3949);
+/* harmony import */ var _BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8474);
+/* harmony import */ var _core_qrcode_QRCodeReader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2038);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -1550,27 +1550,27 @@ var BrowserQRCodeReader = /** @class */ (function (_super) {
      */
     function BrowserQRCodeReader(timeBetweenScansMillis) {
         if (timeBetweenScansMillis === void 0) { timeBetweenScansMillis = 500; }
-        return _super.call(this, new _core_qrcode_QRCodeReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z(), timeBetweenScansMillis) || this;
+        return _super.call(this, new _core_qrcode_QRCodeReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A(), timeBetweenScansMillis) || this;
     }
     return BrowserQRCodeReader;
-}(_BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__/* .BrowserCodeReader */ .n));
+}(_BrowserCodeReader__WEBPACK_IMPORTED_MODULE_0__/* .BrowserCodeReader */ .J));
 
 
 
 /***/ }),
 
-/***/ 6432:
+/***/ 7385:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "p": () => (/* binding */ BrowserQRCodeSvgWriter)
+/* harmony export */   Q: () => (/* binding */ BrowserQRCodeSvgWriter)
 /* harmony export */ });
-/* harmony import */ var _core_EncodeHintType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5127);
-/* harmony import */ var _core_qrcode_encoder_Encoder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3080);
-/* harmony import */ var _core_qrcode_decoder_ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8911);
-/* harmony import */ var _core_IllegalArgumentException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8475);
-/* harmony import */ var _core_IllegalStateException__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4418);
+/* harmony import */ var _core_EncodeHintType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1444);
+/* harmony import */ var _core_qrcode_encoder_Encoder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2177);
+/* harmony import */ var _core_qrcode_decoder_ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3317);
+/* harmony import */ var _core_IllegalArgumentException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5793);
+/* harmony import */ var _core_IllegalStateException__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7591);
 
 
 
@@ -1593,25 +1593,25 @@ var BrowserQRCodeSvgWriter = /** @class */ (function () {
     BrowserQRCodeSvgWriter.prototype.write = function (contents, width, height, hints) {
         if (hints === void 0) { hints = null; }
         if (contents.length === 0) {
-            throw new _core_IllegalArgumentException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z('Found empty contents');
+            throw new _core_IllegalArgumentException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A('Found empty contents');
         }
         // if (format != BarcodeFormat.QR_CODE) {
         //   throw new IllegalArgumentException("Can only encode QR_CODE, but got " + format)
         // }
         if (width < 0 || height < 0) {
-            throw new _core_IllegalArgumentException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z('Requested dimensions are too small: ' + width + 'x' + height);
+            throw new _core_IllegalArgumentException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A('Requested dimensions are too small: ' + width + 'x' + height);
         }
-        var errorCorrectionLevel = _core_qrcode_decoder_ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_2__/* ["default"].L */ .Z.L;
+        var errorCorrectionLevel = _core_qrcode_decoder_ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.L;
         var quietZone = BrowserQRCodeSvgWriter.QUIET_ZONE_SIZE;
         if (hints !== null) {
-            if (undefined !== hints.get(_core_EncodeHintType__WEBPACK_IMPORTED_MODULE_0__/* ["default"].ERROR_CORRECTION */ .Z.ERROR_CORRECTION)) {
-                errorCorrectionLevel = _core_qrcode_decoder_ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_2__/* ["default"].fromString */ .Z.fromString(hints.get(_core_EncodeHintType__WEBPACK_IMPORTED_MODULE_0__/* ["default"].ERROR_CORRECTION */ .Z.ERROR_CORRECTION).toString());
+            if (undefined !== hints.get(_core_EncodeHintType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.ERROR_CORRECTION)) {
+                errorCorrectionLevel = _core_qrcode_decoder_ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.fromString(hints.get(_core_EncodeHintType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.ERROR_CORRECTION).toString());
             }
-            if (undefined !== hints.get(_core_EncodeHintType__WEBPACK_IMPORTED_MODULE_0__/* ["default"].MARGIN */ .Z.MARGIN)) {
-                quietZone = Number.parseInt(hints.get(_core_EncodeHintType__WEBPACK_IMPORTED_MODULE_0__/* ["default"].MARGIN */ .Z.MARGIN).toString(), 10);
+            if (undefined !== hints.get(_core_EncodeHintType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.MARGIN)) {
+                quietZone = Number.parseInt(hints.get(_core_EncodeHintType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.MARGIN).toString(), 10);
             }
         }
-        var code = _core_qrcode_encoder_Encoder__WEBPACK_IMPORTED_MODULE_1__/* ["default"].encode */ .Z.encode(contents, errorCorrectionLevel, hints);
+        var code = _core_qrcode_encoder_Encoder__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.encode(contents, errorCorrectionLevel, hints);
         return this.renderResult(code, width, height, quietZone);
     };
     /**
@@ -1633,7 +1633,7 @@ var BrowserQRCodeSvgWriter = /** @class */ (function () {
     BrowserQRCodeSvgWriter.prototype.renderResult = function (code, width /*int*/, height /*int*/, quietZone /*int*/) {
         var input = code.getMatrix();
         if (input === null) {
-            throw new _core_IllegalStateException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+            throw new _core_IllegalStateException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
         }
         var inputWidth = input.getWidth();
         var inputHeight = input.getHeight();
@@ -1701,23 +1701,23 @@ var BrowserQRCodeSvgWriter = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 3692:
+/***/ 3155:
 /***/ (() => {
 
 
 
 /***/ }),
 
-/***/ 9279:
+/***/ 8524:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "R": () => (/* binding */ HTMLCanvasElementLuminanceSource)
+/* harmony export */   L: () => (/* binding */ HTMLCanvasElementLuminanceSource)
 /* harmony export */ });
-/* harmony import */ var _core_InvertedLuminanceSource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2384);
-/* harmony import */ var _core_LuminanceSource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6695);
-/* harmony import */ var _core_IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8475);
+/* harmony import */ var _core_InvertedLuminanceSource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2019);
+/* harmony import */ var _core_LuminanceSource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1960);
+/* harmony import */ var _core_IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5793);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -1807,7 +1807,7 @@ var HTMLCanvasElementLuminanceSource = /** @class */ (function (_super) {
     };
     HTMLCanvasElementLuminanceSource.prototype.getRow = function (y /*int*/, row) {
         if (y < 0 || y >= this.getHeight()) {
-            throw new _core_IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z('Requested row is outside the image: ' + y);
+            throw new _core_IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A('Requested row is outside the image: ' + y);
         }
         var width = this.getWidth();
         var start = y * width;
@@ -1878,30 +1878,30 @@ var HTMLCanvasElementLuminanceSource = /** @class */ (function (_super) {
         return this;
     };
     HTMLCanvasElementLuminanceSource.prototype.invert = function () {
-        return new _core_InvertedLuminanceSource__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(this);
+        return new _core_InvertedLuminanceSource__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(this);
     };
     HTMLCanvasElementLuminanceSource.DEGREE_TO_RADIANS = Math.PI / 180;
     HTMLCanvasElementLuminanceSource.FRAME_INDEX = true;
     return HTMLCanvasElementLuminanceSource;
-}(_core_LuminanceSource__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z));
+}(_core_LuminanceSource__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A));
 
 
 
 /***/ }),
 
-/***/ 7210:
+/***/ 967:
 /***/ (() => {
 
 
 
 /***/ }),
 
-/***/ 5491:
+/***/ 7669:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "D": () => (/* binding */ VideoInputDevice)
+/* harmony export */   K: () => (/* binding */ VideoInputDevice)
 /* harmony export */ });
 /**
  * @deprecated Moving to @zxing/browser
@@ -1938,14 +1938,14 @@ var VideoInputDevice = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 3087:
+/***/ 2951:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1546);
+/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3830);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -1970,20 +1970,20 @@ var ArgumentException = /** @class */ (function (_super) {
     }
     ArgumentException.kind = 'ArgumentException';
     return ArgumentException;
-}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
+}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ArgumentException);
 
 
 /***/ }),
 
-/***/ 6288:
+/***/ 2046:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1546);
+/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3830);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -2008,18 +2008,18 @@ var ArithmeticException = /** @class */ (function (_super) {
     }
     ArithmeticException.kind = 'ArithmeticException';
     return ArithmeticException;
-}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
+}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ArithmeticException);
 
 
 /***/ }),
 
-/***/ 8684:
+/***/ 9460:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /*
  * Direct port to TypeScript of ZXing by Adrian Toșcă
@@ -2087,12 +2087,12 @@ var BarcodeFormat;
 
 /***/ }),
 
-/***/ 5477:
+/***/ 4529:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /*
  * Copyright 2009 ZXing authors
@@ -2137,14 +2137,14 @@ var Binarizer = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 8467:
+/***/ 4153:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8475);
+/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5793);
 /*
  * Copyright 2009 ZXing authors
  *
@@ -2165,7 +2165,7 @@ var BinaryBitmap = /** @class */ (function () {
     function BinaryBitmap(binarizer) {
         this.binarizer = binarizer;
         if (binarizer === null) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z('Binarizer must be non-null.');
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A('Binarizer must be non-null.');
         }
     }
     /**
@@ -2276,14 +2276,14 @@ var BinaryBitmap = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 3392:
+/***/ 1371:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1546);
+/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3830);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -2311,18 +2311,18 @@ var ChecksumException = /** @class */ (function (_super) {
     };
     ChecksumException.kind = 'ChecksumException';
     return ChecksumException;
-}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
+}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ChecksumException);
 
 
 /***/ }),
 
-/***/ 6650:
+/***/ 1180:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /*
  * Copyright 2009 ZXing authors
@@ -2435,12 +2435,12 @@ var DecodeHintType;
 
 /***/ }),
 
-/***/ 5127:
+/***/ 1444:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /*
  * Copyright 2009 ZXing authors
@@ -2564,14 +2564,14 @@ var EncodeHintType;
 
 /***/ }),
 
-/***/ 1546:
+/***/ 3830:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Z": () => (/* binding */ core_Exception)
+  A: () => (/* binding */ core_Exception)
 });
 
 ;// CONCATENATED MODULE: ../node_modules/ts-custom-error/dist/custom-error.mjs
@@ -2730,14 +2730,14 @@ var Exception = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 2468:
+/***/ 7027:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1546);
+/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3830);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -2765,20 +2765,20 @@ var FormatException = /** @class */ (function (_super) {
     };
     FormatException.kind = 'FormatException';
     return FormatException;
-}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
+}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormatException);
 
 
 /***/ }),
 
-/***/ 8475:
+/***/ 5793:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1546);
+/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3830);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -2803,20 +2803,20 @@ var IllegalArgumentException = /** @class */ (function (_super) {
     }
     IllegalArgumentException.kind = 'IllegalArgumentException';
     return IllegalArgumentException;
-}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
+}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IllegalArgumentException);
 
 
 /***/ }),
 
-/***/ 4418:
+/***/ 7591:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1546);
+/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3830);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -2841,20 +2841,20 @@ var IllegalStateException = /** @class */ (function (_super) {
     }
     IllegalStateException.kind = 'IllegalStateException';
     return IllegalStateException;
-}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
+}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IllegalStateException);
 
 
 /***/ }),
 
-/***/ 7164:
+/***/ 9766:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1546);
+/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3830);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -2879,20 +2879,20 @@ var IndexOutOfBoundsException = /** @class */ (function (_super) {
     }
     IndexOutOfBoundsException.kind = 'IndexOutOfBoundsException';
     return IndexOutOfBoundsException;
-}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
+}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IndexOutOfBoundsException);
 
 
 /***/ }),
 
-/***/ 2384:
+/***/ 2019:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _LuminanceSource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6695);
+/* harmony import */ var _LuminanceSource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1960);
 /*
  * Copyright 2009 ZXing authors
  *
@@ -2983,21 +2983,21 @@ var InvertedLuminanceSource = /** @class */ (function (_super) {
         return new InvertedLuminanceSource(this.delegate.rotateCounterClockwise45());
     };
     return InvertedLuminanceSource;
-}(_LuminanceSource__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
+}(_LuminanceSource__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InvertedLuminanceSource);
 
 
 /***/ }),
 
-/***/ 6695:
+/***/ 1960:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75);
-/* harmony import */ var _UnsupportedOperationException__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9991);
+/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(432);
+/* harmony import */ var _UnsupportedOperationException__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(142);
 /*
  * Copyright 2009 ZXing authors
  *
@@ -3059,7 +3059,7 @@ var LuminanceSource = /** @class */ (function () {
      * @return A cropped version of this object.
      */
     LuminanceSource.prototype.crop = function (left /*int*/, top /*int*/, width /*int*/, height /*int*/) {
-        throw new _UnsupportedOperationException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z('This luminance source does not support cropping.');
+        throw new _UnsupportedOperationException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A('This luminance source does not support cropping.');
     };
     /**
      * @return Whether this subclass supports counter-clockwise rotation.
@@ -3074,7 +3074,7 @@ var LuminanceSource = /** @class */ (function () {
      * @return A rotated version of this object.
      */
     LuminanceSource.prototype.rotateCounterClockwise = function () {
-        throw new _UnsupportedOperationException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z('This luminance source does not support rotation by 90 degrees.');
+        throw new _UnsupportedOperationException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A('This luminance source does not support rotation by 90 degrees.');
     };
     /**
      * Returns a new object with rotated image data by 45 degrees counterclockwise.
@@ -3083,12 +3083,12 @@ var LuminanceSource = /** @class */ (function () {
      * @return A rotated version of this object.
      */
     LuminanceSource.prototype.rotateCounterClockwise45 = function () {
-        throw new _UnsupportedOperationException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z('This luminance source does not support rotation by 45 degrees.');
+        throw new _UnsupportedOperationException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A('This luminance source does not support rotation by 45 degrees.');
     };
     /*@Override*/
     LuminanceSource.prototype.toString = function () {
         var row = new Uint8ClampedArray(this.width);
-        var result = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+        var result = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A();
         for (var y = 0; y < this.height; y++) {
             var sourceRow = this.getRow(y, row);
             for (var x = 0; x < this.width; x++) {
@@ -3119,22 +3119,22 @@ var LuminanceSource = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 781:
+/***/ 6190:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _DecodeHintType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6650);
-/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8684);
-/* harmony import */ var _qrcode_QRCodeReader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3949);
-/* harmony import */ var _aztec_AztecReader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6144);
-/* harmony import */ var _oned_MultiFormatOneDReader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4956);
-/* harmony import */ var _datamatrix_DataMatrixReader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5370);
-/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8842);
-/* harmony import */ var _pdf417_PDF417Reader__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(4963);
-/* harmony import */ var _ReaderException__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(4386);
+/* harmony import */ var _DecodeHintType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1180);
+/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9460);
+/* harmony import */ var _qrcode_QRCodeReader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2038);
+/* harmony import */ var _aztec_AztecReader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(623);
+/* harmony import */ var _oned_MultiFormatOneDReader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8787);
+/* harmony import */ var _datamatrix_DataMatrixReader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9208);
+/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8427);
+/* harmony import */ var _pdf417_PDF417Reader__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(4390);
+/* harmony import */ var _ReaderException__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(7819);
 /*
  * Copyright 2009 ZXing authors
  *
@@ -3236,60 +3236,60 @@ var MultiFormatReader = /** @class */ (function () {
      */
     MultiFormatReader.prototype.setHints = function (hints) {
         this.hints = hints;
-        var tryHarder = hints !== null && hints !== undefined && undefined !== hints.get(_DecodeHintType__WEBPACK_IMPORTED_MODULE_0__/* ["default"].TRY_HARDER */ .Z.TRY_HARDER);
+        var tryHarder = hints !== null && hints !== undefined && undefined !== hints.get(_DecodeHintType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.TRY_HARDER);
         /*@SuppressWarnings("unchecked")*/
-        var formats = hints === null || hints === undefined ? null : hints.get(_DecodeHintType__WEBPACK_IMPORTED_MODULE_0__/* ["default"].POSSIBLE_FORMATS */ .Z.POSSIBLE_FORMATS);
+        var formats = hints === null || hints === undefined ? null : hints.get(_DecodeHintType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.POSSIBLE_FORMATS);
         var readers = new Array();
         if (formats !== null && formats !== undefined) {
             var addOneDReader = formats.some(function (f) {
-                return f === _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"].UPC_A */ .Z.UPC_A ||
-                    f === _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"].UPC_E */ .Z.UPC_E ||
-                    f === _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"].EAN_13 */ .Z.EAN_13 ||
-                    f === _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"].EAN_8 */ .Z.EAN_8 ||
-                    f === _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"].CODABAR */ .Z.CODABAR ||
-                    f === _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"].CODE_39 */ .Z.CODE_39 ||
-                    f === _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"].CODE_93 */ .Z.CODE_93 ||
-                    f === _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"].CODE_128 */ .Z.CODE_128 ||
-                    f === _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"].ITF */ .Z.ITF ||
-                    f === _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"].RSS_14 */ .Z.RSS_14 ||
-                    f === _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"].RSS_EXPANDED */ .Z.RSS_EXPANDED;
+                return f === _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.UPC_A ||
+                    f === _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.UPC_E ||
+                    f === _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.EAN_13 ||
+                    f === _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.EAN_8 ||
+                    f === _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.CODABAR ||
+                    f === _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.CODE_39 ||
+                    f === _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.CODE_93 ||
+                    f === _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.CODE_128 ||
+                    f === _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.ITF ||
+                    f === _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.RSS_14 ||
+                    f === _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.RSS_EXPANDED;
             });
             // Put 1D readers upfront in "normal" mode
             // TYPESCRIPTPORT: TODO: uncomment below as they are ported
             if (addOneDReader && !tryHarder) {
-                readers.push(new _oned_MultiFormatOneDReader__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z(hints));
+                readers.push(new _oned_MultiFormatOneDReader__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A(hints));
             }
-            if (formats.includes(_BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"].QR_CODE */ .Z.QR_CODE)) {
-                readers.push(new _qrcode_QRCodeReader__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z());
+            if (formats.includes(_BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.QR_CODE)) {
+                readers.push(new _qrcode_QRCodeReader__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A());
             }
-            if (formats.includes(_BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"].DATA_MATRIX */ .Z.DATA_MATRIX)) {
-                readers.push(new _datamatrix_DataMatrixReader__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z());
+            if (formats.includes(_BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.DATA_MATRIX)) {
+                readers.push(new _datamatrix_DataMatrixReader__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A());
             }
-            if (formats.includes(_BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"].AZTEC */ .Z.AZTEC)) {
-                readers.push(new _aztec_AztecReader__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z());
+            if (formats.includes(_BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.AZTEC)) {
+                readers.push(new _aztec_AztecReader__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A());
             }
-            if (formats.includes(_BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"].PDF_417 */ .Z.PDF_417)) {
-                readers.push(new _pdf417_PDF417Reader__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z());
+            if (formats.includes(_BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.PDF_417)) {
+                readers.push(new _pdf417_PDF417Reader__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A());
             }
             // if (formats.includes(BarcodeFormat.MAXICODE)) {
             //    readers.push(new MaxiCodeReader())
             // }
             // At end in "try harder" mode
             if (addOneDReader && tryHarder) {
-                readers.push(new _oned_MultiFormatOneDReader__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z(hints));
+                readers.push(new _oned_MultiFormatOneDReader__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A(hints));
             }
         }
         if (readers.length === 0) {
             if (!tryHarder) {
-                readers.push(new _oned_MultiFormatOneDReader__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z(hints));
+                readers.push(new _oned_MultiFormatOneDReader__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A(hints));
             }
-            readers.push(new _qrcode_QRCodeReader__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z());
-            readers.push(new _datamatrix_DataMatrixReader__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z());
-            readers.push(new _aztec_AztecReader__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z());
-            readers.push(new _pdf417_PDF417Reader__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z());
+            readers.push(new _qrcode_QRCodeReader__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A());
+            readers.push(new _datamatrix_DataMatrixReader__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A());
+            readers.push(new _aztec_AztecReader__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A());
+            readers.push(new _pdf417_PDF417Reader__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A());
             // readers.push(new MaxiCodeReader())
             if (tryHarder) {
-                readers.push(new _oned_MultiFormatOneDReader__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z(hints));
+                readers.push(new _oned_MultiFormatOneDReader__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A(hints));
             }
         }
         this.readers = readers; // .toArray(new Reader[readers.size()])
@@ -3319,7 +3319,7 @@ var MultiFormatReader = /** @class */ (function () {
     MultiFormatReader.prototype.decodeInternal = function (image) {
         var e_2, _a;
         if (this.readers === null) {
-            throw new _ReaderException__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z('No readers where selected, nothing can be read.');
+            throw new _ReaderException__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A('No readers where selected, nothing can be read.');
         }
         try {
             for (var _b = __values(this.readers), _c = _b.next(); !_c.done; _c = _b.next()) {
@@ -3329,7 +3329,7 @@ var MultiFormatReader = /** @class */ (function () {
                     return reader.decode(image, this.hints);
                 }
                 catch (ex) {
-                    if (ex instanceof _ReaderException__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z) {
+                    if (ex instanceof _ReaderException__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A) {
                         continue;
                     }
                     // Bad Exception.
@@ -3343,7 +3343,7 @@ var MultiFormatReader = /** @class */ (function () {
             }
             finally { if (e_2) throw e_2.error; }
         }
-        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z('No MultiFormat Readers were able to detect the code.');
+        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A('No MultiFormat Readers were able to detect the code.');
     };
     return MultiFormatReader;
 }());
@@ -3352,16 +3352,16 @@ var MultiFormatReader = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 9410:
+/***/ 942:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _qrcode_QRCodeWriter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9891);
-/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8684);
-/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8475);
+/* harmony import */ var _qrcode_QRCodeWriter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8029);
+/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9460);
+/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5793);
 /*
  * Copyright 2008 ZXing authors
  *
@@ -3424,8 +3424,8 @@ var MultiFormatWriter = /** @class */ (function () {
             // case BarcodeFormat.UPC_A:
             //   writer = new UPCAWriter()
             //   break
-            case _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"].QR_CODE */ .Z.QR_CODE:
-                writer = new _qrcode_QRCodeWriter__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+            case _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.QR_CODE:
+                writer = new _qrcode_QRCodeWriter__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A();
                 break;
             // case BarcodeFormat.CODE_39:
             //   writer = new Code39Writer()
@@ -3452,7 +3452,7 @@ var MultiFormatWriter = /** @class */ (function () {
             //   writer = new AztecWriter()
             //   break
             default:
-                throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z('No encoder available for format ' + format);
+                throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A('No encoder available for format ' + format);
         }
         return writer.encode(contents, format, width, height, hints);
     };
@@ -3463,14 +3463,14 @@ var MultiFormatWriter = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 8842:
+/***/ 8427:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1546);
+/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3830);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -3498,23 +3498,23 @@ var NotFoundException = /** @class */ (function (_super) {
     };
     NotFoundException.kind = 'NotFoundException';
     return NotFoundException;
-}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
+}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NotFoundException);
 
 
 /***/ }),
 
-/***/ 7998:
+/***/ 3544:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _util_System__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8507);
-/* harmony import */ var _LuminanceSource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6695);
-/* harmony import */ var _InvertedLuminanceSource__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2384);
-/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8475);
+/* harmony import */ var _util_System__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7527);
+/* harmony import */ var _LuminanceSource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1960);
+/* harmony import */ var _InvertedLuminanceSource__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2019);
+/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5793);
 /*
  * Copyright 2009 ZXing authors
  *
@@ -3568,7 +3568,7 @@ var PlanarYUVLuminanceSource = /** @class */ (function (_super) {
         _this.left = left;
         _this.top = top;
         if (left + width > dataWidth || top + height > dataHeight) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z('Crop rectangle does not fit within image data.');
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A('Crop rectangle does not fit within image data.');
         }
         if (reverseHorizontal) {
             _this.reverseHorizontal(width, height);
@@ -3578,14 +3578,14 @@ var PlanarYUVLuminanceSource = /** @class */ (function (_super) {
     /*@Override*/
     PlanarYUVLuminanceSource.prototype.getRow = function (y /*int*/, row) {
         if (y < 0 || y >= this.getHeight()) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z('Requested row is outside the image: ' + y);
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A('Requested row is outside the image: ' + y);
         }
         var width = this.getWidth();
         if (row === null || row === undefined || row.length < width) {
             row = new Uint8ClampedArray(width);
         }
         var offset = (y + this.top) * this.dataWidth + this.left;
-        _util_System__WEBPACK_IMPORTED_MODULE_0__/* ["default"].arraycopy */ .Z.arraycopy(this.yuvData, offset, row, 0, width);
+        _util_System__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.arraycopy(this.yuvData, offset, row, 0, width);
         return row;
     };
     /*@Override*/
@@ -3602,13 +3602,13 @@ var PlanarYUVLuminanceSource = /** @class */ (function (_super) {
         var inputOffset = this.top * this.dataWidth + this.left;
         // If the width matches the full width of the underlying data, perform a single copy.
         if (width === this.dataWidth) {
-            _util_System__WEBPACK_IMPORTED_MODULE_0__/* ["default"].arraycopy */ .Z.arraycopy(this.yuvData, inputOffset, matrix, 0, area);
+            _util_System__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.arraycopy(this.yuvData, inputOffset, matrix, 0, area);
             return matrix;
         }
         // Otherwise copy one cropped row at a time.
         for (var y = 0; y < height; y++) {
             var outputOffset = y * width;
-            _util_System__WEBPACK_IMPORTED_MODULE_0__/* ["default"].arraycopy */ .Z.arraycopy(this.yuvData, inputOffset, matrix, outputOffset, width);
+            _util_System__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.arraycopy(this.yuvData, inputOffset, matrix, outputOffset, width);
             inputOffset += this.dataWidth;
         }
         return matrix;
@@ -3661,27 +3661,27 @@ var PlanarYUVLuminanceSource = /** @class */ (function (_super) {
         }
     };
     PlanarYUVLuminanceSource.prototype.invert = function () {
-        return new _InvertedLuminanceSource__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z(this);
+        return new _InvertedLuminanceSource__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A(this);
     };
     PlanarYUVLuminanceSource.THUMBNAIL_SCALE_FACTOR = 2;
     return PlanarYUVLuminanceSource;
-}(_LuminanceSource__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z));
+}(_LuminanceSource__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PlanarYUVLuminanceSource);
 
 
 /***/ }),
 
-/***/ 8457:
+/***/ 4413:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _InvertedLuminanceSource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2384);
-/* harmony import */ var _LuminanceSource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6695);
-/* harmony import */ var _util_System__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8507);
-/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8475);
+/* harmony import */ var _InvertedLuminanceSource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2019);
+/* harmony import */ var _LuminanceSource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1960);
+/* harmony import */ var _util_System__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7527);
+/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5793);
 /*
  * Copyright 2009 ZXing authors
  *
@@ -3760,21 +3760,21 @@ var RGBLuminanceSource = /** @class */ (function (_super) {
             _this.top = 0;
         }
         if (_this.left + width > _this.dataWidth || _this.top + height > _this.dataHeight) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z('Crop rectangle does not fit within image data.');
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A('Crop rectangle does not fit within image data.');
         }
         return _this;
     }
     /*@Override*/
     RGBLuminanceSource.prototype.getRow = function (y /*int*/, row) {
         if (y < 0 || y >= this.getHeight()) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z('Requested row is outside the image: ' + y);
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A('Requested row is outside the image: ' + y);
         }
         var width = this.getWidth();
         if (row === null || row === undefined || row.length < width) {
             row = new Uint8ClampedArray(width);
         }
         var offset = (y + this.top) * this.dataWidth + this.left;
-        _util_System__WEBPACK_IMPORTED_MODULE_2__/* ["default"].arraycopy */ .Z.arraycopy(this.luminances, offset, row, 0, width);
+        _util_System__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.arraycopy(this.luminances, offset, row, 0, width);
         return row;
     };
     /*@Override*/
@@ -3791,13 +3791,13 @@ var RGBLuminanceSource = /** @class */ (function (_super) {
         var inputOffset = this.top * this.dataWidth + this.left;
         // If the width matches the full width of the underlying data, perform a single copy.
         if (width === this.dataWidth) {
-            _util_System__WEBPACK_IMPORTED_MODULE_2__/* ["default"].arraycopy */ .Z.arraycopy(this.luminances, inputOffset, matrix, 0, area);
+            _util_System__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.arraycopy(this.luminances, inputOffset, matrix, 0, area);
             return matrix;
         }
         // Otherwise copy one cropped row at a time.
         for (var y = 0; y < height; y++) {
             var outputOffset = y * width;
-            _util_System__WEBPACK_IMPORTED_MODULE_2__/* ["default"].arraycopy */ .Z.arraycopy(this.luminances, inputOffset, matrix, outputOffset, width);
+            _util_System__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.arraycopy(this.luminances, inputOffset, matrix, outputOffset, width);
             inputOffset += this.dataWidth;
         }
         return matrix;
@@ -3811,23 +3811,23 @@ var RGBLuminanceSource = /** @class */ (function (_super) {
         return new RGBLuminanceSource(this.luminances, width, height, this.dataWidth, this.dataHeight, this.left + left, this.top + top);
     };
     RGBLuminanceSource.prototype.invert = function () {
-        return new _InvertedLuminanceSource__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(this);
+        return new _InvertedLuminanceSource__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(this);
     };
     return RGBLuminanceSource;
-}(_LuminanceSource__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z));
+}(_LuminanceSource__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RGBLuminanceSource);
 
 
 /***/ }),
 
-/***/ 4386:
+/***/ 7819:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1546);
+/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3830);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -3852,20 +3852,20 @@ var ReaderException = /** @class */ (function (_super) {
     }
     ReaderException.kind = 'ReaderException';
     return ReaderException;
-}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
+}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ReaderException);
 
 
 /***/ }),
 
-/***/ 2309:
+/***/ 7495:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1546);
+/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3830);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -3890,20 +3890,20 @@ var ReedSolomonException = /** @class */ (function (_super) {
     }
     ReedSolomonException.kind = 'ReedSolomonException';
     return ReedSolomonException;
-}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
+}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ReedSolomonException);
 
 
 /***/ }),
 
-/***/ 1462:
+/***/ 6770:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _util_System__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8507);
+/* harmony import */ var _util_System__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7527);
 /*
  * Copyright 2007 ZXing authors
  *
@@ -3942,7 +3942,7 @@ var Result = /** @class */ (function () {
     // }
     function Result(text, rawBytes, numBits, resultPoints, format, timestamp) {
         if (numBits === void 0) { numBits = rawBytes == null ? 0 : 8 * rawBytes.length; }
-        if (timestamp === void 0) { timestamp = _util_System__WEBPACK_IMPORTED_MODULE_0__/* ["default"].currentTimeMillis */ .Z.currentTimeMillis(); }
+        if (timestamp === void 0) { timestamp = _util_System__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.currentTimeMillis(); }
         this.text = text;
         this.rawBytes = rawBytes;
         this.numBits = numBits;
@@ -3961,7 +3961,7 @@ var Result = /** @class */ (function () {
         this.format = format;
         this.resultMetadata = null;
         if (undefined === timestamp || null === timestamp) {
-            this.timestamp = _util_System__WEBPACK_IMPORTED_MODULE_0__/* ["default"].currentTimeMillis */ .Z.currentTimeMillis();
+            this.timestamp = _util_System__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.currentTimeMillis();
         }
         else {
             this.timestamp = timestamp;
@@ -4031,8 +4031,8 @@ var Result = /** @class */ (function () {
         }
         else if (newPoints !== null && newPoints.length > 0) {
             var allPoints = new Array(oldPoints.length + newPoints.length);
-            _util_System__WEBPACK_IMPORTED_MODULE_0__/* ["default"].arraycopy */ .Z.arraycopy(oldPoints, 0, allPoints, 0, oldPoints.length);
-            _util_System__WEBPACK_IMPORTED_MODULE_0__/* ["default"].arraycopy */ .Z.arraycopy(newPoints, 0, allPoints, oldPoints.length, newPoints.length);
+            _util_System__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.arraycopy(oldPoints, 0, allPoints, 0, oldPoints.length);
+            _util_System__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.arraycopy(newPoints, 0, allPoints, oldPoints.length, newPoints.length);
             this.resultPoints = allPoints;
         }
     };
@@ -4050,12 +4050,12 @@ var Result = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 5621:
+/***/ 688:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /*
  * Copyright 2008 ZXing authors
@@ -4146,15 +4146,15 @@ var ResultMetadataType;
 
 /***/ }),
 
-/***/ 8307:
+/***/ 6502:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8611);
-/* harmony import */ var _util_Float__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(377);
+/* harmony import */ var _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1091);
+/* harmony import */ var _util_Float__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1226);
 /*
  * Copyright 2007 ZXing authors
  *
@@ -4200,7 +4200,7 @@ var ResultPoint = /** @class */ (function () {
     };
     /*@Override*/
     ResultPoint.prototype.hashCode = function () {
-        return 31 * _util_Float__WEBPACK_IMPORTED_MODULE_1__/* ["default"].floatToIntBits */ .Z.floatToIntBits(this.x) + _util_Float__WEBPACK_IMPORTED_MODULE_1__/* ["default"].floatToIntBits */ .Z.floatToIntBits(this.y);
+        return 31 * _util_Float__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.floatToIntBits(this.x) + _util_Float__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.floatToIntBits(this.y);
     };
     /*@Override*/
     ResultPoint.prototype.toString = function () {
@@ -4255,7 +4255,7 @@ var ResultPoint = /** @class */ (function () {
      * @return distance between two points
      */
     ResultPoint.distance = function (pattern1, pattern2) {
-        return _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"].distance */ .Z.distance(pattern1.x, pattern1.y, pattern2.x, pattern2.y);
+        return _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.distance(pattern1.x, pattern1.y, pattern2.x, pattern2.y);
     };
     /**
      * Returns the z component of the cross product between vectors BC and BA.
@@ -4272,14 +4272,14 @@ var ResultPoint = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 9991:
+/***/ 142:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1546);
+/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3830);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -4304,20 +4304,20 @@ var UnsupportedOperationException = /** @class */ (function (_super) {
     }
     UnsupportedOperationException.kind = 'UnsupportedOperationException';
     return UnsupportedOperationException;
-}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
+}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (UnsupportedOperationException);
 
 
 /***/ }),
 
-/***/ 1079:
+/***/ 5527:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1546);
+/* harmony import */ var _Exception__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3830);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -4342,20 +4342,20 @@ var WriterException = /** @class */ (function (_super) {
     }
     WriterException.kind = 'WriterException';
     return WriterException;
-}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
+}(_Exception__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (WriterException);
 
 
 /***/ }),
 
-/***/ 5123:
+/***/ 4227:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _common_DetectorResult__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7877);
+/* harmony import */ var _common_DetectorResult__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3014);
 /*
  * Copyright 2010 ZXing authors
  *
@@ -4410,26 +4410,26 @@ var AztecDetectorResult = /** @class */ (function (_super) {
         return this.compact;
     };
     return AztecDetectorResult;
-}(_common_DetectorResult__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
+}(_common_DetectorResult__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AztecDetectorResult);
 
 
 /***/ }),
 
-/***/ 6144:
+/***/ 623:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Result__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1462);
-/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8684);
-/* harmony import */ var _DecodeHintType__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6650);
-/* harmony import */ var _ResultMetadataType__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5621);
-/* harmony import */ var _util_System__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8507);
-/* harmony import */ var _decoder_Decoder__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(131);
-/* harmony import */ var _detector_Detector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8106);
+/* harmony import */ var _Result__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6770);
+/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9460);
+/* harmony import */ var _DecodeHintType__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1180);
+/* harmony import */ var _ResultMetadataType__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(688);
+/* harmony import */ var _util_System__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7527);
+/* harmony import */ var _decoder_Decoder__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1842);
+/* harmony import */ var _detector_Detector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(5616);
 /*
  * Copyright 2010 ZXing authors
  *
@@ -4472,14 +4472,14 @@ var AztecReader = /** @class */ (function () {
     AztecReader.prototype.decode = function (image, hints) {
         if (hints === void 0) { hints = null; }
         var exception = null;
-        var detector = new _detector_Detector__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z(image.getBlackMatrix());
+        var detector = new _detector_Detector__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A(image.getBlackMatrix());
         var points = null;
         var decoderResult = null;
         try {
             var detectorResult = detector.detectMirror(false);
             points = detectorResult.getPoints();
             this.reportFoundResultPoints(hints, points);
-            decoderResult = new _decoder_Decoder__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z().decode(detectorResult);
+            decoderResult = new _decoder_Decoder__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A().decode(detectorResult);
         }
         catch (e) {
             exception = e;
@@ -4489,7 +4489,7 @@ var AztecReader = /** @class */ (function () {
                 var detectorResult = detector.detectMirror(true);
                 points = detectorResult.getPoints();
                 this.reportFoundResultPoints(hints, points);
-                decoderResult = new _decoder_Decoder__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z().decode(detectorResult);
+                decoderResult = new _decoder_Decoder__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A().decode(detectorResult);
             }
             catch (e) {
                 if (exception != null) {
@@ -4498,20 +4498,20 @@ var AztecReader = /** @class */ (function () {
                 throw e;
             }
         }
-        var result = new _Result__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(decoderResult.getText(), decoderResult.getRawBytes(), decoderResult.getNumBits(), points, _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"].AZTEC */ .Z.AZTEC, _util_System__WEBPACK_IMPORTED_MODULE_4__/* ["default"].currentTimeMillis */ .Z.currentTimeMillis());
+        var result = new _Result__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(decoderResult.getText(), decoderResult.getRawBytes(), decoderResult.getNumBits(), points, _BarcodeFormat__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.AZTEC, _util_System__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A.currentTimeMillis());
         var byteSegments = decoderResult.getByteSegments();
         if (byteSegments != null) {
-            result.putMetadata(_ResultMetadataType__WEBPACK_IMPORTED_MODULE_3__/* ["default"].BYTE_SEGMENTS */ .Z.BYTE_SEGMENTS, byteSegments);
+            result.putMetadata(_ResultMetadataType__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A.BYTE_SEGMENTS, byteSegments);
         }
         var ecLevel = decoderResult.getECLevel();
         if (ecLevel != null) {
-            result.putMetadata(_ResultMetadataType__WEBPACK_IMPORTED_MODULE_3__/* ["default"].ERROR_CORRECTION_LEVEL */ .Z.ERROR_CORRECTION_LEVEL, ecLevel);
+            result.putMetadata(_ResultMetadataType__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A.ERROR_CORRECTION_LEVEL, ecLevel);
         }
         return result;
     };
     AztecReader.prototype.reportFoundResultPoints = function (hints, points) {
         if (hints != null) {
-            var rpcb_1 = hints.get(_DecodeHintType__WEBPACK_IMPORTED_MODULE_2__/* ["default"].NEED_RESULT_POINT_CALLBACK */ .Z.NEED_RESULT_POINT_CALLBACK);
+            var rpcb_1 = hints.get(_DecodeHintType__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.NEED_RESULT_POINT_CALLBACK);
             if (rpcb_1 != null) {
                 points.forEach(function (point, idx, arr) {
                     rpcb_1.foundPossibleResultPoint(point);
@@ -4530,23 +4530,23 @@ var AztecReader = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 8105:
+/***/ 8127:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8684);
-/* harmony import */ var _EncodeHintType__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5127);
-/* harmony import */ var _encoder_Encoder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8332);
-/* harmony import */ var _common_BitMatrix__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1103);
-/* harmony import */ var _util_Charset__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5408);
-/* harmony import */ var _util_StandardCharsets__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4248);
-/* harmony import */ var _util_Integer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(3450);
-/* harmony import */ var _IllegalStateException__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(4418);
-/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(8475);
-/* harmony import */ var _common_StringUtils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(3429);
+/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9460);
+/* harmony import */ var _EncodeHintType__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1444);
+/* harmony import */ var _encoder_Encoder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4498);
+/* harmony import */ var _common_BitMatrix__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8307);
+/* harmony import */ var _util_Charset__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4292);
+/* harmony import */ var _util_StandardCharsets__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3234);
+/* harmony import */ var _util_Integer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9978);
+/* harmony import */ var _IllegalStateException__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(7591);
+/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(5793);
+/* harmony import */ var _common_StringUtils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(9563);
 /*
 * Copyright 2013 ZXing authors
 *
@@ -4592,33 +4592,33 @@ var AztecWriter = /** @class */ (function () {
     };
     // @Override
     AztecWriter.prototype.encodeWithHints = function (contents, format, width, height, hints) {
-        var charset = _util_StandardCharsets__WEBPACK_IMPORTED_MODULE_5__/* ["default"].ISO_8859_1 */ .Z.ISO_8859_1;
-        var eccPercent = _encoder_Encoder__WEBPACK_IMPORTED_MODULE_2__/* ["default"].DEFAULT_EC_PERCENT */ .Z.DEFAULT_EC_PERCENT;
-        var layers = _encoder_Encoder__WEBPACK_IMPORTED_MODULE_2__/* ["default"].DEFAULT_AZTEC_LAYERS */ .Z.DEFAULT_AZTEC_LAYERS;
+        var charset = _util_StandardCharsets__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A.ISO_8859_1;
+        var eccPercent = _encoder_Encoder__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.DEFAULT_EC_PERCENT;
+        var layers = _encoder_Encoder__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.DEFAULT_AZTEC_LAYERS;
         if (hints != null) {
-            if (hints.has(_EncodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"].CHARACTER_SET */ .Z.CHARACTER_SET)) {
-                charset = _util_Charset__WEBPACK_IMPORTED_MODULE_4__/* ["default"].forName */ .Z.forName(hints.get(_EncodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"].CHARACTER_SET */ .Z.CHARACTER_SET).toString());
+            if (hints.has(_EncodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.CHARACTER_SET)) {
+                charset = _util_Charset__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A.forName(hints.get(_EncodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.CHARACTER_SET).toString());
             }
-            if (hints.has(_EncodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"].ERROR_CORRECTION */ .Z.ERROR_CORRECTION)) {
-                eccPercent = _util_Integer__WEBPACK_IMPORTED_MODULE_6__/* ["default"].parseInt */ .Z.parseInt(hints.get(_EncodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"].ERROR_CORRECTION */ .Z.ERROR_CORRECTION).toString());
+            if (hints.has(_EncodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.ERROR_CORRECTION)) {
+                eccPercent = _util_Integer__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A.parseInt(hints.get(_EncodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.ERROR_CORRECTION).toString());
             }
-            if (hints.has(_EncodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"].AZTEC_LAYERS */ .Z.AZTEC_LAYERS)) {
-                layers = _util_Integer__WEBPACK_IMPORTED_MODULE_6__/* ["default"].parseInt */ .Z.parseInt(hints.get(_EncodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"].AZTEC_LAYERS */ .Z.AZTEC_LAYERS).toString());
+            if (hints.has(_EncodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.AZTEC_LAYERS)) {
+                layers = _util_Integer__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A.parseInt(hints.get(_EncodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.AZTEC_LAYERS).toString());
             }
         }
         return AztecWriter.encodeLayers(contents, format, width, height, charset, eccPercent, layers);
     };
     AztecWriter.encodeLayers = function (contents, format, width, height, charset, eccPercent, layers) {
-        if (format !== _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__/* ["default"].AZTEC */ .Z.AZTEC) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z('Can only encode AZTEC, but got ' + format);
+        if (format !== _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.AZTEC) {
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A('Can only encode AZTEC, but got ' + format);
         }
-        var aztec = _encoder_Encoder__WEBPACK_IMPORTED_MODULE_2__/* ["default"].encode */ .Z.encode(_common_StringUtils__WEBPACK_IMPORTED_MODULE_9__/* ["default"].getBytes */ .Z.getBytes(contents, charset), eccPercent, layers);
+        var aztec = _encoder_Encoder__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.encode(_common_StringUtils__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .A.getBytes(contents, charset), eccPercent, layers);
         return AztecWriter.renderResult(aztec, width, height);
     };
     AztecWriter.renderResult = function (code, width, height) {
         var input = code.getMatrix();
         if (input == null) {
-            throw new _IllegalStateException__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z();
+            throw new _IllegalStateException__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A();
         }
         var inputWidth = input.getWidth();
         var inputHeight = input.getHeight();
@@ -4627,7 +4627,7 @@ var AztecWriter = /** @class */ (function () {
         var multiple = Math.min(outputWidth / inputWidth, outputHeight / inputHeight);
         var leftPadding = (outputWidth - (inputWidth * multiple)) / 2;
         var topPadding = (outputHeight - (inputHeight * multiple)) / 2;
-        var output = new _common_BitMatrix__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z(outputWidth, outputHeight);
+        var output = new _common_BitMatrix__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A(outputWidth, outputHeight);
         for (var inputY /*int*/ = 0, outputY = topPadding; inputY < inputHeight; inputY++, outputY += multiple) {
             // Write the contents of this row of the barcode
             for (var inputX /*int*/ = 0, outputX = leftPadding; inputX < inputWidth; inputX++, outputX += multiple) {
@@ -4645,20 +4645,20 @@ var AztecWriter = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 131:
+/***/ 1842:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _common_DecoderResult__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4522);
-/* harmony import */ var _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2127);
-/* harmony import */ var _common_reedsolomon_ReedSolomonDecoder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4646);
-/* harmony import */ var _IllegalStateException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4418);
-/* harmony import */ var _FormatException__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2468);
-/* harmony import */ var _common_StringUtils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3429);
-/* harmony import */ var _util_Integer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(3450);
+/* harmony import */ var _common_DecoderResult__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9064);
+/* harmony import */ var _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2429);
+/* harmony import */ var _common_reedsolomon_ReedSolomonDecoder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4112);
+/* harmony import */ var _IllegalStateException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7591);
+/* harmony import */ var _FormatException__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7027);
+/* harmony import */ var _common_StringUtils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9563);
+/* harmony import */ var _util_Integer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9978);
 /*
  * Copyright 2010 ZXing authors
  *
@@ -4707,7 +4707,7 @@ var Decoder = /** @class */ (function () {
         var correctedBits = this.correctBits(rawbits);
         var rawBytes = Decoder.convertBoolArrayToByteArray(correctedBits);
         var result = Decoder.getEncodedData(correctedBits);
-        var decoderResult = new _common_DecoderResult__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(rawBytes, result, null, null);
+        var decoderResult = new _common_DecoderResult__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(rawBytes, result, null, null);
         decoderResult.setNumBits(correctedBits.length);
         return decoderResult;
     };
@@ -4746,7 +4746,7 @@ var Decoder = /** @class */ (function () {
                         break;
                     }
                     var code = Decoder.readCode(correctedBits, index, 8);
-                    result += /*(char)*/ _common_StringUtils__WEBPACK_IMPORTED_MODULE_5__/* ["default"].castAsNonUtf8Char */ .Z.castAsNonUtf8Char(code);
+                    result += /*(char)*/ _common_StringUtils__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A.castAsNonUtf8Char(code);
                     index += 8;
                 }
                 // Go back to whatever mode we had been in
@@ -4820,7 +4820,7 @@ var Decoder = /** @class */ (function () {
                 return Decoder.DIGIT_TABLE[code];
             default:
                 // Should not reach here.
-                throw new _IllegalStateException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z('Bad table');
+                throw new _IllegalStateException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A('Bad table');
         }
     };
     /**
@@ -4834,24 +4834,24 @@ var Decoder = /** @class */ (function () {
         var codewordSize;
         if (this.ddata.getNbLayers() <= 2) {
             codewordSize = 6;
-            gf = _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_1__/* ["default"].AZTEC_DATA_6 */ .Z.AZTEC_DATA_6;
+            gf = _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.AZTEC_DATA_6;
         }
         else if (this.ddata.getNbLayers() <= 8) {
             codewordSize = 8;
-            gf = _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_1__/* ["default"].AZTEC_DATA_8 */ .Z.AZTEC_DATA_8;
+            gf = _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.AZTEC_DATA_8;
         }
         else if (this.ddata.getNbLayers() <= 22) {
             codewordSize = 10;
-            gf = _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_1__/* ["default"].AZTEC_DATA_10 */ .Z.AZTEC_DATA_10;
+            gf = _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.AZTEC_DATA_10;
         }
         else {
             codewordSize = 12;
-            gf = _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_1__/* ["default"].AZTEC_DATA_12 */ .Z.AZTEC_DATA_12;
+            gf = _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.AZTEC_DATA_12;
         }
         var numDataCodewords = this.ddata.getNbDatablocks();
         var numCodewords = rawbits.length / codewordSize;
         if (numCodewords < numDataCodewords) {
-            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
         }
         var offset = rawbits.length % codewordSize;
         var dataWords = new Int32Array(numCodewords);
@@ -4859,11 +4859,11 @@ var Decoder = /** @class */ (function () {
             dataWords[i] = Decoder.readCode(rawbits, offset, codewordSize);
         }
         try {
-            var rsDecoder = new _common_reedsolomon_ReedSolomonDecoder__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z(gf);
+            var rsDecoder = new _common_reedsolomon_ReedSolomonDecoder__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A(gf);
             rsDecoder.decode(dataWords, numCodewords - numDataCodewords);
         }
         catch (ex) {
-            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z(ex);
+            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A(ex);
         }
         // Now perform the unstuffing operation.
         // First, count how many bits are going to be thrown out as stuffing
@@ -4872,7 +4872,7 @@ var Decoder = /** @class */ (function () {
         for (var i = 0; i < numDataCodewords; i++) {
             var dataWord = dataWords[i];
             if (dataWord === 0 || dataWord === mask) {
-                throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+                throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
             }
             else if (dataWord === 1 || dataWord === mask - 1) {
                 stuffedBits++;
@@ -4914,11 +4914,11 @@ var Decoder = /** @class */ (function () {
             }
         }
         else {
-            var matrixSize = baseMatrixSize + 1 + 2 * _util_Integer__WEBPACK_IMPORTED_MODULE_6__/* ["default"].truncDivision */ .Z.truncDivision((_util_Integer__WEBPACK_IMPORTED_MODULE_6__/* ["default"].truncDivision */ .Z.truncDivision(baseMatrixSize, 2) - 1), 15);
+            var matrixSize = baseMatrixSize + 1 + 2 * _util_Integer__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A.truncDivision((_util_Integer__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A.truncDivision(baseMatrixSize, 2) - 1), 15);
             var origCenter = baseMatrixSize / 2;
-            var center = _util_Integer__WEBPACK_IMPORTED_MODULE_6__/* ["default"].truncDivision */ .Z.truncDivision(matrixSize, 2);
+            var center = _util_Integer__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A.truncDivision(matrixSize, 2);
             for (var i = 0; i < origCenter; i++) {
-                var newOffset = i + _util_Integer__WEBPACK_IMPORTED_MODULE_6__/* ["default"].truncDivision */ .Z.truncDivision(i, 15);
+                var newOffset = i + _util_Integer__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A.truncDivision(i, 15);
                 alignmentMap[origCenter - i - 1] = center - newOffset - 1;
                 alignmentMap[origCenter + i] = center + newOffset + 1;
             }
@@ -5014,23 +5014,23 @@ var Decoder = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 8106:
+/***/ 5616:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "E": () => (/* binding */ Point),
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   b: () => (/* binding */ Point)
 /* harmony export */ });
-/* harmony import */ var _ResultPoint__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8307);
-/* harmony import */ var _AztecDetectorResult__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5123);
-/* harmony import */ var _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8611);
-/* harmony import */ var _common_detector_WhiteRectangleDetector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3354);
-/* harmony import */ var _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2127);
-/* harmony import */ var _common_reedsolomon_ReedSolomonDecoder__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4646);
-/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8842);
-/* harmony import */ var _common_GridSamplerInstance__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(7067);
-/* harmony import */ var _util_Integer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(3450);
+/* harmony import */ var _ResultPoint__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6502);
+/* harmony import */ var _AztecDetectorResult__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4227);
+/* harmony import */ var _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1091);
+/* harmony import */ var _common_detector_WhiteRectangleDetector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7282);
+/* harmony import */ var _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2429);
+/* harmony import */ var _common_reedsolomon_ReedSolomonDecoder__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4112);
+/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8427);
+/* harmony import */ var _common_GridSamplerInstance__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(5634);
+/* harmony import */ var _util_Integer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(9978);
 /*
  * Copyright 2010 ZXing authors
  *
@@ -5061,7 +5061,7 @@ var Point = /** @class */ (function () {
         this.y = y;
     }
     Point.prototype.toResultPoint = function () {
-        return new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(this.getX(), this.getY());
+        return new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(this.getX(), this.getY());
     };
     Point.prototype.getX = function () {
         return this.x;
@@ -5116,7 +5116,7 @@ var Detector = /** @class */ (function () {
         var bits = this.sampleGrid(this.image, bullsEyeCorners[this.shift % 4], bullsEyeCorners[(this.shift + 1) % 4], bullsEyeCorners[(this.shift + 2) % 4], bullsEyeCorners[(this.shift + 3) % 4]);
         // 5. Get the corners of the matrix.
         var corners = this.getMatrixCornerPoints(bullsEyeCorners);
-        return new _AztecDetectorResult__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z(bits, corners, this.compact, this.nbDataBlocks, this.nbLayers);
+        return new _AztecDetectorResult__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A(bits, corners, this.compact, this.nbDataBlocks, this.nbLayers);
     };
     /**
      * Extracts the number of data layers and data blocks from the layer around the bull's eye.
@@ -5127,7 +5127,7 @@ var Detector = /** @class */ (function () {
     Detector.prototype.extractParameters = function (bullsEyeCorners) {
         if (!this.isValidPoint(bullsEyeCorners[0]) || !this.isValidPoint(bullsEyeCorners[1]) ||
             !this.isValidPoint(bullsEyeCorners[2]) || !this.isValidPoint(bullsEyeCorners[3])) {
-            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z();
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A();
         }
         var length = 2 * this.nbCenterLayers;
         // Get the bits around the bull's eye
@@ -5200,11 +5200,11 @@ var Detector = /** @class */ (function () {
         // corner. Since the four rotation values have a Hamming distance of 8, we
         // can easily tolerate two errors.
         for (var shift = 0; shift < 4; shift++) {
-            if (_util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"].bitCount */ .Z.bitCount(cornerBits ^ this.EXPECTED_CORNER_BITS[shift]) <= 2) {
+            if (_util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.bitCount(cornerBits ^ this.EXPECTED_CORNER_BITS[shift]) <= 2) {
                 return shift;
             }
         }
-        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z();
+        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A();
     };
     /**
      * Corrects the parameter bits using Reed-Solomon algorithm.
@@ -5231,11 +5231,11 @@ var Detector = /** @class */ (function () {
             parameterData >>= 4;
         }
         try {
-            var rsDecoder = new _common_reedsolomon_ReedSolomonDecoder__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z(_common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_4__/* ["default"].AZTEC_PARAM */ .Z.AZTEC_PARAM);
+            var rsDecoder = new _common_reedsolomon_ReedSolomonDecoder__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A(_common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A.AZTEC_PARAM);
             rsDecoder.decode(parameterWords, numECCodewords);
         }
         catch (ignored) {
-            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z();
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A();
         }
         // Toss the error correction.  Just return the data as an integer
         var result = 0;
@@ -5280,15 +5280,15 @@ var Detector = /** @class */ (function () {
             color = !color;
         }
         if (this.nbCenterLayers !== 5 && this.nbCenterLayers !== 7) {
-            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z();
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A();
         }
         this.compact = this.nbCenterLayers === 5;
         // Expand the square by .5 pixel in each direction so that we're on the border
         // between the white square and the black square
-        var pinax = new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(pina.getX() + 0.5, pina.getY() - 0.5);
-        var pinbx = new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(pinb.getX() + 0.5, pinb.getY() + 0.5);
-        var pincx = new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(pinc.getX() - 0.5, pinc.getY() + 0.5);
-        var pindx = new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(pind.getX() - 0.5, pind.getY() - 0.5);
+        var pinax = new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(pina.getX() + 0.5, pina.getY() - 0.5);
+        var pinbx = new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(pinb.getX() + 0.5, pinb.getY() + 0.5);
+        var pincx = new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(pinc.getX() - 0.5, pinc.getY() + 0.5);
+        var pindx = new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(pind.getX() - 0.5, pind.getY() - 0.5);
         // Expand the square so that its corners are the centers of the points
         // just outside the bull's eye.
         return this.expandSquare([pinax, pinbx, pincx, pindx], 2 * this.nbCenterLayers - 3, 2 * this.nbCenterLayers);
@@ -5305,7 +5305,7 @@ var Detector = /** @class */ (function () {
         var pointD;
         // Get a white rectangle that can be the border of the matrix in center bull's eye or
         try {
-            var cornerPoints = new _common_detector_WhiteRectangleDetector__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z(this.image).detect();
+            var cornerPoints = new _common_detector_WhiteRectangleDetector__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A(this.image).detect();
             pointA = cornerPoints[0];
             pointB = cornerPoints[1];
             pointC = cornerPoints[2];
@@ -5322,13 +5322,13 @@ var Detector = /** @class */ (function () {
             pointD = this.getFirstDifferent(new Point(cx_1 - 7, cy_1 - 7), false, -1, -1).toResultPoint();
         }
         // Compute the center of the rectangle
-        var cx = _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"].round */ .Z.round((pointA.getX() + pointD.getX() + pointB.getX() + pointC.getX()) / 4.0);
-        var cy = _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"].round */ .Z.round((pointA.getY() + pointD.getY() + pointB.getY() + pointC.getY()) / 4.0);
+        var cx = _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.round((pointA.getX() + pointD.getX() + pointB.getX() + pointC.getX()) / 4.0);
+        var cy = _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.round((pointA.getY() + pointD.getY() + pointB.getY() + pointC.getY()) / 4.0);
         // Redetermine the white rectangle starting from previously computed center.
         // This will ensure that we end up with a white rectangle in center bull's eye
         // in order to compute a more accurate center.
         try {
-            var cornerPoints = new _common_detector_WhiteRectangleDetector__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z(this.image, 15, cx, cy).detect();
+            var cornerPoints = new _common_detector_WhiteRectangleDetector__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A(this.image, 15, cx, cy).detect();
             pointA = cornerPoints[0];
             pointB = cornerPoints[1];
             pointC = cornerPoints[2];
@@ -5343,8 +5343,8 @@ var Detector = /** @class */ (function () {
             pointD = this.getFirstDifferent(new Point(cx - 7, cy - 7), false, -1, -1).toResultPoint();
         }
         // Recompute the center of the rectangle
-        cx = _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"].round */ .Z.round((pointA.getX() + pointD.getX() + pointB.getX() + pointC.getX()) / 4.0);
-        cy = _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"].round */ .Z.round((pointA.getY() + pointD.getY() + pointB.getY() + pointC.getY()) / 4.0);
+        cx = _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.round((pointA.getX() + pointD.getX() + pointB.getX() + pointC.getX()) / 4.0);
+        cy = _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.round((pointA.getY() + pointD.getY() + pointB.getY() + pointC.getY()) / 4.0);
         return new Point(cx, cy);
     };
     /**
@@ -5362,7 +5362,7 @@ var Detector = /** @class */ (function () {
      * diagonal just outside the bull's eye.
      */
     Detector.prototype.sampleGrid = function (image, topLeft, topRight, bottomRight, bottomLeft) {
-        var sampler = _common_GridSamplerInstance__WEBPACK_IMPORTED_MODULE_7__/* ["default"].getInstance */ .Z.getInstance();
+        var sampler = _common_GridSamplerInstance__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A.getInstance();
         var dimension = this.getDimension();
         var low = dimension / 2 - this.nbCenterLayers;
         var high = dimension / 2 + this.nbCenterLayers;
@@ -5389,7 +5389,7 @@ var Detector = /** @class */ (function () {
         var dx = moduleSize * (p2.getX() - p1.getX()) / d;
         var dy = moduleSize * (p2.getY() - p1.getY()) / d;
         for (var i = 0; i < size; i++) {
-            if (this.image.get(_common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"].round */ .Z.round(px + i * dx), _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"].round */ .Z.round(py + i * dy))) {
+            if (this.image.get(_common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.round(px + i * dx), _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.round(py + i * dy))) {
                 result |= 1 << (size - i - 1);
             }
         }
@@ -5437,7 +5437,7 @@ var Detector = /** @class */ (function () {
         for (var i = 0; i < iMax; i++) {
             px += dx;
             py += dy;
-            if (this.image.get(_common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"].round */ .Z.round(px), _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"].round */ .Z.round(py)) !== colorModel) {
+            if (this.image.get(_common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.round(px), _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.round(py)) !== colorModel) {
                 error++;
             }
         }
@@ -5483,14 +5483,14 @@ var Detector = /** @class */ (function () {
         var dy = cornerPoints[0].getY() - cornerPoints[2].getY();
         var centerx = (cornerPoints[0].getX() + cornerPoints[2].getX()) / 2.0;
         var centery = (cornerPoints[0].getY() + cornerPoints[2].getY()) / 2.0;
-        var result0 = new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(centerx + ratio * dx, centery + ratio * dy);
-        var result2 = new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(centerx - ratio * dx, centery - ratio * dy);
+        var result0 = new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(centerx + ratio * dx, centery + ratio * dy);
+        var result2 = new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(centerx - ratio * dx, centery - ratio * dy);
         dx = cornerPoints[1].getX() - cornerPoints[3].getX();
         dy = cornerPoints[1].getY() - cornerPoints[3].getY();
         centerx = (cornerPoints[1].getX() + cornerPoints[3].getX()) / 2.0;
         centery = (cornerPoints[1].getY() + cornerPoints[3].getY()) / 2.0;
-        var result1 = new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(centerx + ratio * dx, centery + ratio * dy);
-        var result3 = new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(centerx - ratio * dx, centery - ratio * dy);
+        var result1 = new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(centerx + ratio * dx, centery + ratio * dy);
+        var result3 = new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(centerx - ratio * dx, centery - ratio * dy);
         var results = [result0, result1, result2, result3];
         return results;
     };
@@ -5498,15 +5498,15 @@ var Detector = /** @class */ (function () {
         return x >= 0 && x < this.image.getWidth() && y > 0 && y < this.image.getHeight();
     };
     Detector.prototype.isValidPoint = function (point) {
-        var x = _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"].round */ .Z.round(point.getX());
-        var y = _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"].round */ .Z.round(point.getY());
+        var x = _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.round(point.getX());
+        var y = _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.round(point.getY());
         return this.isValid(x, y);
     };
     Detector.prototype.distancePoint = function (a, b) {
-        return _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"].distance */ .Z.distance(a.getX(), a.getY(), b.getX(), b.getY());
+        return _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.distance(a.getX(), a.getY(), b.getX(), b.getY());
     };
     Detector.prototype.distanceResultPoint = function (a, b) {
-        return _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"].distance */ .Z.distance(a.getX(), a.getY(), b.getX(), b.getY());
+        return _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.distance(a.getX(), a.getY(), b.getX(), b.getY());
     };
     Detector.prototype.getDimension = function () {
         if (this.compact) {
@@ -5515,7 +5515,7 @@ var Detector = /** @class */ (function () {
         if (this.nbLayers <= 4) {
             return 4 * this.nbLayers + 15;
         }
-        return 4 * this.nbLayers + 2 * (_util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"].truncDivision */ .Z.truncDivision((this.nbLayers - 4), 8) + 1) + 15;
+        return 4 * this.nbLayers + 2 * (_util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.truncDivision((this.nbLayers - 4), 8) + 1) + 15;
     };
     return Detector;
 }());
@@ -5524,12 +5524,12 @@ var Detector = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 9425:
+/***/ 26:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /*
 * Copyright 2013 ZXing authors
@@ -5606,22 +5606,22 @@ var AztecCode = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 8332:
+/***/ 4498:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _common_BitArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1555);
-/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8475);
-/* harmony import */ var _common_StringUtils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3429);
-/* harmony import */ var _common_BitMatrix__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1103);
-/* harmony import */ var _AztecCode__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9425);
-/* harmony import */ var _common_reedsolomon_ReedSolomonEncoder__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8074);
-/* harmony import */ var _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(2127);
-/* harmony import */ var _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(1908);
-/* harmony import */ var _util_Integer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(3450);
+/* harmony import */ var _common_BitArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5369);
+/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5793);
+/* harmony import */ var _common_StringUtils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9563);
+/* harmony import */ var _common_BitMatrix__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8307);
+/* harmony import */ var _AztecCode__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(26);
+/* harmony import */ var _common_reedsolomon_ReedSolomonEncoder__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7464);
+/* harmony import */ var _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(2429);
+/* harmony import */ var _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(3615);
+/* harmony import */ var _util_Integer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(9978);
 var __values = (undefined && undefined.__values) || function(o) {
     var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
     if (m) return m.call(o);
@@ -5690,9 +5690,9 @@ var Encoder = /** @class */ (function () {
      */
     Encoder.encode = function (data, minECCPercent, userSpecifiedLayers) {
         // High-level encode
-        var bits = new _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z(data).encode();
+        var bits = new _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A(data).encode();
         // stuff bits and choose symbol size
-        var eccBits = _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"].truncDivision */ .Z.truncDivision((bits.getSize() * minECCPercent), 100) + 11;
+        var eccBits = _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.truncDivision((bits.getSize() * minECCPercent), 100) + 11;
         var totalSizeBits = bits.getSize() + eccBits;
         var compact;
         var layers;
@@ -5703,18 +5703,18 @@ var Encoder = /** @class */ (function () {
             compact = userSpecifiedLayers < 0;
             layers = Math.abs(userSpecifiedLayers);
             if (layers > (compact ? Encoder.MAX_NB_BITS_COMPACT : Encoder.MAX_NB_BITS)) {
-                throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z(_common_StringUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"].format */ .Z.format('Illegal value %s for layers', userSpecifiedLayers));
+                throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A(_common_StringUtils__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.format('Illegal value %s for layers', userSpecifiedLayers));
             }
             totalBitsInLayer = Encoder.totalBitsInLayer(layers, compact);
             wordSize = Encoder.WORD_SIZE[layers];
             var usableBitsInLayers = totalBitsInLayer - (totalBitsInLayer % wordSize);
             stuffedBits = Encoder.stuffBits(bits, wordSize);
             if (stuffedBits.getSize() + eccBits > usableBitsInLayers) {
-                throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z('Data to large for user specified layer');
+                throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A('Data to large for user specified layer');
             }
             if (compact && stuffedBits.getSize() > wordSize * 64) {
                 // Compact format only allows 64 data words, though C4 can hold more words than that
-                throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z('Data to large for user specified layer');
+                throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A('Data to large for user specified layer');
             }
         }
         else {
@@ -5725,7 +5725,7 @@ var Encoder = /** @class */ (function () {
             // is the same size, but has more data.
             for (var i /*int*/ = 0;; i++) {
                 if (i > Encoder.MAX_NB_BITS) {
-                    throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z('Data too large for an Aztec code');
+                    throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A('Data too large for an Aztec code');
                 }
                 compact = i <= 3;
                 layers = compact ? i + 1 : i;
@@ -5765,16 +5765,16 @@ var Encoder = /** @class */ (function () {
             }
         }
         else {
-            matrixSize = baseMatrixSize + 1 + 2 * _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"].truncDivision */ .Z.truncDivision((_util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"].truncDivision */ .Z.truncDivision(baseMatrixSize, 2) - 1), 15);
-            var origCenter = _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"].truncDivision */ .Z.truncDivision(baseMatrixSize, 2);
-            var center = _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"].truncDivision */ .Z.truncDivision(matrixSize, 2);
+            matrixSize = baseMatrixSize + 1 + 2 * _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.truncDivision((_util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.truncDivision(baseMatrixSize, 2) - 1), 15);
+            var origCenter = _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.truncDivision(baseMatrixSize, 2);
+            var center = _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.truncDivision(matrixSize, 2);
             for (var i /*int*/ = 0; i < origCenter; i++) {
-                var newOffset = i + _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"].truncDivision */ .Z.truncDivision(i, 15);
+                var newOffset = i + _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.truncDivision(i, 15);
                 alignmentMap[origCenter - i - 1] = center - newOffset - 1;
                 alignmentMap[origCenter + i] = center + newOffset + 1;
             }
         }
-        var matrix = new _common_BitMatrix__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z(matrixSize);
+        var matrix = new _common_BitMatrix__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A(matrixSize);
         // draw data bits
         for (var i /*int*/ = 0, rowOffset = 0; i < layers; i++) {
             var rowSize = (layers - i) * 4 + (compact ? 9 : 12);
@@ -5801,20 +5801,20 @@ var Encoder = /** @class */ (function () {
         Encoder.drawModeMessage(matrix, compact, matrixSize, modeMessage);
         // draw alignment marks
         if (compact) {
-            Encoder.drawBullsEye(matrix, _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"].truncDivision */ .Z.truncDivision(matrixSize, 2), 5);
+            Encoder.drawBullsEye(matrix, _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.truncDivision(matrixSize, 2), 5);
         }
         else {
-            Encoder.drawBullsEye(matrix, _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"].truncDivision */ .Z.truncDivision(matrixSize, 2), 7);
-            for (var i /*int*/ = 0, j = 0; i < _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"].truncDivision */ .Z.truncDivision(baseMatrixSize, 2) - 1; i += 15, j += 16) {
-                for (var k /*int*/ = _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"].truncDivision */ .Z.truncDivision(matrixSize, 2) & 1; k < matrixSize; k += 2) {
-                    matrix.set(_util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"].truncDivision */ .Z.truncDivision(matrixSize, 2) - j, k);
-                    matrix.set(_util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"].truncDivision */ .Z.truncDivision(matrixSize, 2) + j, k);
-                    matrix.set(k, _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"].truncDivision */ .Z.truncDivision(matrixSize, 2) - j);
-                    matrix.set(k, _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"].truncDivision */ .Z.truncDivision(matrixSize, 2) + j);
+            Encoder.drawBullsEye(matrix, _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.truncDivision(matrixSize, 2), 7);
+            for (var i /*int*/ = 0, j = 0; i < _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.truncDivision(baseMatrixSize, 2) - 1; i += 15, j += 16) {
+                for (var k /*int*/ = _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.truncDivision(matrixSize, 2) & 1; k < matrixSize; k += 2) {
+                    matrix.set(_util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.truncDivision(matrixSize, 2) - j, k);
+                    matrix.set(_util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.truncDivision(matrixSize, 2) + j, k);
+                    matrix.set(k, _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.truncDivision(matrixSize, 2) - j);
+                    matrix.set(k, _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.truncDivision(matrixSize, 2) + j);
                 }
             }
         }
-        var aztec = new _AztecCode__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+        var aztec = new _AztecCode__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
         aztec.setCompact(compact);
         aztec.setSize(matrixSize);
         aztec.setLayers(layers);
@@ -5839,7 +5839,7 @@ var Encoder = /** @class */ (function () {
         matrix.set(center + size, center + size - 1);
     };
     Encoder.generateModeMessage = function (compact, layers, messageSizeInWords) {
-        var modeMessage = new _common_BitArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+        var modeMessage = new _common_BitArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A();
         if (compact) {
             modeMessage.appendBits(layers - 1, 2);
             modeMessage.appendBits(messageSizeInWords - 1, 6);
@@ -5853,7 +5853,7 @@ var Encoder = /** @class */ (function () {
         return modeMessage;
     };
     Encoder.drawModeMessage = function (matrix, compact, matrixSize, modeMessage) {
-        var center = _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"].truncDivision */ .Z.truncDivision(matrixSize, 2);
+        var center = _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.truncDivision(matrixSize, 2);
         if (compact) {
             for (var i /*int*/ = 0; i < 7; i++) {
                 var offset = center - 3 + i;
@@ -5873,7 +5873,7 @@ var Encoder = /** @class */ (function () {
         }
         else {
             for (var i /*int*/ = 0; i < 10; i++) {
-                var offset = center - 5 + i + _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"].truncDivision */ .Z.truncDivision(i, 5);
+                var offset = center - 5 + i + _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.truncDivision(i, 5);
                 if (modeMessage.get(i)) {
                     matrix.set(offset, center - 7);
                 }
@@ -5893,12 +5893,12 @@ var Encoder = /** @class */ (function () {
         var e_1, _a;
         // bitArray is guaranteed to be a multiple of the wordSize, so no padding needed
         var messageSizeInWords = bitArray.getSize() / wordSize;
-        var rs = new _common_reedsolomon_ReedSolomonEncoder__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z(Encoder.getGF(wordSize));
-        var totalWords = _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"].truncDivision */ .Z.truncDivision(totalBits, wordSize);
+        var rs = new _common_reedsolomon_ReedSolomonEncoder__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A(Encoder.getGF(wordSize));
+        var totalWords = _util_Integer__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.truncDivision(totalBits, wordSize);
         var messageWords = Encoder.bitsToWords(bitArray, wordSize, totalWords);
         rs.encode(messageWords, totalWords - messageSizeInWords);
         var startPad = totalBits % wordSize;
-        var messageBits = new _common_BitArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+        var messageBits = new _common_BitArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A();
         messageBits.appendBits(0, startPad);
         try {
             for (var _b = __values(Array.from(messageWords)), _c = _b.next(); !_c.done; _c = _b.next()) {
@@ -5931,21 +5931,21 @@ var Encoder = /** @class */ (function () {
     Encoder.getGF = function (wordSize) {
         switch (wordSize) {
             case 4:
-                return _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_6__/* ["default"].AZTEC_PARAM */ .Z.AZTEC_PARAM;
+                return _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A.AZTEC_PARAM;
             case 6:
-                return _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_6__/* ["default"].AZTEC_DATA_6 */ .Z.AZTEC_DATA_6;
+                return _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A.AZTEC_DATA_6;
             case 8:
-                return _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_6__/* ["default"].AZTEC_DATA_8 */ .Z.AZTEC_DATA_8;
+                return _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A.AZTEC_DATA_8;
             case 10:
-                return _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_6__/* ["default"].AZTEC_DATA_10 */ .Z.AZTEC_DATA_10;
+                return _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A.AZTEC_DATA_10;
             case 12:
-                return _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_6__/* ["default"].AZTEC_DATA_12 */ .Z.AZTEC_DATA_12;
+                return _common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A.AZTEC_DATA_12;
             default:
-                throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z('Unsupported word size ' + wordSize);
+                throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A('Unsupported word size ' + wordSize);
         }
     };
     Encoder.stuffBits = function (bits, wordSize) {
-        var out = new _common_BitArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+        var out = new _common_BitArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A();
         var n = bits.getSize();
         var mask = (1 << wordSize) - 2;
         for (var i /*int*/ = 0; i < n; i += wordSize) {
@@ -5987,14 +5987,14 @@ var Encoder = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 1908:
+/***/ 3615:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Z": () => (/* binding */ encoder_HighLevelEncoder)
+  A: () => (/* binding */ encoder_HighLevelEncoder)
 });
 
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/util/Collections.js
@@ -6018,7 +6018,7 @@ var Collections = /** @class */ (function () {
 /* harmony default export */ const util_Collections = (Collections);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/BitArray.js
-var BitArray = __webpack_require__(1555);
+var BitArray = __webpack_require__(5369);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/Token.js
 /*
 * Copyright 2013 ZXing authors
@@ -6047,7 +6047,7 @@ var Token = /** @class */ (function () {
 /* harmony default export */ const encoder_Token = (Token);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/Integer.js
-var Integer = __webpack_require__(3450);
+var Integer = __webpack_require__(9978);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/SimpleToken.js
 /*
 * Copyright 2013 ZXing authors
@@ -6107,7 +6107,7 @@ var SimpleToken = /** @class */ (function (_super) {
     SimpleToken.prototype.toString = function () {
         var value = this.value & ((1 << this.bitCount) - 1);
         value |= 1 << this.bitCount;
-        return '<' + Integer/* default.toBinaryString */.Z.toBinaryString(value | (1 << this.bitCount)).substring(1) + '>';
+        return '<' + Integer/* default */.A.toBinaryString(value | (1 << this.bitCount)).substring(1) + '>';
     };
     return SimpleToken;
 }(encoder_Token));
@@ -6262,7 +6262,7 @@ var LATCH_TABLE = [
 ];
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/Arrays.js + 1 modules
-var Arrays = __webpack_require__(1126);
+var Arrays = __webpack_require__(2598);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/ShiftTable.js
 var __values = (undefined && undefined.__values) || function(o) {
     var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
@@ -6282,7 +6282,7 @@ function static_SHIFT_TABLE(SHIFT_TABLE) {
     try {
         for (var SHIFT_TABLE_1 = __values(SHIFT_TABLE), SHIFT_TABLE_1_1 = SHIFT_TABLE_1.next(); !SHIFT_TABLE_1_1.done; SHIFT_TABLE_1_1 = SHIFT_TABLE_1.next()) {
             var table = SHIFT_TABLE_1_1.value /*Int32Array*/;
-            Arrays/* default.fill */.Z.fill(table, -1);
+            Arrays/* default */.A.fill(table, -1);
         }
     }
     catch (e_1_1) { e_1 = { error: e_1_1 }; }
@@ -6300,10 +6300,10 @@ function static_SHIFT_TABLE(SHIFT_TABLE) {
     SHIFT_TABLE[MODE_DIGIT][MODE_UPPER] = 15;
     return SHIFT_TABLE;
 }
-var /*final*/ SHIFT_TABLE = static_SHIFT_TABLE(Arrays/* default.createInt32Array */.Z.createInt32Array(6, 6)); // mode shift codes, per table
+var /*final*/ SHIFT_TABLE = static_SHIFT_TABLE(Arrays/* default */.A.createInt32Array(6, 6)); // mode shift codes, per table
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/StringUtils.js
-var StringUtils = __webpack_require__(3429);
+var StringUtils = __webpack_require__(9563);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/State.js
 /*
  * Copyright 2013 ZXing authors
@@ -6457,7 +6457,7 @@ var State = /** @class */ (function () {
         for (var token = this.endBinaryShift(text.length).token; token !== null; token = token.getPrevious()) {
             symbols.unshift(token);
         }
-        var bitArray = new BitArray/* default */.Z();
+        var bitArray = new BitArray/* default */.A();
         try {
             // Add each token to the result.
             for (var symbols_1 = State_values(symbols), symbols_1_1 = symbols_1.next(); !symbols_1_1.done; symbols_1_1 = symbols_1.next()) {
@@ -6479,7 +6479,7 @@ var State = /** @class */ (function () {
      * @Override
      */
     State.prototype.toString = function () {
-        return StringUtils/* default.format */.Z.format('%s bits=%d bytes=%d', MODE_NAMES[this.mode], this.bitCount, this.binaryShiftByteCount);
+        return StringUtils/* default */.A.format('%s bits=%d bytes=%d', MODE_NAMES[this.mode], this.bitCount, this.binaryShiftByteCount);
     };
     State.calculateBinaryShiftCost = function (state) {
         if (state.binaryShiftByteCount > 62) {
@@ -6503,24 +6503,24 @@ var State = /** @class */ (function () {
 
 
 function static_CHAR_MAP(CHAR_MAP) {
-    var spaceCharCode = StringUtils/* default.getCharCode */.Z.getCharCode(' ');
-    var pointCharCode = StringUtils/* default.getCharCode */.Z.getCharCode('.');
-    var commaCharCode = StringUtils/* default.getCharCode */.Z.getCharCode(',');
+    var spaceCharCode = StringUtils/* default */.A.getCharCode(' ');
+    var pointCharCode = StringUtils/* default */.A.getCharCode('.');
+    var commaCharCode = StringUtils/* default */.A.getCharCode(',');
     CHAR_MAP[MODE_UPPER][spaceCharCode] = 1;
-    var zUpperCharCode = StringUtils/* default.getCharCode */.Z.getCharCode('Z');
-    var aUpperCharCode = StringUtils/* default.getCharCode */.Z.getCharCode('A');
+    var zUpperCharCode = StringUtils/* default */.A.getCharCode('Z');
+    var aUpperCharCode = StringUtils/* default */.A.getCharCode('A');
     for (var c = aUpperCharCode; c <= zUpperCharCode; c++) {
         CHAR_MAP[MODE_UPPER][c] = c - aUpperCharCode + 2;
     }
     CHAR_MAP[MODE_LOWER][spaceCharCode] = 1;
-    var zLowerCharCode = StringUtils/* default.getCharCode */.Z.getCharCode('z');
-    var aLowerCharCode = StringUtils/* default.getCharCode */.Z.getCharCode('a');
+    var zLowerCharCode = StringUtils/* default */.A.getCharCode('z');
+    var aLowerCharCode = StringUtils/* default */.A.getCharCode('a');
     for (var c = aLowerCharCode; c <= zLowerCharCode; c++) {
         CHAR_MAP[MODE_LOWER][c] = c - aLowerCharCode + 2;
     }
     CHAR_MAP[MODE_DIGIT][spaceCharCode] = 1;
-    var nineCharCode = StringUtils/* default.getCharCode */.Z.getCharCode('9');
-    var zeroCharCode = StringUtils/* default.getCharCode */.Z.getCharCode('0');
+    var nineCharCode = StringUtils/* default */.A.getCharCode('9');
+    var zeroCharCode = StringUtils/* default */.A.getCharCode('0');
     for (var c = zeroCharCode; c <= nineCharCode; c++) {
         CHAR_MAP[MODE_DIGIT][c] = c - zeroCharCode + 2;
     }
@@ -6557,7 +6557,7 @@ function static_CHAR_MAP(CHAR_MAP) {
         '\x7f'
     ];
     for (var i = 0; i < mixedTable.length; i++) {
-        CHAR_MAP[MODE_MIXED][StringUtils/* default.getCharCode */.Z.getCharCode(mixedTable[i])] = i;
+        CHAR_MAP[MODE_MIXED][StringUtils/* default */.A.getCharCode(mixedTable[i])] = i;
     }
     var punctTable = [
         '\x00',
@@ -6593,13 +6593,13 @@ function static_CHAR_MAP(CHAR_MAP) {
         '}'
     ];
     for (var i = 0; i < punctTable.length; i++) {
-        if (StringUtils/* default.getCharCode */.Z.getCharCode(punctTable[i]) > 0) {
-            CHAR_MAP[MODE_PUNCT][StringUtils/* default.getCharCode */.Z.getCharCode(punctTable[i])] = i;
+        if (StringUtils/* default */.A.getCharCode(punctTable[i]) > 0) {
+            CHAR_MAP[MODE_PUNCT][StringUtils/* default */.A.getCharCode(punctTable[i])] = i;
         }
     }
     return CHAR_MAP;
 }
-var CHAR_MAP = static_CHAR_MAP(Arrays/* default.createInt32Array */.Z.createInt32Array(5, 256));
+var CHAR_MAP = static_CHAR_MAP(Arrays/* default */.A.createInt32Array(5, 256));
 
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/HighLevelEncoder.js
 /*
@@ -6659,23 +6659,23 @@ var HighLevelEncoder = /** @class */ (function () {
      * @return text represented by this encoder encoded as a {@link BitArray}
      */
     HighLevelEncoder.prototype.encode = function () {
-        var spaceCharCode = StringUtils/* default.getCharCode */.Z.getCharCode(' ');
-        var lineBreakCharCode = StringUtils/* default.getCharCode */.Z.getCharCode('\n');
+        var spaceCharCode = StringUtils/* default */.A.getCharCode(' ');
+        var lineBreakCharCode = StringUtils/* default */.A.getCharCode('\n');
         var states = util_Collections.singletonList(encoder_State.INITIAL_STATE);
         for (var index = 0; index < this.text.length; index++) {
             var pairCode = void 0;
             var nextChar = index + 1 < this.text.length ? this.text[index + 1] : 0;
             switch (this.text[index]) {
-                case StringUtils/* default.getCharCode */.Z.getCharCode('\r'):
+                case StringUtils/* default */.A.getCharCode('\r'):
                     pairCode = nextChar === lineBreakCharCode ? 2 : 0;
                     break;
-                case StringUtils/* default.getCharCode */.Z.getCharCode('.'):
+                case StringUtils/* default */.A.getCharCode('.'):
                     pairCode = nextChar === spaceCharCode ? 3 : 0;
                     break;
-                case StringUtils/* default.getCharCode */.Z.getCharCode(','):
+                case StringUtils/* default */.A.getCharCode(','):
                     pairCode = nextChar === spaceCharCode ? 4 : 0;
                     break;
-                case StringUtils/* default.getCharCode */.Z.getCharCode(':'):
+                case StringUtils/* default */.A.getCharCode(':'):
                     pairCode = nextChar === spaceCharCode ? 5 : 0;
                     break;
                 default:
@@ -6860,17 +6860,17 @@ var HighLevelEncoder = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 1555:
+/***/ 5369:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8475);
-/* harmony import */ var _util_Arrays__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1126);
-/* harmony import */ var _util_Integer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3450);
-/* harmony import */ var _util_System__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8507);
+/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5793);
+/* harmony import */ var _util_Arrays__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2598);
+/* harmony import */ var _util_Integer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9978);
+/* harmony import */ var _util_System__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7527);
 /*
  * Copyright 2007 ZXing authors
  *
@@ -6935,7 +6935,7 @@ var BitArray /*implements Cloneable*/ = /** @class */ (function () {
     BitArray.prototype.ensureCapacity = function (size /*int*/) {
         if (size > this.bits.length * 32) {
             var newBits = BitArray.makeArray(size);
-            _util_System__WEBPACK_IMPORTED_MODULE_3__/* ["default"].arraycopy */ .Z.arraycopy(this.bits, 0, newBits, 0, this.bits.length);
+            _util_System__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A.arraycopy(this.bits, 0, newBits, 0, this.bits.length);
             this.bits = newBits;
         }
     };
@@ -6985,7 +6985,7 @@ var BitArray /*implements Cloneable*/ = /** @class */ (function () {
             }
             currentBits = bits[bitsOffset];
         }
-        var result = (bitsOffset * 32) + _util_Integer__WEBPACK_IMPORTED_MODULE_2__/* ["default"].numberOfTrailingZeros */ .Z.numberOfTrailingZeros(currentBits);
+        var result = (bitsOffset * 32) + _util_Integer__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.numberOfTrailingZeros(currentBits);
         return result > size ? size : result;
     };
     /**
@@ -7010,7 +7010,7 @@ var BitArray /*implements Cloneable*/ = /** @class */ (function () {
             }
             currentBits = ~bits[bitsOffset];
         }
-        var result = (bitsOffset * 32) + _util_Integer__WEBPACK_IMPORTED_MODULE_2__/* ["default"].numberOfTrailingZeros */ .Z.numberOfTrailingZeros(currentBits);
+        var result = (bitsOffset * 32) + _util_Integer__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.numberOfTrailingZeros(currentBits);
         return result > size ? size : result;
     };
     /**
@@ -7031,7 +7031,7 @@ var BitArray /*implements Cloneable*/ = /** @class */ (function () {
      */
     BitArray.prototype.setRange = function (start /*int*/, end /*int*/) {
         if (end < start || start < 0 || end > this.size) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A();
         }
         if (end === start) {
             return;
@@ -7069,7 +7069,7 @@ var BitArray /*implements Cloneable*/ = /** @class */ (function () {
      */
     BitArray.prototype.isRange = function (start /*int*/, end /*int*/, value) {
         if (end < start || start < 0 || end > this.size) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A();
         }
         if (end === start) {
             return true; // empty range matches
@@ -7109,7 +7109,7 @@ var BitArray /*implements Cloneable*/ = /** @class */ (function () {
      */
     BitArray.prototype.appendBits = function (value /*int*/, numBits /*int*/) {
         if (numBits < 0 || numBits > 32) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z('Num bits must be between 0 and 32');
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A('Num bits must be between 0 and 32');
         }
         this.ensureCapacity(this.size + numBits);
         // const appendBit = this.appendBit;
@@ -7127,7 +7127,7 @@ var BitArray /*implements Cloneable*/ = /** @class */ (function () {
     };
     BitArray.prototype.xor = function (other) {
         if (this.size !== other.size) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z('Sizes don\'t match');
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A('Sizes don\'t match');
         }
         var bits = this.bits;
         for (var i = 0, length_1 = bits.length; i < length_1; i++) {
@@ -7204,11 +7204,11 @@ var BitArray /*implements Cloneable*/ = /** @class */ (function () {
             return false;
         }
         var other = o;
-        return this.size === other.size && _util_Arrays__WEBPACK_IMPORTED_MODULE_1__/* ["default"].equals */ .Z.equals(this.bits, other.bits);
+        return this.size === other.size && _util_Arrays__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.equals(this.bits, other.bits);
     };
     /*@Override*/
     BitArray.prototype.hashCode = function () {
-        return 31 * this.size + _util_Arrays__WEBPACK_IMPORTED_MODULE_1__/* ["default"].hashCode */ .Z.hashCode(this.bits);
+        return 31 * this.size + _util_Arrays__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.hashCode(this.bits);
     };
     /*@Override*/
     BitArray.prototype.toString = function () {
@@ -7242,18 +7242,18 @@ var BitArray /*implements Cloneable*/ = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 1103:
+/***/ 8307:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _BitArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1555);
-/* harmony import */ var _util_System__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8507);
-/* harmony import */ var _util_Arrays__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1126);
-/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(75);
-/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8475);
+/* harmony import */ var _BitArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5369);
+/* harmony import */ var _util_System__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7527);
+/* harmony import */ var _util_Arrays__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2598);
+/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(432);
+/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5793);
 /*
  * Copyright 2007 ZXing authors
  *
@@ -7325,7 +7325,7 @@ var BitMatrix /*implements Cloneable*/ = /** @class */ (function () {
         }
         this.height = height;
         if (width < 1 || height < 1) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z('Both dimensions must be greater than 0');
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A('Both dimensions must be greater than 0');
         }
         if (undefined === rowSize || null === rowSize) {
             rowSize = Math.floor((width + 31) / 32);
@@ -7365,7 +7365,7 @@ var BitMatrix /*implements Cloneable*/ = /** @class */ (function () {
      */
     BitMatrix.parseFromString = function (stringRepresentation, setString, unsetString) {
         if (stringRepresentation === null) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z('stringRepresentation cannot be null');
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A('stringRepresentation cannot be null');
         }
         var bits = new Array(stringRepresentation.length);
         var bitsPos = 0;
@@ -7381,7 +7381,7 @@ var BitMatrix /*implements Cloneable*/ = /** @class */ (function () {
                         rowLength = bitsPos - rowStartPos;
                     }
                     else if (bitsPos - rowStartPos !== rowLength) {
-                        throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z('row lengths do not match');
+                        throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A('row lengths do not match');
                     }
                     rowStartPos = bitsPos;
                     nRows++;
@@ -7399,7 +7399,7 @@ var BitMatrix /*implements Cloneable*/ = /** @class */ (function () {
                 bitsPos++;
             }
             else {
-                throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z('illegal character encountered: ' + stringRepresentation.substring(pos));
+                throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A('illegal character encountered: ' + stringRepresentation.substring(pos));
             }
         }
         // no EOL at end?
@@ -7408,7 +7408,7 @@ var BitMatrix /*implements Cloneable*/ = /** @class */ (function () {
                 rowLength = bitsPos - rowStartPos;
             }
             else if (bitsPos - rowStartPos !== rowLength) {
-                throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z('row lengths do not match');
+                throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A('row lengths do not match');
             }
             nRows++;
         }
@@ -7464,9 +7464,9 @@ var BitMatrix /*implements Cloneable*/ = /** @class */ (function () {
     BitMatrix.prototype.xor = function (mask) {
         if (this.width !== mask.getWidth() || this.height !== mask.getHeight()
             || this.rowSize !== mask.getRowSize()) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z('input matrix dimensions do not match');
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A('input matrix dimensions do not match');
         }
-        var rowArray = new _BitArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(Math.floor(this.width / 32) + 1);
+        var rowArray = new _BitArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(Math.floor(this.width / 32) + 1);
         var rowSize = this.rowSize;
         var bits = this.bits;
         for (var y = 0, height = this.height; y < height; y++) {
@@ -7497,15 +7497,15 @@ var BitMatrix /*implements Cloneable*/ = /** @class */ (function () {
      */
     BitMatrix.prototype.setRegion = function (left /*int*/, top /*int*/, width /*int*/, height /*int*/) {
         if (top < 0 || left < 0) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z('Left and top must be nonnegative');
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A('Left and top must be nonnegative');
         }
         if (height < 1 || width < 1) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z('Height and width must be at least 1');
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A('Height and width must be at least 1');
         }
         var right = left + width;
         var bottom = top + height;
         if (bottom > this.height || right > this.width) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z('The region must fit inside the matrix');
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A('The region must fit inside the matrix');
         }
         var rowSize = this.rowSize;
         var bits = this.bits;
@@ -7526,7 +7526,7 @@ var BitMatrix /*implements Cloneable*/ = /** @class */ (function () {
      */
     BitMatrix.prototype.getRow = function (y /*int*/, row) {
         if (row === null || row === undefined || row.getSize() < this.width) {
-            row = new _BitArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(this.width);
+            row = new _BitArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(this.width);
         }
         else {
             row.clear();
@@ -7544,7 +7544,7 @@ var BitMatrix /*implements Cloneable*/ = /** @class */ (function () {
      * @param row {@link BitArray} to copy from
      */
     BitMatrix.prototype.setRow = function (y /*int*/, row) {
-        _util_System__WEBPACK_IMPORTED_MODULE_1__/* ["default"].arraycopy */ .Z.arraycopy(row.getBitArray(), 0, this.bits, y * this.rowSize, this.rowSize);
+        _util_System__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.arraycopy(row.getBitArray(), 0, this.bits, y * this.rowSize, this.rowSize);
     };
     /**
      * Modifies this {@code BitMatrix} to represent the same but rotated 180 degrees
@@ -7552,8 +7552,8 @@ var BitMatrix /*implements Cloneable*/ = /** @class */ (function () {
     BitMatrix.prototype.rotate180 = function () {
         var width = this.getWidth();
         var height = this.getHeight();
-        var topRow = new _BitArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(width);
-        var bottomRow = new _BitArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(width);
+        var topRow = new _BitArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(width);
+        var bottomRow = new _BitArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(width);
         for (var i = 0, length_1 = Math.floor((height + 1) / 2); i < length_1; i++) {
             topRow = this.getRow(i, topRow);
             bottomRow = this.getRow(height - 1 - i, bottomRow);
@@ -7683,7 +7683,7 @@ var BitMatrix /*implements Cloneable*/ = /** @class */ (function () {
         }
         var other = o;
         return this.width === other.width && this.height === other.height && this.rowSize === other.rowSize &&
-            _util_Arrays__WEBPACK_IMPORTED_MODULE_2__/* ["default"].equals */ .Z.equals(this.bits, other.bits);
+            _util_Arrays__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.equals(this.bits, other.bits);
     };
     /*@Override*/
     BitMatrix.prototype.hashCode = function () {
@@ -7691,7 +7691,7 @@ var BitMatrix /*implements Cloneable*/ = /** @class */ (function () {
         hash = 31 * hash + this.width;
         hash = 31 * hash + this.height;
         hash = 31 * hash + this.rowSize;
-        hash = 31 * hash + _util_Arrays__WEBPACK_IMPORTED_MODULE_2__/* ["default"].hashCode */ .Z.hashCode(this.bits);
+        hash = 31 * hash + _util_Arrays__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.hashCode(this.bits);
         return hash;
     };
     /**
@@ -7724,7 +7724,7 @@ var BitMatrix /*implements Cloneable*/ = /** @class */ (function () {
         return this.buildToString(setString, unsetString, lineSeparator);
     };
     BitMatrix.prototype.buildToString = function (setString, unsetString, lineSeparator) {
-        var result = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+        var result = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A();
         // result.append(lineSeparator);
         for (var y = 0, height = this.height; y < height; y++) {
             for (var x = 0, width = this.width; x < width; x++) {
@@ -7745,14 +7745,14 @@ var BitMatrix /*implements Cloneable*/ = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 7677:
+/***/ 879:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8475);
+/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5793);
 /*
  * Copyright 2007 ZXing authors
  *
@@ -7809,7 +7809,7 @@ var BitSource = /** @class */ (function () {
      */
     BitSource.prototype.readBits = function (numBits /*int*/) {
         if (numBits < 1 || numBits > 32 || numBits > this.available()) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z('' + numBits);
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A('' + numBits);
         }
         var result = 0;
         var bitOffset = this.bitOffset;
@@ -7861,15 +7861,15 @@ var BitSource = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 5727:
+/***/ 4945:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* unused harmony export CharacterSetValueIdentifiers */
-/* harmony import */ var _FormatException__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2468);
+/* harmony import */ var _FormatException__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7027);
 /*
  * Copyright 2008 ZXing authors
  *
@@ -8001,11 +8001,11 @@ var CharacterSetECI = /** @class */ (function () {
      */
     CharacterSetECI.getCharacterSetECIByValue = function (value /*int*/) {
         if (value < 0 || value >= 900) {
-            throw new _FormatException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z('incorect value');
+            throw new _FormatException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A('incorect value');
         }
         var characterSet = CharacterSetECI.VALUES_TO_ECI.get(value);
         if (undefined === characterSet) {
-            throw new _FormatException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z('incorect value');
+            throw new _FormatException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A('incorect value');
         }
         return characterSet;
     };
@@ -8017,7 +8017,7 @@ var CharacterSetECI = /** @class */ (function () {
     CharacterSetECI.getCharacterSetECIByName = function (name) {
         var characterSet = CharacterSetECI.NAME_TO_ECI.get(name);
         if (undefined === characterSet) {
-            throw new _FormatException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z('incorect value');
+            throw new _FormatException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A('incorect value');
         }
         return characterSet;
     };
@@ -8069,12 +8069,12 @@ var CharacterSetECI = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 4522:
+/***/ 9064:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /*
  * Copyright 2007 ZXing authors
@@ -8199,17 +8199,17 @@ var DecoderResult = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 6708:
+/***/ 1770:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _GridSampler__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(412);
-/* harmony import */ var _BitMatrix__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1103);
-/* harmony import */ var _PerspectiveTransform__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7310);
-/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8842);
+/* harmony import */ var _GridSampler__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5081);
+/* harmony import */ var _BitMatrix__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8307);
+/* harmony import */ var _PerspectiveTransform__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4635);
+/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8427);
 /*
  * Copyright 2007 ZXing authors
  *
@@ -8253,15 +8253,15 @@ var DefaultGridSampler = /** @class */ (function (_super) {
     }
     /*@Override*/
     DefaultGridSampler.prototype.sampleGrid = function (image, dimensionX /*int*/, dimensionY /*int*/, p1ToX /*float*/, p1ToY /*float*/, p2ToX /*float*/, p2ToY /*float*/, p3ToX /*float*/, p3ToY /*float*/, p4ToX /*float*/, p4ToY /*float*/, p1FromX /*float*/, p1FromY /*float*/, p2FromX /*float*/, p2FromY /*float*/, p3FromX /*float*/, p3FromY /*float*/, p4FromX /*float*/, p4FromY /*float*/) {
-        var transform = _PerspectiveTransform__WEBPACK_IMPORTED_MODULE_2__/* ["default"].quadrilateralToQuadrilateral */ .Z.quadrilateralToQuadrilateral(p1ToX, p1ToY, p2ToX, p2ToY, p3ToX, p3ToY, p4ToX, p4ToY, p1FromX, p1FromY, p2FromX, p2FromY, p3FromX, p3FromY, p4FromX, p4FromY);
+        var transform = _PerspectiveTransform__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.quadrilateralToQuadrilateral(p1ToX, p1ToY, p2ToX, p2ToY, p3ToX, p3ToY, p4ToX, p4ToY, p1FromX, p1FromY, p2FromX, p2FromY, p3FromX, p3FromY, p4FromX, p4FromY);
         return this.sampleGridWithTransform(image, dimensionX, dimensionY, transform);
     };
     /*@Override*/
     DefaultGridSampler.prototype.sampleGridWithTransform = function (image, dimensionX /*int*/, dimensionY /*int*/, transform) {
         if (dimensionX <= 0 || dimensionY <= 0) {
-            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A();
         }
-        var bits = new _BitMatrix__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z(dimensionX, dimensionY);
+        var bits = new _BitMatrix__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A(dimensionX, dimensionY);
         var points = new Float32Array(2 * dimensionX);
         for (var y = 0; y < dimensionY; y++) {
             var max = points.length;
@@ -8273,7 +8273,7 @@ var DefaultGridSampler = /** @class */ (function (_super) {
             transform.transformPoints(points);
             // Quick check to see if points transformed to something inside the image
             // sufficient to check the endpoints
-            _GridSampler__WEBPACK_IMPORTED_MODULE_0__/* ["default"].checkAndNudgePoints */ .Z.checkAndNudgePoints(image, points);
+            _GridSampler__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.checkAndNudgePoints(image, points);
             try {
                 for (var x = 0; x < max; x += 2) {
                     if (image.get(Math.floor(points[x]), Math.floor(points[x + 1]))) {
@@ -8290,24 +8290,24 @@ var DefaultGridSampler = /** @class */ (function (_super) {
                 // This results in an ugly runtime exception despite our clever checks above -- can't have
                 // that. We could check each point's coordinates but that feels duplicative. We settle for
                 // catching and wrapping ArrayIndexOutOfBoundsException.
-                throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+                throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A();
             }
         }
         return bits;
     };
     return DefaultGridSampler;
-}(_GridSampler__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
+}(_GridSampler__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DefaultGridSampler);
 
 
 /***/ }),
 
-/***/ 7877:
+/***/ 3014:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /*
  * Copyright 2007 ZXing authors
@@ -8349,17 +8349,17 @@ var DetectorResult = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 9531:
+/***/ 8994:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Binarizer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5477);
-/* harmony import */ var _BitArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1555);
-/* harmony import */ var _BitMatrix__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1103);
-/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8842);
+/* harmony import */ var _Binarizer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4529);
+/* harmony import */ var _BitArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5369);
+/* harmony import */ var _BitMatrix__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8307);
+/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8427);
 /*
  * Copyright 2009 ZXing authors
  *
@@ -8418,7 +8418,7 @@ var GlobalHistogramBinarizer = /** @class */ (function (_super) {
         var source = this.getLuminanceSource();
         var width = source.getWidth();
         if (row === undefined || row === null || row.getSize() < width) {
-            row = new _BitArray__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z(width);
+            row = new _BitArray__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A(width);
         }
         else {
             row.clear();
@@ -8459,7 +8459,7 @@ var GlobalHistogramBinarizer = /** @class */ (function (_super) {
         var source = this.getLuminanceSource();
         var width = source.getWidth();
         var height = source.getHeight();
-        var matrix = new _BitMatrix__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z(width, height);
+        var matrix = new _BitMatrix__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A(width, height);
         // Quickly calculates the histogram by sampling four rows from the image. This proved to be
         // more robust on the blackbox tests than sampling a diagonal as we used to do.
         this.initArrays(width);
@@ -8538,7 +8538,7 @@ var GlobalHistogramBinarizer = /** @class */ (function (_super) {
         // If there is too little contrast in the image to pick a meaningful black point, throw rather
         // than waste time trying to decode the image, and risk false positives.
         if (secondPeak - firstPeak <= numBuckets / 16) {
-            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A();
         }
         // Find a valley between them that is low and closer to the white peak.
         var bestValley = secondPeak - 1;
@@ -8558,20 +8558,20 @@ var GlobalHistogramBinarizer = /** @class */ (function (_super) {
     GlobalHistogramBinarizer.LUMINANCE_BUCKETS = 1 << GlobalHistogramBinarizer.LUMINANCE_BITS;
     GlobalHistogramBinarizer.EMPTY = Uint8ClampedArray.from([0]);
     return GlobalHistogramBinarizer;
-}(_Binarizer__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
+}(_Binarizer__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GlobalHistogramBinarizer);
 
 
 /***/ }),
 
-/***/ 412:
+/***/ 5081:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8842);
+/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8427);
 /*
  * Copyright 2007 ZXing authors
  *
@@ -8628,7 +8628,7 @@ var GridSampler = /** @class */ (function () {
             var x = Math.floor(points[offset]);
             var y = Math.floor(points[offset + 1]);
             if (x < -1 || x > width || y < -1 || y > height) {
-                throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+                throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A();
             }
             nudged = false;
             if (x === -1) {
@@ -8654,7 +8654,7 @@ var GridSampler = /** @class */ (function () {
             var x = Math.floor(points[offset]);
             var y = Math.floor(points[offset + 1]);
             if (x < -1 || x > width || y < -1 || y > height) {
-                throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+                throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A();
             }
             nudged = false;
             if (x === -1) {
@@ -8682,14 +8682,14 @@ var GridSampler = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 7067:
+/***/ 5634:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _DefaultGridSampler__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6708);
+/* harmony import */ var _DefaultGridSampler__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1770);
 
 var GridSamplerInstance = /** @class */ (function () {
     function GridSamplerInstance() {
@@ -8712,7 +8712,7 @@ var GridSamplerInstance = /** @class */ (function () {
     GridSamplerInstance.getInstance = function () {
         return GridSamplerInstance.gridSampler;
     };
-    GridSamplerInstance.gridSampler = new _DefaultGridSampler__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+    GridSamplerInstance.gridSampler = new _DefaultGridSampler__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A();
     return GridSamplerInstance;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GridSamplerInstance);
@@ -8720,15 +8720,15 @@ var GridSamplerInstance = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 3545:
+/***/ 929:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _GlobalHistogramBinarizer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9531);
-/* harmony import */ var _BitMatrix__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1103);
+/* harmony import */ var _GlobalHistogramBinarizer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8994);
+/* harmony import */ var _BitMatrix__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8307);
 /*
  * Copyright 2009 ZXing authors
  *
@@ -8807,7 +8807,7 @@ var HybridBinarizer = /** @class */ (function (_super) {
                 subHeight++;
             }
             var blackPoints = HybridBinarizer.calculateBlackPoints(luminances, subWidth, subHeight, width, height);
-            var newMatrix = new _BitMatrix__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z(width, height);
+            var newMatrix = new _BitMatrix__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A(width, height);
             HybridBinarizer.calculateThresholdForBlock(luminances, subWidth, subHeight, width, height, blackPoints, newMatrix);
             this.matrix = newMatrix;
         }
@@ -8949,18 +8949,18 @@ var HybridBinarizer = /** @class */ (function (_super) {
     HybridBinarizer.MINIMUM_DIMENSION = HybridBinarizer.BLOCK_SIZE * 5;
     HybridBinarizer.MIN_DYNAMIC_RANGE = 24;
     return HybridBinarizer;
-}(_GlobalHistogramBinarizer__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
+}(_GlobalHistogramBinarizer__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HybridBinarizer);
 
 
 /***/ }),
 
-/***/ 7310:
+/***/ 4635:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /*
  * Copyright 2007 ZXing authors
@@ -9076,16 +9076,16 @@ var PerspectiveTransform = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 3429:
+/***/ 9563:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _DecodeHintType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6650);
-/* harmony import */ var _CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5727);
-/* harmony import */ var _util_StringEncoding__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4421);
+/* harmony import */ var _DecodeHintType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1180);
+/* harmony import */ var _CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4945);
+/* harmony import */ var _util_StringEncoding__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2442);
 /*
  * Copyright (C) 2010 ZXing authors
  *
@@ -9124,7 +9124,7 @@ var StringUtils = /** @class */ (function () {
         // you can see this method as a Java version of String.fromCharCode
         var e = encoding ? encoding.getName() : this.ISO88591;
         // use passed format (fromCharCode will return UTF8 encoding)
-        return _util_StringEncoding__WEBPACK_IMPORTED_MODULE_2__/* ["default"].decode */ .Z.decode(new Uint8Array([code]), e);
+        return _util_StringEncoding__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.decode(new Uint8Array([code]), e);
     };
     /**
      * @param bytes bytes encoding a string, whose encoding should be guessed
@@ -9134,8 +9134,8 @@ var StringUtils = /** @class */ (function () {
      *  default encoding if none of these can possibly be correct
      */
     StringUtils.guessEncoding = function (bytes, hints) {
-        if (hints !== null && hints !== undefined && undefined !== hints.get(_DecodeHintType__WEBPACK_IMPORTED_MODULE_0__/* ["default"].CHARACTER_SET */ .Z.CHARACTER_SET)) {
-            return hints.get(_DecodeHintType__WEBPACK_IMPORTED_MODULE_0__/* ["default"].CHARACTER_SET */ .Z.CHARACTER_SET).toString();
+        if (hints !== null && hints !== undefined && undefined !== hints.get(_DecodeHintType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.CHARACTER_SET)) {
+            return hints.get(_DecodeHintType__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.CHARACTER_SET).toString();
         }
         // For now, merely tries to distinguish ISO-8859-1, UTF-8 and Shift_JIS,
         // which should be by far the most common encodings.
@@ -9350,7 +9350,7 @@ var StringUtils = /** @class */ (function () {
      *
      */
     StringUtils.getBytes = function (str, encoding) {
-        return _util_StringEncoding__WEBPACK_IMPORTED_MODULE_2__/* ["default"].encode */ .Z.encode(str, encoding);
+        return _util_StringEncoding__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.encode(str, encoding);
     };
     /**
      * Returns the charcode at the specified index or at index zero.
@@ -9365,11 +9365,11 @@ var StringUtils = /** @class */ (function () {
     StringUtils.getCharAt = function (charCode) {
         return String.fromCharCode(charCode);
     };
-    StringUtils.SHIFT_JIS = _CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__/* ["default"].SJIS.getName */ .Z.SJIS.getName(); // "SJIS"
+    StringUtils.SHIFT_JIS = _CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.SJIS.getName(); // "SJIS"
     StringUtils.GB2312 = 'GB2312';
-    StringUtils.ISO88591 = _CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__/* ["default"].ISO8859_1.getName */ .Z.ISO8859_1.getName(); // "ISO8859_1"
+    StringUtils.ISO88591 = _CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.ISO8859_1.getName(); // "ISO8859_1"
     StringUtils.EUC_JP = 'EUC_JP';
-    StringUtils.UTF8 = _CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__/* ["default"].UTF8.getName */ .Z.UTF8.getName(); // "UTF8"
+    StringUtils.UTF8 = _CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.UTF8.getName(); // "UTF8"
     StringUtils.PLATFORM_DEFAULT_ENCODING = StringUtils.UTF8; // "UTF8"//Charset.defaultCharset().name()
     StringUtils.ASSUME_SHIFT_JIS = false;
     return StringUtils;
@@ -9379,12 +9379,12 @@ var StringUtils = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 8611:
+/***/ 1091:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /*
  * Copyright 2012 ZXing authors
@@ -9470,16 +9470,16 @@ var MathUtils = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 3354:
+/***/ 7282:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _ResultPoint__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8307);
-/* harmony import */ var _MathUtils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8611);
-/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8842);
+/* harmony import */ var _ResultPoint__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6502);
+/* harmony import */ var _MathUtils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1091);
+/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8427);
 /*
  * Copyright 2010 ZXing authors
  *
@@ -9539,7 +9539,7 @@ var WhiteRectangleDetector = /** @class */ (function () {
         this.upInit = y - halfsize;
         this.downInit = y + halfsize;
         if (this.upInit < 0 || this.leftInit < 0 || this.downInit >= this.height || this.rightInit >= this.width) {
-            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A();
         }
     }
     /**
@@ -9659,7 +9659,7 @@ var WhiteRectangleDetector = /** @class */ (function () {
                 z = this.getBlackPointOnSegment(left, down - i, left + i, down);
             }
             if (z == null) {
-                throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+                throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A();
             }
             var t = null;
             // go down right
@@ -9667,7 +9667,7 @@ var WhiteRectangleDetector = /** @class */ (function () {
                 t = this.getBlackPointOnSegment(left, up + i, left + i, up);
             }
             if (t == null) {
-                throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+                throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A();
             }
             var x = null;
             // go down left
@@ -9675,7 +9675,7 @@ var WhiteRectangleDetector = /** @class */ (function () {
                 x = this.getBlackPointOnSegment(right, up + i, right - i, up);
             }
             if (x == null) {
-                throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+                throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A();
             }
             var y = null;
             // go up left
@@ -9683,24 +9683,24 @@ var WhiteRectangleDetector = /** @class */ (function () {
                 y = this.getBlackPointOnSegment(right, down - i, right - i, down);
             }
             if (y == null) {
-                throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+                throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A();
             }
             return this.centerEdges(y, z, x, t);
         }
         else {
-            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A();
         }
     };
     WhiteRectangleDetector.prototype.getBlackPointOnSegment = function (aX /*float*/, aY /*float*/, bX /*float*/, bY /*float*/) {
-        var dist = _MathUtils__WEBPACK_IMPORTED_MODULE_1__/* ["default"].round */ .Z.round(_MathUtils__WEBPACK_IMPORTED_MODULE_1__/* ["default"].distance */ .Z.distance(aX, aY, bX, bY));
+        var dist = _MathUtils__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.round(_MathUtils__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.distance(aX, aY, bX, bY));
         var xStep = (bX - aX) / dist;
         var yStep = (bY - aY) / dist;
         var image = this.image;
         for (var i = 0; i < dist; i++) {
-            var x = _MathUtils__WEBPACK_IMPORTED_MODULE_1__/* ["default"].round */ .Z.round(aX + i * xStep);
-            var y = _MathUtils__WEBPACK_IMPORTED_MODULE_1__/* ["default"].round */ .Z.round(aY + i * yStep);
+            var x = _MathUtils__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.round(aX + i * xStep);
+            var y = _MathUtils__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.round(aY + i * yStep);
             if (image.get(x, y)) {
-                return new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(x, y);
+                return new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(x, y);
             }
         }
         return null;
@@ -9736,18 +9736,18 @@ var WhiteRectangleDetector = /** @class */ (function () {
         var CORR = WhiteRectangleDetector.CORR;
         if (yi < this.width / 2.0) {
             return [
-                new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(ti - CORR, tj + CORR),
-                new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(zi + CORR, zj + CORR),
-                new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(xi - CORR, xj - CORR),
-                new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(yi + CORR, yj - CORR)
+                new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(ti - CORR, tj + CORR),
+                new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(zi + CORR, zj + CORR),
+                new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(xi - CORR, xj - CORR),
+                new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(yi + CORR, yj - CORR)
             ];
         }
         else {
             return [
-                new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(ti + CORR, tj + CORR),
-                new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(zi + CORR, zj - CORR),
-                new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(xi - CORR, xj + CORR),
-                new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(yi - CORR, yj - CORR)
+                new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(ti + CORR, tj + CORR),
+                new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(zi + CORR, zj - CORR),
+                new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(xi - CORR, xj + CORR),
+                new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(yi - CORR, yj - CORR)
             ];
         }
     };
@@ -9787,14 +9787,14 @@ var WhiteRectangleDetector = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 6975:
+/***/ 7403:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8475);
+/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5793);
 /*
  * Copyright 2007 ZXing authors
  *
@@ -9836,7 +9836,7 @@ var AbstractGenericGF = /** @class */ (function () {
      */
     AbstractGenericGF.prototype.log = function (a /*int*/) {
         if (a === 0) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A();
         }
         return this.logTable[a];
     };
@@ -9855,18 +9855,18 @@ var AbstractGenericGF = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 2127:
+/***/ 2429:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _GenericGFPoly__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4279);
-/* harmony import */ var _AbstractGenericGF__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6975);
-/* harmony import */ var _util_Integer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3450);
-/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8475);
-/* harmony import */ var _ArithmeticException__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6288);
+/* harmony import */ var _GenericGFPoly__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5571);
+/* harmony import */ var _AbstractGenericGF__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7403);
+/* harmony import */ var _util_Integer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9978);
+/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5793);
+/* harmony import */ var _ArithmeticException__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2046);
 /*
  * Copyright 2007 ZXing authors
  *
@@ -9947,8 +9947,8 @@ var GenericGF = /** @class */ (function (_super) {
         }
         _this.logTable = logTable;
         // logTable[0] == 0 but this should never be used
-        _this.zero = new _GenericGFPoly__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(_this, Int32Array.from([0]));
-        _this.one = new _GenericGFPoly__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(_this, Int32Array.from([1]));
+        _this.zero = new _GenericGFPoly__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(_this, Int32Array.from([0]));
+        _this.one = new _GenericGFPoly__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(_this, Int32Array.from([1]));
         return _this;
     }
     GenericGF.prototype.getZero = function () {
@@ -9962,21 +9962,21 @@ var GenericGF = /** @class */ (function (_super) {
      */
     GenericGF.prototype.buildMonomial = function (degree /*int*/, coefficient /*int*/) {
         if (degree < 0) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A();
         }
         if (coefficient === 0) {
             return this.zero;
         }
         var coefficients = new Int32Array(degree + 1);
         coefficients[0] = coefficient;
-        return new _GenericGFPoly__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(this, coefficients);
+        return new _GenericGFPoly__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(this, coefficients);
     };
     /**
      * @return multiplicative inverse of a
      */
     GenericGF.prototype.inverse = function (a /*int*/) {
         if (a === 0) {
-            throw new _ArithmeticException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+            throw new _ArithmeticException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
         }
         return this.expTable[this.size - this.logTable[a] - 1];
     };
@@ -9997,7 +9997,7 @@ var GenericGF = /** @class */ (function (_super) {
     };
     /*@Override*/
     GenericGF.prototype.toString = function () {
-        return ('GF(0x' + _util_Integer__WEBPACK_IMPORTED_MODULE_2__/* ["default"].toHexString */ .Z.toHexString(this.primitive) + ',' + this.size + ')');
+        return ('GF(0x' + _util_Integer__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.toHexString(this.primitive) + ',' + this.size + ')');
     };
     GenericGF.prototype.equals = function (o) {
         return o === this;
@@ -10011,22 +10011,22 @@ var GenericGF = /** @class */ (function (_super) {
     GenericGF.AZTEC_DATA_8 = GenericGF.DATA_MATRIX_FIELD_256;
     GenericGF.MAXICODE_FIELD_64 = GenericGF.AZTEC_DATA_6;
     return GenericGF;
-}(_AbstractGenericGF__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z));
+}(_AbstractGenericGF__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GenericGF);
 
 
 /***/ }),
 
-/***/ 4279:
+/***/ 5571:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _AbstractGenericGF__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6975);
-/* harmony import */ var _util_System__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8507);
-/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8475);
+/* harmony import */ var _AbstractGenericGF__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7403);
+/* harmony import */ var _util_System__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7527);
+/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5793);
 /*
  * Copyright 2007 ZXing authors
  *
@@ -10067,7 +10067,7 @@ var GenericGFPoly = /** @class */ (function () {
      */
     function GenericGFPoly(field, coefficients) {
         if (coefficients.length === 0) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A();
         }
         this.field = field;
         var coefficientsLength = coefficients.length;
@@ -10082,7 +10082,7 @@ var GenericGFPoly = /** @class */ (function () {
             }
             else {
                 this.coefficients = new Int32Array(coefficientsLength - firstNonZero);
-                _util_System__WEBPACK_IMPORTED_MODULE_1__/* ["default"].arraycopy */ .Z.arraycopy(coefficients, firstNonZero, this.coefficients, 0, this.coefficients.length);
+                _util_System__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.arraycopy(coefficients, firstNonZero, this.coefficients, 0, this.coefficients.length);
             }
         }
         else {
@@ -10125,7 +10125,7 @@ var GenericGFPoly = /** @class */ (function () {
             result = 0;
             for (var i = 0, length_1 = coefficients.length; i !== length_1; i++) {
                 var coefficient = coefficients[i];
-                result = _AbstractGenericGF__WEBPACK_IMPORTED_MODULE_0__/* ["default"].addOrSubtract */ .Z.addOrSubtract(result, coefficient);
+                result = _AbstractGenericGF__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.addOrSubtract(result, coefficient);
             }
             return result;
         }
@@ -10133,13 +10133,13 @@ var GenericGFPoly = /** @class */ (function () {
         var size = coefficients.length;
         var field = this.field;
         for (var i = 1; i < size; i++) {
-            result = _AbstractGenericGF__WEBPACK_IMPORTED_MODULE_0__/* ["default"].addOrSubtract */ .Z.addOrSubtract(field.multiply(a, result), coefficients[i]);
+            result = _AbstractGenericGF__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.addOrSubtract(field.multiply(a, result), coefficients[i]);
         }
         return result;
     };
     GenericGFPoly.prototype.addOrSubtract = function (other) {
         if (!this.field.equals(other.field)) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z('GenericGFPolys do not have same GenericGF field');
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A('GenericGFPolys do not have same GenericGF field');
         }
         if (this.isZero()) {
             return other;
@@ -10157,15 +10157,15 @@ var GenericGFPoly = /** @class */ (function () {
         var sumDiff = new Int32Array(largerCoefficients.length);
         var lengthDiff = largerCoefficients.length - smallerCoefficients.length;
         // Copy high-order terms only found in higher-degree polynomial's coefficients
-        _util_System__WEBPACK_IMPORTED_MODULE_1__/* ["default"].arraycopy */ .Z.arraycopy(largerCoefficients, 0, sumDiff, 0, lengthDiff);
+        _util_System__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.arraycopy(largerCoefficients, 0, sumDiff, 0, lengthDiff);
         for (var i = lengthDiff; i < largerCoefficients.length; i++) {
-            sumDiff[i] = _AbstractGenericGF__WEBPACK_IMPORTED_MODULE_0__/* ["default"].addOrSubtract */ .Z.addOrSubtract(smallerCoefficients[i - lengthDiff], largerCoefficients[i]);
+            sumDiff[i] = _AbstractGenericGF__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.addOrSubtract(smallerCoefficients[i - lengthDiff], largerCoefficients[i]);
         }
         return new GenericGFPoly(this.field, sumDiff);
     };
     GenericGFPoly.prototype.multiply = function (other) {
         if (!this.field.equals(other.field)) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z('GenericGFPolys do not have same GenericGF field');
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A('GenericGFPolys do not have same GenericGF field');
         }
         if (this.isZero() || other.isZero()) {
             return this.field.getZero();
@@ -10179,7 +10179,7 @@ var GenericGFPoly = /** @class */ (function () {
         for (var i = 0; i < aLength; i++) {
             var aCoeff = aCoefficients[i];
             for (var j = 0; j < bLength; j++) {
-                product[i + j] = _AbstractGenericGF__WEBPACK_IMPORTED_MODULE_0__/* ["default"].addOrSubtract */ .Z.addOrSubtract(product[i + j], field.multiply(aCoeff, bCoefficients[j]));
+                product[i + j] = _AbstractGenericGF__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.addOrSubtract(product[i + j], field.multiply(aCoeff, bCoefficients[j]));
             }
         }
         return new GenericGFPoly(field, product);
@@ -10202,7 +10202,7 @@ var GenericGFPoly = /** @class */ (function () {
     };
     GenericGFPoly.prototype.multiplyByMonomial = function (degree /*int*/, coefficient /*int*/) {
         if (degree < 0) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A();
         }
         if (coefficient === 0) {
             return this.field.getZero();
@@ -10218,10 +10218,10 @@ var GenericGFPoly = /** @class */ (function () {
     };
     GenericGFPoly.prototype.divide = function (other) {
         if (!this.field.equals(other.field)) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z('GenericGFPolys do not have same GenericGF field');
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A('GenericGFPolys do not have same GenericGF field');
         }
         if (other.isZero()) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z('Divide by 0');
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A('Divide by 0');
         }
         var field = this.field;
         var quotient = field.getZero();
@@ -10286,17 +10286,17 @@ var GenericGFPoly = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 4646:
+/***/ 4112:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _GenericGF__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2127);
-/* harmony import */ var _GenericGFPoly__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4279);
-/* harmony import */ var _ReedSolomonException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2309);
-/* harmony import */ var _IllegalStateException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4418);
+/* harmony import */ var _GenericGF__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2429);
+/* harmony import */ var _GenericGFPoly__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5571);
+/* harmony import */ var _ReedSolomonException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7495);
+/* harmony import */ var _IllegalStateException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7591);
 /*
  * Copyright 2007 ZXing authors
  *
@@ -10354,7 +10354,7 @@ var ReedSolomonDecoder = /** @class */ (function () {
      */
     ReedSolomonDecoder.prototype.decode = function (received, twoS /*int*/) {
         var field = this.field;
-        var poly = new _GenericGFPoly__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z(field, received);
+        var poly = new _GenericGFPoly__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A(field, received);
         var syndromeCoefficients = new Int32Array(twoS);
         var noError = true;
         for (var i = 0; i < twoS; i++) {
@@ -10367,7 +10367,7 @@ var ReedSolomonDecoder = /** @class */ (function () {
         if (noError) {
             return;
         }
-        var syndrome = new _GenericGFPoly__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z(field, syndromeCoefficients);
+        var syndrome = new _GenericGFPoly__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A(field, syndromeCoefficients);
         var sigmaOmega = this.runEuclideanAlgorithm(field.buildMonomial(twoS, 1), syndrome, twoS);
         var sigma = sigmaOmega[0];
         var omega = sigmaOmega[1];
@@ -10376,9 +10376,9 @@ var ReedSolomonDecoder = /** @class */ (function () {
         for (var i = 0; i < errorLocations.length; i++) {
             var position = received.length - 1 - field.log(errorLocations[i]);
             if (position < 0) {
-                throw new _ReedSolomonException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z('Bad error location');
+                throw new _ReedSolomonException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A('Bad error location');
             }
-            received[position] = _GenericGF__WEBPACK_IMPORTED_MODULE_0__/* ["default"].addOrSubtract */ .Z.addOrSubtract(received[position], errorMagnitudes[i]);
+            received[position] = _GenericGF__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.addOrSubtract(received[position], errorMagnitudes[i]);
         }
     };
     ReedSolomonDecoder.prototype.runEuclideanAlgorithm = function (a, b, R /*int*/) {
@@ -10402,7 +10402,7 @@ var ReedSolomonDecoder = /** @class */ (function () {
             // Divide rLastLast by rLast, with quotient in q and remainder in r
             if (rLast.isZero()) {
                 // Oops, Euclidean algorithm already terminated?
-                throw new _ReedSolomonException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z('r_{i-1} was zero');
+                throw new _ReedSolomonException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A('r_{i-1} was zero');
             }
             r = rLastLast;
             var q = field.getZero();
@@ -10416,12 +10416,12 @@ var ReedSolomonDecoder = /** @class */ (function () {
             }
             t = q.multiply(tLast).addOrSubtract(tLastLast);
             if (r.getDegree() >= rLast.getDegree()) {
-                throw new _IllegalStateException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z('Division algorithm failed to reduce polynomial?');
+                throw new _IllegalStateException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A('Division algorithm failed to reduce polynomial?');
             }
         }
         var sigmaTildeAtZero = t.getCoefficient(0);
         if (sigmaTildeAtZero === 0) {
-            throw new _ReedSolomonException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z('sigmaTilde(0) was zero');
+            throw new _ReedSolomonException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A('sigmaTilde(0) was zero');
         }
         var inverse = field.inverse(sigmaTildeAtZero);
         var sigma = t.multiplyScalar(inverse);
@@ -10444,7 +10444,7 @@ var ReedSolomonDecoder = /** @class */ (function () {
             }
         }
         if (e !== numErrors) {
-            throw new _ReedSolomonException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z('Error locator degree does not match number of roots');
+            throw new _ReedSolomonException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A('Error locator degree does not match number of roots');
         }
         return result;
     };
@@ -10481,16 +10481,16 @@ var ReedSolomonDecoder = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 8074:
+/***/ 7464:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _GenericGFPoly__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4279);
-/* harmony import */ var _util_System__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8507);
-/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8475);
+/* harmony import */ var _GenericGFPoly__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5571);
+/* harmony import */ var _util_System__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7527);
+/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5793);
 /*
  * Copyright 2008 ZXing authors
  *
@@ -10527,7 +10527,7 @@ var ReedSolomonEncoder = /** @class */ (function () {
     function ReedSolomonEncoder(field) {
         this.field = field;
         this.cachedGenerators = [];
-        this.cachedGenerators.push(new _GenericGFPoly__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(field, Int32Array.from([1])));
+        this.cachedGenerators.push(new _GenericGFPoly__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(field, Int32Array.from([1])));
     }
     ReedSolomonEncoder.prototype.buildGenerator = function (degree /*int*/) {
         var cachedGenerators = this.cachedGenerators;
@@ -10535,7 +10535,7 @@ var ReedSolomonEncoder = /** @class */ (function () {
             var lastGenerator = cachedGenerators[cachedGenerators.length - 1];
             var field = this.field;
             for (var d = cachedGenerators.length; d <= degree; d++) {
-                var nextGenerator = lastGenerator.multiply(new _GenericGFPoly__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(field, Int32Array.from([1, field.exp(d - 1 + field.getGeneratorBase())])));
+                var nextGenerator = lastGenerator.multiply(new _GenericGFPoly__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(field, Int32Array.from([1, field.exp(d - 1 + field.getGeneratorBase())])));
                 cachedGenerators.push(nextGenerator);
                 lastGenerator = nextGenerator;
             }
@@ -10563,16 +10563,16 @@ var ReedSolomonEncoder = /** @class */ (function () {
      */
     ReedSolomonEncoder.prototype.encode = function (toEncode, ecBytes /*int*/) {
         if (ecBytes === 0) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z('No error correction bytes');
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A('No error correction bytes');
         }
         var dataBytes = toEncode.length - ecBytes;
         if (dataBytes <= 0) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z('No data bytes provided');
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A('No data bytes provided');
         }
         var generator = this.buildGenerator(ecBytes);
         var infoCoefficients = new Int32Array(dataBytes);
-        _util_System__WEBPACK_IMPORTED_MODULE_1__/* ["default"].arraycopy */ .Z.arraycopy(toEncode, 0, infoCoefficients, 0, dataBytes);
-        var info = new _GenericGFPoly__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(this.field, infoCoefficients);
+        _util_System__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.arraycopy(toEncode, 0, infoCoefficients, 0, dataBytes);
+        var info = new _GenericGFPoly__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(this.field, infoCoefficients);
         info = info.multiplyByMonomial(ecBytes, 1);
         var remainder = info.divide(generator)[1];
         var coefficients = remainder.getCoefficients();
@@ -10580,7 +10580,7 @@ var ReedSolomonEncoder = /** @class */ (function () {
         for (var i = 0; i < numZeroCoefficients; i++) {
             toEncode[dataBytes + i] = 0;
         }
-        _util_System__WEBPACK_IMPORTED_MODULE_1__/* ["default"].arraycopy */ .Z.arraycopy(coefficients, 0, toEncode, dataBytes + numZeroCoefficients, coefficients.length);
+        _util_System__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.arraycopy(coefficients, 0, toEncode, dataBytes + numZeroCoefficients, coefficients.length);
     };
     return ReedSolomonEncoder;
 }());
@@ -10589,38 +10589,38 @@ var ReedSolomonEncoder = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 5370:
+/***/ 9208:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Z": () => (/* binding */ datamatrix_DataMatrixReader)
+  A: () => (/* binding */ datamatrix_DataMatrixReader)
 });
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/BarcodeFormat.js
-var BarcodeFormat = __webpack_require__(8684);
+var BarcodeFormat = __webpack_require__(9460);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/BitMatrix.js
-var BitMatrix = __webpack_require__(1103);
+var BitMatrix = __webpack_require__(8307);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/DecodeHintType.js
-var DecodeHintType = __webpack_require__(6650);
+var DecodeHintType = __webpack_require__(1180);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/NotFoundException.js
-var NotFoundException = __webpack_require__(8842);
+var NotFoundException = __webpack_require__(8427);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/Result.js
-var Result = __webpack_require__(1462);
+var Result = __webpack_require__(6770);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/ResultMetadataType.js
-var ResultMetadataType = __webpack_require__(5621);
+var ResultMetadataType = __webpack_require__(688);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/System.js
-var System = __webpack_require__(8507);
+var System = __webpack_require__(7527);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/ChecksumException.js
-var ChecksumException = __webpack_require__(3392);
+var ChecksumException = __webpack_require__(1371);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/reedsolomon/GenericGF.js
-var GenericGF = __webpack_require__(2127);
+var GenericGF = __webpack_require__(2429);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/reedsolomon/ReedSolomonDecoder.js
-var ReedSolomonDecoder = __webpack_require__(4646);
+var ReedSolomonDecoder = __webpack_require__(4112);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/FormatException.js
-var FormatException = __webpack_require__(2468);
+var FormatException = __webpack_require__(7027);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/decoder/Version.js
 var __values = (undefined && undefined.__values) || function(o) {
     var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
@@ -10755,7 +10755,7 @@ var Version = /** @class */ (function () {
     Version.getVersionForDimensions = function (numRows, numColumns) {
         var e_2, _a;
         if ((numRows & 0x01) !== 0 || (numColumns & 0x01) !== 0) {
-            throw new FormatException/* default */.Z();
+            throw new FormatException/* default */.A();
         }
         try {
             for (var _b = __values(Version.VERSIONS), _c = _b.next(); !_c.done; _c = _b.next()) {
@@ -10772,7 +10772,7 @@ var Version = /** @class */ (function () {
             }
             finally { if (e_2) throw e_2.error; }
         }
-        throw new FormatException/* default */.Z();
+        throw new FormatException/* default */.A();
     };
     //  @Override
     Version.prototype.toString = function () {
@@ -10821,7 +10821,7 @@ var Version = /** @class */ (function () {
 /* harmony default export */ const decoder_Version = (Version);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/IllegalArgumentException.js
-var IllegalArgumentException = __webpack_require__(8475);
+var IllegalArgumentException = __webpack_require__(5793);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/decoder/BitMatrixParser.js
 
 
@@ -10853,11 +10853,11 @@ var BitMatrixParser = /** @class */ (function () {
     function BitMatrixParser(bitMatrix) {
         var dimension = bitMatrix.getHeight();
         if (dimension < 8 || dimension > 144 || (dimension & 0x01) !== 0) {
-            throw new FormatException/* default */.Z();
+            throw new FormatException/* default */.A();
         }
         this.version = BitMatrixParser.readVersion(bitMatrix);
         this.mappingBitMatrix = this.extractDataRegion(bitMatrix);
-        this.readMappingMatrix = new BitMatrix/* default */.Z(this.mappingBitMatrix.getWidth(), this.mappingBitMatrix.getHeight());
+        this.readMappingMatrix = new BitMatrix/* default */.A(this.mappingBitMatrix.getWidth(), this.mappingBitMatrix.getHeight());
     }
     BitMatrixParser.prototype.getVersion = function () {
         return this.version;
@@ -10948,7 +10948,7 @@ var BitMatrixParser = /** @class */ (function () {
             }
         } while ((row < numRows) || (column < numColumns));
         if (resultOffset !== this.version.getTotalCodewords()) {
-            throw new FormatException/* default */.Z();
+            throw new FormatException/* default */.A();
         }
         return result;
     };
@@ -11207,7 +11207,7 @@ var BitMatrixParser = /** @class */ (function () {
         var symbolSizeRows = this.version.getSymbolSizeRows();
         var symbolSizeColumns = this.version.getSymbolSizeColumns();
         if (bitMatrix.getHeight() !== symbolSizeRows) {
-            throw new IllegalArgumentException/* default */.Z('Dimension of bitMatrix must match the version size');
+            throw new IllegalArgumentException/* default */.A('Dimension of bitMatrix must match the version size');
         }
         var dataRegionSizeRows = this.version.getDataRegionSizeRows();
         var dataRegionSizeColumns = this.version.getDataRegionSizeColumns();
@@ -11215,7 +11215,7 @@ var BitMatrixParser = /** @class */ (function () {
         var numDataRegionsColumn = symbolSizeColumns / dataRegionSizeColumns | 0;
         var sizeDataRegionRow = numDataRegionsRow * dataRegionSizeRows;
         var sizeDataRegionColumn = numDataRegionsColumn * dataRegionSizeColumns;
-        var bitMatrixWithoutAlignment = new BitMatrix/* default */.Z(sizeDataRegionColumn, sizeDataRegionRow);
+        var bitMatrixWithoutAlignment = new BitMatrix/* default */.A(sizeDataRegionColumn, sizeDataRegionRow);
         for (var dataRegionRow = 0; dataRegionRow < numDataRegionsRow; ++dataRegionRow) {
             var dataRegionRowOffset = dataRegionRow * dataRegionSizeRows;
             for (var dataRegionColumn = 0; dataRegionColumn < numDataRegionsColumn; ++dataRegionColumn) {
@@ -11360,7 +11360,7 @@ var DataBlock = /** @class */ (function () {
             }
         }
         if (rawCodewordsOffset !== rawCodewords.length) {
-            throw new IllegalArgumentException/* default */.Z();
+            throw new IllegalArgumentException/* default */.A();
         }
         return result;
     };
@@ -11375,7 +11375,7 @@ var DataBlock = /** @class */ (function () {
 /* harmony default export */ const decoder_DataBlock = (DataBlock);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/decoder/DecodedBitStreamParser.js
-var DecodedBitStreamParser = __webpack_require__(7897);
+var DecodedBitStreamParser = __webpack_require__(4630);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/decoder/Decoder.js
 var Decoder_values = (undefined && undefined.__values) || function(o) {
     var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
@@ -11417,7 +11417,7 @@ var Decoder_values = (undefined && undefined.__values) || function(o) {
  */
 var Decoder = /** @class */ (function () {
     function Decoder() {
-        this.rsDecoder = new ReedSolomonDecoder/* default */.Z(GenericGF/* default.DATA_MATRIX_FIELD_256 */.Z.DATA_MATRIX_FIELD_256);
+        this.rsDecoder = new ReedSolomonDecoder/* default */.A(GenericGF/* default */.A.DATA_MATRIX_FIELD_256);
     }
     /**
      * <p>Decodes a Data Matrix Code represented as a {@link BitMatrix}. A 1 or "true" is taken
@@ -11466,7 +11466,7 @@ var Decoder = /** @class */ (function () {
             }
         }
         // Decode the contents of that stream of bytes
-        return DecodedBitStreamParser/* default.decode */.Z.decode(resultBytes);
+        return DecodedBitStreamParser/* default */.A.decode(resultBytes);
     };
     /**
      * <p>Given data and error-correction codewords received, possibly corrupted by errors, attempts to
@@ -11487,7 +11487,7 @@ var Decoder = /** @class */ (function () {
             this.rsDecoder.decode(codewordsInts, codewordBytes.length - numDataCodewords);
         }
         catch (ignored /* ReedSolomonException */) {
-            throw new ChecksumException/* default */.Z();
+            throw new ChecksumException/* default */.A();
         }
         // Copy back into array of bytes -- only need to worry about the bytes that were data
         // We don't care about errors in the error-correction codewords
@@ -11500,13 +11500,13 @@ var Decoder = /** @class */ (function () {
 /* harmony default export */ const decoder_Decoder = (Decoder);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/detector/WhiteRectangleDetector.js
-var WhiteRectangleDetector = __webpack_require__(3354);
+var WhiteRectangleDetector = __webpack_require__(7282);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/DetectorResult.js
-var DetectorResult = __webpack_require__(7877);
+var DetectorResult = __webpack_require__(3014);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/GridSamplerInstance.js
-var GridSamplerInstance = __webpack_require__(7067);
+var GridSamplerInstance = __webpack_require__(5634);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/ResultPoint.js
-var ResultPoint = __webpack_require__(8307);
+var ResultPoint = __webpack_require__(6502);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/detector/Detector.js
 
 
@@ -11537,7 +11537,7 @@ var ResultPoint = __webpack_require__(8307);
 var Detector = /** @class */ (function () {
     function Detector(image) {
         this.image = image;
-        this.rectangleDetector = new WhiteRectangleDetector/* default */.Z(this.image);
+        this.rectangleDetector = new WhiteRectangleDetector/* default */.A(this.image);
     }
     /**
      * <p>Detects a Data Matrix Code in an image.</p>
@@ -11551,7 +11551,7 @@ var Detector = /** @class */ (function () {
         points = this.detectSolid2(points);
         points[3] = this.correctTopRight(points);
         if (!points[3]) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         points = this.shiftToModuleCenter(points);
         var topLeft = points[0];
@@ -11571,12 +11571,12 @@ var Detector = /** @class */ (function () {
             dimensionTop = dimensionRight = Math.max(dimensionTop, dimensionRight);
         }
         var bits = Detector.sampleGrid(this.image, topLeft, bottomLeft, bottomRight, topRight, dimensionTop, dimensionRight);
-        return new DetectorResult/* default */.Z(bits, [topLeft, bottomLeft, bottomRight, topRight]);
+        return new DetectorResult/* default */.A(bits, [topLeft, bottomLeft, bottomRight, topRight]);
     };
     Detector.shiftPoint = function (point, to, div) {
         var x = (to.getX() - point.getX()) / (div + 1);
         var y = (to.getY() - point.getY()) / (div + 1);
-        return new ResultPoint/* default */.Z(point.getX() + x, point.getY() + y);
+        return new ResultPoint/* default */.A(point.getX() + x, point.getY() + y);
     };
     Detector.moveAway = function (point, fromX, fromY) {
         var x = point.getX();
@@ -11593,7 +11593,7 @@ var Detector = /** @class */ (function () {
         else {
             y += 1;
         }
-        return new ResultPoint/* default */.Z(x, y);
+        return new ResultPoint/* default */.A(x, y);
     };
     /**
      * Detect a solid side which has minimum transition.
@@ -11691,8 +11691,8 @@ var Detector = /** @class */ (function () {
         var pointCs = Detector.shiftPoint(pointC, pointB, (trTop + 1) * 4);
         trTop = this.transitionsBetween(pointAs, pointD);
         trRight = this.transitionsBetween(pointCs, pointD);
-        var candidate1 = new ResultPoint/* default */.Z(pointD.getX() + (pointC.getX() - pointB.getX()) / (trTop + 1), pointD.getY() + (pointC.getY() - pointB.getY()) / (trTop + 1));
-        var candidate2 = new ResultPoint/* default */.Z(pointD.getX() + (pointA.getX() - pointB.getX()) / (trRight + 1), pointD.getY() + (pointA.getY() - pointB.getY()) / (trRight + 1));
+        var candidate1 = new ResultPoint/* default */.A(pointD.getX() + (pointC.getX() - pointB.getX()) / (trTop + 1), pointD.getY() + (pointC.getY() - pointB.getY()) / (trTop + 1));
+        var candidate2 = new ResultPoint/* default */.A(pointD.getX() + (pointA.getX() - pointB.getX()) / (trRight + 1), pointD.getY() + (pointA.getY() - pointB.getY()) / (trRight + 1));
         if (!this.isValid(candidate1)) {
             if (this.isValid(candidate2)) {
                 return candidate2;
@@ -11762,7 +11762,7 @@ var Detector = /** @class */ (function () {
         return p.getX() >= 0 && p.getX() < this.image.getWidth() && p.getY() > 0 && p.getY() < this.image.getHeight();
     };
     Detector.sampleGrid = function (image, topLeft, bottomLeft, bottomRight, topRight, dimensionX, dimensionY) {
-        var sampler = GridSamplerInstance/* default.getInstance */.Z.getInstance();
+        var sampler = GridSamplerInstance/* default */.A.getInstance();
         return sampler.sampleGrid(image, dimensionX, dimensionY, 0.5, 0.5, dimensionX - 0.5, 0.5, dimensionX - 0.5, dimensionY - 0.5, 0.5, dimensionY - 0.5, topLeft.getX(), topLeft.getY(), topRight.getX(), topRight.getY(), bottomRight.getX(), bottomRight.getY(), bottomLeft.getX(), bottomLeft.getY());
     };
     /**
@@ -11862,7 +11862,7 @@ var DataMatrixReader = /** @class */ (function () {
         if (hints === void 0) { hints = null; }
         var decoderResult;
         var points;
-        if (hints != null && hints.has(DecodeHintType/* default.PURE_BARCODE */.Z.PURE_BARCODE)) {
+        if (hints != null && hints.has(DecodeHintType/* default */.A.PURE_BARCODE)) {
             var bits = DataMatrixReader.extractPureBits(image.getBlackMatrix());
             decoderResult = this.decoder.decode(bits);
             points = DataMatrixReader.NO_POINTS;
@@ -11873,14 +11873,14 @@ var DataMatrixReader = /** @class */ (function () {
             points = detectorResult.getPoints();
         }
         var rawBytes = decoderResult.getRawBytes();
-        var result = new Result/* default */.Z(decoderResult.getText(), rawBytes, 8 * rawBytes.length, points, BarcodeFormat/* default.DATA_MATRIX */.Z.DATA_MATRIX, System/* default.currentTimeMillis */.Z.currentTimeMillis());
+        var result = new Result/* default */.A(decoderResult.getText(), rawBytes, 8 * rawBytes.length, points, BarcodeFormat/* default */.A.DATA_MATRIX, System/* default */.A.currentTimeMillis());
         var byteSegments = decoderResult.getByteSegments();
         if (byteSegments != null) {
-            result.putMetadata(ResultMetadataType/* default.BYTE_SEGMENTS */.Z.BYTE_SEGMENTS, byteSegments);
+            result.putMetadata(ResultMetadataType/* default */.A.BYTE_SEGMENTS, byteSegments);
         }
         var ecLevel = decoderResult.getECLevel();
         if (ecLevel != null) {
-            result.putMetadata(ResultMetadataType/* default.ERROR_CORRECTION_LEVEL */.Z.ERROR_CORRECTION_LEVEL, ecLevel);
+            result.putMetadata(ResultMetadataType/* default */.A.ERROR_CORRECTION_LEVEL, ecLevel);
         }
         return result;
     };
@@ -11900,7 +11900,7 @@ var DataMatrixReader = /** @class */ (function () {
         var leftTopBlack = image.getTopLeftOnBit();
         var rightBottomBlack = image.getBottomRightOnBit();
         if (leftTopBlack == null || rightBottomBlack == null) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         var moduleSize = this.moduleSize(leftTopBlack, image);
         var top = leftTopBlack[1];
@@ -11910,7 +11910,7 @@ var DataMatrixReader = /** @class */ (function () {
         var matrixWidth = (right - left + 1) / moduleSize;
         var matrixHeight = (bottom - top + 1) / moduleSize;
         if (matrixWidth <= 0 || matrixHeight <= 0) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         // Push in the "border" by half the module width so that we start
         // sampling in the middle of the module. Just in case the image is a
@@ -11919,7 +11919,7 @@ var DataMatrixReader = /** @class */ (function () {
         top += nudge;
         left += nudge;
         // Now just read off the bits
-        var bits = new BitMatrix/* default */.Z(matrixWidth, matrixHeight);
+        var bits = new BitMatrix/* default */.A(matrixWidth, matrixHeight);
         for (var y = 0; y < matrixHeight; y++) {
             var iOffset = top + y * moduleSize;
             for (var x = 0; x < matrixWidth; x++) {
@@ -11938,11 +11938,11 @@ var DataMatrixReader = /** @class */ (function () {
             x++;
         }
         if (x === width) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         var moduleSize = x - leftTopBlack[0];
         if (moduleSize === 0) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         return moduleSize;
     };
@@ -11954,50 +11954,50 @@ var DataMatrixReader = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 880:
+/***/ 7597:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Z": () => (/* binding */ datamatrix_DataMatrixWriter)
+  A: () => (/* binding */ datamatrix_DataMatrixWriter)
 });
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/BarcodeFormat.js
-var BarcodeFormat = __webpack_require__(8684);
+var BarcodeFormat = __webpack_require__(9460);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/BitMatrix.js
-var BitMatrix = __webpack_require__(1103);
+var BitMatrix = __webpack_require__(8307);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/EncodeHintType.js
-var EncodeHintType = __webpack_require__(5127);
+var EncodeHintType = __webpack_require__(1444);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/qrcode/encoder/ByteMatrix.js
-var ByteMatrix = __webpack_require__(8556);
+var ByteMatrix = __webpack_require__(966);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/Charset.js
-var Charset = __webpack_require__(5408);
+var Charset = __webpack_require__(4292);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/ASCIIEncoder.js
-var ASCIIEncoder = __webpack_require__(4470);
+var ASCIIEncoder = __webpack_require__(3937);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/Base256Encoder.js
-var Base256Encoder = __webpack_require__(3256);
+var Base256Encoder = __webpack_require__(2926);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/C40Encoder.js
-var C40Encoder = __webpack_require__(4903);
+var C40Encoder = __webpack_require__(8955);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/DefaultPlacement.js
-var DefaultPlacement = __webpack_require__(8504);
+var DefaultPlacement = __webpack_require__(8032);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/EdifactEncoder.js
-var EdifactEncoder = __webpack_require__(2299);
+var EdifactEncoder = __webpack_require__(2042);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/EncoderContext.js
-var EncoderContext = __webpack_require__(8847);
+var EncoderContext = __webpack_require__(7751);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/ErrorCorrection.js
-var ErrorCorrection = __webpack_require__(9864);
+var ErrorCorrection = __webpack_require__(4688);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/HighLevelEncoder.js
-var HighLevelEncoder = __webpack_require__(9729);
+var HighLevelEncoder = __webpack_require__(7750);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/constants.js
-var constants = __webpack_require__(4255);
+var constants = __webpack_require__(4715);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StandardCharsets.js
-var StandardCharsets = __webpack_require__(4248);
+var StandardCharsets = __webpack_require__(3234);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StringEncoding.js
-var StringEncoding = __webpack_require__(4421);
+var StringEncoding = __webpack_require__(2442);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/StringUtils.js
-var StringUtils = __webpack_require__(3429);
+var StringUtils = __webpack_require__(9563);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/common/ECIEncoderSet.js
 /**
  * Set of CharsetEncoders for a given input string
@@ -12035,7 +12035,7 @@ var CharsetEncoder = /** @class */ (function () {
     }
     CharsetEncoder.prototype.canEncode = function (c) {
         try {
-            return StringEncoding/* default.encode */.Z.encode(c, this.charset) != null;
+            return StringEncoding/* default */.A.encode(c, this.charset) != null;
         }
         catch (ex) {
             return false;
@@ -12075,11 +12075,11 @@ var ECIEncoderSet = /** @class */ (function () {
             'windows-1252',
             'windows-1256',
             'Shift_JIS',
-        ].map(function (name) { return new CharsetEncoder(Charset/* default.forName */.Z.forName(name)); });
+        ].map(function (name) { return new CharsetEncoder(Charset/* default */.A.forName(name)); });
         this.encoders = [];
         var neededEncoders = [];
         // we always need the ISO-8859-1 encoder. It is the default encoding
-        neededEncoders.push(new CharsetEncoder(StandardCharsets/* default.ISO_8859_1 */.Z.ISO_8859_1));
+        neededEncoders.push(new CharsetEncoder(StandardCharsets/* default */.A.ISO_8859_1));
         var needUnicodeEncoder = priorityCharset != null && priorityCharset.name.startsWith('UTF');
         // Walk over the input string and see if all characters can be encoded with the list of encoders
         for (var i = 0; i < stringToEncode.length; i++) {
@@ -12206,16 +12206,16 @@ var ECIEncoderSet = /** @class */ (function () {
         if (!(encoderIndex < this.length())) {
             throw new Error('index must be less than length');
         }
-        return StringEncoding/* default.encode */.Z.encode(StringUtils/* default.getCharAt */.Z.getCharAt(c), this.encoders[encoderIndex].name);
+        return StringEncoding/* default */.A.encode(StringUtils/* default */.A.getCharAt(c), this.encoders[encoderIndex].name);
     };
     return ECIEncoderSet;
 }());
 
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/Integer.js
-var Integer = __webpack_require__(3450);
+var Integer = __webpack_require__(9978);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StringBuilder.js
-var StringBuilder = __webpack_require__(75);
+var StringBuilder = __webpack_require__(432);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/common/MinimalECIInput.js
 
 
@@ -12319,7 +12319,7 @@ var MinimalECIInput = /** @class */ (function () {
         if (start < 0 || start > end || end > this.length()) {
             throw new Error('' + start);
         }
-        var result = new StringBuilder/* default */.Z();
+        var result = new StringBuilder/* default */.A();
         for (var i = start; i < end; i++) {
             if (this.isECI(i)) {
                 throw new Error('value at ' + i + ' is not a character but an ECI');
@@ -12428,7 +12428,7 @@ var MinimalECIInput = /** @class */ (function () {
             }
         }
         var minimalJ = -1;
-        var minimalSize = Integer/* default.MAX_VALUE */.Z.MAX_VALUE;
+        var minimalSize = Integer/* default */.A.MAX_VALUE;
         for (var j = 0; j < encoderSet.length(); j++) {
             if (edges[inputLength][j] != null) {
                 var edge = edges[inputLength][j];
@@ -12631,13 +12631,13 @@ var MinimalEncoder = /** @class */ (function () {
         if (fnc1 === void 0) { fnc1 = -1; }
         if (shape === void 0) { shape = 0 /* FORCE_NONE */; }
         var macroId = 0;
-        if (msg.startsWith(constants/* MACRO_05_HEADER */.qL) && msg.endsWith(constants/* MACRO_TRAILER */.Lt)) {
+        if (msg.startsWith(constants/* MACRO_05_HEADER */.h_) && msg.endsWith(constants/* MACRO_TRAILER */.TG)) {
             macroId = 5;
-            msg = msg.substring(constants/* MACRO_05_HEADER.length */.qL.length, msg.length - 2);
+            msg = msg.substring(constants/* MACRO_05_HEADER */.h_.length, msg.length - 2);
         }
-        else if (msg.startsWith(constants/* MACRO_06_HEADER */.np) && msg.endsWith(constants/* MACRO_TRAILER */.Lt)) {
+        else if (msg.startsWith(constants/* MACRO_06_HEADER */.eB) && msg.endsWith(constants/* MACRO_TRAILER */.TG)) {
             macroId = 6;
-            msg = msg.substring(constants/* MACRO_06_HEADER.length */.np.length, msg.length - 2);
+            msg = msg.substring(constants/* MACRO_06_HEADER */.eB.length, msg.length - 2);
         }
         return decodeURIComponent(escape(String.fromCharCode.apply(String, __spread(this.encode(msg, priorityCharset, fnc1, shape, macroId)))));
     };
@@ -12681,8 +12681,8 @@ var MinimalEncoder = /** @class */ (function () {
                 return 0;
             }
             var ci = input.charAt(i);
-            if ((c40 && HighLevelEncoder/* default.isNativeC40 */.Z.isNativeC40(ci)) ||
-                (!c40 && HighLevelEncoder/* default.isNativeText */.Z.isNativeText(ci))) {
+            if ((c40 && HighLevelEncoder/* default */.A.isNativeC40(ci)) ||
+                (!c40 && HighLevelEncoder/* default */.A.isNativeText(ci))) {
                 thirdsCount++; // native
             }
             else if (!MinimalEncoder.isExtendedASCII(ci, input.getFNC1Character())) {
@@ -12691,8 +12691,8 @@ var MinimalEncoder = /** @class */ (function () {
             else {
                 var asciiValue = ci & 0xff;
                 if (asciiValue >= 128 &&
-                    ((c40 && HighLevelEncoder/* default.isNativeC40 */.Z.isNativeC40(asciiValue - 128)) ||
-                        (!c40 && HighLevelEncoder/* default.isNativeText */.Z.isNativeText(asciiValue - 128)))) {
+                    ((c40 && HighLevelEncoder/* default */.A.isNativeC40(asciiValue - 128)) ||
+                        (!c40 && HighLevelEncoder/* default */.A.isNativeText(asciiValue - 128)))) {
                     thirdsCount += 3; // shift, Upper shift
                 }
                 else {
@@ -12718,9 +12718,9 @@ var MinimalEncoder = /** @class */ (function () {
         if (previous === null || previous.getEndMode() !== Mode.EDF) {
             // not possible to unlatch a full EDF edge to something
             // else
-            if (HighLevelEncoder/* default.isDigit */.Z.isDigit(ch) &&
+            if (HighLevelEncoder/* default */.A.isDigit(ch) &&
                 input.haveNCharacters(from, 2) &&
-                HighLevelEncoder/* default.isDigit */.Z.isDigit(input.charAt(from + 1))) {
+                HighLevelEncoder/* default */.A.isDigit(input.charAt(from + 1))) {
                 // two digits ASCII encoded
                 this.addEdge(edges, new Edge(input, Mode.ASCII, from, 2, previous));
             }
@@ -12746,9 +12746,9 @@ var MinimalEncoder = /** @class */ (function () {
                 finally { if (e_2) throw e_2.error; }
             }
             if (input.haveNCharacters(from, 3) &&
-                HighLevelEncoder/* default.isNativeX12 */.Z.isNativeX12(input.charAt(from)) &&
-                HighLevelEncoder/* default.isNativeX12 */.Z.isNativeX12(input.charAt(from + 1)) &&
-                HighLevelEncoder/* default.isNativeX12 */.Z.isNativeX12(input.charAt(from + 2))) {
+                HighLevelEncoder/* default */.A.isNativeX12(input.charAt(from)) &&
+                HighLevelEncoder/* default */.A.isNativeX12(input.charAt(from + 1)) &&
+                HighLevelEncoder/* default */.A.isNativeX12(input.charAt(from + 2))) {
                 this.addEdge(edges, new Edge(input, Mode.X12, from, 3, previous));
             }
             this.addEdge(edges, new Edge(input, Mode.B256, from, 1, previous));
@@ -12759,7 +12759,7 @@ var MinimalEncoder = /** @class */ (function () {
         for (i = 0; i < 3; i++) {
             var pos = from + i;
             if (input.haveNCharacters(pos, 1) &&
-                HighLevelEncoder/* default.isNativeEDIFACT */.Z.isNativeEDIFACT(input.charAt(pos))) {
+                HighLevelEncoder/* default */.A.isNativeEDIFACT(input.charAt(pos))) {
                 this.addEdge(edges, new Edge(input, Mode.EDF, from, i + 1, previous));
             }
             else {
@@ -12768,7 +12768,7 @@ var MinimalEncoder = /** @class */ (function () {
         }
         if (i === 3 &&
             input.haveNCharacters(from, 4) &&
-            HighLevelEncoder/* default.isNativeEDIFACT */.Z.isNativeEDIFACT(input.charAt(from + 3))) {
+            HighLevelEncoder/* default */.A.isNativeEDIFACT(input.charAt(from + 3))) {
             this.addEdge(edges, new Edge(input, Mode.EDF, from, 4, previous));
         }
     };
@@ -12975,7 +12975,7 @@ var MinimalEncoder = /** @class */ (function () {
             }
         }
         var minimalJ = -1;
-        var minimalSize = Integer/* default.MAX_VALUE */.Z.MAX_VALUE;
+        var minimalSize = Integer/* default */.A.MAX_VALUE;
         for (var j = 0; j < 6; j++) {
             if (edges[inputLength][j] !== null) {
                 var edge = edges[inputLength][j];
@@ -13257,29 +13257,29 @@ var Edge = /** @class */ (function () {
                 MinimalEncoder.isExtendedASCII(this.input.charAt(from + 1), this.input.getFNC1Character())) {
                 return 0;
             }
-            if (HighLevelEncoder/* default.isDigit */.Z.isDigit(this.input.charAt(from)) &&
-                HighLevelEncoder/* default.isDigit */.Z.isDigit(this.input.charAt(from + 1))) {
+            if (HighLevelEncoder/* default */.A.isDigit(this.input.charAt(from)) &&
+                HighLevelEncoder/* default */.A.isDigit(this.input.charAt(from + 1))) {
                 return 1;
             }
             return 2;
         }
         if (length - from === 3) {
-            if (HighLevelEncoder/* default.isDigit */.Z.isDigit(this.input.charAt(from)) &&
-                HighLevelEncoder/* default.isDigit */.Z.isDigit(this.input.charAt(from + 1)) &&
+            if (HighLevelEncoder/* default */.A.isDigit(this.input.charAt(from)) &&
+                HighLevelEncoder/* default */.A.isDigit(this.input.charAt(from + 1)) &&
                 !MinimalEncoder.isExtendedASCII(this.input.charAt(from + 2), this.input.getFNC1Character())) {
                 return 2;
             }
-            if (HighLevelEncoder/* default.isDigit */.Z.isDigit(this.input.charAt(from + 1)) &&
-                HighLevelEncoder/* default.isDigit */.Z.isDigit(this.input.charAt(from + 2)) &&
+            if (HighLevelEncoder/* default */.A.isDigit(this.input.charAt(from + 1)) &&
+                HighLevelEncoder/* default */.A.isDigit(this.input.charAt(from + 2)) &&
                 !MinimalEncoder.isExtendedASCII(this.input.charAt(from), this.input.getFNC1Character())) {
                 return 2;
             }
             return 0;
         }
-        if (HighLevelEncoder/* default.isDigit */.Z.isDigit(this.input.charAt(from)) &&
-            HighLevelEncoder/* default.isDigit */.Z.isDigit(this.input.charAt(from + 1)) &&
-            HighLevelEncoder/* default.isDigit */.Z.isDigit(this.input.charAt(from + 2)) &&
-            HighLevelEncoder/* default.isDigit */.Z.isDigit(this.input.charAt(from + 3))) {
+        if (HighLevelEncoder/* default */.A.isDigit(this.input.charAt(from)) &&
+            HighLevelEncoder/* default */.A.isDigit(this.input.charAt(from + 1)) &&
+            HighLevelEncoder/* default */.A.isDigit(this.input.charAt(from + 2)) &&
+            HighLevelEncoder/* default */.A.isDigit(this.input.charAt(from + 3))) {
             return 2;
         }
         return 0;
@@ -13453,8 +13453,8 @@ var Edge = /** @class */ (function () {
         var c40Values = [];
         for (var i = 0; i < this.characterLength; i++) {
             var ci = this.input.charAt(this.fromPosition + i);
-            if ((c40 && HighLevelEncoder/* default.isNativeC40 */.Z.isNativeC40(ci)) ||
-                (!c40 && HighLevelEncoder/* default.isNativeText */.Z.isNativeText(ci))) {
+            if ((c40 && HighLevelEncoder/* default */.A.isNativeC40(ci)) ||
+                (!c40 && HighLevelEncoder/* default */.A.isNativeText(ci))) {
                 c40Values.push(this.getC40Value(c40, 0, ci, fnc1));
             }
             else if (!MinimalEncoder.isExtendedASCII(ci, fnc1)) {
@@ -13464,8 +13464,8 @@ var Edge = /** @class */ (function () {
             }
             else {
                 var asciiValue = (ci & 0xff) - 128;
-                if ((c40 && HighLevelEncoder/* default.isNativeC40 */.Z.isNativeC40(asciiValue)) ||
-                    (!c40 && HighLevelEncoder/* default.isNativeText */.Z.isNativeText(asciiValue))) {
+                if ((c40 && HighLevelEncoder/* default */.A.isNativeC40(asciiValue)) ||
+                    (!c40 && HighLevelEncoder/* default */.A.isNativeText(asciiValue))) {
                     c40Values.push(1); // Shift 2
                     c40Values.push(30); // Upper Shift
                     c40Values.push(this.getC40Value(c40, 0, asciiValue, fnc1));
@@ -13618,11 +13618,11 @@ var Input = /** @class */ (function (_super) {
 }(MinimalECIInput));
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/SymbolInfo.js
-var SymbolInfo = __webpack_require__(1662);
+var SymbolInfo = __webpack_require__(748);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/TextEncoder.js
-var TextEncoder = __webpack_require__(6175);
+var TextEncoder = __webpack_require__(6563);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/X12Encoder.js
-var X12Encoder = __webpack_require__(9714);
+var X12Encoder = __webpack_require__(4405);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/index.js
 
 
@@ -13653,7 +13653,7 @@ var DataMatrixWriter = /** @class */ (function () {
         if (contents.trim() === '') {
             throw new Error('Found empty contents');
         }
-        if (format !== BarcodeFormat/* default.DATA_MATRIX */.Z.DATA_MATRIX) {
+        if (format !== BarcodeFormat/* default */.A.DATA_MATRIX) {
             throw new Error('Can only encode DATA_MATRIX, but got ' + format);
         }
         if (width < 0 || height < 0) {
@@ -13664,15 +13664,15 @@ var DataMatrixWriter = /** @class */ (function () {
         var minSize = null;
         var maxSize = null;
         if (hints != null) {
-            var requestedShape = hints.get(EncodeHintType/* default.DATA_MATRIX_SHAPE */.Z.DATA_MATRIX_SHAPE);
+            var requestedShape = hints.get(EncodeHintType/* default */.A.DATA_MATRIX_SHAPE);
             if (requestedShape != null) {
                 shape = requestedShape;
             }
-            var requestedMinSize = hints.get(EncodeHintType/* default.MIN_SIZE */.Z.MIN_SIZE);
+            var requestedMinSize = hints.get(EncodeHintType/* default */.A.MIN_SIZE);
             if (requestedMinSize != null) {
                 minSize = requestedMinSize;
             }
-            var requestedMaxSize = hints.get(EncodeHintType/* default.MAX_SIZE */.Z.MAX_SIZE);
+            var requestedMaxSize = hints.get(EncodeHintType/* default */.A.MAX_SIZE);
             if (requestedMaxSize != null) {
                 maxSize = requestedMaxSize;
             }
@@ -13680,29 +13680,29 @@ var DataMatrixWriter = /** @class */ (function () {
         // 1. step: Data encodation
         var encoded;
         var hasCompactionHint = hints != null &&
-            hints.has(EncodeHintType/* default.DATA_MATRIX_COMPACT */.Z.DATA_MATRIX_COMPACT) &&
-            Boolean(hints.get(EncodeHintType/* default.DATA_MATRIX_COMPACT */.Z.DATA_MATRIX_COMPACT).toString());
+            hints.has(EncodeHintType/* default */.A.DATA_MATRIX_COMPACT) &&
+            Boolean(hints.get(EncodeHintType/* default */.A.DATA_MATRIX_COMPACT).toString());
         if (hasCompactionHint) {
-            var hasGS1FormatHint = hints.has(EncodeHintType/* default.GS1_FORMAT */.Z.GS1_FORMAT) &&
-                Boolean(hints.get(EncodeHintType/* default.GS1_FORMAT */.Z.GS1_FORMAT).toString());
+            var hasGS1FormatHint = hints.has(EncodeHintType/* default */.A.GS1_FORMAT) &&
+                Boolean(hints.get(EncodeHintType/* default */.A.GS1_FORMAT).toString());
             var charset = null;
-            var hasEncodingHint = hints.has(EncodeHintType/* default.CHARACTER_SET */.Z.CHARACTER_SET);
+            var hasEncodingHint = hints.has(EncodeHintType/* default */.A.CHARACTER_SET);
             if (hasEncodingHint) {
-                charset = Charset/* default.forName */.Z.forName(hints.get(EncodeHintType/* default.CHARACTER_SET */.Z.CHARACTER_SET).toString());
+                charset = Charset/* default */.A.forName(hints.get(EncodeHintType/* default */.A.CHARACTER_SET).toString());
             }
             encoded = MinimalEncoder.encodeHighLevel(contents, charset, hasGS1FormatHint ? 0x1d : -1, shape);
         }
         else {
             var hasForceC40Hint = hints != null &&
-                hints.has(EncodeHintType/* default.FORCE_C40 */.Z.FORCE_C40) &&
-                Boolean(hints.get(EncodeHintType/* default.FORCE_C40 */.Z.FORCE_C40).toString());
-            encoded = HighLevelEncoder/* default.encodeHighLevel */.Z.encodeHighLevel(contents, shape, minSize, maxSize, hasForceC40Hint);
+                hints.has(EncodeHintType/* default */.A.FORCE_C40) &&
+                Boolean(hints.get(EncodeHintType/* default */.A.FORCE_C40).toString());
+            encoded = HighLevelEncoder/* default */.A.encodeHighLevel(contents, shape, minSize, maxSize, hasForceC40Hint);
         }
-        var symbolInfo = SymbolInfo/* default.lookup */.Z.lookup(encoded.length, shape, minSize, maxSize, true);
+        var symbolInfo = SymbolInfo/* default */.A.lookup(encoded.length, shape, minSize, maxSize, true);
         // 2. step: ECC generation
-        var codewords = ErrorCorrection/* default.encodeECC200 */.Z.encodeECC200(encoded, symbolInfo);
+        var codewords = ErrorCorrection/* default */.A.encodeECC200(encoded, symbolInfo);
         // 3. step: Module placement in Matrix
-        var placement = new DefaultPlacement/* default */.Z(codewords, symbolInfo.getSymbolDataWidth(), symbolInfo.getSymbolDataHeight());
+        var placement = new DefaultPlacement/* default */.A(codewords, symbolInfo.getSymbolDataWidth(), symbolInfo.getSymbolDataHeight());
         placement.place();
         // 4. step: low-level encoding
         return this.encodeLowLevel(placement, symbolInfo, width, height);
@@ -13717,7 +13717,7 @@ var DataMatrixWriter = /** @class */ (function () {
     DataMatrixWriter.prototype.encodeLowLevel = function (placement, symbolInfo, width, height) {
         var symbolWidth = symbolInfo.getSymbolDataWidth();
         var symbolHeight = symbolInfo.getSymbolDataHeight();
-        var matrix = new ByteMatrix/* default */.Z(symbolInfo.getSymbolWidth(), symbolInfo.getSymbolHeight());
+        var matrix = new ByteMatrix/* default */.A(symbolInfo.getSymbolWidth(), symbolInfo.getSymbolHeight());
         var matrixY = 0;
         for (var y = 0; y < symbolHeight; y++) {
             // Fill the top edge with alternate 0 / 1
@@ -13779,10 +13779,10 @@ var DataMatrixWriter = /** @class */ (function () {
         if (reqHeight < matrixHeight || reqWidth < matrixWidth) {
             leftPadding = 0;
             topPadding = 0;
-            output = new BitMatrix/* default */.Z(matrixWidth, matrixHeight);
+            output = new BitMatrix/* default */.A(matrixWidth, matrixHeight);
         }
         else {
-            output = new BitMatrix/* default */.Z(reqWidth, reqHeight);
+            output = new BitMatrix/* default */.A(reqWidth, reqHeight);
         }
         output.clear();
         for (var inputY = 0, outputY = topPadding; inputY < matrixHeight; inputY++, outputY += multiple) {
@@ -13802,20 +13802,20 @@ var DataMatrixWriter = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 7897:
+/***/ 4630:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _common_DecoderResult__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4522);
-/* harmony import */ var _common_BitSource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7677);
-/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(75);
-/* harmony import */ var _util_StringEncoding__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4421);
-/* harmony import */ var _common_StringUtils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3429);
-/* harmony import */ var _FormatException__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(2468);
-/* harmony import */ var _IllegalStateException__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4418);
+/* harmony import */ var _common_DecoderResult__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9064);
+/* harmony import */ var _common_BitSource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(879);
+/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(432);
+/* harmony import */ var _util_StringEncoding__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2442);
+/* harmony import */ var _common_StringUtils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9563);
+/* harmony import */ var _FormatException__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7027);
+/* harmony import */ var _IllegalStateException__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7591);
 
 
 
@@ -13861,9 +13861,9 @@ var DecodedBitStreamParser = /** @class */ (function () {
     function DecodedBitStreamParser() {
     }
     DecodedBitStreamParser.decode = function (bytes) {
-        var bits = new _common_BitSource__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z(bytes);
-        var result = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
-        var resultTrailer = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+        var bits = new _common_BitSource__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A(bytes);
+        var result = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A();
+        var resultTrailer = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A();
         var byteSegments = new Array();
         var mode = Mode.ASCII_ENCODE;
         do {
@@ -13888,7 +13888,7 @@ var DecodedBitStreamParser = /** @class */ (function () {
                         this.decodeBase256Segment(bits, result, byteSegments);
                         break;
                     default:
-                        throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z();
+                        throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A();
                 }
                 mode = Mode.ASCII_ENCODE;
             }
@@ -13896,7 +13896,7 @@ var DecodedBitStreamParser = /** @class */ (function () {
         if (resultTrailer.length() > 0) {
             result.append(resultTrailer.toString());
         }
-        return new _common_DecoderResult__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(bytes, result.toString(), byteSegments.length === 0 ? null : byteSegments, null);
+        return new _common_DecoderResult__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(bytes, result.toString(), byteSegments.length === 0 ? null : byteSegments, null);
     };
     /**
      * See ISO 16022:2006, 5.2.3 and Annex C, Table C.2
@@ -13906,7 +13906,7 @@ var DecodedBitStreamParser = /** @class */ (function () {
         do {
             var oneByte = bits.readBits(8);
             if (oneByte === 0) {
-                throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z();
+                throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A();
             }
             else if (oneByte <= 128) { // ASCII data (ASCII value + 1)
                 if (upperShift) {
@@ -13966,7 +13966,7 @@ var DecodedBitStreamParser = /** @class */ (function () {
                         // Not to be used in ASCII encodation
                         // but work around encoders that end with 254, latch back to ASCII
                         if (oneByte !== 254 || bits.available() !== 0) {
-                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z();
+                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A();
                         }
                         break;
                 }
@@ -14012,7 +14012,7 @@ var DecodedBitStreamParser = /** @class */ (function () {
                             }
                         }
                         else {
-                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z();
+                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A();
                         }
                         break;
                     case 1:
@@ -14045,7 +14045,7 @@ var DecodedBitStreamParser = /** @class */ (function () {
                                     upperShift = true;
                                     break;
                                 default:
-                                    throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z();
+                                    throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A();
                             }
                         }
                         shift = 0;
@@ -14061,7 +14061,7 @@ var DecodedBitStreamParser = /** @class */ (function () {
                         shift = 0;
                         break;
                     default:
-                        throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z();
+                        throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A();
                 }
             }
         } while (bits.available() > 0);
@@ -14104,7 +14104,7 @@ var DecodedBitStreamParser = /** @class */ (function () {
                             }
                         }
                         else {
-                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z();
+                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A();
                         }
                         break;
                     case 1:
@@ -14138,7 +14138,7 @@ var DecodedBitStreamParser = /** @class */ (function () {
                                     upperShift = true;
                                     break;
                                 default:
-                                    throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z();
+                                    throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A();
                             }
                         }
                         shift = 0;
@@ -14156,11 +14156,11 @@ var DecodedBitStreamParser = /** @class */ (function () {
                             shift = 0;
                         }
                         else {
-                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z();
+                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A();
                         }
                         break;
                     default:
-                        throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z();
+                        throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A();
                 }
             }
         } while (bits.available() > 0);
@@ -14205,7 +14205,7 @@ var DecodedBitStreamParser = /** @class */ (function () {
                             result.append(String.fromCharCode(cValue + 51));
                         }
                         else {
-                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z();
+                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A();
                         }
                         break;
                 }
@@ -14267,23 +14267,23 @@ var DecodedBitStreamParser = /** @class */ (function () {
         }
         // We're seeing NegativeArraySizeException errors from users.
         if (count < 0) {
-            throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z();
+            throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A();
         }
         var bytes = new Uint8Array(count);
         for (var i = 0; i < count; i++) {
             // Have seen this particular error in the wild, such as at
             // http://www.bcgen.com/demo/IDAutomationStreamingDataMatrix.aspx?MODE=3&D=Fred&PFMT=3&PT=F&X=0.3&O=0&LM=0.2
             if (bits.available() < 8) {
-                throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z();
+                throw new _FormatException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A();
             }
             bytes[i] = this.unrandomize255State(bits.readBits(8), codewordPosition++);
         }
         byteSegments.push(bytes);
         try {
-            result.append(_util_StringEncoding__WEBPACK_IMPORTED_MODULE_3__/* ["default"].decode */ .Z.decode(bytes, _common_StringUtils__WEBPACK_IMPORTED_MODULE_4__/* ["default"].ISO88591 */ .Z.ISO88591));
+            result.append(_util_StringEncoding__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A.decode(bytes, _common_StringUtils__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A.ISO88591));
         }
         catch (uee) {
-            throw new _IllegalStateException__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z('Platform does not support required encoding: ' + uee.message);
+            throw new _IllegalStateException__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A('Platform does not support required encoding: ' + uee.message);
         }
     };
     /**
@@ -14329,15 +14329,15 @@ var DecodedBitStreamParser = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 4470:
+/***/ 3937:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "g": () => (/* binding */ ASCIIEncoder)
+/* harmony export */   a: () => (/* binding */ ASCIIEncoder)
 /* harmony export */ });
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4255);
-/* harmony import */ var _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9729);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4715);
+/* harmony import */ var _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7750);
 
 // tslint:disable-next-line:no-circular-imports
 
@@ -14345,46 +14345,46 @@ var ASCIIEncoder = /** @class */ (function () {
     function ASCIIEncoder() {
     }
     ASCIIEncoder.prototype.getEncodingMode = function () {
-        return _constants__WEBPACK_IMPORTED_MODULE_0__/* .ASCII_ENCODATION */ .KJ;
+        return _constants__WEBPACK_IMPORTED_MODULE_0__/* .ASCII_ENCODATION */ .d2;
     };
     ASCIIEncoder.prototype.encode = function (context) {
         // step B
-        var n = _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__/* ["default"].determineConsecutiveDigitCount */ .Z.determineConsecutiveDigitCount(context.getMessage(), context.pos);
+        var n = _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.determineConsecutiveDigitCount(context.getMessage(), context.pos);
         if (n >= 2) {
             context.writeCodeword(this.encodeASCIIDigits(context.getMessage().charCodeAt(context.pos), context.getMessage().charCodeAt(context.pos + 1)));
             context.pos += 2;
         }
         else {
             var c = context.getCurrentChar();
-            var newMode = _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__/* ["default"].lookAheadTest */ .Z.lookAheadTest(context.getMessage(), context.pos, this.getEncodingMode());
+            var newMode = _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.lookAheadTest(context.getMessage(), context.pos, this.getEncodingMode());
             if (newMode !== this.getEncodingMode()) {
                 switch (newMode) {
-                    case _constants__WEBPACK_IMPORTED_MODULE_0__/* .BASE256_ENCODATION */ .vF:
-                        context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_0__/* .LATCH_TO_BASE256 */ .Fd);
-                        context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_0__/* .BASE256_ENCODATION */ .vF);
+                    case _constants__WEBPACK_IMPORTED_MODULE_0__/* .BASE256_ENCODATION */ .mt:
+                        context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_0__/* .LATCH_TO_BASE256 */ .ah);
+                        context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_0__/* .BASE256_ENCODATION */ .mt);
                         return;
-                    case _constants__WEBPACK_IMPORTED_MODULE_0__/* .C40_ENCODATION */ .Bw:
-                        context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_0__/* .LATCH_TO_C40 */ .RJ);
-                        context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_0__/* .C40_ENCODATION */ .Bw);
+                    case _constants__WEBPACK_IMPORTED_MODULE_0__/* .C40_ENCODATION */ .fG:
+                        context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_0__/* .LATCH_TO_C40 */ .X7);
+                        context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_0__/* .C40_ENCODATION */ .fG);
                         return;
-                    case _constants__WEBPACK_IMPORTED_MODULE_0__/* .X12_ENCODATION */ .Pi:
-                        context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_0__/* .LATCH_TO_ANSIX12 */ .xh);
-                        context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_0__/* .X12_ENCODATION */ .Pi);
+                    case _constants__WEBPACK_IMPORTED_MODULE_0__/* .X12_ENCODATION */ .VK:
+                        context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_0__/* .LATCH_TO_ANSIX12 */ .Qe);
+                        context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_0__/* .X12_ENCODATION */ .VK);
                         break;
-                    case _constants__WEBPACK_IMPORTED_MODULE_0__/* .TEXT_ENCODATION */ .Uz:
-                        context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_0__/* .LATCH_TO_TEXT */ .HO);
-                        context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_0__/* .TEXT_ENCODATION */ .Uz);
+                    case _constants__WEBPACK_IMPORTED_MODULE_0__/* .TEXT_ENCODATION */ .VL:
+                        context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_0__/* .LATCH_TO_TEXT */ .dn);
+                        context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_0__/* .TEXT_ENCODATION */ .VL);
                         break;
-                    case _constants__WEBPACK_IMPORTED_MODULE_0__/* .EDIFACT_ENCODATION */ .t_:
-                        context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_0__/* .LATCH_TO_EDIFACT */ .gy);
-                        context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_0__/* .EDIFACT_ENCODATION */ .t_);
+                    case _constants__WEBPACK_IMPORTED_MODULE_0__/* .EDIFACT_ENCODATION */ .uf:
+                        context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_0__/* .LATCH_TO_EDIFACT */ .ij);
+                        context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_0__/* .EDIFACT_ENCODATION */ .uf);
                         break;
                     default:
                         throw new Error('Illegal mode: ' + newMode);
                 }
             }
-            else if (_HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__/* ["default"].isExtendedASCII */ .Z.isExtendedASCII(c)) {
-                context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_0__/* .UPPER_SHIFT */ .R2);
+            else if (_HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.isExtendedASCII(c)) {
+                context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_0__/* .UPPER_SHIFT */ .gn);
                 context.writeCodeword(c - 128 + 1);
                 context.pos++;
             }
@@ -14395,7 +14395,7 @@ var ASCIIEncoder = /** @class */ (function () {
         }
     };
     ASCIIEncoder.prototype.encodeASCIIDigits = function (digit1, digit2) {
-        if (_HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__/* ["default"].isDigit */ .Z.isDigit(digit1) && _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__/* ["default"].isDigit */ .Z.isDigit(digit2)) {
+        if (_HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.isDigit(digit1) && _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.isDigit(digit2)) {
             var num = (digit1 - 48) * 10 + (digit2 - 48);
             return num + 130;
         }
@@ -14408,17 +14408,17 @@ var ASCIIEncoder = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 3256:
+/***/ 2926:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "M": () => (/* binding */ Base256Encoder)
+/* harmony export */   B: () => (/* binding */ Base256Encoder)
 /* harmony export */ });
-/* harmony import */ var _common_StringUtils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3429);
-/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75);
-/* harmony import */ var _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9729);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4255);
+/* harmony import */ var _common_StringUtils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9563);
+/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(432);
+/* harmony import */ var _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7750);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4715);
 
 
 
@@ -14427,19 +14427,19 @@ var Base256Encoder = /** @class */ (function () {
     function Base256Encoder() {
     }
     Base256Encoder.prototype.getEncodingMode = function () {
-        return _constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF;
+        return _constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .mt;
     };
     Base256Encoder.prototype.encode = function (context) {
-        var buffer = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z();
+        var buffer = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A();
         buffer.append(0); // Initialize length field
         while (context.hasMoreCharacters()) {
             var c = context.getCurrentChar();
             buffer.append(c);
             context.pos++;
-            var newMode = _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_2__/* ["default"].lookAheadTest */ .Z.lookAheadTest(context.getMessage(), context.pos, this.getEncodingMode());
+            var newMode = _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.lookAheadTest(context.getMessage(), context.pos, this.getEncodingMode());
             if (newMode !== this.getEncodingMode()) {
                 // Return to ASCII encodation, which will actually handle latch to new mode
-                context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ);
+                context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .d2);
                 break;
             }
         }
@@ -14450,11 +14450,11 @@ var Base256Encoder = /** @class */ (function () {
         var mustPad = context.getSymbolInfo().getDataCapacity() - currentSize > 0;
         if (context.hasMoreCharacters() || mustPad) {
             if (dataCount <= 249) {
-                buffer.setCharAt(0, _common_StringUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"].getCharAt */ .Z.getCharAt(dataCount));
+                buffer.setCharAt(0, _common_StringUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.getCharAt(dataCount));
             }
             else if (dataCount <= 1555) {
-                buffer.setCharAt(0, _common_StringUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"].getCharAt */ .Z.getCharAt(Math.floor(dataCount / 250) + 249));
-                buffer.insert(1, _common_StringUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"].getCharAt */ .Z.getCharAt(dataCount % 250));
+                buffer.setCharAt(0, _common_StringUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.getCharAt(Math.floor(dataCount / 250) + 249));
+                buffer.insert(1, _common_StringUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.getCharAt(dataCount % 250));
             }
             else {
                 throw new Error('Message length not in valid ranges: ' + dataCount);
@@ -14481,16 +14481,16 @@ var Base256Encoder = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 4903:
+/***/ 8955:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "D": () => (/* binding */ C40Encoder)
+/* harmony export */   S: () => (/* binding */ C40Encoder)
 /* harmony export */ });
-/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75);
-/* harmony import */ var _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9729);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4255);
+/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(432);
+/* harmony import */ var _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7750);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4715);
 
 
 
@@ -14498,10 +14498,10 @@ var C40Encoder = /** @class */ (function () {
     function C40Encoder() {
     }
     C40Encoder.prototype.getEncodingMode = function () {
-        return _constants__WEBPACK_IMPORTED_MODULE_2__/* .C40_ENCODATION */ .Bw;
+        return _constants__WEBPACK_IMPORTED_MODULE_2__/* .C40_ENCODATION */ .fG;
     };
     C40Encoder.prototype.encodeMaximal = function (context) {
-        var buffer = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+        var buffer = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A();
         var lastCharSize = 0;
         var backtrackStartPosition = context.pos;
         var backtrackBufferLength = 0;
@@ -14527,13 +14527,13 @@ var C40Encoder = /** @class */ (function () {
             }
         }
         if (buffer.length() > 0) {
-            context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_2__/* .LATCH_TO_C40 */ .RJ);
+            context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_2__/* .LATCH_TO_C40 */ .X7);
         }
         this.handleEOD(context, buffer);
     };
     C40Encoder.prototype.encode = function (context) {
         // step C
-        var buffer = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+        var buffer = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A();
         while (context.hasMoreCharacters()) {
             var c = context.getCurrentChar();
             context.pos++;
@@ -14544,7 +14544,7 @@ var C40Encoder = /** @class */ (function () {
             var available = context.getSymbolInfo().getDataCapacity() - curCodewordCount;
             if (!context.hasMoreCharacters()) {
                 // Avoid having a single C40 value in the last triplet
-                var removed = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+                var removed = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A();
                 if (buffer.length() % 3 === 2 && available !== 2) {
                     lastCharSize = this.backtrackOneCharacter(context, buffer, removed, lastCharSize);
                 }
@@ -14556,10 +14556,10 @@ var C40Encoder = /** @class */ (function () {
             }
             var count = buffer.length();
             if (count % 3 === 0) {
-                var newMode = _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__/* ["default"].lookAheadTest */ .Z.lookAheadTest(context.getMessage(), context.pos, this.getEncodingMode());
+                var newMode = _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.lookAheadTest(context.getMessage(), context.pos, this.getEncodingMode());
                 if (newMode !== this.getEncodingMode()) {
                     // Return to ASCII encodation, which will actually handle latch to new mode
-                    context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_2__/* .ASCII_ENCODATION */ .KJ);
+                    context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_2__/* .ASCII_ENCODATION */ .d2);
                     break;
                 }
             }
@@ -14609,7 +14609,7 @@ var C40Encoder = /** @class */ (function () {
                 this.writeNextTriplet(context, buffer);
             }
             if (context.hasMoreCharacters()) {
-                context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_2__/* .C40_UNLATCH */ .fs);
+                context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_2__/* .C40_UNLATCH */ .eb);
             }
         }
         else if (available === 1 && rest === 1) {
@@ -14617,7 +14617,7 @@ var C40Encoder = /** @class */ (function () {
                 this.writeNextTriplet(context, buffer);
             }
             if (context.hasMoreCharacters()) {
-                context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_2__/* .C40_UNLATCH */ .fs);
+                context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_2__/* .C40_UNLATCH */ .eb);
             }
             // else no unlatch
             context.pos--;
@@ -14627,13 +14627,13 @@ var C40Encoder = /** @class */ (function () {
                 this.writeNextTriplet(context, buffer);
             }
             if (available > 0 || context.hasMoreCharacters()) {
-                context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_2__/* .C40_UNLATCH */ .fs);
+                context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_2__/* .C40_UNLATCH */ .eb);
             }
         }
         else {
             throw new Error('Unexpected case. Please report!');
         }
-        context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_2__/* .ASCII_ENCODATION */ .KJ);
+        context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_2__/* .ASCII_ENCODATION */ .d2);
     };
     C40Encoder.prototype.encodeChar = function (c, sb) {
         if (c === ' '.charCodeAt(0)) {
@@ -14682,7 +14682,7 @@ var C40Encoder = /** @class */ (function () {
         var v = 1600 * sb.charCodeAt(0) + 40 * sb.charCodeAt(1) + sb.charCodeAt(2) + 1;
         var cw1 = v / 256;
         var cw2 = v % 256;
-        var result = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+        var result = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A();
         result.append(cw1);
         result.append(cw2);
         return result.toString();
@@ -14694,14 +14694,14 @@ var C40Encoder = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 8504:
+/***/ 8032:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _util_Arrays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1126);
+/* harmony import */ var _util_Arrays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2598);
 
 /**
  * Symbol Character Placement Program. Adapted from Annex M.1 in ISO/IEC 16022:2000(E).
@@ -14719,7 +14719,7 @@ var DefaultPlacement = /** @class */ (function () {
         this.numcols = numcols;
         this.numrows = numrows;
         this.bits = new Uint8Array(numcols * numrows);
-        _util_Arrays__WEBPACK_IMPORTED_MODULE_0__/* ["default"].fill */ .Z.fill(this.bits, 2); // Initialize with "not set" value
+        _util_Arrays__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.fill(this.bits, 2); // Initialize with "not set" value
     }
     DefaultPlacement.prototype.getNumrows = function () {
         return this.numrows;
@@ -14863,17 +14863,17 @@ var DefaultPlacement = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 2299:
+/***/ 2042:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Q": () => (/* binding */ EdifactEncoder)
+/* harmony export */   b: () => (/* binding */ EdifactEncoder)
 /* harmony export */ });
-/* harmony import */ var _common_StringUtils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3429);
-/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4255);
-/* harmony import */ var _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9729);
+/* harmony import */ var _common_StringUtils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9563);
+/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(432);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4715);
+/* harmony import */ var _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7750);
 
 
 
@@ -14882,11 +14882,11 @@ var EdifactEncoder = /** @class */ (function () {
     function EdifactEncoder() {
     }
     EdifactEncoder.prototype.getEncodingMode = function () {
-        return _constants__WEBPACK_IMPORTED_MODULE_2__/* .EDIFACT_ENCODATION */ .t_;
+        return _constants__WEBPACK_IMPORTED_MODULE_2__/* .EDIFACT_ENCODATION */ .uf;
     };
     EdifactEncoder.prototype.encode = function (context) {
         // step F
-        var buffer = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z();
+        var buffer = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A();
         while (context.hasMoreCharacters()) {
             var c = context.getCurrentChar();
             this.encodeChar(c, buffer);
@@ -14901,15 +14901,15 @@ var EdifactEncoder = /** @class */ (function () {
                 // for (let i = 0; i < 4; i++) {
                 //  buffer.deleteCharAt(i);
                 // }
-                var newMode = _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_3__/* ["default"].lookAheadTest */ .Z.lookAheadTest(context.getMessage(), context.pos, this.getEncodingMode());
+                var newMode = _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A.lookAheadTest(context.getMessage(), context.pos, this.getEncodingMode());
                 if (newMode !== this.getEncodingMode()) {
                     // Return to ASCII encodation, which will actually handle latch to new mode
-                    context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_2__/* .ASCII_ENCODATION */ .KJ);
+                    context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_2__/* .ASCII_ENCODATION */ .d2);
                     break;
                 }
             }
         }
-        buffer.append(_common_StringUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"].getCharAt */ .Z.getCharAt(31)); // Unlatch
+        buffer.append(_common_StringUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.getCharAt(31)); // Unlatch
         this.handleEOD(context, buffer);
     };
     /**
@@ -14967,7 +14967,7 @@ var EdifactEncoder = /** @class */ (function () {
             }
         }
         finally {
-            context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_2__/* .ASCII_ENCODATION */ .KJ);
+            context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_2__/* .ASCII_ENCODATION */ .d2);
         }
     };
     EdifactEncoder.prototype.encodeChar = function (c, sb) {
@@ -14975,10 +14975,10 @@ var EdifactEncoder = /** @class */ (function () {
             sb.append(c);
         }
         else if (c >= '@'.charCodeAt(0) && c <= '^'.charCodeAt(0)) {
-            sb.append(_common_StringUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"].getCharAt */ .Z.getCharAt(c - 64));
+            sb.append(_common_StringUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.getCharAt(c - 64));
         }
         else {
-            _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_3__/* ["default"].illegalCharacter */ .Z.illegalCharacter(_common_StringUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"].getCharAt */ .Z.getCharAt(c));
+            _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A.illegalCharacter(_common_StringUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.getCharAt(c));
         }
     };
     EdifactEncoder.prototype.encodeToCodewords = function (sb) {
@@ -14994,7 +14994,7 @@ var EdifactEncoder = /** @class */ (function () {
         var cw1 = (v >> 16) & 255;
         var cw2 = (v >> 8) & 255;
         var cw3 = v & 255;
-        var res = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z();
+        var res = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A();
         res.append(cw1);
         if (len >= 2) {
             res.append(cw2);
@@ -15011,15 +15011,15 @@ var EdifactEncoder = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 8847:
+/***/ 7751:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "y": () => (/* binding */ EncoderContext)
+/* harmony export */   Q: () => (/* binding */ EncoderContext)
 /* harmony export */ });
-/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75);
-/* harmony import */ var _SymbolInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1662);
+/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(432);
+/* harmony import */ var _SymbolInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(748);
 
 
 var EncoderContext = /** @class */ (function () {
@@ -15029,7 +15029,7 @@ var EncoderContext = /** @class */ (function () {
         this.skipAtEnd = 0;
         // From this point on Strings are not Unicode anymore!
         var msgBinary = msg.split('').map(function (c) { return c.charCodeAt(0); });
-        var sb = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+        var sb = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A();
         for (var i = 0, c = msgBinary.length; i < c; i++) {
             var ch = String.fromCharCode(msgBinary[i] & 0xff);
             if (ch === '?' && msg.charAt(i) !== '?') {
@@ -15039,7 +15039,7 @@ var EncoderContext = /** @class */ (function () {
         }
         this.msg = sb.toString(); // Not Unicode here!
         this.shape = 0 /* FORCE_NONE */;
-        this.codewords = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+        this.codewords = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A();
         this.newEncoding = -1;
     }
     EncoderContext.prototype.setSymbolShape = function (shape) {
@@ -15097,7 +15097,7 @@ var EncoderContext = /** @class */ (function () {
     EncoderContext.prototype.updateSymbolInfo = function (len) {
         if (len === void 0) { len = this.getCodewordCount(); }
         if (this.symbolInfo == null || len > this.symbolInfo.getDataCapacity()) {
-            this.symbolInfo = _SymbolInfo__WEBPACK_IMPORTED_MODULE_1__/* ["default"].lookup */ .Z.lookup(len, this.shape, this.minSize, this.maxSize, true);
+            this.symbolInfo = _SymbolInfo__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.lookup(len, this.shape, this.minSize, this.maxSize, true);
         }
     };
     EncoderContext.prototype.resetSymbolInfo = function () {
@@ -15110,15 +15110,15 @@ var EncoderContext = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 9864:
+/***/ 4688:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4255);
+/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(432);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4715);
 
 
 /**
@@ -15138,7 +15138,7 @@ var ErrorCorrection = /** @class */ (function () {
         if (codewords.length !== symbolInfo.getDataCapacity()) {
             throw new Error('The number of codewords does not match the selected symbol');
         }
-        var sb = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+        var sb = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A();
         sb.append(codewords);
         var blockCount = symbolInfo.getInterleavedBlockCount();
         if (blockCount === 1) {
@@ -15154,7 +15154,7 @@ var ErrorCorrection = /** @class */ (function () {
                 errorSizes[i] = symbolInfo.getErrorLengthForInterleavedBlock(i + 1);
             }
             for (var block = 0; block < blockCount; block++) {
-                var temp = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+                var temp = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A();
                 for (var d = block; d < symbolInfo.getDataCapacity(); d += blockCount) {
                     temp.append(codewords.charAt(d));
                 }
@@ -15169,8 +15169,8 @@ var ErrorCorrection = /** @class */ (function () {
     };
     ErrorCorrection.createECCBlock = function (codewords, numECWords) {
         var table = -1;
-        for (var i = 0; i < _constants__WEBPACK_IMPORTED_MODULE_1__/* .FACTOR_SETS.length */ .cA.length; i++) {
-            if (_constants__WEBPACK_IMPORTED_MODULE_1__/* .FACTOR_SETS */ .cA[i] === numECWords) {
+        for (var i = 0; i < _constants__WEBPACK_IMPORTED_MODULE_1__/* .FACTOR_SETS */ .gE.length; i++) {
+            if (_constants__WEBPACK_IMPORTED_MODULE_1__/* .FACTOR_SETS */ .gE[i] === numECWords) {
                 table = i;
                 break;
             }
@@ -15178,7 +15178,7 @@ var ErrorCorrection = /** @class */ (function () {
         if (table < 0) {
             throw new Error('Illegal number of error correction codewords specified: ' + numECWords);
         }
-        var poly = _constants__WEBPACK_IMPORTED_MODULE_1__/* .FACTORS */ .Sh[table];
+        var poly = _constants__WEBPACK_IMPORTED_MODULE_1__/* .FACTORS */ .XQ[table];
         var ecc = [];
         for (var i = 0; i < numECWords; i++) {
             ecc[i] = 0;
@@ -15187,14 +15187,14 @@ var ErrorCorrection = /** @class */ (function () {
             var m = ecc[numECWords - 1] ^ codewords.charAt(i).charCodeAt(0);
             for (var k = numECWords - 1; k > 0; k--) {
                 if (m !== 0 && poly[k] !== 0) {
-                    ecc[k] = ecc[k - 1] ^ _constants__WEBPACK_IMPORTED_MODULE_1__/* .ALOG */ .UD[(_constants__WEBPACK_IMPORTED_MODULE_1__/* .LOG */ .sY[m] + _constants__WEBPACK_IMPORTED_MODULE_1__/* .LOG */ .sY[poly[k]]) % 255];
+                    ecc[k] = ecc[k - 1] ^ _constants__WEBPACK_IMPORTED_MODULE_1__/* .ALOG */ .KX[(_constants__WEBPACK_IMPORTED_MODULE_1__/* .LOG */ .$9[m] + _constants__WEBPACK_IMPORTED_MODULE_1__/* .LOG */ .$9[poly[k]]) % 255];
                 }
                 else {
                     ecc[k] = ecc[k - 1];
                 }
             }
             if (m !== 0 && poly[0] !== 0) {
-                ecc[0] = _constants__WEBPACK_IMPORTED_MODULE_1__/* .ALOG */ .UD[(_constants__WEBPACK_IMPORTED_MODULE_1__/* .LOG */ .sY[m] + _constants__WEBPACK_IMPORTED_MODULE_1__/* .LOG */ .sY[poly[0]]) % 255];
+                ecc[0] = _constants__WEBPACK_IMPORTED_MODULE_1__/* .ALOG */ .KX[(_constants__WEBPACK_IMPORTED_MODULE_1__/* .LOG */ .$9[m] + _constants__WEBPACK_IMPORTED_MODULE_1__/* .LOG */ .$9[poly[0]]) % 255];
             }
             else {
                 ecc[0] = 0;
@@ -15213,23 +15213,23 @@ var ErrorCorrection = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 9729:
+/***/ 7750:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _ASCIIEncoder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4470);
-/* harmony import */ var _Base256Encoder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3256);
-/* harmony import */ var _C40Encoder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4903);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4255);
-/* harmony import */ var _EdifactEncoder__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2299);
-/* harmony import */ var _EncoderContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8847);
-/* harmony import */ var _X12Encoder__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9714);
-/* harmony import */ var _TextEncoder__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(6175);
-/* harmony import */ var _util_Arrays__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(1126);
-/* harmony import */ var _util_Integer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(3450);
+/* harmony import */ var _ASCIIEncoder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3937);
+/* harmony import */ var _Base256Encoder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2926);
+/* harmony import */ var _C40Encoder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8955);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4715);
+/* harmony import */ var _EdifactEncoder__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2042);
+/* harmony import */ var _EncoderContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7751);
+/* harmony import */ var _X12Encoder__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4405);
+/* harmony import */ var _TextEncoder__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(6563);
+/* harmony import */ var _util_Arrays__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(2598);
+/* harmony import */ var _util_Integer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(9978);
 // tslint:disable-next-line:no-circular-imports
 
 // tslint:disable-next-line:no-circular-imports
@@ -15255,7 +15255,7 @@ var HighLevelEncoder = /** @class */ (function () {
     }
     HighLevelEncoder.randomize253State = function (codewordPosition) {
         var pseudoRandom = ((149 * codewordPosition) % 253) + 1;
-        var tempVariable = _constants__WEBPACK_IMPORTED_MODULE_3__/* .PAD */ .Bg + pseudoRandom;
+        var tempVariable = _constants__WEBPACK_IMPORTED_MODULE_3__/* .PAD */ .Qw + pseudoRandom;
         return tempVariable <= 254 ? tempVariable : tempVariable - 254;
     };
     /**
@@ -15276,29 +15276,29 @@ var HighLevelEncoder = /** @class */ (function () {
         if (maxSize === void 0) { maxSize = null; }
         if (forceC40 === void 0) { forceC40 = false; }
         // the codewords 0..255 are encoded as Unicode characters
-        var c40Encoder = new _C40Encoder__WEBPACK_IMPORTED_MODULE_2__/* .C40Encoder */ .D();
+        var c40Encoder = new _C40Encoder__WEBPACK_IMPORTED_MODULE_2__/* .C40Encoder */ .S();
         var encoders = [
-            new _ASCIIEncoder__WEBPACK_IMPORTED_MODULE_0__/* .ASCIIEncoder */ .g(),
+            new _ASCIIEncoder__WEBPACK_IMPORTED_MODULE_0__/* .ASCIIEncoder */ .a(),
             c40Encoder,
-            new _TextEncoder__WEBPACK_IMPORTED_MODULE_7__/* .TextEncoder */ .p(),
-            new _X12Encoder__WEBPACK_IMPORTED_MODULE_6__/* .X12Encoder */ .c(),
-            new _EdifactEncoder__WEBPACK_IMPORTED_MODULE_4__/* .EdifactEncoder */ .Q(),
-            new _Base256Encoder__WEBPACK_IMPORTED_MODULE_1__/* .Base256Encoder */ .M(),
+            new _TextEncoder__WEBPACK_IMPORTED_MODULE_7__/* .TextEncoder */ ._(),
+            new _X12Encoder__WEBPACK_IMPORTED_MODULE_6__/* .X12Encoder */ .y(),
+            new _EdifactEncoder__WEBPACK_IMPORTED_MODULE_4__/* .EdifactEncoder */ .b(),
+            new _Base256Encoder__WEBPACK_IMPORTED_MODULE_1__/* .Base256Encoder */ .B(),
         ];
-        var context = new _EncoderContext__WEBPACK_IMPORTED_MODULE_5__/* .EncoderContext */ .y(msg);
+        var context = new _EncoderContext__WEBPACK_IMPORTED_MODULE_5__/* .EncoderContext */ .Q(msg);
         context.setSymbolShape(shape);
         context.setSizeConstraints(minSize, maxSize);
-        if (msg.startsWith(_constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_05_HEADER */ .qL) && msg.endsWith(_constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_TRAILER */ .Lt)) {
-            context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_05 */ .nz);
+        if (msg.startsWith(_constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_05_HEADER */ .h_) && msg.endsWith(_constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_TRAILER */ .TG)) {
+            context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_05 */ .tf);
             context.setSkipAtEnd(2);
-            context.pos += _constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_05_HEADER.length */ .qL.length;
+            context.pos += _constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_05_HEADER */ .h_.length;
         }
-        else if (msg.startsWith(_constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_06_HEADER */ .np) && msg.endsWith(_constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_TRAILER */ .Lt)) {
-            context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_06 */ .Jg);
+        else if (msg.startsWith(_constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_06_HEADER */ .eB) && msg.endsWith(_constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_TRAILER */ .TG)) {
+            context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_06 */ .mD);
             context.setSkipAtEnd(2);
-            context.pos += _constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_06_HEADER.length */ .np.length;
+            context.pos += _constants__WEBPACK_IMPORTED_MODULE_3__/* .MACRO_06_HEADER */ .eB.length;
         }
-        var encodingMode = _constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ; // Default mode
+        var encodingMode = _constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .d2; // Default mode
         if (forceC40) {
             c40Encoder.encodeMaximal(context);
             encodingMode = context.getNewEncoding();
@@ -15315,15 +15315,15 @@ var HighLevelEncoder = /** @class */ (function () {
         context.updateSymbolInfo();
         var capacity = context.getSymbolInfo().getDataCapacity();
         if (len < capacity &&
-            encodingMode !== _constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ &&
-            encodingMode !== _constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF &&
-            encodingMode !== _constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_) {
+            encodingMode !== _constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .d2 &&
+            encodingMode !== _constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .mt &&
+            encodingMode !== _constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .uf) {
             context.writeCodeword('\u00fe'); // Unlatch (254)
         }
         // Padding
         var codewords = context.getCodewords();
         if (codewords.length() < capacity) {
-            codewords.append(_constants__WEBPACK_IMPORTED_MODULE_3__/* .PAD */ .Bg);
+            codewords.append(_constants__WEBPACK_IMPORTED_MODULE_3__/* .PAD */ .Qw);
         }
         while (codewords.length() < capacity) {
             codewords.append(this.randomize253State(codewords.length() + 1));
@@ -15332,20 +15332,20 @@ var HighLevelEncoder = /** @class */ (function () {
     };
     HighLevelEncoder.lookAheadTest = function (msg, startpos, currentMode) {
         var newMode = this.lookAheadTestIntern(msg, startpos, currentMode);
-        if (currentMode === _constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi && newMode === _constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi) {
+        if (currentMode === _constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .VK && newMode === _constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .VK) {
             var endpos = Math.min(startpos + 3, msg.length);
             for (var i = startpos; i < endpos; i++) {
                 if (!this.isNativeX12(msg.charCodeAt(i))) {
-                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ;
+                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .d2;
                 }
             }
         }
-        else if (currentMode === _constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_ &&
-            newMode === _constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_) {
+        else if (currentMode === _constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .uf &&
+            newMode === _constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .uf) {
             var endpos = Math.min(startpos + 4, msg.length);
             for (var i = startpos; i < endpos; i++) {
                 if (!this.isNativeEDIFACT(msg.charCodeAt(i))) {
-                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ;
+                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .d2;
                 }
             }
         }
@@ -15357,7 +15357,7 @@ var HighLevelEncoder = /** @class */ (function () {
         }
         var charCounts;
         // step J
-        if (currentMode === _constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ) {
+        if (currentMode === _constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .d2) {
             charCounts = [0, 1, 1, 1, 1, 1.25];
         }
         else {
@@ -15370,134 +15370,134 @@ var HighLevelEncoder = /** @class */ (function () {
         while (true) {
             // step K
             if (startpos + charsProcessed === msg.length) {
-                _util_Arrays__WEBPACK_IMPORTED_MODULE_8__/* ["default"].fill */ .Z.fill(mins, 0);
-                _util_Arrays__WEBPACK_IMPORTED_MODULE_8__/* ["default"].fill */ .Z.fill(intCharCounts, 0);
-                var min = this.findMinimums(charCounts, intCharCounts, _util_Integer__WEBPACK_IMPORTED_MODULE_9__/* ["default"].MAX_VALUE */ .Z.MAX_VALUE, mins);
+                _util_Arrays__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.fill(mins, 0);
+                _util_Arrays__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.fill(intCharCounts, 0);
+                var min = this.findMinimums(charCounts, intCharCounts, _util_Integer__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .A.MAX_VALUE, mins);
                 var minCount = this.getMinimumCount(mins);
-                if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ] === min) {
-                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ;
+                if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .d2] === min) {
+                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .d2;
                 }
                 if (minCount === 1) {
-                    if (mins[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF] > 0) {
-                        return _constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF;
+                    if (mins[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .mt] > 0) {
+                        return _constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .mt;
                     }
-                    if (mins[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_] > 0) {
-                        return _constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_;
+                    if (mins[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .uf] > 0) {
+                        return _constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .uf;
                     }
-                    if (mins[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz] > 0) {
-                        return _constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz;
+                    if (mins[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .VL] > 0) {
+                        return _constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .VL;
                     }
-                    if (mins[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi] > 0) {
-                        return _constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi;
+                    if (mins[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .VK] > 0) {
+                        return _constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .VK;
                     }
                 }
-                return _constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw;
+                return _constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .fG;
             }
             var c = msg.charCodeAt(startpos + charsProcessed);
             charsProcessed++;
             // step L
             if (this.isDigit(c)) {
-                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ] += 0.5;
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .d2] += 0.5;
             }
             else if (this.isExtendedASCII(c)) {
-                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ] = Math.ceil(charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ]);
-                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ] += 2.0;
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .d2] = Math.ceil(charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .d2]);
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .d2] += 2.0;
             }
             else {
-                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ] = Math.ceil(charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ]);
-                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ]++;
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .d2] = Math.ceil(charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .d2]);
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .d2]++;
             }
             // step M
             if (this.isNativeC40(c)) {
-                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw] += 2.0 / 3.0;
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .fG] += 2.0 / 3.0;
             }
             else if (this.isExtendedASCII(c)) {
-                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw] += 8.0 / 3.0;
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .fG] += 8.0 / 3.0;
             }
             else {
-                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw] += 4.0 / 3.0;
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .fG] += 4.0 / 3.0;
             }
             // step N
             if (this.isNativeText(c)) {
-                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz] += 2.0 / 3.0;
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .VL] += 2.0 / 3.0;
             }
             else if (this.isExtendedASCII(c)) {
-                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz] += 8.0 / 3.0;
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .VL] += 8.0 / 3.0;
             }
             else {
-                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz] += 4.0 / 3.0;
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .VL] += 4.0 / 3.0;
             }
             // step O
             if (this.isNativeX12(c)) {
-                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi] += 2.0 / 3.0;
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .VK] += 2.0 / 3.0;
             }
             else if (this.isExtendedASCII(c)) {
-                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi] += 13.0 / 3.0;
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .VK] += 13.0 / 3.0;
             }
             else {
-                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi] += 10.0 / 3.0;
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .VK] += 10.0 / 3.0;
             }
             // step P
             if (this.isNativeEDIFACT(c)) {
-                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_] += 3.0 / 4.0;
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .uf] += 3.0 / 4.0;
             }
             else if (this.isExtendedASCII(c)) {
-                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_] += 17.0 / 4.0;
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .uf] += 17.0 / 4.0;
             }
             else {
-                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_] += 13.0 / 4.0;
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .uf] += 13.0 / 4.0;
             }
             // step Q
             if (this.isSpecialB256(c)) {
-                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF] += 4.0;
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .mt] += 4.0;
             }
             else {
-                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF]++;
+                charCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .mt]++;
             }
             // step R
             if (charsProcessed >= 4) {
-                _util_Arrays__WEBPACK_IMPORTED_MODULE_8__/* ["default"].fill */ .Z.fill(mins, 0);
-                _util_Arrays__WEBPACK_IMPORTED_MODULE_8__/* ["default"].fill */ .Z.fill(intCharCounts, 0);
-                this.findMinimums(charCounts, intCharCounts, _util_Integer__WEBPACK_IMPORTED_MODULE_9__/* ["default"].MAX_VALUE */ .Z.MAX_VALUE, mins);
-                if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ] <
-                    this.min(intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_])) {
-                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ;
+                _util_Arrays__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.fill(mins, 0);
+                _util_Arrays__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.fill(intCharCounts, 0);
+                this.findMinimums(charCounts, intCharCounts, _util_Integer__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .A.MAX_VALUE, mins);
+                if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .d2] <
+                    this.min(intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .mt], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .fG], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .VL], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .VK], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .uf])) {
+                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .d2;
                 }
-                if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF] < intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ] ||
-                    intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF] + 1 <
-                        this.min(intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_])) {
-                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF;
+                if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .mt] < intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .d2] ||
+                    intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .mt] + 1 <
+                        this.min(intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .fG], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .VL], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .VK], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .uf])) {
+                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .mt;
                 }
-                if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_] + 1 <
-                    this.min(intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ])) {
-                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_;
+                if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .uf] + 1 <
+                    this.min(intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .mt], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .fG], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .VL], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .VK], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .d2])) {
+                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .uf;
                 }
-                if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz] + 1 <
-                    this.min(intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ])) {
-                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz;
+                if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .VL] + 1 <
+                    this.min(intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .mt], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .fG], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .uf], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .VK], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .d2])) {
+                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .VL;
                 }
-                if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi] + 1 <
-                    this.min(intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ])) {
-                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi;
+                if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .VK] + 1 <
+                    this.min(intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .mt], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .fG], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .uf], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .VL], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .d2])) {
+                    return _constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .VK;
                 }
-                if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw] + 1 <
-                    this.min(intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .KJ], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .vF], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .t_], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .Uz])) {
-                    if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw] < intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi]) {
-                        return _constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw;
+                if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .fG] + 1 <
+                    this.min(intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .ASCII_ENCODATION */ .d2], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .BASE256_ENCODATION */ .mt], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .EDIFACT_ENCODATION */ .uf], intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .TEXT_ENCODATION */ .VL])) {
+                    if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .fG] < intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .VK]) {
+                        return _constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .fG;
                     }
-                    if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw] === intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi]) {
+                    if (intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .fG] === intCharCounts[_constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .VK]) {
                         var p = startpos + charsProcessed + 1;
                         while (p < msg.length) {
                             var tc = msg.charCodeAt(p);
                             if (this.isX12TermSep(tc)) {
-                                return _constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .Pi;
+                                return _constants__WEBPACK_IMPORTED_MODULE_3__/* .X12_ENCODATION */ .VK;
                             }
                             if (!this.isNativeX12(tc)) {
                                 break;
                             }
                             p++;
                         }
-                        return _constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .Bw;
+                        return _constants__WEBPACK_IMPORTED_MODULE_3__/* .C40_ENCODATION */ .fG;
                     }
                 }
             }
@@ -15517,7 +15517,7 @@ var HighLevelEncoder = /** @class */ (function () {
             var current = (intCharCounts[i] = Math.ceil(charCounts[i]));
             if (min > current) {
                 min = current;
-                _util_Arrays__WEBPACK_IMPORTED_MODULE_8__/* ["default"].fill */ .Z.fill(mins, 0);
+                _util_Arrays__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.fill(mins, 0);
             }
             if (min === current) {
                 mins[i] = mins[i] + 1;
@@ -15582,7 +15582,7 @@ var HighLevelEncoder = /** @class */ (function () {
         return idx - startpos;
     };
     HighLevelEncoder.illegalCharacter = function (singleCharacter) {
-        var hex = _util_Integer__WEBPACK_IMPORTED_MODULE_9__/* ["default"].toHexString */ .Z.toHexString(singleCharacter.charCodeAt(0));
+        var hex = _util_Integer__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .A.toHexString(singleCharacter.charCodeAt(0));
         hex = '0000'.substring(0, 4 - hex.length) + hex;
         throw new Error('Illegal character: ' + singleCharacter + ' (0x' + hex + ')');
     };
@@ -15593,12 +15593,12 @@ var HighLevelEncoder = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 1662:
+/***/ 748:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* unused harmony export PROD_SYMBOLS */
 var __extends = (undefined && undefined.__extends) || (function () {
@@ -15798,15 +15798,15 @@ var PROD_SYMBOLS = [
 
 /***/ }),
 
-/***/ 6175:
+/***/ 6563:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "p": () => (/* binding */ TextEncoder)
+/* harmony export */   _: () => (/* binding */ TextEncoder)
 /* harmony export */ });
-/* harmony import */ var _C40Encoder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4903);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4255);
+/* harmony import */ var _C40Encoder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8955);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4715);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -15828,7 +15828,7 @@ var TextEncoder = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     TextEncoder.prototype.getEncodingMode = function () {
-        return _constants__WEBPACK_IMPORTED_MODULE_1__/* .TEXT_ENCODATION */ .Uz;
+        return _constants__WEBPACK_IMPORTED_MODULE_1__/* .TEXT_ENCODATION */ .VL;
     };
     TextEncoder.prototype.encodeChar = function (c, sb) {
         if (c === ' '.charCodeAt(0)) {
@@ -15884,24 +15884,24 @@ var TextEncoder = /** @class */ (function (_super) {
         return len;
     };
     return TextEncoder;
-}(_C40Encoder__WEBPACK_IMPORTED_MODULE_0__/* .C40Encoder */ .D));
+}(_C40Encoder__WEBPACK_IMPORTED_MODULE_0__/* .C40Encoder */ .S));
 
 
 
 /***/ }),
 
-/***/ 9714:
+/***/ 4405:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "c": () => (/* binding */ X12Encoder)
+/* harmony export */   y: () => (/* binding */ X12Encoder)
 /* harmony export */ });
-/* harmony import */ var _common_StringUtils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3429);
-/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75);
-/* harmony import */ var _C40Encoder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4903);
-/* harmony import */ var _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9729);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4255);
+/* harmony import */ var _common_StringUtils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9563);
+/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(432);
+/* harmony import */ var _C40Encoder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8955);
+/* harmony import */ var _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7750);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4715);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -15926,11 +15926,11 @@ var X12Encoder = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     X12Encoder.prototype.getEncodingMode = function () {
-        return _constants__WEBPACK_IMPORTED_MODULE_4__/* .X12_ENCODATION */ .Pi;
+        return _constants__WEBPACK_IMPORTED_MODULE_4__/* .X12_ENCODATION */ .VK;
     };
     X12Encoder.prototype.encode = function (context) {
         // step C
-        var buffer = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z();
+        var buffer = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A();
         while (context.hasMoreCharacters()) {
             var c = context.getCurrentChar();
             context.pos++;
@@ -15938,10 +15938,10 @@ var X12Encoder = /** @class */ (function (_super) {
             var count = buffer.length();
             if (count % 3 === 0) {
                 this.writeNextTriplet(context, buffer);
-                var newMode = _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_3__/* ["default"].lookAheadTest */ .Z.lookAheadTest(context.getMessage(), context.pos, this.getEncodingMode());
+                var newMode = _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A.lookAheadTest(context.getMessage(), context.pos, this.getEncodingMode());
                 if (newMode !== this.getEncodingMode()) {
                     // Return to ASCII encodation, which will actually handle latch to new mode
-                    context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_4__/* .ASCII_ENCODATION */ .KJ);
+                    context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_4__/* .ASCII_ENCODATION */ .d2);
                     break;
                 }
             }
@@ -15970,7 +15970,7 @@ var X12Encoder = /** @class */ (function (_super) {
                     sb.append(c - 65 + 14);
                 }
                 else {
-                    _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_3__/* ["default"].illegalCharacter */ .Z.illegalCharacter(_common_StringUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"].getCharAt */ .Z.getCharAt(c));
+                    _HighLevelEncoder__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A.illegalCharacter(_common_StringUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.getCharAt(c));
                 }
                 break;
         }
@@ -15984,49 +15984,49 @@ var X12Encoder = /** @class */ (function (_super) {
         if (context.getRemainingCharacters() > 1 ||
             available > 1 ||
             context.getRemainingCharacters() !== available) {
-            context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_4__/* .X12_UNLATCH */ .RW);
+            context.writeCodeword(_constants__WEBPACK_IMPORTED_MODULE_4__/* .X12_UNLATCH */ .OM);
         }
         if (context.getNewEncoding() < 0) {
-            context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_4__/* .ASCII_ENCODATION */ .KJ);
+            context.signalEncoderChange(_constants__WEBPACK_IMPORTED_MODULE_4__/* .ASCII_ENCODATION */ .d2);
         }
     };
     return X12Encoder;
-}(_C40Encoder__WEBPACK_IMPORTED_MODULE_2__/* .C40Encoder */ .D));
+}(_C40Encoder__WEBPACK_IMPORTED_MODULE_2__/* .C40Encoder */ .S));
 
 
 
 /***/ }),
 
-/***/ 4255:
+/***/ 4715:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Bg": () => (/* binding */ PAD),
-/* harmony export */   "Bw": () => (/* binding */ C40_ENCODATION),
-/* harmony export */   "Fd": () => (/* binding */ LATCH_TO_BASE256),
-/* harmony export */   "HO": () => (/* binding */ LATCH_TO_TEXT),
-/* harmony export */   "Jg": () => (/* binding */ MACRO_06),
-/* harmony export */   "KJ": () => (/* binding */ ASCII_ENCODATION),
-/* harmony export */   "Lt": () => (/* binding */ MACRO_TRAILER),
-/* harmony export */   "Pi": () => (/* binding */ X12_ENCODATION),
-/* harmony export */   "R2": () => (/* binding */ UPPER_SHIFT),
-/* harmony export */   "RJ": () => (/* binding */ LATCH_TO_C40),
-/* harmony export */   "RW": () => (/* binding */ X12_UNLATCH),
-/* harmony export */   "Sh": () => (/* binding */ FACTORS),
-/* harmony export */   "UD": () => (/* binding */ ALOG),
-/* harmony export */   "Uz": () => (/* binding */ TEXT_ENCODATION),
-/* harmony export */   "cA": () => (/* binding */ FACTOR_SETS),
-/* harmony export */   "fs": () => (/* binding */ C40_UNLATCH),
-/* harmony export */   "gy": () => (/* binding */ LATCH_TO_EDIFACT),
-/* harmony export */   "nC": () => (/* binding */ SymbolShapeHint),
-/* harmony export */   "np": () => (/* binding */ MACRO_06_HEADER),
-/* harmony export */   "nz": () => (/* binding */ MACRO_05),
-/* harmony export */   "qL": () => (/* binding */ MACRO_05_HEADER),
-/* harmony export */   "sY": () => (/* binding */ LOG),
-/* harmony export */   "t_": () => (/* binding */ EDIFACT_ENCODATION),
-/* harmony export */   "vF": () => (/* binding */ BASE256_ENCODATION),
-/* harmony export */   "xh": () => (/* binding */ LATCH_TO_ANSIX12)
+/* harmony export */   $9: () => (/* binding */ LOG),
+/* harmony export */   KX: () => (/* binding */ ALOG),
+/* harmony export */   OM: () => (/* binding */ X12_UNLATCH),
+/* harmony export */   Qe: () => (/* binding */ LATCH_TO_ANSIX12),
+/* harmony export */   Qw: () => (/* binding */ PAD),
+/* harmony export */   TG: () => (/* binding */ MACRO_TRAILER),
+/* harmony export */   VK: () => (/* binding */ X12_ENCODATION),
+/* harmony export */   VL: () => (/* binding */ TEXT_ENCODATION),
+/* harmony export */   X7: () => (/* binding */ LATCH_TO_C40),
+/* harmony export */   XQ: () => (/* binding */ FACTORS),
+/* harmony export */   ah: () => (/* binding */ LATCH_TO_BASE256),
+/* harmony export */   d2: () => (/* binding */ ASCII_ENCODATION),
+/* harmony export */   dn: () => (/* binding */ LATCH_TO_TEXT),
+/* harmony export */   eB: () => (/* binding */ MACRO_06_HEADER),
+/* harmony export */   eb: () => (/* binding */ C40_UNLATCH),
+/* harmony export */   fG: () => (/* binding */ C40_ENCODATION),
+/* harmony export */   gE: () => (/* binding */ FACTOR_SETS),
+/* harmony export */   gn: () => (/* binding */ UPPER_SHIFT),
+/* harmony export */   h_: () => (/* binding */ MACRO_05_HEADER),
+/* harmony export */   ij: () => (/* binding */ LATCH_TO_EDIFACT),
+/* harmony export */   mD: () => (/* binding */ MACRO_06),
+/* harmony export */   mt: () => (/* binding */ BASE256_ENCODATION),
+/* harmony export */   t3: () => (/* binding */ SymbolShapeHint),
+/* harmony export */   tf: () => (/* binding */ MACRO_05),
+/* harmony export */   uf: () => (/* binding */ EDIFACT_ENCODATION)
 /* harmony export */ });
 /* unused harmony export MODULO_VALUE */
 var _a;
@@ -16203,18 +16203,18 @@ var BASE256_ENCODATION = 5;
 
 /***/ }),
 
-/***/ 6004:
+/***/ 3457:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8684);
-/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8842);
-/* harmony import */ var _OneDReader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3903);
-/* harmony import */ var _Result__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1462);
-/* harmony import */ var _ResultPoint__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8307);
+/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9460);
+/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8427);
+/* harmony import */ var _OneDReader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1693);
+/* harmony import */ var _Result__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6770);
+/* harmony import */ var _ResultPoint__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6502);
 /*
  * Copyright 2008 ZXing authors
  *
@@ -16286,11 +16286,11 @@ var CodaBarReader = /** @class */ (function (_super) {
     CodaBarReader.prototype.decodeRow = function (rowNumber, row, hints) {
         var validRowData = this.getValidRowData(row);
         if (!validRowData)
-            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z();
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A();
         var retStr = this.codaBarDecodeRow(validRowData.row);
         if (!retStr)
-            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z();
-        return new _Result__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z(retStr, null, 0, [new _ResultPoint__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z(validRowData.left, rowNumber), new _ResultPoint__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z(validRowData.right, rowNumber)], _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__/* ["default"].CODABAR */ .Z.CODABAR, new Date().getTime());
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A();
+        return new _Result__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A(retStr, null, 0, [new _ResultPoint__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A(validRowData.left, rowNumber), new _ResultPoint__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A(validRowData.right, rowNumber)], _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.CODABAR, new Date().getTime());
     };
     /**
      * converts bit array to valid data array(lengths of black bits and white bits)
@@ -16353,27 +16353,27 @@ var CodaBarReader = /** @class */ (function (_super) {
         return reg.test(src);
     };
     return CodaBarReader;
-}(_OneDReader__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z));
+}(_OneDReader__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CodaBarReader);
 
 
 /***/ }),
 
-/***/ 7344:
+/***/ 5817:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8684);
-/* harmony import */ var _ChecksumException__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3392);
-/* harmony import */ var _DecodeHintType__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6650);
-/* harmony import */ var _FormatException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2468);
-/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8842);
-/* harmony import */ var _Result__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1462);
-/* harmony import */ var _ResultPoint__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8307);
-/* harmony import */ var _OneDReader__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(3903);
+/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9460);
+/* harmony import */ var _ChecksumException__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1371);
+/* harmony import */ var _DecodeHintType__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1180);
+/* harmony import */ var _FormatException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7027);
+/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8427);
+/* harmony import */ var _Result__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6770);
+/* harmony import */ var _ResultPoint__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(6502);
+/* harmony import */ var _OneDReader__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(1693);
 /*
  * Copyright 2008 ZXing authors
  *
@@ -16440,7 +16440,7 @@ var Code128Reader = /** @class */ (function (_super) {
                     var bestVariance = Code128Reader.MAX_AVG_VARIANCE;
                     var bestMatch = -1;
                     for (var startCode = Code128Reader.CODE_START_A; startCode <= Code128Reader.CODE_START_C; startCode++) {
-                        var variance = _OneDReader__WEBPACK_IMPORTED_MODULE_7__/* ["default"].patternMatchVariance */ .Z.patternMatchVariance(counters, Code128Reader.CODE_PATTERNS[startCode], Code128Reader.MAX_INDIVIDUAL_VARIANCE);
+                        var variance = _OneDReader__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A.patternMatchVariance(counters, Code128Reader.CODE_PATTERNS[startCode], Code128Reader.MAX_INDIVIDUAL_VARIANCE);
                         if (variance < bestVariance) {
                             bestVariance = variance;
                             bestMatch = startCode;
@@ -16464,10 +16464,10 @@ var Code128Reader = /** @class */ (function (_super) {
                 isWhite = !isWhite;
             }
         }
-        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
     };
     Code128Reader.decodeCode = function (row, counters, rowOffset) {
-        _OneDReader__WEBPACK_IMPORTED_MODULE_7__/* ["default"].recordPattern */ .Z.recordPattern(row, rowOffset, counters);
+        _OneDReader__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A.recordPattern(row, rowOffset, counters);
         var bestVariance = Code128Reader.MAX_AVG_VARIANCE; // worst variance we'll accept
         var bestMatch = -1;
         for (var d = 0; d < Code128Reader.CODE_PATTERNS.length; d++) {
@@ -16483,11 +16483,11 @@ var Code128Reader = /** @class */ (function (_super) {
             return bestMatch;
         }
         else {
-            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
         }
     };
     Code128Reader.prototype.decodeRow = function (rowNumber, row, hints) {
-        var convertFNC1 = hints && (hints.get(_DecodeHintType__WEBPACK_IMPORTED_MODULE_2__/* ["default"].ASSUME_GS1 */ .Z.ASSUME_GS1) === true);
+        var convertFNC1 = hints && (hints.get(_DecodeHintType__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.ASSUME_GS1) === true);
         var startPatternInfo = Code128Reader.findStartPattern(row);
         var startCode = startPatternInfo[2];
         var currentRawCodesIndex = 0;
@@ -16505,7 +16505,7 @@ var Code128Reader = /** @class */ (function (_super) {
                 codeSet = Code128Reader.CODE_CODE_C;
                 break;
             default:
-                throw new _FormatException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+                throw new _FormatException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A();
         }
         var done = false;
         var isNextShifted = false;
@@ -16545,7 +16545,7 @@ var Code128Reader = /** @class */ (function (_super) {
                 case Code128Reader.CODE_START_A:
                 case Code128Reader.CODE_START_B:
                 case Code128Reader.CODE_START_C:
-                    throw new _FormatException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+                    throw new _FormatException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A();
             }
             switch (codeSet) {
                 case Code128Reader.CODE_CODE_A:
@@ -16730,19 +16730,19 @@ var Code128Reader = /** @class */ (function (_super) {
         // to read off. Would be slightly better to properly read. Here we just skip it:
         nextStart = row.getNextUnset(nextStart);
         if (!row.isRange(nextStart, Math.min(row.getSize(), nextStart + (nextStart - lastStart) / 2), false)) {
-            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
         }
         // Pull out from sum the value of the penultimate check code
         checksumTotal -= multiplier * lastCode;
         // lastCode is the checksum then:
         if (checksumTotal % 103 !== lastCode) {
-            throw new _ChecksumException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z();
+            throw new _ChecksumException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A();
         }
         // Need to pull out the check digits from string
         var resultLength = result.length;
         if (resultLength === 0) {
             // false positive
-            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
         }
         // Only bother if the result had at least one character, and if the checksum digit happened to
         // be a printable character. If it was just interpreted as a control code, nothing to remove.
@@ -16761,8 +16761,8 @@ var Code128Reader = /** @class */ (function (_super) {
         for (var i = 0; i < rawCodesSize; i++) {
             rawBytes[i] = rawCodes[i];
         }
-        var points = [new _ResultPoint__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z(left, rowNumber), new _ResultPoint__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z(right, rowNumber)];
-        return new _Result__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z(result, rawBytes, 0, points, _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__/* ["default"].CODE_128 */ .Z.CODE_128, new Date().getTime());
+        var points = [new _ResultPoint__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A(left, rowNumber), new _ResultPoint__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A(right, rowNumber)];
+        return new _Result__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A(result, rawBytes, 0, points, _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.CODE_128, new Date().getTime());
     };
     Code128Reader.CODE_PATTERNS = [
         Int32Array.from([2, 1, 2, 2, 2, 2]),
@@ -16889,26 +16889,26 @@ var Code128Reader = /** @class */ (function (_super) {
     Code128Reader.CODE_START_C = 105;
     Code128Reader.CODE_STOP = 106;
     return Code128Reader;
-}(_OneDReader__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z));
+}(_OneDReader__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Code128Reader);
 
 
 /***/ }),
 
-/***/ 352:
+/***/ 7924:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8684);
-/* harmony import */ var _ChecksumException__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3392);
-/* harmony import */ var _FormatException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2468);
-/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8842);
-/* harmony import */ var _OneDReader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3903);
-/* harmony import */ var _Result__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1462);
-/* harmony import */ var _ResultPoint__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8307);
+/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9460);
+/* harmony import */ var _ChecksumException__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1371);
+/* harmony import */ var _FormatException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7027);
+/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8427);
+/* harmony import */ var _OneDReader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1693);
+/* harmony import */ var _Result__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6770);
+/* harmony import */ var _ResultPoint__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(6502);
 /*
  * Copyright 2008 ZXing authors
  *
@@ -17016,7 +17016,7 @@ var Code39Reader = /** @class */ (function (_super) {
             Code39Reader.recordPattern(row, nextStart, theCounters);
             var pattern = Code39Reader.toNarrowWidePattern(theCounters);
             if (pattern < 0) {
-                throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+                throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A();
             }
             decodedChar = Code39Reader.patternToChar(pattern);
             this.decodeRowResult += decodedChar;
@@ -17057,7 +17057,7 @@ var Code39Reader = /** @class */ (function (_super) {
         // If 50% of last pattern size, following last pattern, is not whitespace, fail
         // (but if it's whitespace to the very end of the image, that's OK)
         if (nextStart !== end && (whiteSpaceAfterEnd * 2) < lastPatternSize) {
-            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A();
         }
         if (this.usingCheckDigit) {
             var max = this.decodeRowResult.length - 1;
@@ -17066,13 +17066,13 @@ var Code39Reader = /** @class */ (function (_super) {
                 total += Code39Reader.ALPHABET_STRING.indexOf(this.decodeRowResult.charAt(i));
             }
             if (this.decodeRowResult.charAt(max) !== Code39Reader.ALPHABET_STRING.charAt(total % 43)) {
-                throw new _ChecksumException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z();
+                throw new _ChecksumException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A();
             }
             this.decodeRowResult = this.decodeRowResult.substring(0, max);
         }
         if (this.decodeRowResult.length === 0) {
             // false positive
-            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A();
         }
         var resultString;
         if (this.extendedMode) {
@@ -17083,7 +17083,7 @@ var Code39Reader = /** @class */ (function (_super) {
         }
         var left = (start[1] + start[0]) / 2.0;
         var right = lastStart + lastPatternSize / 2.0;
-        return new _Result__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z(resultString, null, 0, [new _ResultPoint__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z(left, rowNumber), new _ResultPoint__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z(right, rowNumber)], _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__/* ["default"].CODE_39 */ .Z.CODE_39, new Date().getTime());
+        return new _Result__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A(resultString, null, 0, [new _ResultPoint__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A(left, rowNumber), new _ResultPoint__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A(right, rowNumber)], _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.CODE_39, new Date().getTime());
     };
     Code39Reader.findAsteriskPattern = function (row, counters) {
         var width = row.getSize();
@@ -17116,7 +17116,7 @@ var Code39Reader = /** @class */ (function (_super) {
                 isWhite = !isWhite;
             }
         }
-        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A();
     };
     // For efficiency, returns -1 on failure. Not throwing here saved as many as 700 exceptions
     // per image when using some of our blackbox images.
@@ -17182,7 +17182,7 @@ var Code39Reader = /** @class */ (function (_super) {
         if (pattern === Code39Reader.ASTERISK_ENCODING) {
             return '*';
         }
-        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A();
     };
     Code39Reader.decodeExtended = function (encoded) {
         var length = encoded.length;
@@ -17199,7 +17199,7 @@ var Code39Reader = /** @class */ (function (_super) {
                             decodedChar = String.fromCharCode(next.charCodeAt(0) + 32);
                         }
                         else {
-                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A();
                         }
                         break;
                     case '$':
@@ -17208,7 +17208,7 @@ var Code39Reader = /** @class */ (function (_super) {
                             decodedChar = String.fromCharCode(next.charCodeAt(0) - 64);
                         }
                         else {
-                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A();
                         }
                         break;
                     case '%':
@@ -17238,7 +17238,7 @@ var Code39Reader = /** @class */ (function (_super) {
                             decodedChar = '\x7f';
                         }
                         else {
-                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A();
                         }
                         break;
                     case '/':
@@ -17250,7 +17250,7 @@ var Code39Reader = /** @class */ (function (_super) {
                             decodedChar = ':';
                         }
                         else {
-                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A();
                         }
                         break;
                 }
@@ -17279,26 +17279,26 @@ var Code39Reader = /** @class */ (function (_super) {
     ];
     Code39Reader.ASTERISK_ENCODING = 0x094;
     return Code39Reader;
-}(_OneDReader__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z));
+}(_OneDReader__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Code39Reader);
 
 
 /***/ }),
 
-/***/ 7340:
+/***/ 668:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8684);
-/* harmony import */ var _ChecksumException__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3392);
-/* harmony import */ var _FormatException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2468);
-/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8842);
-/* harmony import */ var _OneDReader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3903);
-/* harmony import */ var _Result__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1462);
-/* harmony import */ var _ResultPoint__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8307);
+/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9460);
+/* harmony import */ var _ChecksumException__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1371);
+/* harmony import */ var _FormatException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7027);
+/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8427);
+/* harmony import */ var _OneDReader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1693);
+/* harmony import */ var _Result__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6770);
+/* harmony import */ var _ResultPoint__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(6502);
 /*
  * Copyright 2010 ZXing authors
  *
@@ -17380,7 +17380,7 @@ var Code93Reader = /** @class */ (function (_super) {
             Code93Reader.recordPattern(row, nextStart, theCounters);
             var pattern = this.toPattern(theCounters);
             if (pattern < 0) {
-                throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+                throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A();
             }
             decodedChar = this.patternToChar(pattern);
             this.decodeRowResult += decodedChar;
@@ -17418,11 +17418,11 @@ var Code93Reader = /** @class */ (function (_super) {
         }
         // Should be at least one more black module
         if (nextStart === end || !row.get(nextStart)) {
-            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A();
         }
         if (this.decodeRowResult.length < 2) {
             // false positive -- need at least 2 checksum digits
-            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A();
         }
         this.checkChecksums(this.decodeRowResult);
         // Remove checksum digits
@@ -17430,7 +17430,7 @@ var Code93Reader = /** @class */ (function (_super) {
         var resultString = this.decodeExtended(this.decodeRowResult);
         var left = (start[1] + start[0]) / 2.0;
         var right = lastStart + lastPatternSize / 2.0;
-        return new _Result__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z(resultString, null, 0, [new _ResultPoint__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z(left, rowNumber), new _ResultPoint__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z(right, rowNumber)], _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__/* ["default"].CODE_93 */ .Z.CODE_93, new Date().getTime());
+        return new _Result__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A(resultString, null, 0, [new _ResultPoint__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A(left, rowNumber), new _ResultPoint__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A(right, rowNumber)], _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.CODE_93, new Date().getTime());
     };
     Code93Reader.prototype.findAsteriskPattern = function (row) {
         var width = row.getSize();
@@ -17463,7 +17463,7 @@ var Code93Reader = /** @class */ (function (_super) {
                 isWhite = !isWhite;
             }
         }
-        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z;
+        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A;
     };
     Code93Reader.prototype.toPattern = function (counters) {
         var e_3, _a;
@@ -17505,7 +17505,7 @@ var Code93Reader = /** @class */ (function (_super) {
                 return Code93Reader.ALPHABET_STRING.charAt(i);
             }
         }
-        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A();
     };
     Code93Reader.prototype.decodeExtended = function (encoded) {
         var length = encoded.length;
@@ -17514,7 +17514,7 @@ var Code93Reader = /** @class */ (function (_super) {
             var c = encoded.charAt(i);
             if (c >= 'a' && c <= 'd') {
                 if (i >= length - 1) {
-                    throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+                    throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A();
                 }
                 var next = encoded.charAt(i + 1);
                 var decodedChar = '\0';
@@ -17525,7 +17525,7 @@ var Code93Reader = /** @class */ (function (_super) {
                             decodedChar = String.fromCharCode(next.charCodeAt(0) + 32);
                         }
                         else {
-                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A();
                         }
                         break;
                     case 'a':
@@ -17534,7 +17534,7 @@ var Code93Reader = /** @class */ (function (_super) {
                             decodedChar = String.fromCharCode(next.charCodeAt(0) - 64);
                         }
                         else {
-                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A();
                         }
                         break;
                     case 'b':
@@ -17571,7 +17571,7 @@ var Code93Reader = /** @class */ (function (_super) {
                             decodedChar = String.fromCharCode(127);
                         }
                         else {
-                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A();
                         }
                         break;
                     case 'c':
@@ -17583,7 +17583,7 @@ var Code93Reader = /** @class */ (function (_super) {
                             decodedChar = ':';
                         }
                         else {
-                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A();
                         }
                         break;
                 }
@@ -17612,7 +17612,7 @@ var Code93Reader = /** @class */ (function (_super) {
             }
         }
         if (result.charAt(checkPosition) !== Code93Reader.ALPHABET_STRING[total % 47]) {
-            throw new _ChecksumException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z;
+            throw new _ChecksumException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A;
         }
     };
     // Note that 'abcd' are dummy characters in place of control characters.
@@ -17631,22 +17631,22 @@ var Code93Reader = /** @class */ (function (_super) {
     ];
     Code93Reader.ASTERISK_ENCODING = Code93Reader.CHARACTER_ENCODINGS[47];
     return Code93Reader;
-}(_OneDReader__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z));
+}(_OneDReader__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Code93Reader);
 
 
 /***/ }),
 
-/***/ 9667:
+/***/ 8571:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8684);
-/* harmony import */ var _UPCEANReader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9928);
-/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8842);
+/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9460);
+/* harmony import */ var _UPCEANReader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3164);
+/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8427);
 /*
  * Copyright 2008 ZXing authors
  *
@@ -17714,7 +17714,7 @@ var EAN13Reader = /** @class */ (function (_super) {
         var rowOffset = startRange[1];
         var lgPatternFound = 0;
         for (var x = 0; x < 6 && rowOffset < end; x++) {
-            var bestMatch = _UPCEANReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"].decodeDigit */ .Z.decodeDigit(row, counters, rowOffset, _UPCEANReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"].L_AND_G_PATTERNS */ .Z.L_AND_G_PATTERNS);
+            var bestMatch = _UPCEANReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.decodeDigit(row, counters, rowOffset, _UPCEANReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.L_AND_G_PATTERNS);
             resultString += String.fromCharCode(('0'.charCodeAt(0) + bestMatch % 10));
             try {
                 for (var counters_1 = (e_1 = void 0, __values(counters)), counters_1_1 = counters_1.next(); !counters_1_1.done; counters_1_1 = counters_1.next()) {
@@ -17734,10 +17734,10 @@ var EAN13Reader = /** @class */ (function (_super) {
             }
         }
         resultString = EAN13Reader.determineFirstDigit(resultString, lgPatternFound);
-        var middleRange = _UPCEANReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"].findGuardPattern */ .Z.findGuardPattern(row, rowOffset, true, _UPCEANReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"].MIDDLE_PATTERN */ .Z.MIDDLE_PATTERN, new Int32Array(_UPCEANReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"].MIDDLE_PATTERN.length */ .Z.MIDDLE_PATTERN.length).fill(0));
+        var middleRange = _UPCEANReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.findGuardPattern(row, rowOffset, true, _UPCEANReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.MIDDLE_PATTERN, new Int32Array(_UPCEANReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.MIDDLE_PATTERN.length).fill(0));
         rowOffset = middleRange[1];
         for (var x = 0; x < 6 && rowOffset < end; x++) {
-            var bestMatch = _UPCEANReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"].decodeDigit */ .Z.decodeDigit(row, counters, rowOffset, _UPCEANReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"].L_PATTERNS */ .Z.L_PATTERNS);
+            var bestMatch = _UPCEANReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.decodeDigit(row, counters, rowOffset, _UPCEANReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.L_PATTERNS);
             resultString += String.fromCharCode(('0'.charCodeAt(0) + bestMatch));
             try {
                 for (var counters_2 = (e_2 = void 0, __values(counters)), counters_2_1 = counters_2.next(); !counters_2_1.done; counters_2_1 = counters_2.next()) {
@@ -17756,7 +17756,7 @@ var EAN13Reader = /** @class */ (function (_super) {
         return { rowOffset: rowOffset, resultString: resultString };
     };
     EAN13Reader.prototype.getBarcodeFormat = function () {
-        return _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__/* ["default"].EAN_13 */ .Z.EAN_13;
+        return _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.EAN_13;
     };
     EAN13Reader.determineFirstDigit = function (resultString, lgPatternFound) {
         for (var d = 0; d < 10; d++) {
@@ -17765,32 +17765,32 @@ var EAN13Reader = /** @class */ (function (_super) {
                 return resultString;
             }
         }
-        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A();
     };
     EAN13Reader.FIRST_DIGIT_ENCODINGS = [0x00, 0x0B, 0x0D, 0xE, 0x13, 0x19, 0x1C, 0x15, 0x16, 0x1A];
     return EAN13Reader;
-}(_UPCEANReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z));
+}(_UPCEANReader__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (EAN13Reader);
 
 
 /***/ }),
 
-/***/ 1758:
+/***/ 1894:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8684);
-/* harmony import */ var _DecodeHintType__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6650);
-/* harmony import */ var _FormatException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2468);
-/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8842);
-/* harmony import */ var _Result__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1462);
-/* harmony import */ var _ResultPoint__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8307);
-/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(75);
-/* harmony import */ var _util_System__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(8507);
-/* harmony import */ var _OneDReader__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(3903);
+/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9460);
+/* harmony import */ var _DecodeHintType__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1180);
+/* harmony import */ var _FormatException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7027);
+/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8427);
+/* harmony import */ var _Result__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6770);
+/* harmony import */ var _ResultPoint__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6502);
+/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(432);
+/* harmony import */ var _util_System__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(7527);
+/* harmony import */ var _OneDReader__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(1693);
 /*
  * Copyright 2008 ZXing authors
  *
@@ -17868,12 +17868,12 @@ var ITFReader = /** @class */ (function (_super) {
         // Find out where the Middle section (payload) starts & ends
         var startRange = this.decodeStart(row);
         var endRange = this.decodeEnd(row);
-        var result = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z();
+        var result = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A();
         ITFReader.decodeMiddle(row, startRange[1], endRange[0], result);
         var resultString = result.toString();
         var allowedLengths = null;
         if (hints != null) {
-            allowedLengths = hints.get(_DecodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"].ALLOWED_LENGTHS */ .Z.ALLOWED_LENGTHS);
+            allowedLengths = hints.get(_DecodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.ALLOWED_LENGTHS);
         }
         if (allowedLengths == null) {
             allowedLengths = ITFReader.DEFAULT_ALLOWED_LENGTHS;
@@ -17906,11 +17906,11 @@ var ITFReader = /** @class */ (function (_super) {
             lengthOK = true;
         }
         if (!lengthOK) {
-            throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z();
+            throw new _FormatException__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A();
         }
-        var points = [new _ResultPoint__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z(startRange[1], rowNumber), new _ResultPoint__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z(endRange[0], rowNumber)];
-        var resultReturn = new _Result__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z(resultString, null, // no natural byte representation for these barcodes
-        0, points, _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__/* ["default"].ITF */ .Z.ITF, new Date().getTime());
+        var points = [new _ResultPoint__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A(startRange[1], rowNumber), new _ResultPoint__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A(endRange[0], rowNumber)];
+        var resultReturn = new _Result__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A(resultString, null, // no natural byte representation for these barcodes
+        0, points, _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.ITF, new Date().getTime());
         return resultReturn;
     };
     /*
@@ -17934,7 +17934,7 @@ var ITFReader = /** @class */ (function (_super) {
         counterWhite.fill(0);
         while (payloadStart < payloadEnd) {
             // Get 10 runs of black/white.
-            _OneDReader__WEBPACK_IMPORTED_MODULE_8__/* ["default"].recordPattern */ .Z.recordPattern(row, payloadStart, counterDigitPair);
+            _OneDReader__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.recordPattern(row, payloadStart, counterDigitPair);
             // Split them into each array
             for (var k = 0; k < 5; k++) {
                 var twoK = 2 * k;
@@ -17994,7 +17994,7 @@ var ITFReader = /** @class */ (function (_super) {
         }
         if (quietCount !== 0) {
             // Unable to find the necessary number of quiet zone pixels.
-            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A();
         }
     };
     /*
@@ -18009,7 +18009,7 @@ var ITFReader = /** @class */ (function (_super) {
         var width = row.getSize();
         var endStart = row.getNextSet(0);
         if (endStart === width) {
-            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A();
         }
         return endStart;
     };
@@ -18031,7 +18031,7 @@ var ITFReader = /** @class */ (function (_super) {
                 endPattern = ITFReader.findGuardPattern(row, endStart, ITFReader.END_PATTERN_REVERSED[0]);
             }
             catch (error) {
-                if (error instanceof _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z) {
+                if (error instanceof _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A) {
                     endPattern = ITFReader.findGuardPattern(row, endStart, ITFReader.END_PATTERN_REVERSED[1]);
                 }
             }
@@ -18076,11 +18076,11 @@ var ITFReader = /** @class */ (function (_super) {
             }
             else {
                 if (counterPosition === patternLength - 1) {
-                    if (_OneDReader__WEBPACK_IMPORTED_MODULE_8__/* ["default"].patternMatchVariance */ .Z.patternMatchVariance(counters, pattern, ITFReader.MAX_INDIVIDUAL_VARIANCE) < ITFReader.MAX_AVG_VARIANCE) {
+                    if (_OneDReader__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.patternMatchVariance(counters, pattern, ITFReader.MAX_INDIVIDUAL_VARIANCE) < ITFReader.MAX_AVG_VARIANCE) {
                         return [patternStart, x];
                     }
                     patternStart += counters[0] + counters[1];
-                    _util_System__WEBPACK_IMPORTED_MODULE_7__/* ["default"].arraycopy */ .Z.arraycopy(counters, 2, counters, 0, counterPosition - 1);
+                    _util_System__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A.arraycopy(counters, 2, counters, 0, counterPosition - 1);
                     counters[counterPosition - 1] = 0;
                     counters[counterPosition] = 0;
                     counterPosition--;
@@ -18092,7 +18092,7 @@ var ITFReader = /** @class */ (function (_super) {
                 isWhite = !isWhite;
             }
         }
-        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A();
     };
     /*/!**
      * Attempts to decode a sequence of ITF black/white lines into single
@@ -18108,7 +18108,7 @@ var ITFReader = /** @class */ (function (_super) {
         var max = ITFReader.PATTERNS.length;
         for (var i = 0; i < max; i++) {
             var pattern = ITFReader.PATTERNS[i];
-            var variance = _OneDReader__WEBPACK_IMPORTED_MODULE_8__/* ["default"].patternMatchVariance */ .Z.patternMatchVariance(counters, pattern, ITFReader.MAX_INDIVIDUAL_VARIANCE);
+            var variance = _OneDReader__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A.patternMatchVariance(counters, pattern, ITFReader.MAX_INDIVIDUAL_VARIANCE);
             if (variance < bestVariance) {
                 bestVariance = variance;
                 bestMatch = i;
@@ -18122,7 +18122,7 @@ var ITFReader = /** @class */ (function (_super) {
             return bestMatch % 10;
         }
         else {
-            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z();
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A();
         }
     };
     ITFReader.PATTERNS = [
@@ -18163,44 +18163,44 @@ var ITFReader = /** @class */ (function (_super) {
         Int32Array.from([1, 1, 3]) // 3x
     ];
     return ITFReader;
-}(_OneDReader__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z));
+}(_OneDReader__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ITFReader);
 
 
 /***/ }),
 
-/***/ 4956:
+/***/ 8787:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Z": () => (/* binding */ oned_MultiFormatOneDReader)
+  A: () => (/* binding */ oned_MultiFormatOneDReader)
 });
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/BarcodeFormat.js
-var BarcodeFormat = __webpack_require__(8684);
+var BarcodeFormat = __webpack_require__(9460);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/DecodeHintType.js
-var DecodeHintType = __webpack_require__(6650);
+var DecodeHintType = __webpack_require__(1180);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/NotFoundException.js
-var NotFoundException = __webpack_require__(8842);
+var NotFoundException = __webpack_require__(8427);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/Code128Reader.js
-var Code128Reader = __webpack_require__(7344);
+var Code128Reader = __webpack_require__(5817);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/Code39Reader.js
-var Code39Reader = __webpack_require__(352);
+var Code39Reader = __webpack_require__(7924);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/Code93Reader.js
-var Code93Reader = __webpack_require__(7340);
+var Code93Reader = __webpack_require__(668);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/ITFReader.js
-var ITFReader = __webpack_require__(1758);
+var ITFReader = __webpack_require__(1894);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/Result.js
-var Result = __webpack_require__(1462);
+var Result = __webpack_require__(6770);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/OneDReader.js
-var OneDReader = __webpack_require__(3903);
+var OneDReader = __webpack_require__(1693);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/EAN13Reader.js
-var EAN13Reader = __webpack_require__(9667);
+var EAN13Reader = __webpack_require__(8571);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/UPCEANReader.js + 4 modules
-var UPCEANReader = __webpack_require__(9928);
+var UPCEANReader = __webpack_require__(3164);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/EAN8Reader.js
 /*
  * Copyright 2008 ZXing authors
@@ -18265,7 +18265,7 @@ var EAN8Reader = /** @class */ (function (_super) {
         var end = row.getSize();
         var rowOffset = startRange[1];
         for (var x = 0; x < 4 && rowOffset < end; x++) {
-            var bestMatch = UPCEANReader/* default.decodeDigit */.Z.decodeDigit(row, counters, rowOffset, UPCEANReader/* default.L_PATTERNS */.Z.L_PATTERNS);
+            var bestMatch = UPCEANReader/* default */.A.decodeDigit(row, counters, rowOffset, UPCEANReader/* default */.A.L_PATTERNS);
             resultString += String.fromCharCode(('0'.charCodeAt(0) + bestMatch));
             try {
                 for (var counters_1 = (e_1 = void 0, __values(counters)), counters_1_1 = counters_1.next(); !counters_1_1.done; counters_1_1 = counters_1.next()) {
@@ -18281,10 +18281,10 @@ var EAN8Reader = /** @class */ (function (_super) {
                 finally { if (e_1) throw e_1.error; }
             }
         }
-        var middleRange = UPCEANReader/* default.findGuardPattern */.Z.findGuardPattern(row, rowOffset, true, UPCEANReader/* default.MIDDLE_PATTERN */.Z.MIDDLE_PATTERN, new Int32Array(UPCEANReader/* default.MIDDLE_PATTERN.length */.Z.MIDDLE_PATTERN.length).fill(0));
+        var middleRange = UPCEANReader/* default */.A.findGuardPattern(row, rowOffset, true, UPCEANReader/* default */.A.MIDDLE_PATTERN, new Int32Array(UPCEANReader/* default */.A.MIDDLE_PATTERN.length).fill(0));
         rowOffset = middleRange[1];
         for (var x = 0; x < 4 && rowOffset < end; x++) {
-            var bestMatch = UPCEANReader/* default.decodeDigit */.Z.decodeDigit(row, counters, rowOffset, UPCEANReader/* default.L_PATTERNS */.Z.L_PATTERNS);
+            var bestMatch = UPCEANReader/* default */.A.decodeDigit(row, counters, rowOffset, UPCEANReader/* default */.A.L_PATTERNS);
             resultString += String.fromCharCode(('0'.charCodeAt(0) + bestMatch));
             try {
                 for (var counters_2 = (e_2 = void 0, __values(counters)), counters_2_1 = counters_2.next(); !counters_2_1.done; counters_2_1 = counters_2.next()) {
@@ -18303,10 +18303,10 @@ var EAN8Reader = /** @class */ (function (_super) {
         return { rowOffset: rowOffset, resultString: resultString };
     };
     EAN8Reader.prototype.getBarcodeFormat = function () {
-        return BarcodeFormat/* default.EAN_8 */.Z.EAN_8;
+        return BarcodeFormat/* default */.A.EAN_8;
     };
     return EAN8Reader;
-}(UPCEANReader/* default */.Z));
+}(UPCEANReader/* default */.A));
 /* harmony default export */ const oned_EAN8Reader = (EAN8Reader);
 
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/UPCAReader.js
@@ -18360,12 +18360,12 @@ var UPCAReader = /** @class */ (function (_super) {
     UPCAReader_extends(UPCAReader, _super);
     function UPCAReader() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.ean13Reader = new EAN13Reader/* default */.Z();
+        _this.ean13Reader = new EAN13Reader/* default */.A();
         return _this;
     }
     // @Override
     UPCAReader.prototype.getBarcodeFormat = function () {
-        return BarcodeFormat/* default.UPC_A */.Z.UPC_A;
+        return BarcodeFormat/* default */.A.UPC_A;
     };
     // Note that we don't try rotation without the try harder flag, even if rotation was supported.
     // @Override
@@ -18383,25 +18383,25 @@ var UPCAReader = /** @class */ (function (_super) {
     UPCAReader.prototype.maybeReturnResult = function (result) {
         var text = result.getText();
         if (text.charAt(0) === '0') {
-            var upcaResult = new Result/* default */.Z(text.substring(1), null, null, result.getResultPoints(), BarcodeFormat/* default.UPC_A */.Z.UPC_A);
+            var upcaResult = new Result/* default */.A(text.substring(1), null, null, result.getResultPoints(), BarcodeFormat/* default */.A.UPC_A);
             if (result.getResultMetadata() != null) {
                 upcaResult.putAllMetadata(result.getResultMetadata());
             }
             return upcaResult;
         }
         else {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
     };
     UPCAReader.prototype.reset = function () {
         this.ean13Reader.reset();
     };
     return UPCAReader;
-}(UPCEANReader/* default */.Z));
+}(UPCEANReader/* default */.A));
 /* harmony default export */ const oned_UPCAReader = (UPCAReader);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StringBuilder.js
-var StringBuilder = __webpack_require__(75);
+var StringBuilder = __webpack_require__(432);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/UPCEReader.js
 /*
  * Copyright 2008 ZXing authors
@@ -18503,7 +18503,7 @@ var UPCEReader = /** @class */ (function (_super) {
                 lgPatternFound |= 1 << (5 - x);
             }
         }
-        UPCEReader.determineNumSysAndCheckDigit(new StringBuilder/* default */.Z(result), lgPatternFound);
+        UPCEReader.determineNumSysAndCheckDigit(new StringBuilder/* default */.A(result), lgPatternFound);
         return rowOffset;
     };
     /**
@@ -18518,7 +18518,7 @@ var UPCEReader = /** @class */ (function (_super) {
      */
     // @Override
     UPCEReader.prototype.checkChecksum = function (s) {
-        return UPCEANReader/* default.checkChecksum */.Z.checkChecksum(UPCEReader.convertUPCEtoUPCA(s));
+        return UPCEANReader/* default */.A.checkChecksum(UPCEReader.convertUPCEtoUPCA(s));
     };
     /**
      * @throws NotFoundException
@@ -18533,11 +18533,11 @@ var UPCEReader = /** @class */ (function (_super) {
                 }
             }
         }
-        throw NotFoundException/* default.getNotFoundInstance */.Z.getNotFoundInstance();
+        throw NotFoundException/* default */.A.getNotFoundInstance();
     };
     // @Override
     UPCEReader.prototype.getBarcodeFormat = function () {
-        return BarcodeFormat/* default.UPC_E */.Z.UPC_E;
+        return BarcodeFormat/* default */.A.UPC_E;
     };
     /**
      * Expands a UPC-E value back into its full, equivalent UPC-A code value.
@@ -18548,7 +18548,7 @@ var UPCEReader = /** @class */ (function (_super) {
     UPCEReader.convertUPCEtoUPCA = function (upce) {
         // the following line is equivalent to upce.getChars(1, 7, upceChars, 0);
         var upceChars = upce.slice(1, 7).split('').map(function (x) { return x.charCodeAt(0); });
-        var result = new StringBuilder/* default */.Z( /*12*/);
+        var result = new StringBuilder/* default */.A( /*12*/);
         result.append(upce.charAt(0));
         var lastChar = upceChars[5];
         switch (lastChar) {
@@ -18620,7 +18620,7 @@ var UPCEReader = /** @class */ (function (_super) {
         Int32Array.from([0x07, 0x0B, 0x0D, 0x0E, 0x13, 0x19, 0x1C, 0x15, 0x16, 0x1]),
     ];
     return UPCEReader;
-}(UPCEANReader/* default */.Z));
+}(UPCEANReader/* default */.A));
 /* harmony default export */ const oned_UPCEReader = (UPCEReader);
 
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/MultiFormatUPCEANReader.js
@@ -18683,24 +18683,24 @@ var MultiFormatUPCEANReader = /** @class */ (function (_super) {
     MultiFormatUPCEANReader_extends(MultiFormatUPCEANReader, _super);
     function MultiFormatUPCEANReader(hints) {
         var _this = _super.call(this) || this;
-        var possibleFormats = hints == null ? null : hints.get(DecodeHintType/* default.POSSIBLE_FORMATS */.Z.POSSIBLE_FORMATS);
+        var possibleFormats = hints == null ? null : hints.get(DecodeHintType/* default */.A.POSSIBLE_FORMATS);
         var readers = [];
         if (possibleFormats != null) {
-            if (possibleFormats.indexOf(BarcodeFormat/* default.EAN_13 */.Z.EAN_13) > -1) {
-                readers.push(new EAN13Reader/* default */.Z());
+            if (possibleFormats.indexOf(BarcodeFormat/* default */.A.EAN_13) > -1) {
+                readers.push(new EAN13Reader/* default */.A());
             }
-            if (possibleFormats.indexOf(BarcodeFormat/* default.UPC_A */.Z.UPC_A) > -1) {
+            if (possibleFormats.indexOf(BarcodeFormat/* default */.A.UPC_A) > -1) {
                 readers.push(new oned_UPCAReader());
             }
-            if (possibleFormats.indexOf(BarcodeFormat/* default.EAN_8 */.Z.EAN_8) > -1) {
+            if (possibleFormats.indexOf(BarcodeFormat/* default */.A.EAN_8) > -1) {
                 readers.push(new oned_EAN8Reader());
             }
-            if (possibleFormats.indexOf(BarcodeFormat/* default.UPC_E */.Z.UPC_E) > -1) {
+            if (possibleFormats.indexOf(BarcodeFormat/* default */.A.UPC_E) > -1) {
                 readers.push(new oned_UPCEReader());
             }
         }
         if (readers.length === 0) {
-            readers.push(new EAN13Reader/* default */.Z());
+            readers.push(new EAN13Reader/* default */.A());
             readers.push(new oned_UPCAReader());
             readers.push(new oned_EAN8Reader());
             readers.push(new oned_UPCEReader());
@@ -18728,15 +18728,15 @@ var MultiFormatUPCEANReader = /** @class */ (function (_super) {
                     // result if appropriate.
                     //
                     // But, don't return UPC-A if UPC-A was not a requested format!
-                    var ean13MayBeUPCA = result.getBarcodeFormat() === BarcodeFormat/* default.EAN_13 */.Z.EAN_13 &&
+                    var ean13MayBeUPCA = result.getBarcodeFormat() === BarcodeFormat/* default */.A.EAN_13 &&
                         result.getText().charAt(0) === '0';
                     // @SuppressWarnings("unchecked")
-                    var possibleFormats = hints == null ? null : hints.get(DecodeHintType/* default.POSSIBLE_FORMATS */.Z.POSSIBLE_FORMATS);
-                    var canReturnUPCA = possibleFormats == null || possibleFormats.includes(BarcodeFormat/* default.UPC_A */.Z.UPC_A);
+                    var possibleFormats = hints == null ? null : hints.get(DecodeHintType/* default */.A.POSSIBLE_FORMATS);
+                    var canReturnUPCA = possibleFormats == null || possibleFormats.includes(BarcodeFormat/* default */.A.UPC_A);
                     if (ean13MayBeUPCA && canReturnUPCA) {
                         var rawBytes = result.getRawBytes();
                         // Transfer the metadata across
-                        var resultUPCA = new Result/* default */.Z(result.getText().substring(1), rawBytes, (rawBytes ? rawBytes.length : null), result.getResultPoints(), BarcodeFormat/* default.UPC_A */.Z.UPC_A);
+                        var resultUPCA = new Result/* default */.A(result.getText().substring(1), rawBytes, (rawBytes ? rawBytes.length : null), result.getResultPoints(), BarcodeFormat/* default */.A.UPC_A);
                         resultUPCA.putAllMetadata(result.getResultMetadata());
                         return resultUPCA;
                     }
@@ -18754,7 +18754,7 @@ var MultiFormatUPCEANReader = /** @class */ (function (_super) {
             }
             finally { if (e_1) throw e_1.error; }
         }
-        throw new NotFoundException/* default */.Z();
+        throw new NotFoundException/* default */.A();
     };
     MultiFormatUPCEANReader.prototype.reset = function () {
         var e_2, _a;
@@ -18773,15 +18773,15 @@ var MultiFormatUPCEANReader = /** @class */ (function (_super) {
         }
     };
     return MultiFormatUPCEANReader;
-}(OneDReader/* default */.Z));
+}(OneDReader/* default */.A));
 /* harmony default export */ const oned_MultiFormatUPCEANReader = (MultiFormatUPCEANReader);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/CodaBarReader.js
-var CodaBarReader = __webpack_require__(6004);
+var CodaBarReader = __webpack_require__(3457);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/RSSExpandedReader.js + 3 modules
-var RSSExpandedReader = __webpack_require__(2050);
+var RSSExpandedReader = __webpack_require__(5172);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/RSS14Reader.js + 1 modules
-var RSS14Reader = __webpack_require__(1006);
+var RSS14Reader = __webpack_require__(1690);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/MultiFormatOneDReader.js
 /*
  * Copyright 2008 ZXing authors
@@ -18833,48 +18833,48 @@ var MultiFormatOneDReader = /** @class */ (function (_super) {
     function MultiFormatOneDReader(hints) {
         var _this = _super.call(this) || this;
         _this.readers = [];
-        var possibleFormats = !hints ? null : hints.get(DecodeHintType/* default.POSSIBLE_FORMATS */.Z.POSSIBLE_FORMATS);
-        var useCode39CheckDigit = hints && hints.get(DecodeHintType/* default.ASSUME_CODE_39_CHECK_DIGIT */.Z.ASSUME_CODE_39_CHECK_DIGIT) !== undefined;
-        var useCode39ExtendedMode = hints && hints.get(DecodeHintType/* default.ENABLE_CODE_39_EXTENDED_MODE */.Z.ENABLE_CODE_39_EXTENDED_MODE) !== undefined;
+        var possibleFormats = !hints ? null : hints.get(DecodeHintType/* default */.A.POSSIBLE_FORMATS);
+        var useCode39CheckDigit = hints && hints.get(DecodeHintType/* default */.A.ASSUME_CODE_39_CHECK_DIGIT) !== undefined;
+        var useCode39ExtendedMode = hints && hints.get(DecodeHintType/* default */.A.ENABLE_CODE_39_EXTENDED_MODE) !== undefined;
         if (possibleFormats) {
-            if (possibleFormats.includes(BarcodeFormat/* default.EAN_13 */.Z.EAN_13) ||
-                possibleFormats.includes(BarcodeFormat/* default.UPC_A */.Z.UPC_A) ||
-                possibleFormats.includes(BarcodeFormat/* default.EAN_8 */.Z.EAN_8) ||
-                possibleFormats.includes(BarcodeFormat/* default.UPC_E */.Z.UPC_E)) {
+            if (possibleFormats.includes(BarcodeFormat/* default */.A.EAN_13) ||
+                possibleFormats.includes(BarcodeFormat/* default */.A.UPC_A) ||
+                possibleFormats.includes(BarcodeFormat/* default */.A.EAN_8) ||
+                possibleFormats.includes(BarcodeFormat/* default */.A.UPC_E)) {
                 _this.readers.push(new oned_MultiFormatUPCEANReader(hints));
             }
-            if (possibleFormats.includes(BarcodeFormat/* default.CODE_39 */.Z.CODE_39)) {
-                _this.readers.push(new Code39Reader/* default */.Z(useCode39CheckDigit, useCode39ExtendedMode));
+            if (possibleFormats.includes(BarcodeFormat/* default */.A.CODE_39)) {
+                _this.readers.push(new Code39Reader/* default */.A(useCode39CheckDigit, useCode39ExtendedMode));
             }
-            if (possibleFormats.includes(BarcodeFormat/* default.CODE_93 */.Z.CODE_93)) {
-                _this.readers.push(new Code93Reader/* default */.Z());
+            if (possibleFormats.includes(BarcodeFormat/* default */.A.CODE_93)) {
+                _this.readers.push(new Code93Reader/* default */.A());
             }
-            if (possibleFormats.includes(BarcodeFormat/* default.CODE_128 */.Z.CODE_128)) {
-                _this.readers.push(new Code128Reader/* default */.Z());
+            if (possibleFormats.includes(BarcodeFormat/* default */.A.CODE_128)) {
+                _this.readers.push(new Code128Reader/* default */.A());
             }
-            if (possibleFormats.includes(BarcodeFormat/* default.ITF */.Z.ITF)) {
-                _this.readers.push(new ITFReader/* default */.Z());
+            if (possibleFormats.includes(BarcodeFormat/* default */.A.ITF)) {
+                _this.readers.push(new ITFReader/* default */.A());
             }
-            if (possibleFormats.includes(BarcodeFormat/* default.CODABAR */.Z.CODABAR)) {
-                _this.readers.push(new CodaBarReader/* default */.Z());
+            if (possibleFormats.includes(BarcodeFormat/* default */.A.CODABAR)) {
+                _this.readers.push(new CodaBarReader/* default */.A());
             }
-            if (possibleFormats.includes(BarcodeFormat/* default.RSS_14 */.Z.RSS_14)) {
-                _this.readers.push(new RSS14Reader/* default */.Z());
+            if (possibleFormats.includes(BarcodeFormat/* default */.A.RSS_14)) {
+                _this.readers.push(new RSS14Reader/* default */.A());
             }
-            if (possibleFormats.includes(BarcodeFormat/* default.RSS_EXPANDED */.Z.RSS_EXPANDED)) {
+            if (possibleFormats.includes(BarcodeFormat/* default */.A.RSS_EXPANDED)) {
                 console.warn('RSS Expanded reader IS NOT ready for production yet! use at your own risk.');
-                _this.readers.push(new RSSExpandedReader/* default */.Z());
+                _this.readers.push(new RSSExpandedReader/* default */.A());
             }
         }
         if (_this.readers.length === 0) {
             _this.readers.push(new oned_MultiFormatUPCEANReader(hints));
-            _this.readers.push(new Code39Reader/* default */.Z());
+            _this.readers.push(new Code39Reader/* default */.A());
             // this.readers.push(new CodaBarReader());
-            _this.readers.push(new Code93Reader/* default */.Z());
+            _this.readers.push(new Code93Reader/* default */.A());
             _this.readers.push(new oned_MultiFormatUPCEANReader(hints));
-            _this.readers.push(new Code128Reader/* default */.Z());
-            _this.readers.push(new ITFReader/* default */.Z());
-            _this.readers.push(new RSS14Reader/* default */.Z());
+            _this.readers.push(new Code128Reader/* default */.A());
+            _this.readers.push(new ITFReader/* default */.A());
+            _this.readers.push(new RSS14Reader/* default */.A());
             // this.readers.push(new RSSExpandedReader());
         }
         return _this;
@@ -18889,31 +18889,31 @@ var MultiFormatOneDReader = /** @class */ (function (_super) {
                 // continue
             }
         }
-        throw new NotFoundException/* default */.Z();
+        throw new NotFoundException/* default */.A();
     };
     // @Override
     MultiFormatOneDReader.prototype.reset = function () {
         this.readers.forEach(function (reader) { return reader.reset(); });
     };
     return MultiFormatOneDReader;
-}(OneDReader/* default */.Z));
+}(OneDReader/* default */.A));
 /* harmony default export */ const oned_MultiFormatOneDReader = (MultiFormatOneDReader);
 
 
 /***/ }),
 
-/***/ 3903:
+/***/ 1693:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _common_BitArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1555);
-/* harmony import */ var _DecodeHintType__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6650);
-/* harmony import */ var _ResultMetadataType__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5621);
-/* harmony import */ var _ResultPoint__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8307);
-/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8842);
+/* harmony import */ var _common_BitArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5369);
+/* harmony import */ var _DecodeHintType__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1180);
+/* harmony import */ var _ResultMetadataType__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(688);
+/* harmony import */ var _ResultPoint__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6502);
+/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8427);
 /*
  * Copyright 2008 ZXing authors
  *
@@ -18957,30 +18957,30 @@ var OneDReader = /** @class */ (function () {
             return this.doDecode(image, hints);
         }
         catch (nfe) {
-            var tryHarder = hints && (hints.get(_DecodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"].TRY_HARDER */ .Z.TRY_HARDER) === true);
+            var tryHarder = hints && (hints.get(_DecodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.TRY_HARDER) === true);
             if (tryHarder && image.isRotateSupported()) {
                 var rotatedImage = image.rotateCounterClockwise();
                 var result = this.doDecode(rotatedImage, hints);
                 // Record that we found it rotated 90 degrees CCW / 270 degrees CW
                 var metadata = result.getResultMetadata();
                 var orientation_1 = 270;
-                if (metadata !== null && (metadata.get(_ResultMetadataType__WEBPACK_IMPORTED_MODULE_2__/* ["default"].ORIENTATION */ .Z.ORIENTATION) === true)) {
+                if (metadata !== null && (metadata.get(_ResultMetadataType__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.ORIENTATION) === true)) {
                     // But if we found it reversed in doDecode(), add in that result here:
-                    orientation_1 = (orientation_1 + metadata.get(_ResultMetadataType__WEBPACK_IMPORTED_MODULE_2__/* ["default"].ORIENTATION */ .Z.ORIENTATION) % 360);
+                    orientation_1 = (orientation_1 + metadata.get(_ResultMetadataType__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.ORIENTATION) % 360);
                 }
-                result.putMetadata(_ResultMetadataType__WEBPACK_IMPORTED_MODULE_2__/* ["default"].ORIENTATION */ .Z.ORIENTATION, orientation_1);
+                result.putMetadata(_ResultMetadataType__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.ORIENTATION, orientation_1);
                 // Update result points
                 var points = result.getResultPoints();
                 if (points !== null) {
                     var height = rotatedImage.getHeight();
                     for (var i = 0; i < points.length; i++) {
-                        points[i] = new _ResultPoint__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z(height - points[i].getY() - 1, points[i].getX());
+                        points[i] = new _ResultPoint__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A(height - points[i].getY() - 1, points[i].getX());
                     }
                 }
                 return result;
             }
             else {
-                throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+                throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
             }
         }
     };
@@ -19005,8 +19005,8 @@ var OneDReader = /** @class */ (function () {
     OneDReader.prototype.doDecode = function (image, hints) {
         var width = image.getWidth();
         var height = image.getHeight();
-        var row = new _common_BitArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(width);
-        var tryHarder = hints && (hints.get(_DecodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"].TRY_HARDER */ .Z.TRY_HARDER) === true);
+        var row = new _common_BitArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(width);
+        var tryHarder = hints && (hints.get(_DecodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.TRY_HARDER) === true);
         var rowStep = Math.max(1, height >> (tryHarder ? 8 : 5));
         var maxLines;
         if (tryHarder) {
@@ -19039,10 +19039,10 @@ var OneDReader = /** @class */ (function () {
                     // since we want to avoid drawing the wrong points after flipping the row, and,
                     // don't want to clutter with noise from every single row scan -- just the scans
                     // that start on the center line.
-                    if (hints && (hints.get(_DecodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"].NEED_RESULT_POINT_CALLBACK */ .Z.NEED_RESULT_POINT_CALLBACK) === true)) {
+                    if (hints && (hints.get(_DecodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.NEED_RESULT_POINT_CALLBACK) === true)) {
                         var newHints_1 = new Map();
                         hints.forEach(function (hint, key) { return newHints_1.set(key, hint); });
-                        newHints_1.delete(_DecodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"].NEED_RESULT_POINT_CALLBACK */ .Z.NEED_RESULT_POINT_CALLBACK);
+                        newHints_1.delete(_DecodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.NEED_RESULT_POINT_CALLBACK);
                         hints = newHints_1;
                     }
                 }
@@ -19052,12 +19052,12 @@ var OneDReader = /** @class */ (function () {
                     // We found our barcode
                     if (attempt === 1) {
                         // But it was upside down, so note that
-                        result.putMetadata(_ResultMetadataType__WEBPACK_IMPORTED_MODULE_2__/* ["default"].ORIENTATION */ .Z.ORIENTATION, 180);
+                        result.putMetadata(_ResultMetadataType__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.ORIENTATION, 180);
                         // And remember to flip the result points horizontally.
                         var points = result.getResultPoints();
                         if (points !== null) {
-                            points[0] = new _ResultPoint__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z(width - points[0].getX() - 1, points[0].getY());
-                            points[1] = new _ResultPoint__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z(width - points[1].getX() - 1, points[1].getY());
+                            points[0] = new _ResultPoint__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A(width - points[0].getX() - 1, points[0].getY());
+                            points[1] = new _ResultPoint__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A(width - points[1].getX() - 1, points[1].getY());
                         }
                     }
                     return { value: result };
@@ -19075,7 +19075,7 @@ var OneDReader = /** @class */ (function () {
                     return state_1.value;
             }
         }
-        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
     };
     /**
      * Records the size of successive runs of white and black pixels in a row, starting at a given point.
@@ -19096,7 +19096,7 @@ var OneDReader = /** @class */ (function () {
             counters[index] = 0;
         var end = row.getSize();
         if (start >= end) {
-            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
         }
         var isWhite = !row.get(start);
         var counterPosition = 0;
@@ -19119,7 +19119,7 @@ var OneDReader = /** @class */ (function () {
         // If we read fully the last section of pixels and filled up our counters -- or filled
         // the last counter but ran off the side of the image, OK. Otherwise, a problem.
         if (!(counterPosition === numCounters || (counterPosition === numCounters - 1 && i === end))) {
-            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
         }
     };
     OneDReader.recordPatternInReverse = function (row, start, counters) {
@@ -19133,7 +19133,7 @@ var OneDReader = /** @class */ (function () {
             }
         }
         if (numTransitionsLeft >= 0) {
-            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+            throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
         }
         OneDReader.recordPattern(row, start + 1, counters);
     };
@@ -19181,32 +19181,32 @@ var OneDReader = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 9928:
+/***/ 3164:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Z": () => (/* binding */ oned_UPCEANReader)
+  A: () => (/* binding */ oned_UPCEANReader)
 });
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/BarcodeFormat.js
-var BarcodeFormat = __webpack_require__(8684);
+var BarcodeFormat = __webpack_require__(9460);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/DecodeHintType.js
-var DecodeHintType = __webpack_require__(6650);
+var DecodeHintType = __webpack_require__(1180);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/Result.js
-var Result = __webpack_require__(1462);
+var Result = __webpack_require__(6770);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/ResultMetadataType.js
-var ResultMetadataType = __webpack_require__(5621);
+var ResultMetadataType = __webpack_require__(688);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/ResultPoint.js
-var ResultPoint = __webpack_require__(8307);
+var ResultPoint = __webpack_require__(6502);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/OneDReader.js
-var OneDReader = __webpack_require__(3903);
+var OneDReader = __webpack_require__(1693);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/NotFoundException.js
-var NotFoundException = __webpack_require__(8842);
+var NotFoundException = __webpack_require__(8427);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/FormatException.js
-var FormatException = __webpack_require__(2468);
+var FormatException = __webpack_require__(7027);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/AbstractUPCEANReader.js
 /*
  * Copyright 2008 ZXing authors
@@ -19296,7 +19296,7 @@ var AbstractUPCEANReader = /** @class */ (function (_super) {
         for (var i = length - 1; i >= 0; i -= 2) {
             var digit = s.charAt(i).charCodeAt(0) - '0'.charCodeAt(0);
             if (digit < 0 || digit > 9) {
-                throw new FormatException/* default */.Z();
+                throw new FormatException/* default */.A();
             }
             sum += digit;
         }
@@ -19304,7 +19304,7 @@ var AbstractUPCEANReader = /** @class */ (function (_super) {
         for (var i = length - 2; i >= 0; i -= 2) {
             var digit = s.charAt(i).charCodeAt(0) - '0'.charCodeAt(0);
             if (digit < 0 || digit > 9) {
-                throw new FormatException/* default */.Z();
+                throw new FormatException/* default */.A();
             }
             sum += digit;
         }
@@ -19343,7 +19343,7 @@ var AbstractUPCEANReader = /** @class */ (function (_super) {
             }
             else {
                 if (counterPosition === patternLength - 1) {
-                    if (OneDReader/* default.patternMatchVariance */.Z.patternMatchVariance(counters, pattern, AbstractUPCEANReader.MAX_INDIVIDUAL_VARIANCE) < AbstractUPCEANReader.MAX_AVG_VARIANCE) {
+                    if (OneDReader/* default */.A.patternMatchVariance(counters, pattern, AbstractUPCEANReader.MAX_INDIVIDUAL_VARIANCE) < AbstractUPCEANReader.MAX_AVG_VARIANCE) {
                         return Int32Array.from([patternStart, x]);
                     }
                     patternStart += counters[0] + counters[1];
@@ -19362,7 +19362,7 @@ var AbstractUPCEANReader = /** @class */ (function (_super) {
                 isWhite = !isWhite;
             }
         }
-        throw new NotFoundException/* default */.Z();
+        throw new NotFoundException/* default */.A();
     };
     AbstractUPCEANReader.decodeDigit = function (row, counters, rowOffset, patterns) {
         this.recordPattern(row, rowOffset, counters);
@@ -19371,7 +19371,7 @@ var AbstractUPCEANReader = /** @class */ (function (_super) {
         var max = patterns.length;
         for (var i = 0; i < max; i++) {
             var pattern = patterns[i];
-            var variance = OneDReader/* default.patternMatchVariance */.Z.patternMatchVariance(counters, pattern, AbstractUPCEANReader.MAX_INDIVIDUAL_VARIANCE);
+            var variance = OneDReader/* default */.A.patternMatchVariance(counters, pattern, AbstractUPCEANReader.MAX_INDIVIDUAL_VARIANCE);
             if (variance < bestVariance) {
                 bestVariance = variance;
                 bestMatch = i;
@@ -19381,7 +19381,7 @@ var AbstractUPCEANReader = /** @class */ (function (_super) {
             return bestMatch;
         }
         else {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
     };
     // These two values are critical for determining how permissive the decoding will be.
@@ -19417,7 +19417,7 @@ var AbstractUPCEANReader = /** @class */ (function (_super) {
         Int32Array.from([3, 1, 1, 2]),
     ];
     return AbstractUPCEANReader;
-}(OneDReader/* default */.Z));
+}(OneDReader/* default */.A));
 /* harmony default export */ const oned_AbstractUPCEANReader = (AbstractUPCEANReader);
 
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/UPCEANExtension5Support.js
@@ -19469,10 +19469,10 @@ var UPCEANExtension5Support = /** @class */ (function () {
         var resultString = result.toString();
         var extensionData = UPCEANExtension5Support.parseExtensionString(resultString);
         var resultPoints = [
-            new ResultPoint/* default */.Z((extensionStartRange[0] + extensionStartRange[1]) / 2.0, rowNumber),
-            new ResultPoint/* default */.Z(end, rowNumber)
+            new ResultPoint/* default */.A((extensionStartRange[0] + extensionStartRange[1]) / 2.0, rowNumber),
+            new ResultPoint/* default */.A(end, rowNumber)
         ];
-        var extensionResult = new Result/* default */.Z(resultString, null, 0, resultPoints, BarcodeFormat/* default.UPC_EAN_EXTENSION */.Z.UPC_EAN_EXTENSION, new Date().getTime());
+        var extensionResult = new Result/* default */.A(resultString, null, 0, resultPoints, BarcodeFormat/* default */.A.UPC_EAN_EXTENSION, new Date().getTime());
         if (extensionData != null) {
             extensionResult.putAllMetadata(extensionData);
         }
@@ -19514,11 +19514,11 @@ var UPCEANExtension5Support = /** @class */ (function () {
             }
         }
         if (resultString.length !== 5) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         var checkDigit = this.determineCheckDigit(lgPatternFound);
         if (UPCEANExtension5Support.extensionChecksum(resultString.toString()) !== checkDigit) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         return rowOffset;
     };
@@ -19541,7 +19541,7 @@ var UPCEANExtension5Support = /** @class */ (function () {
                 return d;
             }
         }
-        throw new NotFoundException/* default */.Z();
+        throw new NotFoundException/* default */.A();
     };
     UPCEANExtension5Support.parseExtensionString = function (raw) {
         if (raw.length !== 5) {
@@ -19551,7 +19551,7 @@ var UPCEANExtension5Support = /** @class */ (function () {
         if (value == null) {
             return null;
         }
-        return new Map([[ResultMetadataType/* default.SUGGESTED_PRICE */.Z.SUGGESTED_PRICE, value]]);
+        return new Map([[ResultMetadataType/* default */.A.SUGGESTED_PRICE, value]]);
     };
     UPCEANExtension5Support.parseExtension5String = function (raw) {
         var currency;
@@ -19638,10 +19638,10 @@ var UPCEANExtension2Support = /** @class */ (function () {
         var resultString = result.toString();
         var extensionData = UPCEANExtension2Support.parseExtensionString(resultString);
         var resultPoints = [
-            new ResultPoint/* default */.Z((extensionStartRange[0] + extensionStartRange[1]) / 2.0, rowNumber),
-            new ResultPoint/* default */.Z(end, rowNumber)
+            new ResultPoint/* default */.A((extensionStartRange[0] + extensionStartRange[1]) / 2.0, rowNumber),
+            new ResultPoint/* default */.A(end, rowNumber)
         ];
-        var extensionResult = new Result/* default */.Z(resultString, null, 0, resultPoints, BarcodeFormat/* default.UPC_EAN_EXTENSION */.Z.UPC_EAN_EXTENSION, new Date().getTime());
+        var extensionResult = new Result/* default */.A(resultString, null, 0, resultPoints, BarcodeFormat/* default */.A.UPC_EAN_EXTENSION, new Date().getTime());
         if (extensionData != null) {
             extensionResult.putAllMetadata(extensionData);
         }
@@ -19683,10 +19683,10 @@ var UPCEANExtension2Support = /** @class */ (function () {
             }
         }
         if (resultString.length !== 2) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         if (parseInt(resultString.toString()) % 4 !== checkParity) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         return rowOffset;
     };
@@ -19694,7 +19694,7 @@ var UPCEANExtension2Support = /** @class */ (function () {
         if (raw.length !== 2) {
             return null;
         }
-        return new Map([[ResultMetadataType/* default.ISSUE_NUMBER */.Z.ISSUE_NUMBER, parseInt(raw)]]);
+        return new Map([[ResultMetadataType/* default */.A.ISSUE_NUMBER, parseInt(raw)]]);
     };
     return UPCEANExtension2Support;
 }());
@@ -19741,7 +19741,7 @@ var UPCEANExtensionSupport = /** @class */ (function () {
 /* harmony default export */ const oned_UPCEANExtensionSupport = (UPCEANExtensionSupport);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/ChecksumException.js
-var ChecksumException = __webpack_require__(3392);
+var ChecksumException = __webpack_require__(1371);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/UPCEANReader.js
 /*
  * Copyright 2008 ZXing authors
@@ -19807,21 +19807,21 @@ var UPCEANReader = /** @class */ (function (_super) {
     }
     UPCEANReader.prototype.decodeRow = function (rowNumber, row, hints) {
         var startGuardRange = UPCEANReader.findStartGuardPattern(row);
-        var resultPointCallback = hints == null ? null : hints.get(DecodeHintType/* default.NEED_RESULT_POINT_CALLBACK */.Z.NEED_RESULT_POINT_CALLBACK);
+        var resultPointCallback = hints == null ? null : hints.get(DecodeHintType/* default */.A.NEED_RESULT_POINT_CALLBACK);
         if (resultPointCallback != null) {
-            var resultPoint_1 = new ResultPoint/* default */.Z((startGuardRange[0] + startGuardRange[1]) / 2.0, rowNumber);
+            var resultPoint_1 = new ResultPoint/* default */.A((startGuardRange[0] + startGuardRange[1]) / 2.0, rowNumber);
             resultPointCallback.foundPossibleResultPoint(resultPoint_1);
         }
         var budello = this.decodeMiddle(row, startGuardRange, this.decodeRowStringBuffer);
         var endStart = budello.rowOffset;
         var result = budello.resultString;
         if (resultPointCallback != null) {
-            var resultPoint_2 = new ResultPoint/* default */.Z(endStart, rowNumber);
+            var resultPoint_2 = new ResultPoint/* default */.A(endStart, rowNumber);
             resultPointCallback.foundPossibleResultPoint(resultPoint_2);
         }
         var endRange = UPCEANReader.decodeEnd(row, endStart);
         if (resultPointCallback != null) {
-            var resultPoint_3 = new ResultPoint/* default */.Z((endRange[0] + endRange[1]) / 2.0, rowNumber);
+            var resultPoint_3 = new ResultPoint/* default */.A((endRange[0] + endRange[1]) / 2.0, rowNumber);
             resultPointCallback.foundPossibleResultPoint(resultPoint_3);
         }
         // Make sure there is a quiet zone at least as big as the end pattern after the barcode. The
@@ -19829,32 +19829,32 @@ var UPCEANReader = /** @class */ (function (_super) {
         var end = endRange[1];
         var quietEnd = end + (end - endRange[0]);
         if (quietEnd >= row.getSize() || !row.isRange(end, quietEnd, false)) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         var resultString = result.toString();
         // UPC/EAN should never be less than 8 chars anyway
         if (resultString.length < 8) {
-            throw new FormatException/* default */.Z();
+            throw new FormatException/* default */.A();
         }
         if (!UPCEANReader.checkChecksum(resultString)) {
-            throw new ChecksumException/* default */.Z();
+            throw new ChecksumException/* default */.A();
         }
         var left = (startGuardRange[1] + startGuardRange[0]) / 2.0;
         var right = (endRange[1] + endRange[0]) / 2.0;
         var format = this.getBarcodeFormat();
-        var resultPoint = [new ResultPoint/* default */.Z(left, rowNumber), new ResultPoint/* default */.Z(right, rowNumber)];
-        var decodeResult = new Result/* default */.Z(resultString, null, 0, resultPoint, format, new Date().getTime());
+        var resultPoint = [new ResultPoint/* default */.A(left, rowNumber), new ResultPoint/* default */.A(right, rowNumber)];
+        var decodeResult = new Result/* default */.A(resultString, null, 0, resultPoint, format, new Date().getTime());
         var extensionLength = 0;
         try {
             var extensionResult = oned_UPCEANExtensionSupport.decodeRow(rowNumber, row, endRange[1]);
-            decodeResult.putMetadata(ResultMetadataType/* default.UPC_EAN_EXTENSION */.Z.UPC_EAN_EXTENSION, extensionResult.getText());
+            decodeResult.putMetadata(ResultMetadataType/* default */.A.UPC_EAN_EXTENSION, extensionResult.getText());
             decodeResult.putAllMetadata(extensionResult.getResultMetadata());
             decodeResult.addResultPoints(extensionResult.getResultPoints());
             extensionLength = extensionResult.getText().length;
         }
         catch (err) {
         }
-        var allowedExtensions = hints == null ? null : hints.get(DecodeHintType/* default.ALLOWED_EAN_EXTENSIONS */.Z.ALLOWED_EAN_EXTENSIONS);
+        var allowedExtensions = hints == null ? null : hints.get(DecodeHintType/* default */.A.ALLOWED_EAN_EXTENSIONS);
         if (allowedExtensions != null) {
             var valid = false;
             for (var length_1 in allowedExtensions) {
@@ -19864,10 +19864,10 @@ var UPCEANReader = /** @class */ (function (_super) {
                 }
             }
             if (!valid) {
-                throw new NotFoundException/* default */.Z();
+                throw new NotFoundException/* default */.A();
             }
         }
-        if (format === BarcodeFormat/* default.EAN_13 */.Z.EAN_13 || format === BarcodeFormat/* default.UPC_A */.Z.UPC_A) {
+        if (format === BarcodeFormat/* default */.A.EAN_13 || format === BarcodeFormat/* default */.A.UPC_A) {
             // let countryID = eanManSupport.lookupContryIdentifier(resultString); todo
             // if (countryID != null) {
             //     decodeResult.putMetadata(ResultMetadataType.POSSIBLE_COUNTRY, countryID);
@@ -19891,7 +19891,7 @@ var UPCEANReader = /** @class */ (function (_super) {
         for (var i = length - 1; i >= 0; i -= 2) {
             var digit = s.charAt(i).charCodeAt(0) - '0'.charCodeAt(0);
             if (digit < 0 || digit > 9) {
-                throw new FormatException/* default */.Z();
+                throw new FormatException/* default */.A();
             }
             sum += digit;
         }
@@ -19899,7 +19899,7 @@ var UPCEANReader = /** @class */ (function (_super) {
         for (var i = length - 2; i >= 0; i -= 2) {
             var digit = s.charAt(i).charCodeAt(0) - '0'.charCodeAt(0);
             if (digit < 0 || digit > 9) {
-                throw new FormatException/* default */.Z();
+                throw new FormatException/* default */.A();
             }
             sum += digit;
         }
@@ -19915,16 +19915,16 @@ var UPCEANReader = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 510:
+/***/ 3986:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8611);
-/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8842);
-/* harmony import */ var _OneDReader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3903);
+/* harmony import */ var _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1091);
+/* harmony import */ var _NotFoundException__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8427);
+/* harmony import */ var _OneDReader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1693);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -19986,11 +19986,11 @@ var AbstractRSSReader = /** @class */ (function (_super) {
     };
     AbstractRSSReader.prototype.parseFinderValue = function (counters, finderPatterns) {
         for (var value = 0; value < finderPatterns.length; value++) {
-            if (_OneDReader__WEBPACK_IMPORTED_MODULE_2__/* ["default"].patternMatchVariance */ .Z.patternMatchVariance(counters, finderPatterns[value], AbstractRSSReader.MAX_INDIVIDUAL_VARIANCE) < AbstractRSSReader.MAX_AVG_VARIANCE) {
+            if (_OneDReader__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.patternMatchVariance(counters, finderPatterns[value], AbstractRSSReader.MAX_INDIVIDUAL_VARIANCE) < AbstractRSSReader.MAX_AVG_VARIANCE) {
                 return value;
             }
         }
-        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z();
+        throw new _NotFoundException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A();
     };
     /**
      * @param array values to sum
@@ -19998,7 +19998,7 @@ var AbstractRSSReader = /** @class */ (function (_super) {
      * @deprecated call {@link MathUtils#sum(int[])}
      */
     AbstractRSSReader.count = function (array) {
-        return _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"].sum */ .Z.sum(new Int32Array(array));
+        return _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.sum(new Int32Array(array));
     };
     AbstractRSSReader.increment = function (array, errors) {
         var index = 0;
@@ -20058,18 +20058,18 @@ var AbstractRSSReader = /** @class */ (function (_super) {
     AbstractRSSReader.MIN_FINDER_PATTERN_RATIO = 9.5 / 12.0;
     AbstractRSSReader.MAX_FINDER_PATTERN_RATIO = 12.5 / 14.0;
     return AbstractRSSReader;
-}(_OneDReader__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z));
+}(_OneDReader__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AbstractRSSReader);
 
 
 /***/ }),
 
-/***/ 8158:
+/***/ 528:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 var DataCharacter = /** @class */ (function () {
     function DataCharacter(value, checksumPortion) {
@@ -20102,14 +20102,14 @@ var DataCharacter = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 3714:
+/***/ 209:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _ResultPoint__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8307);
+/* harmony import */ var _ResultPoint__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6502);
 
 var FinderPattern = /** @class */ (function () {
     function FinderPattern(value, startEnd, start, end, rowNumber) {
@@ -20118,8 +20118,8 @@ var FinderPattern = /** @class */ (function () {
         this.value = value;
         this.startEnd = startEnd;
         this.resultPoints = new Array();
-        this.resultPoints.push(new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(start, rowNumber));
-        this.resultPoints.push(new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(end, rowNumber));
+        this.resultPoints.push(new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(start, rowNumber));
+        this.resultPoints.push(new _ResultPoint__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(end, rowNumber));
     }
     FinderPattern.prototype.getValue = function () {
         return this.value;
@@ -20147,20 +20147,20 @@ var FinderPattern = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 1006:
+/***/ 1690:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Z": () => (/* binding */ rss_RSS14Reader)
+  A: () => (/* binding */ rss_RSS14Reader)
 });
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/AbstractRSSReader.js
-var AbstractRSSReader = __webpack_require__(510);
+var AbstractRSSReader = __webpack_require__(3986);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/DataCharacter.js
-var DataCharacter = __webpack_require__(8158);
+var DataCharacter = __webpack_require__(528);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/Pair.js
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -20194,31 +20194,31 @@ var Pair = /** @class */ (function (_super) {
         this.count++;
     };
     return Pair;
-}(DataCharacter/* default */.Z));
+}(DataCharacter/* default */.A));
 /* harmony default export */ const rss_Pair = (Pair);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/Result.js
-var Result = __webpack_require__(1462);
+var Result = __webpack_require__(6770);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/DecodeHintType.js
-var DecodeHintType = __webpack_require__(6650);
+var DecodeHintType = __webpack_require__(1180);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/NotFoundException.js
-var NotFoundException = __webpack_require__(8842);
+var NotFoundException = __webpack_require__(8427);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StringBuilder.js
-var StringBuilder = __webpack_require__(75);
+var StringBuilder = __webpack_require__(432);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/BarcodeFormat.js
-var BarcodeFormat = __webpack_require__(8684);
+var BarcodeFormat = __webpack_require__(9460);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/ResultPoint.js
-var ResultPoint = __webpack_require__(8307);
+var ResultPoint = __webpack_require__(6502);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/FinderPattern.js
-var FinderPattern = __webpack_require__(3714);
+var FinderPattern = __webpack_require__(209);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/detector/MathUtils.js
-var MathUtils = __webpack_require__(8611);
+var MathUtils = __webpack_require__(1091);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/RSSUtils.js
-var RSSUtils = __webpack_require__(7894);
+var RSSUtils = __webpack_require__(3846);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/System.js
-var System = __webpack_require__(8507);
+var System = __webpack_require__(7527);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/OneDReader.js
-var OneDReader = __webpack_require__(3903);
+var OneDReader = __webpack_require__(1693);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/RSS14Reader.js
 var RSS14Reader_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -20303,7 +20303,7 @@ var RSS14Reader = /** @class */ (function (_super) {
             }
             finally { if (e_1) throw e_1.error; }
         }
-        throw new NotFoundException/* default */.Z();
+        throw new NotFoundException/* default */.A();
     };
     RSS14Reader.addOrTally = function (possiblePairs, pair) {
         var e_3, _a;
@@ -20339,7 +20339,7 @@ var RSS14Reader = /** @class */ (function (_super) {
     RSS14Reader.constructResult = function (leftPair, rightPair) {
         var symbolValue = 4537077 * leftPair.getValue() + rightPair.getValue();
         var text = new String(symbolValue).toString();
-        var buffer = new StringBuilder/* default */.Z();
+        var buffer = new StringBuilder/* default */.A();
         for (var i = 13 - text.length; i > 0; i--) {
             buffer.append('0');
         }
@@ -20356,7 +20356,7 @@ var RSS14Reader = /** @class */ (function (_super) {
         buffer.append(checkDigit.toString());
         var leftPoints = leftPair.getFinderPattern().getResultPoints();
         var rightPoints = rightPair.getFinderPattern().getResultPoints();
-        return new Result/* default */.Z(buffer.toString(), null, 0, [leftPoints[0], leftPoints[1], rightPoints[0], rightPoints[1]], BarcodeFormat/* default.RSS_14 */.Z.RSS_14, new Date().getTime());
+        return new Result/* default */.A(buffer.toString(), null, 0, [leftPoints[0], leftPoints[1], rightPoints[0], rightPoints[1]], BarcodeFormat/* default */.A.RSS_14, new Date().getTime());
     };
     RSS14Reader.checkChecksum = function (leftPair, rightPair) {
         var checkValue = (leftPair.getChecksumPortion() + 16 * rightPair.getChecksumPortion()) % 79;
@@ -20373,14 +20373,14 @@ var RSS14Reader = /** @class */ (function (_super) {
         try {
             var startEnd = this.findFinderPattern(row, right);
             var pattern = this.parseFoundFinderPattern(row, rowNumber, right, startEnd);
-            var resultPointCallback = hints == null ? null : hints.get(DecodeHintType/* default.NEED_RESULT_POINT_CALLBACK */.Z.NEED_RESULT_POINT_CALLBACK);
+            var resultPointCallback = hints == null ? null : hints.get(DecodeHintType/* default */.A.NEED_RESULT_POINT_CALLBACK);
             if (resultPointCallback != null) {
                 var center = (startEnd[0] + startEnd[1]) / 2.0;
                 if (right) {
                     // row is actually reversed
                     center = row.getSize() - 1 - center;
                 }
-                resultPointCallback.foundPossibleResultPoint(new ResultPoint/* default */.Z(center, rowNumber));
+                resultPointCallback.foundPossibleResultPoint(new ResultPoint/* default */.A(center, rowNumber));
             }
             var outside = this.decodeDataCharacter(row, pattern, true);
             var inside = this.decodeDataCharacter(row, pattern, false);
@@ -20396,10 +20396,10 @@ var RSS14Reader = /** @class */ (function (_super) {
             counters[x] = 0;
         }
         if (outsideChar) {
-            OneDReader/* default.recordPatternInReverse */.Z.recordPatternInReverse(row, pattern.getStartEnd()[0], counters);
+            OneDReader/* default */.A.recordPatternInReverse(row, pattern.getStartEnd()[0], counters);
         }
         else {
-            OneDReader/* default.recordPattern */.Z.recordPattern(row, pattern.getStartEnd()[1] + 1, counters);
+            OneDReader/* default */.A.recordPattern(row, pattern.getStartEnd()[1] + 1, counters);
             // reverse it
             for (var i = 0, j = counters.length - 1; i < j; i++, j--) {
                 var temp = counters[i];
@@ -20408,7 +20408,7 @@ var RSS14Reader = /** @class */ (function (_super) {
             }
         }
         var numModules = outsideChar ? 16 : 15;
-        var elementWidth = MathUtils/* default.sum */.Z.sum(new Int32Array(counters)) / numModules;
+        var elementWidth = MathUtils/* default */.A.sum(new Int32Array(counters)) / numModules;
         var oddCounts = this.getOddCounts();
         var evenCounts = this.getEvenCounts();
         var oddRoundingErrors = this.getOddRoundingErrors();
@@ -20450,29 +20450,29 @@ var RSS14Reader = /** @class */ (function (_super) {
         var checksumPortion = oddChecksumPortion + 3 * evenChecksumPortion;
         if (outsideChar) {
             if ((oddSum & 0x01) !== 0 || oddSum > 12 || oddSum < 4) {
-                throw new NotFoundException/* default */.Z();
+                throw new NotFoundException/* default */.A();
             }
             var group = (12 - oddSum) / 2;
             var oddWidest = RSS14Reader.OUTSIDE_ODD_WIDEST[group];
             var evenWidest = 9 - oddWidest;
-            var vOdd = RSSUtils/* default.getRSSvalue */.Z.getRSSvalue(oddCounts, oddWidest, false);
-            var vEven = RSSUtils/* default.getRSSvalue */.Z.getRSSvalue(evenCounts, evenWidest, true);
+            var vOdd = RSSUtils/* default */.A.getRSSvalue(oddCounts, oddWidest, false);
+            var vEven = RSSUtils/* default */.A.getRSSvalue(evenCounts, evenWidest, true);
             var tEven = RSS14Reader.OUTSIDE_EVEN_TOTAL_SUBSET[group];
             var gSum = RSS14Reader.OUTSIDE_GSUM[group];
-            return new DataCharacter/* default */.Z(vOdd * tEven + vEven + gSum, checksumPortion);
+            return new DataCharacter/* default */.A(vOdd * tEven + vEven + gSum, checksumPortion);
         }
         else {
             if ((evenSum & 0x01) !== 0 || evenSum > 10 || evenSum < 4) {
-                throw new NotFoundException/* default */.Z();
+                throw new NotFoundException/* default */.A();
             }
             var group = (10 - evenSum) / 2;
             var oddWidest = RSS14Reader.INSIDE_ODD_WIDEST[group];
             var evenWidest = 9 - oddWidest;
-            var vOdd = RSSUtils/* default.getRSSvalue */.Z.getRSSvalue(oddCounts, oddWidest, true);
-            var vEven = RSSUtils/* default.getRSSvalue */.Z.getRSSvalue(evenCounts, evenWidest, false);
+            var vOdd = RSSUtils/* default */.A.getRSSvalue(oddCounts, oddWidest, true);
+            var vEven = RSSUtils/* default */.A.getRSSvalue(evenCounts, evenWidest, false);
             var tOdd = RSS14Reader.INSIDE_ODD_TOTAL_SUBSET[group];
             var gSum = RSS14Reader.INSIDE_GSUM[group];
-            return new DataCharacter/* default */.Z(vEven * tOdd + vOdd + gSum, checksumPortion);
+            return new DataCharacter/* default */.A(vEven * tOdd + vOdd + gSum, checksumPortion);
         }
     };
     RSS14Reader.prototype.findFinderPattern = function (row, rightFinderPattern) {
@@ -20500,7 +20500,7 @@ var RSS14Reader = /** @class */ (function (_super) {
             }
             else {
                 if (counterPosition === 3) {
-                    if (AbstractRSSReader/* default.isFinderPattern */.Z.isFinderPattern(counters)) {
+                    if (AbstractRSSReader/* default */.A.isFinderPattern(counters)) {
                         return [patternStart, x];
                     }
                     patternStart += counters[0] + counters[1];
@@ -20517,7 +20517,7 @@ var RSS14Reader = /** @class */ (function (_super) {
                 isWhite = !isWhite;
             }
         }
-        throw new NotFoundException/* default */.Z();
+        throw new NotFoundException/* default */.A();
     };
     RSS14Reader.prototype.parseFoundFinderPattern = function (row, rowNumber, right, startEnd) {
         // Actually we found elements 2-5
@@ -20532,7 +20532,7 @@ var RSS14Reader = /** @class */ (function (_super) {
         // Make 'counters' hold 1-4
         var counters = this.getDecodeFinderCounters();
         var copy = new Int32Array(counters.length);
-        System/* default.arraycopy */.Z.arraycopy(counters, 0, copy, 1, counters.length - 1);
+        System/* default */.A.arraycopy(counters, 0, copy, 1, counters.length - 1);
         copy[0] = firstCounter;
         var value = this.parseFinderValue(copy, RSS14Reader.FINDER_PATTERNS);
         var start = firstElementStart;
@@ -20542,11 +20542,11 @@ var RSS14Reader = /** @class */ (function (_super) {
             start = row.getSize() - 1 - start;
             end = row.getSize() - 1 - end;
         }
-        return new FinderPattern/* default */.Z(value, [firstElementStart, startEnd[1]], start, end, rowNumber);
+        return new FinderPattern/* default */.A(value, [firstElementStart, startEnd[1]], start, end, rowNumber);
     };
     RSS14Reader.prototype.adjustOddEvenCounts = function (outsideChar, numModules) {
-        var oddSum = MathUtils/* default.sum */.Z.sum(new Int32Array(this.getOddCounts()));
-        var evenSum = MathUtils/* default.sum */.Z.sum(new Int32Array(this.getEvenCounts()));
+        var oddSum = MathUtils/* default */.A.sum(new Int32Array(this.getOddCounts()));
+        var evenSum = MathUtils/* default */.A.sum(new Int32Array(this.getEvenCounts()));
         var incrementOdd = false;
         var decrementOdd = false;
         var incrementEven = false;
@@ -20585,13 +20585,13 @@ var RSS14Reader = /** @class */ (function (_super) {
         if (mismatch === 1) {
             if (oddParityBad) {
                 if (evenParityBad) {
-                    throw new NotFoundException/* default */.Z();
+                    throw new NotFoundException/* default */.A();
                 }
                 decrementOdd = true;
             }
             else {
                 if (!evenParityBad) {
-                    throw new NotFoundException/* default */.Z();
+                    throw new NotFoundException/* default */.A();
                 }
                 decrementEven = true;
             }
@@ -20599,13 +20599,13 @@ var RSS14Reader = /** @class */ (function (_super) {
         else if (mismatch === -1) {
             if (oddParityBad) {
                 if (evenParityBad) {
-                    throw new NotFoundException/* default */.Z();
+                    throw new NotFoundException/* default */.A();
                 }
                 incrementOdd = true;
             }
             else {
                 if (!evenParityBad) {
-                    throw new NotFoundException/* default */.Z();
+                    throw new NotFoundException/* default */.A();
                 }
                 incrementEven = true;
             }
@@ -20613,7 +20613,7 @@ var RSS14Reader = /** @class */ (function (_super) {
         else if (mismatch === 0) {
             if (oddParityBad) {
                 if (!evenParityBad) {
-                    throw new NotFoundException/* default */.Z();
+                    throw new NotFoundException/* default */.A();
                 }
                 // Both bad
                 if (oddSum < evenSum) {
@@ -20627,31 +20627,31 @@ var RSS14Reader = /** @class */ (function (_super) {
             }
             else {
                 if (evenParityBad) {
-                    throw new NotFoundException/* default */.Z();
+                    throw new NotFoundException/* default */.A();
                 }
                 // Nothing to do!
             }
         }
         else {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         if (incrementOdd) {
             if (decrementOdd) {
-                throw new NotFoundException/* default */.Z();
+                throw new NotFoundException/* default */.A();
             }
-            AbstractRSSReader/* default.increment */.Z.increment(this.getOddCounts(), this.getOddRoundingErrors());
+            AbstractRSSReader/* default */.A.increment(this.getOddCounts(), this.getOddRoundingErrors());
         }
         if (decrementOdd) {
-            AbstractRSSReader/* default.decrement */.Z.decrement(this.getOddCounts(), this.getOddRoundingErrors());
+            AbstractRSSReader/* default */.A.decrement(this.getOddCounts(), this.getOddRoundingErrors());
         }
         if (incrementEven) {
             if (decrementEven) {
-                throw new NotFoundException/* default */.Z();
+                throw new NotFoundException/* default */.A();
             }
-            AbstractRSSReader/* default.increment */.Z.increment(this.getEvenCounts(), this.getOddRoundingErrors());
+            AbstractRSSReader/* default */.A.increment(this.getEvenCounts(), this.getOddRoundingErrors());
         }
         if (decrementEven) {
-            AbstractRSSReader/* default.decrement */.Z.decrement(this.getEvenCounts(), this.getEvenRoundingErrors());
+            AbstractRSSReader/* default */.A.decrement(this.getEvenCounts(), this.getEvenRoundingErrors());
         }
     };
     RSS14Reader.OUTSIDE_EVEN_TOTAL_SUBSET = [1, 10, 34, 70, 126];
@@ -20672,18 +20672,18 @@ var RSS14Reader = /** @class */ (function (_super) {
         Int32Array.from([1, 3, 9, 1]),
     ];
     return RSS14Reader;
-}(AbstractRSSReader/* default */.Z));
+}(AbstractRSSReader/* default */.A));
 /* harmony default export */ const rss_RSS14Reader = (RSS14Reader);
 
 
 /***/ }),
 
-/***/ 7894:
+/***/ 3846:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 var __values = (undefined && undefined.__values) || function(o) {
     var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
@@ -20777,36 +20777,36 @@ var RSSUtils = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 2050:
+/***/ 5172:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Z": () => (/* binding */ expanded_RSSExpandedReader)
+  A: () => (/* binding */ expanded_RSSExpandedReader)
 });
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/BarcodeFormat.js
-var BarcodeFormat = __webpack_require__(8684);
+var BarcodeFormat = __webpack_require__(9460);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/detector/MathUtils.js
-var MathUtils = __webpack_require__(8611);
+var MathUtils = __webpack_require__(1091);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/NotFoundException.js
-var NotFoundException = __webpack_require__(8842);
+var NotFoundException = __webpack_require__(8427);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/Result.js
-var Result = __webpack_require__(1462);
+var Result = __webpack_require__(6770);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/System.js
-var System = __webpack_require__(8507);
+var System = __webpack_require__(7527);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/AbstractRSSReader.js
-var AbstractRSSReader = __webpack_require__(510);
+var AbstractRSSReader = __webpack_require__(3986);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/DataCharacter.js
-var DataCharacter = __webpack_require__(8158);
+var DataCharacter = __webpack_require__(528);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/FinderPattern.js
-var FinderPattern = __webpack_require__(3714);
+var FinderPattern = __webpack_require__(209);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/RSSUtils.js
-var RSSUtils = __webpack_require__(7894);
+var RSSUtils = __webpack_require__(3846);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/BitArray.js
-var BitArray = __webpack_require__(1555);
+var BitArray = __webpack_require__(5369);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/BitArrayBuilder.js
 
 var BitArrayBuilder = /** @class */ (function () {
@@ -20818,7 +20818,7 @@ var BitArrayBuilder = /** @class */ (function () {
             charNumber -= 1;
         }
         var size = 12 * charNumber;
-        var binary = new BitArray/* default */.Z(size);
+        var binary = new BitArray/* default */.A(size);
         var accPos = 0;
         var firstPair = pairs[0];
         var firstValue = firstPair.getRightChar().getValue();
@@ -20854,7 +20854,7 @@ var BitArrayBuilder = /** @class */ (function () {
 /* harmony default export */ const expanded_BitArrayBuilder = (BitArrayBuilder);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AbstractExpandedDecoderComplement.js + 10 modules
-var AbstractExpandedDecoderComplement = __webpack_require__(3351);
+var AbstractExpandedDecoderComplement = __webpack_require__(5768);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/ExpandedPair.js
 var ExpandedPair = /** @class */ (function () {
     function ExpandedPair(leftChar, rightChar, finderPatter, mayBeLast) {
@@ -21036,9 +21036,9 @@ var RSSExpandedReader = /** @class */ (function (_super) {
                 this.pairs.push(this.retrieveNextPair(row, this.pairs, rowNumber));
             }
             catch (error) {
-                if (error instanceof NotFoundException/* default */.Z) {
+                if (error instanceof NotFoundException/* default */.A) {
                     if (!this.pairs.length) {
-                        throw new NotFoundException/* default */.Z();
+                        throw new NotFoundException/* default */.A();
                     }
                     // exit this loop when retrieveNextPair() fails and throws
                     done = true;
@@ -21070,7 +21070,7 @@ var RSSExpandedReader = /** @class */ (function (_super) {
                 return ps;
             }
         }
-        throw new NotFoundException/* default */.Z();
+        throw new NotFoundException/* default */.A();
     };
     // Need to Verify
     RSSExpandedReader.prototype.checkRowsBoolean = function (reverse) {
@@ -21138,7 +21138,7 @@ var RSSExpandedReader = /** @class */ (function (_super) {
                 console.log(e);
             }
         }
-        throw new NotFoundException/* default */.Z();
+        throw new NotFoundException/* default */.A();
     };
     // Whether the pairs form a valid find pattern sequence,
     // either complete or a prefix
@@ -21336,14 +21336,14 @@ var RSSExpandedReader = /** @class */ (function (_super) {
     // Not private for unit testing
     RSSExpandedReader.constructResult = function (pairs) {
         var binary = expanded_BitArrayBuilder.buildBitArray(pairs);
-        var decoder = (0,AbstractExpandedDecoderComplement/* createDecoder */.U)(binary);
+        var decoder = (0,AbstractExpandedDecoderComplement/* createDecoder */.$)(binary);
         var resultingString = decoder.parseInformation();
         var firstPoints = pairs[0].getFinderPattern().getResultPoints();
         var lastPoints = pairs[pairs.length - 1]
             .getFinderPattern()
             .getResultPoints();
         var points = [firstPoints[0], firstPoints[1], lastPoints[0], lastPoints[1]];
-        return new Result/* default */.Z(resultingString, null, null, points, BarcodeFormat/* default.RSS_EXPANDED */.Z.RSS_EXPANDED, null);
+        return new Result/* default */.A(resultingString, null, null, points, BarcodeFormat/* default */.A.RSS_EXPANDED, null);
     };
     RSSExpandedReader.prototype.checkChecksum = function () {
         var firstPair = this.pairs.get(0);
@@ -21404,7 +21404,7 @@ var RSSExpandedReader = /** @class */ (function (_super) {
         var leftChar = this.decodeDataCharacter(row, pattern, isOddPattern, true);
         if (!this.isEmptyPair(previousPairs) &&
             previousPairs[previousPairs.length - 1].mustBeLast()) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         var rightChar;
         try {
@@ -21485,7 +21485,7 @@ var RSSExpandedReader = /** @class */ (function (_super) {
                 isWhite = !isWhite;
             }
         }
-        throw new NotFoundException/* default */.Z();
+        throw new NotFoundException/* default */.A();
     };
     RSSExpandedReader.reverseCounters = function (counters) {
         var length = counters.length;
@@ -21520,7 +21520,7 @@ var RSSExpandedReader = /** @class */ (function (_super) {
         }
         // Make 'counters' hold 1-4
         var counters = this.getDecodeFinderCounters();
-        System/* default.arraycopy */.Z.arraycopy(counters, 0, counters, 1, counters.length - 1);
+        System/* default */.A.arraycopy(counters, 0, counters, 1, counters.length - 1);
         counters[0] = firstCounter;
         var value;
         try {
@@ -21530,7 +21530,7 @@ var RSSExpandedReader = /** @class */ (function (_super) {
             return null;
         }
         // return new FinderPattern(value, new int[] { start, end }, start, end, rowNumber});
-        return new FinderPattern/* default */.Z(value, [start, end], start, end, rowNumber);
+        return new FinderPattern/* default */.A(value, [start, end], start, end, rowNumber);
     };
     RSSExpandedReader.prototype.decodeDataCharacter = function (row, pattern, isOddPattern, leftChar) {
         var counters = this.getDataCharacterCounters();
@@ -21550,12 +21550,12 @@ var RSSExpandedReader = /** @class */ (function (_super) {
             }
         } // counters[] has the pixels of the module
         var numModules = 17; // left and right data characters have all the same length
-        var elementWidth = MathUtils/* default.sum */.Z.sum(new Int32Array(counters)) / numModules;
+        var elementWidth = MathUtils/* default */.A.sum(new Int32Array(counters)) / numModules;
         // Sanity check: element width for pattern and the character should match
         var expectedElementWidth = (pattern.getStartEnd()[1] - pattern.getStartEnd()[0]) / 15.0;
         if (Math.abs(elementWidth - expectedElementWidth) / expectedElementWidth >
             0.3) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         var oddCounts = this.getOddCounts();
         var evenCounts = this.getEvenCounts();
@@ -21566,13 +21566,13 @@ var RSSExpandedReader = /** @class */ (function (_super) {
             var count = value_1 + 0.5; // Round
             if (count < 1) {
                 if (value_1 < 0.3) {
-                    throw new NotFoundException/* default */.Z();
+                    throw new NotFoundException/* default */.A();
                 }
                 count = 1;
             }
             else if (count > 8) {
                 if (value_1 > 8.7) {
-                    throw new NotFoundException/* default */.Z();
+                    throw new NotFoundException/* default */.A();
                 }
                 count = 8;
             }
@@ -21608,25 +21608,25 @@ var RSSExpandedReader = /** @class */ (function (_super) {
         }
         var checksumPortion = oddChecksumPortion + evenChecksumPortion;
         if ((oddSum & 0x01) !== 0 || oddSum > 13 || oddSum < 4) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         var group = (13 - oddSum) / 2;
         var oddWidest = RSSExpandedReader.SYMBOL_WIDEST[group];
         var evenWidest = 9 - oddWidest;
-        var vOdd = RSSUtils/* default.getRSSvalue */.Z.getRSSvalue(oddCounts, oddWidest, true);
-        var vEven = RSSUtils/* default.getRSSvalue */.Z.getRSSvalue(evenCounts, evenWidest, false);
+        var vOdd = RSSUtils/* default */.A.getRSSvalue(oddCounts, oddWidest, true);
+        var vEven = RSSUtils/* default */.A.getRSSvalue(evenCounts, evenWidest, false);
         var tEven = RSSExpandedReader.EVEN_TOTAL_SUBSET[group];
         var gSum = RSSExpandedReader.GSUM[group];
         var value = vOdd * tEven + vEven + gSum;
-        return new DataCharacter/* default */.Z(value, checksumPortion);
+        return new DataCharacter/* default */.A(value, checksumPortion);
     };
     RSSExpandedReader.isNotA1left = function (pattern, isOddPattern, leftChar) {
         // A1: pattern.getValue is 0 (A), and it's an oddPattern, and it is a left char
         return !(pattern.getValue() === 0 && isOddPattern && leftChar);
     };
     RSSExpandedReader.prototype.adjustOddEvenCounts = function (numModules) {
-        var oddSum = MathUtils/* default.sum */.Z.sum(new Int32Array(this.getOddCounts()));
-        var evenSum = MathUtils/* default.sum */.Z.sum(new Int32Array(this.getEvenCounts()));
+        var oddSum = MathUtils/* default */.A.sum(new Int32Array(this.getOddCounts()));
+        var evenSum = MathUtils/* default */.A.sum(new Int32Array(this.getEvenCounts()));
         var incrementOdd = false;
         var decrementOdd = false;
         if (oddSum > 13) {
@@ -21649,13 +21649,13 @@ var RSSExpandedReader = /** @class */ (function (_super) {
         if (mismatch === 1) {
             if (oddParityBad) {
                 if (evenParityBad) {
-                    throw new NotFoundException/* default */.Z();
+                    throw new NotFoundException/* default */.A();
                 }
                 decrementOdd = true;
             }
             else {
                 if (!evenParityBad) {
-                    throw new NotFoundException/* default */.Z();
+                    throw new NotFoundException/* default */.A();
                 }
                 decrementEven = true;
             }
@@ -21663,13 +21663,13 @@ var RSSExpandedReader = /** @class */ (function (_super) {
         else if (mismatch === -1) {
             if (oddParityBad) {
                 if (evenParityBad) {
-                    throw new NotFoundException/* default */.Z();
+                    throw new NotFoundException/* default */.A();
                 }
                 incrementOdd = true;
             }
             else {
                 if (!evenParityBad) {
-                    throw new NotFoundException/* default */.Z();
+                    throw new NotFoundException/* default */.A();
                 }
                 incrementEven = true;
             }
@@ -21677,7 +21677,7 @@ var RSSExpandedReader = /** @class */ (function (_super) {
         else if (mismatch === 0) {
             if (oddParityBad) {
                 if (!evenParityBad) {
-                    throw new NotFoundException/* default */.Z();
+                    throw new NotFoundException/* default */.A();
                 }
                 // Both bad
                 if (oddSum < evenSum) {
@@ -21691,17 +21691,17 @@ var RSSExpandedReader = /** @class */ (function (_super) {
             }
             else {
                 if (evenParityBad) {
-                    throw new NotFoundException/* default */.Z();
+                    throw new NotFoundException/* default */.A();
                 }
                 // Nothing to do!
             }
         }
         else {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         if (incrementOdd) {
             if (decrementOdd) {
-                throw new NotFoundException/* default */.Z();
+                throw new NotFoundException/* default */.A();
             }
             RSSExpandedReader.increment(this.getOddCounts(), this.getOddRoundingErrors());
         }
@@ -21710,7 +21710,7 @@ var RSSExpandedReader = /** @class */ (function (_super) {
         }
         if (incrementEven) {
             if (decrementEven) {
-                throw new NotFoundException/* default */.Z();
+                throw new NotFoundException/* default */.A();
             }
             RSSExpandedReader.increment(this.getEvenCounts(), this.getOddRoundingErrors());
         }
@@ -21846,25 +21846,25 @@ var RSSExpandedReader = /** @class */ (function (_super) {
     ];
     RSSExpandedReader.MAX_PAIRS = 11;
     return RSSExpandedReader;
-}(AbstractRSSReader/* default */.Z));
+}(AbstractRSSReader/* default */.A));
 /* harmony default export */ const expanded_RSSExpandedReader = (RSSExpandedReader);
 
 
 /***/ }),
 
-/***/ 1811:
+/***/ 4262:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _GeneralAppIdDecoder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8784);
+/* harmony import */ var _GeneralAppIdDecoder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3829);
 
 var AbstractExpandedDecoder = /** @class */ (function () {
     function AbstractExpandedDecoder(information) {
         this.information = information;
-        this.generalDecoder = new _GeneralAppIdDecoder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(information);
+        this.generalDecoder = new _GeneralAppIdDecoder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(information);
     }
     AbstractExpandedDecoder.prototype.getInformation = function () {
         return this.information;
@@ -21879,22 +21879,22 @@ var AbstractExpandedDecoder = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 3351:
+/***/ 5768:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "U": () => (/* binding */ createDecoder)
+  $: () => (/* binding */ createDecoder)
 });
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/IllegalStateException.js
-var IllegalStateException = __webpack_require__(4418);
+var IllegalStateException = __webpack_require__(7591);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/GeneralAppIdDecoder.js + 6 modules
-var GeneralAppIdDecoder = __webpack_require__(8784);
+var GeneralAppIdDecoder = __webpack_require__(3829);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AbstractExpandedDecoder.js
-var AbstractExpandedDecoder = __webpack_require__(1811);
+var AbstractExpandedDecoder = __webpack_require__(4262);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01decoder.js
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -21950,11 +21950,11 @@ var AI01decoder = /** @class */ (function (_super) {
     };
     AI01decoder.GTIN_SIZE = 40;
     return AI01decoder;
-}(AbstractExpandedDecoder/* default */.Z));
+}(AbstractExpandedDecoder/* default */.A));
 /* harmony default export */ const decoders_AI01decoder = (AI01decoder);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StringBuilder.js
-var StringBuilder = __webpack_require__(75);
+var StringBuilder = __webpack_require__(432);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01AndOtherAIs.js
 var AI01AndOtherAIs_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -21978,7 +21978,7 @@ var AI01AndOtherAIs = /** @class */ (function (_super) {
         return _super.call(this, information) || this;
     }
     AI01AndOtherAIs.prototype.parseInformation = function () {
-        var buff = new StringBuilder/* default */.Z();
+        var buff = new StringBuilder/* default */.A();
         buff.append('(01)');
         var initialGtinPosition = buff.length();
         var firstGtinDigit = this.getGeneralDecoder().extractNumericValueFromBitArray(AI01AndOtherAIs.HEADER_SIZE, 4);
@@ -22013,12 +22013,12 @@ var AnyAIDecoder = /** @class */ (function (_super) {
         return _super.call(this, information) || this;
     }
     AnyAIDecoder.prototype.parseInformation = function () {
-        var buf = new StringBuilder/* default */.Z();
+        var buf = new StringBuilder/* default */.A();
         return this.getGeneralDecoder().decodeAllCodes(buf, AnyAIDecoder.HEADER_SIZE);
     };
     AnyAIDecoder.HEADER_SIZE = 2 + 1 + 2;
     return AnyAIDecoder;
-}(AbstractExpandedDecoder/* default */.Z));
+}(AbstractExpandedDecoder/* default */.A));
 /* harmony default export */ const decoders_AnyAIDecoder = (AnyAIDecoder);
 
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01weightDecoder.js
@@ -22059,7 +22059,7 @@ var AI01weightDecoder = /** @class */ (function (_super) {
 /* harmony default export */ const decoders_AI01weightDecoder = (AI01weightDecoder);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/NotFoundException.js
-var NotFoundException = __webpack_require__(8842);
+var NotFoundException = __webpack_require__(8427);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI013x0xDecoder.js
 var AI013x0xDecoder_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -22087,9 +22087,9 @@ var AI013x0xDecoder = /** @class */ (function (_super) {
             AI013x0xDecoder.HEADER_SIZE +
                 decoders_AI01weightDecoder.GTIN_SIZE +
                 AI013x0xDecoder.WEIGHT_SIZE) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
-        var buf = new StringBuilder/* default */.Z();
+        var buf = new StringBuilder/* default */.A();
         this.encodeCompressedGtin(buf, AI013x0xDecoder.HEADER_SIZE);
         this.encodeCompressedWeight(buf, AI013x0xDecoder.HEADER_SIZE + decoders_AI01weightDecoder.GTIN_SIZE, AI013x0xDecoder.WEIGHT_SIZE);
         return buf.toString();
@@ -22192,9 +22192,9 @@ var AI01392xDecoder = /** @class */ (function (_super) {
     }
     AI01392xDecoder.prototype.parseInformation = function () {
         if (this.getInformation().getSize() < AI01392xDecoder.HEADER_SIZE + decoders_AI01decoder.GTIN_SIZE) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
-        var buf = new StringBuilder/* default */.Z();
+        var buf = new StringBuilder/* default */.A();
         this.encodeCompressedGtin(buf, AI01392xDecoder.HEADER_SIZE);
         var lastAIdigit = this.getGeneralDecoder().extractNumericValueFromBitArray(AI01392xDecoder.HEADER_SIZE + decoders_AI01decoder.GTIN_SIZE, AI01392xDecoder.LAST_DIGIT_SIZE);
         buf.append('(392');
@@ -22235,9 +22235,9 @@ var AI01393xDecoder = /** @class */ (function (_super) {
     AI01393xDecoder.prototype.parseInformation = function () {
         if (this.getInformation().getSize() <
             AI01393xDecoder.HEADER_SIZE + decoders_AI01decoder.GTIN_SIZE) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
-        var buf = new StringBuilder/* default */.Z();
+        var buf = new StringBuilder/* default */.A();
         this.encodeCompressedGtin(buf, AI01393xDecoder.HEADER_SIZE);
         var lastAIdigit = this.getGeneralDecoder().extractNumericValueFromBitArray(AI01393xDecoder.HEADER_SIZE + decoders_AI01decoder.GTIN_SIZE, AI01393xDecoder.LAST_DIGIT_SIZE);
         buf.append('(393');
@@ -22298,9 +22298,9 @@ var AI013x0x1xDecoder = /** @class */ (function (_super) {
                 AI013x0x1xDecoder.GTIN_SIZE +
                 AI013x0x1xDecoder.WEIGHT_SIZE +
                 AI013x0x1xDecoder.DATE_SIZE) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
-        var buf = new StringBuilder/* default */.Z();
+        var buf = new StringBuilder/* default */.A();
         this.encodeCompressedGtin(buf, AI013x0x1xDecoder.HEADER_SIZE);
         this.encodeCompressedWeight(buf, AI013x0x1xDecoder.HEADER_SIZE + AI013x0x1xDecoder.GTIN_SIZE, AI013x0x1xDecoder.WEIGHT_SIZE);
         this.encodeCompressedDate(buf, AI013x0x1xDecoder.HEADER_SIZE +
@@ -22368,17 +22368,17 @@ function createDecoder(information) {
         if (!information.get(2)) {
             return new decoders_AnyAIDecoder(information);
         }
-        var fourBitEncodationMethod = GeneralAppIdDecoder/* default.extractNumericValueFromBitArray */.Z.extractNumericValueFromBitArray(information, 1, 4);
+        var fourBitEncodationMethod = GeneralAppIdDecoder/* default */.A.extractNumericValueFromBitArray(information, 1, 4);
         switch (fourBitEncodationMethod) {
             case 4: return new decoders_AI013103decoder(information);
             case 5: return new decoders_AI01320xDecoder(information);
         }
-        var fiveBitEncodationMethod = GeneralAppIdDecoder/* default.extractNumericValueFromBitArray */.Z.extractNumericValueFromBitArray(information, 1, 5);
+        var fiveBitEncodationMethod = GeneralAppIdDecoder/* default */.A.extractNumericValueFromBitArray(information, 1, 5);
         switch (fiveBitEncodationMethod) {
             case 12: return new decoders_AI01392xDecoder(information);
             case 13: return new decoders_AI01393xDecoder(information);
         }
-        var sevenBitEncodationMethod = GeneralAppIdDecoder/* default.extractNumericValueFromBitArray */.Z.extractNumericValueFromBitArray(information, 1, 7);
+        var sevenBitEncodationMethod = GeneralAppIdDecoder/* default */.A.extractNumericValueFromBitArray(information, 1, 7);
         switch (sevenBitEncodationMethod) {
             case 56: return new decoders_AI013x0x1xDecoder(information, '310', '11');
             case 57: return new decoders_AI013x0x1xDecoder(information, '320', '11');
@@ -22392,29 +22392,29 @@ function createDecoder(information) {
     }
     catch (e) {
         console.log(e);
-        throw new IllegalStateException/* default */.Z('unknown decoder: ' + information);
+        throw new IllegalStateException/* default */.A('unknown decoder: ' + information);
     }
 }
 
 
 /***/ }),
 
-/***/ 8784:
+/***/ 3829:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Z": () => (/* binding */ decoders_GeneralAppIdDecoder)
+  A: () => (/* binding */ decoders_GeneralAppIdDecoder)
 });
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/FormatException.js
-var FormatException = __webpack_require__(2468);
+var FormatException = __webpack_require__(7027);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/IllegalStateException.js
-var IllegalStateException = __webpack_require__(4418);
+var IllegalStateException = __webpack_require__(7591);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StringBuilder.js
-var StringBuilder = __webpack_require__(75);
+var StringBuilder = __webpack_require__(432);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/BlockParsedResult.js
 var BlockParsedResult = /** @class */ (function () {
     function BlockParsedResult(finished, decodedInformation) {
@@ -22545,7 +22545,7 @@ var DecodedNumeric = /** @class */ (function (_super) {
     function DecodedNumeric(newPosition, firstDigit, secondDigit) {
         var _this = _super.call(this, newPosition) || this;
         if (firstDigit < 0 || firstDigit > 10 || secondDigit < 0 || secondDigit > 10) {
-            throw new FormatException/* default */.Z();
+            throw new FormatException/* default */.A();
         }
         _this.firstDigit = firstDigit;
         _this.secondDigit = secondDigit;
@@ -22575,7 +22575,7 @@ var DecodedNumeric = /** @class */ (function (_super) {
 /* harmony default export */ const decoders_DecodedNumeric = (DecodedNumeric);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/NotFoundException.js
-var NotFoundException = __webpack_require__(8842);
+var NotFoundException = __webpack_require__(8427);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/FieldParser.js
 var __values = (undefined && undefined.__values) || function(o) {
     var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
@@ -22599,7 +22599,7 @@ var FieldParser = /** @class */ (function () {
         }
         // Processing 2-digit AIs
         if (rawInformation.length < 2) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         var firstTwoDigits = rawInformation.substring(0, 2);
         try {
@@ -22621,7 +22621,7 @@ var FieldParser = /** @class */ (function () {
             finally { if (e_1) throw e_1.error; }
         }
         if (rawInformation.length < 3) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         var firstThreeDigits = rawInformation.substring(0, 3);
         try {
@@ -22661,7 +22661,7 @@ var FieldParser = /** @class */ (function () {
             finally { if (e_3) throw e_3.error; }
         }
         if (rawInformation.length < 4) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         var firstFourDigits = rawInformation.substring(0, 4);
         try {
@@ -22682,15 +22682,15 @@ var FieldParser = /** @class */ (function () {
             }
             finally { if (e_4) throw e_4.error; }
         }
-        throw new NotFoundException/* default */.Z();
+        throw new NotFoundException/* default */.A();
     };
     FieldParser.processFixedAI = function (aiSize, fieldSize, rawInformation) {
         if (rawInformation.length < aiSize) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         var ai = rawInformation.substring(0, aiSize);
         if (rawInformation.length < aiSize + fieldSize) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         var field = rawInformation.substring(aiSize, aiSize + fieldSize);
         var remaining = rawInformation.substring(aiSize + fieldSize);
@@ -22863,7 +22863,7 @@ var FieldParser = /** @class */ (function () {
 
 var GeneralAppIdDecoder = /** @class */ (function () {
     function GeneralAppIdDecoder(information) {
-        this.buffer = new StringBuilder/* default */.Z();
+        this.buffer = new StringBuilder/* default */.A();
         this.information = information;
     }
     GeneralAppIdDecoder.prototype.decodeAllCodes = function (buff, initialPosition) {
@@ -23143,7 +23143,7 @@ var GeneralAppIdDecoder = /** @class */ (function () {
                 c = ' ';
                 break;
             default:
-                throw new FormatException/* default */.Z();
+                throw new FormatException/* default */.A();
         }
         return new decoders_DecodedChar(pos + 8, c);
     };
@@ -23192,7 +23192,7 @@ var GeneralAppIdDecoder = /** @class */ (function () {
                 c = '/';
                 break;
             default:
-                throw new IllegalStateException/* default */.Z('Decoding invalid alphanumeric value: ' + sixBitValue);
+                throw new IllegalStateException/* default */.A('Decoding invalid alphanumeric value: ' + sixBitValue);
         }
         return new decoders_DecodedChar(pos + 6, c);
     };
@@ -23244,15 +23244,15 @@ var GeneralAppIdDecoder = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 2807:
+/***/ 4847:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _util_Arrays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1126);
-/* harmony import */ var _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8611);
+/* harmony import */ var _util_Arrays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2598);
+/* harmony import */ var _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1091);
 /*
 * Copyright 2009 ZXing authors
 *
@@ -23301,7 +23301,7 @@ var PDF417Common = /** @class */ (function () {
      */
     // @Deprecated
     PDF417Common.getBitCountSum = function (moduleBitCount) {
-        return _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_1__/* ["default"].sum */ .Z.sum(moduleBitCount);
+        return _common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.sum(moduleBitCount);
     };
     PDF417Common.toIntArray = function (list) {
         var e_1, _a;
@@ -23330,7 +23330,7 @@ var PDF417Common = /** @class */ (function () {
      * @return the codeword corresponding to the symbol.
      */
     PDF417Common.getCodeword = function (symbol /*int*/) {
-        var i = _util_Arrays__WEBPACK_IMPORTED_MODULE_0__/* ["default"].binarySearch */ .Z.binarySearch(PDF417Common.SYMBOL_TABLE, symbol & 0x3FFFF);
+        var i = _util_Arrays__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.binarySearch(PDF417Common.SYMBOL_TABLE, symbol & 0x3FFFF);
         if (i < 0) {
             return -1;
         }
@@ -23739,38 +23739,38 @@ var PDF417Common = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 4963:
+/***/ 4390:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Z": () => (/* binding */ pdf417_PDF417Reader)
+  A: () => (/* binding */ pdf417_PDF417Reader)
 });
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/BarcodeFormat.js
-var BarcodeFormat = __webpack_require__(8684);
+var BarcodeFormat = __webpack_require__(9460);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/ChecksumException.js
-var ChecksumException = __webpack_require__(3392);
+var ChecksumException = __webpack_require__(1371);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/FormatException.js
-var FormatException = __webpack_require__(2468);
+var FormatException = __webpack_require__(7027);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/NotFoundException.js
-var NotFoundException = __webpack_require__(8842);
+var NotFoundException = __webpack_require__(8427);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/Result.js
-var Result = __webpack_require__(1462);
+var Result = __webpack_require__(6770);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/pdf417/PDF417Common.js
-var PDF417Common = __webpack_require__(2807);
+var PDF417Common = __webpack_require__(4847);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/Integer.js
-var Integer = __webpack_require__(3450);
+var Integer = __webpack_require__(9978);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/ResultMetadataType.js
-var ResultMetadataType = __webpack_require__(5621);
+var ResultMetadataType = __webpack_require__(688);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/ResultPoint.js
-var ResultPoint = __webpack_require__(8307);
+var ResultPoint = __webpack_require__(6502);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/System.js
-var System = __webpack_require__(8507);
+var System = __webpack_require__(7527);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/Arrays.js + 1 modules
-var Arrays = __webpack_require__(1126);
+var Arrays = __webpack_require__(2598);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/detector/PDF417DetectorResult.js
 /*
 * Copyright 2007 ZXing authors
@@ -23991,8 +23991,8 @@ var Detector = /** @class */ (function () {
                         break;
                     }
                 }
-                result[0] = new ResultPoint/* default */.Z(loc[0], startRow);
-                result[1] = new ResultPoint/* default */.Z(loc[1], startRow);
+                result[0] = new ResultPoint/* default */.A(loc[0], startRow);
+                result[1] = new ResultPoint/* default */.A(loc[1], startRow);
                 found = true;
                 break;
             }
@@ -24024,11 +24024,11 @@ var Detector = /** @class */ (function () {
                 }
             }
             stopRow -= skippedRowCount + 1;
-            result[2] = new ResultPoint/* default */.Z(previousRowLoc[0], stopRow);
-            result[3] = new ResultPoint/* default */.Z(previousRowLoc[1], stopRow);
+            result[2] = new ResultPoint/* default */.A(previousRowLoc[0], stopRow);
+            result[3] = new ResultPoint/* default */.A(previousRowLoc[1], stopRow);
         }
         if (stopRow - startRow < Detector.BARCODE_MIN_HEIGHT) {
-            Arrays/* default.fill */.Z.fill(result, null);
+            Arrays/* default */.A.fill(result, null);
         }
         return result;
     };
@@ -24043,7 +24043,7 @@ var Detector = /** @class */ (function () {
      * @return start/end horizontal offset of guard pattern, as an array of two ints.
      */
     Detector.findGuardPattern = function (matrix, column, row, width, whiteFirst, pattern, counters) {
-        Arrays/* default.fillWithin */.Z.fillWithin(counters, 0, counters.length, 0);
+        Arrays/* default */.A.fillWithin(counters, 0, counters.length, 0);
         var patternStart = column;
         var pixelDrift = 0;
         // if there are black pixels left of the current pixel shift to the left, but only for MAX_PIXEL_DRIFT pixels
@@ -24064,7 +24064,7 @@ var Detector = /** @class */ (function () {
                         return new Int32Array([patternStart, x]);
                     }
                     patternStart += counters[0] + counters[1];
-                    System/* default.arraycopy */.Z.arraycopy(counters, 2, counters, 0, counterPosition - 1);
+                    System/* default */.A.arraycopy(counters, 2, counters, 0, counterPosition - 1);
                     counters[counterPosition - 1] = 0;
                     counters[counterPosition] = 0;
                     counterPosition--;
@@ -24146,9 +24146,9 @@ var Detector = /** @class */ (function () {
 /* harmony default export */ const detector_Detector = (Detector);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/detector/MathUtils.js
-var MathUtils = __webpack_require__(8611);
+var MathUtils = __webpack_require__(1091);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/ec/ErrorCorrection.js + 3 modules
-var ErrorCorrection = __webpack_require__(2193);
+var ErrorCorrection = __webpack_require__(4034);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/BoundingBox.js
 /*
 * Copyright 2013 ZXing authors
@@ -24196,15 +24196,15 @@ var BoundingBox = /** @class */ (function () {
         var leftUnspecified = topLeft == null || bottomLeft == null;
         var rightUnspecified = topRight == null || bottomRight == null;
         if (leftUnspecified && rightUnspecified) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         if (leftUnspecified) {
-            topLeft = new ResultPoint/* default */.Z(0, topRight.getY());
-            bottomLeft = new ResultPoint/* default */.Z(0, bottomRight.getY());
+            topLeft = new ResultPoint/* default */.A(0, topRight.getY());
+            bottomLeft = new ResultPoint/* default */.A(0, bottomRight.getY());
         }
         else if (rightUnspecified) {
-            topRight = new ResultPoint/* default */.Z(image.getWidth() - 1, topLeft.getY());
-            bottomRight = new ResultPoint/* default */.Z(image.getWidth() - 1, bottomLeft.getY());
+            topRight = new ResultPoint/* default */.A(image.getWidth() - 1, topLeft.getY());
+            bottomRight = new ResultPoint/* default */.A(image.getWidth() - 1, bottomLeft.getY());
         }
         this.image = image;
         this.topLeft = topLeft;
@@ -24253,7 +24253,7 @@ var BoundingBox = /** @class */ (function () {
             if (newMinY < 0) {
                 newMinY = 0;
             }
-            var newTop = new ResultPoint/* default */.Z(top_1.getX(), newMinY);
+            var newTop = new ResultPoint/* default */.A(top_1.getX(), newMinY);
             if (isLeft) {
                 newTopLeft = newTop;
             }
@@ -24267,7 +24267,7 @@ var BoundingBox = /** @class */ (function () {
             if (newMaxY >= this.image.getHeight()) {
                 newMaxY = this.image.getHeight() - 1;
             }
-            var newBottom = new ResultPoint/* default */.Z(bottom.getX(), newMaxY);
+            var newBottom = new ResultPoint/* default */.A(bottom.getX(), newMaxY);
             if (isLeft) {
                 newBottomLeft = newBottom;
             }
@@ -24644,7 +24644,7 @@ var BarcodeValue = /** @class */ (function () {
             }
             finally { if (e_1) throw e_1.error; }
         }
-        return PDF417Common/* default.toIntArray */.Z.toIntArray(result);
+        return PDF417Common/* default */.A.toIntArray(result);
     };
     BarcodeValue.prototype.getConfidence = function (value) {
         return this.values.get(value);
@@ -24913,8 +24913,8 @@ var DetectionResultRowIndicatorColumn = /** @class */ (function (_super) {
             (barcodeRowCountLowerPart.getValue().length === 0) ||
             (barcodeECLevel.getValue().length === 0) ||
             barcodeColumnCount.getValue()[0] < 1 ||
-            barcodeRowCountUpperPart.getValue()[0] + barcodeRowCountLowerPart.getValue()[0] < PDF417Common/* default.MIN_ROWS_IN_BARCODE */.Z.MIN_ROWS_IN_BARCODE ||
-            barcodeRowCountUpperPart.getValue()[0] + barcodeRowCountLowerPart.getValue()[0] > PDF417Common/* default.MAX_ROWS_IN_BARCODE */.Z.MAX_ROWS_IN_BARCODE) {
+            barcodeRowCountUpperPart.getValue()[0] + barcodeRowCountLowerPart.getValue()[0] < PDF417Common/* default */.A.MIN_ROWS_IN_BARCODE ||
+            barcodeRowCountUpperPart.getValue()[0] + barcodeRowCountLowerPart.getValue()[0] > PDF417Common/* default */.A.MAX_ROWS_IN_BARCODE) {
             return null;
         }
         var barcodeMetadata = new decoder_BarcodeMetadata(barcodeColumnCount.getValue()[0], barcodeRowCountUpperPart.getValue()[0], barcodeRowCountLowerPart.getValue()[0], barcodeECLevel.getValue()[0]);
@@ -25015,7 +25015,7 @@ var DetectionResult = /** @class */ (function () {
     DetectionResult.prototype.getDetectionResultColumns = function () {
         this.adjustIndicatorColumnRowNumbers(this.detectionResultColumns[0]);
         this.adjustIndicatorColumnRowNumbers(this.detectionResultColumns[this.barcodeColumnCount + 1]);
-        var unadjustedCodewordCount = PDF417Common/* default.MAX_CODEWORDS_IN_BARCODE */.Z.MAX_CODEWORDS_IN_BARCODE;
+        var unadjustedCodewordCount = PDF417Common/* default */.A.MAX_CODEWORDS_IN_BARCODE;
         var previousUnadjustedCount;
         do {
             previousUnadjustedCount = unadjustedCodewordCount;
@@ -25334,7 +25334,7 @@ var Codeword = /** @class */ (function () {
 /* harmony default export */ const decoder_Codeword = (Codeword);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/Float.js
-var Float = __webpack_require__(377);
+var Float = __webpack_require__(1226);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/PDF417CodewordDecoder.js
 /*
 * Copyright 2013 ZXing authors
@@ -25371,10 +25371,10 @@ var PDF417CodewordDecoder = /** @class */ (function () {
     */
     PDF417CodewordDecoder.initialize = function () {
         // Pre-computes the symbol ratio table.
-        for ( /*int*/var i = 0; i < PDF417Common/* default.SYMBOL_TABLE.length */.Z.SYMBOL_TABLE.length; i++) {
-            var currentSymbol = PDF417Common/* default.SYMBOL_TABLE */.Z.SYMBOL_TABLE[i];
+        for ( /*int*/var i = 0; i < PDF417Common/* default */.A.SYMBOL_TABLE.length; i++) {
+            var currentSymbol = PDF417Common/* default */.A.SYMBOL_TABLE[i];
             var currentBit = currentSymbol & 0x1;
-            for ( /*int*/var j = 0; j < PDF417Common/* default.BARS_IN_MODULE */.Z.BARS_IN_MODULE; j++) {
+            for ( /*int*/var j = 0; j < PDF417Common/* default */.A.BARS_IN_MODULE; j++) {
                 var size = 0.0;
                 while ((currentSymbol & 0x1) === currentBit) {
                     size += 1.0;
@@ -25382,9 +25382,9 @@ var PDF417CodewordDecoder = /** @class */ (function () {
                 }
                 currentBit = currentSymbol & 0x1;
                 if (!PDF417CodewordDecoder.RATIOS_TABLE[i]) {
-                    PDF417CodewordDecoder.RATIOS_TABLE[i] = new Array(PDF417Common/* default.BARS_IN_MODULE */.Z.BARS_IN_MODULE);
+                    PDF417CodewordDecoder.RATIOS_TABLE[i] = new Array(PDF417Common/* default */.A.BARS_IN_MODULE);
                 }
-                PDF417CodewordDecoder.RATIOS_TABLE[i][PDF417Common/* default.BARS_IN_MODULE */.Z.BARS_IN_MODULE - j - 1] = Math.fround(size / PDF417Common/* default.MODULES_IN_CODEWORD */.Z.MODULES_IN_CODEWORD);
+                PDF417CodewordDecoder.RATIOS_TABLE[i][PDF417Common/* default */.A.BARS_IN_MODULE - j - 1] = Math.fround(size / PDF417Common/* default */.A.MODULES_IN_CODEWORD);
             }
         }
         this.bSymbolTableReady = true;
@@ -25397,13 +25397,13 @@ var PDF417CodewordDecoder = /** @class */ (function () {
         return PDF417CodewordDecoder.getClosestDecodedValue(moduleBitCount);
     };
     PDF417CodewordDecoder.sampleBitCounts = function (moduleBitCount) {
-        var bitCountSum = MathUtils/* default.sum */.Z.sum(moduleBitCount);
-        var result = new Int32Array(PDF417Common/* default.BARS_IN_MODULE */.Z.BARS_IN_MODULE);
+        var bitCountSum = MathUtils/* default */.A.sum(moduleBitCount);
+        var result = new Int32Array(PDF417Common/* default */.A.BARS_IN_MODULE);
         var bitCountIndex = 0;
         var sumPreviousBits = 0;
-        for ( /*int*/var i = 0; i < PDF417Common/* default.MODULES_IN_CODEWORD */.Z.MODULES_IN_CODEWORD; i++) {
-            var sampleIndex = bitCountSum / (2 * PDF417Common/* default.MODULES_IN_CODEWORD */.Z.MODULES_IN_CODEWORD) +
-                (i * bitCountSum) / PDF417Common/* default.MODULES_IN_CODEWORD */.Z.MODULES_IN_CODEWORD;
+        for ( /*int*/var i = 0; i < PDF417Common/* default */.A.MODULES_IN_CODEWORD; i++) {
+            var sampleIndex = bitCountSum / (2 * PDF417Common/* default */.A.MODULES_IN_CODEWORD) +
+                (i * bitCountSum) / PDF417Common/* default */.A.MODULES_IN_CODEWORD;
             if (sumPreviousBits + moduleBitCount[bitCountIndex] <= sampleIndex) {
                 sumPreviousBits += moduleBitCount[bitCountIndex];
                 bitCountIndex++;
@@ -25414,7 +25414,7 @@ var PDF417CodewordDecoder = /** @class */ (function () {
     };
     PDF417CodewordDecoder.getDecodedCodewordValue = function (moduleBitCount) {
         var decodedValue = PDF417CodewordDecoder.getBitValue(moduleBitCount);
-        return PDF417Common/* default.getCodeword */.Z.getCodeword(decodedValue) === -1 ? -1 : decodedValue;
+        return PDF417Common/* default */.A.getCodeword(decodedValue) === -1 ? -1 : decodedValue;
     };
     PDF417CodewordDecoder.getBitValue = function (moduleBitCount) {
         var result = /*long*/ 0;
@@ -25427,14 +25427,14 @@ var PDF417CodewordDecoder = /** @class */ (function () {
     };
     // working with 32bit float (as in Java)
     PDF417CodewordDecoder.getClosestDecodedValue = function (moduleBitCount) {
-        var bitCountSum = MathUtils/* default.sum */.Z.sum(moduleBitCount);
-        var bitCountRatios = new Array(PDF417Common/* default.BARS_IN_MODULE */.Z.BARS_IN_MODULE);
+        var bitCountSum = MathUtils/* default */.A.sum(moduleBitCount);
+        var bitCountRatios = new Array(PDF417Common/* default */.A.BARS_IN_MODULE);
         if (bitCountSum > 1) {
             for (var /*int*/ i = 0; i < bitCountRatios.length; i++) {
                 bitCountRatios[i] = Math.fround(moduleBitCount[i] / bitCountSum);
             }
         }
-        var bestMatchError = Float/* default.MAX_VALUE */.Z.MAX_VALUE;
+        var bestMatchError = Float/* default */.A.MAX_VALUE;
         var bestMatch = -1;
         if (!this.bSymbolTableReady) {
             PDF417CodewordDecoder.initialize();
@@ -25442,7 +25442,7 @@ var PDF417CodewordDecoder = /** @class */ (function () {
         for ( /*int*/var j = 0; j < PDF417CodewordDecoder.RATIOS_TABLE.length; j++) {
             var error = 0.0;
             var ratioTableRow = PDF417CodewordDecoder.RATIOS_TABLE[j];
-            for ( /*int*/var k = 0; k < PDF417Common/* default.BARS_IN_MODULE */.Z.BARS_IN_MODULE; k++) {
+            for ( /*int*/var k = 0; k < PDF417Common/* default */.A.BARS_IN_MODULE; k++) {
                 var diff = Math.fround(ratioTableRow[k] - bitCountRatios[k]);
                 error += Math.fround(diff * diff);
                 if (error >= bestMatchError) {
@@ -25451,20 +25451,20 @@ var PDF417CodewordDecoder = /** @class */ (function () {
             }
             if (error < bestMatchError) {
                 bestMatchError = error;
-                bestMatch = PDF417Common/* default.SYMBOL_TABLE */.Z.SYMBOL_TABLE[j];
+                bestMatch = PDF417Common/* default */.A.SYMBOL_TABLE[j];
             }
         }
         return bestMatch;
     };
     // flag that the table is ready for use
     PDF417CodewordDecoder.bSymbolTableReady = false;
-    PDF417CodewordDecoder.RATIOS_TABLE = new Array(PDF417Common/* default.SYMBOL_TABLE.length */.Z.SYMBOL_TABLE.length).map(function (x) { return x = new Array(PDF417Common/* default.BARS_IN_MODULE */.Z.BARS_IN_MODULE); });
+    PDF417CodewordDecoder.RATIOS_TABLE = new Array(PDF417Common/* default */.A.SYMBOL_TABLE.length).map(function (x) { return x = new Array(PDF417Common/* default */.A.BARS_IN_MODULE); });
     return PDF417CodewordDecoder;
 }());
 /* harmony default export */ const decoder_PDF417CodewordDecoder = (PDF417CodewordDecoder);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/DecodedBitStreamParser.js + 5 modules
-var DecodedBitStreamParser = __webpack_require__(9763);
+var DecodedBitStreamParser = __webpack_require__(7915);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/PDF417ScanningDecoder.js
 /*
 * Copyright 2013 ZXing authors
@@ -25566,7 +25566,7 @@ var PDF417ScanningDecoder = /** @class */ (function () {
             }
             detectionResult = PDF417ScanningDecoder.merge(leftRowIndicatorColumn, rightRowIndicatorColumn);
             if (detectionResult == null) {
-                throw NotFoundException/* default.getNotFoundInstance */.Z.getNotFoundInstance();
+                throw NotFoundException/* default */.A.getNotFoundInstance();
             }
             var resultBox = detectionResult.getBoundingBox();
             if (firstPass && resultBox != null &&
@@ -25759,8 +25759,8 @@ var PDF417ScanningDecoder = /** @class */ (function () {
             detectionResult.getBarcodeRowCount() -
             PDF417ScanningDecoder.getNumberOfECCodeWords(detectionResult.getBarcodeECLevel());
         if (numberOfCodewords.length === 0) {
-            if (calculatedNumberOfCodewords < 1 || calculatedNumberOfCodewords > PDF417Common/* default.MAX_CODEWORDS_IN_BARCODE */.Z.MAX_CODEWORDS_IN_BARCODE) {
-                throw NotFoundException/* default.getNotFoundInstance */.Z.getNotFoundInstance();
+            if (calculatedNumberOfCodewords < 1 || calculatedNumberOfCodewords > PDF417Common/* default */.A.MAX_CODEWORDS_IN_BARCODE) {
+                throw NotFoundException/* default */.A.getNotFoundInstance();
             }
             barcodeMatrix01.setValue(calculatedNumberOfCodewords);
         }
@@ -25804,7 +25804,7 @@ var PDF417ScanningDecoder = /** @class */ (function () {
         for (var i /*int*/ = 0; i < ambiguousIndexValues.length; i++) {
             ambiguousIndexValues[i] = ambiguousIndexValuesList[i];
         }
-        return PDF417ScanningDecoder.createDecoderResultFromAmbiguousValues(detectionResult.getBarcodeECLevel(), codewords, PDF417Common/* default.toIntArray */.Z.toIntArray(erasures), PDF417Common/* default.toIntArray */.Z.toIntArray(ambiguousIndexesList), ambiguousIndexValues);
+        return PDF417ScanningDecoder.createDecoderResultFromAmbiguousValues(detectionResult.getBarcodeECLevel(), codewords, PDF417Common/* default */.A.toIntArray(erasures), PDF417Common/* default */.A.toIntArray(ambiguousIndexesList), ambiguousIndexValues);
     };
     /**
      * This method deals with the fact, that the decoding process doesn't always yield a single most likely value. The
@@ -25833,13 +25833,13 @@ var PDF417ScanningDecoder = /** @class */ (function () {
                 return PDF417ScanningDecoder.decodeCodewords(codewords, ecLevel, erasureArray);
             }
             catch (err) {
-                var ignored = err instanceof ChecksumException/* default */.Z;
+                var ignored = err instanceof ChecksumException/* default */.A;
                 if (!ignored) {
                     throw err;
                 }
             }
             if (ambiguousIndexCount.length === 0) {
-                throw ChecksumException/* default.getChecksumInstance */.Z.getChecksumInstance();
+                throw ChecksumException/* default */.A.getChecksumInstance();
             }
             for (var i /*int*/ = 0; i < ambiguousIndexCount.length; i++) {
                 if (ambiguousIndexCount[i] < ambiguousIndexValues[i].length - 1) {
@@ -25849,12 +25849,12 @@ var PDF417ScanningDecoder = /** @class */ (function () {
                 else {
                     ambiguousIndexCount[i] = 0;
                     if (i === ambiguousIndexCount.length - 1) {
-                        throw ChecksumException/* default.getChecksumInstance */.Z.getChecksumInstance();
+                        throw ChecksumException/* default */.A.getChecksumInstance();
                     }
                 }
             }
         }
-        throw ChecksumException/* default.getChecksumInstance */.Z.getChecksumInstance();
+        throw ChecksumException/* default */.A.getChecksumInstance();
     };
     PDF417ScanningDecoder.createBarcodeMatrix = function (detectionResult) {
         var e_3, _a, e_4, _b;
@@ -25965,7 +25965,7 @@ var PDF417ScanningDecoder = /** @class */ (function () {
             return null;
         }
         var endColumn;
-        var codewordBitCount = MathUtils/* default.sum */.Z.sum(moduleBitCount);
+        var codewordBitCount = MathUtils/* default */.A.sum(moduleBitCount);
         if (leftToRight) {
             endColumn = startColumn + codewordBitCount;
         }
@@ -25997,7 +25997,7 @@ var PDF417ScanningDecoder = /** @class */ (function () {
             return null;
         }
         var decodedValue = decoder_PDF417CodewordDecoder.getDecodedValue(moduleBitCount);
-        var codeword = PDF417Common/* default.getCodeword */.Z.getCodeword(decodedValue);
+        var codeword = PDF417Common/* default */.A.getCodeword(decodedValue);
         if (codeword === -1) {
             return null;
         }
@@ -26057,13 +26057,13 @@ var PDF417ScanningDecoder = /** @class */ (function () {
      */
     PDF417ScanningDecoder.decodeCodewords = function (codewords, ecLevel, erasures) {
         if (codewords.length === 0) {
-            throw FormatException/* default.getFormatInstance */.Z.getFormatInstance();
+            throw FormatException/* default */.A.getFormatInstance();
         }
         var numECCodewords = 1 << (ecLevel + 1);
         var correctedErrorsCount = PDF417ScanningDecoder.correctErrors(codewords, erasures, numECCodewords);
         PDF417ScanningDecoder.verifyCodewordCount(codewords, numECCodewords);
         // Decode the codewords
-        var decoderResult = DecodedBitStreamParser/* default.decode */.Z.decode(codewords, '' + ecLevel);
+        var decoderResult = DecodedBitStreamParser/* default */.A.decode(codewords, '' + ecLevel);
         decoderResult.setErrorsCorrected(correctedErrorsCount);
         decoderResult.setErasures(erasures.length);
         return decoderResult;
@@ -26083,7 +26083,7 @@ var PDF417ScanningDecoder = /** @class */ (function () {
             numECCodewords < 0 ||
             numECCodewords > PDF417ScanningDecoder.MAX_EC_CODEWORDS) {
             // Too many errors or EC Codewords is corrupted
-            throw ChecksumException/* default.getChecksumInstance */.Z.getChecksumInstance();
+            throw ChecksumException/* default */.A.getChecksumInstance();
         }
         return PDF417ScanningDecoder.errorCorrection.decode(codewords, numECCodewords, erasures);
     };
@@ -26095,14 +26095,14 @@ var PDF417ScanningDecoder = /** @class */ (function () {
         if (codewords.length < 4) {
             // Codeword array size should be at least 4 allowing for
             // Count CW, At least one Data CW, Error Correction CW, Error Correction CW
-            throw FormatException/* default.getFormatInstance */.Z.getFormatInstance();
+            throw FormatException/* default */.A.getFormatInstance();
         }
         // The first codeword, the Symbol Length Descriptor, shall always encode the total number of data
         // codewords in the symbol, including the Symbol Length Descriptor itself, data codewords and pad
         // codewords, but excluding the number of error correction codewords.
         var numberOfCodewords = codewords[0];
         if (numberOfCodewords > codewords.length) {
-            throw FormatException/* default.getFormatInstance */.Z.getFormatInstance();
+            throw FormatException/* default */.A.getFormatInstance();
         }
         if (numberOfCodewords === 0) {
             // Reset to the length of the array - 8 (Allow for at least level 3 Error Correction (8 Error Codewords)
@@ -26110,7 +26110,7 @@ var PDF417ScanningDecoder = /** @class */ (function () {
                 codewords[0] = codewords.length - numECCodewords;
             }
             else {
-                throw FormatException/* default.getFormatInstance */.Z.getFormatInstance();
+                throw FormatException/* default */.A.getFormatInstance();
             }
         }
     };
@@ -26165,7 +26165,7 @@ var PDF417ScanningDecoder = /** @class */ (function () {
     /*final*/ PDF417ScanningDecoder.CODEWORD_SKEW_SIZE = 2;
     /*final*/ PDF417ScanningDecoder.MAX_ERRORS = 3;
     /*final*/ PDF417ScanningDecoder.MAX_EC_CODEWORDS = 512;
-    /*final*/ PDF417ScanningDecoder.errorCorrection = new ErrorCorrection/* default */.Z();
+    /*final*/ PDF417ScanningDecoder.errorCorrection = new ErrorCorrection/* default */.A();
     return PDF417ScanningDecoder;
 }());
 /* harmony default export */ const decoder_PDF417ScanningDecoder = (PDF417ScanningDecoder);
@@ -26243,7 +26243,7 @@ var PDF417Reader = /** @class */ (function () {
         if (hints === void 0) { hints = null; }
         var result = PDF417Reader.decode(image, hints, false);
         if (result == null || result.length === 0 || result[0] == null) {
-            throw NotFoundException/* default.getNotFoundInstance */.Z.getNotFoundInstance();
+            throw NotFoundException/* default */.A.getNotFoundInstance();
         }
         return result[0];
     };
@@ -26260,8 +26260,8 @@ var PDF417Reader = /** @class */ (function () {
             return PDF417Reader.decode(image, hints, true);
         }
         catch (ignored) {
-            if (ignored instanceof FormatException/* default */.Z || ignored instanceof ChecksumException/* default */.Z) {
-                throw NotFoundException/* default.getNotFoundInstance */.Z.getNotFoundInstance();
+            if (ignored instanceof FormatException/* default */.A || ignored instanceof ChecksumException/* default */.A) {
+                throw NotFoundException/* default */.A.getNotFoundInstance();
             }
             throw ignored;
         }
@@ -26284,11 +26284,11 @@ var PDF417Reader = /** @class */ (function () {
             for (var _b = PDF417Reader_values(detectorResult.getPoints()), _c = _b.next(); !_c.done; _c = _b.next()) {
                 var points = _c.value;
                 var decoderResult = decoder_PDF417ScanningDecoder.decode(detectorResult.getBits(), points[4], points[5], points[6], points[7], PDF417Reader.getMinCodewordWidth(points), PDF417Reader.getMaxCodewordWidth(points));
-                var result = new Result/* default */.Z(decoderResult.getText(), decoderResult.getRawBytes(), undefined, points, BarcodeFormat/* default.PDF_417 */.Z.PDF_417);
-                result.putMetadata(ResultMetadataType/* default.ERROR_CORRECTION_LEVEL */.Z.ERROR_CORRECTION_LEVEL, decoderResult.getECLevel());
+                var result = new Result/* default */.A(decoderResult.getText(), decoderResult.getRawBytes(), undefined, points, BarcodeFormat/* default */.A.PDF_417);
+                result.putMetadata(ResultMetadataType/* default */.A.ERROR_CORRECTION_LEVEL, decoderResult.getECLevel());
                 var pdf417ResultMetadata = decoderResult.getOther();
                 if (pdf417ResultMetadata != null) {
-                    result.putMetadata(ResultMetadataType/* default.PDF417_EXTRA_METADATA */.Z.PDF417_EXTRA_METADATA, pdf417ResultMetadata);
+                    result.putMetadata(ResultMetadataType/* default */.A.PDF417_EXTRA_METADATA, pdf417ResultMetadata);
                 }
                 results.push(result);
             }
@@ -26310,19 +26310,19 @@ var PDF417Reader = /** @class */ (function () {
     };
     PDF417Reader.getMinWidth = function (p1, p2) {
         if (p1 == null || p2 == null) {
-            return Integer/* default.MAX_VALUE */.Z.MAX_VALUE;
+            return Integer/* default */.A.MAX_VALUE;
         }
         return Math.trunc(Math.abs(p1.getX() - p2.getX()));
     };
     PDF417Reader.getMaxCodewordWidth = function (p) {
-        return Math.floor(Math.max(Math.max(PDF417Reader.getMaxWidth(p[0], p[4]), PDF417Reader.getMaxWidth(p[6], p[2]) * PDF417Common/* default.MODULES_IN_CODEWORD */.Z.MODULES_IN_CODEWORD /
-            PDF417Common/* default.MODULES_IN_STOP_PATTERN */.Z.MODULES_IN_STOP_PATTERN), Math.max(PDF417Reader.getMaxWidth(p[1], p[5]), PDF417Reader.getMaxWidth(p[7], p[3]) * PDF417Common/* default.MODULES_IN_CODEWORD */.Z.MODULES_IN_CODEWORD /
-            PDF417Common/* default.MODULES_IN_STOP_PATTERN */.Z.MODULES_IN_STOP_PATTERN)));
+        return Math.floor(Math.max(Math.max(PDF417Reader.getMaxWidth(p[0], p[4]), PDF417Reader.getMaxWidth(p[6], p[2]) * PDF417Common/* default */.A.MODULES_IN_CODEWORD /
+            PDF417Common/* default */.A.MODULES_IN_STOP_PATTERN), Math.max(PDF417Reader.getMaxWidth(p[1], p[5]), PDF417Reader.getMaxWidth(p[7], p[3]) * PDF417Common/* default */.A.MODULES_IN_CODEWORD /
+            PDF417Common/* default */.A.MODULES_IN_STOP_PATTERN)));
     };
     PDF417Reader.getMinCodewordWidth = function (p) {
-        return Math.floor(Math.min(Math.min(PDF417Reader.getMinWidth(p[0], p[4]), PDF417Reader.getMinWidth(p[6], p[2]) * PDF417Common/* default.MODULES_IN_CODEWORD */.Z.MODULES_IN_CODEWORD /
-            PDF417Common/* default.MODULES_IN_STOP_PATTERN */.Z.MODULES_IN_STOP_PATTERN), Math.min(PDF417Reader.getMinWidth(p[1], p[5]), PDF417Reader.getMinWidth(p[7], p[3]) * PDF417Common/* default.MODULES_IN_CODEWORD */.Z.MODULES_IN_CODEWORD /
-            PDF417Common/* default.MODULES_IN_STOP_PATTERN */.Z.MODULES_IN_STOP_PATTERN)));
+        return Math.floor(Math.min(Math.min(PDF417Reader.getMinWidth(p[0], p[4]), PDF417Reader.getMinWidth(p[6], p[2]) * PDF417Common/* default */.A.MODULES_IN_CODEWORD /
+            PDF417Common/* default */.A.MODULES_IN_STOP_PATTERN), Math.min(PDF417Reader.getMinWidth(p[1], p[5]), PDF417Reader.getMinWidth(p[7], p[3]) * PDF417Common/* default */.A.MODULES_IN_CODEWORD /
+            PDF417Common/* default */.A.MODULES_IN_STOP_PATTERN)));
     };
     // @Override
     PDF417Reader.prototype.reset = function () {
@@ -26335,12 +26335,12 @@ var PDF417Reader = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 6027:
+/***/ 8318:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /*
  * Copyright 2013 ZXing authors
@@ -26487,30 +26487,30 @@ var PDF417ResultMetadata = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 9763:
+/***/ 7915:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Z": () => (/* binding */ decoder_DecodedBitStreamParser)
+  A: () => (/* binding */ decoder_DecodedBitStreamParser)
 });
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/FormatException.js
-var FormatException = __webpack_require__(2468);
+var FormatException = __webpack_require__(7027);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/CharacterSetECI.js
-var CharacterSetECI = __webpack_require__(5727);
+var CharacterSetECI = __webpack_require__(4945);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/DecoderResult.js
-var DecoderResult = __webpack_require__(4522);
+var DecoderResult = __webpack_require__(9064);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/pdf417/PDF417ResultMetadata.js
-var PDF417ResultMetadata = __webpack_require__(6027);
+var PDF417ResultMetadata = __webpack_require__(8318);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/Arrays.js + 1 modules
-var Arrays = __webpack_require__(1126);
+var Arrays = __webpack_require__(2598);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StringBuilder.js
-var StringBuilder = __webpack_require__(75);
+var StringBuilder = __webpack_require__(432);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/Integer.js
-var Integer = __webpack_require__(3450);
+var Integer = __webpack_require__(9978);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/util/Long.js
 /**
  * Ponyfill for Java's Long class.
@@ -26533,9 +26533,9 @@ var Long = /** @class */ (function () {
 /* harmony default export */ const util_Long = (Long);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/IndexOutOfBoundsException.js
-var IndexOutOfBoundsException = __webpack_require__(7164);
+var IndexOutOfBoundsException = __webpack_require__(9766);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/Exception.js + 1 modules
-var Exception = __webpack_require__(1546);
+var Exception = __webpack_require__(3830);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/NullPointerException.js
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -26561,7 +26561,7 @@ var NullPointerException = /** @class */ (function (_super) {
     }
     NullPointerException.kind = 'NullPointerException';
     return NullPointerException;
-}(Exception/* default */.Z));
+}(Exception/* default */.A));
 /* harmony default export */ const core_NullPointerException = (NullPointerException);
 
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/util/OutputStream.js
@@ -26660,7 +26660,7 @@ var OutputStream /*implements Closeable, Flushable*/ = /** @class */ (function (
         }
         else if ((off < 0) || (off > b.length) || (len < 0) ||
             ((off + len) > b.length) || ((off + len) < 0)) {
-            throw new IndexOutOfBoundsException/* default */.Z();
+            throw new IndexOutOfBoundsException/* default */.A();
         }
         else if (len === 0) {
             return;
@@ -26706,7 +26706,7 @@ var OutputStream /*implements Closeable, Flushable*/ = /** @class */ (function (
 /* harmony default export */ const util_OutputStream = (OutputStream);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/IllegalArgumentException.js
-var IllegalArgumentException = __webpack_require__(8475);
+var IllegalArgumentException = __webpack_require__(5793);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/OutOfMemoryError.js
 var OutOfMemoryError_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -26731,11 +26731,11 @@ var OutOfMemoryError = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     return OutOfMemoryError;
-}(Exception/* default */.Z));
+}(Exception/* default */.A));
 /* harmony default export */ const core_OutOfMemoryError = (OutOfMemoryError);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/System.js
-var System = __webpack_require__(8507);
+var System = __webpack_require__(7527);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/util/ByteArrayOutputStream.js
 /*
  * Copyright (c) 1994, 2010, Oracle and/or its affiliates. All rights reserved.
@@ -26821,7 +26821,7 @@ var ByteArrayOutputStream = /** @class */ (function (_super) {
          */
         _this.count = 0;
         if (size < 0) {
-            throw new IllegalArgumentException/* default */.Z('Negative initial size: '
+            throw new IllegalArgumentException/* default */.A('Negative initial size: '
                 + size);
         }
         _this.buf = new Uint8Array(size);
@@ -26857,9 +26857,9 @@ var ByteArrayOutputStream = /** @class */ (function (_super) {
         if (newCapacity < 0) {
             if (minCapacity < 0) // overflow
                 throw new core_OutOfMemoryError();
-            newCapacity = Integer/* default.MAX_VALUE */.Z.MAX_VALUE;
+            newCapacity = Integer/* default */.A.MAX_VALUE;
         }
-        this.buf = Arrays/* default.copyOfUint8Array */.Z.copyOfUint8Array(this.buf, newCapacity);
+        this.buf = Arrays/* default */.A.copyOfUint8Array(this.buf, newCapacity);
     };
     /**
      * Writes the specified byte to this byte array output stream.
@@ -26882,10 +26882,10 @@ var ByteArrayOutputStream = /** @class */ (function (_super) {
     ByteArrayOutputStream.prototype.writeBytesOffset = function (b, off, len) {
         if ((off < 0) || (off > b.length) || (len < 0) ||
             ((off + len) - b.length > 0)) {
-            throw new IndexOutOfBoundsException/* default */.Z();
+            throw new IndexOutOfBoundsException/* default */.A();
         }
         this.ensureCapacity(this.count + len);
-        System/* default.arraycopy */.Z.arraycopy(b, off, this.buf, this.count, len);
+        System/* default */.A.arraycopy(b, off, this.buf, this.count, len);
         this.count += len;
     };
     /**
@@ -26919,7 +26919,7 @@ var ByteArrayOutputStream = /** @class */ (function (_super) {
      * @see     java.io.ByteArrayOutputStream#size()
      */
     ByteArrayOutputStream.prototype.toByteArray = function () {
-        return Arrays/* default.copyOfUint8Array */.Z.copyOfUint8Array(this.buf, this.count);
+        return Arrays/* default */.A.copyOfUint8Array(this.buf, this.count);
     };
     /**
      * Returns the current size of the buffer.
@@ -27020,7 +27020,7 @@ var ByteArrayOutputStream = /** @class */ (function (_super) {
 /* harmony default export */ const util_ByteArrayOutputStream = (ByteArrayOutputStream);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StringEncoding.js
-var StringEncoding = __webpack_require__(4421);
+var StringEncoding = __webpack_require__(2442);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/DecodedBitStreamParser.js
 /*
  * Copyright 2009 ZXing authors
@@ -27134,9 +27134,9 @@ var DecodedBitStreamParser = /** @class */ (function () {
      */
     DecodedBitStreamParser.decode = function (codewords, ecLevel) {
         // pass encoding to result (will be used for decode symbols in byte mode)
-        var result = new StringBuilder/* default */.Z('');
+        var result = new StringBuilder/* default */.A('');
         // let encoding: Charset = StandardCharsets.ISO_8859_1;
-        var encoding = CharacterSetECI/* default.ISO8859_1 */.Z.ISO8859_1;
+        var encoding = CharacterSetECI/* default */.A.ISO8859_1;
         /**
          * @note the next command is specific from this TypeScript library
          * because TS can't properly cast some values to char and
@@ -27148,7 +27148,7 @@ var DecodedBitStreamParser = /** @class */ (function () {
         // Get compaction mode
         var codeIndex = 1;
         var code = codewords[codeIndex++];
-        var resultMetadata = new PDF417ResultMetadata/* default */.Z();
+        var resultMetadata = new PDF417ResultMetadata/* default */.A();
         while (codeIndex < codewords[0]) {
             switch (code) {
                 case DecodedBitStreamParser.TEXT_COMPACTION_MODE_LATCH:
@@ -27165,7 +27165,7 @@ var DecodedBitStreamParser = /** @class */ (function () {
                     codeIndex = DecodedBitStreamParser.numericCompaction(codewords, codeIndex, result);
                     break;
                 case DecodedBitStreamParser.ECI_CHARSET:
-                    var charsetECI = CharacterSetECI/* default.getCharacterSetECIByValue */.Z.getCharacterSetECIByValue(codewords[codeIndex++]);
+                    var charsetECI = CharacterSetECI/* default */.A.getCharacterSetECIByValue(codewords[codeIndex++]);
                     // encoding = Charset.forName(charsetECI.getName());
                     break;
                 case DecodedBitStreamParser.ECI_GENERAL_PURPOSE:
@@ -27182,7 +27182,7 @@ var DecodedBitStreamParser = /** @class */ (function () {
                 case DecodedBitStreamParser.BEGIN_MACRO_PDF417_OPTIONAL_FIELD:
                 case DecodedBitStreamParser.MACRO_PDF417_TERMINATOR:
                     // Should not see these outside a macro block
-                    throw new FormatException/* default */.Z();
+                    throw new FormatException/* default */.A();
                 default:
                     // Default to text compaction. During testing numerous barcodes
                     // appeared to be missing the starting mode. In these cases defaulting
@@ -27195,13 +27195,13 @@ var DecodedBitStreamParser = /** @class */ (function () {
                 code = codewords[codeIndex++];
             }
             else {
-                throw FormatException/* default.getFormatInstance */.Z.getFormatInstance();
+                throw FormatException/* default */.A.getFormatInstance();
             }
         }
         if (result.length() === 0) {
-            throw FormatException/* default.getFormatInstance */.Z.getFormatInstance();
+            throw FormatException/* default */.A.getFormatInstance();
         }
-        var decoderResult = new DecoderResult/* default */.Z(null, result.toString(), null, ecLevel);
+        var decoderResult = new DecoderResult/* default */.A(null, result.toString(), null, ecLevel);
         decoderResult.setOther(resultMetadata);
         return decoderResult;
     };
@@ -27221,14 +27221,14 @@ var DecodedBitStreamParser = /** @class */ (function () {
     DecodedBitStreamParser.decodeMacroBlock = function (codewords, codeIndex, resultMetadata) {
         if (codeIndex + DecodedBitStreamParser.NUMBER_OF_SEQUENCE_CODEWORDS > codewords[0]) {
             // we must have at least two bytes left for the segment index
-            throw FormatException/* default.getFormatInstance */.Z.getFormatInstance();
+            throw FormatException/* default */.A.getFormatInstance();
         }
         var segmentIndexArray = new Int32Array(DecodedBitStreamParser.NUMBER_OF_SEQUENCE_CODEWORDS);
         for (var i /*int*/ = 0; i < DecodedBitStreamParser.NUMBER_OF_SEQUENCE_CODEWORDS; i++, codeIndex++) {
             segmentIndexArray[i] = codewords[codeIndex];
         }
-        resultMetadata.setSegmentIndex(Integer/* default.parseInt */.Z.parseInt(DecodedBitStreamParser.decodeBase900toBase10(segmentIndexArray, DecodedBitStreamParser.NUMBER_OF_SEQUENCE_CODEWORDS)));
-        var fileId = new StringBuilder/* default */.Z();
+        resultMetadata.setSegmentIndex(Integer/* default */.A.parseInt(DecodedBitStreamParser.decodeBase900toBase10(segmentIndexArray, DecodedBitStreamParser.NUMBER_OF_SEQUENCE_CODEWORDS)));
+        var fileId = new StringBuilder/* default */.A();
         codeIndex = DecodedBitStreamParser.textCompaction(codewords, codeIndex, fileId);
         resultMetadata.setFileId(fileId.toString());
         var optionalFieldsStart = -1;
@@ -27241,42 +27241,42 @@ var DecodedBitStreamParser = /** @class */ (function () {
                     codeIndex++;
                     switch (codewords[codeIndex]) {
                         case DecodedBitStreamParser.MACRO_PDF417_OPTIONAL_FIELD_FILE_NAME:
-                            var fileName = new StringBuilder/* default */.Z();
+                            var fileName = new StringBuilder/* default */.A();
                             codeIndex = DecodedBitStreamParser.textCompaction(codewords, codeIndex + 1, fileName);
                             resultMetadata.setFileName(fileName.toString());
                             break;
                         case DecodedBitStreamParser.MACRO_PDF417_OPTIONAL_FIELD_SENDER:
-                            var sender = new StringBuilder/* default */.Z();
+                            var sender = new StringBuilder/* default */.A();
                             codeIndex = DecodedBitStreamParser.textCompaction(codewords, codeIndex + 1, sender);
                             resultMetadata.setSender(sender.toString());
                             break;
                         case DecodedBitStreamParser.MACRO_PDF417_OPTIONAL_FIELD_ADDRESSEE:
-                            var addressee = new StringBuilder/* default */.Z();
+                            var addressee = new StringBuilder/* default */.A();
                             codeIndex = DecodedBitStreamParser.textCompaction(codewords, codeIndex + 1, addressee);
                             resultMetadata.setAddressee(addressee.toString());
                             break;
                         case DecodedBitStreamParser.MACRO_PDF417_OPTIONAL_FIELD_SEGMENT_COUNT:
-                            var segmentCount = new StringBuilder/* default */.Z();
+                            var segmentCount = new StringBuilder/* default */.A();
                             codeIndex = DecodedBitStreamParser.numericCompaction(codewords, codeIndex + 1, segmentCount);
-                            resultMetadata.setSegmentCount(Integer/* default.parseInt */.Z.parseInt(segmentCount.toString()));
+                            resultMetadata.setSegmentCount(Integer/* default */.A.parseInt(segmentCount.toString()));
                             break;
                         case DecodedBitStreamParser.MACRO_PDF417_OPTIONAL_FIELD_TIME_STAMP:
-                            var timestamp = new StringBuilder/* default */.Z();
+                            var timestamp = new StringBuilder/* default */.A();
                             codeIndex = DecodedBitStreamParser.numericCompaction(codewords, codeIndex + 1, timestamp);
                             resultMetadata.setTimestamp(util_Long.parseLong(timestamp.toString()));
                             break;
                         case DecodedBitStreamParser.MACRO_PDF417_OPTIONAL_FIELD_CHECKSUM:
-                            var checksum = new StringBuilder/* default */.Z();
+                            var checksum = new StringBuilder/* default */.A();
                             codeIndex = DecodedBitStreamParser.numericCompaction(codewords, codeIndex + 1, checksum);
-                            resultMetadata.setChecksum(Integer/* default.parseInt */.Z.parseInt(checksum.toString()));
+                            resultMetadata.setChecksum(Integer/* default */.A.parseInt(checksum.toString()));
                             break;
                         case DecodedBitStreamParser.MACRO_PDF417_OPTIONAL_FIELD_FILE_SIZE:
-                            var fileSize = new StringBuilder/* default */.Z();
+                            var fileSize = new StringBuilder/* default */.A();
                             codeIndex = DecodedBitStreamParser.numericCompaction(codewords, codeIndex + 1, fileSize);
                             resultMetadata.setFileSize(util_Long.parseLong(fileSize.toString()));
                             break;
                         default:
-                            throw FormatException/* default.getFormatInstance */.Z.getFormatInstance();
+                            throw FormatException/* default */.A.getFormatInstance();
                     }
                     break;
                 case DecodedBitStreamParser.MACRO_PDF417_TERMINATOR:
@@ -27284,7 +27284,7 @@ var DecodedBitStreamParser = /** @class */ (function () {
                     resultMetadata.setLastSegment(true);
                     break;
                 default:
-                    throw FormatException/* default.getFormatInstance */.Z.getFormatInstance();
+                    throw FormatException/* default */.A.getFormatInstance();
             }
         }
         // copy optional fields to additional options
@@ -27294,7 +27294,7 @@ var DecodedBitStreamParser = /** @class */ (function () {
                 // do not include terminator
                 optionalFieldsLength--;
             }
-            resultMetadata.setOptionalData(Arrays/* default.copyOfRange */.Z.copyOfRange(codewords, optionalFieldsStart, optionalFieldsStart + optionalFieldsLength));
+            resultMetadata.setOptionalData(Arrays/* default */.A.copyOfRange(codewords, optionalFieldsStart, optionalFieldsStart + optionalFieldsLength));
         }
         return codeIndex;
     };
@@ -27656,7 +27656,7 @@ var DecodedBitStreamParser = /** @class */ (function () {
                 }
                 break;
         }
-        result.append(StringEncoding/* default.decode */.Z.decode(decodedBytes.toByteArray(), encoding));
+        result.append(StringEncoding/* default */.A.decode(decodedBytes.toByteArray(), encoding));
         return codeIndex;
     };
     /**
@@ -27757,7 +27757,7 @@ var DecodedBitStreamParser = /** @class */ (function () {
         }
         var resultString = result.toString();
         if (resultString.charAt(0) !== '1') {
-            throw new FormatException/* default */.Z();
+            throw new FormatException/* default */.A();
         }
         return resultString.substring(1);
     };
@@ -27802,24 +27802,24 @@ var DecodedBitStreamParser = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 2193:
+/***/ 4034:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Z": () => (/* binding */ ec_ErrorCorrection)
+  A: () => (/* binding */ ec_ErrorCorrection)
 });
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/ChecksumException.js
-var ChecksumException = __webpack_require__(3392);
+var ChecksumException = __webpack_require__(1371);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/IllegalArgumentException.js
-var IllegalArgumentException = __webpack_require__(8475);
+var IllegalArgumentException = __webpack_require__(5793);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/System.js
-var System = __webpack_require__(8507);
+var System = __webpack_require__(7527);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StringBuilder.js
-var StringBuilder = __webpack_require__(75);
+var StringBuilder = __webpack_require__(432);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/ec/ModulusPoly.js
 /*
 * Copyright 2012 ZXing authors
@@ -27858,7 +27858,7 @@ var __values = (undefined && undefined.__values) || function(o) {
 var ModulusPoly = /** @class */ (function () {
     function ModulusPoly(field, coefficients) {
         if (coefficients.length === 0) {
-            throw new IllegalArgumentException/* default */.Z();
+            throw new IllegalArgumentException/* default */.A();
         }
         this.field = field;
         var coefficientsLength = /*int*/ coefficients.length;
@@ -27873,7 +27873,7 @@ var ModulusPoly = /** @class */ (function () {
             }
             else {
                 this.coefficients = new Int32Array(coefficientsLength - firstNonZero);
-                System/* default.arraycopy */.Z.arraycopy(coefficients, firstNonZero, this.coefficients, 0, this.coefficients.length);
+                System/* default */.A.arraycopy(coefficients, firstNonZero, this.coefficients, 0, this.coefficients.length);
             }
         }
         else {
@@ -27937,7 +27937,7 @@ var ModulusPoly = /** @class */ (function () {
     };
     ModulusPoly.prototype.add = function (other) {
         if (!this.field.equals(other.field)) {
-            throw new IllegalArgumentException/* default */.Z('ModulusPolys do not have same ModulusGF field');
+            throw new IllegalArgumentException/* default */.A('ModulusPolys do not have same ModulusGF field');
         }
         if (this.isZero()) {
             return other;
@@ -27955,7 +27955,7 @@ var ModulusPoly = /** @class */ (function () {
         var sumDiff = new Int32Array(largerCoefficients.length);
         var lengthDiff = /*int*/ largerCoefficients.length - smallerCoefficients.length;
         // Copy high-order terms only found in higher-degree polynomial's coefficients
-        System/* default.arraycopy */.Z.arraycopy(largerCoefficients, 0, sumDiff, 0, lengthDiff);
+        System/* default */.A.arraycopy(largerCoefficients, 0, sumDiff, 0, lengthDiff);
         for (var i /*int*/ = lengthDiff; i < largerCoefficients.length; i++) {
             sumDiff[i] = this.field.add(smallerCoefficients[i - lengthDiff], largerCoefficients[i]);
         }
@@ -27963,7 +27963,7 @@ var ModulusPoly = /** @class */ (function () {
     };
     ModulusPoly.prototype.subtract = function (other) {
         if (!this.field.equals(other.field)) {
-            throw new IllegalArgumentException/* default */.Z('ModulusPolys do not have same ModulusGF field');
+            throw new IllegalArgumentException/* default */.A('ModulusPolys do not have same ModulusGF field');
         }
         if (other.isZero()) {
             return this;
@@ -27978,7 +27978,7 @@ var ModulusPoly = /** @class */ (function () {
     };
     ModulusPoly.prototype.multiplyOther = function (other) {
         if (!this.field.equals(other.field)) {
-            throw new IllegalArgumentException/* default */.Z('ModulusPolys do not have same ModulusGF field');
+            throw new IllegalArgumentException/* default */.A('ModulusPolys do not have same ModulusGF field');
         }
         if (this.isZero() || other.isZero()) {
             // return this.field.getZero();
@@ -28021,7 +28021,7 @@ var ModulusPoly = /** @class */ (function () {
     };
     ModulusPoly.prototype.multiplyByMonomial = function (degree, coefficient) {
         if (degree < 0) {
-            throw new IllegalArgumentException/* default */.Z();
+            throw new IllegalArgumentException/* default */.A();
         }
         if (coefficient === 0) {
             return new ModulusPoly(this.field, new Int32Array([0]));
@@ -28062,7 +28062,7 @@ var ModulusPoly = /** @class */ (function () {
     */
     // @Override
     ModulusPoly.prototype.toString = function () {
-        var result = new StringBuilder/* default */.Z( /*8 * this.getDegree()*/); // dynamic string size in JS
+        var result = new StringBuilder/* default */.A( /*8 * this.getDegree()*/); // dynamic string size in JS
         for (var degree /*int*/ = this.getDegree(); degree >= 0; degree--) {
             var coefficient = /*int*/ this.getCoefficient(degree);
             if (coefficient !== 0) {
@@ -28096,9 +28096,9 @@ var ModulusPoly = /** @class */ (function () {
 /* harmony default export */ const ec_ModulusPoly = (ModulusPoly);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/pdf417/PDF417Common.js
-var PDF417Common = __webpack_require__(2807);
+var PDF417Common = __webpack_require__(4847);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/ArithmeticException.js
-var ArithmeticException = __webpack_require__(6288);
+var ArithmeticException = __webpack_require__(2046);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/ec/ModulusBase.js
 
 
@@ -28116,13 +28116,13 @@ var ModulusBase = /** @class */ (function () {
     };
     ModulusBase.prototype.log = function (a) {
         if (a === 0) {
-            throw new IllegalArgumentException/* default */.Z();
+            throw new IllegalArgumentException/* default */.A();
         }
         return this.logTable[a];
     };
     ModulusBase.prototype.inverse = function (a) {
         if (a === 0) {
-            throw new ArithmeticException/* default */.Z();
+            throw new ArithmeticException/* default */.A();
         }
         return this.expTable[this.modulus - this.logTable[a] - 1];
     };
@@ -28212,7 +28212,7 @@ var ModulusGF = /** @class */ (function (_super) {
     };
     ModulusGF.prototype.buildMonomial = function (degree, coefficient) {
         if (degree < 0) {
-            throw new IllegalArgumentException/* default */.Z();
+            throw new IllegalArgumentException/* default */.A();
         }
         if (coefficient === 0) {
             return this.zero;
@@ -28221,7 +28221,7 @@ var ModulusGF = /** @class */ (function (_super) {
         coefficients[0] = coefficient;
         return new ec_ModulusPoly(this, coefficients);
     };
-    ModulusGF.PDF417_GF = new ModulusGF(PDF417Common/* default.NUMBER_OF_CODEWORDS */.Z.NUMBER_OF_CODEWORDS, 3);
+    ModulusGF.PDF417_GF = new ModulusGF(PDF417Common/* default */.A.NUMBER_OF_CODEWORDS, 3);
     return ModulusGF;
 }(ec_ModulusBase));
 /* harmony default export */ const ec_ModulusGF = (ModulusGF);
@@ -28323,7 +28323,7 @@ var ErrorCorrection = /** @class */ (function () {
         for (var i /*int*/ = 0; i < errorLocations.length; i++) {
             var position = received.length - 1 - this.field.log(errorLocations[i]);
             if (position < 0) {
-                throw ChecksumException/* default.getChecksumInstance */.Z.getChecksumInstance();
+                throw ChecksumException/* default */.A.getChecksumInstance();
             }
             received[position] = this.field.subtract(received[position], errorMagnitudes[i]);
         }
@@ -28359,7 +28359,7 @@ var ErrorCorrection = /** @class */ (function () {
             // Divide rLastLast by rLast, with quotient in q and remainder in r
             if (rLast.isZero()) {
                 // Oops, Euclidean algorithm already terminated?
-                throw ChecksumException/* default.getChecksumInstance */.Z.getChecksumInstance();
+                throw ChecksumException/* default */.A.getChecksumInstance();
             }
             r = rLastLast;
             var q = this.field.getZero();
@@ -28375,7 +28375,7 @@ var ErrorCorrection = /** @class */ (function () {
         }
         var sigmaTildeAtZero = t.getCoefficient(0);
         if (sigmaTildeAtZero === 0) {
-            throw ChecksumException/* default.getChecksumInstance */.Z.getChecksumInstance();
+            throw ChecksumException/* default */.A.getChecksumInstance();
         }
         var inverse = this.field.inverse(sigmaTildeAtZero);
         var sigma = t.multiply(inverse);
@@ -28399,7 +28399,7 @@ var ErrorCorrection = /** @class */ (function () {
             }
         }
         if (e !== numErrors) {
-            throw ChecksumException/* default.getChecksumInstance */.Z.getChecksumInstance();
+            throw ChecksumException/* default */.A.getChecksumInstance();
         }
         return result;
     };
@@ -28429,42 +28429,42 @@ var ErrorCorrection = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 3949:
+/***/ 2038:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Z": () => (/* binding */ qrcode_QRCodeReader)
+  A: () => (/* binding */ qrcode_QRCodeReader)
 });
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/BarcodeFormat.js
-var BarcodeFormat = __webpack_require__(8684);
+var BarcodeFormat = __webpack_require__(9460);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/BitMatrix.js
-var BitMatrix = __webpack_require__(1103);
+var BitMatrix = __webpack_require__(8307);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/DecodeHintType.js
-var DecodeHintType = __webpack_require__(6650);
+var DecodeHintType = __webpack_require__(1180);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/NotFoundException.js
-var NotFoundException = __webpack_require__(8842);
+var NotFoundException = __webpack_require__(8427);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/Result.js
-var Result = __webpack_require__(1462);
+var Result = __webpack_require__(6770);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/ResultMetadataType.js
-var ResultMetadataType = __webpack_require__(5621);
+var ResultMetadataType = __webpack_require__(688);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/ChecksumException.js
-var ChecksumException = __webpack_require__(3392);
+var ChecksumException = __webpack_require__(1371);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/reedsolomon/GenericGF.js
-var GenericGF = __webpack_require__(2127);
+var GenericGF = __webpack_require__(2429);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/reedsolomon/ReedSolomonDecoder.js
-var ReedSolomonDecoder = __webpack_require__(4646);
+var ReedSolomonDecoder = __webpack_require__(4112);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/Version.js + 2 modules
-var Version = __webpack_require__(1507);
+var Version = __webpack_require__(6870);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/FormatInformation.js
-var FormatInformation = __webpack_require__(5173);
+var FormatInformation = __webpack_require__(1722);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/DataMask.js
-var DataMask = __webpack_require__(579);
+var DataMask = __webpack_require__(6021);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/FormatException.js
-var FormatException = __webpack_require__(2468);
+var FormatException = __webpack_require__(7027);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/BitMatrixParser.js
 /*
  * Copyright 2007 ZXing authors
@@ -28496,7 +28496,7 @@ var BitMatrixParser = /** @class */ (function () {
     function BitMatrixParser(bitMatrix) {
         var dimension = bitMatrix.getHeight();
         if (dimension < 21 || (dimension & 0x03) !== 1) {
-            throw new FormatException/* default */.Z();
+            throw new FormatException/* default */.A();
         }
         this.bitMatrix = bitMatrix;
     }
@@ -28534,11 +28534,11 @@ var BitMatrixParser = /** @class */ (function () {
         for (var i = dimension - 8; i < dimension; i++) {
             formatInfoBits2 = this.copyBit(i, 8, formatInfoBits2);
         }
-        this.parsedFormatInfo = FormatInformation/* default.decodeFormatInformation */.Z.decodeFormatInformation(formatInfoBits1, formatInfoBits2);
+        this.parsedFormatInfo = FormatInformation/* default */.A.decodeFormatInformation(formatInfoBits1, formatInfoBits2);
         if (this.parsedFormatInfo !== null) {
             return this.parsedFormatInfo;
         }
-        throw new FormatException/* default */.Z();
+        throw new FormatException/* default */.A();
     };
     /**
      * <p>Reads version information from one of its two locations within the QR Code.</p>
@@ -28554,7 +28554,7 @@ var BitMatrixParser = /** @class */ (function () {
         var dimension = this.bitMatrix.getHeight();
         var provisionalVersion = Math.floor((dimension - 17) / 4);
         if (provisionalVersion <= 6) {
-            return Version/* default.getVersionForNumber */.Z.getVersionForNumber(provisionalVersion);
+            return Version/* default */.A.getVersionForNumber(provisionalVersion);
         }
         // Read top-right version info: 3 wide by 6 tall
         var versionBits = 0;
@@ -28564,7 +28564,7 @@ var BitMatrixParser = /** @class */ (function () {
                 versionBits = this.copyBit(i, j, versionBits);
             }
         }
-        var theParsedVersion = Version/* default.decodeVersionInformation */.Z.decodeVersionInformation(versionBits);
+        var theParsedVersion = Version/* default */.A.decodeVersionInformation(versionBits);
         if (theParsedVersion !== null && theParsedVersion.getDimensionForVersion() === dimension) {
             this.parsedVersion = theParsedVersion;
             return theParsedVersion;
@@ -28576,12 +28576,12 @@ var BitMatrixParser = /** @class */ (function () {
                 versionBits = this.copyBit(i, j, versionBits);
             }
         }
-        theParsedVersion = Version/* default.decodeVersionInformation */.Z.decodeVersionInformation(versionBits);
+        theParsedVersion = Version/* default */.A.decodeVersionInformation(versionBits);
         if (theParsedVersion !== null && theParsedVersion.getDimensionForVersion() === dimension) {
             this.parsedVersion = theParsedVersion;
             return theParsedVersion;
         }
-        throw new FormatException/* default */.Z();
+        throw new FormatException/* default */.A();
     };
     BitMatrixParser.prototype.copyBit = function (i /*int*/, j /*int*/, versionBits /*int*/) {
         var bit = this.isMirror ? this.bitMatrix.get(j, i) : this.bitMatrix.get(i, j);
@@ -28600,7 +28600,7 @@ var BitMatrixParser = /** @class */ (function () {
         var version = this.readVersion();
         // Get the data mask for the format used in this QR Code. This will exclude
         // some bits from reading as we wind through the bit matrix.
-        var dataMask = DataMask/* default.values.get */.Z.values.get(formatInfo.getDataMask());
+        var dataMask = DataMask/* default */.A.values.get(formatInfo.getDataMask());
         var dimension = this.bitMatrix.getHeight();
         dataMask.unmaskBitMatrix(this.bitMatrix, dimension);
         var functionPattern = version.buildFunctionPattern();
@@ -28640,7 +28640,7 @@ var BitMatrixParser = /** @class */ (function () {
             readingUp = !readingUp; // readingUp ^= true; // readingUp = !readingUp; // switch directions
         }
         if (resultOffset !== version.getTotalCodewords()) {
-            throw new FormatException/* default */.Z();
+            throw new FormatException/* default */.A();
         }
         return result;
     };
@@ -28651,7 +28651,7 @@ var BitMatrixParser = /** @class */ (function () {
         if (this.parsedFormatInfo === null) {
             return; // We have no format information, and have no data mask
         }
-        var dataMask = DataMask/* default.values.get */.Z.values.get(this.parsedFormatInfo.getDataMask());
+        var dataMask = DataMask/* default */.A.values.get(this.parsedFormatInfo.getDataMask());
         var dimension = this.bitMatrix.getHeight();
         dataMask.unmaskBitMatrix(this.bitMatrix, dimension);
     };
@@ -28685,7 +28685,7 @@ var BitMatrixParser = /** @class */ (function () {
 /* harmony default export */ const decoder_BitMatrixParser = (BitMatrixParser);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/IllegalArgumentException.js
-var IllegalArgumentException = __webpack_require__(8475);
+var IllegalArgumentException = __webpack_require__(5793);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/DataBlock.js
 /*
  * Copyright 2007 ZXing authors
@@ -28740,7 +28740,7 @@ var DataBlock = /** @class */ (function () {
     DataBlock.getDataBlocks = function (rawCodewords, version, ecLevel) {
         var e_1, _a, e_2, _b;
         if (rawCodewords.length !== version.getTotalCodewords()) {
-            throw new IllegalArgumentException/* default */.Z();
+            throw new IllegalArgumentException/* default */.A();
         }
         // Figure out the number and size of data blocks used by this version and
         // error correction level
@@ -28828,7 +28828,7 @@ var DataBlock = /** @class */ (function () {
 /* harmony default export */ const decoder_DataBlock = (DataBlock);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/DecodedBitStreamParser.js
-var DecodedBitStreamParser = __webpack_require__(9297);
+var DecodedBitStreamParser = __webpack_require__(4299);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/QRCodeDecoderMetaData.js
 /*
  * Copyright 2013 ZXing authors
@@ -28924,7 +28924,7 @@ var Decoder_values = (undefined && undefined.__values) || function(o) {
  */
 var Decoder = /** @class */ (function () {
     function Decoder() {
-        this.rsDecoder = new ReedSolomonDecoder/* default */.Z(GenericGF/* default.QR_CODE_FIELD_256 */.Z.QR_CODE_FIELD_256);
+        this.rsDecoder = new ReedSolomonDecoder/* default */.A(GenericGF/* default */.A.QR_CODE_FIELD_256);
     }
     // public decode(image: boolean[][]): DecoderResult /*throws ChecksumException, FormatException*/ {
     //   return decode(image, null)
@@ -28940,7 +28940,7 @@ var Decoder = /** @class */ (function () {
      * @throws ChecksumException if error correction fails
      */
     Decoder.prototype.decodeBooleanArray = function (image, hints) {
-        return this.decodeBitMatrix(BitMatrix/* default.parseFromBooleanArray */.Z.parseFromBooleanArray(image), hints);
+        return this.decodeBitMatrix(BitMatrix/* default */.A.parseFromBooleanArray(image), hints);
     };
     // public decodeBitMatrix(bits: BitMatrix): DecoderResult /*throws ChecksumException, FormatException*/ {
     //   return decode(bits, null)
@@ -29039,7 +29039,7 @@ var Decoder = /** @class */ (function () {
             finally { if (e_2) throw e_2.error; }
         }
         // Decode the contents of that stream of bytes
-        return DecodedBitStreamParser/* default.decode */.Z.decode(resultBytes, version, ecLevel, hints);
+        return DecodedBitStreamParser/* default */.A.decode(resultBytes, version, ecLevel, hints);
     };
     /**
      * <p>Given data and error-correction codewords received, possibly corrupted by errors, attempts to
@@ -29062,7 +29062,7 @@ var Decoder = /** @class */ (function () {
             this.rsDecoder.decode(codewordsInts, codewordBytes.length - numDataCodewords);
         }
         catch (ignored /*: ReedSolomonException*/) {
-            throw new ChecksumException/* default */.Z();
+            throw new ChecksumException/* default */.A();
         }
         // Copy back into array of bytes -- only need to worry about the bytes that were data
         // We don't care about errors in the error-correction codewords
@@ -29075,15 +29075,15 @@ var Decoder = /** @class */ (function () {
 /* harmony default export */ const decoder_Decoder = (Decoder);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/detector/MathUtils.js
-var MathUtils = __webpack_require__(8611);
+var MathUtils = __webpack_require__(1091);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/DetectorResult.js
-var DetectorResult = __webpack_require__(7877);
+var DetectorResult = __webpack_require__(3014);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/GridSamplerInstance.js
-var GridSamplerInstance = __webpack_require__(7067);
+var GridSamplerInstance = __webpack_require__(5634);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/PerspectiveTransform.js
-var PerspectiveTransform = __webpack_require__(7310);
+var PerspectiveTransform = __webpack_require__(4635);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/ResultPoint.js
-var ResultPoint = __webpack_require__(8307);
+var ResultPoint = __webpack_require__(6502);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/detector/AlignmentPattern.js
 /*
  * Copyright 2007 ZXing authors
@@ -29150,7 +29150,7 @@ var AlignmentPattern = /** @class */ (function (_super) {
         return new AlignmentPattern(combinedX, combinedY, combinedModuleSize);
     };
     return AlignmentPattern;
-}(ResultPoint/* default */.Z));
+}(ResultPoint/* default */.A));
 /* harmony default export */ const detector_AlignmentPattern = (AlignmentPattern);
 
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/detector/AlignmentPatternFinder.js
@@ -29296,7 +29296,7 @@ var AlignmentPatternFinder = /** @class */ (function () {
         if (this.possibleCenters.length !== 0) {
             return this.possibleCenters[0];
         }
-        throw new NotFoundException/* default */.Z();
+        throw new NotFoundException/* default */.A();
     };
     /**
      * Given a count of black/white/black pixels just seen and an end position,
@@ -29511,7 +29511,7 @@ var FinderPattern = /** @class */ (function (_super) {
         return new FinderPattern(combinedX, combinedY, combinedModuleSize, combinedCount);
     };
     return FinderPattern;
-}(ResultPoint/* default */.Z));
+}(ResultPoint/* default */.A));
 /* harmony default export */ const detector_FinderPattern = (FinderPattern);
 
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/detector/FinderPatternInfo.js
@@ -29625,8 +29625,8 @@ var FinderPatternFinder = /** @class */ (function () {
         return this.possibleCenters;
     };
     FinderPatternFinder.prototype.find = function (hints) {
-        var tryHarder = (hints !== null && hints !== undefined) && undefined !== hints.get(DecodeHintType/* default.TRY_HARDER */.Z.TRY_HARDER);
-        var pureBarcode = (hints !== null && hints !== undefined) && undefined !== hints.get(DecodeHintType/* default.PURE_BARCODE */.Z.PURE_BARCODE);
+        var tryHarder = (hints !== null && hints !== undefined) && undefined !== hints.get(DecodeHintType/* default */.A.TRY_HARDER);
+        var pureBarcode = (hints !== null && hints !== undefined) && undefined !== hints.get(DecodeHintType/* default */.A.PURE_BARCODE);
         var image = this.image;
         var maxI = image.getHeight();
         var maxJ = image.getWidth();
@@ -29732,7 +29732,7 @@ var FinderPatternFinder = /** @class */ (function () {
             }
         }
         var patternInfo = this.selectBestPatterns();
-        ResultPoint/* default.orderBestPatterns */.Z.orderBestPatterns(patternInfo);
+        ResultPoint/* default */.A.orderBestPatterns(patternInfo);
         return new detector_FinderPatternInfo(patternInfo);
     };
     /**
@@ -30142,7 +30142,7 @@ var FinderPatternFinder = /** @class */ (function () {
         var startSize = this.possibleCenters.length;
         if (startSize < 3) {
             // Couldn't find enough finder patterns
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         var possibleCenters = this.possibleCenters;
         var average;
@@ -30298,7 +30298,7 @@ var Detector = /** @class */ (function () {
      */
     Detector.prototype.detect = function (hints) {
         this.resultPointCallback = (hints === null || hints === undefined) ? null :
-            /*(ResultPointCallback) */ hints.get(DecodeHintType/* default.NEED_RESULT_POINT_CALLBACK */.Z.NEED_RESULT_POINT_CALLBACK);
+            /*(ResultPointCallback) */ hints.get(DecodeHintType/* default */.A.NEED_RESULT_POINT_CALLBACK);
         var finder = new detector_FinderPatternFinder(this.image, this.resultPointCallback);
         var info = finder.find(hints);
         return this.processFinderPatternInfo(info);
@@ -30309,10 +30309,10 @@ var Detector = /** @class */ (function () {
         var bottomLeft = info.getBottomLeft();
         var moduleSize = this.calculateModuleSize(topLeft, topRight, bottomLeft);
         if (moduleSize < 1.0) {
-            throw new NotFoundException/* default */.Z('No pattern found in proccess finder.');
+            throw new NotFoundException/* default */.A('No pattern found in proccess finder.');
         }
         var dimension = Detector.computeDimension(topLeft, topRight, bottomLeft, moduleSize);
-        var provisionalVersion = Version/* default.getProvisionalVersionForDimension */.Z.getProvisionalVersionForDimension(dimension);
+        var provisionalVersion = Version/* default */.A.getProvisionalVersionForDimension(dimension);
         var modulesBetweenFPCenters = provisionalVersion.getDimensionForVersion() - 7;
         var alignmentPattern = null;
         // Anything above version 1 has an alignment pattern
@@ -30332,7 +30332,7 @@ var Detector = /** @class */ (function () {
                     break;
                 }
                 catch (re /*NotFoundException*/) {
-                    if (!(re instanceof NotFoundException/* default */.Z)) {
+                    if (!(re instanceof NotFoundException/* default */.A)) {
                         throw re;
                     }
                     // try next round
@@ -30349,7 +30349,7 @@ var Detector = /** @class */ (function () {
         else {
             points = [bottomLeft, topLeft, topRight, alignmentPattern];
         }
-        return new DetectorResult/* default */.Z(bits, points);
+        return new DetectorResult/* default */.A(bits, points);
     };
     Detector.createTransform = function (topLeft, topRight, bottomLeft, alignmentPattern, dimension /*int*/) {
         var dimMinusThree = dimension - 3.5;
@@ -30370,10 +30370,10 @@ var Detector = /** @class */ (function () {
             sourceBottomRightX = dimMinusThree;
             sourceBottomRightY = dimMinusThree;
         }
-        return PerspectiveTransform/* default.quadrilateralToQuadrilateral */.Z.quadrilateralToQuadrilateral(3.5, 3.5, dimMinusThree, 3.5, sourceBottomRightX, sourceBottomRightY, 3.5, dimMinusThree, topLeft.getX(), topLeft.getY(), topRight.getX(), topRight.getY(), bottomRightX, bottomRightY, bottomLeft.getX(), bottomLeft.getY());
+        return PerspectiveTransform/* default */.A.quadrilateralToQuadrilateral(3.5, 3.5, dimMinusThree, 3.5, sourceBottomRightX, sourceBottomRightY, 3.5, dimMinusThree, topLeft.getX(), topLeft.getY(), topRight.getX(), topRight.getY(), bottomRightX, bottomRightY, bottomLeft.getX(), bottomLeft.getY());
     };
     Detector.sampleGrid = function (image, transform, dimension /*int*/) {
-        var sampler = GridSamplerInstance/* default.getInstance */.Z.getInstance();
+        var sampler = GridSamplerInstance/* default */.A.getInstance();
         return sampler.sampleGridWithTransform(image, dimension, dimension, transform);
     };
     /**
@@ -30381,8 +30381,8 @@ var Detector = /** @class */ (function () {
      * of the finder patterns and estimated module size.</p>
      */
     Detector.computeDimension = function (topLeft, topRight, bottomLeft, moduleSize /*float*/) {
-        var tltrCentersDimension = MathUtils/* default.round */.Z.round(ResultPoint/* default.distance */.Z.distance(topLeft, topRight) / moduleSize);
-        var tlblCentersDimension = MathUtils/* default.round */.Z.round(ResultPoint/* default.distance */.Z.distance(topLeft, bottomLeft) / moduleSize);
+        var tltrCentersDimension = MathUtils/* default */.A.round(ResultPoint/* default */.A.distance(topLeft, topRight) / moduleSize);
+        var tlblCentersDimension = MathUtils/* default */.A.round(ResultPoint/* default */.A.distance(topLeft, bottomLeft) / moduleSize);
         var dimension = Math.floor((tltrCentersDimension + tlblCentersDimension) / 2) + 7;
         switch (dimension & 0x03) { // mod 4
             case 0:
@@ -30393,7 +30393,7 @@ var Detector = /** @class */ (function () {
                 dimension--;
                 break;
             case 3:
-                throw new NotFoundException/* default */.Z('Dimensions could be not found.');
+                throw new NotFoundException/* default */.A('Dimensions could be not found.');
         }
         return dimension;
     };
@@ -30505,7 +30505,7 @@ var Detector = /** @class */ (function () {
             // color, advance to next state or end if we are in state 2 already
             if ((state === 1) === this.image.get(realX, realY)) {
                 if (state === 2) {
-                    return MathUtils/* default.distance */.Z.distance(x, y, fromX, fromY);
+                    return MathUtils/* default */.A.distance(x, y, fromX, fromY);
                 }
                 state++;
             }
@@ -30522,7 +30522,7 @@ var Detector = /** @class */ (function () {
         // is "white" so this last point at (toX+xStep,toY) is the right ending. This is really a
         // small approximation; (toX+xStep,toY+yStep) might be really correct. Ignore this.
         if (state === 2) {
-            return MathUtils/* default.distance */.Z.distance(toX + xstep, toY, fromX, fromY);
+            return MathUtils/* default */.A.distance(toX + xstep, toY, fromX, fromY);
         }
         // else we didn't find even black-white-black; no estimate is really possible
         return NaN;
@@ -30545,12 +30545,12 @@ var Detector = /** @class */ (function () {
         var alignmentAreaLeftX = Math.max(0, estAlignmentX - allowance);
         var alignmentAreaRightX = Math.min(this.image.getWidth() - 1, estAlignmentX + allowance);
         if (alignmentAreaRightX - alignmentAreaLeftX < overallEstModuleSize * 3) {
-            throw new NotFoundException/* default */.Z('Alignment top exceeds estimated module size.');
+            throw new NotFoundException/* default */.A('Alignment top exceeds estimated module size.');
         }
         var alignmentAreaTopY = Math.max(0, estAlignmentY - allowance);
         var alignmentAreaBottomY = Math.min(this.image.getHeight() - 1, estAlignmentY + allowance);
         if (alignmentAreaBottomY - alignmentAreaTopY < overallEstModuleSize * 3) {
-            throw new NotFoundException/* default */.Z('Alignment bottom exceeds estimated module size.');
+            throw new NotFoundException/* default */.A('Alignment bottom exceeds estimated module size.');
         }
         var alignmentFinder = new detector_AlignmentPatternFinder(this.image, alignmentAreaLeftX, alignmentAreaTopY, alignmentAreaRightX - alignmentAreaLeftX, alignmentAreaBottomY - alignmentAreaTopY, overallEstModuleSize, this.resultPointCallback);
         return alignmentFinder.find();
@@ -30616,7 +30616,7 @@ var QRCodeReader = /** @class */ (function () {
     QRCodeReader.prototype.decode = function (image, hints) {
         var decoderResult;
         var points;
-        if (hints !== undefined && hints !== null && undefined !== hints.get(DecodeHintType/* default.PURE_BARCODE */.Z.PURE_BARCODE)) {
+        if (hints !== undefined && hints !== null && undefined !== hints.get(DecodeHintType/* default */.A.PURE_BARCODE)) {
             var bits = QRCodeReader.extractPureBits(image.getBlackMatrix());
             decoderResult = this.decoder.decodeBitMatrix(bits, hints);
             points = QRCodeReader.NO_POINTS;
@@ -30630,18 +30630,18 @@ var QRCodeReader = /** @class */ (function () {
         if (decoderResult.getOther() instanceof decoder_QRCodeDecoderMetaData) {
             decoderResult.getOther().applyMirroredCorrection(points);
         }
-        var result = new Result/* default */.Z(decoderResult.getText(), decoderResult.getRawBytes(), undefined, points, BarcodeFormat/* default.QR_CODE */.Z.QR_CODE, undefined);
+        var result = new Result/* default */.A(decoderResult.getText(), decoderResult.getRawBytes(), undefined, points, BarcodeFormat/* default */.A.QR_CODE, undefined);
         var byteSegments = decoderResult.getByteSegments();
         if (byteSegments !== null) {
-            result.putMetadata(ResultMetadataType/* default.BYTE_SEGMENTS */.Z.BYTE_SEGMENTS, byteSegments);
+            result.putMetadata(ResultMetadataType/* default */.A.BYTE_SEGMENTS, byteSegments);
         }
         var ecLevel = decoderResult.getECLevel();
         if (ecLevel !== null) {
-            result.putMetadata(ResultMetadataType/* default.ERROR_CORRECTION_LEVEL */.Z.ERROR_CORRECTION_LEVEL, ecLevel);
+            result.putMetadata(ResultMetadataType/* default */.A.ERROR_CORRECTION_LEVEL, ecLevel);
         }
         if (decoderResult.hasStructuredAppend()) {
-            result.putMetadata(ResultMetadataType/* default.STRUCTURED_APPEND_SEQUENCE */.Z.STRUCTURED_APPEND_SEQUENCE, decoderResult.getStructuredAppendSequenceNumber());
-            result.putMetadata(ResultMetadataType/* default.STRUCTURED_APPEND_PARITY */.Z.STRUCTURED_APPEND_PARITY, decoderResult.getStructuredAppendParity());
+            result.putMetadata(ResultMetadataType/* default */.A.STRUCTURED_APPEND_SEQUENCE, decoderResult.getStructuredAppendSequenceNumber());
+            result.putMetadata(ResultMetadataType/* default */.A.STRUCTURED_APPEND_PARITY, decoderResult.getStructuredAppendParity());
         }
         return result;
     };
@@ -30661,7 +30661,7 @@ var QRCodeReader = /** @class */ (function () {
         var leftTopBlack = image.getTopLeftOnBit();
         var rightBottomBlack = image.getBottomRightOnBit();
         if (leftTopBlack === null || rightBottomBlack === null) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         var moduleSize = this.moduleSize(leftTopBlack, image);
         var top = leftTopBlack[1];
@@ -30670,7 +30670,7 @@ var QRCodeReader = /** @class */ (function () {
         var right = rightBottomBlack[0];
         // Sanity check!
         if (left >= right || top >= bottom) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         if (bottom - top !== right - left) {
             // Special case, where bottom-right module wasn't black so we found something else in the last row
@@ -30678,17 +30678,17 @@ var QRCodeReader = /** @class */ (function () {
             right = left + (bottom - top);
             if (right >= image.getWidth()) {
                 // Abort if that would not make sense -- off image
-                throw new NotFoundException/* default */.Z();
+                throw new NotFoundException/* default */.A();
             }
         }
         var matrixWidth = Math.round((right - left + 1) / moduleSize);
         var matrixHeight = Math.round((bottom - top + 1) / moduleSize);
         if (matrixWidth <= 0 || matrixHeight <= 0) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         if (matrixHeight !== matrixWidth) {
             // Only possibly decode square regions
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         // Push in the "border" by half the module width so that we start
         // sampling in the middle of the module. Just in case the image is a
@@ -30703,7 +30703,7 @@ var QRCodeReader = /** @class */ (function () {
         if (nudgedTooFarRight > 0) {
             if (nudgedTooFarRight > nudge) {
                 // Neither way fits; abort
-                throw new NotFoundException/* default */.Z();
+                throw new NotFoundException/* default */.A();
             }
             left -= nudgedTooFarRight;
         }
@@ -30712,12 +30712,12 @@ var QRCodeReader = /** @class */ (function () {
         if (nudgedTooFarDown > 0) {
             if (nudgedTooFarDown > nudge) {
                 // Neither way fits; abort
-                throw new NotFoundException/* default */.Z();
+                throw new NotFoundException/* default */.A();
             }
             top -= nudgedTooFarDown;
         }
         // Now just read off the bits
-        var bits = new BitMatrix/* default */.Z(matrixWidth, matrixHeight);
+        var bits = new BitMatrix/* default */.A(matrixWidth, matrixHeight);
         for (var y = 0; y < matrixHeight; y++) {
             var iOffset = top + /*(int) */ Math.floor(y * moduleSize);
             for (var x = 0; x < matrixWidth; x++) {
@@ -30746,7 +30746,7 @@ var QRCodeReader = /** @class */ (function () {
             y++;
         }
         if (x === width || y === height) {
-            throw new NotFoundException/* default */.Z();
+            throw new NotFoundException/* default */.A();
         }
         return (x - leftTopBlack[0]) / 7.0;
     };
@@ -30758,20 +30758,20 @@ var QRCodeReader = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 9891:
+/***/ 8029:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8684);
-/* harmony import */ var _EncodeHintType__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5127);
-/* harmony import */ var _common_BitMatrix__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1103);
-/* harmony import */ var _decoder_ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8911);
-/* harmony import */ var _encoder_Encoder__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3080);
-/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8475);
-/* harmony import */ var _IllegalStateException__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4418);
+/* harmony import */ var _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9460);
+/* harmony import */ var _EncodeHintType__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1444);
+/* harmony import */ var _common_BitMatrix__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8307);
+/* harmony import */ var _decoder_ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3317);
+/* harmony import */ var _encoder_Encoder__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2177);
+/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5793);
+/* harmony import */ var _IllegalStateException__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7591);
 /*
  * Copyright 2008 ZXing authors
  *
@@ -30812,25 +30812,25 @@ var QRCodeWriter = /** @class */ (function () {
     /*@Override*/
     QRCodeWriter.prototype.encode = function (contents, format, width /*int*/, height /*int*/, hints) {
         if (contents.length === 0) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z('Found empty contents');
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A('Found empty contents');
         }
-        if (format !== _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__/* ["default"].QR_CODE */ .Z.QR_CODE) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z('Can only encode QR_CODE, but got ' + format);
+        if (format !== _BarcodeFormat__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.QR_CODE) {
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A('Can only encode QR_CODE, but got ' + format);
         }
         if (width < 0 || height < 0) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z("Requested dimensions are too small: " + width + "x" + height);
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A("Requested dimensions are too small: " + width + "x" + height);
         }
-        var errorCorrectionLevel = _decoder_ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_3__/* ["default"].L */ .Z.L;
+        var errorCorrectionLevel = _decoder_ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A.L;
         var quietZone = QRCodeWriter.QUIET_ZONE_SIZE;
         if (hints !== null) {
-            if (undefined !== hints.get(_EncodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"].ERROR_CORRECTION */ .Z.ERROR_CORRECTION)) {
-                errorCorrectionLevel = _decoder_ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_3__/* ["default"].fromString */ .Z.fromString(hints.get(_EncodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"].ERROR_CORRECTION */ .Z.ERROR_CORRECTION).toString());
+            if (undefined !== hints.get(_EncodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.ERROR_CORRECTION)) {
+                errorCorrectionLevel = _decoder_ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A.fromString(hints.get(_EncodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.ERROR_CORRECTION).toString());
             }
-            if (undefined !== hints.get(_EncodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"].MARGIN */ .Z.MARGIN)) {
-                quietZone = Number.parseInt(hints.get(_EncodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"].MARGIN */ .Z.MARGIN).toString(), 10);
+            if (undefined !== hints.get(_EncodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.MARGIN)) {
+                quietZone = Number.parseInt(hints.get(_EncodeHintType__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.MARGIN).toString(), 10);
             }
         }
-        var code = _encoder_Encoder__WEBPACK_IMPORTED_MODULE_4__/* ["default"].encode */ .Z.encode(contents, errorCorrectionLevel, hints);
+        var code = _encoder_Encoder__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A.encode(contents, errorCorrectionLevel, hints);
         return QRCodeWriter.renderResult(code, width, height, quietZone);
     };
     // Note that the input matrix uses 0 == white, 1 == black, while the output matrix uses
@@ -30838,7 +30838,7 @@ var QRCodeWriter = /** @class */ (function () {
     QRCodeWriter.renderResult = function (code, width /*int*/, height /*int*/, quietZone /*int*/) {
         var input = code.getMatrix();
         if (input === null) {
-            throw new _IllegalStateException__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z();
+            throw new _IllegalStateException__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A();
         }
         var inputWidth = input.getWidth();
         var inputHeight = input.getHeight();
@@ -30853,7 +30853,7 @@ var QRCodeWriter = /** @class */ (function () {
         // handle all the padding from 100x100 (the actual QR) up to 200x160.
         var leftPadding = Math.floor((outputWidth - (inputWidth * multiple)) / 2);
         var topPadding = Math.floor((outputHeight - (inputHeight * multiple)) / 2);
-        var output = new _common_BitMatrix__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z(outputWidth, outputHeight);
+        var output = new _common_BitMatrix__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A(outputWidth, outputHeight);
         for (var inputY = 0, outputY = topPadding; inputY < inputHeight; inputY++, outputY += multiple) {
             // Write the contents of this row of the barcode
             for (var inputX = 0, outputX = leftPadding; inputX < inputWidth; inputX++, outputX += multiple) {
@@ -30872,12 +30872,12 @@ var QRCodeWriter = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 579:
+/***/ 6021:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* unused harmony export DataMaskValues */
 /*
@@ -30984,21 +30984,21 @@ var DataMask = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 9297:
+/***/ 4299:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _common_BitSource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7677);
-/* harmony import */ var _common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5727);
-/* harmony import */ var _common_DecoderResult__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4522);
-/* harmony import */ var _common_StringUtils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3429);
-/* harmony import */ var _FormatException__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2468);
-/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(75);
-/* harmony import */ var _util_StringEncoding__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4421);
-/* harmony import */ var _Mode__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(7624);
+/* harmony import */ var _common_BitSource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(879);
+/* harmony import */ var _common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4945);
+/* harmony import */ var _common_DecoderResult__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9064);
+/* harmony import */ var _common_StringUtils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9563);
+/* harmony import */ var _FormatException__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7027);
+/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(432);
+/* harmony import */ var _util_StringEncoding__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(2442);
+/* harmony import */ var _Mode__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9986);
 /*
  * Copyright 2007 ZXing authors
  *
@@ -31040,8 +31040,8 @@ var DecodedBitStreamParser = /** @class */ (function () {
     function DecodedBitStreamParser() {
     }
     DecodedBitStreamParser.decode = function (bytes, version, ecLevel, hints) {
-        var bits = new _common_BitSource__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(bytes);
-        var result = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z();
+        var bits = new _common_BitSource__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(bytes);
+        var result = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A();
         var byteSegments = new Array(); // 1
         // TYPESCRIPTPORT: I do not use constructor with size 1 as in original Java means capacity and the array length is checked below
         var symbolSequence = -1;
@@ -31054,38 +31054,38 @@ var DecodedBitStreamParser = /** @class */ (function () {
                 // While still another segment to read...
                 if (bits.available() < 4) {
                     // OK, assume we're done. Really, a TERMINATOR mode should have been recorded here
-                    mode = _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"].TERMINATOR */ .Z.TERMINATOR;
+                    mode = _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A.TERMINATOR;
                 }
                 else {
                     var modeBits = bits.readBits(4);
-                    mode = _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"].forBits */ .Z.forBits(modeBits); // mode is encoded by 4 bits
+                    mode = _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A.forBits(modeBits); // mode is encoded by 4 bits
                 }
                 switch (mode) {
-                    case _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"].TERMINATOR */ .Z.TERMINATOR:
+                    case _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A.TERMINATOR:
                         break;
-                    case _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"].FNC1_FIRST_POSITION */ .Z.FNC1_FIRST_POSITION:
-                    case _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"].FNC1_SECOND_POSITION */ .Z.FNC1_SECOND_POSITION:
+                    case _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A.FNC1_FIRST_POSITION:
+                    case _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A.FNC1_SECOND_POSITION:
                         // We do little with FNC1 except alter the parsed result a bit according to the spec
                         fc1InEffect = true;
                         break;
-                    case _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"].STRUCTURED_APPEND */ .Z.STRUCTURED_APPEND:
+                    case _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A.STRUCTURED_APPEND:
                         if (bits.available() < 16) {
-                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
                         }
                         // sequence number and parity is added later to the result metadata
                         // Read next 8 bits (symbol sequence #) and 8 bits (data: parity), then continue
                         symbolSequence = bits.readBits(8);
                         parityData = bits.readBits(8);
                         break;
-                    case _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"].ECI */ .Z.ECI:
+                    case _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A.ECI:
                         // Count doesn't apply to ECI
                         var value = DecodedBitStreamParser.parseECIValue(bits);
-                        currentCharacterSetECI = _common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__/* ["default"].getCharacterSetECIByValue */ .Z.getCharacterSetECIByValue(value);
+                        currentCharacterSetECI = _common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.getCharacterSetECIByValue(value);
                         if (currentCharacterSetECI === null) {
-                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+                            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
                         }
                         break;
-                    case _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"].HANZI */ .Z.HANZI:
+                    case _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A.HANZI:
                         // First handle Hanzi mode which does not start with character count
                         // Chinese mode contains a sub set indicator right after mode indicator
                         var subset = bits.readBits(4);
@@ -31099,30 +31099,30 @@ var DecodedBitStreamParser = /** @class */ (function () {
                         // How many characters will follow, encoded in this mode?
                         var count = bits.readBits(mode.getCharacterCountBits(version));
                         switch (mode) {
-                            case _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"].NUMERIC */ .Z.NUMERIC:
+                            case _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A.NUMERIC:
                                 DecodedBitStreamParser.decodeNumericSegment(bits, result, count);
                                 break;
-                            case _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"].ALPHANUMERIC */ .Z.ALPHANUMERIC:
+                            case _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A.ALPHANUMERIC:
                                 DecodedBitStreamParser.decodeAlphanumericSegment(bits, result, count, fc1InEffect);
                                 break;
-                            case _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"].BYTE */ .Z.BYTE:
+                            case _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A.BYTE:
                                 DecodedBitStreamParser.decodeByteSegment(bits, result, count, currentCharacterSetECI, byteSegments, hints);
                                 break;
-                            case _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"].KANJI */ .Z.KANJI:
+                            case _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A.KANJI:
                                 DecodedBitStreamParser.decodeKanjiSegment(bits, result, count);
                                 break;
                             default:
-                                throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+                                throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
                         }
                         break;
                 }
-            } while (mode !== _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"].TERMINATOR */ .Z.TERMINATOR);
+            } while (mode !== _Mode__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A.TERMINATOR);
         }
         catch (iae /*: IllegalArgumentException*/) {
             // from readBits() calls
-            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
         }
-        return new _common_DecoderResult__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z(bytes, result.toString(), byteSegments.length === 0 ? null : byteSegments, ecLevel === null ? null : ecLevel.toString(), symbolSequence, parityData);
+        return new _common_DecoderResult__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A(bytes, result.toString(), byteSegments.length === 0 ? null : byteSegments, ecLevel === null ? null : ecLevel.toString(), symbolSequence, parityData);
     };
     /**
      * See specification GBT 18284-2000
@@ -31130,7 +31130,7 @@ var DecodedBitStreamParser = /** @class */ (function () {
     DecodedBitStreamParser.decodeHanziSegment = function (bits, result, count /*int*/) {
         // Don't crash trying to read more bits than we have available.
         if (count * 13 > bits.available()) {
-            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
         }
         // Each character will require 2 bytes. Read the characters as 2-byte pairs
         // and decode as GB2312 afterwards
@@ -31154,17 +31154,17 @@ var DecodedBitStreamParser = /** @class */ (function () {
             count--;
         }
         try {
-            result.append(_util_StringEncoding__WEBPACK_IMPORTED_MODULE_6__/* ["default"].decode */ .Z.decode(buffer, _common_StringUtils__WEBPACK_IMPORTED_MODULE_3__/* ["default"].GB2312 */ .Z.GB2312));
+            result.append(_util_StringEncoding__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A.decode(buffer, _common_StringUtils__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A.GB2312));
             // TYPESCRIPTPORT: TODO: implement GB2312 decode. StringView from MDN could be a starting point
         }
         catch (ignored /*: UnsupportedEncodingException*/) {
-            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z(ignored);
+            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A(ignored);
         }
     };
     DecodedBitStreamParser.decodeKanjiSegment = function (bits, result, count /*int*/) {
         // Don't crash trying to read more bits than we have available.
         if (count * 13 > bits.available()) {
-            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
         }
         // Each character will require 2 bytes. Read the characters as 2-byte pairs
         // and decode as Shift_JIS afterwards
@@ -31189,17 +31189,17 @@ var DecodedBitStreamParser = /** @class */ (function () {
         }
         // Shift_JIS may not be supported in some environments:
         try {
-            result.append(_util_StringEncoding__WEBPACK_IMPORTED_MODULE_6__/* ["default"].decode */ .Z.decode(buffer, _common_StringUtils__WEBPACK_IMPORTED_MODULE_3__/* ["default"].SHIFT_JIS */ .Z.SHIFT_JIS));
+            result.append(_util_StringEncoding__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A.decode(buffer, _common_StringUtils__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A.SHIFT_JIS));
             // TYPESCRIPTPORT: TODO: implement SHIFT_JIS decode. StringView from MDN could be a starting point
         }
         catch (ignored /*: UnsupportedEncodingException*/) {
-            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z(ignored);
+            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A(ignored);
         }
     };
     DecodedBitStreamParser.decodeByteSegment = function (bits, result, count /*int*/, currentCharacterSetECI, byteSegments, hints) {
         // Don't crash trying to read more bits than we have available.
         if (8 * count > bits.available()) {
-            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
         }
         var readBytes = new Uint8Array(count);
         for (var i = 0; i < count; i++) {
@@ -31212,22 +31212,22 @@ var DecodedBitStreamParser = /** @class */ (function () {
             // upon decoding. I have seen ISO-8859-1 used as well as
             // Shift_JIS -- without anything like an ECI designator to
             // give a hint.
-            encoding = _common_StringUtils__WEBPACK_IMPORTED_MODULE_3__/* ["default"].guessEncoding */ .Z.guessEncoding(readBytes, hints);
+            encoding = _common_StringUtils__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A.guessEncoding(readBytes, hints);
         }
         else {
             encoding = currentCharacterSetECI.getName();
         }
         try {
-            result.append(_util_StringEncoding__WEBPACK_IMPORTED_MODULE_6__/* ["default"].decode */ .Z.decode(readBytes, encoding));
+            result.append(_util_StringEncoding__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A.decode(readBytes, encoding));
         }
         catch (ignored /*: UnsupportedEncodingException*/) {
-            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z(ignored);
+            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A(ignored);
         }
         byteSegments.push(readBytes);
     };
     DecodedBitStreamParser.toAlphaNumericChar = function (value /*int*/) {
         if (value >= DecodedBitStreamParser.ALPHANUMERIC_CHARS.length) {
-            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+            throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
         }
         return DecodedBitStreamParser.ALPHANUMERIC_CHARS[value];
     };
@@ -31236,7 +31236,7 @@ var DecodedBitStreamParser = /** @class */ (function () {
         var start = result.length();
         while (count > 1) {
             if (bits.available() < 11) {
-                throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+                throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
             }
             var nextTwoCharsBits = bits.readBits(11);
             result.append(DecodedBitStreamParser.toAlphaNumericChar(Math.floor(nextTwoCharsBits / 45)));
@@ -31246,7 +31246,7 @@ var DecodedBitStreamParser = /** @class */ (function () {
         if (count === 1) {
             // special case: one character left
             if (bits.available() < 6) {
-                throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+                throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
             }
             result.append(DecodedBitStreamParser.toAlphaNumericChar(bits.readBits(6)));
         }
@@ -31272,11 +31272,11 @@ var DecodedBitStreamParser = /** @class */ (function () {
         while (count >= 3) {
             // Each 10 bits encodes three digits
             if (bits.available() < 10) {
-                throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+                throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
             }
             var threeDigitsBits = bits.readBits(10);
             if (threeDigitsBits >= 1000) {
-                throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+                throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
             }
             result.append(DecodedBitStreamParser.toAlphaNumericChar(Math.floor(threeDigitsBits / 100)));
             result.append(DecodedBitStreamParser.toAlphaNumericChar(Math.floor(threeDigitsBits / 10) % 10));
@@ -31286,11 +31286,11 @@ var DecodedBitStreamParser = /** @class */ (function () {
         if (count === 2) {
             // Two digits left over to read, encoded in 7 bits
             if (bits.available() < 7) {
-                throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+                throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
             }
             var twoDigitsBits = bits.readBits(7);
             if (twoDigitsBits >= 100) {
-                throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+                throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
             }
             result.append(DecodedBitStreamParser.toAlphaNumericChar(Math.floor(twoDigitsBits / 10)));
             result.append(DecodedBitStreamParser.toAlphaNumericChar(twoDigitsBits % 10));
@@ -31298,11 +31298,11 @@ var DecodedBitStreamParser = /** @class */ (function () {
         else if (count === 1) {
             // One digit left over to read
             if (bits.available() < 4) {
-                throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+                throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
             }
             var digitBits = bits.readBits(4);
             if (digitBits >= 10) {
-                throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+                throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
             }
             result.append(DecodedBitStreamParser.toAlphaNumericChar(digitBits));
         }
@@ -31323,7 +31323,7 @@ var DecodedBitStreamParser = /** @class */ (function () {
             var secondThirdBytes = bits.readBits(16);
             return (((firstByte & 0x1F) << 16) & 0xFFFFFFFF) | secondThirdBytes;
         }
-        throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+        throw new _FormatException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
     };
     /**
      * See ISO 18004:2006, 6.4.4 Table 5
@@ -31345,16 +31345,16 @@ var DecodedBitStreamParser = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 8911:
+/***/ 3317:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* unused harmony export ErrorCorrectionLevelValues */
-/* harmony import */ var _ArgumentException__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3087);
-/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8475);
+/* harmony import */ var _ArgumentException__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2951);
+/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5793);
 /*
  * Copyright 2007 ZXing authors
  *
@@ -31406,7 +31406,7 @@ var ErrorCorrectionLevel = /** @class */ (function () {
             case 'M': return ErrorCorrectionLevel.M;
             case 'Q': return ErrorCorrectionLevel.Q;
             case 'H': return ErrorCorrectionLevel.H;
-            default: throw new _ArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(s + 'not available');
+            default: throw new _ArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(s + 'not available');
         }
     };
     ErrorCorrectionLevel.prototype.toString = function () {
@@ -31425,7 +31425,7 @@ var ErrorCorrectionLevel = /** @class */ (function () {
      */
     ErrorCorrectionLevel.forBits = function (bits /*int*/) {
         if (bits < 0 || bits >= ErrorCorrectionLevel.FOR_BITS.size) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z();
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A();
         }
         return ErrorCorrectionLevel.FOR_BITS.get(bits);
     };
@@ -31446,15 +31446,15 @@ var ErrorCorrectionLevel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 5173:
+/***/ 1722:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8911);
-/* harmony import */ var _util_Integer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3450);
+/* harmony import */ var _ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3317);
+/* harmony import */ var _util_Integer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9978);
 /*
  * Copyright 2007 ZXing authors
  *
@@ -31495,12 +31495,12 @@ var __values = (undefined && undefined.__values) || function(o) {
 var FormatInformation = /** @class */ (function () {
     function FormatInformation(formatInfo /*int*/) {
         // Bits 3,4
-        this.errorCorrectionLevel = _ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_0__/* ["default"].forBits */ .Z.forBits((formatInfo >> 3) & 0x03);
+        this.errorCorrectionLevel = _ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.forBits((formatInfo >> 3) & 0x03);
         // Bottom 3 bits
         this.dataMask = /*(byte) */ (formatInfo & 0x07);
     }
     FormatInformation.numBitsDiffering = function (a /*int*/, b /*int*/) {
-        return _util_Integer__WEBPACK_IMPORTED_MODULE_1__/* ["default"].bitCount */ .Z.bitCount(a ^ b);
+        return _util_Integer__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.bitCount(a ^ b);
     };
     /**
      * @param maskedFormatInfo1 format info indicator, with mask still applied
@@ -31625,15 +31625,15 @@ var FormatInformation = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 7624:
+/***/ 9986:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* unused harmony export ModeValues */
-/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8475);
+/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5793);
 /*
  * Copyright 2007 ZXing authors
  *
@@ -31687,7 +31687,7 @@ var Mode = /** @class */ (function () {
     Mode.forBits = function (bits /*int*/) {
         var mode = Mode.FOR_BITS.get(bits);
         if (undefined === mode) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A();
         }
         return mode;
     };
@@ -31746,20 +31746,20 @@ var Mode = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 1507:
+/***/ 6870:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Z": () => (/* binding */ decoder_Version)
+  A: () => (/* binding */ decoder_Version)
 });
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/BitMatrix.js
-var BitMatrix = __webpack_require__(1103);
+var BitMatrix = __webpack_require__(8307);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/FormatInformation.js
-var FormatInformation = __webpack_require__(5173);
+var FormatInformation = __webpack_require__(1722);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/ECBlocks.js
 var __values = (undefined && undefined.__values) || function(o) {
     var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
@@ -31841,9 +31841,9 @@ var ECB = /** @class */ (function () {
 /* harmony default export */ const decoder_ECB = (ECB);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/FormatException.js
-var FormatException = __webpack_require__(2468);
+var FormatException = __webpack_require__(7027);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/IllegalArgumentException.js
-var IllegalArgumentException = __webpack_require__(8475);
+var IllegalArgumentException = __webpack_require__(5793);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/Version.js
 /*
  * Copyright 2007 ZXing authors
@@ -31937,18 +31937,18 @@ var Version = /** @class */ (function () {
      */
     Version.getProvisionalVersionForDimension = function (dimension /*int*/) {
         if (dimension % 4 !== 1) {
-            throw new FormatException/* default */.Z();
+            throw new FormatException/* default */.A();
         }
         try {
             return this.getVersionForNumber((dimension - 17) / 4);
         }
         catch (ignored /*: IllegalArgumentException*/) {
-            throw new FormatException/* default */.Z();
+            throw new FormatException/* default */.A();
         }
     };
     Version.getVersionForNumber = function (versionNumber /*int*/) {
         if (versionNumber < 1 || versionNumber > 40) {
-            throw new IllegalArgumentException/* default */.Z();
+            throw new IllegalArgumentException/* default */.A();
         }
         return Version.VERSIONS[versionNumber - 1];
     };
@@ -31963,7 +31963,7 @@ var Version = /** @class */ (function () {
             }
             // Otherwise see if this is the closest to a real version info bit string
             // we have seen so far
-            var bitsDifference = FormatInformation/* default.numBitsDiffering */.Z.numBitsDiffering(versionBits, targetVersion);
+            var bitsDifference = FormatInformation/* default */.A.numBitsDiffering(versionBits, targetVersion);
             if (bitsDifference < bestDifference) {
                 bestVersion = i + 7;
                 bestDifference = bitsDifference;
@@ -31982,7 +31982,7 @@ var Version = /** @class */ (function () {
      */
     Version.prototype.buildFunctionPattern = function () {
         var dimension = this.getDimensionForVersion();
-        var bitMatrix = new BitMatrix/* default */.Z(dimension);
+        var bitMatrix = new BitMatrix/* default */.A(dimension);
         // Top left finder pattern + separator + format
         bitMatrix.setRegion(0, 0, 9, 9);
         // Top right finder pattern + separator + format
@@ -32082,15 +32082,15 @@ var Version = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 8556:
+/***/ 966:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _util_Arrays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1126);
-/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75);
+/* harmony import */ var _util_Arrays__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2598);
+/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(432);
 /*
  * Copyright 2008 ZXing authors
  *
@@ -32167,7 +32167,7 @@ var ByteMatrix = /** @class */ (function () {
         try {
             for (var _b = __values(this.bytes), _c = _b.next(); !_c.done; _c = _b.next()) {
                 var aByte = _c.value;
-                _util_Arrays__WEBPACK_IMPORTED_MODULE_0__/* ["default"].fill */ .Z.fill(aByte, value);
+                _util_Arrays__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.fill(aByte, value);
             }
         }
         catch (e_1_1) { e_1 = { error: e_1_1 }; }
@@ -32202,7 +32202,7 @@ var ByteMatrix = /** @class */ (function () {
     };
     /*@Override*/
     ByteMatrix.prototype.toString = function () {
-        var result = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z(); // (2 * width * height + 2)
+        var result = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A(); // (2 * width * height + 2)
         for (var y = 0, height = this.height; y < height; ++y) {
             var bytesY = this.bytes[y];
             for (var x = 0, width = this.width; x < width; ++x) {
@@ -32229,40 +32229,40 @@ var ByteMatrix = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 3080:
+/***/ 2177:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Z": () => (/* binding */ encoder_Encoder)
+  A: () => (/* binding */ encoder_Encoder)
 });
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/EncodeHintType.js
-var EncodeHintType = __webpack_require__(5127);
+var EncodeHintType = __webpack_require__(1444);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/BitArray.js
-var BitArray = __webpack_require__(1555);
+var BitArray = __webpack_require__(5369);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/CharacterSetECI.js
-var CharacterSetECI = __webpack_require__(5727);
+var CharacterSetECI = __webpack_require__(4945);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/reedsolomon/GenericGF.js
-var GenericGF = __webpack_require__(2127);
+var GenericGF = __webpack_require__(2429);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/reedsolomon/ReedSolomonEncoder.js
-var ReedSolomonEncoder = __webpack_require__(8074);
+var ReedSolomonEncoder = __webpack_require__(7464);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/Mode.js
-var Mode = __webpack_require__(7624);
+var Mode = __webpack_require__(9986);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/Version.js + 2 modules
-var Version = __webpack_require__(1507);
+var Version = __webpack_require__(6870);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/qrcode/encoder/MaskUtil.js
-var MaskUtil = __webpack_require__(9790);
+var MaskUtil = __webpack_require__(1349);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/qrcode/encoder/ByteMatrix.js
-var ByteMatrix = __webpack_require__(8556);
+var ByteMatrix = __webpack_require__(966);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/qrcode/encoder/QRCode.js
-var QRCode = __webpack_require__(9087);
+var QRCode = __webpack_require__(9395);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/qrcode/encoder/MatrixUtil.js
-var MatrixUtil = __webpack_require__(2569);
+var MatrixUtil = __webpack_require__(6172);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StringEncoding.js
-var StringEncoding = __webpack_require__(4421);
+var StringEncoding = __webpack_require__(2442);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/encoder/BlockPair.js
 /*
  * Copyright 2008 ZXing authors
@@ -32296,7 +32296,7 @@ var BlockPair = /** @class */ (function () {
 /* harmony default export */ const encoder_BlockPair = (BlockPair);
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/WriterException.js
-var WriterException = __webpack_require__(1079);
+var WriterException = __webpack_require__(5527);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/encoder/Encoder.js
 /*
  * Copyright 2008 ZXing authors
@@ -32354,10 +32354,10 @@ var Encoder = /** @class */ (function () {
     // The mask penalty calculation is complicated.  See Table 21 of JISX0510:2004 (p.45) for details.
     // Basically it applies four rules and summate all penalties.
     Encoder.calculateMaskPenalty = function (matrix) {
-        return MaskUtil/* default.applyMaskPenaltyRule1 */.Z.applyMaskPenaltyRule1(matrix)
-            + MaskUtil/* default.applyMaskPenaltyRule2 */.Z.applyMaskPenaltyRule2(matrix)
-            + MaskUtil/* default.applyMaskPenaltyRule3 */.Z.applyMaskPenaltyRule3(matrix)
-            + MaskUtil/* default.applyMaskPenaltyRule4 */.Z.applyMaskPenaltyRule4(matrix);
+        return MaskUtil/* default */.A.applyMaskPenaltyRule1(matrix)
+            + MaskUtil/* default */.A.applyMaskPenaltyRule2(matrix)
+            + MaskUtil/* default */.A.applyMaskPenaltyRule3(matrix)
+            + MaskUtil/* default */.A.applyMaskPenaltyRule4(matrix);
     };
     /**
      * @param content text to encode
@@ -32373,19 +32373,19 @@ var Encoder = /** @class */ (function () {
         if (hints === void 0) { hints = null; }
         // Determine what character encoding has been specified by the caller, if any
         var encoding = Encoder.DEFAULT_BYTE_MODE_ENCODING;
-        var hasEncodingHint = hints !== null && undefined !== hints.get(EncodeHintType/* default.CHARACTER_SET */.Z.CHARACTER_SET);
+        var hasEncodingHint = hints !== null && undefined !== hints.get(EncodeHintType/* default */.A.CHARACTER_SET);
         if (hasEncodingHint) {
-            encoding = hints.get(EncodeHintType/* default.CHARACTER_SET */.Z.CHARACTER_SET).toString();
+            encoding = hints.get(EncodeHintType/* default */.A.CHARACTER_SET).toString();
         }
         // Pick an encoding mode appropriate for the content. Note that this will not attempt to use
         // multiple modes / segments even if that were more efficient. Twould be nice.
         var mode = this.chooseMode(content, encoding);
         // This will store the header information, like mode and
         // length, as well as "header" segments like an ECI segment.
-        var headerBits = new BitArray/* default */.Z();
+        var headerBits = new BitArray/* default */.A();
         // Append ECI segment if applicable
-        if (mode === Mode/* default.BYTE */.Z.BYTE && (hasEncodingHint || Encoder.DEFAULT_BYTE_MODE_ENCODING !== encoding)) {
-            var eci = CharacterSetECI/* default.getCharacterSetECIByName */.Z.getCharacterSetECIByName(encoding);
+        if (mode === Mode/* default */.A.BYTE && (hasEncodingHint || Encoder.DEFAULT_BYTE_MODE_ENCODING !== encoding)) {
+            var eci = CharacterSetECI/* default */.A.getCharacterSetECIByName(encoding);
             if (eci !== undefined) {
                 this.appendECI(eci, headerBits);
             }
@@ -32394,24 +32394,24 @@ var Encoder = /** @class */ (function () {
         this.appendModeInfo(mode, headerBits);
         // Collect data within the main segment, separately, to count its size if needed. Don't add it to
         // main payload yet.
-        var dataBits = new BitArray/* default */.Z();
+        var dataBits = new BitArray/* default */.A();
         this.appendBytes(content, mode, dataBits, encoding);
         var version;
-        if (hints !== null && undefined !== hints.get(EncodeHintType/* default.QR_VERSION */.Z.QR_VERSION)) {
-            var versionNumber = Number.parseInt(hints.get(EncodeHintType/* default.QR_VERSION */.Z.QR_VERSION).toString(), 10);
-            version = Version/* default.getVersionForNumber */.Z.getVersionForNumber(versionNumber);
+        if (hints !== null && undefined !== hints.get(EncodeHintType/* default */.A.QR_VERSION)) {
+            var versionNumber = Number.parseInt(hints.get(EncodeHintType/* default */.A.QR_VERSION).toString(), 10);
+            version = Version/* default */.A.getVersionForNumber(versionNumber);
             var bitsNeeded = this.calculateBitsNeeded(mode, headerBits, dataBits, version);
             if (!this.willFit(bitsNeeded, version, ecLevel)) {
-                throw new WriterException/* default */.Z('Data too big for requested version');
+                throw new WriterException/* default */.A('Data too big for requested version');
             }
         }
         else {
             version = this.recommendVersion(ecLevel, mode, headerBits, dataBits);
         }
-        var headerAndDataBits = new BitArray/* default */.Z();
+        var headerAndDataBits = new BitArray/* default */.A();
         headerAndDataBits.appendBitArray(headerBits);
         // Find "length" of main segment and write it
-        var numLetters = mode === Mode/* default.BYTE */.Z.BYTE ? dataBits.getSizeInBytes() : content.length;
+        var numLetters = mode === Mode/* default */.A.BYTE ? dataBits.getSizeInBytes() : content.length;
         this.appendLengthInfo(numLetters, version, mode, headerAndDataBits);
         // Put data together into the overall payload
         headerAndDataBits.appendBitArray(dataBits);
@@ -32421,17 +32421,17 @@ var Encoder = /** @class */ (function () {
         this.terminateBits(numDataBytes, headerAndDataBits);
         // Interleave data bits with error correction code.
         var finalBits = this.interleaveWithECBytes(headerAndDataBits, version.getTotalCodewords(), numDataBytes, ecBlocks.getNumBlocks());
-        var qrCode = new QRCode/* default */.Z();
+        var qrCode = new QRCode/* default */.A();
         qrCode.setECLevel(ecLevel);
         qrCode.setMode(mode);
         qrCode.setVersion(version);
         //  Choose the mask pattern and set to "qrCode".
         var dimension = version.getDimensionForVersion();
-        var matrix = new ByteMatrix/* default */.Z(dimension, dimension);
+        var matrix = new ByteMatrix/* default */.A(dimension, dimension);
         var maskPattern = this.chooseMaskPattern(finalBits, ecLevel, version, matrix);
         qrCode.setMaskPattern(maskPattern);
         // Build the matrix and set it to "qrCode".
-        MatrixUtil/* default.buildMatrix */.Z.buildMatrix(finalBits, ecLevel, version, maskPattern, matrix);
+        MatrixUtil/* default */.A.buildMatrix(finalBits, ecLevel, version, maskPattern, matrix);
         qrCode.setMatrix(matrix);
         return qrCode;
     };
@@ -32444,7 +32444,7 @@ var Encoder = /** @class */ (function () {
         // Hard part: need to know version to know how many bits length takes. But need to know how many
         // bits it takes to know version. First we take a guess at version by assuming version will be
         // the minimum, 1:
-        var provisionalBitsNeeded = this.calculateBitsNeeded(mode, headerBits, dataBits, Version/* default.getVersionForNumber */.Z.getVersionForNumber(1));
+        var provisionalBitsNeeded = this.calculateBitsNeeded(mode, headerBits, dataBits, Version/* default */.A.getVersionForNumber(1));
         var provisionalVersion = this.chooseVersion(provisionalBitsNeeded, ecLevel);
         // Use that guess to calculate the right version. I am still not sure this works in 100% of cases.
         var bitsNeeded = this.calculateBitsNeeded(mode, headerBits, dataBits, provisionalVersion);
@@ -32472,9 +32472,9 @@ var Encoder = /** @class */ (function () {
      */
     Encoder.chooseMode = function (content, encoding) {
         if (encoding === void 0) { encoding = null; }
-        if (CharacterSetECI/* default.SJIS.getName */.Z.SJIS.getName() === encoding && this.isOnlyDoubleByteKanji(content)) {
+        if (CharacterSetECI/* default */.A.SJIS.getName() === encoding && this.isOnlyDoubleByteKanji(content)) {
             // Choose Kanji mode if all input are double-byte characters
-            return Mode/* default.KANJI */.Z.KANJI;
+            return Mode/* default */.A.KANJI;
         }
         var hasNumeric = false;
         var hasAlphanumeric = false;
@@ -32487,21 +32487,21 @@ var Encoder = /** @class */ (function () {
                 hasAlphanumeric = true;
             }
             else {
-                return Mode/* default.BYTE */.Z.BYTE;
+                return Mode/* default */.A.BYTE;
             }
         }
         if (hasAlphanumeric) {
-            return Mode/* default.ALPHANUMERIC */.Z.ALPHANUMERIC;
+            return Mode/* default */.A.ALPHANUMERIC;
         }
         if (hasNumeric) {
-            return Mode/* default.NUMERIC */.Z.NUMERIC;
+            return Mode/* default */.A.NUMERIC;
         }
-        return Mode/* default.BYTE */.Z.BYTE;
+        return Mode/* default */.A.BYTE;
     };
     Encoder.isOnlyDoubleByteKanji = function (content) {
         var bytes;
         try {
-            bytes = StringEncoding/* default.encode */.Z.encode(content, CharacterSetECI/* default.SJIS */.Z.SJIS); // content.getBytes("Shift_JIS"))
+            bytes = StringEncoding/* default */.A.encode(content, CharacterSetECI/* default */.A.SJIS); // content.getBytes("Shift_JIS"))
         }
         catch (ignored /*: UnsupportedEncodingException*/) {
             return false;
@@ -32522,8 +32522,8 @@ var Encoder = /** @class */ (function () {
         var minPenalty = Number.MAX_SAFE_INTEGER; // Lower penalty is better.
         var bestMaskPattern = -1;
         // We try all mask patterns to choose the best one.
-        for (var maskPattern = 0; maskPattern < QRCode/* default.NUM_MASK_PATTERNS */.Z.NUM_MASK_PATTERNS; maskPattern++) {
-            MatrixUtil/* default.buildMatrix */.Z.buildMatrix(bits, ecLevel, version, maskPattern, matrix);
+        for (var maskPattern = 0; maskPattern < QRCode/* default */.A.NUM_MASK_PATTERNS; maskPattern++) {
+            MatrixUtil/* default */.A.buildMatrix(bits, ecLevel, version, maskPattern, matrix);
             var penalty = this.calculateMaskPenalty(matrix);
             if (penalty < minPenalty) {
                 minPenalty = penalty;
@@ -32534,12 +32534,12 @@ var Encoder = /** @class */ (function () {
     };
     Encoder.chooseVersion = function (numInputBits /*int*/, ecLevel) {
         for (var versionNum = 1; versionNum <= 40; versionNum++) {
-            var version = Version/* default.getVersionForNumber */.Z.getVersionForNumber(versionNum);
+            var version = Version/* default */.A.getVersionForNumber(versionNum);
             if (Encoder.willFit(numInputBits, version, ecLevel)) {
                 return version;
             }
         }
-        throw new WriterException/* default */.Z('Data too big');
+        throw new WriterException/* default */.A('Data too big');
     };
     /**
      * @return true if the number of input bits will fit in a code with the specified version and
@@ -32563,7 +32563,7 @@ var Encoder = /** @class */ (function () {
     Encoder.terminateBits = function (numDataBytes /*int*/, bits) {
         var capacity = numDataBytes * 8;
         if (bits.getSize() > capacity) {
-            throw new WriterException/* default */.Z('data bits cannot fit in the QR Code' + bits.getSize() + ' > ' +
+            throw new WriterException/* default */.A('data bits cannot fit in the QR Code' + bits.getSize() + ' > ' +
                 capacity);
         }
         for (var i = 0; i < 4 && bits.getSize() < capacity; ++i) {
@@ -32583,7 +32583,7 @@ var Encoder = /** @class */ (function () {
             bits.appendBits((i & 0x01) === 0 ? 0xEC : 0x11, 8);
         }
         if (bits.getSize() !== capacity) {
-            throw new WriterException/* default */.Z('Bits size does not equal capacity');
+            throw new WriterException/* default */.A('Bits size does not equal capacity');
         }
     };
     /**
@@ -32593,7 +32593,7 @@ var Encoder = /** @class */ (function () {
      */
     Encoder.getNumDataBytesAndNumECBytesForBlockID = function (numTotalBytes /*int*/, numDataBytes /*int*/, numRSBlocks /*int*/, blockID /*int*/, numDataBytesInBlock, numECBytesInBlock) {
         if (blockID >= numRSBlocks) {
-            throw new WriterException/* default */.Z('Block ID too large');
+            throw new WriterException/* default */.A('Block ID too large');
         }
         // numRsBlocksInGroup2 = 196 % 5 = 1
         var numRsBlocksInGroup2 = numTotalBytes % numRSBlocks;
@@ -32614,11 +32614,11 @@ var Encoder = /** @class */ (function () {
         // Sanity checks.
         // 26 = 26
         if (numEcBytesInGroup1 !== numEcBytesInGroup2) {
-            throw new WriterException/* default */.Z('EC bytes mismatch');
+            throw new WriterException/* default */.A('EC bytes mismatch');
         }
         // 5 = 4 + 1.
         if (numRSBlocks !== numRsBlocksInGroup1 + numRsBlocksInGroup2) {
-            throw new WriterException/* default */.Z('RS blocks mismatch');
+            throw new WriterException/* default */.A('RS blocks mismatch');
         }
         // 196 = (13 + 26) * 4 + (14 + 26) * 1
         if (numTotalBytes !==
@@ -32626,7 +32626,7 @@ var Encoder = /** @class */ (function () {
                 numRsBlocksInGroup1) +
                 ((numDataBytesInGroup2 + numEcBytesInGroup2) *
                     numRsBlocksInGroup2)) {
-            throw new WriterException/* default */.Z('Total bytes mismatch');
+            throw new WriterException/* default */.A('Total bytes mismatch');
         }
         if (blockID < numRsBlocksInGroup1) {
             numDataBytesInBlock[0] = numDataBytesInGroup1;
@@ -32645,7 +32645,7 @@ var Encoder = /** @class */ (function () {
         var e_1, _a, e_2, _b;
         // "bits" must have "getNumDataBytes" bytes of data.
         if (bits.getSizeInBytes() !== numDataBytes) {
-            throw new WriterException/* default */.Z('Number of bits and data bytes does not match');
+            throw new WriterException/* default */.A('Number of bits and data bytes does not match');
         }
         // Step 1.  Divide data bytes into blocks and generate error correction bytes for them. We'll
         // store the divided data bytes blocks and error correction bytes blocks into "blocks".
@@ -32668,9 +32668,9 @@ var Encoder = /** @class */ (function () {
             dataBytesOffset += numDataBytesInBlock[0];
         }
         if (numDataBytes !== dataBytesOffset) {
-            throw new WriterException/* default */.Z('Data bytes does not match offset');
+            throw new WriterException/* default */.A('Data bytes does not match offset');
         }
-        var result = new BitArray/* default */.Z();
+        var result = new BitArray/* default */.A();
         // First, place data blocks.
         for (var i = 0; i < maxNumDataBytes; ++i) {
             try {
@@ -32710,7 +32710,7 @@ var Encoder = /** @class */ (function () {
             }
         }
         if (numTotalBytes !== result.getSizeInBytes()) { // Should be same.
-            throw new WriterException/* default */.Z('Interleaving error: ' + numTotalBytes + ' and ' +
+            throw new WriterException/* default */.A('Interleaving error: ' + numTotalBytes + ' and ' +
                 result.getSizeInBytes() + ' differ.');
         }
         return result;
@@ -32721,7 +32721,7 @@ var Encoder = /** @class */ (function () {
         for (var i = 0; i < numDataBytes; i++) {
             toEncode[i] = dataBytes[i] & 0xFF;
         }
-        new ReedSolomonEncoder/* default */.Z(GenericGF/* default.QR_CODE_FIELD_256 */.Z.QR_CODE_FIELD_256).encode(toEncode, numEcBytesInBlock);
+        new ReedSolomonEncoder/* default */.A(GenericGF/* default */.A.QR_CODE_FIELD_256).encode(toEncode, numEcBytesInBlock);
         var ecBytes = new Uint8Array(numEcBytesInBlock);
         for (var i = 0; i < numEcBytesInBlock; i++) {
             ecBytes[i] = /*(byte) */ toEncode[numDataBytes + i];
@@ -32740,7 +32740,7 @@ var Encoder = /** @class */ (function () {
     Encoder.appendLengthInfo = function (numLetters /*int*/, version, mode, bits) {
         var numBits = mode.getCharacterCountBits(version);
         if (numLetters >= (1 << numBits)) {
-            throw new WriterException/* default */.Z(numLetters + ' is bigger than ' + ((1 << numBits) - 1));
+            throw new WriterException/* default */.A(numLetters + ' is bigger than ' + ((1 << numBits) - 1));
         }
         bits.appendBits(numLetters, numBits);
     };
@@ -32749,20 +32749,20 @@ var Encoder = /** @class */ (function () {
      */
     Encoder.appendBytes = function (content, mode, bits, encoding) {
         switch (mode) {
-            case Mode/* default.NUMERIC */.Z.NUMERIC:
+            case Mode/* default */.A.NUMERIC:
                 Encoder.appendNumericBytes(content, bits);
                 break;
-            case Mode/* default.ALPHANUMERIC */.Z.ALPHANUMERIC:
+            case Mode/* default */.A.ALPHANUMERIC:
                 Encoder.appendAlphanumericBytes(content, bits);
                 break;
-            case Mode/* default.BYTE */.Z.BYTE:
+            case Mode/* default */.A.BYTE:
                 Encoder.append8BitBytes(content, bits, encoding);
                 break;
-            case Mode/* default.KANJI */.Z.KANJI:
+            case Mode/* default */.A.KANJI:
                 Encoder.appendKanjiBytes(content, bits);
                 break;
             default:
-                throw new WriterException/* default */.Z('Invalid mode: ' + mode);
+                throw new WriterException/* default */.A('Invalid mode: ' + mode);
         }
     };
     Encoder.getDigit = function (singleCharacter) {
@@ -32803,12 +32803,12 @@ var Encoder = /** @class */ (function () {
         while (i < length) {
             var code1 = Encoder.getAlphanumericCode(content.charCodeAt(i));
             if (code1 === -1) {
-                throw new WriterException/* default */.Z();
+                throw new WriterException/* default */.A();
             }
             if (i + 1 < length) {
                 var code2 = Encoder.getAlphanumericCode(content.charCodeAt(i + 1));
                 if (code2 === -1) {
-                    throw new WriterException/* default */.Z();
+                    throw new WriterException/* default */.A();
                 }
                 // Encode two alphanumeric letters in 11 bits.
                 bits.appendBits(code1 * 45 + code2, 11);
@@ -32824,10 +32824,10 @@ var Encoder = /** @class */ (function () {
     Encoder.append8BitBytes = function (content, bits, encoding) {
         var bytes;
         try {
-            bytes = StringEncoding/* default.encode */.Z.encode(content, encoding);
+            bytes = StringEncoding/* default */.A.encode(content, encoding);
         }
         catch (uee /*: UnsupportedEncodingException*/) {
-            throw new WriterException/* default */.Z(uee);
+            throw new WriterException/* default */.A(uee);
         }
         for (var i = 0, length_2 = bytes.length; i !== length_2; i++) {
             var b = bytes[i];
@@ -32840,10 +32840,10 @@ var Encoder = /** @class */ (function () {
     Encoder.appendKanjiBytes = function (content, bits) {
         var bytes;
         try {
-            bytes = StringEncoding/* default.encode */.Z.encode(content, CharacterSetECI/* default.SJIS */.Z.SJIS);
+            bytes = StringEncoding/* default */.A.encode(content, CharacterSetECI/* default */.A.SJIS);
         }
         catch (uee /*: UnsupportedEncodingException*/) {
-            throw new WriterException/* default */.Z(uee);
+            throw new WriterException/* default */.A(uee);
         }
         var length = bytes.length;
         for (var i = 0; i < length; i += 2) {
@@ -32858,14 +32858,14 @@ var Encoder = /** @class */ (function () {
                 subtracted = code - 0xc140;
             }
             if (subtracted === -1) {
-                throw new WriterException/* default */.Z('Invalid byte sequence');
+                throw new WriterException/* default */.A('Invalid byte sequence');
             }
             var encoded = ((subtracted >> 8) * 0xc0) + (subtracted & 0xff);
             bits.appendBits(encoded, 13);
         }
     };
     Encoder.appendECI = function (eci, bits) {
-        bits.appendBits(Mode/* default.ECI.getBits */.Z.ECI.getBits(), 4);
+        bits.appendBits(Mode/* default */.A.ECI.getBits(), 4);
         // This is correct for values up to 127, which is all we need now.
         bits.appendBits(eci.getValue(), 8);
     };
@@ -32878,7 +32878,7 @@ var Encoder = /** @class */ (function () {
         -1, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
         25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, -1, -1, -1, -1, -1,
     ]);
-    Encoder.DEFAULT_BYTE_MODE_ENCODING = CharacterSetECI/* default.UTF8.getName */.Z.UTF8.getName(); // "ISO-8859-1"
+    Encoder.DEFAULT_BYTE_MODE_ENCODING = CharacterSetECI/* default */.A.UTF8.getName(); // "ISO-8859-1"
     return Encoder;
 }());
 /* harmony default export */ const encoder_Encoder = (Encoder);
@@ -32886,14 +32886,14 @@ var Encoder = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 9790:
+/***/ 1349:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8475);
+/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5793);
 /*
  * Copyright 2008 ZXing authors
  *
@@ -33063,7 +33063,7 @@ var MaskUtil = /** @class */ (function () {
                 intermediate = ((temp % 3) + ((y + x) & 0x1)) & 0x1;
                 break;
             default:
-                throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z('Invalid mask pattern: ' + maskPattern);
+                throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A('Invalid mask pattern: ' + maskPattern);
         }
         return intermediate === 0;
     };
@@ -33110,19 +33110,19 @@ var MaskUtil = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 2569:
+/***/ 6172:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _common_BitArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1555);
-/* harmony import */ var _util_Integer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3450);
-/* harmony import */ var _QRCode__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9087);
-/* harmony import */ var _MaskUtil__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9790);
-/* harmony import */ var _WriterException__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1079);
-/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8475);
+/* harmony import */ var _common_BitArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5369);
+/* harmony import */ var _util_Integer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9978);
+/* harmony import */ var _QRCode__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9395);
+/* harmony import */ var _MaskUtil__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1349);
+/* harmony import */ var _WriterException__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5527);
+/* harmony import */ var _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5793);
 /*
  * Copyright 2008 ZXing authors
  *
@@ -33191,7 +33191,7 @@ var MatrixUtil = /** @class */ (function () {
     };
     // Embed type information. On success, modify the matrix.
     MatrixUtil.embedTypeInfo = function (ecLevel, maskPattern /*int*/, matrix) {
-        var typeInfoBits = new _common_BitArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+        var typeInfoBits = new _common_BitArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A();
         MatrixUtil.makeTypeInfoBits(ecLevel, maskPattern, typeInfoBits);
         for (var i = 0, size = typeInfoBits.getSize(); i < size; ++i) {
             // Place bits in LSB to MSB order.  LSB (least significant bit) is the last value in
@@ -33222,7 +33222,7 @@ var MatrixUtil = /** @class */ (function () {
         if (version.getVersionNumber() < 7) { // Version info is necessary if version >= 7.
             return; // Don't need version info.
         }
-        var versionInfoBits = new _common_BitArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+        var versionInfoBits = new _common_BitArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A();
         MatrixUtil.makeVersionInfoBits(version, versionInfoBits);
         var bitIndex = 6 * 3 - 1; // It will decrease from 17 to 0.
         for (var i = 0; i < 6; ++i) {
@@ -33269,7 +33269,7 @@ var MatrixUtil = /** @class */ (function () {
                         bit = false;
                     }
                     // Skip masking if mask_pattern is -1 (TYPESCRIPTPORT: 255).
-                    if (maskPattern !== 255 && _MaskUtil__WEBPACK_IMPORTED_MODULE_3__/* ["default"].getDataMaskBit */ .Z.getDataMaskBit(maskPattern, xx, y)) {
+                    if (maskPattern !== 255 && _MaskUtil__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A.getDataMaskBit(maskPattern, xx, y)) {
                         bit = !bit;
                     }
                     matrix.setBoolean(xx, y, bit);
@@ -33282,7 +33282,7 @@ var MatrixUtil = /** @class */ (function () {
         }
         // All bits should be consumed.
         if (bitIndex !== dataBits.getSize()) {
-            throw new _WriterException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z('Not all bits consumed: ' + bitIndex + '/' + dataBits.getSize());
+            throw new _WriterException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A('Not all bits consumed: ' + bitIndex + '/' + dataBits.getSize());
         }
     };
     // Return the position of the most significant bit set (one: to) in the "value". The most
@@ -33291,7 +33291,7 @@ var MatrixUtil = /** @class */ (function () {
     // - findMSBSet(1) => 1
     // - findMSBSet(255) => 8
     MatrixUtil.findMSBSet = function (value /*int*/) {
-        return 32 - _util_Integer__WEBPACK_IMPORTED_MODULE_1__/* ["default"].numberOfLeadingZeros */ .Z.numberOfLeadingZeros(value);
+        return 32 - _util_Integer__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.numberOfLeadingZeros(value);
     };
     // Calculate BCH (Bose-Chaudhuri-Hocquenghem) code for "value" using polynomial "poly". The BCH
     // code is used for encoding type information and version information.
@@ -33320,7 +33320,7 @@ var MatrixUtil = /** @class */ (function () {
     // operations. We don't care if coefficients are positive or negative.
     MatrixUtil.calculateBCHCode = function (value /*int*/, poly /*int*/) {
         if (poly === 0) {
-            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z('0 polynomial');
+            throw new _IllegalArgumentException__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A('0 polynomial');
         }
         // If poly is "1 1111 0010 0101" (version info poly), msbSetInPoly is 13. We'll subtract 1
         // from 13 to make it 12.
@@ -33337,18 +33337,18 @@ var MatrixUtil = /** @class */ (function () {
     // Encode error correction level and mask pattern. See 8.9 of
     // JISX0510:2004 (p.45) for details.
     MatrixUtil.makeTypeInfoBits = function (ecLevel, maskPattern /*int*/, bits) {
-        if (!_QRCode__WEBPACK_IMPORTED_MODULE_2__/* ["default"].isValidMaskPattern */ .Z.isValidMaskPattern(maskPattern)) {
-            throw new _WriterException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z('Invalid mask pattern');
+        if (!_QRCode__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.isValidMaskPattern(maskPattern)) {
+            throw new _WriterException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A('Invalid mask pattern');
         }
         var typeInfo = (ecLevel.getBits() << 3) | maskPattern;
         bits.appendBits(typeInfo, 5);
         var bchCode = MatrixUtil.calculateBCHCode(typeInfo, MatrixUtil.TYPE_INFO_POLY);
         bits.appendBits(bchCode, 10);
-        var maskBits = new _common_BitArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z();
+        var maskBits = new _common_BitArray__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A();
         maskBits.appendBits(MatrixUtil.TYPE_INFO_MASK_PATTERN, 15);
         bits.xor(maskBits);
         if (bits.getSize() !== 15) { // Just in case.
-            throw new _WriterException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z('should not happen but we got: ' + bits.getSize());
+            throw new _WriterException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A('should not happen but we got: ' + bits.getSize());
         }
     };
     // Make bit vector of version information. On success, store the result in "bits" and return true.
@@ -33358,7 +33358,7 @@ var MatrixUtil = /** @class */ (function () {
         var bchCode = MatrixUtil.calculateBCHCode(version.getVersionNumber(), MatrixUtil.VERSION_INFO_POLY);
         bits.appendBits(bchCode, 12);
         if (bits.getSize() !== 18) { // Just in case.
-            throw new _WriterException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z('should not happen but we got: ' + bits.getSize());
+            throw new _WriterException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A('should not happen but we got: ' + bits.getSize());
         }
     };
     // Check if "value" is empty.
@@ -33383,14 +33383,14 @@ var MatrixUtil = /** @class */ (function () {
     // Embed the lonely dark dot at left bottom corner. JISX0510:2004 (p.46)
     MatrixUtil.embedDarkDotAtLeftBottomCorner = function (matrix) {
         if (matrix.get(8, matrix.getHeight() - 8) === 0) {
-            throw new _WriterException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+            throw new _WriterException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
         }
         matrix.setNumber(8, matrix.getHeight() - 8, 1);
     };
     MatrixUtil.embedHorizontalSeparationPattern = function (xStart /*int*/, yStart /*int*/, matrix) {
         for (var x = 0; x < 8; ++x) {
             if (!MatrixUtil.isEmpty(matrix.get(xStart + x, yStart))) {
-                throw new _WriterException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+                throw new _WriterException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
             }
             matrix.setNumber(xStart + x, yStart, 0);
         }
@@ -33398,7 +33398,7 @@ var MatrixUtil = /** @class */ (function () {
     MatrixUtil.embedVerticalSeparationPattern = function (xStart /*int*/, yStart /*int*/, matrix) {
         for (var y = 0; y < 7; ++y) {
             if (!MatrixUtil.isEmpty(matrix.get(xStart, yStart + y))) {
-                throw new _WriterException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z();
+                throw new _WriterException__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A();
             }
             matrix.setNumber(xStart, yStart + y, 0);
         }
@@ -33557,14 +33557,14 @@ var MatrixUtil = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 9087:
+/***/ 9395:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75);
+/* harmony import */ var _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(432);
 /*
  * Copyright 2008 ZXing authors
  *
@@ -33606,7 +33606,7 @@ var QRCode = /** @class */ (function () {
     };
     /*@Override*/
     QRCode.prototype.toString = function () {
-        var result = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(); // (200)
+        var result = new _util_StringBuilder__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A(); // (200)
         result.append('<<\n');
         result.append(' mode: ');
         result.append(this.mode ? this.mode.toString() : 'null');
@@ -33653,22 +33653,22 @@ var QRCode = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 1126:
+/***/ 2598:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Z": () => (/* binding */ util_Arrays)
+  A: () => (/* binding */ util_Arrays)
 });
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/System.js
-var System = __webpack_require__(8507);
+var System = __webpack_require__(7527);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/IllegalArgumentException.js
-var IllegalArgumentException = __webpack_require__(8475);
+var IllegalArgumentException = __webpack_require__(5793);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/IndexOutOfBoundsException.js
-var IndexOutOfBoundsException = __webpack_require__(7164);
+var IndexOutOfBoundsException = __webpack_require__(9766);
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/ArrayIndexOutOfBoundsException.js
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -33699,7 +33699,7 @@ var ArrayIndexOutOfBoundsException = /** @class */ (function (_super) {
     }
     ArrayIndexOutOfBoundsException.kind = 'ArrayIndexOutOfBoundsException';
     return ArrayIndexOutOfBoundsException;
-}(IndexOutOfBoundsException/* default */.Z));
+}(IndexOutOfBoundsException/* default */.A));
 /* harmony default export */ const core_ArrayIndexOutOfBoundsException = (ArrayIndexOutOfBoundsException);
 
 ;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/util/Arrays.js
@@ -33759,7 +33759,7 @@ var Arrays = /** @class */ (function () {
      */
     Arrays.rangeCheck = function (arrayLength, fromIndex, toIndex) {
         if (fromIndex > toIndex) {
-            throw new IllegalArgumentException/* default */.Z('fromIndex(' + fromIndex + ') > toIndex(' + toIndex + ')');
+            throw new IllegalArgumentException/* default */.A('fromIndex(' + fromIndex + ') > toIndex(' + toIndex + ')');
         }
         if (fromIndex < 0) {
             throw new core_ArrayIndexOutOfBoundsException(fromIndex);
@@ -33846,7 +33846,7 @@ var Arrays = /** @class */ (function () {
     Arrays.copyOfRange = function (original, from, to) {
         var newLength = to - from;
         var copy = new Int32Array(newLength);
-        System/* default.arraycopy */.Z.arraycopy(original, from, copy, 0, newLength);
+        System/* default */.A.arraycopy(original, from, copy, 0, newLength);
         return copy;
     };
     /*
@@ -33895,14 +33895,14 @@ var Arrays = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 5408:
+/***/ 4292:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5727);
+/* harmony import */ var _common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4945);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -33929,18 +33929,18 @@ var Charset = /** @class */ (function (_super) {
         return this.getCharacterSetECIByName(name);
     };
     return Charset;
-}(_common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z));
+}(_common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Charset);
 
 
 /***/ }),
 
-/***/ 377:
+/***/ 1226:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /**
  * Ponyfill for Java's Float class.
@@ -33966,12 +33966,12 @@ var Float = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 3450:
+/***/ 9978:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /**
  * Ponyfill for Java's Integer class.
@@ -34070,14 +34070,14 @@ var Integer = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 4248:
+/***/ 3234:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5727);
+/* harmony import */ var _common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4945);
 
 /**
  * Just to make a shortcut between Java code and TS code.
@@ -34085,7 +34085,7 @@ var Integer = /** @class */ (function () {
 var StandardCharsets = /** @class */ (function () {
     function StandardCharsets() {
     }
-    StandardCharsets.ISO_8859_1 = _common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_0__/* ["default"].ISO8859_1 */ .Z.ISO8859_1;
+    StandardCharsets.ISO_8859_1 = _common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.ISO8859_1;
     return StandardCharsets;
 }());
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StandardCharsets);
@@ -34093,14 +34093,14 @@ var StandardCharsets = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 75:
+/***/ 432:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _common_StringUtils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3429);
+/* harmony import */ var _common_StringUtils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9563);
 
 var StringBuilder = /** @class */ (function () {
     function StringBuilder(value) {
@@ -34117,7 +34117,7 @@ var StringBuilder = /** @class */ (function () {
         }
         else if (this.encoding) {
             // use passed format (fromCharCode will return UTF8 encoding)
-            this.value += _common_StringUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"].castAsNonUtf8Char */ .Z.castAsNonUtf8Char(s, this.encoding);
+            this.value += _common_StringUtils__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.castAsNonUtf8Char(s, this.encoding);
         }
         else {
             // correctly converts from UTF-8, but not other encodings
@@ -34165,15 +34165,15 @@ var StringBuilder = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 4421:
+/***/ 2442:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _UnsupportedOperationException__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9991);
-/* harmony import */ var _common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5727);
+/* harmony import */ var _UnsupportedOperationException__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(142);
+/* harmony import */ var _common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4945);
 
 
 /**
@@ -34235,10 +34235,10 @@ var StringEncoding = /** @class */ (function () {
      * Returns character set from some encoding character set.
      */
     StringEncoding.encodingCharacterSet = function (encoding) {
-        if (encoding instanceof _common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z) {
+        if (encoding instanceof _common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A) {
             return encoding;
         }
-        return _common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__/* ["default"].getCharacterSetECIByName */ .Z.getCharacterSetECIByName(encoding);
+        return _common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.getCharacterSetECIByName(encoding);
     };
     /**
      * Runs a fallback for the native decoding funcion.
@@ -34256,15 +34256,15 @@ var StringEncoding = /** @class */ (function () {
             }
             return decodeURIComponent(s);
         }
-        if (characterSet.equals(_common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__/* ["default"].UnicodeBigUnmarked */ .Z.UnicodeBigUnmarked)) {
+        if (characterSet.equals(_common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.UnicodeBigUnmarked)) {
             return String.fromCharCode.apply(null, new Uint16Array(bytes.buffer));
         }
-        throw new _UnsupportedOperationException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z("Encoding " + this.encodingName(encoding) + " not supported by fallback.");
+        throw new _UnsupportedOperationException__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A("Encoding " + this.encodingName(encoding) + " not supported by fallback.");
     };
     StringEncoding.isDecodeFallbackSupported = function (characterSet) {
-        return characterSet.equals(_common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__/* ["default"].UTF8 */ .Z.UTF8) ||
-            characterSet.equals(_common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__/* ["default"].ISO8859_1 */ .Z.ISO8859_1) ||
-            characterSet.equals(_common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__/* ["default"].ASCII */ .Z.ASCII);
+        return characterSet.equals(_common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.UTF8) ||
+            characterSet.equals(_common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.ISO8859_1) ||
+            characterSet.equals(_common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.ASCII);
     };
     /**
      * Runs a fallback for the native encoding funcion.
@@ -34287,12 +34287,12 @@ var StringEncoding = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 8507:
+/***/ 7527:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 var System = /** @class */ (function () {
     function System() {
@@ -34320,212 +34320,212 @@ var System = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 6991:
+/***/ 5363:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "AbstractExpandedDecoder": () => (/* reexport safe */ _core_oned_rss_expanded_decoders_AbstractExpandedDecoder__WEBPACK_IMPORTED_MODULE_94__.Z),
-/* harmony export */   "ArgumentException": () => (/* reexport safe */ _core_ArgumentException__WEBPACK_IMPORTED_MODULE_1__.Z),
-/* harmony export */   "ArithmeticException": () => (/* reexport safe */ _core_ArithmeticException__WEBPACK_IMPORTED_MODULE_2__.Z),
-/* harmony export */   "AztecCode": () => (/* reexport safe */ _core_aztec_encoder_AztecCode__WEBPACK_IMPORTED_MODULE_83__.Z),
-/* harmony export */   "AztecCodeReader": () => (/* reexport safe */ _core_aztec_AztecReader__WEBPACK_IMPORTED_MODULE_78__.Z),
-/* harmony export */   "AztecCodeWriter": () => (/* reexport safe */ _core_aztec_AztecWriter__WEBPACK_IMPORTED_MODULE_79__.Z),
-/* harmony export */   "AztecDecoder": () => (/* reexport safe */ _core_aztec_decoder_Decoder__WEBPACK_IMPORTED_MODULE_84__.Z),
-/* harmony export */   "AztecDetector": () => (/* reexport safe */ _core_aztec_detector_Detector__WEBPACK_IMPORTED_MODULE_85__.Z),
-/* harmony export */   "AztecDetectorResult": () => (/* reexport safe */ _core_aztec_AztecDetectorResult__WEBPACK_IMPORTED_MODULE_80__.Z),
-/* harmony export */   "AztecEncoder": () => (/* reexport safe */ _core_aztec_encoder_Encoder__WEBPACK_IMPORTED_MODULE_81__.Z),
-/* harmony export */   "AztecHighLevelEncoder": () => (/* reexport safe */ _core_aztec_encoder_HighLevelEncoder__WEBPACK_IMPORTED_MODULE_82__.Z),
-/* harmony export */   "AztecPoint": () => (/* reexport safe */ _core_aztec_detector_Detector__WEBPACK_IMPORTED_MODULE_85__.E),
-/* harmony export */   "BarcodeFormat": () => (/* reexport safe */ _core_BarcodeFormat__WEBPACK_IMPORTED_MODULE_13__.Z),
-/* harmony export */   "Binarizer": () => (/* reexport safe */ _core_Binarizer__WEBPACK_IMPORTED_MODULE_14__.Z),
-/* harmony export */   "BinaryBitmap": () => (/* reexport safe */ _core_BinaryBitmap__WEBPACK_IMPORTED_MODULE_15__.Z),
-/* harmony export */   "BitArray": () => (/* reexport safe */ _core_common_BitArray__WEBPACK_IMPORTED_MODULE_33__.Z),
-/* harmony export */   "BitMatrix": () => (/* reexport safe */ _core_common_BitMatrix__WEBPACK_IMPORTED_MODULE_34__.Z),
-/* harmony export */   "BitSource": () => (/* reexport safe */ _core_common_BitSource__WEBPACK_IMPORTED_MODULE_35__.Z),
-/* harmony export */   "CharacterSetECI": () => (/* reexport safe */ _core_common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_36__.Z),
-/* harmony export */   "ChecksumException": () => (/* reexport safe */ _core_ChecksumException__WEBPACK_IMPORTED_MODULE_3__.Z),
-/* harmony export */   "CodaBarReader": () => (/* reexport safe */ _core_oned_CodaBarReader__WEBPACK_IMPORTED_MODULE_97__.Z),
-/* harmony export */   "Code128Reader": () => (/* reexport safe */ _core_oned_Code128Reader__WEBPACK_IMPORTED_MODULE_88__.Z),
-/* harmony export */   "Code39Reader": () => (/* reexport safe */ _core_oned_Code39Reader__WEBPACK_IMPORTED_MODULE_90__.Z),
-/* harmony export */   "Code93Reader": () => (/* reexport safe */ _core_oned_Code93Reader__WEBPACK_IMPORTED_MODULE_91__.Z),
-/* harmony export */   "DataMatrixDecodedBitStreamParser": () => (/* reexport safe */ _core_datamatrix_decoder_DecodedBitStreamParser__WEBPACK_IMPORTED_MODULE_54__.Z),
-/* harmony export */   "DataMatrixDefaultPlacement": () => (/* reexport safe */ _core_datamatrix_encoder_DefaultPlacement__WEBPACK_IMPORTED_MODULE_55__.Z),
-/* harmony export */   "DataMatrixErrorCorrection": () => (/* reexport safe */ _core_datamatrix_encoder_ErrorCorrection__WEBPACK_IMPORTED_MODULE_56__.Z),
-/* harmony export */   "DataMatrixHighLevelEncoder": () => (/* reexport safe */ _core_datamatrix_encoder_HighLevelEncoder__WEBPACK_IMPORTED_MODULE_57__.Z),
-/* harmony export */   "DataMatrixReader": () => (/* reexport safe */ _core_datamatrix_DataMatrixReader__WEBPACK_IMPORTED_MODULE_53__.Z),
-/* harmony export */   "DataMatrixSymbolInfo": () => (/* reexport safe */ _core_datamatrix_encoder_SymbolInfo__WEBPACK_IMPORTED_MODULE_58__.Z),
-/* harmony export */   "DataMatrixSymbolShapeHint": () => (/* reexport safe */ _core_datamatrix_encoder_constants__WEBPACK_IMPORTED_MODULE_59__.nC),
-/* harmony export */   "DataMatrixWriter": () => (/* reexport safe */ _core_datamatrix_DataMatrixWriter__WEBPACK_IMPORTED_MODULE_60__.Z),
-/* harmony export */   "DecodeHintType": () => (/* reexport safe */ _core_DecodeHintType__WEBPACK_IMPORTED_MODULE_16__.Z),
-/* harmony export */   "DecoderResult": () => (/* reexport safe */ _core_common_DecoderResult__WEBPACK_IMPORTED_MODULE_37__.Z),
-/* harmony export */   "DefaultGridSampler": () => (/* reexport safe */ _core_common_DefaultGridSampler__WEBPACK_IMPORTED_MODULE_38__.Z),
-/* harmony export */   "DetectorResult": () => (/* reexport safe */ _core_common_DetectorResult__WEBPACK_IMPORTED_MODULE_39__.Z),
-/* harmony export */   "EAN13Reader": () => (/* reexport safe */ _core_oned_EAN13Reader__WEBPACK_IMPORTED_MODULE_87__.Z),
-/* harmony export */   "EncodeHintType": () => (/* reexport safe */ _core_EncodeHintType__WEBPACK_IMPORTED_MODULE_40__.Z),
-/* harmony export */   "Exception": () => (/* reexport safe */ _core_Exception__WEBPACK_IMPORTED_MODULE_4__.Z),
-/* harmony export */   "FormatException": () => (/* reexport safe */ _core_FormatException__WEBPACK_IMPORTED_MODULE_5__.Z),
-/* harmony export */   "GenericGF": () => (/* reexport safe */ _core_common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_49__.Z),
-/* harmony export */   "GenericGFPoly": () => (/* reexport safe */ _core_common_reedsolomon_GenericGFPoly__WEBPACK_IMPORTED_MODULE_50__.Z),
-/* harmony export */   "GlobalHistogramBinarizer": () => (/* reexport safe */ _core_common_GlobalHistogramBinarizer__WEBPACK_IMPORTED_MODULE_41__.Z),
-/* harmony export */   "GridSampler": () => (/* reexport safe */ _core_common_GridSampler__WEBPACK_IMPORTED_MODULE_42__.Z),
-/* harmony export */   "GridSamplerInstance": () => (/* reexport safe */ _core_common_GridSamplerInstance__WEBPACK_IMPORTED_MODULE_43__.Z),
-/* harmony export */   "HybridBinarizer": () => (/* reexport safe */ _core_common_HybridBinarizer__WEBPACK_IMPORTED_MODULE_44__.Z),
-/* harmony export */   "ITFReader": () => (/* reexport safe */ _core_oned_ITFReader__WEBPACK_IMPORTED_MODULE_89__.Z),
-/* harmony export */   "IllegalArgumentException": () => (/* reexport safe */ _core_IllegalArgumentException__WEBPACK_IMPORTED_MODULE_6__.Z),
-/* harmony export */   "IllegalStateException": () => (/* reexport safe */ _core_IllegalStateException__WEBPACK_IMPORTED_MODULE_7__.Z),
-/* harmony export */   "InvertedLuminanceSource": () => (/* reexport safe */ _core_InvertedLuminanceSource__WEBPACK_IMPORTED_MODULE_17__.Z),
-/* harmony export */   "LuminanceSource": () => (/* reexport safe */ _core_LuminanceSource__WEBPACK_IMPORTED_MODULE_18__.Z),
-/* harmony export */   "MathUtils": () => (/* reexport safe */ _core_common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_47__.Z),
-/* harmony export */   "MultiFormatOneDReader": () => (/* reexport safe */ _core_oned_MultiFormatOneDReader__WEBPACK_IMPORTED_MODULE_96__.Z),
-/* harmony export */   "MultiFormatReader": () => (/* reexport safe */ _core_MultiFormatReader__WEBPACK_IMPORTED_MODULE_19__.Z),
-/* harmony export */   "MultiFormatWriter": () => (/* reexport safe */ _core_MultiFormatWriter__WEBPACK_IMPORTED_MODULE_20__.Z),
-/* harmony export */   "NotFoundException": () => (/* reexport safe */ _core_NotFoundException__WEBPACK_IMPORTED_MODULE_8__.Z),
-/* harmony export */   "OneDReader": () => (/* reexport safe */ _core_oned_OneDReader__WEBPACK_IMPORTED_MODULE_86__.Z),
-/* harmony export */   "PDF417DecodedBitStreamParser": () => (/* reexport safe */ _core_pdf417_decoder_DecodedBitStreamParser__WEBPACK_IMPORTED_MODULE_63__.Z),
-/* harmony export */   "PDF417DecoderErrorCorrection": () => (/* reexport safe */ _core_pdf417_decoder_ec_ErrorCorrection__WEBPACK_IMPORTED_MODULE_64__.Z),
-/* harmony export */   "PDF417Reader": () => (/* reexport safe */ _core_pdf417_PDF417Reader__WEBPACK_IMPORTED_MODULE_61__.Z),
-/* harmony export */   "PDF417ResultMetadata": () => (/* reexport safe */ _core_pdf417_PDF417ResultMetadata__WEBPACK_IMPORTED_MODULE_62__.Z),
-/* harmony export */   "PerspectiveTransform": () => (/* reexport safe */ _core_common_PerspectiveTransform__WEBPACK_IMPORTED_MODULE_45__.Z),
-/* harmony export */   "PlanarYUVLuminanceSource": () => (/* reexport safe */ _core_PlanarYUVLuminanceSource__WEBPACK_IMPORTED_MODULE_21__.Z),
-/* harmony export */   "QRCodeByteMatrix": () => (/* reexport safe */ _core_qrcode_encoder_ByteMatrix__WEBPACK_IMPORTED_MODULE_76__.Z),
-/* harmony export */   "QRCodeDataMask": () => (/* reexport safe */ _core_qrcode_decoder_DataMask__WEBPACK_IMPORTED_MODULE_72__.Z),
-/* harmony export */   "QRCodeDecodedBitStreamParser": () => (/* reexport safe */ _core_qrcode_decoder_DecodedBitStreamParser__WEBPACK_IMPORTED_MODULE_71__.Z),
-/* harmony export */   "QRCodeDecoderErrorCorrectionLevel": () => (/* reexport safe */ _core_qrcode_decoder_ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_67__.Z),
-/* harmony export */   "QRCodeDecoderFormatInformation": () => (/* reexport safe */ _core_qrcode_decoder_FormatInformation__WEBPACK_IMPORTED_MODULE_68__.Z),
-/* harmony export */   "QRCodeEncoder": () => (/* reexport safe */ _core_qrcode_encoder_Encoder__WEBPACK_IMPORTED_MODULE_73__.Z),
-/* harmony export */   "QRCodeEncoderQRCode": () => (/* reexport safe */ _core_qrcode_encoder_QRCode__WEBPACK_IMPORTED_MODULE_74__.Z),
-/* harmony export */   "QRCodeMaskUtil": () => (/* reexport safe */ _core_qrcode_encoder_MaskUtil__WEBPACK_IMPORTED_MODULE_77__.Z),
-/* harmony export */   "QRCodeMatrixUtil": () => (/* reexport safe */ _core_qrcode_encoder_MatrixUtil__WEBPACK_IMPORTED_MODULE_75__.Z),
-/* harmony export */   "QRCodeMode": () => (/* reexport safe */ _core_qrcode_decoder_Mode__WEBPACK_IMPORTED_MODULE_70__.Z),
-/* harmony export */   "QRCodeReader": () => (/* reexport safe */ _core_qrcode_QRCodeReader__WEBPACK_IMPORTED_MODULE_65__.Z),
-/* harmony export */   "QRCodeVersion": () => (/* reexport safe */ _core_qrcode_decoder_Version__WEBPACK_IMPORTED_MODULE_69__.Z),
-/* harmony export */   "QRCodeWriter": () => (/* reexport safe */ _core_qrcode_QRCodeWriter__WEBPACK_IMPORTED_MODULE_66__.Z),
-/* harmony export */   "RGBLuminanceSource": () => (/* reexport safe */ _core_RGBLuminanceSource__WEBPACK_IMPORTED_MODULE_24__.Z),
-/* harmony export */   "RSS14Reader": () => (/* reexport safe */ _core_oned_rss_RSS14Reader__WEBPACK_IMPORTED_MODULE_92__.Z),
-/* harmony export */   "RSSExpandedReader": () => (/* reexport safe */ _core_oned_rss_expanded_RSSExpandedReader__WEBPACK_IMPORTED_MODULE_93__.Z),
-/* harmony export */   "ReaderException": () => (/* reexport safe */ _core_ReaderException__WEBPACK_IMPORTED_MODULE_9__.Z),
-/* harmony export */   "ReedSolomonDecoder": () => (/* reexport safe */ _core_common_reedsolomon_ReedSolomonDecoder__WEBPACK_IMPORTED_MODULE_51__.Z),
-/* harmony export */   "ReedSolomonEncoder": () => (/* reexport safe */ _core_common_reedsolomon_ReedSolomonEncoder__WEBPACK_IMPORTED_MODULE_52__.Z),
-/* harmony export */   "ReedSolomonException": () => (/* reexport safe */ _core_ReedSolomonException__WEBPACK_IMPORTED_MODULE_10__.Z),
-/* harmony export */   "Result": () => (/* reexport safe */ _core_Result__WEBPACK_IMPORTED_MODULE_22__.Z),
-/* harmony export */   "ResultMetadataType": () => (/* reexport safe */ _core_ResultMetadataType__WEBPACK_IMPORTED_MODULE_23__.Z),
-/* harmony export */   "ResultPoint": () => (/* reexport safe */ _core_ResultPoint__WEBPACK_IMPORTED_MODULE_25__.Z),
-/* harmony export */   "StringUtils": () => (/* reexport safe */ _core_common_StringUtils__WEBPACK_IMPORTED_MODULE_46__.Z),
-/* harmony export */   "UnsupportedOperationException": () => (/* reexport safe */ _core_UnsupportedOperationException__WEBPACK_IMPORTED_MODULE_11__.Z),
-/* harmony export */   "WhiteRectangleDetector": () => (/* reexport safe */ _core_common_detector_WhiteRectangleDetector__WEBPACK_IMPORTED_MODULE_48__.Z),
-/* harmony export */   "WriterException": () => (/* reexport safe */ _core_WriterException__WEBPACK_IMPORTED_MODULE_12__.Z),
-/* harmony export */   "ZXingArrays": () => (/* reexport safe */ _core_util_Arrays__WEBPACK_IMPORTED_MODULE_30__.Z),
-/* harmony export */   "ZXingCharset": () => (/* reexport safe */ _core_util_Charset__WEBPACK_IMPORTED_MODULE_29__.Z),
-/* harmony export */   "ZXingInteger": () => (/* reexport safe */ _core_util_Integer__WEBPACK_IMPORTED_MODULE_32__.Z),
-/* harmony export */   "ZXingStandardCharsets": () => (/* reexport safe */ _core_util_StandardCharsets__WEBPACK_IMPORTED_MODULE_31__.Z),
-/* harmony export */   "ZXingStringBuilder": () => (/* reexport safe */ _core_util_StringBuilder__WEBPACK_IMPORTED_MODULE_27__.Z),
-/* harmony export */   "ZXingStringEncoding": () => (/* reexport safe */ _core_util_StringEncoding__WEBPACK_IMPORTED_MODULE_28__.Z),
-/* harmony export */   "ZXingSystem": () => (/* reexport safe */ _core_util_System__WEBPACK_IMPORTED_MODULE_26__.Z),
-/* harmony export */   "createAbstractExpandedDecoder": () => (/* reexport safe */ _core_oned_rss_expanded_decoders_AbstractExpandedDecoderComplement__WEBPACK_IMPORTED_MODULE_95__.U)
+/* harmony export */   AbstractExpandedDecoder: () => (/* reexport safe */ _core_oned_rss_expanded_decoders_AbstractExpandedDecoder__WEBPACK_IMPORTED_MODULE_94__.A),
+/* harmony export */   ArgumentException: () => (/* reexport safe */ _core_ArgumentException__WEBPACK_IMPORTED_MODULE_1__.A),
+/* harmony export */   ArithmeticException: () => (/* reexport safe */ _core_ArithmeticException__WEBPACK_IMPORTED_MODULE_2__.A),
+/* harmony export */   AztecCode: () => (/* reexport safe */ _core_aztec_encoder_AztecCode__WEBPACK_IMPORTED_MODULE_83__.A),
+/* harmony export */   AztecCodeReader: () => (/* reexport safe */ _core_aztec_AztecReader__WEBPACK_IMPORTED_MODULE_78__.A),
+/* harmony export */   AztecCodeWriter: () => (/* reexport safe */ _core_aztec_AztecWriter__WEBPACK_IMPORTED_MODULE_79__.A),
+/* harmony export */   AztecDecoder: () => (/* reexport safe */ _core_aztec_decoder_Decoder__WEBPACK_IMPORTED_MODULE_84__.A),
+/* harmony export */   AztecDetector: () => (/* reexport safe */ _core_aztec_detector_Detector__WEBPACK_IMPORTED_MODULE_85__.A),
+/* harmony export */   AztecDetectorResult: () => (/* reexport safe */ _core_aztec_AztecDetectorResult__WEBPACK_IMPORTED_MODULE_80__.A),
+/* harmony export */   AztecEncoder: () => (/* reexport safe */ _core_aztec_encoder_Encoder__WEBPACK_IMPORTED_MODULE_81__.A),
+/* harmony export */   AztecHighLevelEncoder: () => (/* reexport safe */ _core_aztec_encoder_HighLevelEncoder__WEBPACK_IMPORTED_MODULE_82__.A),
+/* harmony export */   AztecPoint: () => (/* reexport safe */ _core_aztec_detector_Detector__WEBPACK_IMPORTED_MODULE_85__.b),
+/* harmony export */   BarcodeFormat: () => (/* reexport safe */ _core_BarcodeFormat__WEBPACK_IMPORTED_MODULE_13__.A),
+/* harmony export */   Binarizer: () => (/* reexport safe */ _core_Binarizer__WEBPACK_IMPORTED_MODULE_14__.A),
+/* harmony export */   BinaryBitmap: () => (/* reexport safe */ _core_BinaryBitmap__WEBPACK_IMPORTED_MODULE_15__.A),
+/* harmony export */   BitArray: () => (/* reexport safe */ _core_common_BitArray__WEBPACK_IMPORTED_MODULE_33__.A),
+/* harmony export */   BitMatrix: () => (/* reexport safe */ _core_common_BitMatrix__WEBPACK_IMPORTED_MODULE_34__.A),
+/* harmony export */   BitSource: () => (/* reexport safe */ _core_common_BitSource__WEBPACK_IMPORTED_MODULE_35__.A),
+/* harmony export */   CharacterSetECI: () => (/* reexport safe */ _core_common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_36__.A),
+/* harmony export */   ChecksumException: () => (/* reexport safe */ _core_ChecksumException__WEBPACK_IMPORTED_MODULE_3__.A),
+/* harmony export */   CodaBarReader: () => (/* reexport safe */ _core_oned_CodaBarReader__WEBPACK_IMPORTED_MODULE_97__.A),
+/* harmony export */   Code128Reader: () => (/* reexport safe */ _core_oned_Code128Reader__WEBPACK_IMPORTED_MODULE_88__.A),
+/* harmony export */   Code39Reader: () => (/* reexport safe */ _core_oned_Code39Reader__WEBPACK_IMPORTED_MODULE_90__.A),
+/* harmony export */   Code93Reader: () => (/* reexport safe */ _core_oned_Code93Reader__WEBPACK_IMPORTED_MODULE_91__.A),
+/* harmony export */   DataMatrixDecodedBitStreamParser: () => (/* reexport safe */ _core_datamatrix_decoder_DecodedBitStreamParser__WEBPACK_IMPORTED_MODULE_54__.A),
+/* harmony export */   DataMatrixDefaultPlacement: () => (/* reexport safe */ _core_datamatrix_encoder_DefaultPlacement__WEBPACK_IMPORTED_MODULE_55__.A),
+/* harmony export */   DataMatrixErrorCorrection: () => (/* reexport safe */ _core_datamatrix_encoder_ErrorCorrection__WEBPACK_IMPORTED_MODULE_56__.A),
+/* harmony export */   DataMatrixHighLevelEncoder: () => (/* reexport safe */ _core_datamatrix_encoder_HighLevelEncoder__WEBPACK_IMPORTED_MODULE_57__.A),
+/* harmony export */   DataMatrixReader: () => (/* reexport safe */ _core_datamatrix_DataMatrixReader__WEBPACK_IMPORTED_MODULE_53__.A),
+/* harmony export */   DataMatrixSymbolInfo: () => (/* reexport safe */ _core_datamatrix_encoder_SymbolInfo__WEBPACK_IMPORTED_MODULE_58__.A),
+/* harmony export */   DataMatrixSymbolShapeHint: () => (/* reexport safe */ _core_datamatrix_encoder_constants__WEBPACK_IMPORTED_MODULE_59__.t3),
+/* harmony export */   DataMatrixWriter: () => (/* reexport safe */ _core_datamatrix_DataMatrixWriter__WEBPACK_IMPORTED_MODULE_60__.A),
+/* harmony export */   DecodeHintType: () => (/* reexport safe */ _core_DecodeHintType__WEBPACK_IMPORTED_MODULE_16__.A),
+/* harmony export */   DecoderResult: () => (/* reexport safe */ _core_common_DecoderResult__WEBPACK_IMPORTED_MODULE_37__.A),
+/* harmony export */   DefaultGridSampler: () => (/* reexport safe */ _core_common_DefaultGridSampler__WEBPACK_IMPORTED_MODULE_38__.A),
+/* harmony export */   DetectorResult: () => (/* reexport safe */ _core_common_DetectorResult__WEBPACK_IMPORTED_MODULE_39__.A),
+/* harmony export */   EAN13Reader: () => (/* reexport safe */ _core_oned_EAN13Reader__WEBPACK_IMPORTED_MODULE_87__.A),
+/* harmony export */   EncodeHintType: () => (/* reexport safe */ _core_EncodeHintType__WEBPACK_IMPORTED_MODULE_40__.A),
+/* harmony export */   Exception: () => (/* reexport safe */ _core_Exception__WEBPACK_IMPORTED_MODULE_4__.A),
+/* harmony export */   FormatException: () => (/* reexport safe */ _core_FormatException__WEBPACK_IMPORTED_MODULE_5__.A),
+/* harmony export */   GenericGF: () => (/* reexport safe */ _core_common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_49__.A),
+/* harmony export */   GenericGFPoly: () => (/* reexport safe */ _core_common_reedsolomon_GenericGFPoly__WEBPACK_IMPORTED_MODULE_50__.A),
+/* harmony export */   GlobalHistogramBinarizer: () => (/* reexport safe */ _core_common_GlobalHistogramBinarizer__WEBPACK_IMPORTED_MODULE_41__.A),
+/* harmony export */   GridSampler: () => (/* reexport safe */ _core_common_GridSampler__WEBPACK_IMPORTED_MODULE_42__.A),
+/* harmony export */   GridSamplerInstance: () => (/* reexport safe */ _core_common_GridSamplerInstance__WEBPACK_IMPORTED_MODULE_43__.A),
+/* harmony export */   HybridBinarizer: () => (/* reexport safe */ _core_common_HybridBinarizer__WEBPACK_IMPORTED_MODULE_44__.A),
+/* harmony export */   ITFReader: () => (/* reexport safe */ _core_oned_ITFReader__WEBPACK_IMPORTED_MODULE_89__.A),
+/* harmony export */   IllegalArgumentException: () => (/* reexport safe */ _core_IllegalArgumentException__WEBPACK_IMPORTED_MODULE_6__.A),
+/* harmony export */   IllegalStateException: () => (/* reexport safe */ _core_IllegalStateException__WEBPACK_IMPORTED_MODULE_7__.A),
+/* harmony export */   InvertedLuminanceSource: () => (/* reexport safe */ _core_InvertedLuminanceSource__WEBPACK_IMPORTED_MODULE_17__.A),
+/* harmony export */   LuminanceSource: () => (/* reexport safe */ _core_LuminanceSource__WEBPACK_IMPORTED_MODULE_18__.A),
+/* harmony export */   MathUtils: () => (/* reexport safe */ _core_common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_47__.A),
+/* harmony export */   MultiFormatOneDReader: () => (/* reexport safe */ _core_oned_MultiFormatOneDReader__WEBPACK_IMPORTED_MODULE_96__.A),
+/* harmony export */   MultiFormatReader: () => (/* reexport safe */ _core_MultiFormatReader__WEBPACK_IMPORTED_MODULE_19__.A),
+/* harmony export */   MultiFormatWriter: () => (/* reexport safe */ _core_MultiFormatWriter__WEBPACK_IMPORTED_MODULE_20__.A),
+/* harmony export */   NotFoundException: () => (/* reexport safe */ _core_NotFoundException__WEBPACK_IMPORTED_MODULE_8__.A),
+/* harmony export */   OneDReader: () => (/* reexport safe */ _core_oned_OneDReader__WEBPACK_IMPORTED_MODULE_86__.A),
+/* harmony export */   PDF417DecodedBitStreamParser: () => (/* reexport safe */ _core_pdf417_decoder_DecodedBitStreamParser__WEBPACK_IMPORTED_MODULE_63__.A),
+/* harmony export */   PDF417DecoderErrorCorrection: () => (/* reexport safe */ _core_pdf417_decoder_ec_ErrorCorrection__WEBPACK_IMPORTED_MODULE_64__.A),
+/* harmony export */   PDF417Reader: () => (/* reexport safe */ _core_pdf417_PDF417Reader__WEBPACK_IMPORTED_MODULE_61__.A),
+/* harmony export */   PDF417ResultMetadata: () => (/* reexport safe */ _core_pdf417_PDF417ResultMetadata__WEBPACK_IMPORTED_MODULE_62__.A),
+/* harmony export */   PerspectiveTransform: () => (/* reexport safe */ _core_common_PerspectiveTransform__WEBPACK_IMPORTED_MODULE_45__.A),
+/* harmony export */   PlanarYUVLuminanceSource: () => (/* reexport safe */ _core_PlanarYUVLuminanceSource__WEBPACK_IMPORTED_MODULE_21__.A),
+/* harmony export */   QRCodeByteMatrix: () => (/* reexport safe */ _core_qrcode_encoder_ByteMatrix__WEBPACK_IMPORTED_MODULE_76__.A),
+/* harmony export */   QRCodeDataMask: () => (/* reexport safe */ _core_qrcode_decoder_DataMask__WEBPACK_IMPORTED_MODULE_72__.A),
+/* harmony export */   QRCodeDecodedBitStreamParser: () => (/* reexport safe */ _core_qrcode_decoder_DecodedBitStreamParser__WEBPACK_IMPORTED_MODULE_71__.A),
+/* harmony export */   QRCodeDecoderErrorCorrectionLevel: () => (/* reexport safe */ _core_qrcode_decoder_ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_67__.A),
+/* harmony export */   QRCodeDecoderFormatInformation: () => (/* reexport safe */ _core_qrcode_decoder_FormatInformation__WEBPACK_IMPORTED_MODULE_68__.A),
+/* harmony export */   QRCodeEncoder: () => (/* reexport safe */ _core_qrcode_encoder_Encoder__WEBPACK_IMPORTED_MODULE_73__.A),
+/* harmony export */   QRCodeEncoderQRCode: () => (/* reexport safe */ _core_qrcode_encoder_QRCode__WEBPACK_IMPORTED_MODULE_74__.A),
+/* harmony export */   QRCodeMaskUtil: () => (/* reexport safe */ _core_qrcode_encoder_MaskUtil__WEBPACK_IMPORTED_MODULE_77__.A),
+/* harmony export */   QRCodeMatrixUtil: () => (/* reexport safe */ _core_qrcode_encoder_MatrixUtil__WEBPACK_IMPORTED_MODULE_75__.A),
+/* harmony export */   QRCodeMode: () => (/* reexport safe */ _core_qrcode_decoder_Mode__WEBPACK_IMPORTED_MODULE_70__.A),
+/* harmony export */   QRCodeReader: () => (/* reexport safe */ _core_qrcode_QRCodeReader__WEBPACK_IMPORTED_MODULE_65__.A),
+/* harmony export */   QRCodeVersion: () => (/* reexport safe */ _core_qrcode_decoder_Version__WEBPACK_IMPORTED_MODULE_69__.A),
+/* harmony export */   QRCodeWriter: () => (/* reexport safe */ _core_qrcode_QRCodeWriter__WEBPACK_IMPORTED_MODULE_66__.A),
+/* harmony export */   RGBLuminanceSource: () => (/* reexport safe */ _core_RGBLuminanceSource__WEBPACK_IMPORTED_MODULE_24__.A),
+/* harmony export */   RSS14Reader: () => (/* reexport safe */ _core_oned_rss_RSS14Reader__WEBPACK_IMPORTED_MODULE_92__.A),
+/* harmony export */   RSSExpandedReader: () => (/* reexport safe */ _core_oned_rss_expanded_RSSExpandedReader__WEBPACK_IMPORTED_MODULE_93__.A),
+/* harmony export */   ReaderException: () => (/* reexport safe */ _core_ReaderException__WEBPACK_IMPORTED_MODULE_9__.A),
+/* harmony export */   ReedSolomonDecoder: () => (/* reexport safe */ _core_common_reedsolomon_ReedSolomonDecoder__WEBPACK_IMPORTED_MODULE_51__.A),
+/* harmony export */   ReedSolomonEncoder: () => (/* reexport safe */ _core_common_reedsolomon_ReedSolomonEncoder__WEBPACK_IMPORTED_MODULE_52__.A),
+/* harmony export */   ReedSolomonException: () => (/* reexport safe */ _core_ReedSolomonException__WEBPACK_IMPORTED_MODULE_10__.A),
+/* harmony export */   Result: () => (/* reexport safe */ _core_Result__WEBPACK_IMPORTED_MODULE_22__.A),
+/* harmony export */   ResultMetadataType: () => (/* reexport safe */ _core_ResultMetadataType__WEBPACK_IMPORTED_MODULE_23__.A),
+/* harmony export */   ResultPoint: () => (/* reexport safe */ _core_ResultPoint__WEBPACK_IMPORTED_MODULE_25__.A),
+/* harmony export */   StringUtils: () => (/* reexport safe */ _core_common_StringUtils__WEBPACK_IMPORTED_MODULE_46__.A),
+/* harmony export */   UnsupportedOperationException: () => (/* reexport safe */ _core_UnsupportedOperationException__WEBPACK_IMPORTED_MODULE_11__.A),
+/* harmony export */   WhiteRectangleDetector: () => (/* reexport safe */ _core_common_detector_WhiteRectangleDetector__WEBPACK_IMPORTED_MODULE_48__.A),
+/* harmony export */   WriterException: () => (/* reexport safe */ _core_WriterException__WEBPACK_IMPORTED_MODULE_12__.A),
+/* harmony export */   ZXingArrays: () => (/* reexport safe */ _core_util_Arrays__WEBPACK_IMPORTED_MODULE_30__.A),
+/* harmony export */   ZXingCharset: () => (/* reexport safe */ _core_util_Charset__WEBPACK_IMPORTED_MODULE_29__.A),
+/* harmony export */   ZXingInteger: () => (/* reexport safe */ _core_util_Integer__WEBPACK_IMPORTED_MODULE_32__.A),
+/* harmony export */   ZXingStandardCharsets: () => (/* reexport safe */ _core_util_StandardCharsets__WEBPACK_IMPORTED_MODULE_31__.A),
+/* harmony export */   ZXingStringBuilder: () => (/* reexport safe */ _core_util_StringBuilder__WEBPACK_IMPORTED_MODULE_27__.A),
+/* harmony export */   ZXingStringEncoding: () => (/* reexport safe */ _core_util_StringEncoding__WEBPACK_IMPORTED_MODULE_28__.A),
+/* harmony export */   ZXingSystem: () => (/* reexport safe */ _core_util_System__WEBPACK_IMPORTED_MODULE_26__.A),
+/* harmony export */   createAbstractExpandedDecoder: () => (/* reexport safe */ _core_oned_rss_expanded_decoders_AbstractExpandedDecoderComplement__WEBPACK_IMPORTED_MODULE_95__.$)
 /* harmony export */ });
-/* harmony import */ var _browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1329);
+/* harmony import */ var _browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4967);
 /* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
 /* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _browser__WEBPACK_IMPORTED_MODULE_0__) if(["default","ArgumentException","ArithmeticException","ChecksumException","Exception","FormatException","IllegalArgumentException","IllegalStateException","NotFoundException","ReaderException","ReedSolomonException","UnsupportedOperationException","WriterException","BarcodeFormat","Binarizer","BinaryBitmap","DecodeHintType","InvertedLuminanceSource","LuminanceSource","MultiFormatReader","MultiFormatWriter","PlanarYUVLuminanceSource","Result","ResultMetadataType","RGBLuminanceSource","ResultPoint","ZXingSystem","ZXingStringBuilder","ZXingStringEncoding","ZXingCharset","ZXingArrays","ZXingStandardCharsets","ZXingInteger","BitArray","BitMatrix","BitSource","CharacterSetECI","DecoderResult","DefaultGridSampler","DetectorResult","EncodeHintType","GlobalHistogramBinarizer","GridSampler","GridSamplerInstance","HybridBinarizer","PerspectiveTransform","StringUtils","MathUtils","WhiteRectangleDetector","GenericGF","GenericGFPoly","ReedSolomonDecoder","ReedSolomonEncoder","DataMatrixReader","DataMatrixDecodedBitStreamParser","DataMatrixDefaultPlacement","DataMatrixErrorCorrection","DataMatrixHighLevelEncoder","DataMatrixSymbolInfo","DataMatrixSymbolShapeHint","DataMatrixWriter","PDF417Reader","PDF417ResultMetadata","PDF417DecodedBitStreamParser","PDF417DecoderErrorCorrection","QRCodeReader","QRCodeWriter","QRCodeDecoderErrorCorrectionLevel","QRCodeDecoderFormatInformation","QRCodeVersion","QRCodeMode","QRCodeDecodedBitStreamParser","QRCodeDataMask","QRCodeEncoder","QRCodeEncoderQRCode","QRCodeMatrixUtil","QRCodeByteMatrix","QRCodeMaskUtil","AztecCodeReader","AztecCodeWriter","AztecDetectorResult","AztecEncoder","AztecHighLevelEncoder","AztecCode","AztecDecoder","AztecDetector","AztecPoint","OneDReader","EAN13Reader","Code128Reader","ITFReader","Code39Reader","Code93Reader","RSS14Reader","RSSExpandedReader","AbstractExpandedDecoder","createAbstractExpandedDecoder","MultiFormatOneDReader","CodaBarReader"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _browser__WEBPACK_IMPORTED_MODULE_0__[__WEBPACK_IMPORT_KEY__]
 /* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
-/* harmony import */ var _core_ArgumentException__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3087);
-/* harmony import */ var _core_ArithmeticException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6288);
-/* harmony import */ var _core_ChecksumException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3392);
-/* harmony import */ var _core_Exception__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1546);
-/* harmony import */ var _core_FormatException__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(2468);
-/* harmony import */ var _core_IllegalArgumentException__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8475);
-/* harmony import */ var _core_IllegalStateException__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(4418);
-/* harmony import */ var _core_NotFoundException__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(8842);
-/* harmony import */ var _core_ReaderException__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(4386);
-/* harmony import */ var _core_ReedSolomonException__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(2309);
-/* harmony import */ var _core_UnsupportedOperationException__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(9991);
-/* harmony import */ var _core_WriterException__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(1079);
-/* harmony import */ var _core_BarcodeFormat__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(8684);
-/* harmony import */ var _core_Binarizer__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(5477);
-/* harmony import */ var _core_BinaryBitmap__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(8467);
-/* harmony import */ var _core_DecodeHintType__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(6650);
-/* harmony import */ var _core_InvertedLuminanceSource__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(2384);
-/* harmony import */ var _core_LuminanceSource__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(6695);
-/* harmony import */ var _core_MultiFormatReader__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(781);
-/* harmony import */ var _core_MultiFormatWriter__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(9410);
-/* harmony import */ var _core_PlanarYUVLuminanceSource__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(7998);
-/* harmony import */ var _core_Result__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(1462);
-/* harmony import */ var _core_ResultMetadataType__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(5621);
-/* harmony import */ var _core_RGBLuminanceSource__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(8457);
-/* harmony import */ var _core_ResultPoint__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(8307);
-/* harmony import */ var _core_util_System__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(8507);
-/* harmony import */ var _core_util_StringBuilder__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(75);
-/* harmony import */ var _core_util_StringEncoding__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(4421);
-/* harmony import */ var _core_util_Charset__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(5408);
-/* harmony import */ var _core_util_Arrays__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(1126);
-/* harmony import */ var _core_util_StandardCharsets__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(4248);
-/* harmony import */ var _core_util_Integer__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(3450);
-/* harmony import */ var _core_common_BitArray__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(1555);
-/* harmony import */ var _core_common_BitMatrix__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(1103);
-/* harmony import */ var _core_common_BitSource__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(7677);
-/* harmony import */ var _core_common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(5727);
-/* harmony import */ var _core_common_DecoderResult__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(4522);
-/* harmony import */ var _core_common_DefaultGridSampler__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(6708);
-/* harmony import */ var _core_common_DetectorResult__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(7877);
-/* harmony import */ var _core_EncodeHintType__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(5127);
-/* harmony import */ var _core_common_GlobalHistogramBinarizer__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(9531);
-/* harmony import */ var _core_common_GridSampler__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(412);
-/* harmony import */ var _core_common_GridSamplerInstance__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(7067);
-/* harmony import */ var _core_common_HybridBinarizer__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(3545);
-/* harmony import */ var _core_common_PerspectiveTransform__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(7310);
-/* harmony import */ var _core_common_StringUtils__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(3429);
-/* harmony import */ var _core_common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(8611);
-/* harmony import */ var _core_common_detector_WhiteRectangleDetector__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(3354);
-/* harmony import */ var _core_common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(2127);
-/* harmony import */ var _core_common_reedsolomon_GenericGFPoly__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(4279);
-/* harmony import */ var _core_common_reedsolomon_ReedSolomonDecoder__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(4646);
-/* harmony import */ var _core_common_reedsolomon_ReedSolomonEncoder__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(8074);
-/* harmony import */ var _core_datamatrix_DataMatrixReader__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(5370);
-/* harmony import */ var _core_datamatrix_decoder_DecodedBitStreamParser__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(7897);
-/* harmony import */ var _core_datamatrix_encoder_DefaultPlacement__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(8504);
-/* harmony import */ var _core_datamatrix_encoder_ErrorCorrection__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(9864);
-/* harmony import */ var _core_datamatrix_encoder_HighLevelEncoder__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(9729);
-/* harmony import */ var _core_datamatrix_encoder_SymbolInfo__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(1662);
-/* harmony import */ var _core_datamatrix_encoder_constants__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(4255);
-/* harmony import */ var _core_datamatrix_DataMatrixWriter__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(880);
-/* harmony import */ var _core_pdf417_PDF417Reader__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(4963);
-/* harmony import */ var _core_pdf417_PDF417ResultMetadata__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(6027);
-/* harmony import */ var _core_pdf417_decoder_DecodedBitStreamParser__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(9763);
-/* harmony import */ var _core_pdf417_decoder_ec_ErrorCorrection__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(2193);
-/* harmony import */ var _core_qrcode_QRCodeReader__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(3949);
-/* harmony import */ var _core_qrcode_QRCodeWriter__WEBPACK_IMPORTED_MODULE_66__ = __webpack_require__(9891);
-/* harmony import */ var _core_qrcode_decoder_ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_67__ = __webpack_require__(8911);
-/* harmony import */ var _core_qrcode_decoder_FormatInformation__WEBPACK_IMPORTED_MODULE_68__ = __webpack_require__(5173);
-/* harmony import */ var _core_qrcode_decoder_Version__WEBPACK_IMPORTED_MODULE_69__ = __webpack_require__(1507);
-/* harmony import */ var _core_qrcode_decoder_Mode__WEBPACK_IMPORTED_MODULE_70__ = __webpack_require__(7624);
-/* harmony import */ var _core_qrcode_decoder_DecodedBitStreamParser__WEBPACK_IMPORTED_MODULE_71__ = __webpack_require__(9297);
-/* harmony import */ var _core_qrcode_decoder_DataMask__WEBPACK_IMPORTED_MODULE_72__ = __webpack_require__(579);
-/* harmony import */ var _core_qrcode_encoder_Encoder__WEBPACK_IMPORTED_MODULE_73__ = __webpack_require__(3080);
-/* harmony import */ var _core_qrcode_encoder_QRCode__WEBPACK_IMPORTED_MODULE_74__ = __webpack_require__(9087);
-/* harmony import */ var _core_qrcode_encoder_MatrixUtil__WEBPACK_IMPORTED_MODULE_75__ = __webpack_require__(2569);
-/* harmony import */ var _core_qrcode_encoder_ByteMatrix__WEBPACK_IMPORTED_MODULE_76__ = __webpack_require__(8556);
-/* harmony import */ var _core_qrcode_encoder_MaskUtil__WEBPACK_IMPORTED_MODULE_77__ = __webpack_require__(9790);
-/* harmony import */ var _core_aztec_AztecReader__WEBPACK_IMPORTED_MODULE_78__ = __webpack_require__(6144);
-/* harmony import */ var _core_aztec_AztecWriter__WEBPACK_IMPORTED_MODULE_79__ = __webpack_require__(8105);
-/* harmony import */ var _core_aztec_AztecDetectorResult__WEBPACK_IMPORTED_MODULE_80__ = __webpack_require__(5123);
-/* harmony import */ var _core_aztec_encoder_Encoder__WEBPACK_IMPORTED_MODULE_81__ = __webpack_require__(8332);
-/* harmony import */ var _core_aztec_encoder_HighLevelEncoder__WEBPACK_IMPORTED_MODULE_82__ = __webpack_require__(1908);
-/* harmony import */ var _core_aztec_encoder_AztecCode__WEBPACK_IMPORTED_MODULE_83__ = __webpack_require__(9425);
-/* harmony import */ var _core_aztec_decoder_Decoder__WEBPACK_IMPORTED_MODULE_84__ = __webpack_require__(131);
-/* harmony import */ var _core_aztec_detector_Detector__WEBPACK_IMPORTED_MODULE_85__ = __webpack_require__(8106);
-/* harmony import */ var _core_oned_OneDReader__WEBPACK_IMPORTED_MODULE_86__ = __webpack_require__(3903);
-/* harmony import */ var _core_oned_EAN13Reader__WEBPACK_IMPORTED_MODULE_87__ = __webpack_require__(9667);
-/* harmony import */ var _core_oned_Code128Reader__WEBPACK_IMPORTED_MODULE_88__ = __webpack_require__(7344);
-/* harmony import */ var _core_oned_ITFReader__WEBPACK_IMPORTED_MODULE_89__ = __webpack_require__(1758);
-/* harmony import */ var _core_oned_Code39Reader__WEBPACK_IMPORTED_MODULE_90__ = __webpack_require__(352);
-/* harmony import */ var _core_oned_Code93Reader__WEBPACK_IMPORTED_MODULE_91__ = __webpack_require__(7340);
-/* harmony import */ var _core_oned_rss_RSS14Reader__WEBPACK_IMPORTED_MODULE_92__ = __webpack_require__(1006);
-/* harmony import */ var _core_oned_rss_expanded_RSSExpandedReader__WEBPACK_IMPORTED_MODULE_93__ = __webpack_require__(2050);
-/* harmony import */ var _core_oned_rss_expanded_decoders_AbstractExpandedDecoder__WEBPACK_IMPORTED_MODULE_94__ = __webpack_require__(1811);
-/* harmony import */ var _core_oned_rss_expanded_decoders_AbstractExpandedDecoderComplement__WEBPACK_IMPORTED_MODULE_95__ = __webpack_require__(3351);
-/* harmony import */ var _core_oned_MultiFormatOneDReader__WEBPACK_IMPORTED_MODULE_96__ = __webpack_require__(4956);
-/* harmony import */ var _core_oned_CodaBarReader__WEBPACK_IMPORTED_MODULE_97__ = __webpack_require__(6004);
+/* harmony import */ var _core_ArgumentException__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2951);
+/* harmony import */ var _core_ArithmeticException__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2046);
+/* harmony import */ var _core_ChecksumException__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1371);
+/* harmony import */ var _core_Exception__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3830);
+/* harmony import */ var _core_FormatException__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7027);
+/* harmony import */ var _core_IllegalArgumentException__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(5793);
+/* harmony import */ var _core_IllegalStateException__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(7591);
+/* harmony import */ var _core_NotFoundException__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(8427);
+/* harmony import */ var _core_ReaderException__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(7819);
+/* harmony import */ var _core_ReedSolomonException__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(7495);
+/* harmony import */ var _core_UnsupportedOperationException__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(142);
+/* harmony import */ var _core_WriterException__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(5527);
+/* harmony import */ var _core_BarcodeFormat__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(9460);
+/* harmony import */ var _core_Binarizer__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(4529);
+/* harmony import */ var _core_BinaryBitmap__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(4153);
+/* harmony import */ var _core_DecodeHintType__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(1180);
+/* harmony import */ var _core_InvertedLuminanceSource__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(2019);
+/* harmony import */ var _core_LuminanceSource__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(1960);
+/* harmony import */ var _core_MultiFormatReader__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(6190);
+/* harmony import */ var _core_MultiFormatWriter__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(942);
+/* harmony import */ var _core_PlanarYUVLuminanceSource__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(3544);
+/* harmony import */ var _core_Result__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(6770);
+/* harmony import */ var _core_ResultMetadataType__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(688);
+/* harmony import */ var _core_RGBLuminanceSource__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(4413);
+/* harmony import */ var _core_ResultPoint__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(6502);
+/* harmony import */ var _core_util_System__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(7527);
+/* harmony import */ var _core_util_StringBuilder__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(432);
+/* harmony import */ var _core_util_StringEncoding__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(2442);
+/* harmony import */ var _core_util_Charset__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(4292);
+/* harmony import */ var _core_util_Arrays__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(2598);
+/* harmony import */ var _core_util_StandardCharsets__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(3234);
+/* harmony import */ var _core_util_Integer__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(9978);
+/* harmony import */ var _core_common_BitArray__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(5369);
+/* harmony import */ var _core_common_BitMatrix__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(8307);
+/* harmony import */ var _core_common_BitSource__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(879);
+/* harmony import */ var _core_common_CharacterSetECI__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(4945);
+/* harmony import */ var _core_common_DecoderResult__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(9064);
+/* harmony import */ var _core_common_DefaultGridSampler__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(1770);
+/* harmony import */ var _core_common_DetectorResult__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(3014);
+/* harmony import */ var _core_EncodeHintType__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(1444);
+/* harmony import */ var _core_common_GlobalHistogramBinarizer__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(8994);
+/* harmony import */ var _core_common_GridSampler__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(5081);
+/* harmony import */ var _core_common_GridSamplerInstance__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(5634);
+/* harmony import */ var _core_common_HybridBinarizer__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(929);
+/* harmony import */ var _core_common_PerspectiveTransform__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(4635);
+/* harmony import */ var _core_common_StringUtils__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(9563);
+/* harmony import */ var _core_common_detector_MathUtils__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(1091);
+/* harmony import */ var _core_common_detector_WhiteRectangleDetector__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(7282);
+/* harmony import */ var _core_common_reedsolomon_GenericGF__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(2429);
+/* harmony import */ var _core_common_reedsolomon_GenericGFPoly__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(5571);
+/* harmony import */ var _core_common_reedsolomon_ReedSolomonDecoder__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(4112);
+/* harmony import */ var _core_common_reedsolomon_ReedSolomonEncoder__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(7464);
+/* harmony import */ var _core_datamatrix_DataMatrixReader__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(9208);
+/* harmony import */ var _core_datamatrix_decoder_DecodedBitStreamParser__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(4630);
+/* harmony import */ var _core_datamatrix_encoder_DefaultPlacement__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(8032);
+/* harmony import */ var _core_datamatrix_encoder_ErrorCorrection__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(4688);
+/* harmony import */ var _core_datamatrix_encoder_HighLevelEncoder__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(7750);
+/* harmony import */ var _core_datamatrix_encoder_SymbolInfo__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(748);
+/* harmony import */ var _core_datamatrix_encoder_constants__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(4715);
+/* harmony import */ var _core_datamatrix_DataMatrixWriter__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(7597);
+/* harmony import */ var _core_pdf417_PDF417Reader__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(4390);
+/* harmony import */ var _core_pdf417_PDF417ResultMetadata__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(8318);
+/* harmony import */ var _core_pdf417_decoder_DecodedBitStreamParser__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(7915);
+/* harmony import */ var _core_pdf417_decoder_ec_ErrorCorrection__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(4034);
+/* harmony import */ var _core_qrcode_QRCodeReader__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(2038);
+/* harmony import */ var _core_qrcode_QRCodeWriter__WEBPACK_IMPORTED_MODULE_66__ = __webpack_require__(8029);
+/* harmony import */ var _core_qrcode_decoder_ErrorCorrectionLevel__WEBPACK_IMPORTED_MODULE_67__ = __webpack_require__(3317);
+/* harmony import */ var _core_qrcode_decoder_FormatInformation__WEBPACK_IMPORTED_MODULE_68__ = __webpack_require__(1722);
+/* harmony import */ var _core_qrcode_decoder_Version__WEBPACK_IMPORTED_MODULE_69__ = __webpack_require__(6870);
+/* harmony import */ var _core_qrcode_decoder_Mode__WEBPACK_IMPORTED_MODULE_70__ = __webpack_require__(9986);
+/* harmony import */ var _core_qrcode_decoder_DecodedBitStreamParser__WEBPACK_IMPORTED_MODULE_71__ = __webpack_require__(4299);
+/* harmony import */ var _core_qrcode_decoder_DataMask__WEBPACK_IMPORTED_MODULE_72__ = __webpack_require__(6021);
+/* harmony import */ var _core_qrcode_encoder_Encoder__WEBPACK_IMPORTED_MODULE_73__ = __webpack_require__(2177);
+/* harmony import */ var _core_qrcode_encoder_QRCode__WEBPACK_IMPORTED_MODULE_74__ = __webpack_require__(9395);
+/* harmony import */ var _core_qrcode_encoder_MatrixUtil__WEBPACK_IMPORTED_MODULE_75__ = __webpack_require__(6172);
+/* harmony import */ var _core_qrcode_encoder_ByteMatrix__WEBPACK_IMPORTED_MODULE_76__ = __webpack_require__(966);
+/* harmony import */ var _core_qrcode_encoder_MaskUtil__WEBPACK_IMPORTED_MODULE_77__ = __webpack_require__(1349);
+/* harmony import */ var _core_aztec_AztecReader__WEBPACK_IMPORTED_MODULE_78__ = __webpack_require__(623);
+/* harmony import */ var _core_aztec_AztecWriter__WEBPACK_IMPORTED_MODULE_79__ = __webpack_require__(8127);
+/* harmony import */ var _core_aztec_AztecDetectorResult__WEBPACK_IMPORTED_MODULE_80__ = __webpack_require__(4227);
+/* harmony import */ var _core_aztec_encoder_Encoder__WEBPACK_IMPORTED_MODULE_81__ = __webpack_require__(4498);
+/* harmony import */ var _core_aztec_encoder_HighLevelEncoder__WEBPACK_IMPORTED_MODULE_82__ = __webpack_require__(3615);
+/* harmony import */ var _core_aztec_encoder_AztecCode__WEBPACK_IMPORTED_MODULE_83__ = __webpack_require__(26);
+/* harmony import */ var _core_aztec_decoder_Decoder__WEBPACK_IMPORTED_MODULE_84__ = __webpack_require__(1842);
+/* harmony import */ var _core_aztec_detector_Detector__WEBPACK_IMPORTED_MODULE_85__ = __webpack_require__(5616);
+/* harmony import */ var _core_oned_OneDReader__WEBPACK_IMPORTED_MODULE_86__ = __webpack_require__(1693);
+/* harmony import */ var _core_oned_EAN13Reader__WEBPACK_IMPORTED_MODULE_87__ = __webpack_require__(8571);
+/* harmony import */ var _core_oned_Code128Reader__WEBPACK_IMPORTED_MODULE_88__ = __webpack_require__(5817);
+/* harmony import */ var _core_oned_ITFReader__WEBPACK_IMPORTED_MODULE_89__ = __webpack_require__(1894);
+/* harmony import */ var _core_oned_Code39Reader__WEBPACK_IMPORTED_MODULE_90__ = __webpack_require__(7924);
+/* harmony import */ var _core_oned_Code93Reader__WEBPACK_IMPORTED_MODULE_91__ = __webpack_require__(668);
+/* harmony import */ var _core_oned_rss_RSS14Reader__WEBPACK_IMPORTED_MODULE_92__ = __webpack_require__(1690);
+/* harmony import */ var _core_oned_rss_expanded_RSSExpandedReader__WEBPACK_IMPORTED_MODULE_93__ = __webpack_require__(5172);
+/* harmony import */ var _core_oned_rss_expanded_decoders_AbstractExpandedDecoder__WEBPACK_IMPORTED_MODULE_94__ = __webpack_require__(4262);
+/* harmony import */ var _core_oned_rss_expanded_decoders_AbstractExpandedDecoderComplement__WEBPACK_IMPORTED_MODULE_95__ = __webpack_require__(5768);
+/* harmony import */ var _core_oned_MultiFormatOneDReader__WEBPACK_IMPORTED_MODULE_96__ = __webpack_require__(8787);
+/* harmony import */ var _core_oned_CodaBarReader__WEBPACK_IMPORTED_MODULE_97__ = __webpack_require__(3457);
 
 // Exceptions
 
@@ -34641,7 +34641,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 274:
+/***/ 3228:
 /***/ (function(module) {
 
 /**
@@ -34755,18 +34755,18 @@ var __webpack_exports__ = {};
 "use strict";
 
 
-document.getElementById('app-version').innerText = {"version":"2.1.0-2509b1057cbf53c7b8094271ed748f3866d7835d"}.version;
+document.getElementById('app-version').innerText = {"version":"2.1.0-767f4b7a5e73a497790796e70f0f1d7370e54014"}.version;
 
 const {
   BrowserQRCodeReader,
   BrowserQRCodeSvgWriter, 
   EncodeHintType
-} = __webpack_require__(6991);
+} = __webpack_require__(5363);
 const QRCodeWriter = new BrowserQRCodeSvgWriter()
 const QRCodeReader = new BrowserQRCodeReader()
-const TOTP = __webpack_require__(6368);
-const Cookies = __webpack_require__(428);
-const OTPAuthUrl = __webpack_require__(8394);
+const TOTP = __webpack_require__(3796);
+const Cookies = __webpack_require__(5542);
+const OTPAuthUrl = __webpack_require__(781);
 
 let totpGenerator = undefined;
 

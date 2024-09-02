@@ -1161,14 +1161,17 @@ var BrowserCodeReader = /** @class */ (function () {
      */
     BrowserCodeReader.prototype.createBinaryBitmap = function (mediaElement) {
         var ctx = this.getCaptureCanvasContext(mediaElement);
+        // doing a scan with inverted colors on the second scan should only happen for video elements
+        var doAutoInvert = false;
         if (mediaElement instanceof HTMLVideoElement) {
             this.drawFrameOnCanvas(mediaElement);
+            doAutoInvert = true;
         }
         else {
             this.drawImageOnCanvas(mediaElement);
         }
         var canvas = this.getCaptureCanvas(mediaElement);
-        var luminanceSource = new _HTMLCanvasElementLuminanceSource__WEBPACK_IMPORTED_MODULE_6__/* .HTMLCanvasElementLuminanceSource */ .L(canvas);
+        var luminanceSource = new _HTMLCanvasElementLuminanceSource__WEBPACK_IMPORTED_MODULE_6__/* .HTMLCanvasElementLuminanceSource */ .L(canvas, doAutoInvert);
         var hybridBinarizer = new _core_common_HybridBinarizer__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A(luminanceSource);
         return new _core_BinaryBitmap__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A(hybridBinarizer);
     };
@@ -1739,21 +1742,24 @@ var __extends = (undefined && undefined.__extends) || (function () {
  */
 var HTMLCanvasElementLuminanceSource = /** @class */ (function (_super) {
     __extends(HTMLCanvasElementLuminanceSource, _super);
-    function HTMLCanvasElementLuminanceSource(canvas) {
+    function HTMLCanvasElementLuminanceSource(canvas, doAutoInvert) {
+        if (doAutoInvert === void 0) { doAutoInvert = false; }
         var _this = _super.call(this, canvas.width, canvas.height) || this;
         _this.canvas = canvas;
         _this.tempCanvasElement = null;
-        _this.buffer = HTMLCanvasElementLuminanceSource.makeBufferFromCanvasImageData(canvas);
+        _this.buffer = HTMLCanvasElementLuminanceSource.makeBufferFromCanvasImageData(canvas, doAutoInvert);
         return _this;
     }
-    HTMLCanvasElementLuminanceSource.makeBufferFromCanvasImageData = function (canvas) {
+    HTMLCanvasElementLuminanceSource.makeBufferFromCanvasImageData = function (canvas, doAutoInvert) {
+        if (doAutoInvert === void 0) { doAutoInvert = false; }
         var imageData = canvas.getContext('2d').getImageData(0, 0, canvas.width, canvas.height);
-        return HTMLCanvasElementLuminanceSource.toGrayscaleBuffer(imageData.data, canvas.width, canvas.height);
+        return HTMLCanvasElementLuminanceSource.toGrayscaleBuffer(imageData.data, canvas.width, canvas.height, doAutoInvert);
     };
-    HTMLCanvasElementLuminanceSource.toGrayscaleBuffer = function (imageBuffer, width, height) {
+    HTMLCanvasElementLuminanceSource.toGrayscaleBuffer = function (imageBuffer, width, height, doAutoInvert) {
+        if (doAutoInvert === void 0) { doAutoInvert = false; }
         var grayscaleBuffer = new Uint8ClampedArray(width * height);
         HTMLCanvasElementLuminanceSource.FRAME_INDEX = !HTMLCanvasElementLuminanceSource.FRAME_INDEX;
-        if (HTMLCanvasElementLuminanceSource.FRAME_INDEX) {
+        if (HTMLCanvasElementLuminanceSource.FRAME_INDEX || !doAutoInvert) {
             for (var i = 0, j = 0, length_1 = imageBuffer.length; i < length_1; i += 4, j++) {
                 var gray = void 0;
                 var alpha = imageBuffer[i + 3];
@@ -34755,7 +34761,7 @@ var __webpack_exports__ = {};
 "use strict";
 
 
-document.getElementById('app-version').innerText = {"version":"2.1.0-767f4b7a5e73a497790796e70f0f1d7370e54014"}.version;
+document.getElementById('app-version').innerText = {"version":"2.1.0-bd02bcaf9bd7887ebba493f8989fe7e749aa58cb"}.version;
 
 const {
   BrowserQRCodeReader,

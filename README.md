@@ -1,4 +1,4 @@
-# otp-authenticator-webapp [![starline](https://github-starline.vercel.app/qoomon/otp-authenticator-webapp)](https://github.com/qoomon/starline)
+# otp-authenticator-webapp [![starline](https://starlines.qoo.monster/assets/qoomon/otp-authenticator-webapp)](https://github.com/qoomon/starlines)
 
 [![Build Workflow](https://github.com/qoomon/otp-authenticator-webapp/workflows/Build%20&%20Deploy/badge.svg)](https://github.com/qoomon/otp-authenticator-webapp/actions)
 

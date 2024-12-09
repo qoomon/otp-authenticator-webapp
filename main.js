@@ -2580,7 +2580,7 @@ __webpack_require__.d(__webpack_exports__, {
   A: () => (/* binding */ core_Exception)
 });
 
-;// CONCATENATED MODULE: ../node_modules/ts-custom-error/dist/custom-error.mjs
+;// ../node_modules/ts-custom-error/dist/custom-error.mjs
 function fixProto(target, prototype) {
   var setPrototypeOf = Object.setPrototypeOf;
   setPrototypeOf ? setPrototypeOf(target, prototype) : target.__proto__ = prototype;
@@ -2691,7 +2691,7 @@ function customErrorFactory(fn, parent) {
 
 //# sourceMappingURL=custom-error.mjs.map
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/Exception.js
+;// ../node_modules/@zxing/library/esm/core/Exception.js
 var Exception_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -6003,7 +6003,7 @@ __webpack_require__.d(__webpack_exports__, {
   A: () => (/* binding */ encoder_HighLevelEncoder)
 });
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/util/Collections.js
+;// ../node_modules/@zxing/library/esm/core/util/Collections.js
 var Collections = /** @class */ (function () {
     function Collections() {
     }
@@ -6025,7 +6025,7 @@ var Collections = /** @class */ (function () {
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/BitArray.js
 var BitArray = __webpack_require__(5369);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/Token.js
+;// ../node_modules/@zxing/library/esm/core/aztec/encoder/Token.js
 /*
 * Copyright 2013 ZXing authors
 *
@@ -6054,7 +6054,7 @@ var Token = /** @class */ (function () {
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/Integer.js
 var Integer = __webpack_require__(9978);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/SimpleToken.js
+;// ../node_modules/@zxing/library/esm/core/aztec/encoder/SimpleToken.js
 /*
 * Copyright 2013 ZXing authors
 *
@@ -6119,7 +6119,7 @@ var SimpleToken = /** @class */ (function (_super) {
 }(encoder_Token));
 /* harmony default export */ const encoder_SimpleToken = (SimpleToken);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/BinaryShiftToken.js
+;// ../node_modules/@zxing/library/esm/core/aztec/encoder/BinaryShiftToken.js
 /*
 * Copyright 2013 ZXing authors
 *
@@ -6195,7 +6195,7 @@ var BinaryShiftToken = /** @class */ (function (_super) {
 }(encoder_SimpleToken));
 /* harmony default export */ const encoder_BinaryShiftToken = (BinaryShiftToken);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/TokenHelpers.js
+;// ../node_modules/@zxing/library/esm/core/aztec/encoder/TokenHelpers.js
 
 
 function addBinaryShift(token, start, byteCount) {
@@ -6206,7 +6206,7 @@ function add(token, value, bitCount) {
     return new encoder_SimpleToken(token, value, bitCount);
 }
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/EncoderConstants.js
+;// ../node_modules/@zxing/library/esm/core/aztec/encoder/EncoderConstants.js
 
 var /*final*/ MODE_NAMES = [
     'UPPER',
@@ -6222,7 +6222,7 @@ var /*final*/ MODE_MIXED = 3; // 5 bits
 var /*final*/ MODE_PUNCT = 4; // 5 bits
 var EMPTY_TOKEN = new encoder_SimpleToken(null, 0, 0);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/LatchTable.js
+;// ../node_modules/@zxing/library/esm/core/aztec/encoder/LatchTable.js
 // The Latch Table shows, for each pair of Modes, the optimal method for
 // getting from one mode to another.  In the worst possible case, this can
 // be up to 14 bits.  In the best possible case, we are already there!
@@ -6269,7 +6269,7 @@ var LATCH_TABLE = [
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/Arrays.js + 1 modules
 var Arrays = __webpack_require__(2598);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/ShiftTable.js
+;// ../node_modules/@zxing/library/esm/core/aztec/encoder/ShiftTable.js
 var __values = (undefined && undefined.__values) || function(o) {
     var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
     if (m) return m.call(o);
@@ -6310,7 +6310,7 @@ var /*final*/ SHIFT_TABLE = static_SHIFT_TABLE(Arrays/* default */.A.createInt32
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/StringUtils.js
 var StringUtils = __webpack_require__(9563);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/State.js
+;// ../node_modules/@zxing/library/esm/core/aztec/encoder/State.js
 /*
  * Copyright 2013 ZXing authors
  *
@@ -6504,7 +6504,7 @@ var State = /** @class */ (function () {
 }());
 /* harmony default export */ const encoder_State = (State);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/CharMap.js
+;// ../node_modules/@zxing/library/esm/core/aztec/encoder/CharMap.js
 
 
 
@@ -6607,7 +6607,7 @@ function static_CHAR_MAP(CHAR_MAP) {
 }
 var CHAR_MAP = static_CHAR_MAP(Arrays/* default */.A.createInt32Array(5, 256));
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/aztec/encoder/HighLevelEncoder.js
+;// ../node_modules/@zxing/library/esm/core/aztec/encoder/HighLevelEncoder.js
 /*
  * Copyright 2013 ZXing authors
  *
@@ -10627,7 +10627,7 @@ var GenericGF = __webpack_require__(2429);
 var ReedSolomonDecoder = __webpack_require__(4112);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/FormatException.js
 var FormatException = __webpack_require__(7027);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/decoder/Version.js
+;// ../node_modules/@zxing/library/esm/core/datamatrix/decoder/Version.js
 var __values = (undefined && undefined.__values) || function(o) {
     var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
     if (m) return m.call(o);
@@ -10828,7 +10828,7 @@ var Version = /** @class */ (function () {
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/IllegalArgumentException.js
 var IllegalArgumentException = __webpack_require__(5793);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/decoder/BitMatrixParser.js
+;// ../node_modules/@zxing/library/esm/core/datamatrix/decoder/BitMatrixParser.js
 
 
 
@@ -11245,7 +11245,7 @@ var BitMatrixParser = /** @class */ (function () {
 }());
 /* harmony default export */ const decoder_BitMatrixParser = (BitMatrixParser);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/decoder/DataBlock.js
+;// ../node_modules/@zxing/library/esm/core/datamatrix/decoder/DataBlock.js
 var DataBlock_values = (undefined && undefined.__values) || function(o) {
     var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
     if (m) return m.call(o);
@@ -11382,7 +11382,7 @@ var DataBlock = /** @class */ (function () {
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/decoder/DecodedBitStreamParser.js
 var DecodedBitStreamParser = __webpack_require__(4630);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/decoder/Decoder.js
+;// ../node_modules/@zxing/library/esm/core/datamatrix/decoder/Decoder.js
 var Decoder_values = (undefined && undefined.__values) || function(o) {
     var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
     if (m) return m.call(o);
@@ -11513,7 +11513,7 @@ var DetectorResult = __webpack_require__(3014);
 var GridSamplerInstance = __webpack_require__(5634);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/ResultPoint.js
 var ResultPoint = __webpack_require__(6502);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/detector/Detector.js
+;// ../node_modules/@zxing/library/esm/core/datamatrix/detector/Detector.js
 
 
 
@@ -11817,7 +11817,7 @@ var Detector = /** @class */ (function () {
 }());
 /* harmony default export */ const detector_Detector = (Detector);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/DataMatrixReader.js
+;// ../node_modules/@zxing/library/esm/core/datamatrix/DataMatrixReader.js
 
 
 
@@ -12004,7 +12004,7 @@ var StandardCharsets = __webpack_require__(3234);
 var StringEncoding = __webpack_require__(2442);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/StringUtils.js
 var StringUtils = __webpack_require__(9563);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/common/ECIEncoderSet.js
+;// ../node_modules/@zxing/library/esm/core/common/ECIEncoderSet.js
 /**
  * Set of CharsetEncoders for a given input string
  *
@@ -12222,7 +12222,7 @@ var ECIEncoderSet = /** @class */ (function () {
 var Integer = __webpack_require__(9978);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StringBuilder.js
 var StringBuilder = __webpack_require__(432);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/common/MinimalECIInput.js
+;// ../node_modules/@zxing/library/esm/core/common/MinimalECIInput.js
 
 
 
@@ -12498,7 +12498,7 @@ var InputEdge = /** @class */ (function () {
     return InputEdge;
 }());
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/MinimalEncoder.js
+;// ../node_modules/@zxing/library/esm/core/datamatrix/encoder/MinimalEncoder.js
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -13629,7 +13629,7 @@ var SymbolInfo = __webpack_require__(748);
 var TextEncoder = __webpack_require__(6563);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/X12Encoder.js
 var X12Encoder = __webpack_require__(4405);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/encoder/index.js
+;// ../node_modules/@zxing/library/esm/core/datamatrix/encoder/index.js
 
 
 
@@ -13644,7 +13644,7 @@ var X12Encoder = __webpack_require__(4405);
 
 
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/datamatrix/DataMatrixWriter.js
+;// ../node_modules/@zxing/library/esm/core/datamatrix/DataMatrixWriter.js
 
 
 
@@ -18207,7 +18207,7 @@ var OneDReader = __webpack_require__(1693);
 var EAN13Reader = __webpack_require__(8571);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/UPCEANReader.js + 4 modules
 var UPCEANReader = __webpack_require__(3164);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/EAN8Reader.js
+;// ../node_modules/@zxing/library/esm/core/oned/EAN8Reader.js
 /*
  * Copyright 2008 ZXing authors
  *
@@ -18315,7 +18315,7 @@ var EAN8Reader = /** @class */ (function (_super) {
 }(UPCEANReader/* default */.A));
 /* harmony default export */ const oned_EAN8Reader = (EAN8Reader);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/UPCAReader.js
+;// ../node_modules/@zxing/library/esm/core/oned/UPCAReader.js
 /*
  * Copyright 2008 ZXing authors
  *
@@ -18408,7 +18408,7 @@ var UPCAReader = /** @class */ (function (_super) {
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StringBuilder.js
 var StringBuilder = __webpack_require__(432);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/UPCEReader.js
+;// ../node_modules/@zxing/library/esm/core/oned/UPCEReader.js
 /*
  * Copyright 2008 ZXing authors
  *
@@ -18629,7 +18629,7 @@ var UPCEReader = /** @class */ (function (_super) {
 }(UPCEANReader/* default */.A));
 /* harmony default export */ const oned_UPCEReader = (UPCEReader);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/MultiFormatUPCEANReader.js
+;// ../node_modules/@zxing/library/esm/core/oned/MultiFormatUPCEANReader.js
 /*
  * Copyright 2008 ZXing authors
  *
@@ -18788,7 +18788,7 @@ var CodaBarReader = __webpack_require__(3457);
 var RSSExpandedReader = __webpack_require__(5172);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/RSS14Reader.js + 1 modules
 var RSS14Reader = __webpack_require__(1690);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/MultiFormatOneDReader.js
+;// ../node_modules/@zxing/library/esm/core/oned/MultiFormatOneDReader.js
 /*
  * Copyright 2008 ZXing authors
  *
@@ -19213,7 +19213,7 @@ var OneDReader = __webpack_require__(1693);
 var NotFoundException = __webpack_require__(8427);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/FormatException.js
 var FormatException = __webpack_require__(7027);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/AbstractUPCEANReader.js
+;// ../node_modules/@zxing/library/esm/core/oned/AbstractUPCEANReader.js
 /*
  * Copyright 2008 ZXing authors
  *
@@ -19426,7 +19426,7 @@ var AbstractUPCEANReader = /** @class */ (function (_super) {
 }(OneDReader/* default */.A));
 /* harmony default export */ const oned_AbstractUPCEANReader = (AbstractUPCEANReader);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/UPCEANExtension5Support.js
+;// ../node_modules/@zxing/library/esm/core/oned/UPCEANExtension5Support.js
 /*
  * Copyright (C) 2010 ZXing authors
  *
@@ -19597,7 +19597,7 @@ var UPCEANExtension5Support = /** @class */ (function () {
 }());
 /* harmony default export */ const oned_UPCEANExtension5Support = (UPCEANExtension5Support);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/UPCEANExtension2Support.js
+;// ../node_modules/@zxing/library/esm/core/oned/UPCEANExtension2Support.js
 /*
  * Copyright (C) 2012 ZXing authors
  *
@@ -19706,7 +19706,7 @@ var UPCEANExtension2Support = /** @class */ (function () {
 }());
 /* harmony default export */ const oned_UPCEANExtension2Support = (UPCEANExtension2Support);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/UPCEANExtensionSupport.js
+;// ../node_modules/@zxing/library/esm/core/oned/UPCEANExtensionSupport.js
 /*
  * Copyright (C) 2010 ZXing authors
  *
@@ -19748,7 +19748,7 @@ var UPCEANExtensionSupport = /** @class */ (function () {
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/ChecksumException.js
 var ChecksumException = __webpack_require__(1371);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/UPCEANReader.js
+;// ../node_modules/@zxing/library/esm/core/oned/UPCEANReader.js
 /*
  * Copyright 2008 ZXing authors
  *
@@ -20167,7 +20167,7 @@ __webpack_require__.d(__webpack_exports__, {
 var AbstractRSSReader = __webpack_require__(3986);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/DataCharacter.js
 var DataCharacter = __webpack_require__(528);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/Pair.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/Pair.js
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -20225,7 +20225,7 @@ var RSSUtils = __webpack_require__(3846);
 var System = __webpack_require__(7527);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/OneDReader.js
 var OneDReader = __webpack_require__(1693);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/RSS14Reader.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/RSS14Reader.js
 var RSS14Reader_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -20813,7 +20813,7 @@ var FinderPattern = __webpack_require__(209);
 var RSSUtils = __webpack_require__(3846);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/common/BitArray.js
 var BitArray = __webpack_require__(5369);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/BitArrayBuilder.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/expanded/BitArrayBuilder.js
 
 var BitArrayBuilder = /** @class */ (function () {
     function BitArrayBuilder() {
@@ -20861,7 +20861,7 @@ var BitArrayBuilder = /** @class */ (function () {
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AbstractExpandedDecoderComplement.js + 10 modules
 var AbstractExpandedDecoderComplement = __webpack_require__(5768);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/ExpandedPair.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/expanded/ExpandedPair.js
 var ExpandedPair = /** @class */ (function () {
     function ExpandedPair(leftChar, rightChar, finderPatter, mayBeLast) {
         this.leftchar = leftChar;
@@ -20907,7 +20907,7 @@ var ExpandedPair = /** @class */ (function () {
 }());
 /* harmony default export */ const expanded_ExpandedPair = (ExpandedPair);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/ExpandedRow.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/expanded/ExpandedRow.js
 var ExpandedRow = /** @class */ (function () {
     function ExpandedRow(pairs, rowNumber, wasReversed) {
         this.pairs = pairs;
@@ -20959,7 +20959,7 @@ var ExpandedRow = /** @class */ (function () {
 }());
 /* harmony default export */ const expanded_ExpandedRow = (ExpandedRow);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/RSSExpandedReader.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/expanded/RSSExpandedReader.js
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -21901,7 +21901,7 @@ var IllegalStateException = __webpack_require__(7591);
 var GeneralAppIdDecoder = __webpack_require__(3829);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AbstractExpandedDecoder.js
 var AbstractExpandedDecoder = __webpack_require__(4262);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01decoder.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01decoder.js
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -21961,7 +21961,7 @@ var AI01decoder = /** @class */ (function (_super) {
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StringBuilder.js
 var StringBuilder = __webpack_require__(432);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01AndOtherAIs.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01AndOtherAIs.js
 var AI01AndOtherAIs_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -21997,7 +21997,7 @@ var AI01AndOtherAIs = /** @class */ (function (_super) {
 }(decoders_AI01decoder));
 /* harmony default export */ const decoders_AI01AndOtherAIs = (AI01AndOtherAIs);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AnyAIDecoder.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AnyAIDecoder.js
 var AnyAIDecoder_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -22027,7 +22027,7 @@ var AnyAIDecoder = /** @class */ (function (_super) {
 }(AbstractExpandedDecoder/* default */.A));
 /* harmony default export */ const decoders_AnyAIDecoder = (AnyAIDecoder);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01weightDecoder.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01weightDecoder.js
 var AI01weightDecoder_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -22066,7 +22066,7 @@ var AI01weightDecoder = /** @class */ (function (_super) {
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/NotFoundException.js
 var NotFoundException = __webpack_require__(8427);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI013x0xDecoder.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI013x0xDecoder.js
 var AI013x0xDecoder_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -22106,7 +22106,7 @@ var AI013x0xDecoder = /** @class */ (function (_super) {
 }(decoders_AI01weightDecoder));
 /* harmony default export */ const decoders_AI013x0xDecoder = (AI013x0xDecoder);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI013103decoder.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI013103decoder.js
 var AI013103decoder_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -22136,7 +22136,7 @@ var AI013103decoder = /** @class */ (function (_super) {
 }(decoders_AI013x0xDecoder));
 /* harmony default export */ const decoders_AI013103decoder = (AI013103decoder);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01320xDecoder.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01320xDecoder.js
 var AI01320xDecoder_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -22174,7 +22174,7 @@ var AI01320xDecoder = /** @class */ (function (_super) {
 }(decoders_AI013x0xDecoder));
 /* harmony default export */ const decoders_AI01320xDecoder = (AI01320xDecoder);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01392xDecoder.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01392xDecoder.js
 var AI01392xDecoder_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -22216,7 +22216,7 @@ var AI01392xDecoder = /** @class */ (function (_super) {
 }(decoders_AI01decoder));
 /* harmony default export */ const decoders_AI01392xDecoder = (AI01392xDecoder);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01393xDecoder.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01393xDecoder.js
 var AI01393xDecoder_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -22273,7 +22273,7 @@ var AI01393xDecoder = /** @class */ (function (_super) {
 }(decoders_AI01decoder));
 /* harmony default export */ const decoders_AI01393xDecoder = (AI01393xDecoder);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI013x0x1xDecoder.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI013x0x1xDecoder.js
 var AI013x0x1xDecoder_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -22356,7 +22356,7 @@ var AI013x0x1xDecoder = /** @class */ (function (_super) {
 }(decoders_AI01weightDecoder));
 /* harmony default export */ const decoders_AI013x0x1xDecoder = (AI013x0x1xDecoder);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AbstractExpandedDecoderComplement.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AbstractExpandedDecoderComplement.js
 
 
 
@@ -22421,7 +22421,7 @@ var FormatException = __webpack_require__(7027);
 var IllegalStateException = __webpack_require__(7591);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StringBuilder.js
 var StringBuilder = __webpack_require__(432);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/BlockParsedResult.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/BlockParsedResult.js
 var BlockParsedResult = /** @class */ (function () {
     function BlockParsedResult(finished, decodedInformation) {
         if (decodedInformation) {
@@ -22442,7 +22442,7 @@ var BlockParsedResult = /** @class */ (function () {
 }());
 /* harmony default export */ const decoders_BlockParsedResult = (BlockParsedResult);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/DecodedObject.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/DecodedObject.js
 var DecodedObject = /** @class */ (function () {
     function DecodedObject(newPosition) {
         this.newPosition = newPosition;
@@ -22454,7 +22454,7 @@ var DecodedObject = /** @class */ (function () {
 }());
 /* harmony default export */ const decoders_DecodedObject = (DecodedObject);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/DecodedChar.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/DecodedChar.js
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -22487,7 +22487,7 @@ var DecodedChar = /** @class */ (function (_super) {
 }(decoders_DecodedObject));
 /* harmony default export */ const decoders_DecodedChar = (DecodedChar);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/DecodedInformation.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/DecodedInformation.js
 var DecodedInformation_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -22530,7 +22530,7 @@ var DecodedInformation = /** @class */ (function (_super) {
 }(decoders_DecodedObject));
 /* harmony default export */ const decoders_DecodedInformation = (DecodedInformation);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/DecodedNumeric.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/DecodedNumeric.js
 var DecodedNumeric_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -22582,7 +22582,7 @@ var DecodedNumeric = /** @class */ (function (_super) {
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/NotFoundException.js
 var NotFoundException = __webpack_require__(8427);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/FieldParser.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/FieldParser.js
 var __values = (undefined && undefined.__values) || function(o) {
     var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
     if (m) return m.call(o);
@@ -22858,7 +22858,7 @@ var FieldParser = /** @class */ (function () {
 }());
 /* harmony default export */ const decoders_FieldParser = (FieldParser);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/GeneralAppIdDecoder.js
+;// ../node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/GeneralAppIdDecoder.js
 
 
 
@@ -23777,7 +23777,7 @@ var ResultPoint = __webpack_require__(6502);
 var System = __webpack_require__(7527);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/Arrays.js + 1 modules
 var Arrays = __webpack_require__(2598);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/detector/PDF417DetectorResult.js
+;// ../node_modules/@zxing/library/esm/core/pdf417/detector/PDF417DetectorResult.js
 /*
 * Copyright 2007 ZXing authors
 *
@@ -23812,7 +23812,7 @@ var PDF417DetectorResult = /** @class */ (function () {
 }());
 /* harmony default export */ const detector_PDF417DetectorResult = (PDF417DetectorResult);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/detector/Detector.js
+;// ../node_modules/@zxing/library/esm/core/pdf417/detector/Detector.js
 /*
 * Copyright 2009 ZXing authors
 *
@@ -24155,7 +24155,7 @@ var Detector = /** @class */ (function () {
 var MathUtils = __webpack_require__(1091);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/ec/ErrorCorrection.js + 3 modules
 var ErrorCorrection = __webpack_require__(4034);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/BoundingBox.js
+;// ../node_modules/@zxing/library/esm/core/pdf417/decoder/BoundingBox.js
 /*
 * Copyright 2013 ZXing authors
 *
@@ -24311,7 +24311,7 @@ var BoundingBox = /** @class */ (function () {
 }());
 /* harmony default export */ const decoder_BoundingBox = (BoundingBox);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/BarcodeMetadata.js
+;// ../node_modules/@zxing/library/esm/core/pdf417/decoder/BarcodeMetadata.js
 /*
  * Copyright 2013 ZXing authors
  *
@@ -24358,7 +24358,7 @@ var BarcodeMetadata = /** @class */ (function () {
 }());
 /* harmony default export */ const decoder_BarcodeMetadata = (BarcodeMetadata);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/util/Formatter.js
+;// ../node_modules/@zxing/library/esm/core/util/Formatter.js
 /**
  * Java Formatter class polyfill that works in the JS way.
  */
@@ -24438,7 +24438,7 @@ var Formatter = /** @class */ (function () {
 }());
 /* harmony default export */ const util_Formatter = (Formatter);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/DetectionResultColumn.js
+;// ../node_modules/@zxing/library/esm/core/pdf417/decoder/DetectionResultColumn.js
 /*
  * Copyright 2013 ZXing authors
  *
@@ -24545,7 +24545,7 @@ var DetectionResultColumn = /** @class */ (function () {
 }());
 /* harmony default export */ const decoder_DetectionResultColumn = (DetectionResultColumn);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/BarcodeValue.js
+;// ../node_modules/@zxing/library/esm/core/pdf417/decoder/BarcodeValue.js
 /*
  * Copyright 2013 ZXing authors
  *
@@ -24659,7 +24659,7 @@ var BarcodeValue = /** @class */ (function () {
 }());
 /* harmony default export */ const decoder_BarcodeValue = (BarcodeValue);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/DetectionResultRowIndicatorColumn.js
+;// ../node_modules/@zxing/library/esm/core/pdf417/decoder/DetectionResultRowIndicatorColumn.js
 /*
  * Copyright 2013 ZXing authors
  *
@@ -24975,7 +24975,7 @@ var DetectionResultRowIndicatorColumn = /** @class */ (function (_super) {
 }(decoder_DetectionResultColumn));
 /* harmony default export */ const decoder_DetectionResultRowIndicatorColumn = (DetectionResultRowIndicatorColumn);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/DetectionResult.js
+;// ../node_modules/@zxing/library/esm/core/pdf417/decoder/DetectionResult.js
 /*
  * Copyright 2013 ZXing authors
  *
@@ -25272,7 +25272,7 @@ var DetectionResult = /** @class */ (function () {
 }());
 /* harmony default export */ const decoder_DetectionResult = (DetectionResult);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/Codeword.js
+;// ../node_modules/@zxing/library/esm/core/pdf417/decoder/Codeword.js
 /*
  * Copyright 2013 ZXing authors
  *
@@ -25341,7 +25341,7 @@ var Codeword = /** @class */ (function () {
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/Float.js
 var Float = __webpack_require__(1226);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/PDF417CodewordDecoder.js
+;// ../node_modules/@zxing/library/esm/core/pdf417/decoder/PDF417CodewordDecoder.js
 /*
 * Copyright 2013 ZXing authors
 *
@@ -25471,7 +25471,7 @@ var PDF417CodewordDecoder = /** @class */ (function () {
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/DecodedBitStreamParser.js + 5 modules
 var DecodedBitStreamParser = __webpack_require__(7915);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/PDF417ScanningDecoder.js
+;// ../node_modules/@zxing/library/esm/core/pdf417/decoder/PDF417ScanningDecoder.js
 /*
 * Copyright 2013 ZXing authors
 *
@@ -26176,7 +26176,7 @@ var PDF417ScanningDecoder = /** @class */ (function () {
 }());
 /* harmony default export */ const decoder_PDF417ScanningDecoder = (PDF417ScanningDecoder);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/PDF417Reader.js
+;// ../node_modules/@zxing/library/esm/core/pdf417/PDF417Reader.js
 /*
  * Copyright 2009 ZXing authors
  *
@@ -26517,7 +26517,7 @@ var Arrays = __webpack_require__(2598);
 var StringBuilder = __webpack_require__(432);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/Integer.js
 var Integer = __webpack_require__(9978);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/util/Long.js
+;// ../node_modules/@zxing/library/esm/core/util/Long.js
 /**
  * Ponyfill for Java's Long class.
  */
@@ -26542,7 +26542,7 @@ var Long = /** @class */ (function () {
 var IndexOutOfBoundsException = __webpack_require__(9766);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/Exception.js + 1 modules
 var Exception = __webpack_require__(3830);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/NullPointerException.js
+;// ../node_modules/@zxing/library/esm/core/NullPointerException.js
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -26570,7 +26570,7 @@ var NullPointerException = /** @class */ (function (_super) {
 }(Exception/* default */.A));
 /* harmony default export */ const core_NullPointerException = (NullPointerException);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/util/OutputStream.js
+;// ../node_modules/@zxing/library/esm/core/util/OutputStream.js
 
 
 /*
@@ -26713,7 +26713,7 @@ var OutputStream /*implements Closeable, Flushable*/ = /** @class */ (function (
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/IllegalArgumentException.js
 var IllegalArgumentException = __webpack_require__(5793);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/OutOfMemoryError.js
+;// ../node_modules/@zxing/library/esm/core/OutOfMemoryError.js
 var OutOfMemoryError_extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -26742,7 +26742,7 @@ var OutOfMemoryError = /** @class */ (function (_super) {
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/System.js
 var System = __webpack_require__(7527);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/util/ByteArrayOutputStream.js
+;// ../node_modules/@zxing/library/esm/core/util/ByteArrayOutputStream.js
 /*
  * Copyright (c) 1994, 2010, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
@@ -27027,7 +27027,7 @@ var ByteArrayOutputStream = /** @class */ (function (_super) {
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StringEncoding.js
 var StringEncoding = __webpack_require__(2442);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/DecodedBitStreamParser.js
+;// ../node_modules/@zxing/library/esm/core/pdf417/decoder/DecodedBitStreamParser.js
 /*
  * Copyright 2009 ZXing authors
  *
@@ -27826,7 +27826,7 @@ var IllegalArgumentException = __webpack_require__(5793);
 var System = __webpack_require__(7527);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StringBuilder.js
 var StringBuilder = __webpack_require__(432);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/ec/ModulusPoly.js
+;// ../node_modules/@zxing/library/esm/core/pdf417/decoder/ec/ModulusPoly.js
 /*
 * Copyright 2012 ZXing authors
 *
@@ -28105,7 +28105,7 @@ var ModulusPoly = /** @class */ (function () {
 var PDF417Common = __webpack_require__(4847);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/ArithmeticException.js
 var ArithmeticException = __webpack_require__(2046);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/ec/ModulusBase.js
+;// ../node_modules/@zxing/library/esm/core/pdf417/decoder/ec/ModulusBase.js
 
 
 var ModulusBase = /** @class */ (function () {
@@ -28148,7 +28148,7 @@ var ModulusBase = /** @class */ (function () {
 }());
 /* harmony default export */ const ec_ModulusBase = (ModulusBase);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/ec/ModulusGF.js
+;// ../node_modules/@zxing/library/esm/core/pdf417/decoder/ec/ModulusGF.js
 /*
  * Copyright 2012 ZXing authors
  *
@@ -28232,7 +28232,7 @@ var ModulusGF = /** @class */ (function (_super) {
 }(ec_ModulusBase));
 /* harmony default export */ const ec_ModulusGF = (ModulusGF);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/pdf417/decoder/ec/ErrorCorrection.js
+;// ../node_modules/@zxing/library/esm/core/pdf417/decoder/ec/ErrorCorrection.js
 /*
 * Copyright 2012 ZXing authors
 *
@@ -28471,7 +28471,7 @@ var FormatInformation = __webpack_require__(1722);
 var DataMask = __webpack_require__(6021);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/FormatException.js
 var FormatException = __webpack_require__(7027);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/BitMatrixParser.js
+;// ../node_modules/@zxing/library/esm/core/qrcode/decoder/BitMatrixParser.js
 /*
  * Copyright 2007 ZXing authors
  *
@@ -28692,7 +28692,7 @@ var BitMatrixParser = /** @class */ (function () {
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/IllegalArgumentException.js
 var IllegalArgumentException = __webpack_require__(5793);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/DataBlock.js
+;// ../node_modules/@zxing/library/esm/core/qrcode/decoder/DataBlock.js
 /*
  * Copyright 2007 ZXing authors
  *
@@ -28835,7 +28835,7 @@ var DataBlock = /** @class */ (function () {
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/DecodedBitStreamParser.js
 var DecodedBitStreamParser = __webpack_require__(4299);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/QRCodeDecoderMetaData.js
+;// ../node_modules/@zxing/library/esm/core/qrcode/decoder/QRCodeDecoderMetaData.js
 /*
  * Copyright 2013 ZXing authors
  *
@@ -28885,7 +28885,7 @@ var QRCodeDecoderMetaData = /** @class */ (function () {
 }());
 /* harmony default export */ const decoder_QRCodeDecoderMetaData = (QRCodeDecoderMetaData);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/Decoder.js
+;// ../node_modules/@zxing/library/esm/core/qrcode/decoder/Decoder.js
 /*
  * Copyright 2007 ZXing authors
  *
@@ -29090,7 +29090,7 @@ var GridSamplerInstance = __webpack_require__(5634);
 var PerspectiveTransform = __webpack_require__(4635);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/ResultPoint.js
 var ResultPoint = __webpack_require__(6502);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/detector/AlignmentPattern.js
+;// ../node_modules/@zxing/library/esm/core/qrcode/detector/AlignmentPattern.js
 /*
  * Copyright 2007 ZXing authors
  *
@@ -29159,7 +29159,7 @@ var AlignmentPattern = /** @class */ (function (_super) {
 }(ResultPoint/* default */.A));
 /* harmony default export */ const detector_AlignmentPattern = (AlignmentPattern);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/detector/AlignmentPatternFinder.js
+;// ../node_modules/@zxing/library/esm/core/qrcode/detector/AlignmentPatternFinder.js
 /*
  * Copyright 2007 ZXing authors
  *
@@ -29430,7 +29430,7 @@ var AlignmentPatternFinder = /** @class */ (function () {
 }());
 /* harmony default export */ const detector_AlignmentPatternFinder = (AlignmentPatternFinder);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/detector/FinderPattern.js
+;// ../node_modules/@zxing/library/esm/core/qrcode/detector/FinderPattern.js
 /*
  * Copyright 2007 ZXing authors
  *
@@ -29520,7 +29520,7 @@ var FinderPattern = /** @class */ (function (_super) {
 }(ResultPoint/* default */.A));
 /* harmony default export */ const detector_FinderPattern = (FinderPattern);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/detector/FinderPatternInfo.js
+;// ../node_modules/@zxing/library/esm/core/qrcode/detector/FinderPatternInfo.js
 /*
  * Copyright 2007 ZXing authors
  *
@@ -29561,7 +29561,7 @@ var FinderPatternInfo = /** @class */ (function () {
 }());
 /* harmony default export */ const detector_FinderPatternInfo = (FinderPatternInfo);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/detector/FinderPatternFinder.js
+;// ../node_modules/@zxing/library/esm/core/qrcode/detector/FinderPatternFinder.js
 /*
  * Copyright 2007 ZXing authors
  *
@@ -30240,7 +30240,7 @@ var FinderPatternFinder = /** @class */ (function () {
 }());
 /* harmony default export */ const detector_FinderPatternFinder = (FinderPatternFinder);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/detector/Detector.js
+;// ../node_modules/@zxing/library/esm/core/qrcode/detector/Detector.js
 /*
  * Copyright 2007 ZXing authors
  *
@@ -30565,7 +30565,7 @@ var Detector = /** @class */ (function () {
 }());
 /* harmony default export */ const detector_Detector = (Detector);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/QRCodeReader.js
+;// ../node_modules/@zxing/library/esm/core/qrcode/QRCodeReader.js
 /*
  * Copyright 2007 ZXing authors
  *
@@ -31766,7 +31766,7 @@ __webpack_require__.d(__webpack_exports__, {
 var BitMatrix = __webpack_require__(8307);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/FormatInformation.js
 var FormatInformation = __webpack_require__(1722);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/ECBlocks.js
+;// ../node_modules/@zxing/library/esm/core/qrcode/decoder/ECBlocks.js
 var __values = (undefined && undefined.__values) || function(o) {
     var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
     if (m) return m.call(o);
@@ -31825,7 +31825,7 @@ var ECBlocks = /** @class */ (function () {
 }());
 /* harmony default export */ const decoder_ECBlocks = (ECBlocks);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/ECB.js
+;// ../node_modules/@zxing/library/esm/core/qrcode/decoder/ECB.js
 /**
  * <p>Encapsulates the parameters for one error-correction block in one symbol version.
  * This includes the number of data codewords, and the number of times a block with these
@@ -31850,7 +31850,7 @@ var ECB = /** @class */ (function () {
 var FormatException = __webpack_require__(7027);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/IllegalArgumentException.js
 var IllegalArgumentException = __webpack_require__(5793);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/decoder/Version.js
+;// ../node_modules/@zxing/library/esm/core/qrcode/decoder/Version.js
 /*
  * Copyright 2007 ZXing authors
  *
@@ -32269,7 +32269,7 @@ var QRCode = __webpack_require__(9395);
 var MatrixUtil = __webpack_require__(6172);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/util/StringEncoding.js
 var StringEncoding = __webpack_require__(2442);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/encoder/BlockPair.js
+;// ../node_modules/@zxing/library/esm/core/qrcode/encoder/BlockPair.js
 /*
  * Copyright 2008 ZXing authors
  *
@@ -32303,7 +32303,7 @@ var BlockPair = /** @class */ (function () {
 
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/WriterException.js
 var WriterException = __webpack_require__(5527);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/qrcode/encoder/Encoder.js
+;// ../node_modules/@zxing/library/esm/core/qrcode/encoder/Encoder.js
 /*
  * Copyright 2008 ZXing authors
  *
@@ -33675,7 +33675,7 @@ var System = __webpack_require__(7527);
 var IllegalArgumentException = __webpack_require__(5793);
 // EXTERNAL MODULE: ../node_modules/@zxing/library/esm/core/IndexOutOfBoundsException.js
 var IndexOutOfBoundsException = __webpack_require__(9766);
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/ArrayIndexOutOfBoundsException.js
+;// ../node_modules/@zxing/library/esm/core/ArrayIndexOutOfBoundsException.js
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -33708,7 +33708,7 @@ var ArrayIndexOutOfBoundsException = /** @class */ (function (_super) {
 }(IndexOutOfBoundsException/* default */.A));
 /* harmony default export */ const core_ArrayIndexOutOfBoundsException = (ArrayIndexOutOfBoundsException);
 
-;// CONCATENATED MODULE: ../node_modules/@zxing/library/esm/core/util/Arrays.js
+;// ../node_modules/@zxing/library/esm/core/util/Arrays.js
 var __values = (undefined && undefined.__values) || function(o) {
     var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
     if (m) return m.call(o);
@@ -34756,12 +34756,12 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
 (() => {
 "use strict";
 
 
-document.getElementById('app-version').innerText = {"version":"2.1.0-13341668a1fc303ba855f32f430e182d650860bf"}.version;
+document.getElementById('app-version').innerText = {"version":"2.1.0-c21b0f2cb62caa20b284c8f7b2a8384454b09996"}.version;
 
 const {
   BrowserQRCodeReader,

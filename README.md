@@ -18,7 +18,7 @@ Hosted at github pages: https://qoomon.github.io/otp-authenticator-webapp
   * e.g. `otpauth://totp/john.doe?secret=N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G&issuer=example.org`
   
 ### Host in Your Own GitHub Account
-* For this repo
+* Fork this repo
 * Go to your forked Repository -> `Settings` -> `GitHub Pages`
   * Ensure `Source` is set to `gh-pages`
   * Find your link to the app `Your site is published at https://USERNAME.github.io/otp-authenticator-webapp/`

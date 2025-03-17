@@ -34761,7 +34761,7 @@ var __webpack_exports__ = {};
 "use strict";
 
 
-document.getElementById('app-version').innerText = {"version":"2.1.1-d8ca9d821c8b457226123fd65e0a3f1261028ea4"}.version;
+document.getElementById('app-version').innerText = {"version":"2.1.1-e6dfbb22b550bb75cf13ea3acbd28df7b7a81939"}.version;
 
 const {
   BrowserQRCodeReader,
@@ -34935,16 +34935,16 @@ function handleOtpauthUrl(otpauthUrl) {
     // otpauth://totp/issuer%3Aaccount?secret=secret&issuer=issuer
     const otpauthParameters = OTPAuthUrl.parse(otpauthUrl);
 
-    document.getElementById('input-secret').value = otpauthParameters.secret || ' ';
+    document.getElementById('input-secret').value = otpauthParameters.secret?.trim() || ' ';
     document.getElementById('input-secret').dispatchEvent(new Event('input'));
     
-    document.getElementById('input-issuer').value = otpauthParameters.issuer || '';
+    document.getElementById('input-issuer').value = otpauthParameters.issuer?.trim() || '';
     document.getElementById('input-issuer').dispatchEvent(new Event('input'));
     
-    document.getElementById('input-account').value = otpauthParameters.account || '';
+    document.getElementById('input-account').value = otpauthParameters.account?.trim() || '';
     document.getElementById('input-account').dispatchEvent(new Event('input'));
     
-    document.getElementById('input-period').value = otpauthParameters.period || '';
+    document.getElementById('input-period').value = otpauthParameters.period?.trim() || '';
     document.getElementById('input-period').dispatchEvent(new Event('input'));
 }
 

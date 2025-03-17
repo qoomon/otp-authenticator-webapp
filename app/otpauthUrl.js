@@ -26,7 +26,7 @@ module.exports = {
             result.secret = decodeURIComponent(otpauthUrl.searchParams.get('secret'));
         }
 
-        const label = decodeURIComponent(otpauthUrl.pathname.replace(RegExp('^//totp/'), ''));
+        const label = decodeURIComponent(otpauthUrl.pathname.replace(/^\//, ''));
         if (!label.includes(":")) {
             result.account = label;
         } else {

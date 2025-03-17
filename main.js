@@ -1172,7 +1172,7 @@ module.exports = {
             result.secret = decodeURIComponent(otpauthUrl.searchParams.get('secret'));
         }
 
-        const label = decodeURIComponent(otpauthUrl.pathname.replace(RegExp('^//totp/'), ''));
+        const label = decodeURIComponent(otpauthUrl.pathname.replace(/^\//, ''));
         if (!label.includes(":")) {
             result.account = label;
         } else {
@@ -34761,7 +34761,7 @@ var __webpack_exports__ = {};
 "use strict";
 
 
-document.getElementById('app-version').innerText = {"version":"2.1.0-04e82932c9d2bc2b73ea071cc6fcabd9f3789abe"}.version;
+document.getElementById('app-version').innerText = {"version":"2.1.0-9dbeafb0d21e6cb3eb15b89807d16b6e08e87f15"}.version;
 
 const {
   BrowserQRCodeReader,

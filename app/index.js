@@ -174,16 +174,16 @@ function handleOtpauthUrl(otpauthUrl) {
     // otpauth://totp/issuer%3Aaccount?secret=secret&issuer=issuer
     const otpauthParameters = OTPAuthUrl.parse(otpauthUrl);
 
-    document.getElementById('input-secret').value = otpauthParameters.secret || ' ';
+    document.getElementById('input-secret').value = otpauthParameters.secret?.trim() || ' ';
     document.getElementById('input-secret').dispatchEvent(new Event('input'));
     
-    document.getElementById('input-issuer').value = otpauthParameters.issuer || '';
+    document.getElementById('input-issuer').value = otpauthParameters.issuer?.trim() || '';
     document.getElementById('input-issuer').dispatchEvent(new Event('input'));
     
-    document.getElementById('input-account').value = otpauthParameters.account || '';
+    document.getElementById('input-account').value = otpauthParameters.account?.trim() || '';
     document.getElementById('input-account').dispatchEvent(new Event('input'));
     
-    document.getElementById('input-period').value = otpauthParameters.period || '';
+    document.getElementById('input-period').value = otpauthParameters.period?.trim() || '';
     document.getElementById('input-period').dispatchEvent(new Event('input'));
 }
 

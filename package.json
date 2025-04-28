@@ -20,6 +20,6 @@
     "git-revision": "^0.0.3",
     "webpack": "^5.99.7",
     "webpack-cli": "^4.6.0",
-    "webpack-dev-server": "^4.15.2"
+    "webpack-dev-server": "^5.2.1"
   }
 }

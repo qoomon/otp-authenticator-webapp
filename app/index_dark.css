@@ -21,10 +21,25 @@ body
     border-color: #313131;
 }
 
-#input-container input
+#input-container input,
+#search-input
 {
     color: #606060;
     border-color: #2d2d2d;
+}
+
+#search-input {
+    background: #2a2a2a;
+    color: #e6e6e6;
+}
+
+#search-input::placeholder {
+    color: #666;
+}
+
+#search-input:focus {
+    border-color: #598de0;
+    box-shadow: 0 0 0 2px rgba(89, 141, 224, 0.1);
 }
 
 #more-button,
@@ -32,7 +47,10 @@ body
 #input-video-button,
 #light-switch,
 #clear-all-icon,
-#add-key-icon
+#add-key-icon,
+#export-icon,
+#import-icon,
+#lock-icon
 {
     filter: invert(25%);
 }
@@ -41,7 +59,10 @@ body
     filter: invert(60%) sepia(1) saturate(5) hue-rotate(320deg);
 }
 
-#add-key-icon:hover {
+#add-key-icon:hover,
+#export-icon:hover,
+#import-icon:hover,
+#lock-icon:hover {
     filter: invert(50%) sepia(1) saturate(5) hue-rotate(180deg);
 }
 
@@ -112,5 +133,48 @@ body
 
 .add-button:hover {
     background: #598de0;
+}
+
+#password-dialog {
+    background: #2a2a2a;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+#password-dialog h2 {
+    color: #e6e6e6;
+}
+
+#password-dialog p {
+    color: #999;
+}
+
+#password-input,
+#password-confirm {
+    background: #1b1b1b;
+    border-color: #3a3a3a;
+    color: #e6e6e6;
+}
+
+#password-input:focus,
+#password-confirm:focus {
+    border-color: #598de0;
+    box-shadow: 0 0 0 2px rgba(89, 141, 224, 0.1);
+}
+
+#password-submit {
+    background: #598de0;
+}
+
+#password-submit:hover {
+    background: #4070cc;
+}
+
+#password-cancel {
+    background: #3a3a3a;
+    color: #e6e6e6;
+}
+
+#password-cancel:hover {
+    background: #4a4a4a;
 }
 

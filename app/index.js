@@ -18,6 +18,7 @@ let totpGenerator = undefined;
 let otpManager = new OTPManager();
 let isMultiKeyView = true; // Always show multi-key view
 let currentlySwitching = false; // Flag to prevent update conflicts
+let isInitialized = false; // Track if app is initialized
 
 function copyToClipboard(value) {
     // Create a temporary input
@@ -53,6 +54,12 @@ function updateTotpGenerator() {
     if (currentlySwitching) return; // Don't update while switching entries
     
     let secret = document.getElementById('input-secret').value.replace(/\s/g, '');
+    
+    // Don't try to create TOTP for migration URLs
+    if (secret.startsWith('otpauth-migration://')) {
+        return;
+    }
+    
     let period = document.getElementById('input-period').value;
 
     totpGenerator = secret ? new TOTP(secret, period) : undefined;
@@ -95,6 +102,13 @@ function updateTotpToken() {
 
 function updateQrCode() {
     const secret = document.getElementById('input-secret').value;
+    
+    // Don't generate QR code for migration URLs
+    if (secret.startsWith('otpauth-migration://')) {
+        document.getElementById('otpauth-qr-overlay').style.display = 'none';
+        return;
+    }
+    
     const issuer = document.getElementById('input-issuer').value;
     const account = document.getElementById('input-account').value;
     const period = document.getElementById('input-period').value;
@@ -210,6 +224,45 @@ function handleOtpauthUrl(otpauthUrl) {
     document.getElementById('input-period').dispatchEvent(new Event('input'));
 }
 
+function handleMigrationUrl(migrationUrl) {
+    console.log('Handling migration URL:', migrationUrl.substring(0, 50) + '...');
+    
+    // Clear the input field first
+    document.getElementById('input-secret').value = '';
+    
+    // Check if we're currently editing an empty entry and remove it
+    const selectedEntry = otpManager.getSelectedEntry();
+    if (selectedEntry && !selectedEntry.secret && !selectedEntry.account && !selectedEntry.issuer) {
+        // This is an empty entry that was just created - delete it
+        otpManager.deleteEntry(selectedEntry.id);
+        otpManager.selectedId = null;
+    }
+    
+    try {
+        // Import from migration URL
+        const result = otpManager.importFromMigration(migrationUrl);
+        console.log('Import result:', result);
+        
+        if (result.success) {
+            renderEntriesList();
+            if (result.added > 0) {
+                showToast(`Imported ${result.added} keys from Google Authenticator${result.skipped > 0 ? `, skipped ${result.skipped} duplicates` : ''}`);
+            } else {
+                showToast(`All keys already exist (${result.skipped} skipped)`);
+            }
+            
+            // Hide the calculator since we just imported
+            document.getElementById('calculator-container').style.display = 'none';
+        } else {
+            console.error('Migration import error:', result.error);
+            alert(`Migration import failed: ${result.error}`);
+        }
+    } catch (error) {
+        console.error('Migration handling error:', error);
+        alert(`Migration import failed: ${error.message}`);
+    }
+}
+
 document.getElementById('input-video-button').addEventListener('click', () => {
 
   document.getElementById('input-video-dialog').style.display = '';
@@ -219,6 +272,8 @@ document.getElementById('input-video-button').addEventListener('click', () => {
       .then((result) => {
         if(result.text.startsWith('otpauth://totp/')){
           handleOtpauthUrl(result.text)
+        } else if(result.text.startsWith('otpauth-migration://')) {
+          handleMigrationUrl(result.text)
         } else {
           alert('Invalid OTP auth QR code!')
         }
@@ -284,6 +339,8 @@ document.getElementById('input-image').addEventListener('change', (event) => {
       .then((result) => {
         if(result.text.startsWith('otpauth://totp/')) {
           handleOtpauthUrl(result.text);
+        } else if(result.text.startsWith('otpauth-migration://')) {
+          handleMigrationUrl(result.text);
         } else {
           alert('Invalid OTP auth QR code!')
         }
@@ -299,6 +356,10 @@ document.getElementById('input-secret').addEventListener('input', (event) => {
     let secret = event.target.value;
     if (secret.startsWith("otpauth://totp/")) {
       handleOtpauthUrl(secret);
+    } else if (secret.startsWith("otpauth-migration://")) {
+      // Handle migration URL - return early to prevent further processing
+      handleMigrationUrl(secret);
+      return;
     }
     updateTotpGenerator();
     updateQrCode();
@@ -397,10 +458,22 @@ document.getElementById('input-period').addEventListener('input', () => {
 
 // ################  Multi-key functions  ##################
 
+let searchFilter = '';
+
 function renderEntriesList() {
     const entriesList = document.getElementById('entries-list');
-    const entries = otpManager.getAllEntries();
+    let entries = otpManager.getAllEntries();
     const selectedEntry = otpManager.getSelectedEntry();
+    
+    // Apply search filter if active
+    if (searchFilter) {
+        const filterLower = searchFilter.toLowerCase();
+        entries = entries.filter(entry => {
+            const account = (entry.account || '').toLowerCase();
+            const issuer = (entry.issuer || '').toLowerCase();
+            return account.includes(filterLower) || issuer.includes(filterLower);
+        });
+    }
     
     entriesList.innerHTML = '';
     
@@ -475,12 +548,12 @@ function renderEntriesList() {
                 // If no entries left, create a new empty one
                 if (otpManager.getAllEntries().length === 0) {
                     otpManager.addEntry('', '', '', 30);
-                    otpManager.selectedIndex = -1;
+                    otpManager.selectedId = null;
                     document.getElementById('calculator-container').style.display = 'none';
                 } else {
                     // Hide calculator since no entry is selected
                     document.getElementById('calculator-container').style.display = 'none';
-                    otpManager.selectedIndex = -1;
+                    otpManager.selectedId = null;
                 }
             }
         };
@@ -495,7 +568,7 @@ function renderEntriesList() {
             
             if (selectedEntry && selectedEntry.id === entry.id) {
                 // Deselect if clicking the same entry
-                otpManager.selectedIndex = -1;
+                otpManager.selectedId = null;
                 calculatorContainer.style.display = 'none';
                 renderEntriesList();
             } else {
@@ -575,7 +648,7 @@ function initializeMultiKeyView() {
     if (otpManager.getAllEntries().length === 0) {
         otpManager.addEntry('', '', '', 30);
         // Don't select the entry - user must click to select
-        otpManager.selectedIndex = -1;
+        otpManager.selectedId = null;
     }
     
     renderEntriesList();
@@ -611,13 +684,13 @@ document.getElementById('add-key-icon').addEventListener('click', () => {
 });
 
 // Clear all icon handler
-document.getElementById('clear-all-icon').addEventListener('click', () => {
+document.getElementById('clear-all-icon').addEventListener('click', async () => {
     if (confirm('This will delete all saved keys. Are you sure?')) {
         otpManager.clearAll();
         
         // Create a new empty entry but don't select it
         otpManager.addEntry('', '', '', 30);
-        otpManager.selectedIndex = -1;
+        otpManager.selectedId = null;
         
         // Hide calculator since nothing is selected
         document.getElementById('calculator-container').style.display = 'none';
@@ -625,6 +698,89 @@ document.getElementById('clear-all-icon').addEventListener('click', () => {
         renderEntriesList();
     }
 });
+
+// Search input handler
+document.getElementById('search-input').addEventListener('input', (event) => {
+    searchFilter = event.target.value;
+    renderEntriesList();
+});
+
+// Export handler
+document.getElementById('export-icon').addEventListener('click', async () => {
+    const jsonData = await otpManager.exportEntries();
+    
+    // Create a blob and download link
+    const blob = new Blob([jsonData], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `otp-keys-${new Date().toISOString().split('T')[0]}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    
+    const message = otpManager.isEncrypted ? 
+        'Keys exported (encrypted)!' : 
+        'Keys exported successfully!';
+    showToast(message);
+});
+
+// Import icon click handler
+document.getElementById('import-icon').addEventListener('click', () => {
+    document.getElementById('import-file').click();
+});
+
+// Import file handler
+document.getElementById('import-file').addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = async (e) => {
+            const importData = e.target.result;
+            
+            // Try to parse to check if encrypted
+            try {
+                const parsed = JSON.parse(importData);
+                if (otpManager.crypto.isEncrypted(parsed)) {
+                    // Need password to decrypt
+                    showPasswordPrompt('import', async (password) => {
+                        if (!password) {
+                            showToast('Import cancelled');
+                            return;
+                        }
+                        
+                        const result = await otpManager.importEntries(importData, password);
+                        handleImportResult(result);
+                    });
+                } else {
+                    // Not encrypted, import directly
+                    const result = await otpManager.importEntries(importData);
+                    handleImportResult(result);
+                }
+            } catch (e) {
+                alert(`Import failed: Invalid file format`);
+            }
+        };
+        reader.readAsText(file);
+        
+        // Reset the input so the same file can be imported again if needed
+        event.target.value = '';
+    }
+});
+
+function handleImportResult(result) {
+    if (result.success) {
+        renderEntriesList();
+        if (result.added > 0) {
+            showToast(`Imported ${result.added} keys${result.skipped > 0 ? `, skipped ${result.skipped} duplicates` : ''}`);
+        } else {
+            showToast(`All keys already exist (${result.skipped} skipped)`);
+        }
+    } else {
+        alert(`Import failed: ${result.error}`);
+    }
+}
 
 // ################  run  ##################
 if (!Cookies.get("otp-authenticator.darkStyle") && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -646,14 +802,187 @@ setInterval(() => {
     }
 }, 1000);
 
-// Initialize multi-key UI
-initializeMultiKeyView();
-
-// Load the first entry if it exists
-const entries = otpManager.getAllEntries();
-if (entries.length > 0) {
-    // Don't auto-select any entry on page load
-    // User must click to select
-    otpManager.selectedIndex = -1;
+// Initialize encryption and load data
+async function initializeApp() {
+    // Check if data is encrypted
+    if (otpManager.checkEncryptionStatus()) {
+        // Show password prompt
+        showPasswordPrompt('unlock');
+    } else {
+        // Load data without password
+        const result = await otpManager.loadFromStorage();
+        if (result.success) {
+            finalizeInitialization();
+        }
+    }
 }
+
+function finalizeInitialization() {
+    isInitialized = true;
+    // Initialize multi-key UI
+    initializeMultiKeyView();
+    
+    // Update lock icon state
+    updateLockIcon();
+    
+    // Load the first entry if it exists
+    const entries = otpManager.getAllEntries();
+    if (entries.length > 0) {
+        // Don't auto-select any entry on page load
+        // User must click to select
+        otpManager.selectedId = null;
+    }
+}
+
+function showPasswordPrompt(mode, callback) {
+    const overlay = document.getElementById('password-overlay');
+    const title = document.getElementById('password-title');
+    const message = document.getElementById('password-message');
+    const input = document.getElementById('password-input');
+    const confirmInput = document.getElementById('password-confirm');
+    const submitBtn = document.getElementById('password-submit');
+    const cancelBtn = document.getElementById('password-cancel');
+    const errorDiv = document.getElementById('password-error');
+    
+    // Clear previous state
+    input.value = '';
+    confirmInput.value = '';
+    errorDiv.style.display = 'none';
+    errorDiv.textContent = '';
+    
+    // Configure based on mode
+    if (mode === 'unlock') {
+        title.textContent = 'Enter Password';
+        message.textContent = 'Your keys are encrypted. Please enter your password to unlock.';
+        submitBtn.textContent = 'Unlock';
+        cancelBtn.style.display = 'none';
+        confirmInput.style.display = 'none';
+    } else if (mode === 'enable') {
+        title.textContent = 'Enable Encryption';
+        message.textContent = 'Enter a password to encrypt your keys. You will need this password to access your keys.';
+        submitBtn.textContent = 'Enable Encryption';
+        cancelBtn.style.display = 'inline-block';
+        confirmInput.style.display = 'block';
+    } else if (mode === 'disable') {
+        title.textContent = 'Disable Encryption';
+        message.textContent = 'Enter your current password to disable encryption. Your keys will be stored in plain text.';
+        submitBtn.textContent = 'Disable Encryption';
+        cancelBtn.style.display = 'inline-block';
+        confirmInput.style.display = 'none';
+    } else if (mode === 'import') {
+        title.textContent = 'Import Encrypted Data';
+        message.textContent = 'The imported file is encrypted. Enter the password to decrypt it.';
+        submitBtn.textContent = 'Import';
+        cancelBtn.style.display = 'inline-block';
+        confirmInput.style.display = 'none';
+    }
+    
+    overlay.style.display = 'flex';
+    input.focus();
+    
+    // Handle submit
+    const handleSubmit = async () => {
+        const password = input.value;
+        const confirmPassword = confirmInput.value;
+        
+        if (!password) {
+            errorDiv.textContent = 'Please enter a password';
+            errorDiv.style.display = 'block';
+            return;
+        }
+        
+        // Check password confirmation for enable mode
+        if (mode === 'enable') {
+            if (!confirmPassword) {
+                errorDiv.textContent = 'Please confirm your password';
+                errorDiv.style.display = 'block';
+                return;
+            }
+            if (password !== confirmPassword) {
+                errorDiv.textContent = 'Passwords do not match';
+                errorDiv.style.display = 'block';
+                confirmInput.focus();
+                return;
+            }
+            if (password.length < 4) {
+                errorDiv.textContent = 'Password must be at least 4 characters';
+                errorDiv.style.display = 'block';
+                return;
+            }
+        }
+        
+        if (mode === 'unlock') {
+            const result = await otpManager.loadFromStorage(password);
+            if (result.success) {
+                overlay.style.display = 'none';
+                finalizeInitialization();
+            } else if (result.error) {
+                errorDiv.textContent = result.error;
+                errorDiv.style.display = 'block';
+            }
+        } else if (mode === 'enable') {
+            const result = await otpManager.enableEncryption(password);
+            if (result.success) {
+                overlay.style.display = 'none';
+                updateLockIcon();
+                showToast('Encryption enabled');
+            }
+        } else if (mode === 'disable') {
+            const result = await otpManager.disableEncryption(password);
+            if (result.success) {
+                overlay.style.display = 'none';
+                updateLockIcon();
+                showToast('Encryption disabled');
+            } else if (result.error) {
+                errorDiv.textContent = result.error;
+                errorDiv.style.display = 'block';
+            }
+        } else if (mode === 'import' && callback) {
+            overlay.style.display = 'none';
+            callback(password);
+        }
+    };
+    
+    // Event listeners
+    submitBtn.onclick = handleSubmit;
+    cancelBtn.onclick = () => {
+        overlay.style.display = 'none';
+        if (callback) callback(null);
+    };
+    input.onkeypress = (e) => {
+        if (e.key === 'Enter') {
+            if (mode === 'enable' && !confirmInput.value) {
+                confirmInput.focus();
+            } else {
+                handleSubmit();
+            }
+        }
+    };
+    confirmInput.onkeypress = (e) => {
+        if (e.key === 'Enter') handleSubmit();
+    };
+}
+
+function updateLockIcon() {
+    const lockIcon = document.getElementById('lock-icon');
+    if (otpManager.isEncrypted) {
+        lockIcon.classList.remove('unlocked');
+        lockIcon.title = 'Encryption enabled (click to disable)';
+    } else {
+        lockIcon.classList.add('unlocked');
+        lockIcon.title = 'Encryption disabled (click to enable)';
+    }
+}
+
+// Lock icon handler
+document.getElementById('lock-icon').addEventListener('click', () => {
+    if (otpManager.isEncrypted) {
+        showPasswordPrompt('disable');
+    } else {
+        showPasswordPrompt('enable');
+    }
+});
+
+// Initialize the app
+initializeApp();
 

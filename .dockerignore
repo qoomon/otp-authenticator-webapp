@@ -1,0 +1,6 @@
+node_modules
+dist
+otpauth
+npm-debug.log
+.idea/
+.github/

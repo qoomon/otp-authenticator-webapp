@@ -69,7 +69,7 @@ body {
   position: relative;
   display: flex;
   min-width: 300px;
-  max-width: 400px;
+  max-width: 600px;
   height: 64px;
   margin: 0 auto;
   padding: 20px 12px 10px;
@@ -176,6 +176,30 @@ body {
   cursor: pointer;
   background: url(light-bulb.png) no-repeat;
   background-size: contain;
+}
+
+#search-input {
+  flex: 1;
+  max-width: 300px;
+  height: 32px;
+  margin: 0 12px;
+  padding: 0 10px;
+  font-size: 14px;
+  color: #4c4c4c;
+  background: white;
+  border: 1px solid #dedede;
+  border-radius: 16px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+#search-input:focus {
+  border-color: #5892ee;
+  box-shadow: 0 0 0 2px rgba(88, 146, 238, 0.1);
+}
+
+#search-input::placeholder {
+  color: #aaa;
 }
 
 #header-actions {
@@ -309,7 +333,7 @@ body {
 }
 
 #entries-list-container {
-  max-width: 70%;
+  max-width: 90%;
   margin: 20px auto;
   padding: 0 24px;
 }
@@ -458,5 +482,185 @@ body {
 
 #add-key-icon:hover {
   filter: invert(50%) sepia(1) saturate(5) hue-rotate(180deg);
+}
+
+#export-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  position: relative;
+  filter: invert(75%);
+}
+
+#import-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: currentColor;
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+}
+
+#export-icon:hover {
+  filter: invert(50%) sepia(1) saturate(5) hue-rotate(180deg);
+}
+
+#import-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  position: relative;
+  filter: invert(75%);
+}
+
+#export-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: currentColor;
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+}
+
+#import-icon:hover {
+  filter: invert(50%) sepia(1) saturate(5) hue-rotate(180deg);
+}
+
+#lock-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  position: relative;
+  filter: invert(75%);
+}
+
+#lock-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: currentColor;
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><rect x="5" y="11" width="14" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><rect x="5" y="11" width="14" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+}
+
+#lock-icon.unlocked::before {
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><rect x="5" y="11" width="14" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 018 0"/></svg>');
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><rect x="5" y="11" width="14" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 018 0"/></svg>');
+}
+
+#lock-icon:hover {
+  filter: invert(50%) sepia(1) saturate(5) hue-rotate(180deg);
+}
+
+#password-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+#password-dialog {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#password-dialog h2 {
+  margin: 0 0 12px 0;
+  color: #4c4c4c;
+  font-size: 20px;
+}
+
+#password-dialog p {
+  color: #666;
+  margin: 0 0 20px 0;
+  font-size: 14px;
+}
+
+#password-input,
+#password-confirm {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dedede;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+#password-input:focus,
+#password-confirm:focus {
+  border-color: #5892ee;
+  box-shadow: 0 0 0 2px rgba(88, 146, 238, 0.1);
+}
+
+#password-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+#password-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#password-submit {
+  background: #5892ee;
+  color: white;
+}
+
+#password-submit:hover {
+  background: #4070cc;
+}
+
+#password-cancel {
+  background: #f5f5f5;
+  color: #666;
+}
+
+#password-cancel:hover {
+  background: #e0e0e0;
+}
+
+#password-error {
+  color: #ff4444;
+  font-size: 14px;
+  margin-top: 12px;
+  text-align: center;
 }
 

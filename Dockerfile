@@ -1,24 +1,37 @@
-FROM node:16 AS build
+# Build stage
+FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-COPY package.json package-lock.json ./
+# Copy package files
+COPY package*.json ./
 
-RUN npm install
+# Install dependencies
+RUN npm ci
 
+# Copy source files
 COPY . .
 
+# Build the application
 RUN npm run build
 
-FROM node:16-alpine
+# Production stage - nginx
+FROM nginx:alpine
 
-RUN npm install -g http-server
+# Copy built files to nginx
+COPY --from=builder /app/dist /usr/share/nginx/html
 
-WORKDIR /app
+# Add nginx config for SPA
+RUN echo 'server { \
+    listen 80; \
+    server_name localhost; \
+    root /usr/share/nginx/html; \
+    index index.html; \
+    location / { \
+        try_files $uri $uri/ /index.html; \
+    } \
+}' > /etc/nginx/conf.d/default.conf
 
-COPY --from=build /app/dist /app/dist
+EXPOSE 80
 
-EXPOSE 8080
-
-CMD ["http-server", "dist", "-p", "8080"]
-
+CMD ["nginx", "-g", "daemon off;"]

@@ -1,7 +1,7 @@
 {
-  "name": "otp-authenticator-webapp",
-  "version": "2.1.1",
-  "description": "",
+  "name": "otp-authplus-webapp",
+  "version": "3.0.0",
+  "description": "Enhanced OTP authenticator with multi-key support and local encryption",
   "private": true,
   "scripts": {
     "build": "webpack --mode production",

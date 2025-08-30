@@ -1,10 +1,8 @@
-# otp-authenticator-webapp (Enhanced Fork) [![starline](https://starlines.qoo.monster/assets/qoomon/otp-authenticator-webapp)](https://github.com/qoomon/starlines)
+# OTP Auth+ (v3.0.0)
 
-[![Build Workflow](https://github.com/qoomon/otp-authenticator-webapp/workflows/Build%20&%20Deploy/badge.svg)](https://github.com/qoomon/otp-authenticator-webapp/actions)
+An enhanced *Google Authenticator* alternative with multi-key management, local encryption, and advanced features.
 
-An enhanced *Google Authenticator* like offline webapp with multi-key management and local storage.
-
-Original hosted at github pages: https://qoomon.github.io/otp-authenticator-webapp
+Fork of the original otp-authenticator-webapp by qoomon: https://qoomon.github.io/otp-authenticator-webapp
 
 > [!Important] 
 > ☂️ No External Services are used, local JavaScript execution only ☂️
@@ -19,7 +17,7 @@ Original hosted at github pages: https://qoomon.github.io/otp-authenticator-weba
 * Parse OTPAuth URLs in the `secret` input field
   * e.g. `otpauth://totp/john.doe?secret=N2SJSUOXCKQM5MAX7N7J3NBUQ4WTL66G&issuer=example.org`
 
-#### New Features (This Fork)
+#### Enhanced Features (OTP Auth+ v3.0.0)
 * **Multi-Key Management**
   * Store and manage multiple OTP keys simultaneously
   * Grid layout displays all keys as cards
@@ -49,8 +47,42 @@ Original hosted at github pages: https://qoomon.github.io/otp-authenticator-weba
   * Click again to deselect
   * Form hidden when no entry is selected
   
-### Host in Your Own GitHub Account
-* Fork this repo
-* Go to your forked Repository -> `Settings` -> `GitHub Pages`
-  * Ensure `Source` is set to `gh-pages`
-  * Find your link to the app `Your site is published at https://USERNAME.github.io/otp-authenticator-webapp/`
+* **Security Features (New in v3.0.0)**
+  * Optional password-based encryption for stored keys
+  * Password confirmation to prevent lockout
+  * Encrypted export/import with password protection
+  * Works in both HTTP and HTTPS environments
+  * SHA-256 key derivation with 10,000 iterations
+  
+* **Import/Export**
+  * Export all keys to JSON file with date stamp
+  * Import keys from JSON with automatic duplicate detection
+  * Maintains encryption status during export
+  * Password prompt for encrypted imports
+  
+* **Search & Organization**
+  * Real-time search across all keys
+  * Automatic alphabetical sorting by issuer
+  * Responsive grid layout adapts to screen size
+
+* **Google Authenticator Migration**
+  * Direct import from Google Authenticator export QR codes
+  * Bulk import of multiple accounts at once
+  * Supports scanning QR codes or pasting migration URLs
+
+### Deployment Options
+
+#### Docker
+```bash
+docker run -d -p 8080:80 ghcr.io/YOUR_USERNAME/otp-authplus-webapp:latest
+```
+
+#### Static Files
+Download the latest `otp-authplus-dist.zip` from the [Releases](../../releases) page and serve with any web server.
+
+#### Build from Source
+```bash
+npm ci
+npm run build
+# Serve the dist/ directory with any web server
+```

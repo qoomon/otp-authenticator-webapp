@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="theme-color" content="#292929" />
-    <title>OTP Authenticator</title>
+    <title>OTP Auth+</title>
     <link rel=icon href=favicon.ico>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
@@ -11,10 +11,31 @@
     <script src="main.js" defer></script>
   </head>
   <body>
+    <!-- Password prompt overlay -->
+    <div id="password-overlay" style="display: none;">
+      <div id="password-dialog">
+        <h2 id="password-title">Enter Password</h2>
+        <p id="password-message">Your keys are encrypted. Please enter your password to unlock.</p>
+        <input type="password" id="password-input" placeholder="Password" autocomplete="current-password">
+        <input type="password" id="password-confirm" placeholder="Confirm Password" autocomplete="new-password" style="display: none;">
+        <div id="password-actions">
+          <button id="password-submit">Unlock</button>
+          <button id="password-cancel" style="display: none;">Cancel</button>
+        </div>
+        <div id="password-error" style="display: none;"></div>
+      </div>
+    </div>
+    
     <div id="header-container">
       <div id="app-icon"></div>
-      <div id="app-name">OTP Authenticator</div>
+      <div id="app-name">OTP Auth+</div>
+      <input id="search-input" type="text" placeholder="Search keys..." autocomplete="off">
       <div id="header-actions">
+        <div id="lock-icon" title="Lock/Unlock encryption"></div>
+        <div id="export-icon" title="Export all keys"></div>
+        <div id="import-icon" title="Import keys">
+          <input type="file" id="import-file" accept=".json" style="display: none;">
+        </div>
         <div id="add-key-icon" title="Add new key"></div>
         <div id="clear-all-icon" title="Clear all keys"></div>
       </div>
@@ -54,7 +75,7 @@
         <div id="otpauth-qr-overlay">Missing values!</div>
       </div>
     </div>
-    
+    <a id="github-ref" href="https://github.com/rorph/otp-authenticator-webapp" target="_blank"></a>
     <div id="app-version"></div>
     <div id="light-switch"></div>
     

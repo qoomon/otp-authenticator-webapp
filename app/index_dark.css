@@ -30,9 +30,19 @@ body
 #more-button,
 #input-image-button,
 #input-video-button,
-#light-switch
+#light-switch,
+#clear-all-icon,
+#add-key-icon
 {
     filter: invert(25%);
+}
+
+#clear-all-icon:hover {
+    filter: invert(60%) sepia(1) saturate(5) hue-rotate(320deg);
+}
+
+#add-key-icon:hover {
+    filter: invert(50%) sepia(1) saturate(5) hue-rotate(180deg);
 }
 
 #otpauth-qr
@@ -54,7 +64,53 @@ body
     color: #9c9c9c;
 }
 
-#totp-token-remaining-seconds-pie > circle
+#totp-token-remaining-seconds-pie > circle,
+.otp-entry-timer svg > circle
 {
     stroke: #598de0;
 }
+
+.otp-entry {
+    background: #2a2a2a;
+    border-color: #3a3a3a;
+}
+
+.otp-entry:hover {
+    border-color: #598de0;
+    box-shadow: 0 2px 4px rgba(89, 141, 224, 0.2);
+}
+
+.otp-entry.selected {
+    background: #323232;
+    border-color: #598de0;
+}
+
+.otp-entry-label {
+    color: #e6e6e6;
+}
+
+.otp-entry-account {
+    color: #666;
+}
+
+.otp-entry-token {
+    color: #598de0;
+}
+
+.otp-entry-delete {
+    background: #aa3333;
+}
+
+.otp-entry-delete:hover {
+    background: #cc0000;
+}
+
+.add-button {
+    background: #4070cc;
+    color: #f5f5f5;
+}
+
+.add-button:hover {
+    background: #598de0;
+}
+

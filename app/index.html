@@ -14,7 +14,14 @@
     <div id="header-container">
       <div id="app-icon"></div>
       <div id="app-name">OTP Authenticator</div>
-      <div id="more-button"></div>
+      <div id="header-actions">
+        <div id="add-key-icon" title="Add new key"></div>
+        <div id="clear-all-icon" title="Clear all keys"></div>
+      </div>
+    </div>
+    
+    <div id="entries-list-container">
+      <div id="entries-list"></div>
     </div>
     <div id="calculator-container">
       <div id="totp-label" style="margin-bottom: 0px; height: 0px;"></div>
@@ -34,6 +41,7 @@
           <label id="input-image-button" style=" display: inline-block;">
               <input id="input-image" type="file" style="display: none;">
           </label>
+          <div id="more-button"></div>
         </div>
         
         <input id="input-account" placeholder="Account" style="display: none;">
@@ -46,7 +54,7 @@
         <div id="otpauth-qr-overlay">Missing values!</div>
       </div>
     </div>
-    <a id="github-ref" href="https://github.com/qoomon/otp-authenticator-webapp"></a>
+    
     <div id="app-version"></div>
     <div id="light-switch"></div>
     

@@ -2,28 +2,40 @@ name: Build & Deploy
 
 on:
   push:
-    branches: [ '*' ]  
+    branches: [ '*' ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+      - run: npm ci
+      - run: npm run build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
 
-    steps:              
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: 22.x
-    - run: npm ci
-    - run: npm run build
-    # - run: npm test
-    #   env:
-    #     CI: true
-    
-    - name: Deploy to GitHub Pages
-      if: github.ref == 'refs/heads/main'
-      uses: qoomon/actions-publish-to-github-pages@v1
-      with:
-        GITHUB_PAGES_SOURCE_DIR: dist
-        GITHUB_PAGES_BRANCH: gh-pages
-        GITHUB_PAGES_REPLACE: false
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
